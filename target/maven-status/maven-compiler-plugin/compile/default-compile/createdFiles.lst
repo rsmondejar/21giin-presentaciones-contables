@@ -1,0 +1,6 @@
+App/DAO/BaseDao.class
+App/Main.class
+App/Views/BaseView.class
+App/BusinessLogic/BaseBusinessLogic.class
+App/Controllers/BaseController.class
+Core/DatabaseConector.class

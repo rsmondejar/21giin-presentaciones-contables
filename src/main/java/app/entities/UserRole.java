@@ -38,6 +38,14 @@ public class UserRole extends BaseEntity {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Getters And Setters">    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public String getRole() {
         return role;
     }

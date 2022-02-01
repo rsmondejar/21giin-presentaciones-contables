@@ -46,6 +46,14 @@ public class Presentation extends BaseEntity {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Getters And Setters">    
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+    
     public Date getDate() {
         return date;
     }

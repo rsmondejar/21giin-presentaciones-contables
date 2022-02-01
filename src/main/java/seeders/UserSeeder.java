@@ -29,7 +29,7 @@ public class UserSeeder {
             for (int i = 0; i < total; i++) {
                 User user = new User();
                 user.setLogin("user_" + new RandomString(5).nextString());
-                user.setPassword("pasword1234");
+                user.setPassword("pass1234");
                 user.setMunicipalityId(1);
                 user.setRoleId(1);
 

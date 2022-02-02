@@ -12,6 +12,7 @@ import app.entities.BaseEntity;
 import java.util.List;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
+import org.hibernate.Transaction;
 
 /**
  * Base DAO.
@@ -28,13 +29,14 @@ class BaseDao {
 
     /**
      * Get all
+     *
      * @param <T> T
      * @return All registers
      */
     public static <T> List<T> all() {
-        try {
-            Session session = HibernateUtil.get().getCurrentSession();
+        Session session = HibernateUtil.get().getCurrentSession();
 
+        try {
             session.beginTransaction();
 
             List<T> baseEntities = (List<T>) loadAllData(model.getClass(), session);
@@ -44,12 +46,12 @@ class BaseDao {
             }
 
             return baseEntities;
-
-        } catch (HibernateException exception) {
+        } catch (RuntimeException exception) {
             Log.error(exception);
             return null;
         } finally {
-            HibernateUtil.get().getCurrentSession().close();
+            session.flush();
+            session.close();
         }
     }
 
@@ -61,10 +63,11 @@ class BaseDao {
      * @return model instance or null
      */
     public static <T> T findById(int id) {
-        try {
-            Session session = HibernateUtil.get().getCurrentSession();
+        Transaction trns = null;
+        Session session = HibernateUtil.get().getCurrentSession();
 
-            session.beginTransaction();
+        try {
+            trns = session.beginTransaction();
 
             T baseEntity = (T) session.find(model.getClass(), id);
 
@@ -73,12 +76,16 @@ class BaseDao {
             }
 
             return baseEntity;
+        } catch (RuntimeException exception) {
+            if (trns != null) {
+                trns.rollback();
+            }
 
-        } catch (HibernateException exception) {
             Log.error(exception);
             return null;
         } finally {
-            HibernateUtil.get().getCurrentSession().close();
+            session.flush();
+            session.close();
         }
     }
 
@@ -90,20 +97,26 @@ class BaseDao {
      * @return boolean
      */
     public static <T> boolean create(BaseEntity entity) {
-        try {
-            Session session = HibernateUtil.get().getCurrentSession();
+        Transaction trns = null;
+        Session session = HibernateUtil.get().getCurrentSession();
 
-            session.beginTransaction();
+        try {
+            trns = session.beginTransaction();
 
             session.save(entity);
             session.getTransaction().commit();
 
             return true;
-        } catch (HibernateException exception) {
+        } catch (RuntimeException exception) {
+            if (trns != null) {
+                trns.rollback();
+            }
+
             Log.error(exception);
             return false;
         } finally {
-            HibernateUtil.get().getCurrentSession().close();
+            session.flush();
+            session.close();
         }
     }
 
@@ -116,10 +129,11 @@ class BaseDao {
      * @return boolean Status
      */
     public static <T> boolean update(int id, BaseEntity entity) {
-        try {
-            Session session = HibernateUtil.get().getCurrentSession();
+        Transaction trns = null;
+        Session session = HibernateUtil.get().getCurrentSession();
 
-            session.beginTransaction();
+        try {
+            trns = session.beginTransaction();
 
             // check if exits
             T baseEntity = (T) session.find(model.getClass(), id);
@@ -133,26 +147,32 @@ class BaseDao {
             session.getTransaction().commit();
 
             return true;
-        } catch (HibernateException exception) {
+        } catch (RuntimeException exception) {
+            if (trns != null) {
+                trns.rollback();
+            }
+
             Log.error(exception);
             return false;
         } finally {
-            HibernateUtil.get().getCurrentSession().close();
+            session.flush();
+            session.close();
         }
     }
 
     /**
      * Delete by Id.
-     * 
+     *
      * @param <T> T
      * @param id Identifier
-     * @return  boolean Status
+     * @return boolean Status
      */
     public static <T> boolean delete(int id) {
-        try {
-            Session session = HibernateUtil.get().getCurrentSession();
+        Transaction trns = null;
+        Session session = HibernateUtil.get().getCurrentSession();
 
-            session.beginTransaction();
+        try {
+            trns = session.beginTransaction();
 
             T baseEntity = (T) session.find(model.getClass(), id);
 
@@ -164,16 +184,22 @@ class BaseDao {
             session.getTransaction().commit();
 
             return true;
-        } catch (HibernateException exception) {
+        } catch (RuntimeException exception) {
+            if (trns != null) {
+                trns.rollback();
+            }
+
             Log.error(exception);
             return false;
         } finally {
-            HibernateUtil.get().getCurrentSession().close();
+            session.flush();
+            session.close();
         }
     }
 
     /**
      * Load All Data.
+     *
      * @param <T> Class
      * @param type Type
      * @param session Session

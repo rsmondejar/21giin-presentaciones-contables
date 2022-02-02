@@ -5,51 +5,43 @@
 package app.controllers;
 
 import app.Main;
+import app.dao.UserDao;
 import app.entities.User;
-import app.views.LoginJFrame;
 import helpers.Dialog;
 import helpers.Log;
 
 /**
+ * Login Controller.
  *
  * @author raulsm
  */
 public class LoginController extends BaseController {
 
-    public static User loggin(String name, String password) {
+    public static void loggin(String name, String password) {
 
-        Log.info("Name: " + name + " - Password: " + password);
-
-        // @TODO: "Check if user exists in database"
         Boolean isValid = false;
 
-        // @TODO: remove after connection to database
-        if (name.equals("raul") && password.equals("1234")) {
+        // Check if user exists in database
+        User user = null;
+        try {
+            user = UserDao.findByLoginAndPassword(name, password);
             isValid = true;
+        } catch (Exception exception) {
+            Log.error(exception);
         }
 
         if (!isValid) {
             Dialog.error("Usuario y/o contraseña incorrectos", "Error login");
-            return null;
+            return;
         }
 
-        // @TODO: If OK
-        
-        // @TODO: Save user "session"
-        User user = new User();
-        user.setLogin(name);
-        user.setPassword(password);
-        user.setId(1);
-        user.setRoleId(1);
-        
+        // Store session user      
         Main.setAuthUser(user);
-        
-        // @TODO: Hide login view
+
+        // Hide login view
         Main.loginPanelHide();
 
-        // @TODO: Show Main Menu
+        // Show Main Menu
         MainController mainController = new MainController();
-        
-        return null;
     }
 }

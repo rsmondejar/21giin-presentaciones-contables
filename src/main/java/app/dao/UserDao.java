@@ -4,9 +4,15 @@
  */
 package app.dao;
 
+import static app.dao.BaseDao.model;
 import app.entities.BaseEntity;
 import app.entities.User;
+import config.HibernateUtil;
+import helpers.Log;
 import java.util.List;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.query.Query;
 
 /**
  * User DAO.
@@ -70,5 +76,38 @@ public class UserDao extends BaseDao {
      */
     public static boolean delete(int id) {
         return BaseDao.delete(id);
+    }
+    
+    /**
+     * Find By Login And Password.
+     * @param login Login
+     * @param password Password
+     * @return User
+     * @throws Exception 
+     */
+    public static User findByLoginAndPassword(String login, String password) throws Exception {
+        try {
+            Session session = HibernateUtil.get().getCurrentSession();
+
+            session.beginTransaction();
+            
+            Query query = session.createQuery("SELECT u FROM users u WHERE u.login=:login AND u.password=:password");
+            query.setParameter("login", login);
+            query.setParameter("password", password);
+            
+            User user = (User) query.uniqueResult();
+            
+            if (user == null) {
+                throw new Exception("Not found user with login '%s' and password '%s'".formatted(login, password));
+            }
+
+            return user;
+
+        } catch (HibernateException exception) {
+            Log.error(exception);
+            throw exception;
+        } finally {
+            HibernateUtil.get().getCurrentSession().close();
+        }
     }
 }

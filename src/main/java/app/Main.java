@@ -5,6 +5,7 @@
 package app;
 
 //import Helpers.Dialog;
+import app.dao.UserDao;
 import app.entities.User;
 import config.HibernateUtil;
 import helpers.Log;
@@ -16,6 +17,10 @@ import org.hibernate.Session;
 //import org.hibernate.cfg.Configuration;
 
 import app.views.LoginJFrame;
+import helpers.RandomString;
+import java.util.List;
+import javax.persistence.Entity;
+import seeders.UserSeeder;
 
 /**
  *
@@ -24,8 +29,10 @@ import app.views.LoginJFrame;
 public class Main {
 
     private static LoginJFrame loginPanel = new LoginJFrame();
-    
+
     private static User authUser;
+
+    private static Session session;
 
     /**
      * @param args the command line arguments
@@ -34,35 +41,84 @@ public class Main {
         Log.info("Aplicación iniciada");
 
         try {
-//            Session session = HibernateUtil.get().openSession();
-            
+            session = HibernateUtil.get().openSession();
+
             Log.success("Conexión realizada correctamente");
+
+            // @TODO: Test Create User
+//             UserSeeder.create(10);
+            
+            // @TODO: Test Find User
+//            User user = UserDao.findById(10);
+//            Log.success(user.toString());
+
+            // @TODO: Test Remove User
+//            boolean statusDelete = UserDao.delete(20);
+//            Log.info(String.valueOf(statusDelete));
+
+            // @TODO: Test Find User
+//            int userId = 11;
+//            User user = UserDao.findById(userId);
+//            if (user == null) {
+//                throw new Exception("User with id [%d] not found".formatted(userId));
+//            }
+//            Log.info(user.toString());
+
+            // @TODO: Test Update User
+//            int userId = 11;
+//            User user = UserDao.findById(userId);
+//            if (user == null) {
+//                throw new Exception("User with id [%d] not found".formatted(userId));
+//            }
+//            Log.info(user.toString());
+//
+//            String loginPrevious = user.getLogin();
+//            String passwordPrevious = user.getPassword();
+//            
+//            user.setLogin("prueba1234");
+//            user.setPassword("pasword");
+//    
+//            boolean statusUpdate = UserDao.update(userId, user);      
+//            Log.info(String.valueOf(statusUpdate));
+//            
+//            user.setLogin(loginPrevious);
+//            user.setPassword(passwordPrevious);
+//    
+//            statusUpdate = UserDao.update(userId, user);      
+//            Log.info(String.valueOf(statusUpdate));
+            
+            // @TODO: Search all users
+//            List<User> users = UserDao.all();
+//            for (User user : users) {
+//                Log.info(String.valueOf(user));
+//            }
+
+            
             
             // @TODO: Show login view
             loginPanelShow();
-
+            
             // TODO: Cerrar la sesión al salir del programa
             // session.close();            
             // Log.success("Aplicación finalizada");
-
         } catch (Exception exception) {
             Log.error(exception);
         }
     }
-    
+
     public static void loginPanelShow() {
         loginPanel.setLocationRelativeTo(null);
-        loginPanel.setVisible(true); 
+        loginPanel.setVisible(true);
     }
-    
+
     public static void loginPanelHide() {
-        loginPanel.setVisible(false); 
+        loginPanel.setVisible(false);
     }
-    
+
     public static void setAuthUser(User user) {
         authUser = user;
     }
-    
+
     public static User getAuthUser() {
         return authUser;
     }

@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.42.0" timestamp="2022-05-06T18:40:23.135">
+<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/Main.java">
+<violation beginline="8" endline="8" begincolumn="1" endcolumn="23" rule="UnnecessaryImport" ruleset="Code Style" package="app" class="Main" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'app.dao.UserDao'
+</violation>
+<violation beginline="20" endline="20" begincolumn="1" endcolumn="28" rule="UnnecessaryImport" ruleset="Code Style" package="app" class="Main" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'helpers.RandomString'
+</violation>
+<violation beginline="21" endline="21" begincolumn="1" endcolumn="22" rule="UnnecessaryImport" ruleset="Code Style" package="app" class="Main" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'java.util.List'
+</violation>
+<violation beginline="22" endline="22" begincolumn="1" endcolumn="32" rule="UnnecessaryImport" ruleset="Code Style" package="app" class="Main" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'javax.persistence.Entity'
+</violation>
+<violation beginline="23" endline="23" begincolumn="1" endcolumn="26" rule="UnnecessaryImport" ruleset="Code Style" package="app" class="Main" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
+Unused import 'seeders.UserSeeder'
+</violation>
+<violation beginline="35" endline="35" begincolumn="28" endcolumn="34" rule="UnusedPrivateField" ruleset="Best Practices" package="app" class="Main" variable="session" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'session'.
+</violation>
+</file>
+<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/controllers/BaseController.java">
+<violation beginline="19" endline="19" begincolumn="18" endcolumn="21" rule="UnusedPrivateField" ruleset="Best Practices" package="app.controllers" class="BaseController" variable="auth" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_bestpractices.html#unusedprivatefield" priority="3">
+Avoid unused private fields such as 'auth'.
+</violation>
+</file>
+<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/controllers/LoginController.java">
+<violation beginline="45" endline="45" begincolumn="24" endcolumn="37" rule="UnusedLocalVariable" ruleset="Best Practices" package="app.controllers" class="LoginController" method="loggin" variable="mainController" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_bestpractices.html#unusedlocalvariable" priority="3">
+Avoid unused local variables such as 'mainController'.
+</violation>
+</file>
+<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/entities/Presentation.java">
+<violation beginline="41" endline="41" begincolumn="29" endcolumn="30" rule="UnusedFormalParameter" ruleset="Best Practices" package="app.entities" class="Presentation" method="Presentation" variable="id" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_bestpractices.html#unusedformalparameter" priority="3">
+Avoid unused constructor parameters such as 'id'.
+</violation>
+</file>
+<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/entities/User.java">
+<violation beginline="46" endline="46" begincolumn="21" endcolumn="22" rule="UnusedFormalParameter" ruleset="Best Practices" package="app.entities" class="User" method="User" variable="id" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_bestpractices.html#unusedformalparameter" priority="3">
+Avoid unused constructor parameters such as 'id'.
+</violation>
+</file>
+<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/LoginJFrame.java">
+<violation beginline="113" endline="113" begincolumn="74" endcolumn="76" rule="UnusedFormalParameter" ruleset="Best Practices" package="app.views" class="LoginJFrame" method="jButtonLogginActionPerformed" variable="evt" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_bestpractices.html#unusedformalparameter" priority="3">
+Avoid unused method parameters such as 'evt'.
+</violation>
+<violation beginline="129" endline="129" begincolumn="60" endcolumn="62" rule="UnusedFormalParameter" ruleset="Best Practices" package="app.views" class="LoginJFrame" method="enableLoginButton" variable="evt" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_bestpractices.html#unusedformalparameter" priority="3">
+Avoid unused method parameters such as 'evt'.
+</violation>
+</file>
+<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/MenuJFrame.java">
+<violation beginline="134" endline="134" begincolumn="82" endcolumn="84" rule="UnusedFormalParameter" ruleset="Best Practices" package="app.views" class="MenuJFrame" method="jMenuItemCloseSessionActionPerformed" variable="evt" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_bestpractices.html#unusedformalparameter" priority="3">
+Avoid unused method parameters such as 'evt'.
+</violation>
+<violation beginline="139" endline="139" begincolumn="74" endcolumn="76" rule="UnusedFormalParameter" ruleset="Best Practices" package="app.views" class="MenuJFrame" method="jMenuItemExitActionPerformed" variable="evt" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_bestpractices.html#unusedformalparameter" priority="3">
+Avoid unused method parameters such as 'evt'.
+</violation>
+<violation beginline="144" endline="144" begincolumn="84" endcolumn="86" rule="UnusedFormalParameter" ruleset="Best Practices" package="app.views" class="MenuJFrame" method="jMenuItemMunicipiosShowActionPerformed" variable="evt" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_bestpractices.html#unusedformalparameter" priority="3">
+Avoid unused method parameters such as 'evt'.
+</violation>
+</file>
+<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/MunicipalityListJInternalFrame.java">
+<violation beginline="65" endline="65" begincolumn="39" endcolumn="73" rule="UnnecessaryFullyQualifiedName" ruleset="Code Style" package="app.views" class="MunicipalityListJInternalFrame" method="initComponents" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname" priority="4">
+Unnecessary use of fully qualified name 'javax.swing.table.DefaultTableModel' due to existing import 'javax.swing.table.DefaultTableModel'
+</violation>
+<violation beginline="74" endline="74" begincolumn="17" endcolumn="33" rule="UnnecessaryFullyQualifiedName" ruleset="Code Style" package="app.views" class="MunicipalityListJInternalFrame" method="initComponents" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname" priority="4">
+Unnecessary use of fully qualified name 'java.lang.Integer' due to existing implicit import 'java.lang.*'
+</violation>
+<violation beginline="74" endline="74" begincolumn="42" endcolumn="57" rule="UnnecessaryFullyQualifiedName" ruleset="Code Style" package="app.views" class="MunicipalityListJInternalFrame" method="initComponents" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname" priority="4">
+Unnecessary use of fully qualified name 'java.lang.String' due to existing implicit import 'java.lang.*'
+</violation>
+<violation beginline="74" endline="74" begincolumn="66" endcolumn="81" rule="UnnecessaryFullyQualifiedName" ruleset="Code Style" package="app.views" class="MunicipalityListJInternalFrame" method="initComponents" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname" priority="4">
+Unnecessary use of fully qualified name 'java.lang.String' due to existing implicit import 'java.lang.*'
+</violation>
+</file>
+<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/core/DatabaseConnectorInterface.java">
+<violation beginline="15" endline="15" begincolumn="12" endcolumn="40" rule="UnnecessaryModifier" ruleset="Code Style" package="core" class="DatabaseConnectorInterface" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifier 'public' on field 'connection': the field is declared in an interface type
+</violation>
+<violation beginline="16" endline="16" begincolumn="19" endcolumn="39" rule="UnnecessaryModifier" ruleset="Code Style" package="core" class="DatabaseConnectorInterface" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifiers 'public static' on field 'driver': the field is declared in an interface type
+</violation>
+<violation beginline="17" endline="17" begincolumn="19" endcolumn="37" rule="UnnecessaryModifier" ruleset="Code Style" package="core" class="DatabaseConnectorInterface" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifiers 'public static' on field 'host': the field is declared in an interface type
+</violation>
+<violation beginline="18" endline="18" begincolumn="19" endcolumn="37" rule="UnnecessaryModifier" ruleset="Code Style" package="core" class="DatabaseConnectorInterface" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifiers 'public static' on field 'user': the field is declared in an interface type
+</violation>
+<violation beginline="19" endline="19" begincolumn="19" endcolumn="41" rule="UnnecessaryModifier" ruleset="Code Style" package="core" class="DatabaseConnectorInterface" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifiers 'public static' on field 'password': the field is declared in an interface type
+</violation>
+<violation beginline="20" endline="20" begincolumn="19" endcolumn="45" rule="UnnecessaryModifier" ruleset="Code Style" package="core" class="DatabaseConnectorInterface" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifiers 'public static' on field 'databaseName': the field is declared in an interface type
+</violation>
+<violation beginline="21" endline="21" begincolumn="19" endcolumn="36" rule="UnnecessaryModifier" ruleset="Code Style" package="core" class="DatabaseConnectorInterface" variable="VariableDeclaratorId" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifiers 'public static' on field 'url': the field is declared in an interface type
+</violation>
+<violation beginline="23" endline="23" begincolumn="21" endcolumn="37" rule="UnnecessaryModifier" ruleset="Code Style" package="core" class="DatabaseConnectorInterface" method="connector" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessarymodifier" priority="3">
+Unnecessary modifiers 'public abstract' on method 'connector': the method is declared in an interface type
+</violation>
+</file>
+</pmd>

@@ -70,10 +70,84 @@
                     </plugins>
                 </configuration>
             </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.8</version>
+                <executions>
+                    <execution>
+                        <id>default-prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-prepare-agent-integration</id>
+                        <goals>
+                            <goal>prepare-agent-integration</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-report</id>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-report-integration</id>
+                        <goals>
+                            <goal>report-integration</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                implementation is needed only for Maven 2
+                                <rule implementation="org.jacoco.maven.RuleConfiguration">
+                                    <element>BUNDLE</element>
+                                    <limits>
+                                        implementation is needed only for Maven 2
+                                        <limit implementation="org.jacoco.report.check.Limit">
+                                            <counter>COMPLEXITY</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.60</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
     <reporting>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-project-info-reports-plugin</artifactId>
+                <version>3.2.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+                <version>3.0.0-M6</version>
+                <configuration>>
+                    <skipEmptyReport>false</skipEmptyReport>
+                </configuration>    
+            </plugin>
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.8</version>
+                <configuration>>
+                    <skipEmptyReport>false</skipEmptyReport>
+                </configuration>    
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
@@ -85,57 +159,26 @@
                     <minimumTokens>100</minimumTokens>
                     <targetJdk>1.7</targetJdk>
                     <rulesets>
-                        <ruleset>/category/java/bestpractices.xml/AvoidUsingHardCodedIP</ruleset>
-                        <ruleset>/category/java/bestpractices.xml/CheckResultSet</ruleset>
-                        <ruleset>/category/java/bestpractices.xml/PrimitiveWrapperInstantiation</ruleset>
-                        <ruleset>/category/java/bestpractices.xml/UnusedFormalParameter</ruleset>
-                        <ruleset>/category/java/bestpractices.xml/UnusedLocalVariable</ruleset>
-                        <ruleset>/category/java/bestpractices.xml/UnusedPrivateField</ruleset>
-                        <ruleset>/category/java/bestpractices.xml/UnusedPrivateMethod</ruleset>
-                        <ruleset>/category/java/codestyle.xml/ExtendsObject</ruleset>
-                        <ruleset>/category/java/codestyle.xml/ForLoopShouldBeWhileLoop</ruleset>
-                        <ruleset>/category/java/codestyle.xml/TooManyStaticImports</ruleset>
-                        <ruleset>/category/java/codestyle.xml/UnnecessaryFullyQualifiedName</ruleset>
-                        <ruleset>/category/java/codestyle.xml/UnnecessaryImport</ruleset>
-                        <ruleset>/category/java/codestyle.xml/UnnecessaryModifier</ruleset>
-                        <ruleset>/category/java/codestyle.xml/UnnecessaryReturn</ruleset>
-                        <ruleset>/category/java/codestyle.xml/UselessParentheses</ruleset>
-                        <ruleset>/category/java/codestyle.xml/UselessQualifiedThis</ruleset>
-                        <ruleset>/category/java/design.xml/CollapsibleIfStatements</ruleset>
-                        <ruleset>/category/java/design.xml/SimplifiedTernary</ruleset>
-                        <ruleset>/category/java/design.xml/UselessOverridingMethod</ruleset>
-                        <ruleset>/category/java/errorprone.xml/AvoidBranchingStatementAsLastInLoop</ruleset>
-                        <ruleset>/category/java/errorprone.xml/AvoidDecimalLiteralsInBigDecimalConstructor</ruleset>
-                        <ruleset>/category/java/errorprone.xml/AvoidMultipleUnaryOperators</ruleset>
-                        <ruleset>/category/java/errorprone.xml/AvoidUsingOctalValues</ruleset>
-                        <ruleset>/category/java/errorprone.xml/BrokenNullCheck</ruleset>
-                        <ruleset>/category/java/errorprone.xml/CheckSkipResult</ruleset>
-                        <ruleset>/category/java/errorprone.xml/ClassCastExceptionWithToArray</ruleset>
-                        <ruleset>/category/java/errorprone.xml/DontUseFloatTypeForLoopIndices</ruleset>
-                        <ruleset>/category/java/errorprone.xml/EmptyCatchBlock</ruleset>
-                        <ruleset>/category/java/errorprone.xml/EmptyFinallyBlock</ruleset>
-                        <ruleset>/category/java/errorprone.xml/EmptyIfStmt</ruleset>
-                        <ruleset>/category/java/errorprone.xml/EmptyInitializer</ruleset>
-                        <ruleset>/category/java/errorprone.xml/EmptyStatementBlock</ruleset>
-                        <ruleset>/category/java/errorprone.xml/EmptyStatementNotInLoop</ruleset>
-                        <ruleset>/category/java/errorprone.xml/EmptySwitchStatements</ruleset>
-                        <ruleset>/category/java/errorprone.xml/EmptySynchronizedBlock</ruleset>
-                        <ruleset>/category/java/errorprone.xml/EmptyTryBlock</ruleset>
-                        <ruleset>/category/java/errorprone.xml/EmptyWhileStmt</ruleset>
-                        <ruleset>/category/java/errorprone.xml/JumbledIncrementer</ruleset>
-                        <ruleset>/category/java/errorprone.xml/MisplacedNullCheck</ruleset>
-                        <ruleset>/category/java/errorprone.xml/OverrideBothEqualsAndHashcode</ruleset>
-                        <ruleset>/category/java/errorprone.xml/ReturnFromFinallyBlock</ruleset>
-                        <ruleset>/category/java/errorprone.xml/UnconditionalIfStatement</ruleset>
-                        <ruleset>/category/java/errorprone.xml/UnnecessaryConversionTemporary</ruleset>
-                        <ruleset>/category/java/errorprone.xml/UnusedNullCheckInEquals</ruleset>
-                        <ruleset>/category/java/errorprone.xml/UselessOperationOnImmutable</ruleset>
-                        <ruleset>/category/java/multithreading.xml/AvoidThreadGroup</ruleset>
-                        <ruleset>/category/java/multithreading.xml/DontCallThreadRun</ruleset>
-                        <ruleset>/category/java/multithreading.xml/DoubleCheckedLocking</ruleset>
-                        <ruleset>/category/java/performance.xml/BigIntegerInstantiation</ruleset>
+                        <ruleset>/quality/pmd/maven-pmd-plugin-tuning.xml</ruleset>
                     </rulesets>
                 </configuration>
+                <reportSets>
+                    <reportSet>
+                        <id>aggregate</id>
+                        <inherited>false</inherited> <!-- don't run aggregate in child modules -->
+                        <reports>
+                            <report>aggregate-pmd</report>
+                            <report>aggregate-cpd</report>
+                        </reports>
+                    </reportSet>
+                    <reportSet>
+                        <id>default</id>
+                        <reports>
+                            <report>pmd</report>
+                            <report>cpd</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
             </plugin>
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
@@ -143,6 +186,7 @@
                 <version>4.6.0.0</version>
                 <configuration>>
                     <skipEmptyReport>false</skipEmptyReport>
+                    <excludeFilterFile>/quality/spotbugs/maven-spotbugs-plugin-tuning.xml</excludeFilterFile>
                     <plugins>
                         <plugin>
                             <groupId>com.h3xstream.findsecbugs</groupId>
@@ -163,6 +207,9 @@
                     <failsOnError>false</failsOnError>
                     <linkXRef>true</linkXRef>
                     <logViolationsToConsole>true</logViolationsToConsole>
+                    <configLocation>/quality/checkstyle/sun-checks-tuning.xml</configLocation>
+                    <!--<configLocation>/quality/checkstyle/google-checks-tuning.xml</configLocation>-->
+                    <suppressionsLocation>/quality/checkstyle/checkstyle-input-suppressions-tuning.xml</suppressionsLocation>
                 </configuration>
                 <reportSets>
                     <reportSet>

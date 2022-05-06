@@ -84,6 +84,57 @@
                     <sourceEncoding>utf-8</sourceEncoding>
                     <minimumTokens>100</minimumTokens>
                     <targetJdk>1.7</targetJdk>
+                    <rulesets>
+                        <ruleset>/category/java/bestpractices.xml/AvoidUsingHardCodedIP</ruleset>
+                        <ruleset>/category/java/bestpractices.xml/CheckResultSet</ruleset>
+                        <ruleset>/category/java/bestpractices.xml/PrimitiveWrapperInstantiation</ruleset>
+                        <ruleset>/category/java/bestpractices.xml/UnusedFormalParameter</ruleset>
+                        <ruleset>/category/java/bestpractices.xml/UnusedLocalVariable</ruleset>
+                        <ruleset>/category/java/bestpractices.xml/UnusedPrivateField</ruleset>
+                        <ruleset>/category/java/bestpractices.xml/UnusedPrivateMethod</ruleset>
+                        <ruleset>/category/java/codestyle.xml/ExtendsObject</ruleset>
+                        <ruleset>/category/java/codestyle.xml/ForLoopShouldBeWhileLoop</ruleset>
+                        <ruleset>/category/java/codestyle.xml/TooManyStaticImports</ruleset>
+                        <ruleset>/category/java/codestyle.xml/UnnecessaryFullyQualifiedName</ruleset>
+                        <ruleset>/category/java/codestyle.xml/UnnecessaryImport</ruleset>
+                        <ruleset>/category/java/codestyle.xml/UnnecessaryModifier</ruleset>
+                        <ruleset>/category/java/codestyle.xml/UnnecessaryReturn</ruleset>
+                        <ruleset>/category/java/codestyle.xml/UselessParentheses</ruleset>
+                        <ruleset>/category/java/codestyle.xml/UselessQualifiedThis</ruleset>
+                        <ruleset>/category/java/design.xml/CollapsibleIfStatements</ruleset>
+                        <ruleset>/category/java/design.xml/SimplifiedTernary</ruleset>
+                        <ruleset>/category/java/design.xml/UselessOverridingMethod</ruleset>
+                        <ruleset>/category/java/errorprone.xml/AvoidBranchingStatementAsLastInLoop</ruleset>
+                        <ruleset>/category/java/errorprone.xml/AvoidDecimalLiteralsInBigDecimalConstructor</ruleset>
+                        <ruleset>/category/java/errorprone.xml/AvoidMultipleUnaryOperators</ruleset>
+                        <ruleset>/category/java/errorprone.xml/AvoidUsingOctalValues</ruleset>
+                        <ruleset>/category/java/errorprone.xml/BrokenNullCheck</ruleset>
+                        <ruleset>/category/java/errorprone.xml/CheckSkipResult</ruleset>
+                        <ruleset>/category/java/errorprone.xml/ClassCastExceptionWithToArray</ruleset>
+                        <ruleset>/category/java/errorprone.xml/DontUseFloatTypeForLoopIndices</ruleset>
+                        <ruleset>/category/java/errorprone.xml/EmptyCatchBlock</ruleset>
+                        <ruleset>/category/java/errorprone.xml/EmptyFinallyBlock</ruleset>
+                        <ruleset>/category/java/errorprone.xml/EmptyIfStmt</ruleset>
+                        <ruleset>/category/java/errorprone.xml/EmptyInitializer</ruleset>
+                        <ruleset>/category/java/errorprone.xml/EmptyStatementBlock</ruleset>
+                        <ruleset>/category/java/errorprone.xml/EmptyStatementNotInLoop</ruleset>
+                        <ruleset>/category/java/errorprone.xml/EmptySwitchStatements</ruleset>
+                        <ruleset>/category/java/errorprone.xml/EmptySynchronizedBlock</ruleset>
+                        <ruleset>/category/java/errorprone.xml/EmptyTryBlock</ruleset>
+                        <ruleset>/category/java/errorprone.xml/EmptyWhileStmt</ruleset>
+                        <ruleset>/category/java/errorprone.xml/JumbledIncrementer</ruleset>
+                        <ruleset>/category/java/errorprone.xml/MisplacedNullCheck</ruleset>
+                        <ruleset>/category/java/errorprone.xml/OverrideBothEqualsAndHashcode</ruleset>
+                        <ruleset>/category/java/errorprone.xml/ReturnFromFinallyBlock</ruleset>
+                        <ruleset>/category/java/errorprone.xml/UnconditionalIfStatement</ruleset>
+                        <ruleset>/category/java/errorprone.xml/UnnecessaryConversionTemporary</ruleset>
+                        <ruleset>/category/java/errorprone.xml/UnusedNullCheckInEquals</ruleset>
+                        <ruleset>/category/java/errorprone.xml/UselessOperationOnImmutable</ruleset>
+                        <ruleset>/category/java/multithreading.xml/AvoidThreadGroup</ruleset>
+                        <ruleset>/category/java/multithreading.xml/DontCallThreadRun</ruleset>
+                        <ruleset>/category/java/multithreading.xml/DoubleCheckedLocking</ruleset>
+                        <ruleset>/category/java/performance.xml/BigIntegerInstantiation</ruleset>
+                    </rulesets>
                 </configuration>
             </plugin>
             <plugin>

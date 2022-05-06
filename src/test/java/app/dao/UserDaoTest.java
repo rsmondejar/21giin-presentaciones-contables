@@ -49,6 +49,58 @@ public class UserDaoTest extends TestCase {
     }
     
     /**
+     * Test Delete User
+     * @throws Exception 
+     */
+    public void testDeleteUser() throws Exception {
+      
+        boolean userDeletedSuccesfully = false;
+      
+        try {
+            findAndDeleteUser();
+             
+            User user = new User(0, userName, userPassword, 1, 1);
+            UserDao.create(user);
+            
+            user = UserDao.findByLoginAndPassword(userName, userPassword);
+            userDeletedSuccesfully = UserDao.delete(user.getId());
+        } catch (Exception e) {
+            
+        } finally {
+            assertEquals(userDeletedSuccesfully, true);
+            findAndDeleteUser();
+        }
+    }
+    
+        /**
+     * Test Delete User
+     * @throws Exception 
+     */
+    public void testUpdateUser() throws Exception {
+      
+        boolean userUpdatedSuccesfully = false;
+      
+        try {
+            findAndDeleteUser();
+             
+            User user = new User(0, userName, userPassword, 1, 1);
+            UserDao.create(user);
+            
+            user = UserDao.findByLoginAndPassword(userName, userPassword);
+            
+            user.setLogin("UserTestModified");
+            
+            userUpdatedSuccesfully = UserDao.update(user.getId(), user);
+            
+            UserDao.delete(user.getId());
+        } catch (Exception e) {
+            
+        } finally {
+            assertEquals(userUpdatedSuccesfully, true);
+        }
+    }
+    
+    /**
      * Find And Delete User
      * @throws Exception 
      */

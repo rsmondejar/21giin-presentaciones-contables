@@ -44,6 +44,8 @@
        <li class="none"><a href="pmd.html" title="PMD">PMD</a></li>
        <li class="none"><strong>SpotBugs</strong></li>
        <li class="none"><a href="checkstyle.html" title="Checkstyle">Checkstyle</a></li>
+       <li class="none"><a href="xref/index.html" title="Source Xref">Source Xref</a></li>
+       <li class="none"><a href="xref-test/index.html" title="Test Source Xref">Test Source Xref</a></li>
       </ul></li>
     </ul>
       <a href="http://maven.apache.org/" title="Built by Maven" class="poweredBy">
@@ -115,13 +117,13 @@
 <td>app.Main.setAuthUser(User) may expose internal static state by storing a mutable object into a static field app.Main.authUser</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_STATIC_REP2">EI_EXPOSE_STATIC_REP2</a></td>
-<td>119</td>
+<td><a href="./xref/app/Main.html#L119">119</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>Public static app.Main.getAuthUser() may expose internal representation by returning Main.authUser</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#MS_EXPOSE_REP">MS_EXPOSE_REP</a></td>
-<td>123</td>
+<td><a href="./xref/app/Main.html#L123">123</a></td>
 <td>Medium</td></tr></table></section><a name="app.controllers.BaseController"></a><section>
 <h3><a name="app.controllers.BaseController"></a>app.controllers.BaseController</h3>
 <table border="0" class="bodyTable">
@@ -135,7 +137,7 @@
 <td>Unused field: app.controllers.BaseController.auth</td>
 <td>PERFORMANCE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#UUF_UNUSED_FIELD">UUF_UNUSED_FIELD</a></td>
-<td></td>
+<td>Not available</td>
 <td>Medium</td></tr></table></section><a name="app.controllers.LoginController"></a><section>
 <h3><a name="app.controllers.LoginController"></a>app.controllers.LoginController</h3>
 <table border="0" class="bodyTable">
@@ -149,7 +151,7 @@
 <td>Dead store to mainController in app.controllers.LoginController.loggin(String, String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#DLS_DEAD_LOCAL_STORE">DLS_DEAD_LOCAL_STORE</a></td>
-<td>45</td>
+<td><a href="./xref/app/controllers/LoginController.html#L45">45</a></td>
 <td>High</td></tr></table></section><a name="app.entities.Convocatory"></a><section>
 <h3><a name="app.entities.Convocatory"></a>app.entities.Convocatory</h3>
 <table border="0" class="bodyTable">
@@ -163,25 +165,25 @@
 <td>app.entities.Convocatory.getEndDate() may expose internal representation by returning Convocatory.endDate</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
-<td>88</td>
+<td><a href="./xref/app/entities/Convocatory.html#L88">88</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>app.entities.Convocatory.getStartDate() may expose internal representation by returning Convocatory.startDate</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
-<td>80</td>
+<td><a href="./xref/app/entities/Convocatory.html#L80">80</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>app.entities.Convocatory.setEndDate(Timestamp) may expose internal representation by storing an externally mutable object into Convocatory.endDate</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>92</td>
+<td><a href="./xref/app/entities/Convocatory.html#L92">92</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>app.entities.Convocatory.setStartDate(Timestamp) may expose internal representation by storing an externally mutable object into Convocatory.startDate</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>84</td>
+<td><a href="./xref/app/entities/Convocatory.html#L84">84</a></td>
 <td>Medium</td></tr></table></section><a name="app.entities.Presentation"></a><section>
 <h3><a name="app.entities.Presentation"></a>app.entities.Presentation</h3>
 <table border="0" class="bodyTable">
@@ -195,13 +197,13 @@
 <td>app.entities.Presentation.getDate() may expose internal representation by returning Presentation.date</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
-<td>58</td>
+<td><a href="./xref/app/entities/Presentation.html#L58">58</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>app.entities.Presentation.setDate(Date) may expose internal representation by storing an externally mutable object into Presentation.date</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>62</td>
+<td><a href="./xref/app/entities/Presentation.html#L62">62</a></td>
 <td>Medium</td></tr></table></section><a name="app.models.Presentation"></a><section>
 <h3><a name="app.models.Presentation"></a>app.models.Presentation</h3>
 <table border="0" class="bodyTable">
@@ -215,13 +217,13 @@
 <td>app.models.Presentation.getDate() may expose internal representation by returning Presentation.date</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
-<td>35</td>
+<td><a href="./xref/app/models/Presentation.html#L35">35</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>app.models.Presentation.setDate(Date) may expose internal representation by storing an externally mutable object into Presentation.date</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>39</td>
+<td><a href="./xref/app/models/Presentation.html#L39">39</a></td>
 <td>Medium</td></tr></table></section><a name="core.DatabaseConnector"></a><section>
 <h3><a name="core.DatabaseConnector"></a>core.DatabaseConnector</h3>
 <table border="0" class="bodyTable">
@@ -235,55 +237,55 @@
 <td>core.DatabaseConnector.driver should be package protected</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#MS_PKGPROTECT">MS_PKGPROTECT</a></td>
-<td>19</td>
+<td><a href="./xref/core/DatabaseConnector.html#L19">19</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>core.DatabaseConnector.password should be package protected</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#MS_PKGPROTECT">MS_PKGPROTECT</a></td>
-<td>22</td>
+<td><a href="./xref/core/DatabaseConnector.html#L22">22</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>core.DatabaseConnector.url should be package protected</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#MS_PKGPROTECT">MS_PKGPROTECT</a></td>
-<td>24</td>
+<td><a href="./xref/core/DatabaseConnector.html#L24">24</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>core.DatabaseConnector.user should be package protected</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#MS_PKGPROTECT">MS_PKGPROTECT</a></td>
-<td>21</td>
+<td><a href="./xref/core/DatabaseConnector.html#L21">21</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>Redundant nullcheck of core.DatabaseConnector.connection, which is known to be non-null in core.DatabaseConnector.connector()</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE">RCN_REDUNDANT_NULLCHECK_OF_NONNULL_VALUE</a></td>
-<td>48</td>
+<td><a href="./xref/core/DatabaseConnector.html#L48">48</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>Write to static field core.DatabaseConnector.databaseName from instance method new core.DatabaseConnector(String, String, String, String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
-<td>39</td>
+<td><a href="./xref/core/DatabaseConnector.html#L39">39</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Write to static field core.DatabaseConnector.host from instance method new core.DatabaseConnector(String, String, String, String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
-<td>36</td>
+<td><a href="./xref/core/DatabaseConnector.html#L36">36</a></td>
 <td>High</td></tr>
 <tr class="a">
 <td>Write to static field core.DatabaseConnector.password from instance method new core.DatabaseConnector(String, String, String, String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
-<td>38</td>
+<td><a href="./xref/core/DatabaseConnector.html#L38">38</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Write to static field core.DatabaseConnector.user from instance method new core.DatabaseConnector(String, String, String, String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
-<td>37</td>
+<td><a href="./xref/core/DatabaseConnector.html#L37">37</a></td>
 <td>High</td></tr></table></section><a name="core.MySqlDatabaseConnector"></a><section>
 <h3><a name="core.MySqlDatabaseConnector"></a>core.MySqlDatabaseConnector</h3>
 <table border="0" class="bodyTable">
@@ -297,19 +299,19 @@
 <td>core.MySqlDatabaseConnector.mysqlDriver isn't final but should be</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#MS_SHOULD_BE_FINAL">MS_SHOULD_BE_FINAL</a></td>
-<td>14</td>
+<td><a href="./xref/core/MySqlDatabaseConnector.html#L14">14</a></td>
 <td>High</td></tr>
 <tr class="a">
 <td>Write to static field core.DatabaseConnector.url from instance method new core.MySqlDatabaseConnector(String, String, String, String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
-<td>30</td>
+<td><a href="./xref/core/MySqlDatabaseConnector.html#L30">30</a></td>
 <td>High</td></tr>
 <tr class="b">
 <td>Write to static field core.DatabaseConnector.driver from instance method new core.MySqlDatabaseConnector(String, String, String, String)</td>
 <td>STYLE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD">ST_WRITE_TO_STATIC_FROM_INSTANCE_METHOD</a></td>
-<td>32</td>
+<td><a href="./xref/core/MySqlDatabaseConnector.html#L32">32</a></td>
 <td>Medium</td></tr></table></section><a name="helpers.RandomString"></a><section>
 <h3><a name="helpers.RandomString"></a>helpers.RandomString</h3>
 <table border="0" class="bodyTable">
@@ -323,7 +325,7 @@
 <td>new helpers.RandomString(int, Random, String) may expose internal representation by storing an externally mutable object into RandomString.random</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td>60</td>
+<td><a href="./xref/helpers/RandomString.html#L60">60</a></td>
 <td>Medium</td></tr></table></section>
       </div>
     </div>

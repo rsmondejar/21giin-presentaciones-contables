@@ -50,7 +50,7 @@ class BaseDao {
             Log.error(exception);
             return null;
         } finally {
-            session.flush();
+//            session.flush();
             session.close();
         }
     }
@@ -84,7 +84,7 @@ class BaseDao {
             Log.error(exception);
             return null;
         } finally {
-            session.flush();
+//            session.flush();
             session.close();
         }
     }
@@ -115,7 +115,7 @@ class BaseDao {
             Log.error(exception);
             return false;
         } finally {
-            session.flush();
+//            session.flush();
             session.close();
         }
     }
@@ -155,7 +155,7 @@ class BaseDao {
             Log.error(exception);
             return false;
         } finally {
-            session.flush();
+//            session.flush();
             session.close();
         }
     }
@@ -192,7 +192,7 @@ class BaseDao {
             Log.error(exception);
             return false;
         } finally {
-            session.flush();
+//            session.flush();
             session.close();
         }
     }

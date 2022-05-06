@@ -5,6 +5,7 @@
 package config;
 
 import helpers.Log;
+import java.io.File;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 
@@ -18,8 +19,11 @@ public class HibernateUtil {
     
     static {
         try {
+            File hibernateFileConfig = new File("hibernate.cfg.xml");
+            
             sessionFactory = new Configuration()
-                    .configure("hibernate.cfg.xml")
+                    //.configure("hibernate.cfg.xml")
+                    .configure(hibernateFileConfig)
                     .buildSessionFactory();
         } catch(Throwable exception) {
             Log.error(exception);

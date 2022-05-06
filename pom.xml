@@ -107,7 +107,19 @@
                 <version>3.1.2</version>
                 <configuration>>
                     <skipEmptyReport>false</skipEmptyReport>
+                    <encoding>UTF-8</encoding>
+                    <consoleOutput>false</consoleOutput>
+                    <failsOnError>false</failsOnError>
+                    <linkXRef>true</linkXRef>
+                    <logViolationsToConsole>true</logViolationsToConsole>
                 </configuration>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <report>checkstyle</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>

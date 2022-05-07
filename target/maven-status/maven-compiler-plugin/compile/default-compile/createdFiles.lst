@@ -2,7 +2,6 @@ app/dao/UserDao.class
 app/controllers/BaseController.class
 app/views/LoginJFrame$3.class
 helpers/Log.class
-core/DatabaseConnectorInterface.class
 app/entities/BaseEntity.class
 app/views/MenuJFrame$3.class
 app/entities/UserRole.class
@@ -10,7 +9,6 @@ app/controllers/MunicipalityController.class
 config/HibernateUtil.class
 app/Main.class
 app/views/MenuJFrame.class
-core/DatabaseConnector.class
 app/dao/BaseDao.class
 app/views/MenuJFrame$2.class
 app/controllers/MainController.class
@@ -20,7 +18,6 @@ app/businesslogic/BaseBusinessLogic.class
 app/views/MenuJFrame$4.class
 app/entities/MunicipalityCategory.class
 helpers/Dialog.class
-core/MySqlDatabaseConnector.class
 app/views/BaseView.class
 app/dao/MunicipalityDao.class
 app/controllers/LoginController.class

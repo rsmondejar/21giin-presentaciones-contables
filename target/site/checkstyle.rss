@@ -25,8 +25,8 @@ under the License.
     <language>en-us</language>
     <copyright>&#169;2022</copyright>
     <item>
-      <title>File: 28,
-             Errors: 586,
+      <title>File: 25,
+             Errors: 502,
              Warnings: 0,
              Infos: 0
       </title>
@@ -74,20 +74,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#core.DatabaseConnectorInterface.java">core/DatabaseConnectorInterface.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  24
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#app.dao.UserDao.java">app/dao/UserDao.java</a>
                 </td>
                 <td>
@@ -111,7 +97,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  36
+                  12
                 </td>
               </tr>
                           <tr>
@@ -200,20 +186,6 @@ under the License.
               </tr>
                           <tr>
                 <td>
-                  <a href="${project.url}/checkstyle.html#core.MySqlDatabaseConnector.java">core/MySqlDatabaseConnector.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  9
-                </td>
-              </tr>
-                          <tr>
-                <td>
                   <a href="${project.url}/checkstyle.html#app.entities.Convocatory.java">app/entities/Convocatory.java</a>
                 </td>
                 <td>
@@ -293,7 +265,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  45
+                  43
                 </td>
               </tr>
                           <tr>
@@ -307,7 +279,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  5
+                  4
                 </td>
               </tr>
                           <tr>
@@ -336,20 +308,6 @@ under the License.
                 </td>
                 <td>
                   59
-                </td>
-              </tr>
-                          <tr>
-                <td>
-                  <a href="${project.url}/checkstyle.html#core.DatabaseConnector.java">core/DatabaseConnector.java</a>
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  0
-                </td>
-                <td>
-                  23
                 </td>
               </tr>
                           <tr>
@@ -391,7 +349,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  2
+                  3
                 </td>
               </tr>
                           <tr>
@@ -419,7 +377,7 @@ under the License.
                   0
                 </td>
                 <td>
-                  54
+                  52
                 </td>
               </tr>
                           <tr>

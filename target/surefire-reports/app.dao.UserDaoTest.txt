@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: app.dao.UserDaoTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.505 sec
+Tests run: 3, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 4.783 sec

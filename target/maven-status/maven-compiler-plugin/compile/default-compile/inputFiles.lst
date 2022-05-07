@@ -1,17 +1,13 @@
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/core/DatabaseConnectorInterface.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/helpers/Dialog.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/entities/Convocatory.java
-/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/models/BaseModel.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/dao/BaseDao.java
-/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/models/Municipality.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/controllers/LoginController.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/core/MySqlDatabaseConnector.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/entities/Presentation.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/entities/User.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/entities/Municipality.java
-/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/models/Presentation.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/BaseView.java
-/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/models/User.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/dao/UserDao.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/controllers/BaseController.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/Main.java
@@ -19,7 +15,6 @@
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/core/DatabaseConnector.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/entities/UserRole.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/dao/MunicipalityDao.java
-/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/models/MunicipalityCategory.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/entities/BaseEntity.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/MenuJFrame.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/entities/MunicipalityCategory.java

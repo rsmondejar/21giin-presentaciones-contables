@@ -38,7 +38,7 @@ public class Presentation extends BaseEntity {
     public Presentation() {
     }
 
-    public Presentation(int id, Date date, Boolean isValid, int convocatoryId) {
+    public Presentation(Date date, Boolean isValid, int convocatoryId) {
         this.setDate(date);
         this.setIsValid(isValid);
         this.setConvocatoryId(convocatoryId);

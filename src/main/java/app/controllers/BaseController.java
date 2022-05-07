@@ -4,7 +4,7 @@
  */
 package app.controllers;
 
-import app.entities.User;
+//import app.entities.User;
 
 /**
  * Base Controller.
@@ -16,7 +16,7 @@ abstract class BaseController {
 
     // @TODO: Ver si la dejo abstracta o no
     // @TODO: Controlar los permisos del usuario
-    private User auth;
+//    private User auth;
     
     public BaseController() {
         System.out.println("Comprobar los permisos del usuario logueado!!!");

@@ -14,10 +14,9 @@ import app.views.MenuJFrame;
  */
 public class MainController extends BaseController {
 
-    private static MenuJFrame menuPanel = new MenuJFrame();
+    private static final MenuJFrame menuPanel = new MenuJFrame();
 
     public MainController() {
-
         // Get user info
         User authUser = Main.getAuthUser();
 
@@ -26,14 +25,13 @@ public class MainController extends BaseController {
         menuPanel.setUserFooterInfo(authUser);
 
         // Open Menu
-        menuPanelShow();
-
+//        menuPanelShow();
     }
 
     /**
      * Menu Panel Show.
      */
-    public static void menuPanelShow() {
+    public void menuPanelShow() {
         menuPanel.setLocationRelativeTo(null);
         menuPanel.setVisible(true);
     }
@@ -41,8 +39,7 @@ public class MainController extends BaseController {
     /**
      * Menu Panel Hide.
      */
-    public static void menuPanelHide() {
+    public void menuPanelHide() {
         menuPanel.setVisible(false);
     }
-
 }

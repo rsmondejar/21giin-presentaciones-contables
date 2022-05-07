@@ -43,5 +43,6 @@ public class LoginController extends BaseController {
 
         // Show Main Menu
         MainController mainController = new MainController();
+        mainController.menuPanelShow();
     }
 }

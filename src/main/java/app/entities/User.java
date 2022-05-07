@@ -43,7 +43,7 @@ public class User extends BaseEntity {
     public User() {
     }
 
-    public User(int id, String login, String password, int roleId, int municipalityId) {
+    public User(String login, String password, int roleId, int municipalityId) {
         this.setLogin(login);
         this.setPassword(password);
         this.setRoleId(roleId);

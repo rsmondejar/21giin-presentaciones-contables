@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Main.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app</a> &gt; <span class="el_source">Main.java</span></div><h1>Main.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package app;
+
+import app.entities.User;
+import helpers.Log;
+import app.views.LoginJFrame;
+
+/**
+ *
+ * @author raulsm
+ */
+<span class="nc" id="L15">public class Main {</span>
+
+<span class="nc" id="L17">    private static final LoginJFrame loginPanel = new LoginJFrame();</span>
+
+    private static User authUser;
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+<span class="nc" id="L25">        Log.info(&quot;Aplicación iniciada&quot;);</span>
+
+        try {           
+            // Show login view
+<span class="nc" id="L29">            loginPanelShow();</span>
+<span class="nc" id="L30">        } catch (Exception exception) {</span>
+<span class="nc" id="L31">            Log.error(exception);</span>
+<span class="nc" id="L32">        }</span>
+<span class="nc" id="L33">    }</span>
+
+    public static void loginPanelShow() {
+<span class="nc" id="L36">        loginPanel.setLocationRelativeTo(null);</span>
+<span class="nc" id="L37">        loginPanel.setVisible(true);</span>
+<span class="nc" id="L38">    }</span>
+
+    public static void loginPanelHide() {
+<span class="nc" id="L41">        loginPanel.setVisible(false);</span>
+<span class="nc" id="L42">    }</span>
+
+    public static void setAuthUser(User user) {
+<span class="nc" id="L45">        authUser = user;</span>
+<span class="nc" id="L46">    }</span>
+
+    public static User getAuthUser() {
+<span class="nc" id="L49">        return authUser;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

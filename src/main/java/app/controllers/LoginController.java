@@ -1,6 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Login Controller Controller Class
+ * @autor raulsm 
  */
 package app.controllers;
 
@@ -17,6 +17,11 @@ import helpers.Log;
  */
 public class LoginController extends BaseController {
 
+    /**
+     * Loggin
+     * @param name User Name
+     * @param password User Password
+     */
     public static void loggin(String name, String password) {
 
         Boolean isValid = false;
@@ -35,7 +40,7 @@ public class LoginController extends BaseController {
             return;
         }
 
-        // Store session user      
+        // Store session user
         Main.setAuthUser(user);
 
         // Hide login view

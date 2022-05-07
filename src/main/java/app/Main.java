@@ -1,6 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+/**
+ * Main Class
+ * @autor raulsm
  */
 package app;
 
@@ -15,8 +15,14 @@ import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
  */
 public class Main {
 
-    private static final LoginJFrame loginPanel = new LoginJFrame();
+    /**
+     * Login Panel JFrame
+     */
+    private static final LoginJFrame LOGIN_PANEL = new LoginJFrame();
 
+    /**
+     * Auth User
+     */
     private static User authUser;
 
     /**
@@ -25,7 +31,7 @@ public class Main {
     public static void main(String[] args) {
         Log.info("Aplicación iniciada");
 
-        try {           
+        try {       
             // Show login view
             loginPanelShow();
         } catch (Exception exception) {
@@ -33,20 +39,34 @@ public class Main {
         }
     }
 
+    /**
+     * Login Panel Show
+     */
     public static void loginPanelShow() {
-        loginPanel.setLocationRelativeTo(null);
-        loginPanel.setVisible(true);
+        LOGIN_PANEL.setLocationRelativeTo(null);
+        LOGIN_PANEL.setVisible(true);
     }
 
+    /**
+     * Login Panel Hide
+     */
     public static void loginPanelHide() {
-        loginPanel.setVisible(false);
+        LOGIN_PANEL.setVisible(false);
     }
 
+    /**
+     * Set Auth User
+     * @param user User
+     */
     @SuppressFBWarnings({"EI_EXPOSE_STATIC_REP2", "MS_EXPOSE_REP"})
     public static void setAuthUser(User user) {
         authUser = user;
     }
 
+    /**
+     * Get Auth User
+     * @return Auth User
+     */
     @SuppressFBWarnings({"MS_EXPOSE_REP"})
     public static User getAuthUser() {
         return authUser;

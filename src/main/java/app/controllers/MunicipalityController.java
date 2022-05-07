@@ -1,6 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Municipality Controller Class
  */
 package app.controllers;
 
@@ -14,11 +13,14 @@ import java.util.List;
  */
 public class MunicipalityController {
     
+    /**
+     * List Municipies
+     * @return 
+     */
     public static List<Municipality> list() {
-        
         // Get all municipalities
-        List<Municipality> municipalities = MunicipalityDao.all();        
-        
+        List<Municipality> municipalities = MunicipalityDao.all();
+
         return municipalities;
     }
 }

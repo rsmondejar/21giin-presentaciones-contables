@@ -14,7 +14,6 @@ app/views/MenuJFrame$2.class
 app/controllers/MainController.class
 app/views/LoginJFrame$1.class
 app/entities/Presentation.class
-app/businesslogic/BaseBusinessLogic.class
 app/views/MenuJFrame$4.class
 app/entities/MunicipalityCategory.class
 helpers/Dialog.class

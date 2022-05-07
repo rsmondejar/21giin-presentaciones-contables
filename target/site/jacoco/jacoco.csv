@@ -8,7 +8,6 @@ PresentacionesContables,seeders,UserSeeder,65,0,6,0,16,0,5,0,2,0
 PresentacionesContables,helpers,Log,32,0,0,0,11,0,5,0,5,0
 PresentacionesContables,helpers,Dialog,24,0,0,0,9,0,5,0,5,0
 PresentacionesContables,helpers,RandomString,84,0,6,0,20,0,9,0,6,0
-PresentacionesContables,app.businesslogic,BaseBusinessLogic,3,0,0,0,1,0,1,0,1,0
 PresentacionesContables,app.dao,UserDao,14,64,0,2,6,15,3,6,3,5
 PresentacionesContables,app.dao,MunicipalityDao,24,0,0,0,8,0,7,0,7,0
 PresentacionesContables,app.dao,BaseDao,163,80,14,2,49,25,12,3,4,3
@@ -17,8 +16,8 @@ PresentacionesContables,app.entities,MunicipalityCategory,26,3,0,0,12,2,6,1,6,1
 PresentacionesContables,app.entities,Municipality,38,3,0,0,17,2,8,1,8,1
 PresentacionesContables,app.entities,BaseEntity,0,3,0,0,0,1,0,1,0,1
 PresentacionesContables,app.entities,User,28,37,0,0,12,17,6,7,6,7
-PresentacionesContables,app.entities,Presentation,53,0,0,0,24,0,11,0,11,0
-PresentacionesContables,app.entities,Convocatory,77,0,0,0,34,0,15,0,15,0
+PresentacionesContables,app.entities,Presentation,50,3,0,0,22,2,10,1,10,1
+PresentacionesContables,app.entities,Convocatory,74,3,0,0,32,2,14,1,14,1
 PresentacionesContables,config,HibernateUtil,10,16,0,0,4,7,1,2,1,2
 PresentacionesContables,app.views,LoginJFrame,440,0,26,0,103,0,23,0,10,0
 PresentacionesContables,app.views,MenuJFrame,413,0,4,0,98,0,9,0,7,0

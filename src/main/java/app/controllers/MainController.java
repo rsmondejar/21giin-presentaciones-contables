@@ -1,6 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Main Controller Class
  */
 package app.controllers;
 
@@ -14,15 +13,18 @@ import app.views.MenuJFrame;
  */
 public class MainController extends BaseController {
 
-    private static final MenuJFrame menuPanel = new MenuJFrame();
+    private static final MenuJFrame MENU_PANEL = new MenuJFrame();
 
+    /**
+     * Main Controller constructor
+     */
     public MainController() {
         // Get user info
         User authUser = Main.getAuthUser();
 
         System.out.println(authUser.toString());
 
-        menuPanel.setUserFooterInfo(authUser);
+        MENU_PANEL.setUserFooterInfo(authUser);
 
         // Open Menu
 //        menuPanelShow();
@@ -32,14 +34,14 @@ public class MainController extends BaseController {
      * Menu Panel Show.
      */
     public void menuPanelShow() {
-        menuPanel.setLocationRelativeTo(null);
-        menuPanel.setVisible(true);
+        MENU_PANEL.setLocationRelativeTo(null);
+        MENU_PANEL.setVisible(true);
     }
 
     /**
      * Menu Panel Hide.
      */
     public void menuPanelHide() {
-        menuPanel.setVisible(false);
+        MENU_PANEL.setVisible(false);
     }
 }

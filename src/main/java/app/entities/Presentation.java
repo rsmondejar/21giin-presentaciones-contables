@@ -4,6 +4,7 @@
  */
 package app.entities;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -54,10 +55,12 @@ public class Presentation extends BaseEntity {
         this.id = id;
     }
     
+    @SuppressFBWarnings({"EI_EXPOSE_REP"})
     public Date getDate() {
         return date;
     }
 
+    @SuppressFBWarnings({"EI_EXPOSE_REP2"})
     public void setDate(Date date) {
         this.date = date;
     }

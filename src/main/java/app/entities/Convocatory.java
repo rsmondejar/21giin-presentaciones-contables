@@ -4,6 +4,7 @@
  */
 package app.entities;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.sql.Timestamp;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -76,18 +77,22 @@ public class Convocatory extends BaseEntity {
         this.description = description;
     }
 
+    @SuppressFBWarnings({"EI_EXPOSE_REP"})
     public Timestamp getStartDate() {
         return startDate;
     }
 
+    @SuppressFBWarnings({"EI_EXPOSE_REP2"})
     public void setStartDate(Timestamp startDate) {
         this.startDate = startDate;
     }
 
+    @SuppressFBWarnings({"EI_EXPOSE_REP"})
     public Timestamp getEndDate() {
         return endDate;
     }
 
+    @SuppressFBWarnings({"EI_EXPOSE_REP2"})
     public void setEndDate(Timestamp endDate) {
         this.endDate = endDate;
     }

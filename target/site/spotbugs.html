@@ -73,129 +73,14 @@
 <th>Missing Classes</th></tr>
 <tr class="b">
 <td>34</td>
-<td>10</td>
+<td>0</td>
 <td>1</td>
 <td>1</td></tr></table></section><section>
 <h2><a name="Files"></a>Files</h2>
 <table border="0" class="bodyTable">
 <tr class="a">
 <th>Class</th>
-<th>Bugs</th></tr>
-<tr class="b">
-<td><a href="#app.Main">app.Main</a></td>
-<td>2</td></tr>
-<tr class="a">
-<td><a href="#app.entities.Convocatory">app.entities.Convocatory</a></td>
-<td>4</td></tr>
-<tr class="b">
-<td><a href="#app.entities.Presentation">app.entities.Presentation</a></td>
-<td>2</td></tr>
-<tr class="a">
-<td><a href="#helpers.RandomString">helpers.RandomString</a></td>
-<td>1</td></tr>
-<tr class="b">
-<td><a href="#seeders.UserSeeder">seeders.UserSeeder</a></td>
-<td>1</td></tr></table></section><a name="app.Main"></a><section>
-<h3><a name="app.Main"></a>app.Main</h3>
-<table border="0" class="bodyTable">
-<tr class="a">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="b">
-<td>app.Main.setAuthUser(User) may expose internal static state by storing a mutable object into a static field app.Main.authUser</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_STATIC_REP2">EI_EXPOSE_STATIC_REP2</a></td>
-<td><a href="./xref/app/Main.html#L45">45</a></td>
-<td>Medium</td></tr>
-<tr class="a">
-<td>Public static app.Main.getAuthUser() may expose internal representation by returning Main.authUser</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#MS_EXPOSE_REP">MS_EXPOSE_REP</a></td>
-<td><a href="./xref/app/Main.html#L49">49</a></td>
-<td>Medium</td></tr></table></section><a name="app.entities.Convocatory"></a><section>
-<h3><a name="app.entities.Convocatory"></a>app.entities.Convocatory</h3>
-<table border="0" class="bodyTable">
-<tr class="b">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="a">
-<td>app.entities.Convocatory.getEndDate() may expose internal representation by returning Convocatory.endDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
-<td><a href="./xref/app/entities/Convocatory.html#L88">88</a></td>
-<td>Medium</td></tr>
-<tr class="b">
-<td>app.entities.Convocatory.getStartDate() may expose internal representation by returning Convocatory.startDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
-<td><a href="./xref/app/entities/Convocatory.html#L80">80</a></td>
-<td>Medium</td></tr>
-<tr class="a">
-<td>app.entities.Convocatory.setEndDate(Timestamp) may expose internal representation by storing an externally mutable object into Convocatory.endDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td><a href="./xref/app/entities/Convocatory.html#L92">92</a></td>
-<td>Medium</td></tr>
-<tr class="b">
-<td>app.entities.Convocatory.setStartDate(Timestamp) may expose internal representation by storing an externally mutable object into Convocatory.startDate</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td><a href="./xref/app/entities/Convocatory.html#L84">84</a></td>
-<td>Medium</td></tr></table></section><a name="app.entities.Presentation"></a><section>
-<h3><a name="app.entities.Presentation"></a>app.entities.Presentation</h3>
-<table border="0" class="bodyTable">
-<tr class="a">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="b">
-<td>app.entities.Presentation.getDate() may expose internal representation by returning Presentation.date</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
-<td><a href="./xref/app/entities/Presentation.html#L58">58</a></td>
-<td>Medium</td></tr>
-<tr class="a">
-<td>app.entities.Presentation.setDate(Date) may expose internal representation by storing an externally mutable object into Presentation.date</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td><a href="./xref/app/entities/Presentation.html#L62">62</a></td>
-<td>Medium</td></tr></table></section><a name="helpers.RandomString"></a><section>
-<h3><a name="helpers.RandomString"></a>helpers.RandomString</h3>
-<table border="0" class="bodyTable">
-<tr class="b">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="a">
-<td>new helpers.RandomString(int, Random, String) may expose internal representation by storing an externally mutable object into RandomString.random</td>
-<td>MALICIOUS_CODE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td><a href="./xref/helpers/RandomString.html#L60">60</a></td>
-<td>Medium</td></tr></table></section><a name="seeders.UserSeeder"></a><section>
-<h3><a name="seeders.UserSeeder"></a>seeders.UserSeeder</h3>
-<table border="0" class="bodyTable">
-<tr class="b">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="a">
-<td>Hard coded password found</td>
-<td>SECURITY</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#HARD_CODE_PASSWORD">HARD_CODE_PASSWORD</a></td>
-<td><a href="./xref/seeders/UserSeeder.html#L32">32</a></td>
-<td>Medium</td></tr></table></section>
+<th>Bugs</th></tr></table></section>
       </div>
     </div>
     <div class="clear">

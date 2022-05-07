@@ -7,6 +7,7 @@ package app;
 import app.entities.User;
 import helpers.Log;
 import app.views.LoginJFrame;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 /**
  *
@@ -41,10 +42,12 @@ public class Main {
         loginPanel.setVisible(false);
     }
 
+    @SuppressFBWarnings({"EI_EXPOSE_STATIC_REP2", "MS_EXPOSE_REP"})
     public static void setAuthUser(User user) {
         authUser = user;
     }
 
+    @SuppressFBWarnings({"MS_EXPOSE_REP"})
     public static User getAuthUser() {
         return authUser;
     }

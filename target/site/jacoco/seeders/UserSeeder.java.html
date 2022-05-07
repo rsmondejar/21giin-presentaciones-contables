@@ -8,13 +8,14 @@ import app.dao.UserDao;
 import app.entities.User;
 import helpers.Log;
 import helpers.RandomString;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 /**
  * Seeder Table Users.
  *
  * @author raulsm
  */
-<span class="nc" id="L17">public class UserSeeder {</span>
+<span class="nc" id="L18">public class UserSeeder {</span>
 
     /**
      * Seeder Table Users.
@@ -23,29 +24,30 @@ import helpers.RandomString;
      * @return boolean
      * @throws Exception
      */
+    @SuppressFBWarnings(&quot;HARD_CODE_PASSWORD&quot;)
     public static boolean create(int total) throws Exception {
         try {
-<span class="nc" id="L28">            int counter = 0;</span>
-<span class="nc bnc" id="L29" title="All 2 branches missed.">            for (int i = 0; i &lt; total; i++) {</span>
-<span class="nc" id="L30">                User user = new User();</span>
-<span class="nc" id="L31">                user.setLogin(&quot;user_&quot; + new RandomString(5).nextString());</span>
-<span class="nc" id="L32">                user.setPassword(&quot;pass1234&quot;);</span>
-<span class="nc" id="L33">                user.setMunicipalityId(1);</span>
-<span class="nc" id="L34">                user.setRoleId(1);</span>
+<span class="nc" id="L30">            int counter = 0;</span>
+<span class="nc bnc" id="L31" title="All 2 branches missed.">            for (int i = 0; i &lt; total; i++) {</span>
+<span class="nc" id="L32">                User user = new User();</span>
+<span class="nc" id="L33">                user.setLogin(&quot;user_&quot; + new RandomString(5).nextString());</span>
+<span class="nc" id="L34">                user.setPassword(&quot;pass1234&quot;);</span>
+<span class="nc" id="L35">                user.setMunicipalityId(1);</span>
+<span class="nc" id="L36">                user.setRoleId(1);</span>
 
-<span class="nc bnc" id="L36" title="All 2 branches missed.">                if (UserDao.create(user)) {</span>
-<span class="nc" id="L37">                    counter++;</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">                if (UserDao.create(user)) {</span>
+<span class="nc" id="L39">                    counter++;</span>
                 }
             }
 
-<span class="nc bnc" id="L41" title="All 2 branches missed.">            if (counter &lt; total) {</span>
-<span class="nc" id="L42">                throw new Exception(&quot;Se han creado %d de los %d indicados&quot;.formatted(counter, total));</span>
+<span class="nc bnc" id="L43" title="All 2 branches missed.">            if (counter &lt; total) {</span>
+<span class="nc" id="L44">                throw new Exception(&quot;Se han creado %d de los %d indicados&quot;.formatted(counter, total));</span>
             }
 
-<span class="nc" id="L45">            return true;</span>
-<span class="nc" id="L46">        } catch (Exception exception) {</span>
-<span class="nc" id="L47">            Log.error(exception);</span>
-<span class="nc" id="L48">            throw exception;</span>
+<span class="nc" id="L47">            return true;</span>
+<span class="nc" id="L48">        } catch (Exception exception) {</span>
+<span class="nc" id="L49">            Log.error(exception);</span>
+<span class="nc" id="L50">            throw exception;</span>
         }
     }
 }

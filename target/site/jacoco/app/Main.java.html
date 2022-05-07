@@ -7,14 +7,15 @@ package app;
 import app.entities.User;
 import helpers.Log;
 import app.views.LoginJFrame;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 /**
  *
  * @author raulsm
  */
-<span class="nc" id="L15">public class Main {</span>
+<span class="nc" id="L16">public class Main {</span>
 
-<span class="nc" id="L17">    private static final LoginJFrame loginPanel = new LoginJFrame();</span>
+<span class="nc" id="L18">    private static final LoginJFrame loginPanel = new LoginJFrame();</span>
 
     private static User authUser;
 
@@ -22,31 +23,33 @@ import app.views.LoginJFrame;
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-<span class="nc" id="L25">        Log.info(&quot;Aplicación iniciada&quot;);</span>
+<span class="nc" id="L26">        Log.info(&quot;Aplicación iniciada&quot;);</span>
 
         try {           
             // Show login view
-<span class="nc" id="L29">            loginPanelShow();</span>
-<span class="nc" id="L30">        } catch (Exception exception) {</span>
-<span class="nc" id="L31">            Log.error(exception);</span>
-<span class="nc" id="L32">        }</span>
-<span class="nc" id="L33">    }</span>
+<span class="nc" id="L30">            loginPanelShow();</span>
+<span class="nc" id="L31">        } catch (Exception exception) {</span>
+<span class="nc" id="L32">            Log.error(exception);</span>
+<span class="nc" id="L33">        }</span>
+<span class="nc" id="L34">    }</span>
 
     public static void loginPanelShow() {
-<span class="nc" id="L36">        loginPanel.setLocationRelativeTo(null);</span>
-<span class="nc" id="L37">        loginPanel.setVisible(true);</span>
-<span class="nc" id="L38">    }</span>
+<span class="nc" id="L37">        loginPanel.setLocationRelativeTo(null);</span>
+<span class="nc" id="L38">        loginPanel.setVisible(true);</span>
+<span class="nc" id="L39">    }</span>
 
     public static void loginPanelHide() {
-<span class="nc" id="L41">        loginPanel.setVisible(false);</span>
-<span class="nc" id="L42">    }</span>
+<span class="nc" id="L42">        loginPanel.setVisible(false);</span>
+<span class="nc" id="L43">    }</span>
 
+    @SuppressFBWarnings({&quot;EI_EXPOSE_STATIC_REP2&quot;, &quot;MS_EXPOSE_REP&quot;})
     public static void setAuthUser(User user) {
-<span class="nc" id="L45">        authUser = user;</span>
-<span class="nc" id="L46">    }</span>
+<span class="nc" id="L47">        authUser = user;</span>
+<span class="nc" id="L48">    }</span>
 
+    @SuppressFBWarnings({&quot;MS_EXPOSE_REP&quot;})
     public static User getAuthUser() {
-<span class="nc" id="L49">        return authUser;</span>
+<span class="nc" id="L52">        return authUser;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

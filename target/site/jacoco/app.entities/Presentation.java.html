@@ -4,6 +4,7 @@
  */
 package app.entities;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -35,57 +36,59 @@ public class Presentation extends BaseEntity {
     private int convocatoryId;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
-<span class="fc" id="L38">    public Presentation() {</span>
-<span class="fc" id="L39">    }</span>
+<span class="nc" id="L39">    public Presentation() {</span>
+<span class="nc" id="L40">    }</span>
 
-<span class="nc" id="L41">    public Presentation(Date date, Boolean isValid, int convocatoryId) {</span>
-<span class="nc" id="L42">        this.setDate(date);</span>
-<span class="nc" id="L43">        this.setIsValid(isValid);</span>
-<span class="nc" id="L44">        this.setConvocatoryId(convocatoryId);</span>
-<span class="nc" id="L45">    }</span>
+<span class="nc" id="L42">    public Presentation(Date date, Boolean isValid, int convocatoryId) {</span>
+<span class="nc" id="L43">        this.setDate(date);</span>
+<span class="nc" id="L44">        this.setIsValid(isValid);</span>
+<span class="nc" id="L45">        this.setConvocatoryId(convocatoryId);</span>
+<span class="nc" id="L46">    }</span>
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;    
     public int getId() {
-<span class="nc" id="L50">        return id;</span>
+<span class="nc" id="L51">        return id;</span>
     }
 
     public void setId(int id) {
-<span class="nc" id="L54">        this.id = id;</span>
-<span class="nc" id="L55">    }</span>
+<span class="nc" id="L55">        this.id = id;</span>
+<span class="nc" id="L56">    }</span>
     
+    @SuppressFBWarnings({&quot;EI_EXPOSE_REP&quot;})
     public Date getDate() {
-<span class="nc" id="L58">        return date;</span>
+<span class="nc" id="L60">        return date;</span>
     }
 
+    @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
     public void setDate(Date date) {
-<span class="nc" id="L62">        this.date = date;</span>
-<span class="nc" id="L63">    }</span>
+<span class="nc" id="L65">        this.date = date;</span>
+<span class="nc" id="L66">    }</span>
 
     public Boolean getIsValid() {
-<span class="nc" id="L66">        return isValid;</span>
+<span class="nc" id="L69">        return isValid;</span>
     }
 
     public void setIsValid(Boolean isValid) {
-<span class="nc" id="L70">        this.isValid = isValid;</span>
-<span class="nc" id="L71">    }</span>
+<span class="nc" id="L73">        this.isValid = isValid;</span>
+<span class="nc" id="L74">    }</span>
 
     public int getConvocatoryId() {
-<span class="nc" id="L74">        return convocatoryId;</span>
+<span class="nc" id="L77">        return convocatoryId;</span>
     }
 
     public void setConvocatoryId(int convocatoryId) {
-<span class="nc" id="L78">        this.convocatoryId = convocatoryId;</span>
-<span class="nc" id="L79">    }</span>
+<span class="nc" id="L81">        this.convocatoryId = convocatoryId;</span>
+<span class="nc" id="L82">    }</span>
     // &lt;/editor-fold&gt;
 
     @Override
     public String toString() {
-<span class="nc" id="L84">        return &quot;Presentation{&quot;</span>
-<span class="nc" id="L85">                + &quot;id=&quot; + this.getId()</span>
-<span class="nc" id="L86">                + &quot;, date=&quot; + this.getDate()</span>
-<span class="nc" id="L87">                + &quot;, isValid=&quot; + this.getIsValid()</span>
-<span class="nc" id="L88">                + &quot;, convocatoryId=&quot; + this.getConvocatoryId()</span>
+<span class="nc" id="L87">        return &quot;Presentation{&quot;</span>
+<span class="nc" id="L88">                + &quot;id=&quot; + this.getId()</span>
+<span class="nc" id="L89">                + &quot;, date=&quot; + this.getDate()</span>
+<span class="nc" id="L90">                + &quot;, isValid=&quot; + this.getIsValid()</span>
+<span class="nc" id="L91">                + &quot;, convocatoryId=&quot; + this.getConvocatoryId()</span>
                 + '}';
     }
 }

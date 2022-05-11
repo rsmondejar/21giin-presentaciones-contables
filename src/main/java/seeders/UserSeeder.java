@@ -8,6 +8,7 @@ import app.dao.UserDao;
 import app.entities.User;
 import helpers.Log;
 import helpers.RandomString;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 /**
  * Seeder Table Users.
@@ -23,6 +24,7 @@ public class UserSeeder {
      * @return boolean
      * @throws Exception
      */
+    @SuppressFBWarnings("HARD_CODE_PASSWORD")
     public static boolean create(int total) throws Exception {
         try {
             int counter = 0;

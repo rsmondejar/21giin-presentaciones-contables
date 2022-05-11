@@ -4,6 +4,7 @@
  */
 package helpers;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.security.SecureRandom;
 import java.util.Locale;
 import java.util.Objects;
@@ -29,13 +30,13 @@ public class RandomString {
         return new String(buf);
     }
 
-    public static final String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public static final String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-    public static final String lower = upper.toLowerCase(Locale.ROOT);
+    public static final String LOWER = UPPER.toLowerCase(Locale.ROOT);
 
-    public static final String digits = "0123456789";
+    public static final String DIGITS = "0123456789";
 
-    public static final String alphanum = upper + lower + digits;
+    public static final String ALPHANUM = UPPER + LOWER + DIGITS;
 
     private final Random random;
 
@@ -50,6 +51,7 @@ public class RandomString {
      * @param random
      * @param symbols
      */
+    @SuppressFBWarnings({"EI_EXPOSE_REP2"})
     public RandomString(int length, Random random, String symbols) {
         if (length < 1) {
             throw new IllegalArgumentException();
@@ -69,7 +71,7 @@ public class RandomString {
      * @param random Random
      */
     public RandomString(int length, Random random) {
-        this(length, random, alphanum);
+        this(length, random, ALPHANUM);
     }
 
     /**

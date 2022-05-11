@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Dialog.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">helpers</a> &gt; <span class="el_source">Dialog.java</span></div><h1>Dialog.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package helpers;
+
+import javax.swing.JOptionPane;
+
+/**
+ * Modal Helper.
+ *
+ * @author raulsm
+ */
+<span class="nc" id="L14">public class Dialog {</span>
+
+    public static void info(String message, String title) {
+<span class="nc" id="L17">        custom(message, title, JOptionPane.INFORMATION_MESSAGE);</span>
+<span class="nc" id="L18">    }</span>
+
+    public static void error(String message, String title) {
+<span class="nc" id="L21">        custom(message, title, JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc" id="L22">    }</span>
+    
+    public static void warning(String message, String title) {
+<span class="nc" id="L25">        custom(message, title, JOptionPane.WARNING_MESSAGE);</span>
+<span class="nc" id="L26">    }</span>
+
+    /**
+     * Brings up a dialog that displays a message using a default icon
+     * determined by the &lt;code&gt;messageType&lt;/code&gt; parameter.
+     *
+     * @param message the &lt;code&gt;Object&lt;/code&gt; to display
+     * @param title the title string for the dialog
+     * @param messageType the type of message to be displayed:
+     * &lt;code&gt;ERROR_MESSAGE&lt;/code&gt;, &lt;code&gt;INFORMATION_MESSAGE&lt;/code&gt;,
+     * &lt;code&gt;WARNING_MESSAGE&lt;/code&gt;, &lt;code&gt;QUESTION_MESSAGE&lt;/code&gt;, or
+     * &lt;code&gt;PLAIN_MESSAGE&lt;/code&gt;
+     */
+    public static void custom(String message, String title, int messageType) {
+<span class="nc" id="L40">        JOptionPane.showMessageDialog(</span>
+                null,
+                message,
+                title,
+                messageType
+        );
+<span class="nc" id="L46">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -38,7 +38,7 @@ public class UserDaoTest extends TestCase {
         try {
             findAndDeleteUser();
              
-            User user = new User(0, userName, userPassword, 1, 1);
+            User user = new User(userName, userPassword, 1, 1);
             userCreatedSuccesfully = UserDao.create(user);
         } catch (Exception e) {
             
@@ -59,7 +59,7 @@ public class UserDaoTest extends TestCase {
         try {
             findAndDeleteUser();
              
-            User user = new User(0, userName, userPassword, 1, 1);
+            User user = new User(userName, userPassword, 1, 1);
             UserDao.create(user);
             
             user = UserDao.findByLoginAndPassword(userName, userPassword);
@@ -83,7 +83,7 @@ public class UserDaoTest extends TestCase {
         try {
             findAndDeleteUser();
              
-            User user = new User(0, userName, userPassword, 1, 1);
+            User user = new User(userName, userPassword, 1, 1);
             UserDao.create(user);
             
             user = UserDao.findByLoginAndPassword(userName, userPassword);

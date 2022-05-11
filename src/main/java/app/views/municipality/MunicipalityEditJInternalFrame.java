@@ -9,27 +9,30 @@ import app.entities.Municipality;
 import helpers.Dialog;
 import helpers.Log;
 import java.awt.Color;
-import javax.swing.JDesktopPane;
 
 /**
  *
  * @author raulsm
  */
-public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame {
+public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form MunicipalityJInternalFrame
      */
-    public MunicipalityCreateJInternalFrame(JDesktopPane jDesktopPanelContainer) {
+    public MunicipalityEditJInternalFrame() {
         initComponents();
-        loadData();
+        jTextFieldMunicipioId.setVisible(false);
     }
 
     /**
      * Load Data.
+     * @param municipality
      */
-    public void loadData() {        
-        // @TODO: Load Data Municipalities Categories
+    public void loadData(Municipality municipality) {        
+        jTextFieldMunicipioName.setText(municipality.getName());
+        jComboBoxMunicipioCategory.setSelectedIndex(0); // @TODO
+        jTextFieldMunicipioId.setText(String.valueOf(municipality.getId()));
+        jButtonMunicipioUpdate.setEnabled(validateInputs());
     }
     
     /**
@@ -44,38 +47,36 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
         jLabelMunicipioName = new javax.swing.JLabel();
         jTextFieldMunicipioName = new javax.swing.JTextField();
         jLabelMunicipioCategoria = new javax.swing.JLabel();
-        jButtonMunicipioCreate = new javax.swing.JButton();
+        jButtonMunicipioUpdate = new javax.swing.JButton();
         jComboBoxMunicipioCategory = new javax.swing.JComboBox<>();
+        jTextFieldMunicipioId = new javax.swing.JTextField();
 
         setClosable(true);
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Listado Municipios");
+        setTitle("Editar Municipio");
         setToolTipText("");
 
         jLabelMunicipioName.setFont(new java.awt.Font("Lucida Grande", 2, 13)); // NOI18N
         jLabelMunicipioName.setText("Nombre del municipio:");
 
         jTextFieldMunicipioName.setToolTipText("Introducir nombre del municipio");
-        jTextFieldMunicipioName.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                jTextFieldMunicipioNameenableLoginButton(evt);
-            }
-        });
 
         jLabelMunicipioCategoria.setFont(new java.awt.Font("Lucida Grande", 2, 13)); // NOI18N
         jLabelMunicipioCategoria.setText("Categoría del municipio:");
 
-        jButtonMunicipioCreate.setText("Crear");
-        jButtonMunicipioCreate.setEnabled(false);
-        jButtonMunicipioCreate.addActionListener(new java.awt.event.ActionListener() {
+        jButtonMunicipioUpdate.setText("Actualizar");
+        jButtonMunicipioUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButtonMunicipioCreateActionPerformed(evt);
+                jButtonMunicipioUpdateActionPerformed(evt);
             }
         });
 
         jComboBoxMunicipioCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1" }));
+
+        jTextFieldMunicipioId.setEditable(false);
+        jTextFieldMunicipioId.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,9 +87,12 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jTextFieldMunicipioName)
                     .addComponent(jLabelMunicipioName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonMunicipioUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jComboBoxMunicipioCategory, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabelMunicipioCategoria, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE))
+                    .addComponent(jLabelMunicipioCategoria, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextFieldMunicipioId, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -102,52 +106,33 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
                 .addComponent(jLabelMunicipioCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jComboBoxMunicipioCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)
-                .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldMunicipioId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(jButtonMunicipioUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jTextFieldMunicipioNameenableLoginButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldMunicipioNameenableLoginButton
+    private void jButtonMunicipioUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioUpdateActionPerformed
         try {
-            jButtonMunicipioCreate.setEnabled(validateInputs());
-        } catch (Exception e) {
-            Log.error(e);
-        }
-    }//GEN-LAST:event_jTextFieldMunicipioNameenableLoginButton
 
-    private void jButtonMunicipioCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioCreateActionPerformed
-        try {
-            if (!validateInputs()) {
-                throw new Exception("Inputs fieds are invalid.");
-            }
+            int id = Integer.parseInt(jTextFieldMunicipioId.getText());
+            Municipality municipality = MunicipalityController.findById(id);
 
-            String name = getInputName();
-            String category = getInputCategory();
+            municipality.setName(getInputName());
+            municipality.setCategoryId(Integer.parseInt(getInputCategory()));
 
-            // Municipio create
-            Municipality municipality = new Municipality(name, Integer.parseInt(category));
-            MunicipalityController.create(municipality);
+            MunicipalityController.update(id, municipality);
             
-            Dialog.info("Municipio creado correctamente", "Info");
-            
-            cleanInputs();
-        } catch (Exception e) {
+            Dialog.info("Municipio actualizado correctamente", "Info");
+        } catch (NumberFormatException e) {
             Log.error(e);
-            Dialog.error(e.getMessage(), "Error creando municipio");
+            Dialog.error(e.getMessage(), "Error actualizando municipio");
         }
-    }//GEN-LAST:event_jButtonMunicipioCreateActionPerformed
+    }//GEN-LAST:event_jButtonMunicipioUpdateActionPerformed
 
-    /**
-     * Clean Inputs
-     */
-    private void cleanInputs() {
-        jTextFieldMunicipioName.setText("");
-        jComboBoxMunicipioCategory.setSelectedIndex(0);
-        jButtonMunicipioCreate.setEnabled(validateInputs());
-    }
-    
     /**
      * Validate Inputs.
      *
@@ -182,7 +167,8 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
      */
     private Boolean validateInputCategory() {
         // TODO: Validation
-        // String category = getInputCategory();
+        //String category = getInputCategory();
+        
         Boolean isValid = true;
 
         if (isValid) {
@@ -213,10 +199,11 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonMunicipioCreate;
+    private javax.swing.JButton jButtonMunicipioUpdate;
     private javax.swing.JComboBox<String> jComboBoxMunicipioCategory;
     private javax.swing.JLabel jLabelMunicipioCategoria;
     private javax.swing.JLabel jLabelMunicipioName;
+    private javax.swing.JTextField jTextFieldMunicipioId;
     private javax.swing.JTextField jTextFieldMunicipioName;
     // End of variables declaration//GEN-END:variables
 }

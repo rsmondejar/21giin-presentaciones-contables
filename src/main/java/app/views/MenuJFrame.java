@@ -153,7 +153,7 @@ public class MenuJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemExitActionPerformed
 
     private void jMenuItemMunicipiosShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosShowActionPerformed
-        MunicipalityListJInternalFrame  municipalitiesList = new MunicipalityListJInternalFrame();
+        MunicipalityListJInternalFrame  municipalitiesList = new MunicipalityListJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(municipalitiesList);
         
         // @TODO: Fill rows ¿Mover al controlador?
@@ -162,7 +162,7 @@ public class MenuJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemMunicipiosShowActionPerformed
 
     private void jMenuItemMunicipiosCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosCreateActionPerformed
-        MunicipalityCreateJInternalFrame  municipalitiesCreate = new MunicipalityCreateJInternalFrame();
+        MunicipalityCreateJInternalFrame  municipalitiesCreate = new MunicipalityCreateJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(municipalitiesCreate);
         
         municipalitiesCreate.setVisible(true);

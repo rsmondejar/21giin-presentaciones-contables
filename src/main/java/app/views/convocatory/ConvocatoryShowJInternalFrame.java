@@ -8,6 +8,7 @@ import app.controllers.ConvocatoryController;
 import app.entities.Convocatory;
 import helpers.Dialog;
 import helpers.Log;
+import java.util.List;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 
@@ -33,14 +34,38 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
      * Load Data.
      * @param convocatory
      */
-    public void loadData(Convocatory convocatory) {        
+    public void loadData(Convocatory convocatory) {
+        jTextFieldConvocatoryId.setText(String.valueOf(convocatory.getId()));
+        
         jTextFieldConvocatoryName.setText(convocatory.getName());
         jTextAreaConvocatoryDescription.setText(convocatory.getDescription());
-        jDateChooserStartDate.setDateFormatString(convocatory.getStartDate().toString());
-        jDateChooserEndDate.setDateFormatString(convocatory.getEndDate().toString());
+        jDateChooserStartDate.setDate(convocatory.getStartDate());
+        jDateChooserEndDate.setDate(convocatory.getEndDate());
         jCheckBoxConvocatoryStatus.setSelected(convocatory.getIsValid());
         
-        jTextFieldConvocatoryId.setText(String.valueOf(convocatory.getId()));
+        // Set documents
+        List<Integer> documentTypes = convocatory.getDocumentsTypes();
+        setDocumentsTypes(documentTypes);
+    }
+    
+    private void setDocumentsTypes(List<Integer> documentTypes) {
+        for(Integer documentType : documentTypes) {
+            if (documentType == 1) {
+                jCheckBoxDocumentTypeId1.setSelected(true);
+            }
+            if (documentType == 2) {
+                jCheckBoxDocumentTypeId2.setSelected(true);
+            }
+            if (documentType == 3) {
+                jCheckBoxDocumentTypeId3.setSelected(true);
+            }
+            if (documentType == 4) {
+                jCheckBoxDocumentTypeId4.setSelected(true);
+            }
+            if (documentType == 5) {
+                jCheckBoxDocumentTypeId5.setSelected(true);
+            }
+        }
     }
     
     /**
@@ -66,6 +91,13 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
         jDateChooserStartDate = new com.toedter.calendar.JDateChooser();
         jLabelConvocatoryStatus = new javax.swing.JLabel();
         jDateChooserEndDate = new com.toedter.calendar.JDateChooser();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        jCheckBoxDocumentTypeId1 = new javax.swing.JCheckBox();
+        jCheckBoxDocumentTypeId2 = new javax.swing.JCheckBox();
+        jCheckBoxDocumentTypeId3 = new javax.swing.JCheckBox();
+        jCheckBoxDocumentTypeId4 = new javax.swing.JCheckBox();
+        jCheckBoxDocumentTypeId5 = new javax.swing.JCheckBox();
 
         setClosable(true);
         setIconifiable(true);
@@ -127,6 +159,18 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
         jDateChooserEndDate.setDateFormatString("yyyy-MM-dd");
         jDateChooserEndDate.setEnabled(false);
 
+        jLabel1.setText("Documentos necesarios:");
+
+        jCheckBoxDocumentTypeId1.setText("Libro Diario");
+
+        jCheckBoxDocumentTypeId2.setText("Libro Mayor");
+
+        jCheckBoxDocumentTypeId3.setText("Balance de Sumas y Saldos");
+
+        jCheckBoxDocumentTypeId4.setText("Registro de Ingreso de Caja");
+
+        jCheckBoxDocumentTypeId5.setText("Registro de Movimientos de Bancos");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -158,7 +202,14 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jCheckBoxConvocatoryStatus)
                                 .addGap(0, 0, Short.MAX_VALUE))
-                            .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                            .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(jSeparator1)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -183,6 +234,20 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
                     .addComponent(jCheckBoxConvocatoryStatus)
                     .addComponent(jDateChooserEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextFieldConvocatoryId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -238,14 +303,21 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
     private javax.swing.JButton jButtonConvocatoryDelete;
     private javax.swing.JButton jButtonConvocatoryEdit;
     private javax.swing.JCheckBox jCheckBoxConvocatoryStatus;
+    private javax.swing.JCheckBox jCheckBoxDocumentTypeId1;
+    private javax.swing.JCheckBox jCheckBoxDocumentTypeId2;
+    private javax.swing.JCheckBox jCheckBoxDocumentTypeId3;
+    private javax.swing.JCheckBox jCheckBoxDocumentTypeId4;
+    private javax.swing.JCheckBox jCheckBoxDocumentTypeId5;
     private com.toedter.calendar.JDateChooser jDateChooserEndDate;
     private com.toedter.calendar.JDateChooser jDateChooserStartDate;
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabelConvocatoryDescription;
     private javax.swing.JLabel jLabelConvocatoryEndDate1;
     private javax.swing.JLabel jLabelConvocatoryName;
     private javax.swing.JLabel jLabelConvocatoryStartDate;
     private javax.swing.JLabel jLabelConvocatoryStatus;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextArea jTextAreaConvocatoryDescription;
     private javax.swing.JTextField jTextFieldConvocatoryId;
     private javax.swing.JTextField jTextFieldConvocatoryName;

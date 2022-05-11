@@ -4,7 +4,6 @@
  */
 package app.dao;
 
-import static app.dao.BaseDao.model;
 import app.entities.BaseEntity;
 import app.entities.ConvocatoryDocumentType;
 import java.util.List;
@@ -17,8 +16,8 @@ import java.util.List;
  */
 public class ConvocatoryDocumentTypeDao extends BaseDao {
 
-    static {
-        model = (BaseEntity) new ConvocatoryDocumentType();
+    public ConvocatoryDocumentTypeDao() {
+        super.setModel((BaseEntity) new ConvocatoryDocumentType());
     }
 
     /**
@@ -26,8 +25,8 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      *
      * @return List of Documents Types
      */
-    public static List<ConvocatoryDocumentType> all() {
-        return BaseDao.all();
+    public List<ConvocatoryDocumentType> all() {
+        return (new BaseDao()).all();
     }
 
     /**
@@ -36,8 +35,8 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      * @param id Identifer
      * @return ConvocatoryDocumentType
      */
-    public static ConvocatoryDocumentType findById(int id) {
-        return BaseDao.findById(id);
+    public ConvocatoryDocumentType findById(int id) {
+        return (new BaseDao()).findById(id);
     }
 
     /**
@@ -48,7 +47,7 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      * @return status
      */
     public static <T> Integer create(ConvocatoryDocumentType convocatoryDocumentType) {
-        return BaseDao.create((BaseEntity) convocatoryDocumentType);
+        return (new BaseDao()).create((BaseEntity) convocatoryDocumentType);
     }
 
     /**
@@ -59,8 +58,8 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      * @param convocatoryDocumentType Document Type
      * @return
      */
-    public static <T> boolean update(int id, ConvocatoryDocumentType convocatoryDocumentType) {
-        return BaseDao.update(id, (BaseEntity) convocatoryDocumentType);
+    public <T> boolean update(int id, ConvocatoryDocumentType convocatoryDocumentType) {
+        return (new BaseDao()).update(id, (BaseEntity) convocatoryDocumentType);
     }
 
     /**
@@ -69,7 +68,7 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      * @param id Identifier
      * @return status
      */
-    public static boolean delete(int id) {
-        return BaseDao.delete(id);
+    public boolean delete(int id) {
+        return (new BaseDao()).delete(id);
     }
 }

@@ -13,6 +13,7 @@ import java.util.List;
 import javax.persistence.criteria.CriteriaBuilder;
 import javax.persistence.criteria.CriteriaQuery;
 import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 /**
  * Base DAO.
@@ -25,7 +26,15 @@ class BaseDao {
     /**
      * BaseEntity model
      */
-    protected static BaseEntity model;
+    protected BaseEntity model;
+
+    public void setModel(BaseEntity model) {
+        this.model = model;
+    }
+    
+    public BaseEntity getModel() {
+        return this.model;
+    }
 
     /**
      * Get all
@@ -33,24 +42,29 @@ class BaseDao {
      * @param <T> T
      * @return All registers
      */
-    public static <T> List<T> all() {
+    public <T> List<T> all() {
+        Transaction trns = null;
         Session session = HibernateUtil.get().getCurrentSession();
 
         try {
-            session.beginTransaction();
-
-            List<T> baseEntities = (List<T>) loadAllData(model.getClass(), session);
+            trns = session.beginTransaction();
+//            session.beginTransaction();
+            List<T> baseEntities = (List<T>) loadAllData(getModel().getClass(), session);
 
             if (baseEntities == null) {
                 throw new HibernateException("Registers not found");
             }
+            
+            trns.commit();
 
             return baseEntities;
         } catch (RuntimeException exception) {
+            if (trns != null) {
+                trns.rollback();
+            }
             Log.error(exception);
             return null;
         } finally {
-//            session.flush();
             session.close();
         }
     }
@@ -62,14 +76,11 @@ class BaseDao {
      * @param id Identifier
      * @return model instance or null
      */
-    public static <T> T findById(int id) {
-        Transaction trns = null;
+    public <T> T findById(int id) {
         Session session = HibernateUtil.get().getCurrentSession();
 
         try {
-            trns = session.beginTransaction();
-
-            T baseEntity = (T) session.find(model.getClass(), id);
+            T baseEntity = (T) session.find(getModel().getClass(), id);
 
             if (baseEntity == null) {
                 throw new HibernateException("Id [%d] not found".formatted(id));
@@ -77,14 +88,9 @@ class BaseDao {
 
             return baseEntity;
         } catch (RuntimeException exception) {
-            if (trns != null) {
-                trns.rollback();
-            }
-
             Log.error(exception);
             return null;
         } finally {
-//            session.flush();
             session.close();
         }
     }
@@ -96,7 +102,7 @@ class BaseDao {
      * @param entity Model Entity
      * @return boolean
      */
-    public static <T> Integer create(BaseEntity entity) {
+    public <T> Integer create(BaseEntity entity) {
         Transaction trns = null;
         Session session = HibernateUtil.get().getCurrentSession();
 
@@ -104,7 +110,7 @@ class BaseDao {
             trns = session.beginTransaction();
 
             session.save(entity);
-            session.getTransaction().commit();
+            trns.commit();
 
             return entity.getId();
         } catch (RuntimeException exception) {
@@ -115,7 +121,6 @@ class BaseDao {
             Log.error(exception);
             return null;
         } finally {
-//            session.flush();
             session.close();
         }
     }
@@ -128,7 +133,7 @@ class BaseDao {
      * @param entity Model Entity
      * @return boolean Status
      */
-    public static <T> boolean update(int id, BaseEntity entity) {
+    public <T> boolean update(int id, BaseEntity entity) {
         Transaction trns = null;
         Session session = HibernateUtil.get().getCurrentSession();
 
@@ -136,15 +141,14 @@ class BaseDao {
             trns = session.beginTransaction();
 
             // check if exits
-            T baseEntity = (T) session.find(model.getClass(), id);
+            T baseEntity = (T) session.find(getModel().getClass(), id);
 
             if (baseEntity == null) {
                 throw new HibernateException("Id [%d] not found".formatted(id));
             }
-
+            
             session.merge(entity);
-
-            session.getTransaction().commit();
+            trns.commit();
 
             return true;
         } catch (RuntimeException exception) {
@@ -155,7 +159,6 @@ class BaseDao {
             Log.error(exception);
             return false;
         } finally {
-//            session.flush();
             session.close();
         }
     }
@@ -167,21 +170,21 @@ class BaseDao {
      * @param id Identifier
      * @return boolean Status
      */
-    public static <T> boolean delete(int id) {
+    public <T> boolean delete(int id) {
         Transaction trns = null;
         Session session = HibernateUtil.get().getCurrentSession();
 
         try {
             trns = session.beginTransaction();
 
-            T baseEntity = (T) session.find(model.getClass(), id);
+            T baseEntity = (T) session.find(getModel().getClass(), id);
 
             if (baseEntity == null) {
                 throw new HibernateException("Id [%d] not found".formatted(id));
             }
 
             session.delete(baseEntity);
-            session.getTransaction().commit();
+            trns.commit();
 
             return true;
         } catch (RuntimeException exception) {
@@ -192,7 +195,34 @@ class BaseDao {
             Log.error(exception);
             return false;
         } finally {
-//            session.flush();
+            session.close();
+        }
+    }
+    
+    /**
+     * Find by Id.
+     *
+     * @param <T> T
+     * @param id Identifier
+     * @return model instance or null
+     */
+    public <T> List<T> whereNamedQuery(String queryName, String columnName, String columnValue) {
+        Session session = HibernateUtil.get().getCurrentSession();
+
+        try {
+            Query query = session.getNamedQuery(queryName).setParameter(columnName, columnValue);
+            
+            List<T> baseEntities = (List<T>) query.getResultList();
+
+            if (baseEntities == null) {
+                throw new HibernateException("Registers not found");
+            }
+
+            return baseEntities;
+        } catch (RuntimeException exception) {
+            Log.error(exception);
+            return null;
+        } finally {
             session.close();
         }
     }
@@ -205,7 +235,7 @@ class BaseDao {
      * @param session Session
      * @return List of rows
      */
-    private static <T> List<T> loadAllData(Class<T> type, Session session) {
+    private <T> List<T> loadAllData(Class<T> type, Session session) {
         try {
             CriteriaBuilder builder = session.getCriteriaBuilder();
             CriteriaQuery<T> criteria = builder.createQuery(type);

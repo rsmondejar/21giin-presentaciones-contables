@@ -174,21 +174,21 @@ public class MenuJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemExitActionPerformed
 
     private void jMenuItemMunicipiosShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosShowActionPerformed
-        MunicipalityListJInternalFrame  municipalitiesList = new MunicipalityListJInternalFrame(jDesktopPanelContainer);
+        MunicipalityListJInternalFrame municipalitiesList = new MunicipalityListJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(municipalitiesList);
         
         municipalitiesList.setVisible(true);
     }//GEN-LAST:event_jMenuItemMunicipiosShowActionPerformed
 
     private void jMenuItemMunicipiosCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosCreateActionPerformed
-        MunicipalityCreateJInternalFrame  municipalitiesCreate = new MunicipalityCreateJInternalFrame(jDesktopPanelContainer);
+        MunicipalityCreateJInternalFrame municipalitiesCreate = new MunicipalityCreateJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(municipalitiesCreate);
         
         municipalitiesCreate.setVisible(true);
     }//GEN-LAST:event_jMenuItemMunicipiosCreateActionPerformed
 
     private void jMenuItemConvocatoriesShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesShowActionPerformed
-        ConvocatoryListJInternalFrame  convocatoriesList = new ConvocatoryListJInternalFrame(jDesktopPanelContainer);
+        ConvocatoryListJInternalFrame convocatoriesList = new ConvocatoryListJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(convocatoriesList);
         
         convocatoriesList.setVisible(true);

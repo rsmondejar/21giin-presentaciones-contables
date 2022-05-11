@@ -27,6 +27,8 @@ public class UserSeeder {
     @SuppressFBWarnings("HARD_CODE_PASSWORD")
     public static boolean create(int total) throws Exception {
         try {
+            UserDao userDao = new UserDao();
+            
             int counter = 0;
             for (int i = 0; i < total; i++) {
                 User user = new User();
@@ -35,7 +37,7 @@ public class UserSeeder {
                 user.setMunicipalityId(1);
                 user.setRoleId(4);
                 
-                Integer id = UserDao.create(user);
+                Integer id = userDao.create(user);
                 Boolean userCreatedSuccesfully = id != null;
 
                 if (userCreatedSuccesfully) {

@@ -4,7 +4,6 @@
  */
 package app.dao;
 
-import static app.dao.BaseDao.model;
 import app.entities.BaseEntity;
 import app.entities.DocumentType;
 import java.util.List;
@@ -17,8 +16,8 @@ import java.util.List;
  */
 public class DocumentTypeDao extends BaseDao {
 
-    static {
-        model = (BaseEntity) new DocumentType();
+    public DocumentTypeDao() {
+        super.setModel((BaseEntity) new DocumentType());
     }
 
     /**
@@ -26,8 +25,8 @@ public class DocumentTypeDao extends BaseDao {
      *
      * @return List of Documents Types
      */
-    public static List<DocumentType> all() {
-        return BaseDao.all();
+    public List<DocumentType> all() {
+        return (new BaseDao()).all();
     }
 
     /**
@@ -36,8 +35,8 @@ public class DocumentTypeDao extends BaseDao {
      * @param id Identifer
      * @return DocumentType
      */
-    public static DocumentType findById(int id) {
-        return BaseDao.findById(id);
+    public DocumentType findById(int id) {
+        return (new BaseDao()).findById(id);
     }
 
     /**
@@ -47,8 +46,8 @@ public class DocumentTypeDao extends BaseDao {
      * @param documentType Document Type
      * @return status
      */
-    public static <T> Integer create(DocumentType documentType) {
-        return BaseDao.create((BaseEntity) documentType);
+    public <T> Integer create(DocumentType documentType) {
+        return (new BaseDao()).create((BaseEntity) documentType);
     }
 
     /**
@@ -59,8 +58,8 @@ public class DocumentTypeDao extends BaseDao {
      * @param documentType Document Type
      * @return
      */
-    public static <T> boolean update(int id, DocumentType documentType) {
-        return BaseDao.update(id, (BaseEntity) documentType);
+    public <T> boolean update(int id, DocumentType documentType) {
+        return (new BaseDao()).update(id, (BaseEntity) documentType);
     }
 
     /**
@@ -69,7 +68,7 @@ public class DocumentTypeDao extends BaseDao {
      * @param id Identifier
      * @return status
      */
-    public static boolean delete(int id) {
-        return BaseDao.delete(id);
+    public boolean delete(int id) {
+        return (new BaseDao()).delete(id);
     }
 }

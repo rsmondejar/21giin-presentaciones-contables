@@ -4,7 +4,6 @@
  */
 package app.dao;
 
-import static app.dao.BaseDao.model;
 import app.entities.BaseEntity;
 import app.entities.Convocatory;
 import java.util.List;
@@ -17,8 +16,8 @@ import java.util.List;
  */
 public class ConvocatoryDao extends BaseDao {
 
-    static {
-        model = (BaseEntity) new Convocatory();
+    public ConvocatoryDao() {
+        super.setModel((BaseEntity) new Convocatory());
     }
 
     /**
@@ -26,8 +25,8 @@ public class ConvocatoryDao extends BaseDao {
      *
      * @return List of Convocatories
      */
-    public static List<Convocatory> all() {
-        return BaseDao.all();
+    public List<Convocatory> all() {
+        return super.all();
     }
 
     /**
@@ -36,8 +35,8 @@ public class ConvocatoryDao extends BaseDao {
      * @param id Identifer
      * @return Convocatory
      */
-    public static Convocatory findById(int id) {
-        return BaseDao.findById(id);
+    public Convocatory findById(int id) {
+        return super.findById(id);
     }
 
     /**
@@ -47,8 +46,8 @@ public class ConvocatoryDao extends BaseDao {
      * @param convocatory Convocatory
      * @return status
      */
-    public static <T> Integer create(Convocatory convocatory) {
-        return BaseDao.create((BaseEntity) convocatory);
+    public <T> Integer create(Convocatory convocatory) {
+        return super.create((BaseEntity) convocatory);
     }
 
     /**
@@ -59,8 +58,8 @@ public class ConvocatoryDao extends BaseDao {
      * @param convocatory Convocatory
      * @return
      */
-    public static <T> boolean update(int id, Convocatory convocatory) {
-        return BaseDao.update(id, (BaseEntity) convocatory);
+    public <T> boolean update(int id, Convocatory convocatory) {
+        return super.update(id, (BaseEntity) convocatory);
     }
 
     /**
@@ -69,7 +68,7 @@ public class ConvocatoryDao extends BaseDao {
      * @param id Identifier
      * @return status
      */
-    public static boolean delete(int id) {
-        return BaseDao.delete(id);
+    public boolean delete(int id) {
+        return super.delete(id);
     }
 }

@@ -39,7 +39,7 @@ public class UserDaoTest extends TestCase {
             findAndDeleteUser();
              
             User user = new User(userName, userPassword, 1, 1);
-            Integer id = UserDao.create(user);
+            Integer id = (new UserDao()).create(user);
             userCreatedSuccesfully = id != null;
         } catch (Exception e) {
             
@@ -60,11 +60,13 @@ public class UserDaoTest extends TestCase {
         try {
             findAndDeleteUser();
              
-            User user = new User(userName, userPassword, 1, 1);
-            UserDao.create(user);
+            UserDao userDao = new UserDao();
             
-            user = UserDao.findByLoginAndPassword(userName, userPassword);
-            userDeletedSuccesfully = UserDao.delete(user.getId());
+            User user = new User(userName, userPassword, 1, 1);
+            userDao.create(user);
+            
+            user = userDao.findByLoginAndPassword(userName, userPassword);
+            userDeletedSuccesfully = userDao.delete(user.getId());
         } catch (Exception e) {
             
         } finally {
@@ -83,17 +85,19 @@ public class UserDaoTest extends TestCase {
       
         try {
             findAndDeleteUser();
+            
+            UserDao userDao = new UserDao();
              
             User user = new User(userName, userPassword, 1, 1);
-            UserDao.create(user);
+            userDao.create(user);
             
-            user = UserDao.findByLoginAndPassword(userName, userPassword);
+            user = userDao.findByLoginAndPassword(userName, userPassword);
             
             user.setLogin("UserTestModified");
             
-            userUpdatedSuccesfully = UserDao.update(user.getId(), user);
+            userUpdatedSuccesfully = userDao.update(user.getId(), user);
             
-            UserDao.delete(user.getId());
+            userDao.delete(user.getId());
         } catch (Exception e) {
             
         } finally {
@@ -108,14 +112,16 @@ public class UserDaoTest extends TestCase {
     private void findAndDeleteUser() throws Exception {
         User user = null;
 
+        UserDao userDao = new UserDao();
+        
         try {
-            user = UserDao.findByLoginAndPassword(userName, userPassword);
+            user = userDao.findByLoginAndPassword(userName, userPassword);
         } catch (Exception ignore) {}
         
         // If user exists, delete
         if (user != null) {
             try {
-                UserDao.delete(user.getId());
+                userDao.delete(user.getId());
             } catch (Exception ignore) {}
         }
     }

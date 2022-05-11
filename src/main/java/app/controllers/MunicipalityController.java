@@ -21,7 +21,7 @@ public class MunicipalityController {
      */
     public static List<Municipality> list() {
         // Get all municipalities
-        List<Municipality> municipalities = MunicipalityDao.all();
+        List<Municipality> municipalities = (new MunicipalityDao()).all();
 
         return municipalities;
     }
@@ -35,7 +35,7 @@ public class MunicipalityController {
         Municipality municipality = null;
         
         try {
-            municipality = MunicipalityDao.findById(id);
+            municipality = (new MunicipalityDao()).findById(id);
         } catch(Exception e) {
             Log.error(e);
             Dialog.error(e.getMessage(), "Error buscando municipio");
@@ -53,7 +53,7 @@ public class MunicipalityController {
         Municipality municipality = null;
         
         try {
-            municipality = MunicipalityDao.findById(id);
+            municipality = (new MunicipalityDao()).findById(id);
             
             // Load edit view
             
@@ -74,7 +74,7 @@ public class MunicipalityController {
         boolean status = false;
         
         try {
-            Integer id = MunicipalityDao.create(municipality);
+            Integer id = (new MunicipalityDao()).create(municipality);
             status = id != null;
         } catch(Exception e) {
             Log.error(e);
@@ -94,7 +94,7 @@ public class MunicipalityController {
         boolean status = false;
         
         try {
-            status = MunicipalityDao.update(id, municipality);
+            status = (new MunicipalityDao()).update(id, municipality);
         } catch(Exception e) {
             Log.error(e);
             Dialog.error(e.getMessage(), "Error actualizando municipio");
@@ -112,7 +112,7 @@ public class MunicipalityController {
         boolean status = false;
         
         try {
-            status = MunicipalityDao.delete(id);
+            status = (new MunicipalityDao()).delete(id);
         } catch(Exception e) {
             Log.error(e);
             Dialog.error(e.getMessage(), "Error eliminando municipio");

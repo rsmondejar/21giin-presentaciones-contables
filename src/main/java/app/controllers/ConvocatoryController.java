@@ -23,7 +23,7 @@ public class ConvocatoryController {
      */
     public static List<Convocatory> list() {
         // Get all convocatories
-        List<Convocatory> convocatories = ConvocatoryDao.all();
+        List<Convocatory> convocatories = (new ConvocatoryDao()).all();
 
         return convocatories;
     }
@@ -37,7 +37,14 @@ public class ConvocatoryController {
         Convocatory convocatory = null;
         
         try {
-            convocatory = ConvocatoryDao.findById(id);
+            ConvocatoryDao convocatoryDao = new ConvocatoryDao();
+            convocatory = convocatoryDao.findById(id);
+            
+            // @TODO: Add documents
+            List<Integer> documentTypesIds = convocatoryDao
+                    .whereNamedQuery("find_by_convocatory_id", "convocatory_id", String.valueOf(id));
+            
+            convocatory.setDocumentsTypes(documentTypesIds);
         } catch(Exception e) {
             Log.error(e);
             Dialog.error(e.getMessage(), "Error buscando convocatoria");
@@ -55,7 +62,7 @@ public class ConvocatoryController {
         Convocatory convocatory = null;
         
         try {
-            convocatory = ConvocatoryDao.findById(id);            
+            convocatory = (new ConvocatoryDao()).findById(id);            
         } catch(Exception e) {
             Log.error(e);
             Dialog.error(e.getMessage(), "Error buscando convocatoria");
@@ -73,10 +80,10 @@ public class ConvocatoryController {
         boolean status = false;
         
         try {
-            Integer id = ConvocatoryDao.create(convocatory);
+            Integer id = (new ConvocatoryDao()).create(convocatory);
             status = id != null;
             
-            // @TODO: Crear los documentos asociados
+            // Crear los documentos asociados
             List<Integer> documentTypes = convocatory.getDocumentsTypes();
             
             for(Integer documentType : documentTypes) {
@@ -102,7 +109,7 @@ public class ConvocatoryController {
         boolean status = false;
         
         try {
-            status = ConvocatoryDao.update(id, convocatory);
+            status = (new ConvocatoryDao()).update(id, convocatory);
         } catch(Exception e) {
             Log.error(e);
             Dialog.error(e.getMessage(), "Error actualizando convocatoria");
@@ -120,7 +127,7 @@ public class ConvocatoryController {
         boolean status = false;
         
         try {
-            status = ConvocatoryDao.delete(id);
+            status = (new ConvocatoryDao()).delete(id);
         } catch(Exception e) {
             Log.error(e);
             Dialog.error(e.getMessage(), "Error eliminando convocatoria");

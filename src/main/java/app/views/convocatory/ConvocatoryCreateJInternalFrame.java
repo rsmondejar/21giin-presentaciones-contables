@@ -226,7 +226,7 @@ public class ConvocatoryCreateJInternalFrame extends javax.swing.JInternalFrame 
             String name = getInputName();
             String description = getInputDescription();
             Date startDate = getInputStartDate();
-            Date endDate = getInputStartDate();
+            Date endDate = getInputEndDate();
             Boolean status = getInputStatus();
             List<Integer> documentsTypes = getInputDocumentTypesSelected();
             

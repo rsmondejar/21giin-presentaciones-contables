@@ -62,6 +62,13 @@
                           <Component id="jLabelConvocatoryStatus" alignment="0" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jCheckBoxDocumentTypeId1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jCheckBoxDocumentTypeId2" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jCheckBoxDocumentTypeId3" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jCheckBoxDocumentTypeId4" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jCheckBoxDocumentTypeId5" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -91,6 +98,20 @@
                   <Component id="jDateChooserEndDate" alignment="0" min="-2" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
+              <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jCheckBoxDocumentTypeId1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jCheckBoxDocumentTypeId2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jCheckBoxDocumentTypeId3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jCheckBoxDocumentTypeId4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jCheckBoxDocumentTypeId5" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jTextFieldConvocatoryId" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -208,6 +229,38 @@
       <Properties>
         <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
         <Property name="enabled" type="boolean" value="false"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Documentos necesarios:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Libro Diario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Libro Mayor"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Balance de Sumas y Saldos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registro de Ingreso de Caja"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registro de Movimientos de Bancos"/>
       </Properties>
     </Component>
   </SubComponents>

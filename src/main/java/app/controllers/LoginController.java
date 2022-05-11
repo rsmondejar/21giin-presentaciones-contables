@@ -29,7 +29,7 @@ public class LoginController extends BaseController {
         // Check if user exists in database
         User user = null;
         try {
-            user = UserDao.findByLoginAndPassword(name, password);
+            user = (new UserDao()).findByLoginAndPassword(name, password);
             isValid = true;
         } catch (Exception exception) {
             Log.error(exception);

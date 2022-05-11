@@ -2,11 +2,14 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
-package app.views;
+package app.views.municipality;
 
 import app.controllers.MunicipalityController;
 import app.entities.Municipality;
+import helpers.Dialog;
 import java.util.List;
+import javax.swing.JDesktopPane;
+import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -15,11 +18,15 @@ import javax.swing.table.DefaultTableModel;
  */
 public class MunicipalityListJInternalFrame extends javax.swing.JInternalFrame {
 
+    private final JDesktopPane jDesktopPanelContainer;
+    
     /**
      * Creates new form MunicipalityJInternalFrame
+     * @param jDesktopPanelContaine
      */
-    public MunicipalityListJInternalFrame() {
+    public MunicipalityListJInternalFrame(JDesktopPane jDesktopPanelContaine) {
         initComponents();
+        this.jDesktopPanelContainer = jDesktopPanelContaine;
         loadData();
     }
 
@@ -54,6 +61,7 @@ public class MunicipalityListJInternalFrame extends javax.swing.JInternalFrame {
 
         jScrollPane1 = new javax.swing.JScrollPane();
         jTableMunicipies = new javax.swing.JTable();
+        jLabel1 = new javax.swing.JLabel();
 
         setClosable(true);
         setIconifiable(true);
@@ -86,24 +94,55 @@ public class MunicipalityListJInternalFrame extends javax.swing.JInternalFrame {
             }
         });
         jTableMunicipies.getTableHeader().setReorderingAllowed(false);
+        jTableMunicipies.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTableMunicipiesMouseClicked(evt);
+            }
+        });
         jScrollPane1.setViewportView(jTableMunicipies);
+
+        jLabel1.setText("Seleccionar un registro para visualizar su información y poder editar y eliminar.");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 293, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jTableMunicipiesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableMunicipiesMouseClicked
+        JTable source = (JTable) evt.getSource();
+        int row = source.rowAtPoint(evt.getPoint());
+        int id = Integer.parseInt(source.getModel().getValueAt(row, 0).toString());
+        
+        Municipality municipality = MunicipalityController.findById(id);
+
+        MunicipalityShowJInternalFrame  municipalitiesShow = new MunicipalityShowJInternalFrame(jDesktopPanelContainer);
+        jDesktopPanelContainer.add(municipalitiesShow);
+        municipalitiesShow.loadData(municipality);
+        
+        this.hide();
+        
+        municipalitiesShow.setVisible(true);
+    }//GEN-LAST:event_jTableMunicipiesMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel jLabel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTableMunicipies;
     // End of variables declaration//GEN-END:variables

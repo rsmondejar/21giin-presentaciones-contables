@@ -47,7 +47,7 @@ public class MunicipalityDao extends BaseDao {
      * @param municipality Municipality
      * @return status
      */
-    public static <T> boolean create(Municipality municipality) {
+    public static <T> Integer create(Municipality municipality) {
         return BaseDao.create((BaseEntity) municipality);
     }
 

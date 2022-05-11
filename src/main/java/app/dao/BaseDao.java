@@ -96,7 +96,7 @@ class BaseDao {
      * @param entity Model Entity
      * @return boolean
      */
-    public static <T> boolean create(BaseEntity entity) {
+    public static <T> Integer create(BaseEntity entity) {
         Transaction trns = null;
         Session session = HibernateUtil.get().getCurrentSession();
 
@@ -106,14 +106,14 @@ class BaseDao {
             session.save(entity);
             session.getTransaction().commit();
 
-            return true;
+            return entity.getId();
         } catch (RuntimeException exception) {
             if (trns != null) {
                 trns.rollback();
             }
 
             Log.error(exception);
-            return false;
+            return null;
         } finally {
 //            session.flush();
             session.close();

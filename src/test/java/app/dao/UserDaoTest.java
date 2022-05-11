@@ -39,7 +39,8 @@ public class UserDaoTest extends TestCase {
             findAndDeleteUser();
              
             User user = new User(userName, userPassword, 1, 1);
-            userCreatedSuccesfully = UserDao.create(user);
+            Integer id = UserDao.create(user);
+            userCreatedSuccesfully = id != null;
         } catch (Exception e) {
             
         } finally {

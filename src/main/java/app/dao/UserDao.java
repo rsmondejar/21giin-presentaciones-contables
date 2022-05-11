@@ -52,7 +52,7 @@ public class UserDao extends BaseDao {
      * @param user User
      * @return status
      */
-    public static <T> boolean create(User user) {
+    public static <T> Integer create(User user) {
         return BaseDao.create((BaseEntity) user);
     }
 

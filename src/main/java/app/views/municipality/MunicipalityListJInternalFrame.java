@@ -6,7 +6,6 @@ package app.views.municipality;
 
 import app.controllers.MunicipalityController;
 import app.entities.Municipality;
-import helpers.Dialog;
 import java.util.List;
 import javax.swing.JDesktopPane;
 import javax.swing.JTable;
@@ -40,7 +39,7 @@ public class MunicipalityListJInternalFrame extends javax.swing.JInternalFrame {
         List<Municipality> items = MunicipalityController.list();
         
         // @TODO: Add data
-        Object rowData[] = new Object[items.size()];
+        Object rowData[] = new Object[model.getColumnCount()];
         for (int i = 0; i < items.size(); i++) {
             rowData[0] = items.get(i).getId();
             rowData[1] = items.get(i).getName();

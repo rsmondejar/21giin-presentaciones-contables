@@ -6,6 +6,8 @@ package app.views;
 
 import app.views.municipality.MunicipalityListJInternalFrame;
 import app.entities.User;
+import app.views.convocatory.ConvocatoryCreateJInternalFrame;
+import app.views.convocatory.ConvocatoryListJInternalFrame;
 import app.views.municipality.MunicipalityCreateJInternalFrame;
 import helpers.Dialog;
 
@@ -45,6 +47,8 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenuItemMunicipiosShow = new javax.swing.JMenuItem();
         jMenuItemMunicipiosCreate = new javax.swing.JMenuItem();
         jMenuConvocatories = new javax.swing.JMenu();
+        jMenuItemConvocatoriesShow = new javax.swing.JMenuItem();
+        jMenuItemConvocatoriesCreate = new javax.swing.JMenuItem();
         jMenuPresentations = new javax.swing.JMenu();
         jMenuInformation = new javax.swing.JMenu();
 
@@ -110,6 +114,23 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenuBar1.add(jMenuMunicipios);
 
         jMenuConvocatories.setText("Convocatorias");
+
+        jMenuItemConvocatoriesShow.setText("Ver");
+        jMenuItemConvocatoriesShow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConvocatoriesShowActionPerformed(evt);
+            }
+        });
+        jMenuConvocatories.add(jMenuItemConvocatoriesShow);
+
+        jMenuItemConvocatoriesCreate.setText("Crear");
+        jMenuItemConvocatoriesCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConvocatoriesCreateActionPerformed(evt);
+            }
+        });
+        jMenuConvocatories.add(jMenuItemConvocatoriesCreate);
+
         jMenuBar1.add(jMenuConvocatories);
 
         jMenuPresentations.setText("Presentaciones");
@@ -156,8 +177,6 @@ public class MenuJFrame extends javax.swing.JFrame {
         MunicipalityListJInternalFrame  municipalitiesList = new MunicipalityListJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(municipalitiesList);
         
-        // @TODO: Fill rows ¿Mover al controlador?
-        
         municipalitiesList.setVisible(true);
     }//GEN-LAST:event_jMenuItemMunicipiosShowActionPerformed
 
@@ -167,6 +186,20 @@ public class MenuJFrame extends javax.swing.JFrame {
         
         municipalitiesCreate.setVisible(true);
     }//GEN-LAST:event_jMenuItemMunicipiosCreateActionPerformed
+
+    private void jMenuItemConvocatoriesShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesShowActionPerformed
+        ConvocatoryListJInternalFrame  convocatoriesList = new ConvocatoryListJInternalFrame(jDesktopPanelContainer);
+        jDesktopPanelContainer.add(convocatoriesList);
+        
+        convocatoriesList.setVisible(true);
+    }//GEN-LAST:event_jMenuItemConvocatoriesShowActionPerformed
+
+    private void jMenuItemConvocatoriesCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesCreateActionPerformed
+        ConvocatoryCreateJInternalFrame convocatoryCreate = new ConvocatoryCreateJInternalFrame(jDesktopPanelContainer);
+        jDesktopPanelContainer.add(convocatoryCreate);
+        
+        convocatoryCreate.setVisible(true);
+    }//GEN-LAST:event_jMenuItemConvocatoriesCreateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,6 +255,8 @@ public class MenuJFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuConvocatories;
     private javax.swing.JMenu jMenuInformation;
     private javax.swing.JMenuItem jMenuItemCloseSession;
+    private javax.swing.JMenuItem jMenuItemConvocatoriesCreate;
+    private javax.swing.JMenuItem jMenuItemConvocatoriesShow;
     private javax.swing.JMenuItem jMenuItemExit;
     private javax.swing.JMenuItem jMenuItemMunicipiosCreate;
     private javax.swing.JMenuItem jMenuItemMunicipiosShow;

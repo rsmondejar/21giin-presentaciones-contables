@@ -96,7 +96,7 @@ import org.hibernate.Transaction;
      * @param entity Model Entity
      * @return boolean
      */
-    public static &lt;T&gt; boolean create(BaseEntity entity) {
+    public static &lt;T&gt; Integer create(BaseEntity entity) {
 <span class="fc" id="L100">        Transaction trns = null;</span>
 <span class="fc" id="L101">        Session session = HibernateUtil.get().getCurrentSession();</span>
 
@@ -106,14 +106,14 @@ import org.hibernate.Transaction;
 <span class="fc" id="L106">            session.save(entity);</span>
 <span class="fc" id="L107">            session.getTransaction().commit();</span>
 
-<span class="fc" id="L109">            return true;</span>
+<span class="fc" id="L109">            return entity.getId();</span>
 <span class="nc" id="L110">        } catch (RuntimeException exception) {</span>
 <span class="nc bnc" id="L111" title="All 2 branches missed.">            if (trns != null) {</span>
 <span class="nc" id="L112">                trns.rollback();</span>
             }
 
 <span class="nc" id="L115">            Log.error(exception);</span>
-<span class="nc" id="L116">            return false;</span>
+<span class="nc" id="L116">            return null;</span>
         } finally {
 //            session.flush();
 <span class="fc" id="L119">            session.close();</span>

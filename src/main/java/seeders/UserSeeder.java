@@ -33,9 +33,12 @@ public class UserSeeder {
                 user.setLogin("user_" + new RandomString(5).nextString());
                 user.setPassword("pass1234");
                 user.setMunicipalityId(1);
-                user.setRoleId(1);
+                user.setRoleId(4);
+                
+                Integer id = UserDao.create(user);
+                Boolean userCreatedSuccesfully = id != null;
 
-                if (UserDao.create(user)) {
+                if (userCreatedSuccesfully) {
                     counter++;
                 }
             }

@@ -74,7 +74,8 @@ public class MunicipalityController {
         boolean status = false;
         
         try {
-            status = MunicipalityDao.create(municipality);
+            Integer id = MunicipalityDao.create(municipality);
+            status = id != null;
         } catch(Exception e) {
             Log.error(e);
             Dialog.error(e.getMessage(), "Error creando municipio");

@@ -52,7 +52,7 @@ import org.hibernate.query.Query;
      * @param user User
      * @return status
      */
-    public static &lt;T&gt; boolean create(User user) {
+    public static &lt;T&gt; Integer create(User user) {
 <span class="fc" id="L56">        return BaseDao.create((BaseEntity) user);</span>
     }
 

@@ -5,6 +5,8 @@ package app.controllers;
 
 import app.dao.MunicipalityDao;
 import app.entities.Municipality;
+import helpers.Dialog;
+import helpers.Log;
 import java.util.List;
 
 /**
@@ -14,7 +16,7 @@ import java.util.List;
 public class MunicipalityController {
     
     /**
-     * List Municipies
+     * List Municipies.
      * @return 
      */
     public static List<Municipality> list() {
@@ -22,5 +24,23 @@ public class MunicipalityController {
         List<Municipality> municipalities = MunicipalityDao.all();
 
         return municipalities;
+    }
+    
+    /**
+     * Create Municipality.
+     * @param municipality Municipality
+     * @return Status
+     */
+    public static boolean create(Municipality municipality) {
+        boolean status = false;
+        
+        try {
+            status = MunicipalityDao.create(municipality);
+        } catch(Exception e) {
+            Log.error(e);
+            Dialog.error(e.getMessage(), "Error creando municipio");
+        }
+        
+        return status;
     }
 }

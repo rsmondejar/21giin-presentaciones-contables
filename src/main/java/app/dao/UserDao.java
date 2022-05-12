@@ -31,7 +31,7 @@ public class UserDao extends BaseDao {
      * @return List of users
      */
     public List<User> all() {
-        return (new BaseDao()).all();
+        return super.all();
     }
 
     /**
@@ -40,8 +40,9 @@ public class UserDao extends BaseDao {
      * @param id Identifer
      * @return User
      */
+    @Override
     public User findById(int id) {
-        return (new BaseDao()).findById(id);
+        return super.findById(id);
     }
 
     /**
@@ -52,7 +53,7 @@ public class UserDao extends BaseDao {
      * @return status
      */
     public <T> Integer create(User user) {
-        return (new BaseDao()).create((BaseEntity) user);
+        return super.create((BaseEntity) user);
     }
 
     /**
@@ -64,7 +65,7 @@ public class UserDao extends BaseDao {
      * @return
      */
     public <T> boolean update(int id, User user) {
-        return (new BaseDao()).update(id, (BaseEntity) user);
+        return super.update(id, (BaseEntity) user);
     }
 
     /**
@@ -73,8 +74,9 @@ public class UserDao extends BaseDao {
      * @param id Identifier
      * @return status
      */
+    @Override
     public boolean delete(int id) {
-        return (new BaseDao()).delete(id);
+        return super.delete(id);
     }
     
     /**

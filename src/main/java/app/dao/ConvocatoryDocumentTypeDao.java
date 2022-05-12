@@ -25,8 +25,9 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      *
      * @return List of Documents Types
      */
+    @Override
     public List<ConvocatoryDocumentType> all() {
-        return (new BaseDao()).all();
+        return super.all();
     }
 
     /**
@@ -35,8 +36,9 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      * @param id Identifer
      * @return ConvocatoryDocumentType
      */
+    @Override
     public ConvocatoryDocumentType findById(int id) {
-        return (new BaseDao()).findById(id);
+        return super.findById(id);
     }
 
     /**
@@ -46,8 +48,8 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      * @param convocatoryDocumentType Convocatory Document Type
      * @return status
      */
-    public static <T> Integer create(ConvocatoryDocumentType convocatoryDocumentType) {
-        return (new BaseDao()).create((BaseEntity) convocatoryDocumentType);
+    public <T> Integer create(ConvocatoryDocumentType convocatoryDocumentType) {
+        return super.create((BaseEntity) convocatoryDocumentType);
     }
 
     /**
@@ -59,7 +61,7 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      * @return
      */
     public <T> boolean update(int id, ConvocatoryDocumentType convocatoryDocumentType) {
-        return (new BaseDao()).update(id, (BaseEntity) convocatoryDocumentType);
+        return super.update(id, (BaseEntity) convocatoryDocumentType);
     }
 
     /**
@@ -68,7 +70,8 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      * @param id Identifier
      * @return status
      */
+    @Override
     public boolean delete(int id) {
-        return (new BaseDao()).delete(id);
+        return super.delete(id);
     }
 }

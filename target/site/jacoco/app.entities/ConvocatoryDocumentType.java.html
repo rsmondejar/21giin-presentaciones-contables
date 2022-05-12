@@ -9,6 +9,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQuery;
 
 /**
  * Convocatory Document Type Model.
@@ -17,6 +18,11 @@ import javax.persistence.Id;
  * @version 1.0.0
  */
 @Entity(name = &quot;convocatories_has_documents_types&quot;)
+@NamedNativeQuery(
+        name = &quot;find_by_convocatory_id&quot;,
+        query = &quot;SELECT cdt.document_type_id FROM convocatories_has_documents_types cdt &quot;
+        + &quot;WHERE cdt.convocatory_id = :convocatory_id&quot;
+)
 public class ConvocatoryDocumentType extends BaseEntity {
 
     @Id
@@ -26,58 +32,58 @@ public class ConvocatoryDocumentType extends BaseEntity {
 
     @Column(name = &quot;convocatory_id&quot;)
     private int convocatoryId;
-    
+
     @Column(name = &quot;document_type_id&quot;)
     private int documentTypeId;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
-<span class="fc" id="L34">    public ConvocatoryDocumentType() {</span>
-<span class="fc" id="L35">    }</span>
+<span class="fc" id="L40">    public ConvocatoryDocumentType() {</span>
+<span class="fc" id="L41">    }</span>
 
-<span class="nc" id="L37">    public ConvocatoryDocumentType(int convocatoryId, int documentTypeId) {</span>
-<span class="nc" id="L38">        this.setConvocatoryId(convocatoryId);</span>
-<span class="nc" id="L39">        this.setDocumentTypeId(documentTypeId);</span>
-<span class="nc" id="L40">    }</span>
-    
-<span class="nc" id="L42">    public ConvocatoryDocumentType(int id, int convocatoryId, int documentTypeId) {</span>
-<span class="nc" id="L43">        this.setId(id);</span>
+<span class="nc" id="L43">    public ConvocatoryDocumentType(int convocatoryId, int documentTypeId) {</span>
 <span class="nc" id="L44">        this.setConvocatoryId(convocatoryId);</span>
 <span class="nc" id="L45">        this.setDocumentTypeId(documentTypeId);</span>
 <span class="nc" id="L46">    }</span>
+
+<span class="nc" id="L48">    public ConvocatoryDocumentType(int id, int convocatoryId, int documentTypeId) {</span>
+<span class="nc" id="L49">        this.setId(id);</span>
+<span class="nc" id="L50">        this.setConvocatoryId(convocatoryId);</span>
+<span class="nc" id="L51">        this.setDocumentTypeId(documentTypeId);</span>
+<span class="nc" id="L52">    }</span>
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;
     public int getId() {
-<span class="nc" id="L51">        return id;</span>
+<span class="nc" id="L57">        return id;</span>
     }
 
     public void setId(int id) {
-<span class="nc" id="L55">        this.id = id;</span>
-<span class="nc" id="L56">    }</span>
-    
+<span class="nc" id="L61">        this.id = id;</span>
+<span class="nc" id="L62">    }</span>
+
     public int getConvocatoryId() {
-<span class="nc" id="L59">        return convocatoryId;</span>
+<span class="nc" id="L65">        return convocatoryId;</span>
     }
 
     public void setConvocatoryId(int convocatoryId) {
-<span class="nc" id="L63">        this.convocatoryId = convocatoryId;</span>
-<span class="nc" id="L64">    }</span>
-    
+<span class="nc" id="L69">        this.convocatoryId = convocatoryId;</span>
+<span class="nc" id="L70">    }</span>
+
     public int getDocumentTypeId() {
-<span class="nc" id="L67">        return documentTypeId;</span>
+<span class="nc" id="L73">        return documentTypeId;</span>
     }
 
     public void setDocumentTypeId(int documentTypeId) {
-<span class="nc" id="L71">        this.documentTypeId = documentTypeId;</span>
-<span class="nc" id="L72">    }</span>
+<span class="nc" id="L77">        this.documentTypeId = documentTypeId;</span>
+<span class="nc" id="L78">    }</span>
     // &lt;/editor-fold&gt;
 
     @Override
     public String toString() {
-<span class="nc" id="L77">        return &quot;ConvocatoryDocumentType{&quot;</span>
-<span class="nc" id="L78">                + &quot;id=&quot; + this.getId()</span>
-<span class="nc" id="L79">                + &quot;, convocatoryId=&quot; + this.getConvocatoryId()</span>
-<span class="nc" id="L80">                + &quot;, documentTypeId=&quot; + this.getDocumentTypeId()</span>
+<span class="nc" id="L83">        return &quot;ConvocatoryDocumentType{&quot;</span>
+<span class="nc" id="L84">                + &quot;id=&quot; + this.getId()</span>
+<span class="nc" id="L85">                + &quot;, convocatoryId=&quot; + this.getConvocatoryId()</span>
+<span class="nc" id="L86">                + &quot;, documentTypeId=&quot; + this.getDocumentTypeId()</span>
                 + '}';
     }
 }

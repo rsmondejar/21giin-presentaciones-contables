@@ -25,6 +25,7 @@ public class MunicipalityDao extends BaseDao {
      *
      * @return List of Municipalities
      */
+    @Override
     public List<Municipality> all() {
         return super.all();
     }
@@ -35,8 +36,9 @@ public class MunicipalityDao extends BaseDao {
      * @param id Identifer
      * @return Municipality
      */
+    @Override
     public Municipality findById(int id) {
-        return (new BaseDao()).findById(id);
+        return super.findById(id);
     }
 
     /**
@@ -47,7 +49,7 @@ public class MunicipalityDao extends BaseDao {
      * @return status
      */
     public <T> Integer create(Municipality municipality) {
-        return (new BaseDao()).create((BaseEntity) municipality);
+        return super.create((BaseEntity) municipality);
     }
 
     /**
@@ -59,7 +61,7 @@ public class MunicipalityDao extends BaseDao {
      * @return
      */
     public <T> boolean update(int id, Municipality municipality) {
-        return (new BaseDao()).update(id, (BaseEntity) municipality);
+        return super.update(id, (BaseEntity) municipality);
     }
 
     /**
@@ -68,7 +70,8 @@ public class MunicipalityDao extends BaseDao {
      * @param id Identifier
      * @return status
      */
+    @Override
     public boolean delete(int id) {
-        return (new BaseDao()).delete(id);
+        return super.delete(id);
     }
 }

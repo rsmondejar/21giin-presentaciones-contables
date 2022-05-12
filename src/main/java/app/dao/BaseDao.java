@@ -207,11 +207,12 @@ class BaseDao {
     }
 
     /**
-     * Find by Id.
-     *
+     * Find by Named Query.
      * @param <T> T
-     * @param id Identifier
-     * @return model instance or null
+     * @param queryName Query Name
+     * @param columnName Column Name
+     * @param columnValue Column Value
+     * @return 
      */
     public <T> List<T> whereNamedQuery(String queryName, String columnName, String columnValue) {
         Transaction trns = null;
@@ -224,13 +225,42 @@ class BaseDao {
 
             List<T> baseEntities = (List<T>) query.getResultList();
 
-            if (baseEntities == null) {
-                throw new HibernateException("Registers not found");
-            }
-
             trns.commit();
 
             return baseEntities;
+        } catch (RuntimeException exception) {
+            if (trns != null) {
+                trns.rollback();
+            }
+            Log.error(exception);
+            return null;
+        } finally {
+            session.close();
+        }
+    }
+    
+    /**
+     * Execute Named Query.
+     * @param <T> T
+     * @param queryName Query Name
+     * @param columnName Column Name
+     * @param columnValue Column Value
+     * @return 
+     */
+    public Integer executeNamedQuery(String queryName, String columnName, String columnValue) {
+        Transaction trns = null;
+        Session session = HibernateUtil.get().getCurrentSession();
+
+        try {
+            trns = session.beginTransaction();
+
+            Query query = session.getNamedQuery(queryName).setParameter(columnName, columnValue);
+
+            int status = query.executeUpdate();
+
+            trns.commit();
+
+            return status;
         } catch (RuntimeException exception) {
             if (trns != null) {
                 trns.rollback();

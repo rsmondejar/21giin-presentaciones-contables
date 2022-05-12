@@ -6,6 +6,8 @@ package app.dao;
 
 import app.entities.BaseEntity;
 import app.entities.Convocatory;
+import app.entities.ConvocatoryDocumentType;
+import app.entities.DocumentType;
 import java.util.List;
 
 /**
@@ -25,6 +27,7 @@ public class ConvocatoryDao extends BaseDao {
      *
      * @return List of Convocatories
      */
+    @Override
     public List<Convocatory> all() {
         return super.all();
     }
@@ -35,8 +38,19 @@ public class ConvocatoryDao extends BaseDao {
      * @param id Identifer
      * @return Convocatory
      */
+    @Override
     public Convocatory findById(int id) {
-        return super.findById(id);
+        
+        // Add Documents Types
+        Convocatory convocatory = super.findById(id);
+        
+        // Add documents to entity
+        List<DocumentType> documentTypesIds = super
+                    .whereNamedQuery("documents_types", "convocatory_id", String.valueOf(id));
+
+        convocatory.setDocumentsTypes(documentTypesIds);
+        
+        return convocatory;
     }
 
     /**
@@ -47,7 +61,18 @@ public class ConvocatoryDao extends BaseDao {
      * @return status
      */
     public <T> Integer create(Convocatory convocatory) {
-        return super.create((BaseEntity) convocatory);
+        Integer id = super.create((BaseEntity) convocatory);
+        // Create documents types
+        List<DocumentType> documentTypes = convocatory.getDocumentsTypes();
+
+        ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();
+
+        for (DocumentType documentType : documentTypes) {
+            ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());
+            convocatoryDocumentTypeDao.create(convocatoryDocumentType);
+        }
+        
+        return id;
     }
 
     /**
@@ -59,7 +84,20 @@ public class ConvocatoryDao extends BaseDao {
      * @return
      */
     public <T> boolean update(int id, Convocatory convocatory) {
-        return super.update(id, (BaseEntity) convocatory);
+        boolean status = super.update(id, (BaseEntity) convocatory);
+        
+        List<DocumentType> documentTypes = convocatory.getDocumentsTypes();
+         
+        Integer statusDelete = super.executeNamedQuery("delete_documents_types", "convocatory_id", String.valueOf(id));
+        
+        ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();
+
+        for (DocumentType documentType : documentTypes) {
+            ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());
+            convocatoryDocumentTypeDao.create(convocatoryDocumentType);
+        }
+        
+        return status;
     }
 
     /**
@@ -68,6 +106,7 @@ public class ConvocatoryDao extends BaseDao {
      * @param id Identifier
      * @return status
      */
+    @Override
     public boolean delete(int id) {
         return super.delete(id);
     }

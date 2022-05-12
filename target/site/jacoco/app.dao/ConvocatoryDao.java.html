@@ -4,9 +4,10 @@
  */
 package app.dao;
 
-import static app.dao.BaseDao.model;
 import app.entities.BaseEntity;
 import app.entities.Convocatory;
+import app.entities.ConvocatoryDocumentType;
+import app.entities.DocumentType;
 import java.util.List;
 
 /**
@@ -15,19 +16,20 @@ import java.util.List;
  * @author raulsm
  * @version 1.0.0
  */
-<span class="nc" id="L18">public class ConvocatoryDao extends BaseDao {</span>
+public class ConvocatoryDao extends BaseDao {
 
-    static {
-<span class="nc" id="L21">        model = (BaseEntity) new Convocatory();</span>
-<span class="nc" id="L22">    }</span>
+<span class="nc" id="L21">    public ConvocatoryDao() {</span>
+<span class="nc" id="L22">        super.setModel((BaseEntity) new Convocatory());</span>
+<span class="nc" id="L23">    }</span>
 
     /**
      * List Convocatories.
      *
      * @return List of Convocatories
      */
-    public static List&lt;Convocatory&gt; all() {
-<span class="nc" id="L30">        return BaseDao.all();</span>
+    @Override
+    public List&lt;Convocatory&gt; all() {
+<span class="nc" id="L32">        return super.all();</span>
     }
 
     /**
@@ -36,8 +38,19 @@ import java.util.List;
      * @param id Identifer
      * @return Convocatory
      */
-    public static Convocatory findById(int id) {
-<span class="nc" id="L40">        return BaseDao.findById(id);</span>
+    @Override
+    public Convocatory findById(int id) {
+        
+        // Add Documents Types
+<span class="nc" id="L45">        Convocatory convocatory = super.findById(id);</span>
+        
+        // Add documents to entity
+<span class="nc" id="L48">        List&lt;DocumentType&gt; documentTypesIds = super</span>
+<span class="nc" id="L49">                    .whereNamedQuery(&quot;documents_types&quot;, &quot;convocatory_id&quot;, String.valueOf(id));</span>
+
+<span class="nc" id="L51">        convocatory.setDocumentsTypes(documentTypesIds);</span>
+        
+<span class="nc" id="L53">        return convocatory;</span>
     }
 
     /**
@@ -47,8 +60,19 @@ import java.util.List;
      * @param convocatory Convocatory
      * @return status
      */
-    public static &lt;T&gt; Integer create(Convocatory convocatory) {
-<span class="nc" id="L51">        return BaseDao.create((BaseEntity) convocatory);</span>
+    public &lt;T&gt; Integer create(Convocatory convocatory) {
+<span class="nc" id="L64">        Integer id = super.create((BaseEntity) convocatory);</span>
+        // Create documents types
+<span class="nc" id="L66">        List&lt;DocumentType&gt; documentTypes = convocatory.getDocumentsTypes();</span>
+
+<span class="nc" id="L68">        ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();</span>
+
+<span class="nc bnc" id="L70" title="All 2 branches missed.">        for (DocumentType documentType : documentTypes) {</span>
+<span class="nc" id="L71">            ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());</span>
+<span class="nc" id="L72">            convocatoryDocumentTypeDao.create(convocatoryDocumentType);</span>
+<span class="nc" id="L73">        }</span>
+        
+<span class="nc" id="L75">        return id;</span>
     }
 
     /**
@@ -59,8 +83,21 @@ import java.util.List;
      * @param convocatory Convocatory
      * @return
      */
-    public static &lt;T&gt; boolean update(int id, Convocatory convocatory) {
-<span class="nc" id="L63">        return BaseDao.update(id, (BaseEntity) convocatory);</span>
+    public &lt;T&gt; boolean update(int id, Convocatory convocatory) {
+<span class="nc" id="L87">        boolean status = super.update(id, (BaseEntity) convocatory);</span>
+        
+<span class="nc" id="L89">        List&lt;DocumentType&gt; documentTypes = convocatory.getDocumentsTypes();</span>
+         
+<span class="nc" id="L91">        Integer statusDelete = super.executeNamedQuery(&quot;delete_documents_types&quot;, &quot;convocatory_id&quot;, String.valueOf(id));</span>
+        
+<span class="nc" id="L93">        ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();</span>
+
+<span class="nc bnc" id="L95" title="All 2 branches missed.">        for (DocumentType documentType : documentTypes) {</span>
+<span class="nc" id="L96">            ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());</span>
+<span class="nc" id="L97">            convocatoryDocumentTypeDao.create(convocatoryDocumentType);</span>
+<span class="nc" id="L98">        }</span>
+        
+<span class="nc" id="L100">        return status;</span>
     }
 
     /**
@@ -69,8 +106,9 @@ import java.util.List;
      * @param id Identifier
      * @return status
      */
-    public static boolean delete(int id) {
-<span class="nc" id="L73">        return BaseDao.delete(id);</span>
+    @Override
+    public boolean delete(int id) {
+<span class="nc" id="L111">        return super.delete(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

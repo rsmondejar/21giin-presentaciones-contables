@@ -6,6 +6,7 @@ package app.views.convocatory;
 
 import app.controllers.ConvocatoryController;
 import app.entities.Convocatory;
+import app.entities.DocumentType;
 import helpers.Dialog;
 import helpers.Log;
 import java.util.List;
@@ -44,25 +45,29 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
         jCheckBoxConvocatoryStatus.setSelected(convocatory.getIsValid());
         
         // Set documents
-        List<Integer> documentTypes = convocatory.getDocumentsTypes();
+        List<DocumentType> documentTypes = convocatory.getDocumentsTypes();
         setDocumentsTypes(documentTypes);
     }
     
-    private void setDocumentsTypes(List<Integer> documentTypes) {
-        for(Integer documentType : documentTypes) {
-            if (documentType == 1) {
+    /**
+     * Set Documents Types
+     * @param documentTypes Documents Types
+     */
+    private void setDocumentsTypes(List<DocumentType> documentTypes) {
+        for(DocumentType documentType : documentTypes) {
+            if (documentType.getId() == 1) {
                 jCheckBoxDocumentTypeId1.setSelected(true);
             }
-            if (documentType == 2) {
+            if (documentType.getId() == 2) {
                 jCheckBoxDocumentTypeId2.setSelected(true);
             }
-            if (documentType == 3) {
+            if (documentType.getId() == 3) {
                 jCheckBoxDocumentTypeId3.setSelected(true);
             }
-            if (documentType == 4) {
+            if (documentType.getId() == 4) {
                 jCheckBoxDocumentTypeId4.setSelected(true);
             }
-            if (documentType == 5) {
+            if (documentType.getId() == 5) {
                 jCheckBoxDocumentTypeId5.setSelected(true);
             }
         }
@@ -162,14 +167,19 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
         jLabel1.setText("Documentos necesarios:");
 
         jCheckBoxDocumentTypeId1.setText("Libro Diario");
+        jCheckBoxDocumentTypeId1.setEnabled(false);
 
         jCheckBoxDocumentTypeId2.setText("Libro Mayor");
+        jCheckBoxDocumentTypeId2.setEnabled(false);
 
         jCheckBoxDocumentTypeId3.setText("Balance de Sumas y Saldos");
+        jCheckBoxDocumentTypeId3.setEnabled(false);
 
         jCheckBoxDocumentTypeId4.setText("Registro de Ingreso de Caja");
+        jCheckBoxDocumentTypeId4.setEnabled(false);
 
         jCheckBoxDocumentTypeId5.setText("Registro de Movimientos de Bancos");
+        jCheckBoxDocumentTypeId5.setEnabled(false);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -262,16 +272,18 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
         try {
 
             int id = Integer.parseInt(jTextFieldConvocatoryId.getText());
-//            Convocatory convocatory = MunicipalityController.findById(id);
-//            
-//            ConvocatoryEditJInternalFrame convocatoryEdit = new ConvocatoryEditJInternalFrame();
-//        
-//            jDesktopPanelContainer.add(convocatoryEdit);
-//        
-//            // Load municipio info in view
-//            convocatoryEdit.loadData(convocatory);
-//            
-//            convocatoryEdit.setVisible(true);
+            Convocatory convocatory = ConvocatoryController.findById(id);
+            
+            ConvocatoryEditJInternalFrame convocatoryEdit = new ConvocatoryEditJInternalFrame(jDesktopPanelContainer);
+        
+            jDesktopPanelContainer.add(convocatoryEdit);
+        
+            // Load convocatory info in view
+            convocatoryEdit.loadData(convocatory);
+            
+            this.hide();
+            
+            convocatoryEdit.setVisible(true);
         } catch (NumberFormatException e) {
             Log.error(e);
             Dialog.error(e.getMessage(), "Error editar municipio");

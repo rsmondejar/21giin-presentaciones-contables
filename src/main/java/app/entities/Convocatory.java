@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.Transient;
 
 /**
@@ -19,6 +21,19 @@ import javax.persistence.Transient;
  * @author raulsm
  */
 @Entity(name = "convocatories")
+@NamedNativeQueries({
+    @NamedNativeQuery(
+        name = "documents_types",
+        query = "SELECT dt.* FROM documents_types as dt "
+        + " JOIN convocatories_has_documents_types cdt ON cdt.document_type_id = dt.id "
+        + " WHERE cdt.convocatory_id = :convocatory_id",
+        resultClass = DocumentType.class
+    ),
+    @NamedNativeQuery(
+            name = "delete_documents_types",
+            query = "DELETE FROM convocatories_has_documents_types WHERE convocatory_id = :convocatory_id"
+    )
+})
 public class Convocatory extends BaseEntity {
     
     @Id
@@ -42,7 +57,7 @@ public class Convocatory extends BaseEntity {
     private Boolean isValid;
     
     @Transient
-    private List<Integer> documentsTypes;
+    private List<DocumentType> documentsTypes;
 
     // <editor-fold defaultstate="collapsed" desc="Constructors">
     public Convocatory() {
@@ -56,7 +71,17 @@ public class Convocatory extends BaseEntity {
         this.setIsValid(isValid);
     }
     
-    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid, List<Integer> documentsTypes) {
+    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid, List<DocumentType> documentsTypes) {
+        this.setName(name);
+        this.setDescription(description);
+        this.setStartDate(startDate);
+        this.setEndDate(endDate);
+        this.setIsValid(isValid);
+        this.setDocumentsTypes(documentsTypes);
+    }
+    
+    public Convocatory(int id, String name, String description, Date startDate, Date endDate, Boolean isValid, List<DocumentType> documentsTypes) {
+        this.setId(id);
         this.setName(name);
         this.setDescription(description);
         this.setStartDate(startDate);
@@ -119,11 +144,11 @@ public class Convocatory extends BaseEntity {
         this.isValid = isValid;
     }
     
-    public List<Integer> getDocumentsTypes() {
+    public List<DocumentType> getDocumentsTypes() {
         return documentsTypes;
     }
     
-    public void setDocumentsTypes(List<Integer> documentsTypes) {
+    public void setDocumentsTypes(List<DocumentType> documentsTypes) {
         this.documentsTypes = documentsTypes;
     }
     // </editor-fold>

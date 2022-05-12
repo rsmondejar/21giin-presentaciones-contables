@@ -56,13 +56,16 @@ public class MenuJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(830, 450));
-        setPreferredSize(new java.awt.Dimension(830, 450));
+        setPreferredSize(new java.awt.Dimension(830, 800));
 
         jLabelUser.setFont(new java.awt.Font("Lucida Grande", 2, 13)); // NOI18N
         jLabelUser.setText("Usuario");
         jLabelUser.setToolTipText("");
 
         jDesktopPanelContainer.setBackground(new java.awt.Color(204, 204, 204));
+        jDesktopPanelContainer.setRequestFocusEnabled(false);
+
+        jMenuBar1.setMinimumSize(new java.awt.Dimension(564, 22));
 
         jMenu2.setText("Menú");
         jMenu2.setToolTipText("");
@@ -114,6 +117,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenuBar1.add(jMenuMunicipios);
 
         jMenuConvocatories.setText("Convocatorias");
+        jMenuConvocatories.setMinimumSize(new java.awt.Dimension(116, 800));
 
         jMenuItemConvocatoriesShow.setText("Ver");
         jMenuItemConvocatoriesShow.addActionListener(new java.awt.event.ActionListener() {
@@ -154,7 +158,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPanelContainer)
+                .addComponent(jDesktopPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelUser)
                 .addContainerGap())

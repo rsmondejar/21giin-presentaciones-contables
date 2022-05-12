@@ -9,7 +9,7 @@ import app.entities.DocumentType;
 import java.util.List;
 
 /**
- * Municipality DAO.
+ * Document Type DAO.
  *
  * @author raulsm
  * @version 1.0.0
@@ -25,8 +25,9 @@ public class DocumentTypeDao extends BaseDao {
      *
      * @return List of Documents Types
      */
+    @Override
     public List<DocumentType> all() {
-        return (new BaseDao()).all();
+        return super.all();
     }
 
     /**
@@ -35,8 +36,9 @@ public class DocumentTypeDao extends BaseDao {
      * @param id Identifer
      * @return DocumentType
      */
+    @Override
     public DocumentType findById(int id) {
-        return (new BaseDao()).findById(id);
+        return super.findById(id);
     }
 
     /**
@@ -47,7 +49,7 @@ public class DocumentTypeDao extends BaseDao {
      * @return status
      */
     public <T> Integer create(DocumentType documentType) {
-        return (new BaseDao()).create((BaseEntity) documentType);
+        return super.create((BaseEntity) documentType);
     }
 
     /**
@@ -59,7 +61,7 @@ public class DocumentTypeDao extends BaseDao {
      * @return
      */
     public <T> boolean update(int id, DocumentType documentType) {
-        return (new BaseDao()).update(id, (BaseEntity) documentType);
+        return super.update(id, (BaseEntity) documentType);
     }
 
     /**
@@ -68,7 +70,8 @@ public class DocumentTypeDao extends BaseDao {
      * @param id Identifier
      * @return status
      */
+    @Override
     public boolean delete(int id) {
-        return (new BaseDao()).delete(id);
+        return super.delete(id);
     }
 }

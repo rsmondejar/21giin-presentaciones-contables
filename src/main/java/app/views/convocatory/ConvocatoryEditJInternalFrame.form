@@ -27,10 +27,10 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="1" attributes="0">
+          <Group type="102" attributes="0">
               <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="1" attributes="0">
-                  <Component id="jButtonConvocatoryUpdate" max="32767" attributes="0"/>
+              <Group type="103" groupAlignment="0" attributes="0">
+                  <Component id="jButtonConvocatoryUpdate" alignment="1" max="32767" attributes="0"/>
                   <Component id="jTextFieldConvocatoryName" alignment="0" max="32767" attributes="0"/>
                   <Component id="jLabelConvocatoryName" alignment="1" max="32767" attributes="0"/>
                   <Component id="jLabelConvocatoryDescription" alignment="1" max="32767" attributes="0"/>
@@ -58,6 +58,13 @@
                           <Component id="jLabelConvocatoryStatus" alignment="0" pref="230" max="32767" attributes="0"/>
                       </Group>
                   </Group>
+                  <Component id="jSeparator1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jLabel1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jCheckBoxDocumentTypeId1" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jCheckBoxDocumentTypeId2" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jCheckBoxDocumentTypeId3" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jCheckBoxDocumentTypeId4" alignment="0" max="32767" attributes="0"/>
+                  <Component id="jCheckBoxDocumentTypeId5" alignment="0" max="32767" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
           </Group>
@@ -88,8 +95,23 @@
               </Group>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jTextFieldConvocatoryId" min="-2" max="-2" attributes="0"/>
-              <EmptySpace max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jSeparator1" min="-2" pref="10" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jCheckBoxDocumentTypeId1" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jCheckBoxDocumentTypeId2" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jCheckBoxDocumentTypeId3" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jCheckBoxDocumentTypeId4" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="jCheckBoxDocumentTypeId5" min="-2" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="jButtonConvocatoryUpdate" min="-2" pref="61" max="-2" attributes="0"/>
+              <EmptySpace pref="12" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -106,7 +128,6 @@
     <Component class="javax.swing.JTextField" name="jTextFieldConvocatoryName">
       <Properties>
         <Property name="toolTipText" type="java.lang.String" value="Introducir nombre del municipio"/>
-        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JLabel" name="jLabelConvocatoryDescription">
@@ -140,10 +161,8 @@
       <SubComponents>
         <Component class="javax.swing.JTextArea" name="jTextAreaConvocatoryDescription">
           <Properties>
-            <Property name="editable" type="boolean" value="false"/>
             <Property name="columns" type="int" value="20"/>
             <Property name="rows" type="int" value="5"/>
-            <Property name="enabled" type="boolean" value="false"/>
           </Properties>
         </Component>
       </SubComponents>
@@ -185,6 +204,38 @@
     <Component class="com.toedter.calendar.JDateChooser" name="jDateChooserEndDate">
       <Properties>
         <Property name="dateFormatString" type="java.lang.String" value="yyyy-MM-dd"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JSeparator" name="jSeparator1">
+    </Component>
+    <Component class="javax.swing.JLabel" name="jLabel1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Documentos necesarios:"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId1">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Libro Diario"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId2">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Libro Mayor"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId3">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Balance de Sumas y Saldos"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId4">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registro de Ingreso de Caja"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId5">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Registro de Movimientos de Bancos"/>
       </Properties>
     </Component>
   </SubComponents>

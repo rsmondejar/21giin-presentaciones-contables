@@ -5,7 +5,9 @@
 package app.views.convocatory;
 
 import app.controllers.ConvocatoryController;
+import app.dao.DocumentTypeDao;
 import app.entities.Convocatory;
+import app.entities.DocumentType;
 import helpers.Dialog;
 import helpers.Log;
 import java.awt.Color;
@@ -13,7 +15,6 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.swing.JDesktopPane;
-import javax.swing.JOptionPane;
 
 /**
  *
@@ -210,8 +211,9 @@ public class ConvocatoryCreateJInternalFrame extends javax.swing.JInternalFrame 
                 .addComponent(jCheckBoxDocumentTypeId4)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jCheckBoxDocumentTypeId5)
-                .addGap(18, 18, Short.MAX_VALUE)
-                .addComponent(jButtonConvocatoryCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonConvocatoryCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         pack();
@@ -228,7 +230,7 @@ public class ConvocatoryCreateJInternalFrame extends javax.swing.JInternalFrame 
             Date startDate = getInputStartDate();
             Date endDate = getInputEndDate();
             Boolean status = getInputStatus();
-            List<Integer> documentsTypes = getInputDocumentTypesSelected();
+            List<DocumentType> documentsTypes = getInputDocumentTypesSelected();
             
             // Convocatory create
             Convocatory convocatory = new Convocatory(name, description, startDate, endDate, status, documentsTypes);
@@ -436,27 +438,29 @@ public class ConvocatoryCreateJInternalFrame extends javax.swing.JInternalFrame 
      * Get Input Document Types Selected
      * @return Documents Types Selected
      */
-    private List<Integer> getInputDocumentTypesSelected() {
-        List<Integer> documentsTypes = new ArrayList<>();;
+    private List<DocumentType> getInputDocumentTypesSelected() {
+        List<DocumentType> documentsTypes = new ArrayList<>();
+        
+        DocumentTypeDao documentTypeDao = new DocumentTypeDao();
             
         if (getInputDocumentTypeId1()) {
-            documentsTypes.add(1);
+            documentsTypes.add(documentTypeDao.findById(1));
         }
 
         if (getInputDocumentTypeId2()) {
-            documentsTypes.add(2);
+            documentsTypes.add(documentTypeDao.findById(2));
         }
 
         if (getInputDocumentTypeId3()) {
-            documentsTypes.add(3);
+           documentsTypes.add(documentTypeDao.findById(3));
         }
 
         if (getInputDocumentTypeId4()) {
-            documentsTypes.add(4);
+            documentsTypes.add(documentTypeDao.findById(4));
         }
 
         if (getInputDocumentTypeId5()) {
-            documentsTypes.add(5);
+            documentsTypes.add(documentTypeDao.findById(5));
         }
             
         return documentsTypes;

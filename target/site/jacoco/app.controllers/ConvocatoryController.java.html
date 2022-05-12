@@ -7,6 +7,7 @@ import app.dao.ConvocatoryDao;
 import app.dao.ConvocatoryDocumentTypeDao;
 import app.entities.Convocatory;
 import app.entities.ConvocatoryDocumentType;
+import app.entities.DocumentType;
 import helpers.Dialog;
 import helpers.Log;
 import java.util.List;
@@ -15,118 +16,116 @@ import java.util.List;
  *
  * @author raulsm
  */
-<span class="nc" id="L18">public class ConvocatoryController {</span>
-    
+<span class="nc" id="L19">public class ConvocatoryController {</span>
+
     /**
      * List Convocatories.
-     * @return 
+     *
+     * @return
      */
     public static List&lt;Convocatory&gt; list() {
         // Get all convocatories
-<span class="nc" id="L26">        List&lt;Convocatory&gt; convocatories = ConvocatoryDao.all();</span>
+<span class="nc" id="L28">        List&lt;Convocatory&gt; convocatories = (new ConvocatoryDao()).all();</span>
 
-<span class="nc" id="L28">        return convocatories;</span>
+<span class="nc" id="L30">        return convocatories;</span>
     }
-    
+
     /**
      * Find Convocatory by Id.
+     *
      * @param id Convocatory Id
      * @return Status
      */
     public static Convocatory findById(int id) {
-<span class="nc" id="L37">        Convocatory convocatory = null;</span>
-        
+<span class="nc" id="L40">        Convocatory convocatory = null;</span>
+
         try {
-<span class="nc" id="L40">            convocatory = ConvocatoryDao.findById(id);</span>
-<span class="nc" id="L41">        } catch(Exception e) {</span>
-<span class="nc" id="L42">            Log.error(e);</span>
-<span class="nc" id="L43">            Dialog.error(e.getMessage(), &quot;Error buscando convocatoria&quot;);</span>
-<span class="nc" id="L44">        }</span>
-        
-<span class="nc" id="L46">        return convocatory;</span>
+<span class="nc" id="L43">            ConvocatoryDao convocatoryDao = new ConvocatoryDao();</span>
+<span class="nc" id="L44">            convocatory = convocatoryDao.findById(id);</span>
+<span class="nc" id="L45">        } catch (Exception e) {</span>
+<span class="nc" id="L46">            Log.error(e);</span>
+<span class="nc" id="L47">            Dialog.error(e.getMessage(), &quot;Error buscando convocatoria&quot;);</span>
+<span class="nc" id="L48">        }</span>
+
+<span class="nc" id="L50">        return convocatory;</span>
     }
-    
+
     /**
      * Find Convocatory by Id.
+     *
      * @param id Convocatory Id
      * @return Status
      */
     public static Convocatory edit(int id) {
-<span class="nc" id="L55">        Convocatory convocatory = null;</span>
-        
+<span class="nc" id="L60">        Convocatory convocatory = null;</span>
+
         try {
-<span class="nc" id="L58">            convocatory = ConvocatoryDao.findById(id);            </span>
-<span class="nc" id="L59">        } catch(Exception e) {</span>
-<span class="nc" id="L60">            Log.error(e);</span>
-<span class="nc" id="L61">            Dialog.error(e.getMessage(), &quot;Error buscando convocatoria&quot;);</span>
-<span class="nc" id="L62">        }</span>
-        
-<span class="nc" id="L64">        return convocatory;</span>
+<span class="nc" id="L63">            convocatory = (new ConvocatoryDao()).findById(id);</span>
+<span class="nc" id="L64">        } catch (Exception e) {</span>
+<span class="nc" id="L65">            Log.error(e);</span>
+<span class="nc" id="L66">            Dialog.error(e.getMessage(), &quot;Error buscando convocatoria&quot;);</span>
+<span class="nc" id="L67">        }</span>
+
+<span class="nc" id="L69">        return convocatory;</span>
     }
-    
+
     /**
      * Create Convocatory.
+     *
      * @param convocatory Convocatory
      * @return Status
      */
     public static boolean create(Convocatory convocatory) {
-<span class="nc" id="L73">        boolean status = false;</span>
-        
+<span class="nc" id="L79">        boolean status = false;</span>
+
         try {
-<span class="nc" id="L76">            Integer id = ConvocatoryDao.create(convocatory);</span>
-<span class="nc bnc" id="L77" title="All 2 branches missed.">            status = id != null;</span>
-            
-            // @TODO: Crear los documentos asociados
-<span class="nc" id="L80">            List&lt;Integer&gt; documentTypes = convocatory.getDocumentsTypes();</span>
-            
-<span class="nc bnc" id="L82" title="All 2 branches missed.">            for(Integer documentType : documentTypes) {</span>
-<span class="nc" id="L83">                ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType);</span>
-<span class="nc" id="L84">                ConvocatoryDocumentTypeDao.create(convocatoryDocumentType);</span>
-<span class="nc" id="L85">            }</span>
-            
-<span class="nc" id="L87">        } catch(Exception e) {</span>
-<span class="nc" id="L88">            Log.error(e);</span>
-<span class="nc" id="L89">            Dialog.error(e.getMessage(), &quot;Error creando convocatoria&quot;);</span>
-<span class="nc" id="L90">        }</span>
-        
-<span class="nc" id="L92">        return status;</span>
+<span class="nc" id="L82">            Integer id = (new ConvocatoryDao()).create(convocatory);</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">            status = id != null;</span>
+<span class="nc" id="L84">        } catch (Exception e) {</span>
+<span class="nc" id="L85">            Log.error(e);</span>
+<span class="nc" id="L86">            Dialog.error(e.getMessage(), &quot;Error creando convocatoria&quot;);</span>
+<span class="nc" id="L87">        }</span>
+
+<span class="nc" id="L89">        return status;</span>
     }
-    
+
     /**
      * Update Convocatory.
+     *
      * @param id Convocatory Id
      * @param convocatory Convocatory
-     * @return 
+     * @return
      */
     public static boolean update(int id, Convocatory convocatory) {
-<span class="nc" id="L102">        boolean status = false;</span>
-        
+<span class="nc" id="L100">        boolean status = false;</span>
+
         try {
-<span class="nc" id="L105">            status = ConvocatoryDao.update(id, convocatory);</span>
-<span class="nc" id="L106">        } catch(Exception e) {</span>
-<span class="nc" id="L107">            Log.error(e);</span>
-<span class="nc" id="L108">            Dialog.error(e.getMessage(), &quot;Error actualizando convocatoria&quot;);</span>
-<span class="nc" id="L109">        }</span>
-        
-<span class="nc" id="L111">        return status;</span>
+<span class="nc" id="L103">            status = (new ConvocatoryDao()).update(id, convocatory);</span>
+<span class="nc" id="L104">        } catch (Exception e) {</span>
+<span class="nc" id="L105">            Log.error(e);</span>
+<span class="nc" id="L106">            Dialog.error(e.getMessage(), &quot;Error actualizando convocatoria&quot;);</span>
+<span class="nc" id="L107">        }</span>
+
+<span class="nc" id="L109">        return status;</span>
     }
-    
+
     /**
      * Delete Convocatory.
+     *
      * @param id Convocatory Id
      * @return Status
      */
     public static boolean delete(int id) {
-<span class="nc" id="L120">        boolean status = false;</span>
-        
+<span class="nc" id="L119">        boolean status = false;</span>
+
         try {
-<span class="nc" id="L123">            status = ConvocatoryDao.delete(id);</span>
-<span class="nc" id="L124">        } catch(Exception e) {</span>
-<span class="nc" id="L125">            Log.error(e);</span>
-<span class="nc" id="L126">            Dialog.error(e.getMessage(), &quot;Error eliminando convocatoria&quot;);</span>
-<span class="nc" id="L127">        }</span>
-        
-<span class="nc" id="L129">        return status;</span>
+<span class="nc" id="L122">            status = (new ConvocatoryDao()).delete(id);</span>
+<span class="nc" id="L123">        } catch (Exception e) {</span>
+<span class="nc" id="L124">            Log.error(e);</span>
+<span class="nc" id="L125">            Dialog.error(e.getMessage(), &quot;Error eliminando convocatoria&quot;);</span>
+<span class="nc" id="L126">        }</span>
+
+<span class="nc" id="L128">        return status;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

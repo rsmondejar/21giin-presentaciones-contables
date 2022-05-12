@@ -21,7 +21,7 @@ import java.util.List;
      */
     public static List&lt;Municipality&gt; list() {
         // Get all municipalities
-<span class="nc" id="L24">        List&lt;Municipality&gt; municipalities = MunicipalityDao.all();</span>
+<span class="nc" id="L24">        List&lt;Municipality&gt; municipalities = (new MunicipalityDao()).all();</span>
 
 <span class="nc" id="L26">        return municipalities;</span>
     }
@@ -35,7 +35,7 @@ import java.util.List;
 <span class="nc" id="L35">        Municipality municipality = null;</span>
         
         try {
-<span class="nc" id="L38">            municipality = MunicipalityDao.findById(id);</span>
+<span class="nc" id="L38">            municipality = (new MunicipalityDao()).findById(id);</span>
 <span class="nc" id="L39">        } catch(Exception e) {</span>
 <span class="nc" id="L40">            Log.error(e);</span>
 <span class="nc" id="L41">            Dialog.error(e.getMessage(), &quot;Error buscando municipio&quot;);</span>
@@ -53,7 +53,7 @@ import java.util.List;
 <span class="nc" id="L53">        Municipality municipality = null;</span>
         
         try {
-<span class="nc" id="L56">            municipality = MunicipalityDao.findById(id);</span>
+<span class="nc" id="L56">            municipality = (new MunicipalityDao()).findById(id);</span>
             
             // Load edit view
             
@@ -74,7 +74,7 @@ import java.util.List;
 <span class="nc" id="L74">        boolean status = false;</span>
         
         try {
-<span class="nc" id="L77">            Integer id = MunicipalityDao.create(municipality);</span>
+<span class="nc" id="L77">            Integer id = (new MunicipalityDao()).create(municipality);</span>
 <span class="nc bnc" id="L78" title="All 2 branches missed.">            status = id != null;</span>
 <span class="nc" id="L79">        } catch(Exception e) {</span>
 <span class="nc" id="L80">            Log.error(e);</span>
@@ -94,7 +94,7 @@ import java.util.List;
 <span class="nc" id="L94">        boolean status = false;</span>
         
         try {
-<span class="nc" id="L97">            status = MunicipalityDao.update(id, municipality);</span>
+<span class="nc" id="L97">            status = (new MunicipalityDao()).update(id, municipality);</span>
 <span class="nc" id="L98">        } catch(Exception e) {</span>
 <span class="nc" id="L99">            Log.error(e);</span>
 <span class="nc" id="L100">            Dialog.error(e.getMessage(), &quot;Error actualizando municipio&quot;);</span>
@@ -112,7 +112,7 @@ import java.util.List;
 <span class="nc" id="L112">        boolean status = false;</span>
         
         try {
-<span class="nc" id="L115">            status = MunicipalityDao.delete(id);</span>
+<span class="nc" id="L115">            status = (new MunicipalityDao()).delete(id);</span>
 <span class="nc" id="L116">        } catch(Exception e) {</span>
 <span class="nc" id="L117">            Log.error(e);</span>
 <span class="nc" id="L118">            Dialog.error(e.getMessage(), &quot;Error eliminando municipio&quot;);</span>

@@ -241,26 +241,31 @@
     <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId1">
       <Properties>
         <Property name="text" type="java.lang.String" value="Libro Diario"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId2">
       <Properties>
         <Property name="text" type="java.lang.String" value="Libro Mayor"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId3">
       <Properties>
         <Property name="text" type="java.lang.String" value="Balance de Sumas y Saldos"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId4">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registro de Ingreso de Caja"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
     <Component class="javax.swing.JCheckBox" name="jCheckBoxDocumentTypeId5">
       <Properties>
         <Property name="text" type="java.lang.String" value="Registro de Movimientos de Bancos"/>
+        <Property name="enabled" type="boolean" value="false"/>
       </Properties>
     </Component>
   </SubComponents>

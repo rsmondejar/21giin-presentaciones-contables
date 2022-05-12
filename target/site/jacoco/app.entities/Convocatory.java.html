@@ -12,6 +12,8 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.Transient;
 
 /**
@@ -19,6 +21,19 @@ import javax.persistence.Transient;
  * @author raulsm
  */
 @Entity(name = &quot;convocatories&quot;)
+@NamedNativeQueries({
+    @NamedNativeQuery(
+        name = &quot;documents_types&quot;,
+        query = &quot;SELECT dt.* FROM documents_types as dt &quot;
+        + &quot; JOIN convocatories_has_documents_types cdt ON cdt.document_type_id = dt.id &quot;
+        + &quot; WHERE cdt.convocatory_id = :convocatory_id&quot;,
+        resultClass = DocumentType.class
+    ),
+    @NamedNativeQuery(
+            name = &quot;delete_documents_types&quot;,
+            query = &quot;DELETE FROM convocatories_has_documents_types WHERE convocatory_id = :convocatory_id&quot;
+    )
+})
 public class Convocatory extends BaseEntity {
     
     @Id
@@ -42,101 +57,111 @@ public class Convocatory extends BaseEntity {
     private Boolean isValid;
     
     @Transient
-    private List&lt;Integer&gt; documentsTypes;
+    private List&lt;DocumentType&gt; documentsTypes;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
-<span class="fc" id="L48">    public Convocatory() {</span>
-<span class="fc" id="L49">    }</span>
+<span class="fc" id="L63">    public Convocatory() {</span>
+<span class="fc" id="L64">    }</span>
 
-<span class="nc" id="L51">    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid) {</span>
-<span class="nc" id="L52">        this.setName(name);</span>
-<span class="nc" id="L53">        this.setDescription(description);</span>
-<span class="nc" id="L54">        this.setStartDate(startDate);</span>
-<span class="nc" id="L55">        this.setEndDate(endDate);</span>
-<span class="nc" id="L56">        this.setIsValid(isValid);</span>
-<span class="nc" id="L57">    }</span>
+<span class="nc" id="L66">    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid) {</span>
+<span class="nc" id="L67">        this.setName(name);</span>
+<span class="nc" id="L68">        this.setDescription(description);</span>
+<span class="nc" id="L69">        this.setStartDate(startDate);</span>
+<span class="nc" id="L70">        this.setEndDate(endDate);</span>
+<span class="nc" id="L71">        this.setIsValid(isValid);</span>
+<span class="nc" id="L72">    }</span>
     
-<span class="nc" id="L59">    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid, List&lt;Integer&gt; documentsTypes) {</span>
-<span class="nc" id="L60">        this.setName(name);</span>
-<span class="nc" id="L61">        this.setDescription(description);</span>
-<span class="nc" id="L62">        this.setStartDate(startDate);</span>
-<span class="nc" id="L63">        this.setEndDate(endDate);</span>
-<span class="nc" id="L64">        this.setIsValid(isValid);</span>
-<span class="nc" id="L65">        this.setDocumentsTypes(documentsTypes);</span>
-<span class="nc" id="L66">    }</span>
+<span class="nc" id="L74">    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid, List&lt;DocumentType&gt; documentsTypes) {</span>
+<span class="nc" id="L75">        this.setName(name);</span>
+<span class="nc" id="L76">        this.setDescription(description);</span>
+<span class="nc" id="L77">        this.setStartDate(startDate);</span>
+<span class="nc" id="L78">        this.setEndDate(endDate);</span>
+<span class="nc" id="L79">        this.setIsValid(isValid);</span>
+<span class="nc" id="L80">        this.setDocumentsTypes(documentsTypes);</span>
+<span class="nc" id="L81">    }</span>
+    
+<span class="nc" id="L83">    public Convocatory(int id, String name, String description, Date startDate, Date endDate, Boolean isValid, List&lt;DocumentType&gt; documentsTypes) {</span>
+<span class="nc" id="L84">        this.setId(id);</span>
+<span class="nc" id="L85">        this.setName(name);</span>
+<span class="nc" id="L86">        this.setDescription(description);</span>
+<span class="nc" id="L87">        this.setStartDate(startDate);</span>
+<span class="nc" id="L88">        this.setEndDate(endDate);</span>
+<span class="nc" id="L89">        this.setIsValid(isValid);</span>
+<span class="nc" id="L90">        this.setDocumentsTypes(documentsTypes);</span>
+<span class="nc" id="L91">    }</span>
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;
     public int getId() {
-<span class="nc" id="L71">        return id;</span>
+<span class="nc" id="L96">        return id;</span>
     }
 
     public void setId(int id) {
-<span class="nc" id="L75">        this.id = id;</span>
-<span class="nc" id="L76">    }</span>
+<span class="nc" id="L100">        this.id = id;</span>
+<span class="nc" id="L101">    }</span>
     
     public String getName() {
-<span class="nc" id="L79">        return name;</span>
+<span class="nc" id="L104">        return name;</span>
     }
 
     public void setName(String name) {
-<span class="nc" id="L83">        this.name = name;</span>
-<span class="nc" id="L84">    }</span>
+<span class="nc" id="L108">        this.name = name;</span>
+<span class="nc" id="L109">    }</span>
 
     public String getDescription() {
-<span class="nc" id="L87">        return description;</span>
+<span class="nc" id="L112">        return description;</span>
     }
 
     public void setDescription(String description) {
-<span class="nc" id="L91">        this.description = description;</span>
-<span class="nc" id="L92">    }</span>
+<span class="nc" id="L116">        this.description = description;</span>
+<span class="nc" id="L117">    }</span>
 
     @SuppressFBWarnings({&quot;EI_EXPOSE_REP&quot;})
     public Date getStartDate() {
-<span class="nc" id="L96">        return startDate;</span>
+<span class="nc" id="L121">        return startDate;</span>
     }
 
     @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
     public void setStartDate(Date startDate) {
-<span class="nc" id="L101">        this.startDate = startDate;</span>
-<span class="nc" id="L102">    }</span>
+<span class="nc" id="L126">        this.startDate = startDate;</span>
+<span class="nc" id="L127">    }</span>
 
     @SuppressFBWarnings({&quot;EI_EXPOSE_REP&quot;})
     public Date getEndDate() {
-<span class="nc" id="L106">        return endDate;</span>
+<span class="nc" id="L131">        return endDate;</span>
     }
 
     @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
     public void setEndDate(Date endDate) {
-<span class="nc" id="L111">        this.endDate = endDate;</span>
-<span class="nc" id="L112">    }</span>
+<span class="nc" id="L136">        this.endDate = endDate;</span>
+<span class="nc" id="L137">    }</span>
 
     public Boolean getIsValid() {
-<span class="nc" id="L115">        return isValid;</span>
+<span class="nc" id="L140">        return isValid;</span>
     }
 
     public void setIsValid(Boolean isValid) {
-<span class="nc" id="L119">        this.isValid = isValid;</span>
-<span class="nc" id="L120">    }</span>
+<span class="nc" id="L144">        this.isValid = isValid;</span>
+<span class="nc" id="L145">    }</span>
     
-    public List&lt;Integer&gt; getDocumentsTypes() {
-<span class="nc" id="L123">        return documentsTypes;</span>
+    public List&lt;DocumentType&gt; getDocumentsTypes() {
+<span class="nc" id="L148">        return documentsTypes;</span>
     }
     
-    public void setDocumentsTypes(List&lt;Integer&gt; documentsTypes) {
-<span class="nc" id="L127">        this.documentsTypes = documentsTypes;</span>
-<span class="nc" id="L128">    }</span>
+    public void setDocumentsTypes(List&lt;DocumentType&gt; documentsTypes) {
+<span class="nc" id="L152">        this.documentsTypes = documentsTypes;</span>
+<span class="nc" id="L153">    }</span>
     // &lt;/editor-fold&gt;
 
     @Override
     public String toString() {
-<span class="nc" id="L133">        return &quot;Convocatory{&quot; </span>
-<span class="nc" id="L134">                 + &quot;id=&quot; + this.getId()</span>
-<span class="nc" id="L135">                + &quot;, name=&quot; + this.getName()</span>
-<span class="nc" id="L136">                + &quot;, description=&quot; + this.getDescription()</span>
-<span class="nc" id="L137">                + &quot;, startDate=&quot; + this.getStartDate()</span>
-<span class="nc" id="L138">                + &quot;, endDate=&quot; + this.getEndDate()</span>
-<span class="nc" id="L139">                + &quot;, isValid=&quot; + this.getIsValid()</span>
+<span class="nc" id="L158">        return &quot;Convocatory{&quot; </span>
+<span class="nc" id="L159">                 + &quot;id=&quot; + this.getId()</span>
+<span class="nc" id="L160">                + &quot;, name=&quot; + this.getName()</span>
+<span class="nc" id="L161">                + &quot;, description=&quot; + this.getDescription()</span>
+<span class="nc" id="L162">                + &quot;, startDate=&quot; + this.getStartDate()</span>
+<span class="nc" id="L163">                + &quot;, endDate=&quot; + this.getEndDate()</span>
+<span class="nc" id="L164">                + &quot;, isValid=&quot; + this.getIsValid()</span>
                 + '}';
     }
 }

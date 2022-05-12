@@ -31,7 +31,7 @@ class BaseDao {
     public void setModel(BaseEntity model) {
         this.model = model;
     }
-    
+
     public BaseEntity getModel() {
         return this.model;
     }
@@ -54,7 +54,7 @@ class BaseDao {
             if (baseEntities == null) {
                 throw new HibernateException("Registers not found");
             }
-            
+
             trns.commit();
 
             return baseEntities;
@@ -77,17 +77,24 @@ class BaseDao {
      * @return model instance or null
      */
     public <T> T findById(int id) {
+        Transaction trns = null;
         Session session = HibernateUtil.get().getCurrentSession();
 
         try {
+            trns = session.beginTransaction();
             T baseEntity = (T) session.find(getModel().getClass(), id);
 
             if (baseEntity == null) {
                 throw new HibernateException("Id [%d] not found".formatted(id));
             }
 
+            trns.commit();
+
             return baseEntity;
         } catch (RuntimeException exception) {
+            if (trns != null) {
+                trns.rollback();
+            }
             Log.error(exception);
             return null;
         } finally {
@@ -146,7 +153,7 @@ class BaseDao {
             if (baseEntity == null) {
                 throw new HibernateException("Id [%d] not found".formatted(id));
             }
-            
+
             session.merge(entity);
             trns.commit();
 
@@ -198,7 +205,7 @@ class BaseDao {
             session.close();
         }
     }
-    
+
     /**
      * Find by Id.
      *
@@ -207,19 +214,27 @@ class BaseDao {
      * @return model instance or null
      */
     public <T> List<T> whereNamedQuery(String queryName, String columnName, String columnValue) {
+        Transaction trns = null;
         Session session = HibernateUtil.get().getCurrentSession();
 
         try {
+            trns = session.beginTransaction();
+
             Query query = session.getNamedQuery(queryName).setParameter(columnName, columnValue);
-            
+
             List<T> baseEntities = (List<T>) query.getResultList();
 
             if (baseEntities == null) {
                 throw new HibernateException("Registers not found");
             }
 
+            trns.commit();
+
             return baseEntities;
         } catch (RuntimeException exception) {
+            if (trns != null) {
+                trns.rollback();
+            }
             Log.error(exception);
             return null;
         } finally {

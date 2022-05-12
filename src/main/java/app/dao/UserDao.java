@@ -4,7 +4,6 @@
  */
 package app.dao;
 
-import static app.dao.BaseDao.model;
 import app.entities.BaseEntity;
 import app.entities.User;
 import config.HibernateUtil;
@@ -22,8 +21,8 @@ import org.hibernate.query.Query;
  */
 public class UserDao extends BaseDao {
 
-    static {
-        model = (BaseEntity) new User();
+    public UserDao() {
+        super.setModel((BaseEntity) new User());
     }
 
     /**
@@ -31,8 +30,8 @@ public class UserDao extends BaseDao {
      *
      * @return List of users
      */
-    public static List<User> all() {
-        return BaseDao.all();
+    public List<User> all() {
+        return super.all();
     }
 
     /**
@@ -41,8 +40,9 @@ public class UserDao extends BaseDao {
      * @param id Identifer
      * @return User
      */
-    public static User findById(int id) {
-        return BaseDao.findById(id);
+    @Override
+    public User findById(int id) {
+        return super.findById(id);
     }
 
     /**
@@ -52,8 +52,8 @@ public class UserDao extends BaseDao {
      * @param user User
      * @return status
      */
-    public static <T> boolean create(User user) {
-        return BaseDao.create((BaseEntity) user);
+    public <T> Integer create(User user) {
+        return super.create((BaseEntity) user);
     }
 
     /**
@@ -64,8 +64,8 @@ public class UserDao extends BaseDao {
      * @param user User
      * @return
      */
-    public static <T> boolean update(int id, User user) {
-        return BaseDao.update(id, (BaseEntity) user);
+    public <T> boolean update(int id, User user) {
+        return super.update(id, (BaseEntity) user);
     }
 
     /**
@@ -74,8 +74,9 @@ public class UserDao extends BaseDao {
      * @param id Identifier
      * @return status
      */
-    public static boolean delete(int id) {
-        return BaseDao.delete(id);
+    @Override
+    public boolean delete(int id) {
+        return super.delete(id);
     }
     
     /**
@@ -85,7 +86,7 @@ public class UserDao extends BaseDao {
      * @return User
      * @throws Exception 
      */
-    public static User findByLoginAndPassword(String login, String password) throws Exception {
+    public User findByLoginAndPassword(String login, String password) throws Exception {
         try {
             Session session = HibernateUtil.get().getCurrentSession();
 

@@ -4,7 +4,6 @@
  */
 package app.dao;
 
-import static app.dao.BaseDao.model;
 import app.entities.BaseEntity;
 import app.entities.Municipality;
 import java.util.List;
@@ -15,19 +14,20 @@ import java.util.List;
  * @author raulsm
  * @version 1.0.0
  */
-<span class="nc" id="L18">public class MunicipalityDao extends BaseDao {</span>
+public class MunicipalityDao extends BaseDao {
 
-    static {
-<span class="nc" id="L21">        model = (BaseEntity) new Municipality();</span>
-<span class="nc" id="L22">    }</span>
+<span class="nc" id="L19">    public MunicipalityDao() {</span>
+<span class="nc" id="L20">        super.setModel((BaseEntity) new Municipality());</span>
+<span class="nc" id="L21">    }</span>
 
     /**
      * List Municipalitys.
      *
      * @return List of Municipalities
      */
-    public static List&lt;Municipality&gt; all() {
-<span class="nc" id="L30">        return BaseDao.all();</span>
+    @Override
+    public List&lt;Municipality&gt; all() {
+<span class="nc" id="L30">        return super.all();</span>
     }
 
     /**
@@ -36,8 +36,9 @@ import java.util.List;
      * @param id Identifer
      * @return Municipality
      */
-    public static Municipality findById(int id) {
-<span class="nc" id="L40">        return BaseDao.findById(id);</span>
+    @Override
+    public Municipality findById(int id) {
+<span class="nc" id="L41">        return super.findById(id);</span>
     }
 
     /**
@@ -47,8 +48,8 @@ import java.util.List;
      * @param municipality Municipality
      * @return status
      */
-    public static &lt;T&gt; boolean create(Municipality municipality) {
-<span class="nc" id="L51">        return BaseDao.create((BaseEntity) municipality);</span>
+    public &lt;T&gt; Integer create(Municipality municipality) {
+<span class="nc" id="L52">        return super.create((BaseEntity) municipality);</span>
     }
 
     /**
@@ -59,8 +60,8 @@ import java.util.List;
      * @param municipality Municipality
      * @return
      */
-    public static &lt;T&gt; boolean update(int id, Municipality municipality) {
-<span class="nc" id="L63">        return BaseDao.update(id, (BaseEntity) municipality);</span>
+    public &lt;T&gt; boolean update(int id, Municipality municipality) {
+<span class="nc" id="L64">        return super.update(id, (BaseEntity) municipality);</span>
     }
 
     /**
@@ -69,8 +70,9 @@ import java.util.List;
      * @param id Identifier
      * @return status
      */
-    public static boolean delete(int id) {
-<span class="nc" id="L73">        return BaseDao.delete(id);</span>
+    @Override
+    public boolean delete(int id) {
+<span class="nc" id="L75">        return super.delete(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -5,18 +5,35 @@
 package app.entities;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
-import java.sql.Timestamp;
+import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.Transient;
 
 /**
  *
  * @author raulsm
  */
 @Entity(name = "convocatories")
+@NamedNativeQueries({
+    @NamedNativeQuery(
+        name = "documents_types",
+        query = "SELECT dt.* FROM documents_types as dt "
+        + " JOIN convocatories_has_documents_types cdt ON cdt.document_type_id = dt.id "
+        + " WHERE cdt.convocatory_id = :convocatory_id",
+        resultClass = DocumentType.class
+    ),
+    @NamedNativeQuery(
+            name = "delete_documents_types",
+            query = "DELETE FROM convocatories_has_documents_types WHERE convocatory_id = :convocatory_id"
+    )
+})
 public class Convocatory extends BaseEntity {
     
     @Id
@@ -31,24 +48,46 @@ public class Convocatory extends BaseEntity {
     private String description;
     
     @Column(name = "start_date")
-    private Timestamp startDate;
+    private Date startDate;
     
     @Column(name = "end_date")
-    private Timestamp endDate;
+    private Date endDate;
  
     @Column(name = "is_valid")
     private Boolean isValid;
+    
+    @Transient
+    private List<DocumentType> documentsTypes;
 
     // <editor-fold defaultstate="collapsed" desc="Constructors">
     public Convocatory() {
     }
 
-    public Convocatory(String name, String description, Timestamp startDate, Timestamp endDate, Boolean isValid) {
+    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid) {
         this.setName(name);
         this.setDescription(description);
         this.setStartDate(startDate);
         this.setEndDate(endDate);
         this.setIsValid(isValid);
+    }
+    
+    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid, List<DocumentType> documentsTypes) {
+        this.setName(name);
+        this.setDescription(description);
+        this.setStartDate(startDate);
+        this.setEndDate(endDate);
+        this.setIsValid(isValid);
+        this.setDocumentsTypes(documentsTypes);
+    }
+    
+    public Convocatory(int id, String name, String description, Date startDate, Date endDate, Boolean isValid, List<DocumentType> documentsTypes) {
+        this.setId(id);
+        this.setName(name);
+        this.setDescription(description);
+        this.setStartDate(startDate);
+        this.setEndDate(endDate);
+        this.setIsValid(isValid);
+        this.setDocumentsTypes(documentsTypes);
     }
     // </editor-fold>
 
@@ -78,22 +117,22 @@ public class Convocatory extends BaseEntity {
     }
 
     @SuppressFBWarnings({"EI_EXPOSE_REP"})
-    public Timestamp getStartDate() {
+    public Date getStartDate() {
         return startDate;
     }
 
     @SuppressFBWarnings({"EI_EXPOSE_REP2"})
-    public void setStartDate(Timestamp startDate) {
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
     @SuppressFBWarnings({"EI_EXPOSE_REP"})
-    public Timestamp getEndDate() {
+    public Date getEndDate() {
         return endDate;
     }
 
     @SuppressFBWarnings({"EI_EXPOSE_REP2"})
-    public void setEndDate(Timestamp endDate) {
+    public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
@@ -103,6 +142,14 @@ public class Convocatory extends BaseEntity {
 
     public void setIsValid(Boolean isValid) {
         this.isValid = isValid;
+    }
+    
+    public List<DocumentType> getDocumentsTypes() {
+        return documentsTypes;
+    }
+    
+    public void setDocumentsTypes(List<DocumentType> documentsTypes) {
+        this.documentsTypes = documentsTypes;
     }
     // </editor-fold>
 
@@ -117,6 +164,4 @@ public class Convocatory extends BaseEntity {
                 + ", isValid=" + this.getIsValid()
                 + '}';
     }
-    
-    
 }

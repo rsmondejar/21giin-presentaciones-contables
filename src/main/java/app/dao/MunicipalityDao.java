@@ -4,7 +4,6 @@
  */
 package app.dao;
 
-import static app.dao.BaseDao.model;
 import app.entities.BaseEntity;
 import app.entities.Municipality;
 import java.util.List;
@@ -17,8 +16,8 @@ import java.util.List;
  */
 public class MunicipalityDao extends BaseDao {
 
-    static {
-        model = (BaseEntity) new Municipality();
+    public MunicipalityDao() {
+        super.setModel((BaseEntity) new Municipality());
     }
 
     /**
@@ -26,8 +25,9 @@ public class MunicipalityDao extends BaseDao {
      *
      * @return List of Municipalities
      */
-    public static List<Municipality> all() {
-        return BaseDao.all();
+    @Override
+    public List<Municipality> all() {
+        return super.all();
     }
 
     /**
@@ -36,8 +36,9 @@ public class MunicipalityDao extends BaseDao {
      * @param id Identifer
      * @return Municipality
      */
-    public static Municipality findById(int id) {
-        return BaseDao.findById(id);
+    @Override
+    public Municipality findById(int id) {
+        return super.findById(id);
     }
 
     /**
@@ -47,8 +48,8 @@ public class MunicipalityDao extends BaseDao {
      * @param municipality Municipality
      * @return status
      */
-    public static <T> boolean create(Municipality municipality) {
-        return BaseDao.create((BaseEntity) municipality);
+    public <T> Integer create(Municipality municipality) {
+        return super.create((BaseEntity) municipality);
     }
 
     /**
@@ -59,8 +60,8 @@ public class MunicipalityDao extends BaseDao {
      * @param municipality Municipality
      * @return
      */
-    public static <T> boolean update(int id, Municipality municipality) {
-        return BaseDao.update(id, (BaseEntity) municipality);
+    public <T> boolean update(int id, Municipality municipality) {
+        return super.update(id, (BaseEntity) municipality);
     }
 
     /**
@@ -69,7 +70,8 @@ public class MunicipalityDao extends BaseDao {
      * @param id Identifier
      * @return status
      */
-    public static boolean delete(int id) {
-        return BaseDao.delete(id);
+    @Override
+    public boolean delete(int id) {
+        return super.delete(id);
     }
 }

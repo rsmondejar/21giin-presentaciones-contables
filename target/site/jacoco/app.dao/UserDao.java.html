@@ -4,7 +4,6 @@
  */
 package app.dao;
 
-import static app.dao.BaseDao.model;
 import app.entities.BaseEntity;
 import app.entities.User;
 import config.HibernateUtil;
@@ -20,19 +19,19 @@ import org.hibernate.query.Query;
  * @author raulsm
  * @version 1.0.0
  */
-<span class="nc" id="L23">public class UserDao extends BaseDao {</span>
+public class UserDao extends BaseDao {
 
-    static {
-<span class="fc" id="L26">        model = (BaseEntity) new User();</span>
-<span class="fc" id="L27">    }</span>
+<span class="fc" id="L24">    public UserDao() {</span>
+<span class="fc" id="L25">        super.setModel((BaseEntity) new User());</span>
+<span class="fc" id="L26">    }</span>
 
     /**
      * List Users.
      *
      * @return List of users
      */
-    public static List&lt;User&gt; all() {
-<span class="nc" id="L35">        return BaseDao.all();</span>
+    public List&lt;User&gt; all() {
+<span class="nc" id="L34">        return super.all();</span>
     }
 
     /**
@@ -41,8 +40,9 @@ import org.hibernate.query.Query;
      * @param id Identifer
      * @return User
      */
-    public static User findById(int id) {
-<span class="nc" id="L45">        return BaseDao.findById(id);</span>
+    @Override
+    public User findById(int id) {
+<span class="nc" id="L45">        return super.findById(id);</span>
     }
 
     /**
@@ -52,8 +52,8 @@ import org.hibernate.query.Query;
      * @param user User
      * @return status
      */
-    public static &lt;T&gt; boolean create(User user) {
-<span class="fc" id="L56">        return BaseDao.create((BaseEntity) user);</span>
+    public &lt;T&gt; Integer create(User user) {
+<span class="fc" id="L56">        return super.create((BaseEntity) user);</span>
     }
 
     /**
@@ -64,8 +64,8 @@ import org.hibernate.query.Query;
      * @param user User
      * @return
      */
-    public static &lt;T&gt; boolean update(int id, User user) {
-<span class="fc" id="L68">        return BaseDao.update(id, (BaseEntity) user);</span>
+    public &lt;T&gt; boolean update(int id, User user) {
+<span class="fc" id="L68">        return super.update(id, (BaseEntity) user);</span>
     }
 
     /**
@@ -74,8 +74,9 @@ import org.hibernate.query.Query;
      * @param id Identifier
      * @return status
      */
-    public static boolean delete(int id) {
-<span class="fc" id="L78">        return BaseDao.delete(id);</span>
+    @Override
+    public boolean delete(int id) {
+<span class="fc" id="L79">        return super.delete(id);</span>
     }
     
     /**
@@ -85,29 +86,29 @@ import org.hibernate.query.Query;
      * @return User
      * @throws Exception 
      */
-    public static User findByLoginAndPassword(String login, String password) throws Exception {
+    public User findByLoginAndPassword(String login, String password) throws Exception {
         try {
-<span class="fc" id="L90">            Session session = HibernateUtil.get().getCurrentSession();</span>
+<span class="fc" id="L91">            Session session = HibernateUtil.get().getCurrentSession();</span>
 
-<span class="fc" id="L92">            session.beginTransaction();</span>
+<span class="fc" id="L93">            session.beginTransaction();</span>
             
-<span class="fc" id="L94">            Query query = session.createQuery(&quot;SELECT u FROM users u WHERE u.login=:login AND u.password=:password&quot;);</span>
-<span class="fc" id="L95">            query.setParameter(&quot;login&quot;, login);</span>
-<span class="fc" id="L96">            query.setParameter(&quot;password&quot;, password);</span>
+<span class="fc" id="L95">            Query query = session.createQuery(&quot;SELECT u FROM users u WHERE u.login=:login AND u.password=:password&quot;);</span>
+<span class="fc" id="L96">            query.setParameter(&quot;login&quot;, login);</span>
+<span class="fc" id="L97">            query.setParameter(&quot;password&quot;, password);</span>
             
-<span class="fc" id="L98">            User user = (User) query.uniqueResult();</span>
+<span class="fc" id="L99">            User user = (User) query.uniqueResult();</span>
             
-<span class="fc bfc" id="L100" title="All 2 branches covered.">            if (user == null) {</span>
-<span class="fc" id="L101">                throw new Exception(&quot;Not found user with login '%s' and password '%s'&quot;.formatted(login, password));</span>
+<span class="fc bfc" id="L101" title="All 2 branches covered.">            if (user == null) {</span>
+<span class="fc" id="L102">                throw new Exception(&quot;Not found user with login '%s' and password '%s'&quot;.formatted(login, password));</span>
             }
 
-<span class="fc" id="L104">            return user;</span>
+<span class="fc" id="L105">            return user;</span>
 
-<span class="nc" id="L106">        } catch (HibernateException exception) {</span>
-<span class="nc" id="L107">            Log.error(exception);</span>
-<span class="nc" id="L108">            throw exception;</span>
+<span class="nc" id="L107">        } catch (HibernateException exception) {</span>
+<span class="nc" id="L108">            Log.error(exception);</span>
+<span class="nc" id="L109">            throw exception;</span>
         } finally {
-<span class="fc" id="L110">            HibernateUtil.get().getCurrentSession().close();</span>
+<span class="fc" id="L111">            HibernateUtil.get().getCurrentSession().close();</span>
         }
     }
 }

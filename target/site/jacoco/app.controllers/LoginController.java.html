@@ -29,7 +29,7 @@ import helpers.Log;
         // Check if user exists in database
 <span class="nc" id="L30">        User user = null;</span>
         try {
-<span class="nc" id="L32">            user = UserDao.findByLoginAndPassword(name, password);</span>
+<span class="nc" id="L32">            user = (new UserDao()).findByLoginAndPassword(name, password);</span>
 <span class="nc" id="L33">            isValid = true;</span>
 <span class="nc" id="L34">        } catch (Exception exception) {</span>
 <span class="nc" id="L35">            Log.error(exception);</span>

@@ -20,4 +20,8 @@ public class BaseEntity {
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected int id;
+    
+    public int getId() {
+        return id;
+    }
 }

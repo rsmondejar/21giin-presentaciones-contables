@@ -27,5 +27,7 @@
         <mapping class="app.entities.User"/>
         <mapping class="app.entities.Convocatory"/>
         <mapping class="app.entities.Presentation"/>
+        <mapping class="app.entities.DocumentType"/>
+        <mapping class="app.entities.ConvocatoryDocumentType"/>
     </session-factory>
 </hibernate-configuration>

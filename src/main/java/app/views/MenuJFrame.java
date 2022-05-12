@@ -6,6 +6,8 @@ package app.views;
 
 import app.views.municipality.MunicipalityListJInternalFrame;
 import app.entities.User;
+import app.views.convocatory.ConvocatoryCreateJInternalFrame;
+import app.views.convocatory.ConvocatoryListJInternalFrame;
 import app.views.municipality.MunicipalityCreateJInternalFrame;
 import helpers.Dialog;
 
@@ -45,6 +47,8 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenuItemMunicipiosShow = new javax.swing.JMenuItem();
         jMenuItemMunicipiosCreate = new javax.swing.JMenuItem();
         jMenuConvocatories = new javax.swing.JMenu();
+        jMenuItemConvocatoriesShow = new javax.swing.JMenuItem();
+        jMenuItemConvocatoriesCreate = new javax.swing.JMenuItem();
         jMenuPresentations = new javax.swing.JMenu();
         jMenuInformation = new javax.swing.JMenu();
 
@@ -52,13 +56,16 @@ public class MenuJFrame extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMinimumSize(new java.awt.Dimension(830, 450));
-        setPreferredSize(new java.awt.Dimension(830, 450));
+        setPreferredSize(new java.awt.Dimension(830, 800));
 
         jLabelUser.setFont(new java.awt.Font("Lucida Grande", 2, 13)); // NOI18N
         jLabelUser.setText("Usuario");
         jLabelUser.setToolTipText("");
 
         jDesktopPanelContainer.setBackground(new java.awt.Color(204, 204, 204));
+        jDesktopPanelContainer.setRequestFocusEnabled(false);
+
+        jMenuBar1.setMinimumSize(new java.awt.Dimension(564, 22));
 
         jMenu2.setText("Menú");
         jMenu2.setToolTipText("");
@@ -110,6 +117,24 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenuBar1.add(jMenuMunicipios);
 
         jMenuConvocatories.setText("Convocatorias");
+        jMenuConvocatories.setMinimumSize(new java.awt.Dimension(116, 800));
+
+        jMenuItemConvocatoriesShow.setText("Ver");
+        jMenuItemConvocatoriesShow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConvocatoriesShowActionPerformed(evt);
+            }
+        });
+        jMenuConvocatories.add(jMenuItemConvocatoriesShow);
+
+        jMenuItemConvocatoriesCreate.setText("Crear");
+        jMenuItemConvocatoriesCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemConvocatoriesCreateActionPerformed(evt);
+            }
+        });
+        jMenuConvocatories.add(jMenuItemConvocatoriesCreate);
+
         jMenuBar1.add(jMenuConvocatories);
 
         jMenuPresentations.setText("Presentaciones");
@@ -133,7 +158,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPanelContainer)
+                .addComponent(jDesktopPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelUser)
                 .addContainerGap())
@@ -153,20 +178,32 @@ public class MenuJFrame extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItemExitActionPerformed
 
     private void jMenuItemMunicipiosShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosShowActionPerformed
-        MunicipalityListJInternalFrame  municipalitiesList = new MunicipalityListJInternalFrame(jDesktopPanelContainer);
+        MunicipalityListJInternalFrame municipalitiesList = new MunicipalityListJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(municipalitiesList);
-        
-        // @TODO: Fill rows ¿Mover al controlador?
         
         municipalitiesList.setVisible(true);
     }//GEN-LAST:event_jMenuItemMunicipiosShowActionPerformed
 
     private void jMenuItemMunicipiosCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosCreateActionPerformed
-        MunicipalityCreateJInternalFrame  municipalitiesCreate = new MunicipalityCreateJInternalFrame(jDesktopPanelContainer);
+        MunicipalityCreateJInternalFrame municipalitiesCreate = new MunicipalityCreateJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(municipalitiesCreate);
         
         municipalitiesCreate.setVisible(true);
     }//GEN-LAST:event_jMenuItemMunicipiosCreateActionPerformed
+
+    private void jMenuItemConvocatoriesShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesShowActionPerformed
+        ConvocatoryListJInternalFrame convocatoriesList = new ConvocatoryListJInternalFrame(jDesktopPanelContainer);
+        jDesktopPanelContainer.add(convocatoriesList);
+        
+        convocatoriesList.setVisible(true);
+    }//GEN-LAST:event_jMenuItemConvocatoriesShowActionPerformed
+
+    private void jMenuItemConvocatoriesCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesCreateActionPerformed
+        ConvocatoryCreateJInternalFrame convocatoryCreate = new ConvocatoryCreateJInternalFrame(jDesktopPanelContainer);
+        jDesktopPanelContainer.add(convocatoryCreate);
+        
+        convocatoryCreate.setVisible(true);
+    }//GEN-LAST:event_jMenuItemConvocatoriesCreateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -222,6 +259,8 @@ public class MenuJFrame extends javax.swing.JFrame {
     private javax.swing.JMenu jMenuConvocatories;
     private javax.swing.JMenu jMenuInformation;
     private javax.swing.JMenuItem jMenuItemCloseSession;
+    private javax.swing.JMenuItem jMenuItemConvocatoriesCreate;
+    private javax.swing.JMenuItem jMenuItemConvocatoriesShow;
     private javax.swing.JMenuItem jMenuItemExit;
     private javax.swing.JMenuItem jMenuItemMunicipiosCreate;
     private javax.swing.JMenuItem jMenuItemMunicipiosShow;

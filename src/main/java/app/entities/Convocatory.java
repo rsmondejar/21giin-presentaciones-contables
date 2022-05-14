@@ -155,13 +155,6 @@ public class Convocatory extends BaseEntity {
 
     @Override
     public String toString() {
-        return "Convocatory{" 
-                 + "id=" + this.getId()
-                + ", name=" + this.getName()
-                + ", description=" + this.getDescription()
-                + ", startDate=" + this.getStartDate()
-                + ", endDate=" + this.getEndDate()
-                + ", isValid=" + this.getIsValid()
-                + '}';
+        return this.getName();
     }
 }

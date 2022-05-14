@@ -5,7 +5,9 @@
 package app.dao;
 
 import app.entities.BaseEntity;
+import app.entities.Municipality;
 import app.entities.User;
+import app.entities.UserRole;
 import config.HibernateUtil;
 import helpers.Log;
 import java.util.List;
@@ -31,7 +33,14 @@ public class UserDao extends BaseDao {
      * @return List of users
      */
     public List<User> all() {
-        return super.all();
+        List<User> users = super.all();
+        
+        // Add extra fields: Municpality and UserRole
+        for(int i = 0; i < users.size(); i++) {
+            users.set(i, findById(users.get(i).getId()));
+        }
+        
+        return users;
     }
 
     /**
@@ -42,7 +51,21 @@ public class UserDao extends BaseDao {
      */
     @Override
     public User findById(int id) {
-        return super.findById(id);
+        User user = super.findById(id);
+        
+        // Add Role
+        List<UserRole> userRoles = super
+                    .whereNamedQuery("role", "role_id", String.valueOf(user.getRoleId()));
+        
+        user.setUserRole(userRoles.get(0));
+        
+        // Add Municipality
+        List<Municipality> municipalities = super
+                    .whereNamedQuery("municipality", "municipality_id", String.valueOf(user.getMunicipalityId()));
+        
+        user.setMunicipality(municipalities.get(0));
+        
+        return user;
     }
 
     /**

@@ -17,11 +17,14 @@ import javax.swing.JDesktopPane;
  */
 public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame {
 
+    private final JDesktopPane jDesktopPanelContainer;
+    
     /**
      * Creates new form MunicipalityJInternalFrame
      */
     public MunicipalityCreateJInternalFrame(JDesktopPane jDesktopPanelContainer) {
         initComponents();
+        this.jDesktopPanelContainer = jDesktopPanelContainer;
         loadData();
     }
 

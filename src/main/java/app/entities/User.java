@@ -9,7 +9,10 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 import javax.persistence.UniqueConstraint;
 
 /**
@@ -20,24 +23,44 @@ import javax.persistence.UniqueConstraint;
  */
 @Entity(name = "users")
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "login", name = "loginUniqueConstraint"))
+@NamedNativeQueries({
+    @NamedNativeQuery(
+            name = "role",
+            query = "SELECT ur.* FROM user_roles as ur "
+            + " WHERE ur.id = :role_id",
+            resultClass = UserRole.class
+    ),
+    @NamedNativeQuery(
+            name = "municipality",
+            query = "SELECT m.* FROM municipalities as m "
+            + " WHERE m.id = :municipality_id",
+            resultClass = Municipality.class
+    )
+})
 public class User extends BaseEntity {
 
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected int id;
-    
+
     @Column(name = "login")
     private String login;
-    
+
     @Column(name = "password")
     private String password;
-    
+
     @Column(name = "user_role_id")
     private int roleId;
-    
+
     @Column(name = "municipality_id")
     private int municipalityId;
+
+    @Transient
+    private UserRole userRole;
+
+    @Transient
+    private Municipality municipality;
 
     // <editor-fold defaultstate="collapsed" desc="Constructors">
     public User() {
@@ -59,7 +82,7 @@ public class User extends BaseEntity {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getLogin() {
         return login;
     }
@@ -91,16 +114,26 @@ public class User extends BaseEntity {
     public void setMunicipalityId(int municipalityId) {
         this.municipalityId = municipalityId;
     }
+
+    public UserRole getUserRole() {
+        return userRole;
+    }
+
+    public void setUserRole(UserRole userRole) {
+        this.userRole = userRole;
+    }
+
+    public Municipality getMunicipality() {
+        return municipality;
+    }
+
+    public void setMunicipality(Municipality municipality) {
+        this.municipality = municipality;
+    }
     // </editor-fold>
 
     @Override
     public String toString() {
-        return "User{"
-                + "id=" + this.getId()
-                + ", login=" + this.getLogin()
-                + ", password=" + this.getPassword()
-                + ", roleId=" + this.getRoleId()
-                + ", municipalityId=" + this.getMunicipalityId()
-                + '}';
+        return this.getLogin();
     }
 }

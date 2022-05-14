@@ -5,7 +5,9 @@
 package app.dao;
 
 import app.entities.BaseEntity;
+import app.entities.Municipality;
 import app.entities.User;
+import app.entities.UserRole;
 import config.HibernateUtil;
 import helpers.Log;
 import java.util.List;
@@ -21,9 +23,9 @@ import org.hibernate.query.Query;
  */
 public class UserDao extends BaseDao {
 
-<span class="fc" id="L24">    public UserDao() {</span>
-<span class="fc" id="L25">        super.setModel((BaseEntity) new User());</span>
-<span class="fc" id="L26">    }</span>
+<span class="fc" id="L26">    public UserDao() {</span>
+<span class="fc" id="L27">        super.setModel((BaseEntity) new User());</span>
+<span class="fc" id="L28">    }</span>
 
     /**
      * List Users.
@@ -31,7 +33,14 @@ public class UserDao extends BaseDao {
      * @return List of users
      */
     public List&lt;User&gt; all() {
-<span class="nc" id="L34">        return super.all();</span>
+<span class="nc" id="L36">        List&lt;User&gt; users = super.all();</span>
+        
+        // Add extra fields: Municpality and UserRole
+<span class="nc bnc" id="L39" title="All 2 branches missed.">        for(int i = 0; i &lt; users.size(); i++) {</span>
+<span class="nc" id="L40">            users.set(i, findById(users.get(i).getId()));</span>
+        }
+        
+<span class="nc" id="L43">        return users;</span>
     }
 
     /**
@@ -42,7 +51,21 @@ public class UserDao extends BaseDao {
      */
     @Override
     public User findById(int id) {
-<span class="nc" id="L45">        return super.findById(id);</span>
+<span class="nc" id="L54">        User user = super.findById(id);</span>
+        
+        // Add Role
+<span class="nc" id="L57">        List&lt;UserRole&gt; userRoles = super</span>
+<span class="nc" id="L58">                    .whereNamedQuery(&quot;role&quot;, &quot;role_id&quot;, String.valueOf(user.getRoleId()));</span>
+        
+<span class="nc" id="L60">        user.setUserRole(userRoles.get(0));</span>
+        
+        // Add Municipality
+<span class="nc" id="L63">        List&lt;Municipality&gt; municipalities = super</span>
+<span class="nc" id="L64">                    .whereNamedQuery(&quot;municipality&quot;, &quot;municipality_id&quot;, String.valueOf(user.getMunicipalityId()));</span>
+        
+<span class="nc" id="L66">        user.setMunicipality(municipalities.get(0));</span>
+        
+<span class="nc" id="L68">        return user;</span>
     }
 
     /**
@@ -53,7 +76,7 @@ public class UserDao extends BaseDao {
      * @return status
      */
     public &lt;T&gt; Integer create(User user) {
-<span class="fc" id="L56">        return super.create((BaseEntity) user);</span>
+<span class="fc" id="L79">        return super.create((BaseEntity) user);</span>
     }
 
     /**
@@ -65,7 +88,7 @@ public class UserDao extends BaseDao {
      * @return
      */
     public &lt;T&gt; boolean update(int id, User user) {
-<span class="fc" id="L68">        return super.update(id, (BaseEntity) user);</span>
+<span class="fc" id="L91">        return super.update(id, (BaseEntity) user);</span>
     }
 
     /**
@@ -76,7 +99,7 @@ public class UserDao extends BaseDao {
      */
     @Override
     public boolean delete(int id) {
-<span class="fc" id="L79">        return super.delete(id);</span>
+<span class="fc" id="L102">        return super.delete(id);</span>
     }
     
     /**
@@ -88,27 +111,27 @@ public class UserDao extends BaseDao {
      */
     public User findByLoginAndPassword(String login, String password) throws Exception {
         try {
-<span class="fc" id="L91">            Session session = HibernateUtil.get().getCurrentSession();</span>
+<span class="fc" id="L114">            Session session = HibernateUtil.get().getCurrentSession();</span>
 
-<span class="fc" id="L93">            session.beginTransaction();</span>
+<span class="fc" id="L116">            session.beginTransaction();</span>
             
-<span class="fc" id="L95">            Query query = session.createQuery(&quot;SELECT u FROM users u WHERE u.login=:login AND u.password=:password&quot;);</span>
-<span class="fc" id="L96">            query.setParameter(&quot;login&quot;, login);</span>
-<span class="fc" id="L97">            query.setParameter(&quot;password&quot;, password);</span>
+<span class="fc" id="L118">            Query query = session.createQuery(&quot;SELECT u FROM users u WHERE u.login=:login AND u.password=:password&quot;);</span>
+<span class="fc" id="L119">            query.setParameter(&quot;login&quot;, login);</span>
+<span class="fc" id="L120">            query.setParameter(&quot;password&quot;, password);</span>
             
-<span class="fc" id="L99">            User user = (User) query.uniqueResult();</span>
+<span class="fc" id="L122">            User user = (User) query.uniqueResult();</span>
             
-<span class="fc bfc" id="L101" title="All 2 branches covered.">            if (user == null) {</span>
-<span class="fc" id="L102">                throw new Exception(&quot;Not found user with login '%s' and password '%s'&quot;.formatted(login, password));</span>
+<span class="fc bfc" id="L124" title="All 2 branches covered.">            if (user == null) {</span>
+<span class="fc" id="L125">                throw new Exception(&quot;Not found user with login '%s' and password '%s'&quot;.formatted(login, password));</span>
             }
 
-<span class="fc" id="L105">            return user;</span>
+<span class="fc" id="L128">            return user;</span>
 
-<span class="nc" id="L107">        } catch (HibernateException exception) {</span>
-<span class="nc" id="L108">            Log.error(exception);</span>
-<span class="nc" id="L109">            throw exception;</span>
+<span class="nc" id="L130">        } catch (HibernateException exception) {</span>
+<span class="nc" id="L131">            Log.error(exception);</span>
+<span class="nc" id="L132">            throw exception;</span>
         } finally {
-<span class="fc" id="L111">            HibernateUtil.get().getCurrentSession().close();</span>
+<span class="fc" id="L134">            HibernateUtil.get().getCurrentSession().close();</span>
         }
     }
 }

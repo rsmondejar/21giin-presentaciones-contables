@@ -59,9 +59,6 @@ public class DocumentType extends BaseEntity {
 
     @Override
     public String toString() {
-        return "DocumentType{"
-                + "id=" + this.getId()
-                + ", name=" + this.getName()
-                + '}';
+        return this.getName();
     }
 }

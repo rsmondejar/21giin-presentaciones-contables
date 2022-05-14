@@ -143,7 +143,7 @@ public class MunicipalityShowJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L143">            int id = Integer.parseInt(jTextFieldMunicipioId.getText());</span>
 <span class="nc" id="L144">            Municipality municipality = MunicipalityController.findById(id);</span>
             
-<span class="nc" id="L146">            MunicipalityEditJInternalFrame municipalitiesEdit = new MunicipalityEditJInternalFrame();</span>
+<span class="nc" id="L146">            MunicipalityEditJInternalFrame municipalitiesEdit = new MunicipalityEditJInternalFrame(jDesktopPanelContainer);</span>
         
 <span class="nc" id="L148">            jDesktopPanelContainer.add(municipalitiesEdit);</span>
         

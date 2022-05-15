@@ -61,7 +61,7 @@ public class User extends BaseEntity {
 
     @Transient
     private Municipality municipality;
-
+    
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
 <span class="fc" id="L66">    public User() {</span>
 <span class="fc" id="L67">    }</span>
@@ -108,7 +108,7 @@ public class User extends BaseEntity {
 <span class="fc" id="L108">    }</span>
 
     public int getRoleId() {
-<span class="nc" id="L111">        return roleId;</span>
+<span class="fc" id="L111">        return roleId;</span>
     }
 
     public void setRoleId(int roleId) {
@@ -116,7 +116,7 @@ public class User extends BaseEntity {
 <span class="fc" id="L116">    }</span>
 
     public int getMunicipalityId() {
-<span class="nc" id="L119">        return municipalityId;</span>
+<span class="fc" id="L119">        return municipalityId;</span>
     }
 
     public void setMunicipalityId(int municipalityId) {
@@ -128,21 +128,29 @@ public class User extends BaseEntity {
     }
 
     public void setUserRole(UserRole userRole) {
-<span class="nc" id="L131">        this.userRole = userRole;</span>
-<span class="nc" id="L132">    }</span>
+<span class="fc" id="L131">        this.userRole = userRole;</span>
+<span class="fc" id="L132">    }</span>
 
     public Municipality getMunicipality() {
 <span class="nc" id="L135">        return municipality;</span>
     }
 
     public void setMunicipality(Municipality municipality) {
-<span class="nc" id="L139">        this.municipality = municipality;</span>
-<span class="nc" id="L140">    }</span>
+<span class="fc" id="L139">        this.municipality = municipality;</span>
+<span class="fc" id="L140">    }</span>
+    
+    public String getRoleName() {
+<span class="nc" id="L143">        return this.getUserRole().getRole();</span>
+    }
+    
+    public String getMunicipalityName() {
+<span class="nc" id="L147">        return this.getMunicipality().getName();</span>
+    }
     // &lt;/editor-fold&gt;
 
     @Override
     public String toString() {
-<span class="nc" id="L145">        return this.getLogin();</span>
+<span class="nc" id="L153">        return this.getLogin();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

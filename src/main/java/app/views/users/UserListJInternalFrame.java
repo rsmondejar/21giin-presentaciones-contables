@@ -43,8 +43,8 @@ public class UserListJInternalFrame extends javax.swing.JInternalFrame {
         for (int i = 0; i < items.size(); i++) {
             rowData[0] = items.get(i).getId();
             rowData[1] = items.get(i).getLogin();
-            rowData[2] = items.get(i).getUserRole().getRole();
-            rowData[3] = items.get(i).getMunicipality().getName();
+            rowData[2] = items.get(i).getRoleName();
+            rowData[3] = items.get(i).getMunicipalityName();
             
             model.addRow(rowData);
         }

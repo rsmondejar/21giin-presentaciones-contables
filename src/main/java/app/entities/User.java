@@ -61,7 +61,7 @@ public class User extends BaseEntity {
 
     @Transient
     private Municipality municipality;
-
+    
     // <editor-fold defaultstate="collapsed" desc="Constructors">
     public User() {
     }
@@ -137,6 +137,14 @@ public class User extends BaseEntity {
 
     public void setMunicipality(Municipality municipality) {
         this.municipality = municipality;
+    }
+    
+    public String getRoleName() {
+        return this.getUserRole().getRole();
+    }
+    
+    public String getMunicipalityName() {
+        return this.getMunicipality().getName();
     }
     // </editor-fold>
 

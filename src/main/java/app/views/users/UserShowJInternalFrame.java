@@ -38,8 +38,8 @@ public class UserShowJInternalFrame extends javax.swing.JInternalFrame {
         
         jTextFieldUserLogin.setText(user.getLogin());
         jPasswordFieldUserPassword.setText(user.getPassword());
-        jTextFieldUserRole.setText(user.getUserRole().getRole());
-        jTextFieldUserMunicipality.setText(user.getMunicipality().getName());
+        jTextFieldUserRole.setText(user.getRoleName());
+        jTextFieldUserMunicipality.setText(user.getMunicipalityName());
     }
     
     /**

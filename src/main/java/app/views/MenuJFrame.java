@@ -58,6 +58,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenu1.setText("jMenu1");
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Presentaciones Contables");
         setMinimumSize(new java.awt.Dimension(830, 450));
         setPreferredSize(new java.awt.Dimension(830, 800));
 
@@ -271,13 +272,12 @@ public class MenuJFrame extends javax.swing.JFrame {
         });
     }
 
+    /**
+     * Set User Footer Info.
+     * @param user User
+     */
     public void setUserFooterInfo(User user) {
-    
-        String name = user.getLogin();
-        String role = String.valueOf(user.getRoleId());
-        
-        String text = "Bievenido: " + name + " [Role: " + role + "]";
-        
+        String text = "Bievenido: %s [Role: %s]".formatted(user.getLogin(), user.getRoleName());
         jLabelUser.setText(text);
     }
     

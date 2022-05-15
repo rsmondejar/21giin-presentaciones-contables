@@ -13,6 +13,7 @@ import helpers.Log;
 import java.util.List;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 /**
@@ -51,21 +52,7 @@ public class UserDao extends BaseDao {
      */
     @Override
     public User findById(int id) {
-        User user = super.findById(id);
-        
-        // Add Role
-        List<UserRole> userRoles = super
-                    .whereNamedQuery("role", "role_id", String.valueOf(user.getRoleId()));
-        
-        user.setUserRole(userRoles.get(0));
-        
-        // Add Municipality
-        List<Municipality> municipalities = super
-                    .whereNamedQuery("municipality", "municipality_id", String.valueOf(user.getMunicipalityId()));
-        
-        user.setMunicipality(municipalities.get(0));
-        
-        return user;
+        return addRelations(super.findById(id));
     }
 
     /**
@@ -110,10 +97,11 @@ public class UserDao extends BaseDao {
      * @throws Exception 
      */
     public User findByLoginAndPassword(String login, String password) throws Exception {
+        Transaction trns = null;
+        Session session = HibernateUtil.get().getCurrentSession();
+        
         try {
-            Session session = HibernateUtil.get().getCurrentSession();
-
-            session.beginTransaction();
+            trns = session.beginTransaction();
             
             Query query = session.createQuery("SELECT u FROM users u WHERE u.login=:login AND u.password=:password");
             query.setParameter("login", login);
@@ -124,14 +112,44 @@ public class UserDao extends BaseDao {
             if (user == null) {
                 throw new Exception("Not found user with login '%s' and password '%s'".formatted(login, password));
             }
+            
+            trns.commit();
 
-            return user;
-
+            return addRelations(user);
         } catch (HibernateException exception) {
+            if (trns != null) {
+                trns.rollback();
+            }
             Log.error(exception);
             throw exception;
         } finally {
-            HibernateUtil.get().getCurrentSession().close();
+            session.close();
         }
+    }
+    
+    /**
+     * Add Relations.
+     * @param user User
+     */ 
+    private User addRelations(User user) {
+        try {
+            // Add Role
+            List<UserRole> userRoles = super
+                        .whereNamedQuery("role", "role_id", String.valueOf(user.getRoleId()));
+
+            user.setUserRole(userRoles.get(0));
+
+            // Add Municipality
+            List<Municipality> municipalities = super
+                        .whereNamedQuery("municipality", "municipality_id", String.valueOf(user.getMunicipalityId()));
+
+            user.setMunicipality(municipalities.get(0));
+
+            return user;
+        } catch(Exception exception) {
+            Log.error(exception);
+        }
+        
+        return null;
     }
 }

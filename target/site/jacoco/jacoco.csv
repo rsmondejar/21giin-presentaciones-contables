@@ -2,17 +2,35 @@ GROUP,PACKAGE,CLASS,INSTRUCTION_MISSED,INSTRUCTION_COVERED,BRANCH_MISSED,BRANCH_
 PresentacionesContables,app.controllers,MainController,28,0,0,0,11,0,4,0,4,0
 PresentacionesContables,app.controllers,LoginController,39,0,2,0,16,0,3,0,2,0
 PresentacionesContables,app.controllers,MunicipalityController,107,0,2,0,39,0,8,0,7,0
+PresentacionesContables,app.controllers,UserController,107,0,2,0,39,0,8,0,7,0
+PresentacionesContables,app.controllers,UserRoleController,107,0,2,0,39,0,8,0,7,0
 PresentacionesContables,app.controllers,BaseController,9,0,0,0,4,0,1,0,1,0
 PresentacionesContables,app.controllers,ConvocatoryController,109,0,2,0,40,0,8,0,7,0
 PresentacionesContables,app,Main,32,0,0,0,16,0,7,0,7,0
+PresentacionesContables,app.views.users,UserEditJInternalFrame.new KeyAdapter() {...},11,0,0,0,3,0,2,0,2,0
+PresentacionesContables,app.views.users,UserListJInternalFrame.new MouseAdapter() {...},11,0,0,0,3,0,2,0,2,0
+PresentacionesContables,app.views.users,UserListJInternalFrame.new DefaultTableModel() {...},58,0,0,0,5,0,3,0,3,0
+PresentacionesContables,app.views.users,UserCreateJInternalFrame.new KeyAdapter() {...},11,0,0,0,3,0,2,0,2,0
+PresentacionesContables,app.views.users,UserCreateJInternalFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+PresentacionesContables,app.views.users,UserCreateJInternalFrame.new KeyAdapter() {...},11,0,0,0,3,0,2,0,2,0
+PresentacionesContables,app.views.users,UserCreateJInternalFrame,510,0,22,0,123,0,24,0,13,0
+PresentacionesContables,app.views.users,UserEditJInternalFrame,588,0,22,0,141,0,25,0,14,0
+PresentacionesContables,app.views.users,UserShowJInternalFrame,529,0,4,0,133,0,7,0,5,0
+PresentacionesContables,app.views.users,UserListJInternalFrame,252,0,2,0,58,0,5,0,4,0
+PresentacionesContables,app.views.users,UserEditJInternalFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+PresentacionesContables,app.views.users,UserEditJInternalFrame.new KeyAdapter() {...},11,0,0,0,3,0,2,0,2,0
+PresentacionesContables,app.views.users,UserShowJInternalFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+PresentacionesContables,app.views.users,UserShowJInternalFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,seeders,UserSeeder,80,0,8,0,19,0,6,0,2,0
 PresentacionesContables,helpers,Log,32,0,0,0,11,0,5,0,5,0
 PresentacionesContables,helpers,Dialog,24,0,0,0,9,0,5,0,5,0
 PresentacionesContables,helpers,RandomString,84,0,6,0,20,0,9,0,6,0
-PresentacionesContables,app.dao,UserDao,13,70,0,2,5,16,2,6,2,5
+PresentacionesContables,helpers,ComboBox,30,0,2,0,10,0,4,0,3,0
+PresentacionesContables,app.dao,UserDao,64,70,2,2,15,16,3,6,2,5
 PresentacionesContables,app.dao,MunicipalityDao,29,0,0,0,8,0,6,0,6,0
 PresentacionesContables,app.dao,ConvocatoryDao,111,0,4,0,27,0,8,0,6,0
 PresentacionesContables,app.dao,ConvocatoryDocumentTypeDao,29,0,0,0,8,0,6,0,6,0
+PresentacionesContables,app.dao,UserRoleDao,29,0,0,0,8,0,6,0,6,0
 PresentacionesContables,app.dao,BaseDao,248,91,20,2,79,29,16,6,5,6
 PresentacionesContables,app.dao,DocumentTypeDao,29,0,0,0,8,0,6,0,6,0
 PresentacionesContables,app.views.convocatory,ConvocatoryCreateJInternalFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
@@ -25,17 +43,17 @@ PresentacionesContables,app.views.convocatory,ConvocatoryListJInternalFrame.new 
 PresentacionesContables,app.views.convocatory,ConvocatoryListJInternalFrame.new MouseAdapter() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views.convocatory,ConvocatoryShowJInternalFrame,829,0,16,0,201,0,14,0,6,0
 PresentacionesContables,app.views.convocatory,ConvocatoryEditJInternalFrame,966,0,58,0,228,0,50,0,21,0
-PresentacionesContables,app.entities,UserRole,26,3,0,0,12,2,6,1,6,1
-PresentacionesContables,app.entities,DocumentType,26,3,0,0,12,2,6,1,6,1
+PresentacionesContables,app.entities,UserRole,23,3,0,0,10,2,6,1,6,1
+PresentacionesContables,app.entities,DocumentType,23,3,0,0,10,2,6,1,6,1
 PresentacionesContables,app.entities,BaseEntity,3,3,0,0,1,1,1,1,1,1
-PresentacionesContables,app.entities,MunicipalityCategory,26,3,0,0,12,2,6,1,6,1
-PresentacionesContables,app.entities,Municipality,38,3,0,0,17,2,8,1,8,1
-PresentacionesContables,app.entities,User,28,37,0,0,12,17,6,7,6,7
+PresentacionesContables,app.entities,MunicipalityCategory,23,3,0,0,10,2,6,1,6,1
+PresentacionesContables,app.entities,Municipality,33,3,0,0,14,2,8,1,8,1
+PresentacionesContables,app.entities,User,51,37,0,0,20,17,11,7,11,7
 PresentacionesContables,app.entities,Presentation,50,3,0,0,22,2,10,1,10,1
 PresentacionesContables,app.entities,ConvocatoryDocumentType,50,3,0,0,22,2,9,1,9,1
-PresentacionesContables,app.entities,Convocatory,126,3,0,0,52,2,18,1,18,1
+PresentacionesContables,app.entities,Convocatory,115,3,0,0,46,2,18,1,18,1
 PresentacionesContables,app.views.municipality,MunicipalityEditJInternalFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
-PresentacionesContables,app.views.municipality,MunicipalityEditJInternalFrame,368,0,14,0,89,0,16,0,9,0
+PresentacionesContables,app.views.municipality,MunicipalityEditJInternalFrame,371,0,14,0,90,0,16,0,9,0
 PresentacionesContables,app.views.municipality,MunicipalityCreateJInternalFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views.municipality,MunicipalityCreateJInternalFrame.new KeyAdapter() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views.municipality,MunicipalityShowJInternalFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
@@ -43,8 +61,8 @@ PresentacionesContables,app.views.municipality,MunicipalityShowJInternalFrame.ne
 PresentacionesContables,app.views.municipality,MunicipalityListJInternalFrame.new DefaultTableModel() {...},50,0,0,0,5,0,3,0,3,0
 PresentacionesContables,app.views.municipality,MunicipalityListJInternalFrame.new MouseAdapter() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views.municipality,MunicipalityListJInternalFrame,234,0,2,0,55,0,5,0,4,0
-PresentacionesContables,app.views.municipality,MunicipalityShowJInternalFrame,384,0,4,0,97,0,7,0,5,0
-PresentacionesContables,app.views.municipality,MunicipalityCreateJInternalFrame,354,0,16,0,90,0,19,0,11,0
+PresentacionesContables,app.views.municipality,MunicipalityShowJInternalFrame,386,0,4,0,97,0,7,0,5,0
+PresentacionesContables,app.views.municipality,MunicipalityCreateJInternalFrame,357,0,16,0,91,0,19,0,11,0
 PresentacionesContables,config,HibernateUtil,10,16,0,0,4,7,1,2,1,2
 PresentacionesContables,app.views,LoginJFrame,440,0,26,0,103,0,23,0,10,0
 PresentacionesContables,app.views,MenuJFrame.new Runnable() {...},9,0,0,0,3,0,2,0,2,0
@@ -52,8 +70,10 @@ PresentacionesContables,app.views,MenuJFrame.new ActionListener() {...},11,0,0,0
 PresentacionesContables,app.views,MenuJFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views,MenuJFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views,MenuJFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+PresentacionesContables,app.views,MenuJFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+PresentacionesContables,app.views,MenuJFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views,BaseView,3,0,0,0,1,0,1,0,1,0
-PresentacionesContables,app.views,MenuJFrame,549,0,4,0,125,0,12,0,10,0
+PresentacionesContables,app.views,MenuJFrame,609,0,4,0,139,0,14,0,12,0
 PresentacionesContables,app.views,MenuJFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views,MenuJFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views,LoginJFrame.new Runnable() {...},9,0,0,0,3,0,2,0,2,0

@@ -9,6 +9,8 @@ import app.entities.User;
 import app.views.convocatory.ConvocatoryCreateJInternalFrame;
 import app.views.convocatory.ConvocatoryListJInternalFrame;
 import app.views.municipality.MunicipalityCreateJInternalFrame;
+import app.views.users.UserCreateJInternalFrame;
+import app.views.users.UserListJInternalFrame;
 import helpers.Dialog;
 
 /**
@@ -43,6 +45,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenuItemExit = new javax.swing.JMenuItem();
         jMenuUsers = new javax.swing.JMenu();
         jMenuItemUsersShow = new javax.swing.JMenuItem();
+        jMenuItemUsersCreate = new javax.swing.JMenuItem();
         jMenuMunicipios = new javax.swing.JMenu();
         jMenuItemMunicipiosShow = new javax.swing.JMenuItem();
         jMenuItemMunicipiosCreate = new javax.swing.JMenuItem();
@@ -92,7 +95,21 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenuUsers.setText("Usuarios");
 
         jMenuItemUsersShow.setText("Ver");
+        jMenuItemUsersShow.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemUsersShowActionPerformed(evt);
+            }
+        });
         jMenuUsers.add(jMenuItemUsersShow);
+
+        jMenuItemUsersCreate.setText("Crear");
+        jMenuItemUsersCreate.setToolTipText("");
+        jMenuItemUsersCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemUsersCreateActionPerformed(evt);
+            }
+        });
+        jMenuUsers.add(jMenuItemUsersCreate);
 
         jMenuBar1.add(jMenuUsers);
 
@@ -158,7 +175,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addComponent(jDesktopPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)
+                .addComponent(jDesktopPanelContainer)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabelUser)
                 .addContainerGap())
@@ -204,6 +221,20 @@ public class MenuJFrame extends javax.swing.JFrame {
         
         convocatoryCreate.setVisible(true);
     }//GEN-LAST:event_jMenuItemConvocatoriesCreateActionPerformed
+
+    private void jMenuItemUsersShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsersShowActionPerformed
+        UserListJInternalFrame usersList = new UserListJInternalFrame(jDesktopPanelContainer);
+        jDesktopPanelContainer.add(usersList);
+        
+        usersList.setVisible(true);
+    }//GEN-LAST:event_jMenuItemUsersShowActionPerformed
+
+    private void jMenuItemUsersCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsersCreateActionPerformed
+        UserCreateJInternalFrame userCreate = new UserCreateJInternalFrame(jDesktopPanelContainer);
+        jDesktopPanelContainer.add(userCreate);
+        
+        userCreate.setVisible(true);
+    }//GEN-LAST:event_jMenuItemUsersCreateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -264,6 +295,7 @@ public class MenuJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemExit;
     private javax.swing.JMenuItem jMenuItemMunicipiosCreate;
     private javax.swing.JMenuItem jMenuItemMunicipiosShow;
+    private javax.swing.JMenuItem jMenuItemUsersCreate;
     private javax.swing.JMenuItem jMenuItemUsersShow;
     private javax.swing.JMenu jMenuMunicipios;
     private javax.swing.JMenu jMenuPresentations;

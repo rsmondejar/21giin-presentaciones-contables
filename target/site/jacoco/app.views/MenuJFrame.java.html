@@ -9,6 +9,8 @@ import app.entities.User;
 import app.views.convocatory.ConvocatoryCreateJInternalFrame;
 import app.views.convocatory.ConvocatoryListJInternalFrame;
 import app.views.municipality.MunicipalityCreateJInternalFrame;
+import app.views.users.UserCreateJInternalFrame;
+import app.views.users.UserListJInternalFrame;
 import helpers.Dialog;
 
 /**
@@ -20,9 +22,9 @@ public class MenuJFrame extends javax.swing.JFrame {
     /**
      * Creates new form MenuJFrame
      */
-<span class="nc" id="L23">    public MenuJFrame() {</span>
-<span class="nc" id="L24">        initComponents();</span>
-<span class="nc" id="L25">    }</span>
+<span class="nc" id="L25">    public MenuJFrame() {</span>
+<span class="nc" id="L26">        initComponents();</span>
+<span class="nc" id="L27">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,177 +35,206 @@ public class MenuJFrame extends javax.swing.JFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L36">        jMenu1 = new javax.swing.JMenu();</span>
-<span class="nc" id="L37">        jLabelUser = new javax.swing.JLabel();</span>
-<span class="nc" id="L38">        jDesktopPanelContainer = new javax.swing.JDesktopPane();</span>
-<span class="nc" id="L39">        jMenuBar1 = new javax.swing.JMenuBar();</span>
-<span class="nc" id="L40">        jMenu2 = new javax.swing.JMenu();</span>
-<span class="nc" id="L41">        jMenuItemCloseSession = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L42">        jSeparator1 = new javax.swing.JPopupMenu.Separator();</span>
-<span class="nc" id="L43">        jMenuItemExit = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L44">        jMenuUsers = new javax.swing.JMenu();</span>
-<span class="nc" id="L45">        jMenuItemUsersShow = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L46">        jMenuMunicipios = new javax.swing.JMenu();</span>
-<span class="nc" id="L47">        jMenuItemMunicipiosShow = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L48">        jMenuItemMunicipiosCreate = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L49">        jMenuConvocatories = new javax.swing.JMenu();</span>
-<span class="nc" id="L50">        jMenuItemConvocatoriesShow = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L51">        jMenuItemConvocatoriesCreate = new javax.swing.JMenuItem();</span>
-<span class="nc" id="L52">        jMenuPresentations = new javax.swing.JMenu();</span>
-<span class="nc" id="L53">        jMenuInformation = new javax.swing.JMenu();</span>
+<span class="nc" id="L38">        jMenu1 = new javax.swing.JMenu();</span>
+<span class="nc" id="L39">        jLabelUser = new javax.swing.JLabel();</span>
+<span class="nc" id="L40">        jDesktopPanelContainer = new javax.swing.JDesktopPane();</span>
+<span class="nc" id="L41">        jMenuBar1 = new javax.swing.JMenuBar();</span>
+<span class="nc" id="L42">        jMenu2 = new javax.swing.JMenu();</span>
+<span class="nc" id="L43">        jMenuItemCloseSession = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L44">        jSeparator1 = new javax.swing.JPopupMenu.Separator();</span>
+<span class="nc" id="L45">        jMenuItemExit = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L46">        jMenuUsers = new javax.swing.JMenu();</span>
+<span class="nc" id="L47">        jMenuItemUsersShow = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L48">        jMenuItemUsersCreate = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L49">        jMenuMunicipios = new javax.swing.JMenu();</span>
+<span class="nc" id="L50">        jMenuItemMunicipiosShow = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L51">        jMenuItemMunicipiosCreate = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L52">        jMenuConvocatories = new javax.swing.JMenu();</span>
+<span class="nc" id="L53">        jMenuItemConvocatoriesShow = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L54">        jMenuItemConvocatoriesCreate = new javax.swing.JMenuItem();</span>
+<span class="nc" id="L55">        jMenuPresentations = new javax.swing.JMenu();</span>
+<span class="nc" id="L56">        jMenuInformation = new javax.swing.JMenu();</span>
 
-<span class="nc" id="L55">        jMenu1.setText(&quot;jMenu1&quot;);</span>
+<span class="nc" id="L58">        jMenu1.setText(&quot;jMenu1&quot;);</span>
 
-<span class="nc" id="L57">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
-<span class="nc" id="L58">        setMinimumSize(new java.awt.Dimension(830, 450));</span>
-<span class="nc" id="L59">        setPreferredSize(new java.awt.Dimension(830, 800));</span>
+<span class="nc" id="L60">        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);</span>
+<span class="nc" id="L61">        setMinimumSize(new java.awt.Dimension(830, 450));</span>
+<span class="nc" id="L62">        setPreferredSize(new java.awt.Dimension(830, 800));</span>
 
-<span class="nc" id="L61">        jLabelUser.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L62">        jLabelUser.setText(&quot;Usuario&quot;);</span>
-<span class="nc" id="L63">        jLabelUser.setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L64">        jLabelUser.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L65">        jLabelUser.setText(&quot;Usuario&quot;);</span>
+<span class="nc" id="L66">        jLabelUser.setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L65">        jDesktopPanelContainer.setBackground(new java.awt.Color(204, 204, 204));</span>
-<span class="nc" id="L66">        jDesktopPanelContainer.setRequestFocusEnabled(false);</span>
+<span class="nc" id="L68">        jDesktopPanelContainer.setBackground(new java.awt.Color(204, 204, 204));</span>
+<span class="nc" id="L69">        jDesktopPanelContainer.setRequestFocusEnabled(false);</span>
 
-<span class="nc" id="L68">        jMenuBar1.setMinimumSize(new java.awt.Dimension(564, 22));</span>
+<span class="nc" id="L71">        jMenuBar1.setMinimumSize(new java.awt.Dimension(564, 22));</span>
 
-<span class="nc" id="L70">        jMenu2.setText(&quot;Menú&quot;);</span>
-<span class="nc" id="L71">        jMenu2.setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L73">        jMenu2.setText(&quot;Menú&quot;);</span>
+<span class="nc" id="L74">        jMenu2.setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L73">        jMenuItemCloseSession.setText(&quot;Cerrar sesión&quot;);</span>
-<span class="nc" id="L74">        jMenuItemCloseSession.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L76">        jMenuItemCloseSession.setText(&quot;Cerrar sesión&quot;);</span>
+<span class="nc" id="L77">        jMenuItemCloseSession.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L76">                jMenuItemCloseSessionActionPerformed(evt);</span>
-<span class="nc" id="L77">            }</span>
+<span class="nc" id="L79">                jMenuItemCloseSessionActionPerformed(evt);</span>
+<span class="nc" id="L80">            }</span>
         });
-<span class="nc" id="L79">        jMenu2.add(jMenuItemCloseSession);</span>
-<span class="nc" id="L80">        jMenu2.add(jSeparator1);</span>
+<span class="nc" id="L82">        jMenu2.add(jMenuItemCloseSession);</span>
+<span class="nc" id="L83">        jMenu2.add(jSeparator1);</span>
 
-<span class="nc" id="L82">        jMenuItemExit.setText(&quot;Salir&quot;);</span>
-<span class="nc" id="L83">        jMenuItemExit.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L85">        jMenuItemExit.setText(&quot;Salir&quot;);</span>
+<span class="nc" id="L86">        jMenuItemExit.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L85">                jMenuItemExitActionPerformed(evt);</span>
-<span class="nc" id="L86">            }</span>
+<span class="nc" id="L88">                jMenuItemExitActionPerformed(evt);</span>
+<span class="nc" id="L89">            }</span>
         });
-<span class="nc" id="L88">        jMenu2.add(jMenuItemExit);</span>
+<span class="nc" id="L91">        jMenu2.add(jMenuItemExit);</span>
 
-<span class="nc" id="L90">        jMenuBar1.add(jMenu2);</span>
+<span class="nc" id="L93">        jMenuBar1.add(jMenu2);</span>
 
-<span class="nc" id="L92">        jMenuUsers.setText(&quot;Usuarios&quot;);</span>
+<span class="nc" id="L95">        jMenuUsers.setText(&quot;Usuarios&quot;);</span>
 
-<span class="nc" id="L94">        jMenuItemUsersShow.setText(&quot;Ver&quot;);</span>
-<span class="nc" id="L95">        jMenuUsers.add(jMenuItemUsersShow);</span>
-
-<span class="nc" id="L97">        jMenuBar1.add(jMenuUsers);</span>
-
-<span class="nc" id="L99">        jMenuMunicipios.setText(&quot;Municipios&quot;);</span>
-
-<span class="nc" id="L101">        jMenuItemMunicipiosShow.setText(&quot;Ver&quot;);</span>
-<span class="nc" id="L102">        jMenuItemMunicipiosShow.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L97">        jMenuItemUsersShow.setText(&quot;Ver&quot;);</span>
+<span class="nc" id="L98">        jMenuItemUsersShow.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L104">                jMenuItemMunicipiosShowActionPerformed(evt);</span>
-<span class="nc" id="L105">            }</span>
+<span class="nc" id="L100">                jMenuItemUsersShowActionPerformed(evt);</span>
+<span class="nc" id="L101">            }</span>
         });
-<span class="nc" id="L107">        jMenuMunicipios.add(jMenuItemMunicipiosShow);</span>
+<span class="nc" id="L103">        jMenuUsers.add(jMenuItemUsersShow);</span>
 
-<span class="nc" id="L109">        jMenuItemMunicipiosCreate.setText(&quot;Crear&quot;);</span>
-<span class="nc" id="L110">        jMenuItemMunicipiosCreate.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L105">        jMenuItemUsersCreate.setText(&quot;Crear&quot;);</span>
+<span class="nc" id="L106">        jMenuItemUsersCreate.setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L107">        jMenuItemUsersCreate.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L112">                jMenuItemMunicipiosCreateActionPerformed(evt);</span>
-<span class="nc" id="L113">            }</span>
+<span class="nc" id="L109">                jMenuItemUsersCreateActionPerformed(evt);</span>
+<span class="nc" id="L110">            }</span>
         });
-<span class="nc" id="L115">        jMenuMunicipios.add(jMenuItemMunicipiosCreate);</span>
+<span class="nc" id="L112">        jMenuUsers.add(jMenuItemUsersCreate);</span>
 
-<span class="nc" id="L117">        jMenuBar1.add(jMenuMunicipios);</span>
+<span class="nc" id="L114">        jMenuBar1.add(jMenuUsers);</span>
 
-<span class="nc" id="L119">        jMenuConvocatories.setText(&quot;Convocatorias&quot;);</span>
-<span class="nc" id="L120">        jMenuConvocatories.setMinimumSize(new java.awt.Dimension(116, 800));</span>
+<span class="nc" id="L116">        jMenuMunicipios.setText(&quot;Municipios&quot;);</span>
 
-<span class="nc" id="L122">        jMenuItemConvocatoriesShow.setText(&quot;Ver&quot;);</span>
-<span class="nc" id="L123">        jMenuItemConvocatoriesShow.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L118">        jMenuItemMunicipiosShow.setText(&quot;Ver&quot;);</span>
+<span class="nc" id="L119">        jMenuItemMunicipiosShow.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L125">                jMenuItemConvocatoriesShowActionPerformed(evt);</span>
-<span class="nc" id="L126">            }</span>
+<span class="nc" id="L121">                jMenuItemMunicipiosShowActionPerformed(evt);</span>
+<span class="nc" id="L122">            }</span>
         });
-<span class="nc" id="L128">        jMenuConvocatories.add(jMenuItemConvocatoriesShow);</span>
+<span class="nc" id="L124">        jMenuMunicipios.add(jMenuItemMunicipiosShow);</span>
 
-<span class="nc" id="L130">        jMenuItemConvocatoriesCreate.setText(&quot;Crear&quot;);</span>
-<span class="nc" id="L131">        jMenuItemConvocatoriesCreate.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L126">        jMenuItemMunicipiosCreate.setText(&quot;Crear&quot;);</span>
+<span class="nc" id="L127">        jMenuItemMunicipiosCreate.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L133">                jMenuItemConvocatoriesCreateActionPerformed(evt);</span>
-<span class="nc" id="L134">            }</span>
+<span class="nc" id="L129">                jMenuItemMunicipiosCreateActionPerformed(evt);</span>
+<span class="nc" id="L130">            }</span>
         });
-<span class="nc" id="L136">        jMenuConvocatories.add(jMenuItemConvocatoriesCreate);</span>
+<span class="nc" id="L132">        jMenuMunicipios.add(jMenuItemMunicipiosCreate);</span>
 
-<span class="nc" id="L138">        jMenuBar1.add(jMenuConvocatories);</span>
+<span class="nc" id="L134">        jMenuBar1.add(jMenuMunicipios);</span>
 
-<span class="nc" id="L140">        jMenuPresentations.setText(&quot;Presentaciones&quot;);</span>
-<span class="nc" id="L141">        jMenuBar1.add(jMenuPresentations);</span>
+<span class="nc" id="L136">        jMenuConvocatories.setText(&quot;Convocatorias&quot;);</span>
+<span class="nc" id="L137">        jMenuConvocatories.setMinimumSize(new java.awt.Dimension(116, 800));</span>
 
-<span class="nc" id="L143">        jMenuInformation.setText(&quot;Información&quot;);</span>
-<span class="nc" id="L144">        jMenuBar1.add(jMenuInformation);</span>
+<span class="nc" id="L139">        jMenuItemConvocatoriesShow.setText(&quot;Ver&quot;);</span>
+<span class="nc" id="L140">        jMenuItemConvocatoriesShow.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L142">                jMenuItemConvocatoriesShowActionPerformed(evt);</span>
+<span class="nc" id="L143">            }</span>
+        });
+<span class="nc" id="L145">        jMenuConvocatories.add(jMenuItemConvocatoriesShow);</span>
 
-<span class="nc" id="L146">        setJMenuBar(jMenuBar1);</span>
+<span class="nc" id="L147">        jMenuItemConvocatoriesCreate.setText(&quot;Crear&quot;);</span>
+<span class="nc" id="L148">        jMenuItemConvocatoriesCreate.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L150">                jMenuItemConvocatoriesCreateActionPerformed(evt);</span>
+<span class="nc" id="L151">            }</span>
+        });
+<span class="nc" id="L153">        jMenuConvocatories.add(jMenuItemConvocatoriesCreate);</span>
 
-<span class="nc" id="L148">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L149">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L150">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L151">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L152">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L153">                .addContainerGap()</span>
-<span class="nc" id="L154">                .addComponent(jLabelUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L155">                .addContainerGap())</span>
-<span class="nc" id="L156">            .addComponent(jDesktopPanelContainer)</span>
+<span class="nc" id="L155">        jMenuBar1.add(jMenuConvocatories);</span>
+
+<span class="nc" id="L157">        jMenuPresentations.setText(&quot;Presentaciones&quot;);</span>
+<span class="nc" id="L158">        jMenuBar1.add(jMenuPresentations);</span>
+
+<span class="nc" id="L160">        jMenuInformation.setText(&quot;Información&quot;);</span>
+<span class="nc" id="L161">        jMenuBar1.add(jMenuInformation);</span>
+
+<span class="nc" id="L163">        setJMenuBar(jMenuBar1);</span>
+
+<span class="nc" id="L165">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L166">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L167">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L168">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L169">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L170">                .addContainerGap()</span>
+<span class="nc" id="L171">                .addComponent(jLabelUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L172">                .addContainerGap())</span>
+<span class="nc" id="L173">            .addComponent(jDesktopPanelContainer)</span>
         );
-<span class="nc" id="L158">        layout.setVerticalGroup(</span>
-<span class="nc" id="L159">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L160">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L161">                .addComponent(jDesktopPanelContainer, javax.swing.GroupLayout.DEFAULT_SIZE, 779, Short.MAX_VALUE)</span>
-<span class="nc" id="L162">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L163">                .addComponent(jLabelUser)</span>
-<span class="nc" id="L164">                .addContainerGap())</span>
+<span class="nc" id="L175">        layout.setVerticalGroup(</span>
+<span class="nc" id="L176">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L177">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L178">                .addComponent(jDesktopPanelContainer)</span>
+<span class="nc" id="L179">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L180">                .addComponent(jLabelUser)</span>
+<span class="nc" id="L181">                .addContainerGap())</span>
         );
 
-<span class="nc" id="L167">        pack();</span>
-<span class="nc" id="L168">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L184">        pack();</span>
+<span class="nc" id="L185">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void jMenuItemCloseSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCloseSessionActionPerformed
         
-<span class="nc" id="L172">        Dialog.info(&quot;Este apartado todavía no está disponible&quot;, &quot;En desarrollo&quot;);</span>
-<span class="nc" id="L173">    }//GEN-LAST:event_jMenuItemCloseSessionActionPerformed</span>
+<span class="nc" id="L189">        Dialog.info(&quot;Este apartado todavía no está disponible&quot;, &quot;En desarrollo&quot;);</span>
+<span class="nc" id="L190">    }//GEN-LAST:event_jMenuItemCloseSessionActionPerformed</span>
 
     private void jMenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExitActionPerformed
 
-<span class="nc" id="L177">         System.exit(0);</span>
-<span class="nc" id="L178">    }//GEN-LAST:event_jMenuItemExitActionPerformed</span>
+<span class="nc" id="L194">         System.exit(0);</span>
+<span class="nc" id="L195">    }//GEN-LAST:event_jMenuItemExitActionPerformed</span>
 
     private void jMenuItemMunicipiosShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosShowActionPerformed
-<span class="nc" id="L181">        MunicipalityListJInternalFrame municipalitiesList = new MunicipalityListJInternalFrame(jDesktopPanelContainer);</span>
-<span class="nc" id="L182">        jDesktopPanelContainer.add(municipalitiesList);</span>
+<span class="nc" id="L198">        MunicipalityListJInternalFrame municipalitiesList = new MunicipalityListJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L199">        jDesktopPanelContainer.add(municipalitiesList);</span>
         
-<span class="nc" id="L184">        municipalitiesList.setVisible(true);</span>
-<span class="nc" id="L185">    }//GEN-LAST:event_jMenuItemMunicipiosShowActionPerformed</span>
+<span class="nc" id="L201">        municipalitiesList.setVisible(true);</span>
+<span class="nc" id="L202">    }//GEN-LAST:event_jMenuItemMunicipiosShowActionPerformed</span>
 
     private void jMenuItemMunicipiosCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosCreateActionPerformed
-<span class="nc" id="L188">        MunicipalityCreateJInternalFrame municipalitiesCreate = new MunicipalityCreateJInternalFrame(jDesktopPanelContainer);</span>
-<span class="nc" id="L189">        jDesktopPanelContainer.add(municipalitiesCreate);</span>
+<span class="nc" id="L205">        MunicipalityCreateJInternalFrame municipalitiesCreate = new MunicipalityCreateJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L206">        jDesktopPanelContainer.add(municipalitiesCreate);</span>
         
-<span class="nc" id="L191">        municipalitiesCreate.setVisible(true);</span>
-<span class="nc" id="L192">    }//GEN-LAST:event_jMenuItemMunicipiosCreateActionPerformed</span>
+<span class="nc" id="L208">        municipalitiesCreate.setVisible(true);</span>
+<span class="nc" id="L209">    }//GEN-LAST:event_jMenuItemMunicipiosCreateActionPerformed</span>
 
     private void jMenuItemConvocatoriesShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesShowActionPerformed
-<span class="nc" id="L195">        ConvocatoryListJInternalFrame convocatoriesList = new ConvocatoryListJInternalFrame(jDesktopPanelContainer);</span>
-<span class="nc" id="L196">        jDesktopPanelContainer.add(convocatoriesList);</span>
+<span class="nc" id="L212">        ConvocatoryListJInternalFrame convocatoriesList = new ConvocatoryListJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L213">        jDesktopPanelContainer.add(convocatoriesList);</span>
         
-<span class="nc" id="L198">        convocatoriesList.setVisible(true);</span>
-<span class="nc" id="L199">    }//GEN-LAST:event_jMenuItemConvocatoriesShowActionPerformed</span>
+<span class="nc" id="L215">        convocatoriesList.setVisible(true);</span>
+<span class="nc" id="L216">    }//GEN-LAST:event_jMenuItemConvocatoriesShowActionPerformed</span>
 
     private void jMenuItemConvocatoriesCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesCreateActionPerformed
-<span class="nc" id="L202">        ConvocatoryCreateJInternalFrame convocatoryCreate = new ConvocatoryCreateJInternalFrame(jDesktopPanelContainer);</span>
-<span class="nc" id="L203">        jDesktopPanelContainer.add(convocatoryCreate);</span>
+<span class="nc" id="L219">        ConvocatoryCreateJInternalFrame convocatoryCreate = new ConvocatoryCreateJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L220">        jDesktopPanelContainer.add(convocatoryCreate);</span>
         
-<span class="nc" id="L205">        convocatoryCreate.setVisible(true);</span>
-<span class="nc" id="L206">    }//GEN-LAST:event_jMenuItemConvocatoriesCreateActionPerformed</span>
+<span class="nc" id="L222">        convocatoryCreate.setVisible(true);</span>
+<span class="nc" id="L223">    }//GEN-LAST:event_jMenuItemConvocatoriesCreateActionPerformed</span>
+
+    private void jMenuItemUsersShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsersShowActionPerformed
+<span class="nc" id="L226">        UserListJInternalFrame usersList = new UserListJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L227">        jDesktopPanelContainer.add(usersList);</span>
+        
+<span class="nc" id="L229">        usersList.setVisible(true);</span>
+<span class="nc" id="L230">    }//GEN-LAST:event_jMenuItemUsersShowActionPerformed</span>
+
+    private void jMenuItemUsersCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsersCreateActionPerformed
+<span class="nc" id="L233">        UserCreateJInternalFrame userCreate = new UserCreateJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L234">        jDesktopPanelContainer.add(userCreate);</span>
+        
+<span class="nc" id="L236">        userCreate.setVisible(true);</span>
+<span class="nc" id="L237">    }//GEN-LAST:event_jMenuItemUsersCreateActionPerformed</span>
 
     /**
      * @param args the command line arguments
@@ -215,40 +246,40 @@ public class MenuJFrame extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-<span class="nc bnc" id="L218" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
-<span class="nc bnc" id="L219" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
-<span class="nc" id="L220">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
-<span class="nc" id="L221">                    break;</span>
+<span class="nc bnc" id="L249" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
+<span class="nc bnc" id="L250" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
+<span class="nc" id="L251">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
+<span class="nc" id="L252">                    break;</span>
                 }
             }
-<span class="nc" id="L224">        } catch (ClassNotFoundException ex) {</span>
-<span class="nc" id="L225">            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L226">        } catch (InstantiationException ex) {</span>
-<span class="nc" id="L227">            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L228">        } catch (IllegalAccessException ex) {</span>
-<span class="nc" id="L229">            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L230">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
-<span class="nc" id="L231">            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L232">        }</span>
+<span class="nc" id="L255">        } catch (ClassNotFoundException ex) {</span>
+<span class="nc" id="L256">            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L257">        } catch (InstantiationException ex) {</span>
+<span class="nc" id="L258">            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L259">        } catch (IllegalAccessException ex) {</span>
+<span class="nc" id="L260">            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L261">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
+<span class="nc" id="L262">            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
+<span class="nc" id="L263">        }</span>
         //&lt;/editor-fold&gt;
 
         /* Create and display the form */
-<span class="nc" id="L236">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
+<span class="nc" id="L267">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
             public void run() {
-<span class="nc" id="L238">                new MenuJFrame().setVisible(true);</span>
-<span class="nc" id="L239">            }</span>
+<span class="nc" id="L269">                new MenuJFrame().setVisible(true);</span>
+<span class="nc" id="L270">            }</span>
         });
-<span class="nc" id="L241">    }</span>
+<span class="nc" id="L272">    }</span>
 
     public void setUserFooterInfo(User user) {
     
-<span class="nc" id="L245">        String name = user.getLogin();</span>
-<span class="nc" id="L246">        String role = String.valueOf(user.getRoleId());</span>
+<span class="nc" id="L276">        String name = user.getLogin();</span>
+<span class="nc" id="L277">        String role = String.valueOf(user.getRoleId());</span>
         
-<span class="nc" id="L248">        String text = &quot;Bievenido: &quot; + name + &quot; [Role: &quot; + role + &quot;]&quot;;</span>
+<span class="nc" id="L279">        String text = &quot;Bievenido: &quot; + name + &quot; [Role: &quot; + role + &quot;]&quot;;</span>
         
-<span class="nc" id="L250">        jLabelUser.setText(text);</span>
-<span class="nc" id="L251">    }</span>
+<span class="nc" id="L281">        jLabelUser.setText(text);</span>
+<span class="nc" id="L282">    }</span>
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane jDesktopPanelContainer;
@@ -264,6 +295,7 @@ public class MenuJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemExit;
     private javax.swing.JMenuItem jMenuItemMunicipiosCreate;
     private javax.swing.JMenuItem jMenuItemMunicipiosShow;
+    private javax.swing.JMenuItem jMenuItemUsersCreate;
     private javax.swing.JMenuItem jMenuItemUsersShow;
     private javax.swing.JMenu jMenuMunicipios;
     private javax.swing.JMenu jMenuPresentations;

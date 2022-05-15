@@ -53,6 +53,18 @@
               <Properties>
                 <Property name="text" type="java.lang.String" value="Ver"/>
               </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemUsersShowActionPerformed"/>
+              </Events>
+            </MenuItem>
+            <MenuItem class="javax.swing.JMenuItem" name="jMenuItemUsersCreate">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Crear"/>
+                <Property name="toolTipText" type="java.lang.String" value=""/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItemUsersCreateActionPerformed"/>
+              </Events>
             </MenuItem>
           </SubComponents>
         </Menu>
@@ -158,7 +170,7 @@
     <DimensionLayout dim="1">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <Component id="jDesktopPanelContainer" pref="779" max="32767" attributes="0"/>
+              <Component id="jDesktopPanelContainer" max="32767" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="jLabelUser" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>

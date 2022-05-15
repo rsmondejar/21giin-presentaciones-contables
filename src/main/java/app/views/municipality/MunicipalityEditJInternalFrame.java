@@ -9,6 +9,7 @@ import app.entities.Municipality;
 import helpers.Dialog;
 import helpers.Log;
 import java.awt.Color;
+import javax.swing.JDesktopPane;
 
 /**
  *
@@ -16,11 +17,14 @@ import java.awt.Color;
  */
 public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
 
+    private final JDesktopPane jDesktopPanelContainer;
+    
     /**
      * Creates new form MunicipalityJInternalFrame
      */
-    public MunicipalityEditJInternalFrame() {
+    public MunicipalityEditJInternalFrame(JDesktopPane jDesktopPanelContainer) {
         initComponents();
+        this.jDesktopPanelContainer = jDesktopPanelContainer;
         jTextFieldMunicipioId.setVisible(false);
     }
 

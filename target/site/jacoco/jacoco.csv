@@ -7,16 +7,18 @@ PresentacionesContables,app.controllers,UserRoleController,107,0,2,0,39,0,8,0,7,
 PresentacionesContables,app.controllers,BaseController,9,0,0,0,4,0,1,0,1,0
 PresentacionesContables,app.controllers,ConvocatoryController,109,0,2,0,40,0,8,0,7,0
 PresentacionesContables,app,Main,32,0,0,0,16,0,7,0,7,0
+PresentacionesContables,app.views.users,UserEditJInternalFrame.new KeyAdapter() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views.users,UserListJInternalFrame.new MouseAdapter() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views.users,UserListJInternalFrame.new DefaultTableModel() {...},58,0,0,0,5,0,3,0,3,0
 PresentacionesContables,app.views.users,UserCreateJInternalFrame.new KeyAdapter() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views.users,UserCreateJInternalFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views.users,UserCreateJInternalFrame.new KeyAdapter() {...},11,0,0,0,3,0,2,0,2,0
-PresentacionesContables,app.views.users,UserCreateJInternalFrame,518,0,22,0,123,0,24,0,13,0
-PresentacionesContables,app.views.users,UserEditJInternalFrame,366,0,2,0,91,0,5,0,4,0
+PresentacionesContables,app.views.users,UserCreateJInternalFrame,510,0,22,0,123,0,24,0,13,0
+PresentacionesContables,app.views.users,UserEditJInternalFrame,588,0,22,0,141,0,25,0,14,0
 PresentacionesContables,app.views.users,UserShowJInternalFrame,529,0,4,0,133,0,7,0,5,0
 PresentacionesContables,app.views.users,UserListJInternalFrame,252,0,2,0,58,0,5,0,4,0
 PresentacionesContables,app.views.users,UserEditJInternalFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
+PresentacionesContables,app.views.users,UserEditJInternalFrame.new KeyAdapter() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views.users,UserShowJInternalFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,app.views.users,UserShowJInternalFrame.new ActionListener() {...},11,0,0,0,3,0,2,0,2,0
 PresentacionesContables,seeders,UserSeeder,80,0,8,0,19,0,6,0,2,0
@@ -46,7 +48,7 @@ PresentacionesContables,app.entities,DocumentType,23,3,0,0,10,2,6,1,6,1
 PresentacionesContables,app.entities,BaseEntity,3,3,0,0,1,1,1,1,1,1
 PresentacionesContables,app.entities,MunicipalityCategory,23,3,0,0,10,2,6,1,6,1
 PresentacionesContables,app.entities,Municipality,33,3,0,0,14,2,8,1,8,1
-PresentacionesContables,app.entities,User,33,37,0,0,13,17,10,7,10,7
+PresentacionesContables,app.entities,User,51,37,0,0,20,17,11,7,11,7
 PresentacionesContables,app.entities,Presentation,50,3,0,0,22,2,10,1,10,1
 PresentacionesContables,app.entities,ConvocatoryDocumentType,50,3,0,0,22,2,9,1,9,1
 PresentacionesContables,app.entities,Convocatory,115,3,0,0,46,2,18,1,18,1

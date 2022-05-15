@@ -9,6 +9,7 @@ app/views/MenuJFrame$8.class
 app/entities/BaseEntity.class
 app/views/convocatory/ConvocatoryCreateJInternalFrame$1.class
 app/entities/UserRole.class
+app/views/users/UserEditJInternalFrame$3.class
 app/views/users/UserShowJInternalFrame.class
 app/entities/ConvocatoryDocumentType.class
 app/controllers/UserController.class
@@ -76,4 +77,5 @@ app/views/convocatory/ConvocatoryEditJInternalFrame$1.class
 app/views/users/UserListJInternalFrame$2.class
 app/entities/Municipality.class
 app/views/LoginJFrame$2.class
+app/views/users/UserEditJInternalFrame$2.class
 app/views/users/UserListJInternalFrame.class

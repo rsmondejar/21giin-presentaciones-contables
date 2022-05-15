@@ -41,11 +41,11 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L41">        jButtonUserCreate.setEnabled(validateInputs());</span>
 
         // Traer de base de datos el listado de roles y agregar al combobox
-<span class="nc" id="L44">        List&lt;UserRole&gt; userRoles = (new UserRoleController()).list();</span>
+<span class="nc" id="L44">        List&lt;UserRole&gt; userRoles = UserRoleController.list();</span>
 <span class="nc" id="L45">        ComboBox.fill(userRoles, jComboBoxUserRole);</span>
 
         // Traer de base de datos el listado de Municipios y agregar al combobox
-<span class="nc" id="L48">        List&lt;Municipality&gt; municipalities = (new MunicipalityController()).list();</span>
+<span class="nc" id="L48">        List&lt;Municipality&gt; municipalities = MunicipalityController.list();</span>
 <span class="nc" id="L49">        ComboBox.fill(municipalities, jComboBoxMunicipality);</span>
 <span class="nc" id="L50">    }</span>
 

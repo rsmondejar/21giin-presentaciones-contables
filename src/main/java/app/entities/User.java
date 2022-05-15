@@ -72,6 +72,14 @@ public class User extends BaseEntity {
         this.setRoleId(roleId);
         this.setMunicipalityId(municipalityId);
     }
+    
+    public User(int id, String login, String password, int roleId, int municipalityId) {
+        this.setId(id);
+        this.setLogin(login);
+        this.setPassword(password);
+        this.setRoleId(roleId);
+        this.setMunicipalityId(municipalityId);
+    }
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Getters And Setters">

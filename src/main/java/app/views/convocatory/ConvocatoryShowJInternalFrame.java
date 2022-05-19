@@ -268,14 +268,14 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unused")
     private void jButtonConvocatoryEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryEditActionPerformed
         try {
 
             int id = Integer.parseInt(jTextFieldConvocatoryId.getText());
             Convocatory convocatory = ConvocatoryController.findById(id);
             
-            ConvocatoryEditJInternalFrame convocatoryEdit = new ConvocatoryEditJInternalFrame(jDesktopPanelContainer);
+            ConvocatoryEditJInternalFrame convocatoryEdit = new ConvocatoryEditJInternalFrame();
         
             jDesktopPanelContainer.add(convocatoryEdit);
         
@@ -291,7 +291,7 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButtonConvocatoryEditActionPerformed
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unused")
     private void jButtonConvocatoryDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryDeleteActionPerformed
         int input = JOptionPane.showConfirmDialog(null, "Deseas eliminar?");
         // 0=yes, 1=no, 2=cancel

@@ -46,10 +46,6 @@ public class HibernateUtil {
             System.out.println("HIBERNATE_USERNAME: " + System.getenv("HIBERNATE_USERNAME"));
             System.out.println("HIBERNATE_PASSWORD: " + System.getenv("HIBERNATE_PASSWORD"));
             System.out.println("===============================");
-            System.out.println("secrets.HIBERNATE_URL: " + System.getenv("secrets.HIBERNATE_URL"));
-            System.out.println("secrets.HIBERNATE_USERNAME: " + System.getenv("secrets.HIBERNATE_USERNAME"));
-            System.out.println("secrets.HIBERNATE_PASSWORD: " + System.getenv("secrets.HIBERNATE_PASSWORD"));
-            System.out.println("===============================");
             System.out.println("connection.url: " + cfg.getProperty("connection.url"));
             System.out.println("connection.username: " + cfg.getProperty("connection.username"));
             System.out.println("connection.password: " + cfg.getProperty("connection.password"));

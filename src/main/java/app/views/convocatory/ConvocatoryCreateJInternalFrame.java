@@ -21,16 +21,12 @@ import javax.swing.JDesktopPane;
  * @author raulsm
  */
 public class ConvocatoryCreateJInternalFrame extends javax.swing.JInternalFrame {
-
-    private final JDesktopPane jDesktopPanelContainer;
     
     /**
      * Creates new form ConvocatoryShowJInternalFrame
-     * @param jDesktopPanelContainer
      */
-    public ConvocatoryCreateJInternalFrame(JDesktopPane jDesktopPanelContainer) {
+    public ConvocatoryCreateJInternalFrame() {
         initComponents();
-        this.jDesktopPanelContainer = jDesktopPanelContainer;
         jTextFieldConvocatoryId.setVisible(false);
     }
 
@@ -219,7 +215,7 @@ public class ConvocatoryCreateJInternalFrame extends javax.swing.JInternalFrame 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unused")
     private void jButtonConvocatoryCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryCreateActionPerformed
         try {
             if (!validateInputs()) {

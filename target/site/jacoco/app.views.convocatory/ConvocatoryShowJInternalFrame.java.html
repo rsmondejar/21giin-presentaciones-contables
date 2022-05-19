@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConvocatoryShowJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.convocatory</a> &gt; <span class="el_source">ConvocatoryShowJInternalFrame.java</span></div><h1>ConvocatoryShowJInternalFrame.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConvocatoryShowJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.convocatory</a> &gt; <span class="el_source">ConvocatoryShowJInternalFrame.java</span></div><h1>ConvocatoryShowJInternalFrame.java</h1><pre class="source lang-java linenums">/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
@@ -268,14 +268,14 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L268">        pack();</span>
 <span class="nc" id="L269">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jButtonConvocatoryEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryEditActionPerformed
         try {
 
 <span class="nc" id="L275">            int id = Integer.parseInt(jTextFieldConvocatoryId.getText());</span>
 <span class="nc" id="L276">            Convocatory convocatory = ConvocatoryController.findById(id);</span>
             
-<span class="nc" id="L278">            ConvocatoryEditJInternalFrame convocatoryEdit = new ConvocatoryEditJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L278">            ConvocatoryEditJInternalFrame convocatoryEdit = new ConvocatoryEditJInternalFrame();</span>
         
 <span class="nc" id="L280">            jDesktopPanelContainer.add(convocatoryEdit);</span>
         
@@ -291,7 +291,7 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L291">        }</span>
 <span class="nc" id="L292">    }//GEN-LAST:event_jButtonConvocatoryEditActionPerformed</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jButtonConvocatoryDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryDeleteActionPerformed
 <span class="nc" id="L296">        int input = JOptionPane.showConfirmDialog(null, &quot;Deseas eliminar?&quot;);</span>
         // 0=yes, 1=no, 2=cancel

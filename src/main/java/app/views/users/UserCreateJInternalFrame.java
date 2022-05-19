@@ -23,14 +23,11 @@ import javax.swing.JDesktopPane;
  */
 public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
 
-    private final JDesktopPane jDesktopPanelContainer;
-
     /**
      * Creates new form MunicipalityJInternalFrame
      */
-    public UserCreateJInternalFrame(JDesktopPane jDesktopPanelContainer) {
+    public UserCreateJInternalFrame() {
         initComponents();
-        this.jDesktopPanelContainer = jDesktopPanelContainer;
         loadData();
     }
 
@@ -151,7 +148,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unused")
     private void jButtonUserCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserCreateActionPerformed
         try {
             if (!validateInputs()) {
@@ -181,7 +178,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      *
      * @param evt
      */
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unused")
     private void enableCreateButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enableCreateButton
         try {
             jButtonUserCreate.setEnabled(validateInputs());

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.dao</a> &gt; <span class="el_source">UserDao.java</span></div><h1>UserDao.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package app.dao;
+
+import app.entities.BaseEntity;
+import app.entities.Municipality;
+import app.entities.User;
+import app.entities.UserRole;
+import config.HibernateUtil;
+import helpers.Log;
+import java.util.List;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+/**
+ * User DAO.
+ *
+ * @author raulsm
+ * @version 1.0.0
+ */
+public class UserDao extends BaseDao {
+
+<span class="fc" id="L27">    public UserDao() {</span>
+<span class="fc" id="L28">        super.setModel((BaseEntity) new User());</span>
+<span class="fc" id="L29">    }</span>
+
+    /**
+     * List Users.
+     *
+     * @return List of users
+     */
+    public List&lt;User&gt; all() {
+<span class="nc" id="L37">        List&lt;User&gt; users = super.all();</span>
+        
+        // Add extra fields: Municpality and UserRole
+<span class="nc bnc" id="L40" title="All 2 branches missed.">        for(int i = 0; i &lt; users.size(); i++) {</span>
+<span class="nc" id="L41">            users.set(i, findById(users.get(i).getId()));</span>
+        }
+        
+<span class="nc" id="L44">        return users;</span>
+    }
+
+    /**
+     * Find by ID.
+     *
+     * @param id Identifer
+     * @return User
+     */
+    @Override
+    public User findById(int id) {
+<span class="nc" id="L55">        return addRelations((User) super.findById(id));</span>
+    }
+
+    /**
+     * Create User.
+     *
+     * @param &lt;T&gt;
+     * @param user User
+     * @return status
+     */
+    public &lt;T&gt; Integer create(User user) {
+<span class="fc" id="L66">        return super.create((BaseEntity) user);</span>
+    }
+
+    /**
+     * Update User.
+     *
+     * @param &lt;T&gt;
+     * @param id Identifier
+     * @param user User
+     * @return
+     */
+    public &lt;T&gt; boolean update(int id, User user) {
+<span class="fc" id="L78">        return super.update(id, (BaseEntity) user);</span>
+    }
+
+    /**
+     * Delete User.
+     *
+     * @param id Identifier
+     * @return status
+     */
+    @Override
+    public boolean delete(int id) {
+<span class="fc" id="L89">        return super.delete(id);</span>
+    }
+    
+    /**
+     * Find By Login And Password.
+     * @param login Login
+     * @param password Password
+     * @return User
+     * @throws Exception 
+     */
+    public User findByLoginAndPassword(String login, String password) throws Exception {
+<span class="fc" id="L100">        Transaction trns = null;</span>
+<span class="fc" id="L101">        Session session = HibernateUtil.get().getCurrentSession();</span>
+        
+        try {
+<span class="fc" id="L104">            trns = session.beginTransaction();</span>
+            
+<span class="fc" id="L106">            Query query = session.createQuery(&quot;SELECT u FROM users u WHERE u.login=:login AND u.password=:password&quot;);</span>
+<span class="fc" id="L107">            query.setParameter(&quot;login&quot;, login);</span>
+<span class="fc" id="L108">            query.setParameter(&quot;password&quot;, password);</span>
+            
+<span class="fc" id="L110">            User user = (User) query.uniqueResult();</span>
+            
+<span class="fc bfc" id="L112" title="All 2 branches covered.">            if (user == null) {</span>
+<span class="fc" id="L113">                throw new Exception(&quot;Not found user with login '%s' and password '%s'&quot;.formatted(login, password));</span>
+            }
+            
+<span class="fc" id="L116">            trns.commit();</span>
+
+<span class="fc" id="L118">            return addRelations(user);</span>
+<span class="nc" id="L119">        } catch (HibernateException exception) {</span>
+<span class="nc bnc" id="L120" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L121">                trns.rollback();</span>
+            }
+<span class="nc" id="L123">            Log.error(exception);</span>
+<span class="nc" id="L124">            throw exception;</span>
+        } finally {
+<span class="fc" id="L126">            session.close();</span>
+        }
+    }
+    
+    /**
+     * Add Relations.
+     * @param user User
+     */ 
+    private User addRelations(User user) {
+        try {
+            // Add Role
+<span class="fc" id="L137">            List&lt;UserRole&gt; userRoles = super</span>
+<span class="fc" id="L138">                        .whereNamedQuery(&quot;role&quot;, &quot;role_id&quot;, String.valueOf(user.getRoleId()));</span>
+
+<span class="fc" id="L140">            user.setUserRole(userRoles.get(0));</span>
+
+            // Add Municipality
+<span class="fc" id="L143">            List&lt;Municipality&gt; municipalities = super</span>
+<span class="fc" id="L144">                        .whereNamedQuery(&quot;municipality&quot;, &quot;municipality_id&quot;, String.valueOf(user.getMunicipalityId()));</span>
+
+<span class="fc" id="L146">            user.setMunicipality(municipalities.get(0));</span>
+
+<span class="fc" id="L148">            return user;</span>
+<span class="nc" id="L149">        } catch(Exception exception) {</span>
+<span class="nc" id="L150">            Log.error(exception);</span>
+        }
+        
+<span class="nc" id="L153">        return null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

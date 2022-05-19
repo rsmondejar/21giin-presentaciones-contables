@@ -59,9 +59,6 @@ public class MunicipalityCategory extends BaseEntity {
 
     @Override
     public String toString() {
-        return "MunicipalityCategory{"
-                + "id=" + this.getId()
-                + ", name=" + this.getName()
-                + '}';
+        return this.getName();
     }
 }

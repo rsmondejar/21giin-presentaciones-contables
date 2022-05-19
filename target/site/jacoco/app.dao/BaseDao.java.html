@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>BaseDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.dao</a> &gt; <span class="el_source">BaseDao.java</span></div><h1>BaseDao.java</h1><pre class="source lang-java linenums">/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package app.dao;
+
+import config.HibernateUtil;
+import helpers.Log;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import app.entities.BaseEntity;
+import java.util.List;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+
+/**
+ * Base DAO.
+ *
+ * @author raulsm
+ * @version 1.0.0
+ */
+<span class="fc" id="L24">class BaseDao {</span>
+
+    /**
+     * BaseEntity model
+     */
+    protected BaseEntity model;
+
+    public void setModel(BaseEntity model) {
+<span class="fc" id="L32">        this.model = model;</span>
+<span class="fc" id="L33">    }</span>
+
+    public BaseEntity getModel() {
+<span class="fc" id="L36">        return this.model;</span>
+    }
+
+    /**
+     * Get all
+     *
+     * @param &lt;T&gt; T
+     * @return All registers
+     */
+    public &lt;T&gt; List&lt;T&gt; all() {
+<span class="nc" id="L46">        Transaction trns = null;</span>
+<span class="nc" id="L47">        Session session = HibernateUtil.get().getCurrentSession();</span>
+
+        try {
+<span class="nc" id="L50">            trns = session.beginTransaction();</span>
+//            session.beginTransaction();
+<span class="nc" id="L52">            List&lt;T&gt; baseEntities = (List&lt;T&gt;) loadAllData(getModel().getClass(), session);</span>
+
+<span class="nc bnc" id="L54" title="All 2 branches missed.">            if (baseEntities == null) {</span>
+<span class="nc" id="L55">                throw new HibernateException(&quot;Registers not found&quot;);</span>
+            }
+
+<span class="nc" id="L58">            trns.commit();</span>
+
+<span class="nc" id="L60">            return baseEntities;</span>
+<span class="nc" id="L61">        } catch (RuntimeException exception) {</span>
+<span class="nc bnc" id="L62" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L63">                trns.rollback();</span>
+            }
+<span class="nc" id="L65">            Log.error(exception);</span>
+<span class="nc" id="L66">            return null;</span>
+        } finally {
+<span class="nc" id="L68">            session.close();</span>
+        }
+    }
+
+    /**
+     * Find by Id.
+     *
+     * @param &lt;T&gt; T
+     * @param id Identifier
+     * @return model instance or null
+     */
+    public &lt;T&gt; T findById(int id) {
+<span class="nc" id="L80">        Transaction trns = null;</span>
+<span class="nc" id="L81">        Session session = HibernateUtil.get().getCurrentSession();</span>
+
+        try {
+<span class="nc" id="L84">            trns = session.beginTransaction();</span>
+<span class="nc" id="L85">            T baseEntity = (T) session.find(getModel().getClass(), id);</span>
+
+<span class="nc bnc" id="L87" title="All 2 branches missed.">            if (baseEntity == null) {</span>
+<span class="nc" id="L88">                throw new HibernateException(&quot;Id [%d] not found&quot;.formatted(id));</span>
+            }
+
+<span class="nc" id="L91">            trns.commit();</span>
+
+<span class="nc" id="L93">            return baseEntity;</span>
+<span class="nc" id="L94">        } catch (RuntimeException exception) {</span>
+<span class="nc bnc" id="L95" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L96">                trns.rollback();</span>
+            }
+<span class="nc" id="L98">            Log.error(exception);</span>
+<span class="nc" id="L99">            return null;</span>
+        } finally {
+<span class="nc" id="L101">            session.close();</span>
+        }
+    }
+
+    /**
+     * Create model.
+     *
+     * @param &lt;T&gt; T
+     * @param entity Model Entity
+     * @return boolean
+     */
+    public &lt;T&gt; Integer create(BaseEntity entity) {
+<span class="fc" id="L113">        Transaction trns = null;</span>
+<span class="fc" id="L114">        Session session = HibernateUtil.get().getCurrentSession();</span>
+
+        try {
+<span class="fc" id="L117">            trns = session.beginTransaction();</span>
+
+<span class="fc" id="L119">            session.save(entity);</span>
+<span class="fc" id="L120">            trns.commit();</span>
+
+<span class="fc" id="L122">            return entity.getId();</span>
+<span class="nc" id="L123">        } catch (RuntimeException exception) {</span>
+<span class="nc bnc" id="L124" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L125">                trns.rollback();</span>
+            }
+
+<span class="nc" id="L128">            Log.error(exception);</span>
+<span class="nc" id="L129">            return null;</span>
+        } finally {
+<span class="fc" id="L131">            session.close();</span>
+        }
+    }
+
+    /**
+     * Update model.
+     *
+     * @param &lt;T&gt; T
+     * @param id Identifier
+     * @param entity Model Entity
+     * @return boolean Status
+     */
+    public &lt;T&gt; boolean update(int id, BaseEntity entity) {
+<span class="fc" id="L144">        Transaction trns = null;</span>
+<span class="fc" id="L145">        Session session = HibernateUtil.get().getCurrentSession();</span>
+
+        try {
+<span class="fc" id="L148">            trns = session.beginTransaction();</span>
+
+            // check if exits
+<span class="fc" id="L151">            T baseEntity = (T) session.find(getModel().getClass(), id);</span>
+
+<span class="pc bpc" id="L153" title="1 of 2 branches missed.">            if (baseEntity == null) {</span>
+<span class="nc" id="L154">                throw new HibernateException(&quot;Id [%d] not found&quot;.formatted(id));</span>
+            }
+
+<span class="fc" id="L157">            session.merge(entity);</span>
+<span class="fc" id="L158">            trns.commit();</span>
+
+<span class="fc" id="L160">            return true;</span>
+<span class="nc" id="L161">        } catch (RuntimeException exception) {</span>
+<span class="nc bnc" id="L162" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L163">                trns.rollback();</span>
+            }
+
+<span class="nc" id="L166">            Log.error(exception);</span>
+<span class="nc" id="L167">            return false;</span>
+        } finally {
+<span class="fc" id="L169">            session.close();</span>
+        }
+    }
+
+    /**
+     * Delete by Id.
+     *
+     * @param &lt;T&gt; T
+     * @param id Identifier
+     * @return boolean Status
+     */
+    public &lt;T&gt; boolean delete(int id) {
+<span class="fc" id="L181">        Transaction trns = null;</span>
+<span class="fc" id="L182">        Session session = HibernateUtil.get().getCurrentSession();</span>
+
+        try {
+<span class="fc" id="L185">            trns = session.beginTransaction();</span>
+
+<span class="fc" id="L187">            T baseEntity = (T) session.find(getModel().getClass(), id);</span>
+
+<span class="pc bpc" id="L189" title="1 of 2 branches missed.">            if (baseEntity == null) {</span>
+<span class="nc" id="L190">                throw new HibernateException(&quot;Id [%d] not found&quot;.formatted(id));</span>
+            }
+
+<span class="fc" id="L193">            session.delete(baseEntity);</span>
+<span class="fc" id="L194">            trns.commit();</span>
+
+<span class="fc" id="L196">            return true;</span>
+<span class="nc" id="L197">        } catch (RuntimeException exception) {</span>
+<span class="nc bnc" id="L198" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L199">                trns.rollback();</span>
+            }
+
+<span class="nc" id="L202">            Log.error(exception);</span>
+<span class="nc" id="L203">            return false;</span>
+        } finally {
+<span class="fc" id="L205">            session.close();</span>
+        }
+    }
+
+    /**
+     * Find by Named Query.
+     * @param &lt;T&gt; T
+     * @param queryName Query Name
+     * @param columnName Column Name
+     * @param columnValue Column Value
+     * @return 
+     */
+    public &lt;T&gt; List&lt;T&gt; whereNamedQuery(String queryName, String columnName, String columnValue) {
+<span class="fc" id="L218">        Transaction trns = null;</span>
+<span class="fc" id="L219">        Session session = HibernateUtil.get().getCurrentSession();</span>
+
+        try {
+<span class="fc" id="L222">            trns = session.beginTransaction();</span>
+
+<span class="fc" id="L224">            Query query = session.getNamedQuery(queryName).setParameter(columnName, columnValue);</span>
+
+<span class="fc" id="L226">            List&lt;T&gt; baseEntities = (List&lt;T&gt;) query.getResultList();</span>
+
+<span class="fc" id="L228">            trns.commit();</span>
+
+<span class="fc" id="L230">            return baseEntities;</span>
+<span class="nc" id="L231">        } catch (RuntimeException exception) {</span>
+<span class="nc bnc" id="L232" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L233">                trns.rollback();</span>
+            }
+<span class="nc" id="L235">            Log.error(exception);</span>
+<span class="nc" id="L236">            return null;</span>
+        } finally {
+<span class="fc" id="L238">            session.close();</span>
+        }
+    }
+    
+    /**
+     * Execute Named Query.
+     * @param &lt;T&gt; T
+     * @param queryName Query Name
+     * @param columnName Column Name
+     * @param columnValue Column Value
+     * @return 
+     */
+    public Integer executeNamedQuery(String queryName, String columnName, String columnValue) {
+<span class="nc" id="L251">        Transaction trns = null;</span>
+<span class="nc" id="L252">        Session session = HibernateUtil.get().getCurrentSession();</span>
+
+        try {
+<span class="nc" id="L255">            trns = session.beginTransaction();</span>
+
+<span class="nc" id="L257">            Query query = session.getNamedQuery(queryName).setParameter(columnName, columnValue);</span>
+
+<span class="nc" id="L259">            int status = query.executeUpdate();</span>
+
+<span class="nc" id="L261">            trns.commit();</span>
+
+<span class="nc" id="L263">            return status;</span>
+<span class="nc" id="L264">        } catch (RuntimeException exception) {</span>
+<span class="nc bnc" id="L265" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L266">                trns.rollback();</span>
+            }
+<span class="nc" id="L268">            Log.error(exception);</span>
+<span class="nc" id="L269">            return null;</span>
+        } finally {
+<span class="nc" id="L271">            session.close();</span>
+        }
+    }
+
+    /**
+     * Load All Data.
+     *
+     * @param &lt;T&gt; Class
+     * @param type Type
+     * @param session Session
+     * @return List of rows
+     */
+    private &lt;T&gt; List&lt;T&gt; loadAllData(Class&lt;T&gt; type, Session session) {
+        try {
+<span class="nc" id="L285">            CriteriaBuilder builder = session.getCriteriaBuilder();</span>
+<span class="nc" id="L286">            CriteriaQuery&lt;T&gt; criteria = builder.createQuery(type);</span>
+<span class="nc" id="L287">            criteria.from(type);</span>
+<span class="nc" id="L288">            List&lt;T&gt; data = session.createQuery(criteria).getResultList();</span>
+<span class="nc" id="L289">            return data;</span>
+<span class="nc" id="L290">        } catch (Exception exception) {</span>
+<span class="nc" id="L291">            Log.error(exception);</span>
+<span class="nc" id="L292">            throw exception;</span>
+        }
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

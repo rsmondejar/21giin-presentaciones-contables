@@ -137,14 +137,14 @@ public class MunicipalityShowJInternalFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unused")
     private void jButtonMunicipioEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioEditActionPerformed
         try {
 
             int id = Integer.parseInt(jTextFieldMunicipioId.getText());
             Municipality municipality = MunicipalityController.findById(id);
             
-            MunicipalityEditJInternalFrame municipalitiesEdit = new MunicipalityEditJInternalFrame(jDesktopPanelContainer);
+            MunicipalityEditJInternalFrame municipalitiesEdit = new MunicipalityEditJInternalFrame();
         
             jDesktopPanelContainer.add(municipalitiesEdit);
         
@@ -158,7 +158,7 @@ public class MunicipalityShowJInternalFrame extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButtonMunicipioEditActionPerformed
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unused")
     private void jButtonMunicipioDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioDeleteActionPerformed
         int input = JOptionPane.showConfirmDialog(null, "Deseas eliminar?");
         // 0=yes, 1=no, 2=cancel

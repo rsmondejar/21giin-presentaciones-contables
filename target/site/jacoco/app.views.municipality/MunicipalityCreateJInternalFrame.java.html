@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MunicipalityCreateJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.municipality</a> &gt; <span class="el_source">MunicipalityCreateJInternalFrame.java</span></div><h1>MunicipalityCreateJInternalFrame.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MunicipalityCreateJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.municipality</a> &gt; <span class="el_source">MunicipalityCreateJInternalFrame.java</span></div><h1>MunicipalityCreateJInternalFrame.java</h1><pre class="source lang-java linenums">/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
@@ -16,24 +16,13 @@ import javax.swing.JDesktopPane;
  * @author raulsm
  */
 public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame {
-
-    private final JDesktopPane jDesktopPanelContainer;
     
     /**
      * Creates new form MunicipalityJInternalFrame
      */
-<span class="nc" id="L25">    public MunicipalityCreateJInternalFrame(JDesktopPane jDesktopPanelContainer) {</span>
-<span class="nc" id="L26">        initComponents();</span>
-<span class="nc" id="L27">        this.jDesktopPanelContainer = jDesktopPanelContainer;</span>
-<span class="nc" id="L28">        loadData();</span>
-<span class="nc" id="L29">    }</span>
-
-    /**
-     * Load Data.
-     */
-    public void loadData() {        
-        // @TODO: Load Data Municipalities Categories
-<span class="nc" id="L36">    }</span>
+<span class="nc" id="L23">    public MunicipalityCreateJInternalFrame() {</span>
+<span class="nc" id="L24">        initComponents();</span>
+<span class="nc" id="L25">    }</span>
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -44,114 +33,114 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L47">        jLabelMunicipioName = new javax.swing.JLabel();</span>
-<span class="nc" id="L48">        jTextFieldMunicipioName = new javax.swing.JTextField();</span>
-<span class="nc" id="L49">        jLabelMunicipioCategoria = new javax.swing.JLabel();</span>
-<span class="nc" id="L50">        jButtonMunicipioCreate = new javax.swing.JButton();</span>
-<span class="nc" id="L51">        jComboBoxMunicipioCategory = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L36">        jLabelMunicipioName = new javax.swing.JLabel();</span>
+<span class="nc" id="L37">        jTextFieldMunicipioName = new javax.swing.JTextField();</span>
+<span class="nc" id="L38">        jLabelMunicipioCategoria = new javax.swing.JLabel();</span>
+<span class="nc" id="L39">        jButtonMunicipioCreate = new javax.swing.JButton();</span>
+<span class="nc" id="L40">        jComboBoxMunicipioCategory = new javax.swing.JComboBox&lt;&gt;();</span>
 
-<span class="nc" id="L53">        setClosable(true);</span>
-<span class="nc" id="L54">        setIconifiable(true);</span>
-<span class="nc" id="L55">        setMaximizable(true);</span>
-<span class="nc" id="L56">        setResizable(true);</span>
-<span class="nc" id="L57">        setTitle(&quot;Crear Municipio&quot;);</span>
-<span class="nc" id="L58">        setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L42">        setClosable(true);</span>
+<span class="nc" id="L43">        setIconifiable(true);</span>
+<span class="nc" id="L44">        setMaximizable(true);</span>
+<span class="nc" id="L45">        setResizable(true);</span>
+<span class="nc" id="L46">        setTitle(&quot;Crear Municipio&quot;);</span>
+<span class="nc" id="L47">        setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L60">        jLabelMunicipioName.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L61">        jLabelMunicipioName.setText(&quot;Nombre del municipio:&quot;);</span>
+<span class="nc" id="L49">        jLabelMunicipioName.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L50">        jLabelMunicipioName.setText(&quot;Nombre del municipio:&quot;);</span>
 
-<span class="nc" id="L63">        jTextFieldMunicipioName.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
-<span class="nc" id="L64">        jTextFieldMunicipioName.addKeyListener(new java.awt.event.KeyAdapter() {</span>
+<span class="nc" id="L52">        jTextFieldMunicipioName.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
+<span class="nc" id="L53">        jTextFieldMunicipioName.addKeyListener(new java.awt.event.KeyAdapter() {</span>
             public void keyReleased(java.awt.event.KeyEvent evt) {
-<span class="nc" id="L66">                jTextFieldMunicipioNameenableLoginButton(evt);</span>
+<span class="nc" id="L55">                jTextFieldMunicipioNameenableLoginButton(evt);</span>
+<span class="nc" id="L56">            }</span>
+        });
+
+<span class="nc" id="L59">        jLabelMunicipioCategoria.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L60">        jLabelMunicipioCategoria.setText(&quot;Categoría del municipio:&quot;);</span>
+
+<span class="nc" id="L62">        jButtonMunicipioCreate.setText(&quot;Crear&quot;);</span>
+<span class="nc" id="L63">        jButtonMunicipioCreate.setEnabled(false);</span>
+<span class="nc" id="L64">        jButtonMunicipioCreate.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L66">                jButtonMunicipioCreateActionPerformed(evt);</span>
 <span class="nc" id="L67">            }</span>
         });
 
-<span class="nc" id="L70">        jLabelMunicipioCategoria.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L71">        jLabelMunicipioCategoria.setText(&quot;Categoría del municipio:&quot;);</span>
+<span class="nc" id="L70">        jComboBoxMunicipioCategory.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;1&quot; }));</span>
 
-<span class="nc" id="L73">        jButtonMunicipioCreate.setText(&quot;Crear&quot;);</span>
-<span class="nc" id="L74">        jButtonMunicipioCreate.setEnabled(false);</span>
-<span class="nc" id="L75">        jButtonMunicipioCreate.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L77">                jButtonMunicipioCreateActionPerformed(evt);</span>
-<span class="nc" id="L78">            }</span>
-        });
-
-<span class="nc" id="L81">        jComboBoxMunicipioCategory.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;1&quot; }));</span>
-
-<span class="nc" id="L83">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L84">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L85">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L86">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L87">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L88">                .addContainerGap()</span>
-<span class="nc" id="L89">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L90">                    .addComponent(jTextFieldMunicipioName)</span>
-<span class="nc" id="L91">                    .addComponent(jLabelMunicipioName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L92">                    .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L93">                    .addComponent(jComboBoxMunicipioCategory, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L94">                    .addComponent(jLabelMunicipioCategoria, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE))</span>
-<span class="nc" id="L95">                .addContainerGap())</span>
+<span class="nc" id="L72">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L73">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L74">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L75">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L76">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L77">                .addContainerGap()</span>
+<span class="nc" id="L78">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L79">                    .addComponent(jTextFieldMunicipioName)</span>
+<span class="nc" id="L80">                    .addComponent(jLabelMunicipioName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L81">                    .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L82">                    .addComponent(jComboBoxMunicipioCategory, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L83">                    .addComponent(jLabelMunicipioCategoria, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE))</span>
+<span class="nc" id="L84">                .addContainerGap())</span>
         );
-<span class="nc" id="L97">        layout.setVerticalGroup(</span>
-<span class="nc" id="L98">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L99">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L100">                .addContainerGap()</span>
-<span class="nc" id="L101">                .addComponent(jLabelMunicipioName)</span>
-<span class="nc" id="L102">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L103">                .addComponent(jTextFieldMunicipioName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L104">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L105">                .addComponent(jLabelMunicipioCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L106">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L107">                .addComponent(jComboBoxMunicipioCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L108">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)</span>
-<span class="nc" id="L109">                .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L86">        layout.setVerticalGroup(</span>
+<span class="nc" id="L87">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L88">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L89">                .addContainerGap()</span>
+<span class="nc" id="L90">                .addComponent(jLabelMunicipioName)</span>
+<span class="nc" id="L91">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L92">                .addComponent(jTextFieldMunicipioName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L93">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L94">                .addComponent(jLabelMunicipioCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L95">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L96">                .addComponent(jComboBoxMunicipioCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L97">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)</span>
+<span class="nc" id="L98">                .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
         );
 
-<span class="nc" id="L112">        pack();</span>
-<span class="nc" id="L113">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L101">        pack();</span>
+<span class="nc" id="L102">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jTextFieldMunicipioNameenableLoginButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldMunicipioNameenableLoginButton
         try {
-<span class="nc" id="L118">            jButtonMunicipioCreate.setEnabled(validateInputs());</span>
-<span class="nc" id="L119">        } catch (Exception e) {</span>
-<span class="nc" id="L120">            Log.error(e);</span>
-<span class="nc" id="L121">        }</span>
-<span class="nc" id="L122">    }//GEN-LAST:event_jTextFieldMunicipioNameenableLoginButton</span>
+<span class="nc" id="L107">            jButtonMunicipioCreate.setEnabled(validateInputs());</span>
+<span class="nc" id="L108">        } catch (Exception e) {</span>
+<span class="nc" id="L109">            Log.error(e);</span>
+<span class="nc" id="L110">        }</span>
+<span class="nc" id="L111">    }//GEN-LAST:event_jTextFieldMunicipioNameenableLoginButton</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jButtonMunicipioCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioCreateActionPerformed
         try {
-<span class="nc bnc" id="L127" title="All 2 branches missed.">            if (!validateInputs()) {</span>
-<span class="nc" id="L128">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
+<span class="nc bnc" id="L116" title="All 2 branches missed.">            if (!validateInputs()) {</span>
+<span class="nc" id="L117">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
             }
 
-<span class="nc" id="L131">            String name = getInputName();</span>
-<span class="nc" id="L132">            String category = getInputCategory();</span>
+<span class="nc" id="L120">            String name = getInputName();</span>
+<span class="nc" id="L121">            String category = getInputCategory();</span>
 
             // Municipio create
-<span class="nc" id="L135">            Municipality municipality = new Municipality(name, Integer.parseInt(category));</span>
-<span class="nc" id="L136">            MunicipalityController.create(municipality);</span>
+<span class="nc" id="L124">            Municipality municipality = new Municipality(name, Integer.parseInt(category));</span>
+<span class="nc" id="L125">            MunicipalityController.create(municipality);</span>
             
-<span class="nc" id="L138">            Dialog.info(&quot;Municipio creado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc" id="L127">            Dialog.info(&quot;Municipio creado correctamente&quot;, &quot;Info&quot;);</span>
             
-<span class="nc" id="L140">            cleanInputs();</span>
-<span class="nc" id="L141">        } catch (Exception e) {</span>
-<span class="nc" id="L142">            Log.error(e);</span>
-<span class="nc" id="L143">            Dialog.error(e.getMessage(), &quot;Error creando municipio&quot;);</span>
-<span class="nc" id="L144">        }</span>
-<span class="nc" id="L145">    }//GEN-LAST:event_jButtonMunicipioCreateActionPerformed</span>
+<span class="nc" id="L129">            cleanInputs();</span>
+<span class="nc" id="L130">        } catch (Exception e) {</span>
+<span class="nc" id="L131">            Log.error(e);</span>
+<span class="nc" id="L132">            Dialog.error(e.getMessage(), &quot;Error creando municipio&quot;);</span>
+<span class="nc" id="L133">        }</span>
+<span class="nc" id="L134">    }//GEN-LAST:event_jButtonMunicipioCreateActionPerformed</span>
 
     /**
      * Clean Inputs
      */
     private void cleanInputs() {
-<span class="nc" id="L151">        jTextFieldMunicipioName.setText(&quot;&quot;);</span>
-<span class="nc" id="L152">        jComboBoxMunicipioCategory.setSelectedIndex(0);</span>
-<span class="nc" id="L153">        jButtonMunicipioCreate.setEnabled(validateInputs());</span>
-<span class="nc" id="L154">    }</span>
+<span class="nc" id="L140">        jTextFieldMunicipioName.setText(&quot;&quot;);</span>
+<span class="nc" id="L141">        jComboBoxMunicipioCategory.setSelectedIndex(0);</span>
+<span class="nc" id="L142">        jButtonMunicipioCreate.setEnabled(validateInputs());</span>
+<span class="nc" id="L143">    }</span>
     
     /**
      * Validate Inputs.
@@ -159,7 +148,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
      * @return True if inputs are valid
      */
     private Boolean validateInputs() {
-<span class="nc bnc" id="L162" title="All 4 branches missed.">        return validateInputName() &amp;&amp; validateInputCategory();</span>
+<span class="nc bnc" id="L151" title="All 4 branches missed.">        return validateInputName() &amp;&amp; validateInputCategory();</span>
     }
 
     /**
@@ -168,16 +157,16 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
      * @return
      */
     private Boolean validateInputName() {
-<span class="nc" id="L171">        String name = getInputName();</span>
-<span class="nc bnc" id="L172" title="All 4 branches missed.">        Boolean isValid = name.length() &gt; 0 &amp;&amp; name.length() &lt;= 30;</span>
+<span class="nc" id="L160">        String name = getInputName();</span>
+<span class="nc bnc" id="L161" title="All 4 branches missed.">        Boolean isValid = name.length() &gt; 0 &amp;&amp; name.length() &lt;= 30;</span>
 
-<span class="nc bnc" id="L174" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
-<span class="nc" id="L175">            jTextFieldMunicipioName.setBackground(Color.white);</span>
+<span class="nc bnc" id="L163" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
+<span class="nc" id="L164">            jTextFieldMunicipioName.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L177">            jTextFieldMunicipioName.setBackground(Color.orange);</span>
+<span class="nc" id="L166">            jTextFieldMunicipioName.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L180">        return isValid;</span>
+<span class="nc" id="L169">        return isValid;</span>
     }
 
     /**
@@ -187,8 +176,8 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
      */
     private Boolean validateInputCategory() {
         // TODO: Validation
-<span class="nc" id="L190">        Boolean isValid = true;</span>
-<span class="nc" id="L191">        return isValid;</span>
+<span class="nc" id="L179">        Boolean isValid = true;</span>
+<span class="nc" id="L180">        return isValid;</span>
     }
 
     /**
@@ -197,7 +186,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
      * @return Input Name
      */
     private String getInputName() {
-<span class="nc" id="L200">        return jTextFieldMunicipioName.getText();</span>
+<span class="nc" id="L189">        return jTextFieldMunicipioName.getText();</span>
     }
 
     /**
@@ -206,7 +195,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
      * @return Input Category.
      */
     private String getInputCategory() {
-<span class="nc" id="L209">        return jComboBoxMunicipioCategory.getSelectedItem().toString();</span>
+<span class="nc" id="L198">        return jComboBoxMunicipioCategory.getSelectedItem().toString();</span>
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

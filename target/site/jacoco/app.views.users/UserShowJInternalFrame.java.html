@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserShowJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.users</a> &gt; <span class="el_source">UserShowJInternalFrame.java</span></div><h1>UserShowJInternalFrame.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserShowJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.users</a> &gt; <span class="el_source">UserShowJInternalFrame.java</span></div><h1>UserShowJInternalFrame.java</h1><pre class="source lang-java linenums">/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
@@ -177,14 +177,14 @@ public class UserShowJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L177">        pack();</span>
 <span class="nc" id="L178">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jButtonUserEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserEditActionPerformed
         try {
 
 <span class="nc" id="L184">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
 <span class="nc" id="L185">            User user = UserController.findById(id);</span>
             
-<span class="nc" id="L187">            UserEditJInternalFrame userEdit = new UserEditJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L187">            UserEditJInternalFrame userEdit = new UserEditJInternalFrame();</span>
         
 <span class="nc" id="L189">            jDesktopPanelContainer.add(userEdit);</span>
         
@@ -200,7 +200,7 @@ public class UserShowJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L200">        }</span>
 <span class="nc" id="L201">    }//GEN-LAST:event_jButtonUserEditActionPerformed</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jButtonUserDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserDeleteActionPerformed
 <span class="nc" id="L205">        int input = JOptionPane.showConfirmDialog(null, &quot;Deseas eliminar?&quot;);</span>
         // 0=yes, 1=no, 2=cancel

@@ -16,23 +16,12 @@ import javax.swing.JDesktopPane;
  * @author raulsm
  */
 public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame {
-
-    private final JDesktopPane jDesktopPanelContainer;
     
     /**
      * Creates new form MunicipalityJInternalFrame
      */
-    public MunicipalityCreateJInternalFrame(JDesktopPane jDesktopPanelContainer) {
+    public MunicipalityCreateJInternalFrame() {
         initComponents();
-        this.jDesktopPanelContainer = jDesktopPanelContainer;
-        loadData();
-    }
-
-    /**
-     * Load Data.
-     */
-    public void loadData() {        
-        // @TODO: Load Data Municipalities Categories
     }
     
     /**
@@ -112,7 +101,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unused")
     private void jTextFieldMunicipioNameenableLoginButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldMunicipioNameenableLoginButton
         try {
             jButtonMunicipioCreate.setEnabled(validateInputs());
@@ -121,7 +110,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
         }
     }//GEN-LAST:event_jTextFieldMunicipioNameenableLoginButton
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unused")
     private void jButtonMunicipioCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioCreateActionPerformed
         try {
             if (!validateInputs()) {

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MenuJFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views</a> &gt; <span class="el_source">MenuJFrame.java</span></div><h1>MenuJFrame.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MenuJFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views</a> &gt; <span class="el_source">MenuJFrame.java</span></div><h1>MenuJFrame.java</h1><pre class="source lang-java linenums">/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
  */
@@ -185,19 +185,19 @@ public class MenuJFrame extends javax.swing.JFrame {
 <span class="nc" id="L185">        pack();</span>
 <span class="nc" id="L186">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jMenuItemCloseSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCloseSessionActionPerformed
         
 <span class="nc" id="L191">        Dialog.info(&quot;Este apartado todavía no está disponible&quot;, &quot;En desarrollo&quot;);</span>
 <span class="nc" id="L192">    }//GEN-LAST:event_jMenuItemCloseSessionActionPerformed</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jMenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExitActionPerformed
 
 <span class="nc" id="L197">         System.exit(0);</span>
 <span class="nc" id="L198">    }//GEN-LAST:event_jMenuItemExitActionPerformed</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jMenuItemMunicipiosShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosShowActionPerformed
 <span class="nc" id="L202">        MunicipalityListJInternalFrame municipalitiesList = new MunicipalityListJInternalFrame(jDesktopPanelContainer);</span>
 <span class="nc" id="L203">        jDesktopPanelContainer.add(municipalitiesList);</span>
@@ -205,15 +205,15 @@ public class MenuJFrame extends javax.swing.JFrame {
 <span class="nc" id="L205">        municipalitiesList.setVisible(true);</span>
 <span class="nc" id="L206">    }//GEN-LAST:event_jMenuItemMunicipiosShowActionPerformed</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jMenuItemMunicipiosCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosCreateActionPerformed
-<span class="nc" id="L210">        MunicipalityCreateJInternalFrame municipalitiesCreate = new MunicipalityCreateJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L210">        MunicipalityCreateJInternalFrame municipalitiesCreate = new MunicipalityCreateJInternalFrame();</span>
 <span class="nc" id="L211">        jDesktopPanelContainer.add(municipalitiesCreate);</span>
         
 <span class="nc" id="L213">        municipalitiesCreate.setVisible(true);</span>
 <span class="nc" id="L214">    }//GEN-LAST:event_jMenuItemMunicipiosCreateActionPerformed</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jMenuItemConvocatoriesShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesShowActionPerformed
 <span class="nc" id="L218">        ConvocatoryListJInternalFrame convocatoriesList = new ConvocatoryListJInternalFrame(jDesktopPanelContainer);</span>
 <span class="nc" id="L219">        jDesktopPanelContainer.add(convocatoriesList);</span>
@@ -221,15 +221,15 @@ public class MenuJFrame extends javax.swing.JFrame {
 <span class="nc" id="L221">        convocatoriesList.setVisible(true);</span>
 <span class="nc" id="L222">    }//GEN-LAST:event_jMenuItemConvocatoriesShowActionPerformed</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jMenuItemConvocatoriesCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesCreateActionPerformed
-<span class="nc" id="L226">        ConvocatoryCreateJInternalFrame convocatoryCreate = new ConvocatoryCreateJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L226">        ConvocatoryCreateJInternalFrame convocatoryCreate = new ConvocatoryCreateJInternalFrame();</span>
 <span class="nc" id="L227">        jDesktopPanelContainer.add(convocatoryCreate);</span>
         
 <span class="nc" id="L229">        convocatoryCreate.setVisible(true);</span>
 <span class="nc" id="L230">    }//GEN-LAST:event_jMenuItemConvocatoriesCreateActionPerformed</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jMenuItemUsersShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsersShowActionPerformed
 <span class="nc" id="L234">        UserListJInternalFrame usersList = new UserListJInternalFrame(jDesktopPanelContainer);</span>
 <span class="nc" id="L235">        jDesktopPanelContainer.add(usersList);</span>
@@ -237,9 +237,9 @@ public class MenuJFrame extends javax.swing.JFrame {
 <span class="nc" id="L237">        usersList.setVisible(true);</span>
 <span class="nc" id="L238">    }//GEN-LAST:event_jMenuItemUsersShowActionPerformed</span>
 
-    @SuppressWarnings(&quot;unchecked&quot;)
+    @SuppressWarnings(&quot;unused&quot;)
     private void jMenuItemUsersCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsersCreateActionPerformed
-<span class="nc" id="L242">        UserCreateJInternalFrame userCreate = new UserCreateJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L242">        UserCreateJInternalFrame userCreate = new UserCreateJInternalFrame();</span>
 <span class="nc" id="L243">        jDesktopPanelContainer.add(userCreate);</span>
         
 <span class="nc" id="L245">        userCreate.setVisible(true);</span>

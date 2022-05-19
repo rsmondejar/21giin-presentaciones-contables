@@ -27,5 +27,5 @@ jobs:
           HIBERNATE_USERNAME: ${{ secrets.HIBERNATE_USERNAME }}
           HIBERNATE_PASSWORD: ${{ secrets.HIBERNATE_PASSWORD }}
         run: |
-           "$HIBERNATE_USERNAME"
+           "$HIBERNATE_USERNAME_TEST"
 

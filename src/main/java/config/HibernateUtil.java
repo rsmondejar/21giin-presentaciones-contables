@@ -30,15 +30,24 @@ public class HibernateUtil {
             System.out.println("HIBERNATE VARIABLES");
             
             if (System.getenv("HIBERNATE_URL") != null) {
+                System.out.println("HIBERNATE_URL CAMBIAR!!!");
                 cfg.setProperty("connection.url", System.getenv("HIBERNATE_URL"));
+            } else {
+                System.out.println("HIBERNATE_URL NO SE HA CAMBIADO!!!");
             }
             
             if (System.getenv("HIBERNATE_USERNAME") != null) {
+                System.out.println("HIBERNATE_USERNAME CAMBIAR!!!");
                 cfg.setProperty("connection.username", System.getenv("HIBERNATE_USERNAME"));
+            } else {
+                System.out.println("HIBERNATE_USERNAME NO SE HA CAMBIADO!!!");
             }
             
             if (System.getenv("HIBERNATE_PASSWORD") != null) {
+                System.out.println("HIBERNATE_PASSWORD CAMBIAR!!!");
                 cfg.setProperty("connection.password", System.getenv("HIBERNATE_PASSWORD"));
+            } else {
+                System.out.println("HIBERNATE_PASSWORD NO SE HA CAMBIADO!!!");
             }
             
             System.out.println("===============================");
@@ -49,6 +58,7 @@ public class HibernateUtil {
             System.out.println("connection.url: " + cfg.getProperty("connection.url"));
             System.out.println("connection.username: " + cfg.getProperty("connection.username"));
             System.out.println("connection.password: " + cfg.getProperty("connection.password"));
+            
             System.out.println("===============================");
             
             sessionFactory = cfg.buildSessionFactory();

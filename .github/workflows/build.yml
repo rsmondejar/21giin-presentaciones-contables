@@ -18,27 +18,14 @@ jobs:
         with:
           java-version: 17
           distribution: zulu
-      - name: Cache SonarCloud packages
-        uses: actions/cache@v1
-        with:
-          path: ~/.sonar/cache
-          key: ${{ runner.os }}-sonar
-          restore-keys: ${{ runner.os }}-sonar
-      - name: Cache Maven packages
-        uses: actions/cache@v1
-        with:
-          path: ~/.m2
-          key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
-          restore-keys: ${{ runner.os }}-m2
-      - name: Make copy of hibernate.github.cfg.xml 📚
-        run: |
-            chmod u+x "${GITHUB_WORKSPACE}/copyHibernateCofigFile.sh"
-            bash "${GITHUB_WORKSPACE}/copyHibernateCofigFile.sh"
-      - name: Build and analyze
+          
+      - shell: bash
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           HIBERNATE_URL: ${{ secrets.HIBERNATE_URL }}
           HIBERNATE_USERNAME: ${{ secrets.HIBERNATE_USERNAME }}
           HIBERNATE_PASSWORD: ${{ secrets.HIBERNATE_PASSWORD }}
-        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.projectKey=rsmondejar_21giin-presentaciones-contables
+        run: |
+          example-command "$HIBERNATE_USERNAME"
+

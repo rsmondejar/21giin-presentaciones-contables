@@ -31,12 +31,26 @@ public class HibernateUtil {
             }
             
             if (System.getenv("HIBERNATE_USERNAME") != null) {
-                cfg.setProperty("connection.username", System.getenv("HIBERNATE_USERNAME"));
+                cfg.setProperty("connection.username", System.getenv("secrets.HIBERNATE_USERNAME"));
             }
             
             if (System.getenv("HIBERNATE_PASSWORD") != null) {
                 cfg.setProperty("connection.password", System.getenv("HIBERNATE_PASSWORD"));
             }
+            
+            System.out.println("===============================");
+            System.out.println("HIBERNATE_URL: " + System.getenv("HIBERNATE_URL"));
+            System.out.println("HIBERNATE_USERNAME: " + System.getenv("HIBERNATE_USERNAME"));
+            System.out.println("HIBERNATE_PASSWORD: " + System.getenv("HIBERNATE_PASSWORD"));
+            System.out.println("===============================");
+            System.out.println("secrets.HIBERNATE_URL: " + System.getenv("secrets.HIBERNATE_URL"));
+            System.out.println("secrets.HIBERNATE_USERNAME: " + System.getenv("secrets.HIBERNATE_USERNAME"));
+            System.out.println("secrets.HIBERNATE_PASSWORD: " + System.getenv("secrets.HIBERNATE_PASSWORD"));
+            System.out.println("===============================");
+            System.out.println("connection.url: " + cfg.getProperty("connection.url"));
+            System.out.println("connection.username: " + cfg.getProperty("connection.username"));
+            System.out.println("connection.password: " + cfg.getProperty("connection.password"));
+            System.out.println("===============================");
             
             sessionFactory = cfg.buildSessionFactory();
         } catch(Throwable exception) {

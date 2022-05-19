@@ -7,7 +7,6 @@ package app.views.users;
 import app.controllers.MunicipalityController;
 import app.controllers.UserController;
 import app.controllers.UserRoleController;
-import app.dao.UserRoleDao;
 import app.entities.Municipality;
 import app.entities.User;
 import app.entities.UserRole;
@@ -17,7 +16,6 @@ import helpers.Log;
 import java.awt.Color;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JDesktopPane;
 
 /**
  *

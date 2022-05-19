@@ -25,46 +25,20 @@ public class HibernateUtil {
             
             cfg.configure(hibernateFileConfig);
             
-            // TODO: update with env variables
-            System.out.println("===============================");
-            System.out.println("HIBERNATE VARIABLES");
-            
+            // Update configuration with enviroment variables
             if (System.getenv("HIBERNATE_URL") != null) {
-                System.out.println("HIBERNATE_URL CAMBIAR!!!");
                 cfg.setProperty("hibernate.connection.url", System.getenv("HIBERNATE_URL"));
-            } else {
-                System.out.println("HIBERNATE_URL NO SE HA CAMBIADO!!!");
             }
             
             if (System.getenv("HIBERNATE_USERNAME") != null) {
-                System.out.println("HIBERNATE_USERNAME CAMBIAR!!!");
                 cfg.setProperty("hibernate.connection.username", System.getenv("HIBERNATE_USERNAME"));
-            } else {
-                System.out.println("HIBERNATE_USERNAME NO SE HA CAMBIADO!!!");
             }
             
             if (System.getenv("HIBERNATE_PASSWORD") != null) {
-                System.out.println("HIBERNATE_PASSWORD CAMBIAR!!!");
                 cfg.setProperty("hibernate.connection.password", System.getenv("HIBERNATE_PASSWORD"));
-            } else {
-                System.out.println("HIBERNATE_PASSWORD NO SE HA CAMBIADO!!!");
             }
-            
-            System.out.println("===============================");
-            System.out.println("HIBERNATE_URL: " + System.getenv("HIBERNATE_URL"));
-            System.out.println("HIBERNATE_USERNAME: " + System.getenv("HIBERNATE_USERNAME"));
-            System.out.println("HIBERNATE_PASSWORD: " + System.getenv("HIBERNATE_PASSWORD"));
-            System.out.println("===============================");
-            System.out.println("connection.url: " + cfg.getProperty("hibernate.connection.url"));
-            System.out.println("connection.username: " + cfg.getProperty("hibernate.connection.username"));
-            System.out.println("connection.password: " + cfg.getProperty("hibernate.connection.password"));
-            
-            System.out.println("===============================");
-            
+
             sessionFactory = cfg.buildSessionFactory();
-            
-            // @TODO: Remove after testing
-            System.out.println(sessionFactory);
         } catch(Throwable exception) {
             Log.error(exception);
             throw new ExceptionInInitializerError();

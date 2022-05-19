@@ -52,6 +52,9 @@ public class HibernateUtil {
             System.out.println("===============================");
             
             sessionFactory = cfg.buildSessionFactory();
+            
+            // @TODO: Remove after testing
+            System.out.println(sessionFactory);
         } catch(Throwable exception) {
             Log.error(exception);
             throw new ExceptionInInitializerError();

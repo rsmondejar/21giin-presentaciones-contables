@@ -184,6 +184,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("unchecked")
     private void jButtonUserUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserUpdateActionPerformed
         try {
             if (!validateInputs()) {
@@ -214,6 +215,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      *
      * @param evt
      */
+    @SuppressWarnings("unchecked")
     private void enableUpdateButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enableUpdateButton
         try {
             jButtonUserUpdate.setEnabled(validateInputs());

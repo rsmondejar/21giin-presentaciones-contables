@@ -119,23 +119,24 @@ public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L119">        pack();</span>
 <span class="nc" id="L120">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void jButtonMunicipioUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioUpdateActionPerformed
         try {
 
-<span class="nc" id="L125">            int id = Integer.parseInt(jTextFieldMunicipioId.getText());</span>
-<span class="nc" id="L126">            Municipality municipality = MunicipalityController.findById(id);</span>
+<span class="nc" id="L126">            int id = Integer.parseInt(jTextFieldMunicipioId.getText());</span>
+<span class="nc" id="L127">            Municipality municipality = MunicipalityController.findById(id);</span>
 
-<span class="nc" id="L128">            municipality.setName(getInputName());</span>
-<span class="nc" id="L129">            municipality.setCategoryId(Integer.parseInt(getInputCategory()));</span>
+<span class="nc" id="L129">            municipality.setName(getInputName());</span>
+<span class="nc" id="L130">            municipality.setCategoryId(Integer.parseInt(getInputCategory()));</span>
 
-<span class="nc" id="L131">            MunicipalityController.update(id, municipality);</span>
+<span class="nc" id="L132">            MunicipalityController.update(id, municipality);</span>
             
-<span class="nc" id="L133">            Dialog.info(&quot;Municipio actualizado correctamente&quot;, &quot;Info&quot;);</span>
-<span class="nc" id="L134">        } catch (NumberFormatException e) {</span>
-<span class="nc" id="L135">            Log.error(e);</span>
-<span class="nc" id="L136">            Dialog.error(e.getMessage(), &quot;Error actualizando municipio&quot;);</span>
-<span class="nc" id="L137">        }</span>
-<span class="nc" id="L138">    }//GEN-LAST:event_jButtonMunicipioUpdateActionPerformed</span>
+<span class="nc" id="L134">            Dialog.info(&quot;Municipio actualizado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc" id="L135">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L136">            Log.error(e);</span>
+<span class="nc" id="L137">            Dialog.error(e.getMessage(), &quot;Error actualizando municipio&quot;);</span>
+<span class="nc" id="L138">        }</span>
+<span class="nc" id="L139">    }//GEN-LAST:event_jButtonMunicipioUpdateActionPerformed</span>
 
     /**
      * Validate Inputs.
@@ -143,7 +144,7 @@ public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return True if inputs are valid
      */
     private Boolean validateInputs() {
-<span class="nc bnc" id="L146" title="All 4 branches missed.">        return validateInputName() &amp;&amp; validateInputCategory();</span>
+<span class="nc bnc" id="L147" title="All 4 branches missed.">        return validateInputName() &amp;&amp; validateInputCategory();</span>
     }
 
     /**
@@ -152,16 +153,16 @@ public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputName() {
-<span class="nc" id="L155">        String name = getInputName();</span>
-<span class="nc bnc" id="L156" title="All 4 branches missed.">        Boolean isValid = name.length() &gt; 0 &amp;&amp; name.length() &lt;= 30;</span>
+<span class="nc" id="L156">        String name = getInputName();</span>
+<span class="nc bnc" id="L157" title="All 4 branches missed.">        Boolean isValid = name.length() &gt; 0 &amp;&amp; name.length() &lt;= 30;</span>
 
-<span class="nc bnc" id="L158" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
-<span class="nc" id="L159">            jTextFieldMunicipioName.setBackground(Color.white);</span>
+<span class="nc bnc" id="L159" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
+<span class="nc" id="L160">            jTextFieldMunicipioName.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L161">            jTextFieldMunicipioName.setBackground(Color.orange);</span>
+<span class="nc" id="L162">            jTextFieldMunicipioName.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L164">        return isValid;</span>
+<span class="nc" id="L165">        return isValid;</span>
     }
 
     /**
@@ -171,17 +172,8 @@ public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
      */
     private Boolean validateInputCategory() {
         // TODO: Validation
-        //String category = getInputCategory();
-        
-<span class="nc" id="L176">        Boolean isValid = true;</span>
-
-<span class="nc bnc" id="L178" title="All 2 branches missed.">        if (isValid) {</span>
-<span class="nc" id="L179">            jComboBoxMunicipioCategory.setBackground(Color.white);</span>
-        } else {
-<span class="nc" id="L181">            jComboBoxMunicipioCategory.setBackground(Color.orange);</span>
-        }
-
-<span class="nc" id="L184">        return isValid;</span>
+<span class="nc" id="L175">        Boolean isValid = true;</span>
+<span class="nc" id="L176">        return isValid;</span>
     }
 
     /**
@@ -190,7 +182,7 @@ public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Name
      */
     private String getInputName() {
-<span class="nc" id="L193">        return jTextFieldMunicipioName.getText();</span>
+<span class="nc" id="L185">        return jTextFieldMunicipioName.getText();</span>
     }
 
     /**
@@ -199,7 +191,7 @@ public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Category.
      */
     private String getInputCategory() {
-<span class="nc" id="L202">        return jComboBoxMunicipioCategory.getSelectedItem().toString();</span>
+<span class="nc" id="L194">        return jComboBoxMunicipioCategory.getSelectedItem().toString();</span>
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

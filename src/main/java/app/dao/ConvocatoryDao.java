@@ -88,7 +88,7 @@ public class ConvocatoryDao extends BaseDao {
         
         List<DocumentType> documentTypes = convocatory.getDocumentsTypes();
          
-        Integer statusDelete = super.executeNamedQuery("delete_documents_types", "convocatory_id", String.valueOf(id));
+        super.executeNamedQuery("delete_documents_types", "convocatory_id", String.valueOf(id));
         
         ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();
 

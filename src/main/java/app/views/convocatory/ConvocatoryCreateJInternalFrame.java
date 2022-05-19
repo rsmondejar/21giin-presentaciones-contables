@@ -219,6 +219,7 @@ public class ConvocatoryCreateJInternalFrame extends javax.swing.JInternalFrame 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("unchecked")
     private void jButtonConvocatoryCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryCreateActionPerformed
         try {
             if (!validateInputs()) {

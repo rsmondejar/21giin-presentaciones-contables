@@ -151,6 +151,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("unchecked")
     private void jButtonUserCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserCreateActionPerformed
         try {
             if (!validateInputs()) {
@@ -180,6 +181,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      *
      * @param evt
      */
+    @SuppressWarnings("unchecked")
     private void enableCreateButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enableCreateButton
         try {
             jButtonUserCreate.setEnabled(validateInputs());

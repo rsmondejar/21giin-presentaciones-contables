@@ -151,53 +151,55 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L151">        pack();</span>
 <span class="nc" id="L152">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void jButtonUserCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserCreateActionPerformed
         try {
-<span class="nc bnc" id="L156" title="All 2 branches missed.">            if (!validateInputs()) {</span>
-<span class="nc" id="L157">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
+<span class="nc bnc" id="L157" title="All 2 branches missed.">            if (!validateInputs()) {</span>
+<span class="nc" id="L158">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
             }
 
-<span class="nc" id="L160">            String login = getInputLogin();</span>
-<span class="nc" id="L161">            String password = getInputPassword();</span>
-<span class="nc" id="L162">            int roleId = getInputUserRole().getId();</span>
-<span class="nc" id="L163">            int municipalityId = getInputMunicipality().getId();</span>
+<span class="nc" id="L161">            String login = getInputLogin();</span>
+<span class="nc" id="L162">            String password = getInputPassword();</span>
+<span class="nc" id="L163">            int roleId = getInputUserRole().getId();</span>
+<span class="nc" id="L164">            int municipalityId = getInputMunicipality().getId();</span>
 
             // User create
-<span class="nc" id="L166">            User user = new User(login, password, roleId, municipalityId);</span>
-<span class="nc" id="L167">            UserController.create(user);</span>
+<span class="nc" id="L167">            User user = new User(login, password, roleId, municipalityId);</span>
+<span class="nc" id="L168">            UserController.create(user);</span>
 
-<span class="nc" id="L169">            Dialog.info(&quot;Usuario creado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc" id="L170">            Dialog.info(&quot;Usuario creado correctamente&quot;, &quot;Info&quot;);</span>
 
-<span class="nc" id="L171">            cleanInputs();</span>
-<span class="nc" id="L172">        } catch (Exception e) {</span>
-<span class="nc" id="L173">            Log.error(e);</span>
-<span class="nc" id="L174">            Dialog.error(e.getMessage(), &quot;Error creando usuario&quot;);</span>
-<span class="nc" id="L175">        }</span>
-<span class="nc" id="L176">    }//GEN-LAST:event_jButtonUserCreateActionPerformed</span>
+<span class="nc" id="L172">            cleanInputs();</span>
+<span class="nc" id="L173">        } catch (Exception e) {</span>
+<span class="nc" id="L174">            Log.error(e);</span>
+<span class="nc" id="L175">            Dialog.error(e.getMessage(), &quot;Error creando usuario&quot;);</span>
+<span class="nc" id="L176">        }</span>
+<span class="nc" id="L177">    }//GEN-LAST:event_jButtonUserCreateActionPerformed</span>
 
     /**
      * Enable Create Button Event.
      *
      * @param evt
      */
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void enableCreateButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enableCreateButton
         try {
-<span class="nc" id="L185">            jButtonUserCreate.setEnabled(validateInputs());</span>
-<span class="nc" id="L186">        } catch (Exception e) {</span>
-<span class="nc" id="L187">            Log.error(e);</span>
-<span class="nc" id="L188">        }</span>
-<span class="nc" id="L189">    }//GEN-LAST:event_enableCreateButton</span>
+<span class="nc" id="L187">            jButtonUserCreate.setEnabled(validateInputs());</span>
+<span class="nc" id="L188">        } catch (Exception e) {</span>
+<span class="nc" id="L189">            Log.error(e);</span>
+<span class="nc" id="L190">        }</span>
+<span class="nc" id="L191">    }//GEN-LAST:event_enableCreateButton</span>
 
     /**
      * Clean Inputs.
      */
     private void cleanInputs() {
-<span class="nc" id="L195">        jTextFieldUserLogin.setText(&quot;&quot;);</span>
-<span class="nc" id="L196">        jPasswordFieldUserPassword.setText(&quot;&quot;);</span>
-<span class="nc" id="L197">        jComboBoxUserRole.setSelectedIndex(0);</span>
-<span class="nc" id="L198">        jComboBoxMunicipality.setSelectedIndex(0);</span>
-<span class="nc" id="L199">        validateInputs();</span>
-<span class="nc" id="L200">    }</span>
+<span class="nc" id="L197">        jTextFieldUserLogin.setText(&quot;&quot;);</span>
+<span class="nc" id="L198">        jPasswordFieldUserPassword.setText(&quot;&quot;);</span>
+<span class="nc" id="L199">        jComboBoxUserRole.setSelectedIndex(0);</span>
+<span class="nc" id="L200">        jComboBoxMunicipality.setSelectedIndex(0);</span>
+<span class="nc" id="L201">        validateInputs();</span>
+<span class="nc" id="L202">    }</span>
 
     /**
      * Validate Inputs.
@@ -205,7 +207,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return True if inputs are valid
      */
     private Boolean validateInputs() {
-<span class="nc bnc" id="L208" title="All 4 branches missed.">        return validateInputLogin() &amp;&amp; validateInputPassword();</span>
+<span class="nc bnc" id="L210" title="All 4 branches missed.">        return validateInputLogin() &amp;&amp; validateInputPassword();</span>
     }
 
     /**
@@ -214,16 +216,16 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputLogin() {
-<span class="nc" id="L217">        String name = getInputLogin();</span>
-<span class="nc bnc" id="L218" title="All 4 branches missed.">        Boolean isValid = name.length() &gt;= 1 &amp;&amp; name.length() &lt;= 10;</span>
+<span class="nc" id="L219">        String name = getInputLogin();</span>
+<span class="nc bnc" id="L220" title="All 4 branches missed.">        Boolean isValid = name.length() &gt;= 1 &amp;&amp; name.length() &lt;= 10;</span>
 
-<span class="nc bnc" id="L220" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
-<span class="nc" id="L221">            jTextFieldUserLogin.setBackground(Color.white);</span>
+<span class="nc bnc" id="L222" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
+<span class="nc" id="L223">            jTextFieldUserLogin.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L223">            jTextFieldUserLogin.setBackground(Color.orange);</span>
+<span class="nc" id="L225">            jTextFieldUserLogin.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L226">        return isValid;</span>
+<span class="nc" id="L228">        return isValid;</span>
     }
 
     /**
@@ -232,16 +234,16 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputPassword() {
-<span class="nc" id="L235">        String password = getInputPassword();</span>
-<span class="nc bnc" id="L236" title="All 4 branches missed.">        Boolean isValid = password.length() &gt;= 4 &amp;&amp; password.length() &lt;= 8;</span>
+<span class="nc" id="L237">        String password = getInputPassword();</span>
+<span class="nc bnc" id="L238" title="All 4 branches missed.">        Boolean isValid = password.length() &gt;= 4 &amp;&amp; password.length() &lt;= 8;</span>
 
-<span class="nc bnc" id="L238" title="All 4 branches missed.">        if (isValid || password.length() == 0) {</span>
-<span class="nc" id="L239">            jPasswordFieldUserPassword.setBackground(Color.white);</span>
+<span class="nc bnc" id="L240" title="All 4 branches missed.">        if (isValid || password.length() == 0) {</span>
+<span class="nc" id="L241">            jPasswordFieldUserPassword.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L241">            jPasswordFieldUserPassword.setBackground(Color.orange);</span>
+<span class="nc" id="L243">            jPasswordFieldUserPassword.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L244">        return isValid;</span>
+<span class="nc" id="L246">        return isValid;</span>
     }
 
     /**
@@ -250,7 +252,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Name
      */
     private String getInputLogin() {
-<span class="nc" id="L253">        return jTextFieldUserLogin.getText();</span>
+<span class="nc" id="L255">        return jTextFieldUserLogin.getText();</span>
     }
 
     /**
@@ -259,7 +261,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Password.
      */
     private String getInputPassword() {
-<span class="nc" id="L262">        return String.valueOf(jPasswordFieldUserPassword.getPassword());</span>
+<span class="nc" id="L264">        return String.valueOf(jPasswordFieldUserPassword.getPassword());</span>
     }
 
     /**
@@ -268,7 +270,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input User Role.
      */
     private UserRole getInputUserRole() {
-<span class="nc" id="L271">        return (UserRole) jComboBoxUserRole.getSelectedItem();</span>
+<span class="nc" id="L273">        return (UserRole) jComboBoxUserRole.getSelectedItem();</span>
     }
 
     /**
@@ -277,7 +279,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Munipality.
      */
     private Municipality getInputMunicipality() {
-<span class="nc" id="L280">        return (Municipality) jComboBoxMunicipality.getSelectedItem();</span>
+<span class="nc" id="L282">        return (Municipality) jComboBoxMunicipality.getSelectedItem();</span>
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

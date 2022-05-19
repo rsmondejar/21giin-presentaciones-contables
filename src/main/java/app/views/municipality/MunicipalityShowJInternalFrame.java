@@ -137,6 +137,7 @@ public class MunicipalityShowJInternalFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("unchecked")
     private void jButtonMunicipioEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioEditActionPerformed
         try {
 
@@ -157,6 +158,7 @@ public class MunicipalityShowJInternalFrame extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButtonMunicipioEditActionPerformed
 
+    @SuppressWarnings("unchecked")
     private void jButtonMunicipioDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioDeleteActionPerformed
         int input = JOptionPane.showConfirmDialog(null, "Deseas eliminar?");
         // 0=yes, 1=no, 2=cancel

@@ -177,6 +177,7 @@ public class UserShowJInternalFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("unchecked")
     private void jButtonUserEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserEditActionPerformed
         try {
 
@@ -199,6 +200,7 @@ public class UserShowJInternalFrame extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButtonUserEditActionPerformed
 
+    @SuppressWarnings("unchecked")
     private void jButtonUserDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserDeleteActionPerformed
         int input = JOptionPane.showConfirmDialog(null, "Deseas eliminar?");
         // 0=yes, 1=no, 2=cancel

@@ -1,2 +1,2 @@
 #!/bin/bash
-cp hibernate.github.cfg.xml hibernate.cfg.xml
+cp hibernate.example.cfg.xml hibernate.cfg.xml

@@ -184,55 +184,57 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L184">        pack();</span>
 <span class="nc" id="L185">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void jButtonUserUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserUpdateActionPerformed
         try {
-<span class="nc bnc" id="L189" title="All 2 branches missed.">            if (!validateInputs()) {</span>
-<span class="nc" id="L190">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
+<span class="nc bnc" id="L190" title="All 2 branches missed.">            if (!validateInputs()) {</span>
+<span class="nc" id="L191">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
             }
 
-<span class="nc" id="L193">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
-<span class="nc" id="L194">            String login = getInputLogin();</span>
-<span class="nc" id="L195">            String password = getInputPassword();</span>
-<span class="nc" id="L196">            int roleId = getInputUserRole().getId();</span>
-<span class="nc" id="L197">            int municipalityId = getInputMunicipality().getId();</span>
+<span class="nc" id="L194">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
+<span class="nc" id="L195">            String login = getInputLogin();</span>
+<span class="nc" id="L196">            String password = getInputPassword();</span>
+<span class="nc" id="L197">            int roleId = getInputUserRole().getId();</span>
+<span class="nc" id="L198">            int municipalityId = getInputMunicipality().getId();</span>
 
             // User update
-<span class="nc" id="L200">            User user = new User(id, login, password, roleId, municipalityId);</span>
-<span class="nc" id="L201">            UserController.update(id, user);</span>
+<span class="nc" id="L201">            User user = new User(id, login, password, roleId, municipalityId);</span>
+<span class="nc" id="L202">            UserController.update(id, user);</span>
 
-<span class="nc" id="L203">            Dialog.info(&quot;Usuario actualizado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc" id="L204">            Dialog.info(&quot;Usuario actualizado correctamente&quot;, &quot;Info&quot;);</span>
 
-<span class="nc" id="L205">            cleanInputs();</span>
-<span class="nc" id="L206">        } catch (Exception e) {</span>
-<span class="nc" id="L207">            Log.error(e);</span>
-<span class="nc" id="L208">            Dialog.error(e.getMessage(), &quot;Error actualiazdno usuario&quot;);</span>
-<span class="nc" id="L209">        }</span>
-<span class="nc" id="L210">    }//GEN-LAST:event_jButtonUserUpdateActionPerformed</span>
+<span class="nc" id="L206">            cleanInputs();</span>
+<span class="nc" id="L207">        } catch (Exception e) {</span>
+<span class="nc" id="L208">            Log.error(e);</span>
+<span class="nc" id="L209">            Dialog.error(e.getMessage(), &quot;Error actualiazdno usuario&quot;);</span>
+<span class="nc" id="L210">        }</span>
+<span class="nc" id="L211">    }//GEN-LAST:event_jButtonUserUpdateActionPerformed</span>
 
     /**
      * Enable Update Button.
      *
      * @param evt
      */
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void enableUpdateButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enableUpdateButton
         try {
-<span class="nc" id="L219">            jButtonUserUpdate.setEnabled(validateInputs());</span>
-<span class="nc" id="L220">        } catch (Exception e) {</span>
-<span class="nc" id="L221">            Log.error(e);</span>
-<span class="nc" id="L222">        }</span>
-<span class="nc" id="L223">    }//GEN-LAST:event_enableUpdateButton</span>
+<span class="nc" id="L221">            jButtonUserUpdate.setEnabled(validateInputs());</span>
+<span class="nc" id="L222">        } catch (Exception e) {</span>
+<span class="nc" id="L223">            Log.error(e);</span>
+<span class="nc" id="L224">        }</span>
+<span class="nc" id="L225">    }//GEN-LAST:event_enableUpdateButton</span>
 
     /**
      * Clean Inputs.
      */
     private void cleanInputs() {
-<span class="nc" id="L229">        jTextFieldUserId.setText(&quot;&quot;);</span>
-<span class="nc" id="L230">        jTextFieldUserLogin.setText(&quot;&quot;);</span>
-<span class="nc" id="L231">        jPasswordFieldUserPassword.setText(&quot;&quot;);</span>
-<span class="nc" id="L232">        jComboBoxUserRole.setSelectedIndex(0);</span>
-<span class="nc" id="L233">        jComboBoxMunicipality.setSelectedIndex(0);</span>
-<span class="nc" id="L234">        validateInputs();</span>
-<span class="nc" id="L235">    }</span>
+<span class="nc" id="L231">        jTextFieldUserId.setText(&quot;&quot;);</span>
+<span class="nc" id="L232">        jTextFieldUserLogin.setText(&quot;&quot;);</span>
+<span class="nc" id="L233">        jPasswordFieldUserPassword.setText(&quot;&quot;);</span>
+<span class="nc" id="L234">        jComboBoxUserRole.setSelectedIndex(0);</span>
+<span class="nc" id="L235">        jComboBoxMunicipality.setSelectedIndex(0);</span>
+<span class="nc" id="L236">        validateInputs();</span>
+<span class="nc" id="L237">    }</span>
 
     /**
      * Validate Inputs.
@@ -240,7 +242,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return True if inputs are valid
      */
     private Boolean validateInputs() {
-<span class="nc bnc" id="L243" title="All 4 branches missed.">        return validateInputLogin() &amp;&amp; validateInputPassword();</span>
+<span class="nc bnc" id="L245" title="All 4 branches missed.">        return validateInputLogin() &amp;&amp; validateInputPassword();</span>
     }
 
     /**
@@ -249,16 +251,16 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputLogin() {
-<span class="nc" id="L252">        String name = getInputLogin();</span>
-<span class="nc bnc" id="L253" title="All 4 branches missed.">        Boolean isValid = name.length() &gt;= 1 &amp;&amp; name.length() &lt;= 10;</span>
+<span class="nc" id="L254">        String name = getInputLogin();</span>
+<span class="nc bnc" id="L255" title="All 4 branches missed.">        Boolean isValid = name.length() &gt;= 1 &amp;&amp; name.length() &lt;= 10;</span>
 
-<span class="nc bnc" id="L255" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
-<span class="nc" id="L256">            jTextFieldUserLogin.setBackground(Color.white);</span>
+<span class="nc bnc" id="L257" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
+<span class="nc" id="L258">            jTextFieldUserLogin.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L258">            jTextFieldUserLogin.setBackground(Color.orange);</span>
+<span class="nc" id="L260">            jTextFieldUserLogin.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L261">        return isValid;</span>
+<span class="nc" id="L263">        return isValid;</span>
     }
 
     /**
@@ -267,16 +269,16 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputPassword() {
-<span class="nc" id="L270">        String password = getInputPassword();</span>
-<span class="nc bnc" id="L271" title="All 4 branches missed.">        Boolean isValid = password.length() &gt;= 4 &amp;&amp; password.length() &lt;= 8;</span>
+<span class="nc" id="L272">        String password = getInputPassword();</span>
+<span class="nc bnc" id="L273" title="All 4 branches missed.">        Boolean isValid = password.length() &gt;= 4 &amp;&amp; password.length() &lt;= 8;</span>
 
-<span class="nc bnc" id="L273" title="All 4 branches missed.">        if (isValid || password.length() == 0) {</span>
-<span class="nc" id="L274">            jPasswordFieldUserPassword.setBackground(Color.white);</span>
+<span class="nc bnc" id="L275" title="All 4 branches missed.">        if (isValid || password.length() == 0) {</span>
+<span class="nc" id="L276">            jPasswordFieldUserPassword.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L276">            jPasswordFieldUserPassword.setBackground(Color.orange);</span>
+<span class="nc" id="L278">            jPasswordFieldUserPassword.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L279">        return isValid;</span>
+<span class="nc" id="L281">        return isValid;</span>
     }
 
     /**
@@ -285,7 +287,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Name
      */
     private String getInputLogin() {
-<span class="nc" id="L288">        return jTextFieldUserLogin.getText();</span>
+<span class="nc" id="L290">        return jTextFieldUserLogin.getText();</span>
     }
 
     /**
@@ -294,7 +296,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Password.
      */
     private String getInputPassword() {
-<span class="nc" id="L297">        return String.valueOf(jPasswordFieldUserPassword.getPassword());</span>
+<span class="nc" id="L299">        return String.valueOf(jPasswordFieldUserPassword.getPassword());</span>
     }
 
     /**
@@ -303,7 +305,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input User Role.
      */
     private UserRole getInputUserRole() {
-<span class="nc" id="L306">        return (UserRole) jComboBoxUserRole.getSelectedItem();</span>
+<span class="nc" id="L308">        return (UserRole) jComboBoxUserRole.getSelectedItem();</span>
     }
 
     /**
@@ -312,7 +314,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Munipality.
      */
     private Municipality getInputMunicipality() {
-<span class="nc" id="L315">        return (Municipality) jComboBoxMunicipality.getSelectedItem();</span>
+<span class="nc" id="L317">        return (Municipality) jComboBoxMunicipality.getSelectedItem();</span>
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

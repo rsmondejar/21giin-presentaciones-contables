@@ -54,7 +54,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
 <span class="nc" id="L54">        setIconifiable(true);</span>
 <span class="nc" id="L55">        setMaximizable(true);</span>
 <span class="nc" id="L56">        setResizable(true);</span>
-<span class="nc" id="L57">        setTitle(&quot;Listado Municipios&quot;);</span>
+<span class="nc" id="L57">        setTitle(&quot;Crear Municipio&quot;);</span>
 <span class="nc" id="L58">        setToolTipText(&quot;&quot;);</span>
 
 <span class="nc" id="L60">        jLabelMunicipioName.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
@@ -112,44 +112,46 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
 <span class="nc" id="L112">        pack();</span>
 <span class="nc" id="L113">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void jTextFieldMunicipioNameenableLoginButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldMunicipioNameenableLoginButton
         try {
-<span class="nc" id="L117">            jButtonMunicipioCreate.setEnabled(validateInputs());</span>
-<span class="nc" id="L118">        } catch (Exception e) {</span>
-<span class="nc" id="L119">            Log.error(e);</span>
-<span class="nc" id="L120">        }</span>
-<span class="nc" id="L121">    }//GEN-LAST:event_jTextFieldMunicipioNameenableLoginButton</span>
+<span class="nc" id="L118">            jButtonMunicipioCreate.setEnabled(validateInputs());</span>
+<span class="nc" id="L119">        } catch (Exception e) {</span>
+<span class="nc" id="L120">            Log.error(e);</span>
+<span class="nc" id="L121">        }</span>
+<span class="nc" id="L122">    }//GEN-LAST:event_jTextFieldMunicipioNameenableLoginButton</span>
 
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void jButtonMunicipioCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioCreateActionPerformed
         try {
-<span class="nc bnc" id="L125" title="All 2 branches missed.">            if (!validateInputs()) {</span>
-<span class="nc" id="L126">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
+<span class="nc bnc" id="L127" title="All 2 branches missed.">            if (!validateInputs()) {</span>
+<span class="nc" id="L128">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
             }
 
-<span class="nc" id="L129">            String name = getInputName();</span>
-<span class="nc" id="L130">            String category = getInputCategory();</span>
+<span class="nc" id="L131">            String name = getInputName();</span>
+<span class="nc" id="L132">            String category = getInputCategory();</span>
 
             // Municipio create
-<span class="nc" id="L133">            Municipality municipality = new Municipality(name, Integer.parseInt(category));</span>
-<span class="nc" id="L134">            MunicipalityController.create(municipality);</span>
+<span class="nc" id="L135">            Municipality municipality = new Municipality(name, Integer.parseInt(category));</span>
+<span class="nc" id="L136">            MunicipalityController.create(municipality);</span>
             
-<span class="nc" id="L136">            Dialog.info(&quot;Municipio creado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc" id="L138">            Dialog.info(&quot;Municipio creado correctamente&quot;, &quot;Info&quot;);</span>
             
-<span class="nc" id="L138">            cleanInputs();</span>
-<span class="nc" id="L139">        } catch (Exception e) {</span>
-<span class="nc" id="L140">            Log.error(e);</span>
-<span class="nc" id="L141">            Dialog.error(e.getMessage(), &quot;Error creando municipio&quot;);</span>
-<span class="nc" id="L142">        }</span>
-<span class="nc" id="L143">    }//GEN-LAST:event_jButtonMunicipioCreateActionPerformed</span>
+<span class="nc" id="L140">            cleanInputs();</span>
+<span class="nc" id="L141">        } catch (Exception e) {</span>
+<span class="nc" id="L142">            Log.error(e);</span>
+<span class="nc" id="L143">            Dialog.error(e.getMessage(), &quot;Error creando municipio&quot;);</span>
+<span class="nc" id="L144">        }</span>
+<span class="nc" id="L145">    }//GEN-LAST:event_jButtonMunicipioCreateActionPerformed</span>
 
     /**
      * Clean Inputs
      */
     private void cleanInputs() {
-<span class="nc" id="L149">        jTextFieldMunicipioName.setText(&quot;&quot;);</span>
-<span class="nc" id="L150">        jComboBoxMunicipioCategory.setSelectedIndex(0);</span>
-<span class="nc" id="L151">        jButtonMunicipioCreate.setEnabled(validateInputs());</span>
-<span class="nc" id="L152">    }</span>
+<span class="nc" id="L151">        jTextFieldMunicipioName.setText(&quot;&quot;);</span>
+<span class="nc" id="L152">        jComboBoxMunicipioCategory.setSelectedIndex(0);</span>
+<span class="nc" id="L153">        jButtonMunicipioCreate.setEnabled(validateInputs());</span>
+<span class="nc" id="L154">    }</span>
     
     /**
      * Validate Inputs.
@@ -157,7 +159,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
      * @return True if inputs are valid
      */
     private Boolean validateInputs() {
-<span class="nc bnc" id="L160" title="All 4 branches missed.">        return validateInputName() &amp;&amp; validateInputCategory();</span>
+<span class="nc bnc" id="L162" title="All 4 branches missed.">        return validateInputName() &amp;&amp; validateInputCategory();</span>
     }
 
     /**
@@ -166,16 +168,16 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
      * @return
      */
     private Boolean validateInputName() {
-<span class="nc" id="L169">        String name = getInputName();</span>
-<span class="nc bnc" id="L170" title="All 4 branches missed.">        Boolean isValid = name.length() &gt; 0 &amp;&amp; name.length() &lt;= 30;</span>
+<span class="nc" id="L171">        String name = getInputName();</span>
+<span class="nc bnc" id="L172" title="All 4 branches missed.">        Boolean isValid = name.length() &gt; 0 &amp;&amp; name.length() &lt;= 30;</span>
 
-<span class="nc bnc" id="L172" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
-<span class="nc" id="L173">            jTextFieldMunicipioName.setBackground(Color.white);</span>
+<span class="nc bnc" id="L174" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
+<span class="nc" id="L175">            jTextFieldMunicipioName.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L175">            jTextFieldMunicipioName.setBackground(Color.orange);</span>
+<span class="nc" id="L177">            jTextFieldMunicipioName.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L178">        return isValid;</span>
+<span class="nc" id="L180">        return isValid;</span>
     }
 
     /**
@@ -185,16 +187,8 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
      */
     private Boolean validateInputCategory() {
         // TODO: Validation
-        // String category = getInputCategory();
-<span class="nc" id="L189">        Boolean isValid = true;</span>
-
-<span class="nc bnc" id="L191" title="All 2 branches missed.">        if (isValid) {</span>
-<span class="nc" id="L192">            jComboBoxMunicipioCategory.setBackground(Color.white);</span>
-        } else {
-<span class="nc" id="L194">            jComboBoxMunicipioCategory.setBackground(Color.orange);</span>
-        }
-
-<span class="nc" id="L197">        return isValid;</span>
+<span class="nc" id="L190">        Boolean isValid = true;</span>
+<span class="nc" id="L191">        return isValid;</span>
     }
 
     /**
@@ -203,7 +197,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
      * @return Input Name
      */
     private String getInputName() {
-<span class="nc" id="L206">        return jTextFieldMunicipioName.getText();</span>
+<span class="nc" id="L200">        return jTextFieldMunicipioName.getText();</span>
     }
 
     /**
@@ -212,7 +206,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
      * @return Input Category.
      */
     private String getInputCategory() {
-<span class="nc" id="L215">        return jComboBoxMunicipioCategory.getSelectedItem().toString();</span>
+<span class="nc" id="L209">        return jComboBoxMunicipioCategory.getSelectedItem().toString();</span>
     }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

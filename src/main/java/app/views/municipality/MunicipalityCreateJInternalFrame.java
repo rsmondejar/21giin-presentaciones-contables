@@ -54,7 +54,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Listado Municipios");
+        setTitle("Crear Municipio");
         setToolTipText("");
 
         jLabelMunicipioName.setFont(new java.awt.Font("Lucida Grande", 2, 13)); // NOI18N
@@ -112,6 +112,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("unchecked")
     private void jTextFieldMunicipioNameenableLoginButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jTextFieldMunicipioNameenableLoginButton
         try {
             jButtonMunicipioCreate.setEnabled(validateInputs());
@@ -120,6 +121,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
         }
     }//GEN-LAST:event_jTextFieldMunicipioNameenableLoginButton
 
+    @SuppressWarnings("unchecked")
     private void jButtonMunicipioCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioCreateActionPerformed
         try {
             if (!validateInputs()) {
@@ -185,15 +187,7 @@ public class MunicipalityCreateJInternalFrame extends javax.swing.JInternalFrame
      */
     private Boolean validateInputCategory() {
         // TODO: Validation
-        // String category = getInputCategory();
         Boolean isValid = true;
-
-        if (isValid) {
-            jComboBoxMunicipioCategory.setBackground(Color.white);
-        } else {
-            jComboBoxMunicipioCategory.setBackground(Color.orange);
-        }
-
         return isValid;
     }
 

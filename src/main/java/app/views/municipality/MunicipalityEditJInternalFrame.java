@@ -119,6 +119,7 @@ public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("unchecked")
     private void jButtonMunicipioUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioUpdateActionPerformed
         try {
 
@@ -171,16 +172,7 @@ public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
      */
     private Boolean validateInputCategory() {
         // TODO: Validation
-        //String category = getInputCategory();
-        
         Boolean isValid = true;
-
-        if (isValid) {
-            jComboBoxMunicipioCategory.setBackground(Color.white);
-        } else {
-            jComboBoxMunicipioCategory.setBackground(Color.orange);
-        }
-
         return isValid;
     }
 

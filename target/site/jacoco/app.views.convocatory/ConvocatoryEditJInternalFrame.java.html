@@ -247,31 +247,32 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L247">        pack();</span>
 <span class="nc" id="L248">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void jButtonConvocatoryUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryUpdateActionPerformed
         try {
-<span class="nc bnc" id="L252" title="All 2 branches missed.">            if (!validateInputs()) {</span>
-<span class="nc" id="L253">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
+<span class="nc bnc" id="L253" title="All 2 branches missed.">            if (!validateInputs()) {</span>
+<span class="nc" id="L254">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
             }
 
-<span class="nc" id="L256">            String name = getInputName();</span>
-<span class="nc" id="L257">            String description = getInputDescription();</span>
-<span class="nc" id="L258">            Date startDate = getInputStartDate();</span>
-<span class="nc" id="L259">            Date endDate = getInputEndDate();</span>
-<span class="nc" id="L260">            Boolean status = getInputStatus();</span>
-<span class="nc" id="L261">            List&lt;DocumentType&gt; documentsTypes = getInputDocumentTypesSelected();</span>
+<span class="nc" id="L257">            String name = getInputName();</span>
+<span class="nc" id="L258">            String description = getInputDescription();</span>
+<span class="nc" id="L259">            Date startDate = getInputStartDate();</span>
+<span class="nc" id="L260">            Date endDate = getInputEndDate();</span>
+<span class="nc" id="L261">            Boolean status = getInputStatus();</span>
+<span class="nc" id="L262">            List&lt;DocumentType&gt; documentsTypes = getInputDocumentTypesSelected();</span>
 
-<span class="nc" id="L263">            int id = Integer.parseInt(jTextFieldConvocatoryId.getText());</span>
+<span class="nc" id="L264">            int id = Integer.parseInt(jTextFieldConvocatoryId.getText());</span>
 
             // Convocatory update
-<span class="nc" id="L266">            Convocatory convocatory = new Convocatory(id, name, description, startDate, endDate, status, documentsTypes);</span>
-<span class="nc" id="L267">            ConvocatoryController.update(id, convocatory);</span>
+<span class="nc" id="L267">            Convocatory convocatory = new Convocatory(id, name, description, startDate, endDate, status, documentsTypes);</span>
+<span class="nc" id="L268">            ConvocatoryController.update(id, convocatory);</span>
 
-<span class="nc" id="L269">            Dialog.info(&quot;Convocatoria actualizado correctamente&quot;, &quot;Info&quot;);</span>
-<span class="nc" id="L270">        } catch (Exception e) {</span>
-<span class="nc" id="L271">            Log.error(e);</span>
-<span class="nc" id="L272">            Dialog.error(e.getMessage(), &quot;Error actualizando convocatoria&quot;);</span>
-<span class="nc" id="L273">        }</span>
-<span class="nc" id="L274">    }//GEN-LAST:event_jButtonConvocatoryUpdateActionPerformed</span>
+<span class="nc" id="L270">            Dialog.info(&quot;Convocatoria actualizado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc" id="L271">        } catch (Exception e) {</span>
+<span class="nc" id="L272">            Log.error(e);</span>
+<span class="nc" id="L273">            Dialog.error(e.getMessage(), &quot;Error actualizando convocatoria&quot;);</span>
+<span class="nc" id="L274">        }</span>
+<span class="nc" id="L275">    }//GEN-LAST:event_jButtonConvocatoryUpdateActionPerformed</span>
 
     /**
      * Validate Inputs.
@@ -279,10 +280,10 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return True if inputs are valid
      */
     private Boolean validateInputs() {
-<span class="nc bnc" id="L282" title="All 2 branches missed.">        return validateInputName()</span>
-<span class="nc bnc" id="L283" title="All 2 branches missed.">                &amp;&amp; validateInputDescription()</span>
-<span class="nc bnc" id="L284" title="All 2 branches missed.">                &amp;&amp; validateInputStartDate()</span>
-<span class="nc bnc" id="L285" title="All 2 branches missed.">                &amp;&amp; validateInputEndDate();</span>
+<span class="nc bnc" id="L283" title="All 2 branches missed.">        return validateInputName()</span>
+<span class="nc bnc" id="L284" title="All 2 branches missed.">                &amp;&amp; validateInputDescription()</span>
+<span class="nc bnc" id="L285" title="All 2 branches missed.">                &amp;&amp; validateInputStartDate()</span>
+<span class="nc bnc" id="L286" title="All 2 branches missed.">                &amp;&amp; validateInputEndDate();</span>
     }
 
     /**
@@ -291,16 +292,16 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputName() {
-<span class="nc" id="L294">        String name = getInputName();</span>
-<span class="nc bnc" id="L295" title="All 4 branches missed.">        Boolean isValid = name.length() &gt; 0 &amp;&amp; name.length() &lt;= 100;</span>
+<span class="nc" id="L295">        String name = getInputName();</span>
+<span class="nc bnc" id="L296" title="All 4 branches missed.">        Boolean isValid = name.length() &gt; 0 &amp;&amp; name.length() &lt;= 100;</span>
 
-<span class="nc bnc" id="L297" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
-<span class="nc" id="L298">            jTextFieldConvocatoryName.setBackground(Color.white);</span>
+<span class="nc bnc" id="L298" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
+<span class="nc" id="L299">            jTextFieldConvocatoryName.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L300">            jTextFieldConvocatoryName.setBackground(Color.orange);</span>
+<span class="nc" id="L301">            jTextFieldConvocatoryName.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L303">        return isValid;</span>
+<span class="nc" id="L304">        return isValid;</span>
     }
 
     /**
@@ -309,16 +310,16 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputDescription() {
-<span class="nc" id="L312">        String name = getInputDescription();</span>
-<span class="nc bnc" id="L313" title="All 4 branches missed.">        Boolean isValid = name.length() &gt; 0 &amp;&amp; name.length() &lt;= 2000;</span>
+<span class="nc" id="L313">        String name = getInputDescription();</span>
+<span class="nc bnc" id="L314" title="All 4 branches missed.">        Boolean isValid = name.length() &gt; 0 &amp;&amp; name.length() &lt;= 2000;</span>
 
-<span class="nc bnc" id="L315" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
-<span class="nc" id="L316">            jTextAreaConvocatoryDescription.setBackground(Color.white);</span>
+<span class="nc bnc" id="L316" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
+<span class="nc" id="L317">            jTextAreaConvocatoryDescription.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L318">            jTextAreaConvocatoryDescription.setBackground(Color.orange);</span>
+<span class="nc" id="L319">            jTextAreaConvocatoryDescription.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L321">        return isValid;</span>
+<span class="nc" id="L322">        return isValid;</span>
     }
 
     /**
@@ -327,16 +328,16 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputStartDate() {
-<span class="nc" id="L330">        Date startDate = jDateChooserStartDate.getDate();</span>
-<span class="nc bnc" id="L331" title="All 2 branches missed.">        Boolean isValid = startDate != null;</span>
+<span class="nc" id="L331">        Date startDate = jDateChooserStartDate.getDate();</span>
+<span class="nc bnc" id="L332" title="All 2 branches missed.">        Boolean isValid = startDate != null;</span>
 
-<span class="nc bnc" id="L333" title="All 2 branches missed.">        if (isValid) {</span>
-<span class="nc" id="L334">            jDateChooserStartDate.setBackground(Color.white);</span>
+<span class="nc bnc" id="L334" title="All 2 branches missed.">        if (isValid) {</span>
+<span class="nc" id="L335">            jDateChooserStartDate.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L336">            jDateChooserStartDate.setBackground(Color.orange);</span>
+<span class="nc" id="L337">            jDateChooserStartDate.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L339">        return isValid;</span>
+<span class="nc" id="L340">        return isValid;</span>
     }
 
     /**
@@ -345,17 +346,17 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputEndDate() {
-<span class="nc" id="L348">        Date startDate = jDateChooserStartDate.getDate();</span>
-<span class="nc" id="L349">        Date endDate = jDateChooserEndDate.getDate();</span>
-<span class="nc bnc" id="L350" title="All 4 branches missed.">        Boolean isValid = endDate != null &amp;&amp; (endDate.compareTo(startDate) &gt; 0);</span>
+<span class="nc" id="L349">        Date startDate = jDateChooserStartDate.getDate();</span>
+<span class="nc" id="L350">        Date endDate = jDateChooserEndDate.getDate();</span>
+<span class="nc bnc" id="L351" title="All 4 branches missed.">        Boolean isValid = endDate != null &amp;&amp; (endDate.compareTo(startDate) &gt; 0);</span>
 
-<span class="nc bnc" id="L352" title="All 2 branches missed.">        if (isValid) {</span>
-<span class="nc" id="L353">            jDateChooserEndDate.setBackground(Color.white);</span>
+<span class="nc bnc" id="L353" title="All 2 branches missed.">        if (isValid) {</span>
+<span class="nc" id="L354">            jDateChooserEndDate.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L355">            jDateChooserEndDate.setBackground(Color.orange);</span>
+<span class="nc" id="L356">            jDateChooserEndDate.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L358">        return isValid;</span>
+<span class="nc" id="L359">        return isValid;</span>
     }
 
     /**
@@ -364,7 +365,7 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Name
      */
     private String getInputName() {
-<span class="nc" id="L367">        return jTextFieldConvocatoryName.getText();</span>
+<span class="nc" id="L368">        return jTextFieldConvocatoryName.getText();</span>
     }
 
     /**
@@ -373,7 +374,7 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Category.
      */
     private String getInputDescription() {
-<span class="nc" id="L376">        return jTextAreaConvocatoryDescription.getText();</span>
+<span class="nc" id="L377">        return jTextAreaConvocatoryDescription.getText();</span>
     }
 
     /**
@@ -382,7 +383,7 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Start Date.
      */
     private Date getInputStartDate() {
-<span class="nc" id="L385">        return jDateChooserStartDate.getDate();</span>
+<span class="nc" id="L386">        return jDateChooserStartDate.getDate();</span>
     }
 
     /**
@@ -391,7 +392,7 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Start Date.
      */
     private Date getInputEndDate() {
-<span class="nc" id="L394">        return jDateChooserEndDate.getDate();</span>
+<span class="nc" id="L395">        return jDateChooserEndDate.getDate();</span>
     }
 
     /**
@@ -400,7 +401,7 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Status.
      */
     private boolean getInputStatus() {
-<span class="nc" id="L403">        return jCheckBoxConvocatoryStatus.isSelected();</span>
+<span class="nc" id="L404">        return jCheckBoxConvocatoryStatus.isSelected();</span>
     }
 
     /**
@@ -409,7 +410,7 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Document Type Id 1.
      */
     private boolean getInputDocumentTypeId1() {
-<span class="nc" id="L412">        return jCheckBoxDocumentTypeId1.isSelected();</span>
+<span class="nc" id="L413">        return jCheckBoxDocumentTypeId1.isSelected();</span>
     }
 
     /**
@@ -418,7 +419,7 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Document Type Id 2.
      */
     private boolean getInputDocumentTypeId2() {
-<span class="nc" id="L421">        return jCheckBoxDocumentTypeId2.isSelected();</span>
+<span class="nc" id="L422">        return jCheckBoxDocumentTypeId2.isSelected();</span>
     }
 
     /**
@@ -427,7 +428,7 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Document Type Id 3.
      */
     private boolean getInputDocumentTypeId3() {
-<span class="nc" id="L430">        return jCheckBoxDocumentTypeId3.isSelected();</span>
+<span class="nc" id="L431">        return jCheckBoxDocumentTypeId3.isSelected();</span>
     }
 
     /**
@@ -436,7 +437,7 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Document Type Id 4.
      */
     private boolean getInputDocumentTypeId4() {
-<span class="nc" id="L439">        return jCheckBoxDocumentTypeId4.isSelected();</span>
+<span class="nc" id="L440">        return jCheckBoxDocumentTypeId4.isSelected();</span>
     }
 
     /**
@@ -445,7 +446,7 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Document Type Id 5.
      */
     private boolean getInputDocumentTypeId5() {
-<span class="nc" id="L448">        return jCheckBoxDocumentTypeId5.isSelected();</span>
+<span class="nc" id="L449">        return jCheckBoxDocumentTypeId5.isSelected();</span>
     }
 
     /**
@@ -453,31 +454,31 @@ public class ConvocatoryEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Documents Types Selected
      */
     private List&lt;DocumentType&gt; getInputDocumentTypesSelected() {
-<span class="nc" id="L456">        List&lt;DocumentType&gt; documentsTypes = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L457">        List&lt;DocumentType&gt; documentsTypes = new ArrayList&lt;&gt;();</span>
         
-<span class="nc" id="L458">        DocumentTypeDao documentTypeDao = new DocumentTypeDao();</span>
+<span class="nc" id="L459">        DocumentTypeDao documentTypeDao = new DocumentTypeDao();</span>
             
-<span class="nc bnc" id="L460" title="All 2 branches missed.">        if (getInputDocumentTypeId1()) {</span>
-<span class="nc" id="L461">            documentsTypes.add(documentTypeDao.findById(1));</span>
+<span class="nc bnc" id="L461" title="All 2 branches missed.">        if (getInputDocumentTypeId1()) {</span>
+<span class="nc" id="L462">            documentsTypes.add(documentTypeDao.findById(1));</span>
         }
 
-<span class="nc bnc" id="L464" title="All 2 branches missed.">        if (getInputDocumentTypeId2()) {</span>
-<span class="nc" id="L465">            documentsTypes.add(documentTypeDao.findById(2));</span>
+<span class="nc bnc" id="L465" title="All 2 branches missed.">        if (getInputDocumentTypeId2()) {</span>
+<span class="nc" id="L466">            documentsTypes.add(documentTypeDao.findById(2));</span>
         }
 
-<span class="nc bnc" id="L468" title="All 2 branches missed.">        if (getInputDocumentTypeId3()) {</span>
-<span class="nc" id="L469">           documentsTypes.add(documentTypeDao.findById(3));</span>
+<span class="nc bnc" id="L469" title="All 2 branches missed.">        if (getInputDocumentTypeId3()) {</span>
+<span class="nc" id="L470">           documentsTypes.add(documentTypeDao.findById(3));</span>
         }
 
-<span class="nc bnc" id="L472" title="All 2 branches missed.">        if (getInputDocumentTypeId4()) {</span>
-<span class="nc" id="L473">            documentsTypes.add(documentTypeDao.findById(4));</span>
+<span class="nc bnc" id="L473" title="All 2 branches missed.">        if (getInputDocumentTypeId4()) {</span>
+<span class="nc" id="L474">            documentsTypes.add(documentTypeDao.findById(4));</span>
         }
 
-<span class="nc bnc" id="L476" title="All 2 branches missed.">        if (getInputDocumentTypeId5()) {</span>
-<span class="nc" id="L477">            documentsTypes.add(documentTypeDao.findById(5));</span>
+<span class="nc bnc" id="L477" title="All 2 branches missed.">        if (getInputDocumentTypeId5()) {</span>
+<span class="nc" id="L478">            documentsTypes.add(documentTypeDao.findById(5));</span>
         }
             
-<span class="nc" id="L480">        return documentsTypes;</span>
+<span class="nc" id="L481">        return documentsTypes;</span>
     }
 
 

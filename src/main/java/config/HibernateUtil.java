@@ -39,7 +39,7 @@ public class HibernateUtil {
             }
 
             sessionFactory = cfg.buildSessionFactory();
-        } catch(Throwable exception) {
+        } catch(Exception exception) {
             Log.error(exception);
             throw new ExceptionInInitializerError();
         }

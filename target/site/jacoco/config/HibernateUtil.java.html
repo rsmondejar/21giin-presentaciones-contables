@@ -39,7 +39,7 @@ import org.hibernate.cfg.Configuration;
             }
 
 <span class="fc" id="L41">            sessionFactory = cfg.buildSessionFactory();</span>
-<span class="nc" id="L42">        } catch(Throwable exception) {</span>
+<span class="nc" id="L42">        } catch(Exception exception) {</span>
 <span class="nc" id="L43">            Log.error(exception);</span>
 <span class="nc" id="L44">            throw new ExceptionInInitializerError();</span>
 <span class="fc" id="L45">        }</span>

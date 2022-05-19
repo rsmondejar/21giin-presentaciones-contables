@@ -110,29 +110,31 @@ public class LoginJFrame extends javax.swing.JFrame {
 <span class="nc" id="L110">        pack();</span>
 <span class="nc" id="L111">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void jButtonLogginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogginActionPerformed
         try {
-<span class="nc bnc" id="L115" title="All 2 branches missed.">            if (!validateInputs()) {</span>
-<span class="nc" id="L116">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
+<span class="nc bnc" id="L116" title="All 2 branches missed.">            if (!validateInputs()) {</span>
+<span class="nc" id="L117">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
             }
 
-<span class="nc" id="L119">            String name = getInputName();</span>
-<span class="nc" id="L120">            String password = getInputPassword();</span>
+<span class="nc" id="L120">            String name = getInputName();</span>
+<span class="nc" id="L121">            String password = getInputPassword();</span>
 
-<span class="nc" id="L122">            LoginController.loggin(name, password);</span>
-<span class="nc" id="L123">        } catch (Exception e) {</span>
-<span class="nc" id="L124">            Log.error(e);</span>
-<span class="nc" id="L125">            Dialog.error(e.getMessage(), &quot;Error loggin&quot;);</span>
-<span class="nc" id="L126">        }</span>
-<span class="nc" id="L127">    }//GEN-LAST:event_jButtonLogginActionPerformed</span>
+<span class="nc" id="L123">            LoginController.loggin(name, password);</span>
+<span class="nc" id="L124">        } catch (Exception e) {</span>
+<span class="nc" id="L125">            Log.error(e);</span>
+<span class="nc" id="L126">            Dialog.error(e.getMessage(), &quot;Error loggin&quot;);</span>
+<span class="nc" id="L127">        }</span>
+<span class="nc" id="L128">    }//GEN-LAST:event_jButtonLogginActionPerformed</span>
 
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void enableLoginButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enableLoginButton
         try {
-<span class="nc" id="L131">            jButtonLoggin.setEnabled(validateInputs());</span>
-<span class="nc" id="L132">        } catch (Exception e) {</span>
-<span class="nc" id="L133">            Log.error(e);</span>
-<span class="nc" id="L134">        }</span>
-<span class="nc" id="L135">    }//GEN-LAST:event_enableLoginButton</span>
+<span class="nc" id="L133">            jButtonLoggin.setEnabled(validateInputs());</span>
+<span class="nc" id="L134">        } catch (Exception e) {</span>
+<span class="nc" id="L135">            Log.error(e);</span>
+<span class="nc" id="L136">        }</span>
+<span class="nc" id="L137">    }//GEN-LAST:event_enableLoginButton</span>
 
     /**
      * Validate Inputs.
@@ -140,7 +142,7 @@ public class LoginJFrame extends javax.swing.JFrame {
      * @return True if inputs are valid
      */
     private Boolean validateInputs() {
-<span class="nc bnc" id="L143" title="All 4 branches missed.">        return validateInputLogin() &amp;&amp; validateInputPassword();</span>
+<span class="nc bnc" id="L145" title="All 4 branches missed.">        return validateInputLogin() &amp;&amp; validateInputPassword();</span>
     }
 
     /**
@@ -149,16 +151,16 @@ public class LoginJFrame extends javax.swing.JFrame {
      * @return
      */
     private Boolean validateInputLogin() {
-<span class="nc" id="L152">        String name = getInputName();</span>
-<span class="nc bnc" id="L153" title="All 4 branches missed.">        Boolean isValid = name.length() &gt;= 1 &amp;&amp; name.length() &lt;= 10;</span>
+<span class="nc" id="L154">        String name = getInputName();</span>
+<span class="nc bnc" id="L155" title="All 4 branches missed.">        Boolean isValid = name.length() &gt;= 1 &amp;&amp; name.length() &lt;= 10;</span>
 
-<span class="nc bnc" id="L155" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
-<span class="nc" id="L156">            jTextFieldUserName.setBackground(Color.white);</span>
+<span class="nc bnc" id="L157" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
+<span class="nc" id="L158">            jTextFieldUserName.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L158">            jTextFieldUserName.setBackground(Color.orange);</span>
+<span class="nc" id="L160">            jTextFieldUserName.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L161">        return isValid;</span>
+<span class="nc" id="L163">        return isValid;</span>
     }
 
     /**
@@ -167,16 +169,16 @@ public class LoginJFrame extends javax.swing.JFrame {
      * @return
      */
     private Boolean validateInputPassword() {
-<span class="nc" id="L170">        String password = getInputPassword();</span>
-<span class="nc bnc" id="L171" title="All 4 branches missed.">        Boolean isValid = password.length() &gt;= 4 &amp;&amp; password.length() &lt;= 8;</span>
+<span class="nc" id="L172">        String password = getInputPassword();</span>
+<span class="nc bnc" id="L173" title="All 4 branches missed.">        Boolean isValid = password.length() &gt;= 4 &amp;&amp; password.length() &lt;= 8;</span>
 
-<span class="nc bnc" id="L173" title="All 4 branches missed.">        if (isValid || password.length() == 0) {</span>
-<span class="nc" id="L174">            jPasswordFieldUserPassword.setBackground(Color.white);</span>
+<span class="nc bnc" id="L175" title="All 4 branches missed.">        if (isValid || password.length() == 0) {</span>
+<span class="nc" id="L176">            jPasswordFieldUserPassword.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L176">            jPasswordFieldUserPassword.setBackground(Color.orange);</span>
+<span class="nc" id="L178">            jPasswordFieldUserPassword.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L179">        return isValid;</span>
+<span class="nc" id="L181">        return isValid;</span>
     }
 
     /**
@@ -185,7 +187,7 @@ public class LoginJFrame extends javax.swing.JFrame {
      * @return Input Name
      */
     private String getInputName() {
-<span class="nc" id="L188">        return jTextFieldUserName.getText();</span>
+<span class="nc" id="L190">        return jTextFieldUserName.getText();</span>
     }
 
     /**
@@ -194,7 +196,7 @@ public class LoginJFrame extends javax.swing.JFrame {
      * @return Input Password.
      */
     private String getInputPassword() {
-<span class="nc" id="L197">        return String.valueOf(jPasswordFieldUserPassword.getPassword());</span>
+<span class="nc" id="L199">        return String.valueOf(jPasswordFieldUserPassword.getPassword());</span>
     }
 
     /**
@@ -207,30 +209,26 @@ public class LoginJFrame extends javax.swing.JFrame {
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
         try {
-<span class="nc bnc" id="L210" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
-<span class="nc bnc" id="L211" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
-<span class="nc" id="L212">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
-<span class="nc" id="L213">                    break;</span>
+<span class="nc bnc" id="L212" title="All 2 branches missed.">            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {</span>
+<span class="nc bnc" id="L213" title="All 2 branches missed.">                if (&quot;Nimbus&quot;.equals(info.getName())) {</span>
+<span class="nc" id="L214">                    javax.swing.UIManager.setLookAndFeel(info.getClassName());</span>
+<span class="nc" id="L215">                    break;</span>
                 }
             }
-<span class="nc" id="L216">        } catch (ClassNotFoundException ex) {</span>
-<span class="nc" id="L217">            java.util.logging.Logger.getLogger(LoginJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L218">        } catch (InstantiationException ex) {</span>
+<span class="nc" id="L218">        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {</span>
 <span class="nc" id="L219">            java.util.logging.Logger.getLogger(LoginJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L220">        } catch (IllegalAccessException ex) {</span>
-<span class="nc" id="L221">            java.util.logging.Logger.getLogger(LoginJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L222">        } catch (javax.swing.UnsupportedLookAndFeelException ex) {</span>
-<span class="nc" id="L223">            java.util.logging.Logger.getLogger(LoginJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);</span>
-<span class="nc" id="L224">        }</span>
+<span class="nc" id="L220">        }</span>
+        //&lt;/editor-fold&gt;
+        
         //&lt;/editor-fold&gt;
 
         /* Create and display the form */
-<span class="nc" id="L228">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
+<span class="nc" id="L226">        java.awt.EventQueue.invokeLater(new Runnable() {</span>
             public void run() {
-<span class="nc" id="L230">                new LoginJFrame().setVisible(true);</span>
-<span class="nc" id="L231">            }</span>
+<span class="nc" id="L228">                new LoginJFrame().setVisible(true);</span>
+<span class="nc" id="L229">            }</span>
         });
-<span class="nc" id="L233">    }</span>
+<span class="nc" id="L231">    }</span>
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonLoggin;

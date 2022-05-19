@@ -137,45 +137,47 @@ public class MunicipalityShowJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L137">        pack();</span>
 <span class="nc" id="L138">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void jButtonMunicipioEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioEditActionPerformed
         try {
 
-<span class="nc" id="L143">            int id = Integer.parseInt(jTextFieldMunicipioId.getText());</span>
-<span class="nc" id="L144">            Municipality municipality = MunicipalityController.findById(id);</span>
+<span class="nc" id="L144">            int id = Integer.parseInt(jTextFieldMunicipioId.getText());</span>
+<span class="nc" id="L145">            Municipality municipality = MunicipalityController.findById(id);</span>
             
-<span class="nc" id="L146">            MunicipalityEditJInternalFrame municipalitiesEdit = new MunicipalityEditJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L147">            MunicipalityEditJInternalFrame municipalitiesEdit = new MunicipalityEditJInternalFrame(jDesktopPanelContainer);</span>
         
-<span class="nc" id="L148">            jDesktopPanelContainer.add(municipalitiesEdit);</span>
+<span class="nc" id="L149">            jDesktopPanelContainer.add(municipalitiesEdit);</span>
         
             // Load municipio info in view
-<span class="nc" id="L151">            municipalitiesEdit.loadData(municipality);</span>
+<span class="nc" id="L152">            municipalitiesEdit.loadData(municipality);</span>
             
-<span class="nc" id="L153">            municipalitiesEdit.setVisible(true);</span>
-<span class="nc" id="L154">        } catch (NumberFormatException e) {</span>
-<span class="nc" id="L155">            Log.error(e);</span>
-<span class="nc" id="L156">            Dialog.error(e.getMessage(), &quot;Error creaando municipio&quot;);</span>
-<span class="nc" id="L157">        }</span>
-<span class="nc" id="L158">    }//GEN-LAST:event_jButtonMunicipioEditActionPerformed</span>
+<span class="nc" id="L154">            municipalitiesEdit.setVisible(true);</span>
+<span class="nc" id="L155">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L156">            Log.error(e);</span>
+<span class="nc" id="L157">            Dialog.error(e.getMessage(), &quot;Error creaando municipio&quot;);</span>
+<span class="nc" id="L158">        }</span>
+<span class="nc" id="L159">    }//GEN-LAST:event_jButtonMunicipioEditActionPerformed</span>
 
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void jButtonMunicipioDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioDeleteActionPerformed
-<span class="nc" id="L161">        int input = JOptionPane.showConfirmDialog(null, &quot;Deseas eliminar?&quot;);</span>
+<span class="nc" id="L163">        int input = JOptionPane.showConfirmDialog(null, &quot;Deseas eliminar?&quot;);</span>
         // 0=yes, 1=no, 2=cancel
         
-<span class="nc bnc" id="L164" title="All 2 branches missed.">        if (input == 0) {</span>
+<span class="nc bnc" id="L166" title="All 2 branches missed.">        if (input == 0) {</span>
             // Delete
-<span class="nc" id="L166">            int id = Integer.parseInt(jTextFieldMunicipioId.getText());</span>
-<span class="nc" id="L167">            boolean status = MunicipalityController.delete(id);</span>
+<span class="nc" id="L168">            int id = Integer.parseInt(jTextFieldMunicipioId.getText());</span>
+<span class="nc" id="L169">            boolean status = MunicipalityController.delete(id);</span>
             
-<span class="nc bnc" id="L169" title="All 2 branches missed.">            if (status) {</span>
-<span class="nc" id="L170">                Dialog.info(&quot;Municipio eliminado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc bnc" id="L171" title="All 2 branches missed.">            if (status) {</span>
+<span class="nc" id="L172">                Dialog.info(&quot;Municipio eliminado correctamente&quot;, &quot;Info&quot;);</span>
                 
-<span class="nc" id="L172">                this.hide();</span>
+<span class="nc" id="L174">                this.hide();</span>
             } else {
-<span class="nc" id="L174">                Dialog.error(&quot;Municipio no se ha eliminado&quot;, &quot;Error&quot;);</span>
+<span class="nc" id="L176">                Dialog.error(&quot;Municipio no se ha eliminado&quot;, &quot;Error&quot;);</span>
             }
         }
         
-<span class="nc" id="L178">    }//GEN-LAST:event_jButtonMunicipioDeleteActionPerformed</span>
+<span class="nc" id="L180">    }//GEN-LAST:event_jButtonMunicipioDeleteActionPerformed</span>
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

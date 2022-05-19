@@ -185,16 +185,19 @@ public class MenuJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("unchecked")
     private void jMenuItemCloseSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCloseSessionActionPerformed
         
         Dialog.info("Este apartado todavía no está disponible", "En desarrollo");
     }//GEN-LAST:event_jMenuItemCloseSessionActionPerformed
 
+    @SuppressWarnings("unchecked")
     private void jMenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExitActionPerformed
 
          System.exit(0);
     }//GEN-LAST:event_jMenuItemExitActionPerformed
 
+    @SuppressWarnings("unchecked")
     private void jMenuItemMunicipiosShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosShowActionPerformed
         MunicipalityListJInternalFrame municipalitiesList = new MunicipalityListJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(municipalitiesList);
@@ -202,6 +205,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         municipalitiesList.setVisible(true);
     }//GEN-LAST:event_jMenuItemMunicipiosShowActionPerformed
 
+    @SuppressWarnings("unchecked")
     private void jMenuItemMunicipiosCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosCreateActionPerformed
         MunicipalityCreateJInternalFrame municipalitiesCreate = new MunicipalityCreateJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(municipalitiesCreate);
@@ -209,6 +213,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         municipalitiesCreate.setVisible(true);
     }//GEN-LAST:event_jMenuItemMunicipiosCreateActionPerformed
 
+    @SuppressWarnings("unchecked")
     private void jMenuItemConvocatoriesShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesShowActionPerformed
         ConvocatoryListJInternalFrame convocatoriesList = new ConvocatoryListJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(convocatoriesList);
@@ -216,6 +221,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         convocatoriesList.setVisible(true);
     }//GEN-LAST:event_jMenuItemConvocatoriesShowActionPerformed
 
+    @SuppressWarnings("unchecked")
     private void jMenuItemConvocatoriesCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesCreateActionPerformed
         ConvocatoryCreateJInternalFrame convocatoryCreate = new ConvocatoryCreateJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(convocatoryCreate);
@@ -223,6 +229,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         convocatoryCreate.setVisible(true);
     }//GEN-LAST:event_jMenuItemConvocatoriesCreateActionPerformed
 
+    @SuppressWarnings("unchecked")
     private void jMenuItemUsersShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsersShowActionPerformed
         UserListJInternalFrame usersList = new UserListJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(usersList);
@@ -230,6 +237,7 @@ public class MenuJFrame extends javax.swing.JFrame {
         usersList.setVisible(true);
     }//GEN-LAST:event_jMenuItemUsersShowActionPerformed
 
+    @SuppressWarnings("unchecked")
     private void jMenuItemUsersCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsersCreateActionPerformed
         UserCreateJInternalFrame userCreate = new UserCreateJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(userCreate);
@@ -253,15 +261,11 @@ public class MenuJFrame extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */

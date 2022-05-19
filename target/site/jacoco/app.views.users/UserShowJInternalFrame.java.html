@@ -177,46 +177,48 @@ public class UserShowJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L177">        pack();</span>
 <span class="nc" id="L178">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void jButtonUserEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserEditActionPerformed
         try {
 
-<span class="nc" id="L183">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
-<span class="nc" id="L184">            User user = UserController.findById(id);</span>
+<span class="nc" id="L184">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
+<span class="nc" id="L185">            User user = UserController.findById(id);</span>
             
-<span class="nc" id="L186">            UserEditJInternalFrame userEdit = new UserEditJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L187">            UserEditJInternalFrame userEdit = new UserEditJInternalFrame(jDesktopPanelContainer);</span>
         
-<span class="nc" id="L188">            jDesktopPanelContainer.add(userEdit);</span>
+<span class="nc" id="L189">            jDesktopPanelContainer.add(userEdit);</span>
         
             // Load user info in view
-<span class="nc" id="L191">            userEdit.loadData(user);</span>
+<span class="nc" id="L192">            userEdit.loadData(user);</span>
             
-<span class="nc" id="L193">            this.hide();</span>
+<span class="nc" id="L194">            this.hide();</span>
             
-<span class="nc" id="L195">            userEdit.setVisible(true);</span>
-<span class="nc" id="L196">        } catch (NumberFormatException e) {</span>
-<span class="nc" id="L197">            Log.error(e);</span>
-<span class="nc" id="L198">            Dialog.error(e.getMessage(), &quot;Error editar municipio&quot;);</span>
-<span class="nc" id="L199">        }</span>
-<span class="nc" id="L200">    }//GEN-LAST:event_jButtonUserEditActionPerformed</span>
+<span class="nc" id="L196">            userEdit.setVisible(true);</span>
+<span class="nc" id="L197">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L198">            Log.error(e);</span>
+<span class="nc" id="L199">            Dialog.error(e.getMessage(), &quot;Error editar municipio&quot;);</span>
+<span class="nc" id="L200">        }</span>
+<span class="nc" id="L201">    }//GEN-LAST:event_jButtonUserEditActionPerformed</span>
 
+    @SuppressWarnings(&quot;unchecked&quot;)
     private void jButtonUserDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserDeleteActionPerformed
-<span class="nc" id="L203">        int input = JOptionPane.showConfirmDialog(null, &quot;Deseas eliminar?&quot;);</span>
+<span class="nc" id="L205">        int input = JOptionPane.showConfirmDialog(null, &quot;Deseas eliminar?&quot;);</span>
         // 0=yes, 1=no, 2=cancel
         
-<span class="nc bnc" id="L206" title="All 2 branches missed.">        if (input == 0) {</span>
+<span class="nc bnc" id="L208" title="All 2 branches missed.">        if (input == 0) {</span>
             // Delete
-<span class="nc" id="L208">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
-<span class="nc" id="L209">            boolean status = UserController.delete(id);</span>
+<span class="nc" id="L210">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
+<span class="nc" id="L211">            boolean status = UserController.delete(id);</span>
             
-<span class="nc bnc" id="L211" title="All 2 branches missed.">            if (status) {</span>
-<span class="nc" id="L212">                Dialog.info(&quot;Usuario eliminado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc bnc" id="L213" title="All 2 branches missed.">            if (status) {</span>
+<span class="nc" id="L214">                Dialog.info(&quot;Usuario eliminado correctamente&quot;, &quot;Info&quot;);</span>
                 
-<span class="nc" id="L214">                this.hide();</span>
+<span class="nc" id="L216">                this.hide();</span>
             } else {
-<span class="nc" id="L216">                Dialog.error(&quot;Usuario no se ha eliminado&quot;, &quot;Error&quot;);</span>
+<span class="nc" id="L218">                Dialog.error(&quot;Usuario no se ha eliminado&quot;, &quot;Error&quot;);</span>
             }
         }
-<span class="nc" id="L219">    }//GEN-LAST:event_jButtonUserDeleteActionPerformed</span>
+<span class="nc" id="L221">    }//GEN-LAST:event_jButtonUserDeleteActionPerformed</span>
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

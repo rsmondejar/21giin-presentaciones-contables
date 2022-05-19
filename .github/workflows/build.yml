@@ -27,5 +27,10 @@ jobs:
           HIBERNATE_USERNAME: ${{ secrets.HIBERNATE_USERNAME }}
           HIBERNATE_PASSWORD: ${{ secrets.HIBERNATE_PASSWORD }}
         run: |
-           "$HIBERNATE_USERNAME_TEST"
+          echo $HIBERNATE_URL >> secrets.txt
+          echo $HIBERNATE_USERNAME >> secrets.txt
+          echo $HIBERNATE_PASSWORD >> secrets.txt
+
+      - name: Run tmate
+        uses: mxschmitt/action-tmate@v2
 

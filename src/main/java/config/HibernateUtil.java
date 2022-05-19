@@ -26,16 +26,16 @@ public class HibernateUtil {
             cfg.configure(hibernateFileConfig);
             
             // TODO: update with env variables
-            if (System.getenv("HIBERNATE_URL") != null) {
-                cfg.setProperty("connection.url", System.getenv("HIBERNATE_URL"));
+            if (System.getenv("secrets.HIBERNATE_URL") != null) {
+                cfg.setProperty("connection.url", System.getenv("secrets.HIBERNATE_URL"));
             }
             
-            if (System.getenv("HIBERNATE_USERNAME") != null) {
-                cfg.setProperty("connection.username", System.getenv("HIBERNATE_USERNAME"));
+            if (System.getenv("secrets.HIBERNATE_USERNAME") != null) {
+                cfg.setProperty("connection.username", System.getenv("secrets.HIBERNATE_USERNAME"));
             }
             
-            if (System.getenv("HIBERNATE_PASSWORD") != null) {
-                cfg.setProperty("connection.password", System.getenv("HIBERNATE_PASSWORD"));
+            if (System.getenv("secrets.HIBERNATE_PASSWORD") != null) {
+                cfg.setProperty("connection.password", System.getenv("secrets.HIBERNATE_PASSWORD"));
             }
             
             sessionFactory = cfg.buildSessionFactory();

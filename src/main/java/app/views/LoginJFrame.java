@@ -110,7 +110,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unused")
     private void jButtonLogginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonLogginActionPerformed
         try {
             if (!validateInputs()) {
@@ -127,7 +127,7 @@ public class LoginJFrame extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jButtonLogginActionPerformed
 
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unused")
     private void enableLoginButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enableLoginButton
         try {
             jButtonLoggin.setEnabled(validateInputs());

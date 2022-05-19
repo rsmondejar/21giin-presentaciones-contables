@@ -21,10 +21,24 @@ public class HibernateUtil {
         try {
             File hibernateFileConfig = new File("hibernate.cfg.xml");
             
-            sessionFactory = new Configuration()
-                    //.configure("hibernate.cfg.xml")
-                    .configure(hibernateFileConfig)
-                    .buildSessionFactory();
+            Configuration cfg = new Configuration();
+            
+            cfg.configure(hibernateFileConfig);
+            
+            // TODO: update with env variables
+            if (System.getenv("HIBERNATE_URL") != null) {
+                cfg.setProperty("connection.url", System.getenv("HIBERNATE_URL"));
+            }
+            
+            if (System.getenv("HIBERNATE_USERNAME") != null) {
+                cfg.setProperty("connection.username", System.getenv("HIBERNATE_USERNAME"));
+            }
+            
+            if (System.getenv("HIBERNATE_PASSWORD") != null) {
+                cfg.setProperty("connection.password", System.getenv("HIBERNATE_PASSWORD"));
+            }
+            
+            sessionFactory = cfg.buildSessionFactory();
         } catch(Throwable exception) {
             Log.error(exception);
             throw new ExceptionInInitializerError();

@@ -26,12 +26,15 @@ public class HibernateUtil {
             cfg.configure(hibernateFileConfig);
             
             // TODO: update with env variables
+            System.out.println("===============================");
+            System.out.println("HIBERNATE VARIABLES");
+            
             if (System.getenv("HIBERNATE_URL") != null) {
                 cfg.setProperty("connection.url", System.getenv("HIBERNATE_URL"));
             }
             
             if (System.getenv("HIBERNATE_USERNAME") != null) {
-                cfg.setProperty("connection.username", System.getenv("secrets.HIBERNATE_USERNAME"));
+                cfg.setProperty("connection.username", System.getenv("HIBERNATE_USERNAME"));
             }
             
             if (System.getenv("HIBERNATE_PASSWORD") != null) {

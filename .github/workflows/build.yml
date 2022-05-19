@@ -27,11 +27,11 @@ jobs:
           HIBERNATE_USERNAME: ${{ secrets.HIBERNATE_USERNAME }}
           HIBERNATE_PASSWORD: ${{ secrets.HIBERNATE_PASSWORD }}
         run: |
-          echo "HIBERNATE_URL"
-          echo $HIBERNATE_URL | sed 's/./& /g'
-          echo "HIBERNATE_USERNAME
-          echo $HIBERNATE_USERNAME | sed 's/./& /g'
-          echo "HIBERNATE_PASSWORD
-          echo $HIBERNATE_PASSWORD| sed 's/./& /g'
-          echo ${{secrets.HIBERNATE_USERNAME}} | sed 's/./& /g'
-          echo ${{HIBERNATE_USERNAME}} | sed 's/./& /g'
+          "HIBERNATE_URL"
+          $HIBERNATE_URL | sed 's/./& /g'
+          "HIBERNATE_USERNAME
+          $HIBERNATE_USERNAME | sed 's/./& /g'
+          "HIBERNATE_PASSWORD
+          $HIBERNATE_PASSWORD| sed 's/./& /g'
+          ${{secrets.HIBERNATE_USERNAME}} | sed 's/./& /g'
+          ${{HIBERNATE_USERNAME}} | sed 's/./& /g'

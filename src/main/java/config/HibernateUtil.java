@@ -26,17 +26,31 @@ public class HibernateUtil {
             cfg.configure(hibernateFileConfig);
             
             // TODO: update with env variables
-            if (System.getenv("secrets.HIBERNATE_URL") != null) {
-                cfg.setProperty("connection.url", System.getenv("secrets.HIBERNATE_URL"));
+            if (System.getenv("HIBERNATE_URL") != null) {
+                cfg.setProperty("connection.url", System.getenv("HIBERNATE_URL"));
             }
             
-            if (System.getenv("secrets.HIBERNATE_USERNAME") != null) {
+            if (System.getenv("HIBERNATE_USERNAME") != null) {
                 cfg.setProperty("connection.username", System.getenv("secrets.HIBERNATE_USERNAME"));
             }
             
-            if (System.getenv("secrets.HIBERNATE_PASSWORD") != null) {
-                cfg.setProperty("connection.password", System.getenv("secrets.HIBERNATE_PASSWORD"));
+            if (System.getenv("HIBERNATE_PASSWORD") != null) {
+                cfg.setProperty("connection.password", System.getenv("HIBERNATE_PASSWORD"));
             }
+            
+            System.out.println("===============================");
+            System.out.println("HIBERNATE_URL: " + System.getenv("HIBERNATE_URL"));
+            System.out.println("HIBERNATE_USERNAME: " + System.getenv("HIBERNATE_USERNAME"));
+            System.out.println("HIBERNATE_PASSWORD: " + System.getenv("HIBERNATE_PASSWORD"));
+            System.out.println("===============================");
+            System.out.println("secrets.HIBERNATE_URL: " + System.getenv("secrets.HIBERNATE_URL"));
+            System.out.println("secrets.HIBERNATE_USERNAME: " + System.getenv("secrets.HIBERNATE_USERNAME"));
+            System.out.println("secrets.HIBERNATE_PASSWORD: " + System.getenv("secrets.HIBERNATE_PASSWORD"));
+            System.out.println("===============================");
+            System.out.println("connection.url: " + cfg.getProperty("connection.url"));
+            System.out.println("connection.username: " + cfg.getProperty("connection.username"));
+            System.out.println("connection.password: " + cfg.getProperty("connection.password"));
+            System.out.println("===============================");
             
             sessionFactory = cfg.buildSessionFactory();
         } catch(Throwable exception) {

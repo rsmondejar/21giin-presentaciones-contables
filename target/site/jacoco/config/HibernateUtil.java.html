@@ -31,22 +31,36 @@ import org.hibernate.cfg.Configuration;
             }
             
 <span class="pc bpc" id="L33" title="1 of 2 branches missed.">            if (System.getenv(&quot;HIBERNATE_USERNAME&quot;) != null) {</span>
-<span class="nc" id="L34">                cfg.setProperty(&quot;connection.username&quot;, System.getenv(&quot;HIBERNATE_USERNAME&quot;));</span>
+<span class="nc" id="L34">                cfg.setProperty(&quot;connection.username&quot;, System.getenv(&quot;secrets.HIBERNATE_USERNAME&quot;));</span>
             }
             
 <span class="pc bpc" id="L37" title="1 of 2 branches missed.">            if (System.getenv(&quot;HIBERNATE_PASSWORD&quot;) != null) {</span>
 <span class="nc" id="L38">                cfg.setProperty(&quot;connection.password&quot;, System.getenv(&quot;HIBERNATE_PASSWORD&quot;));</span>
             }
             
-<span class="fc" id="L41">            sessionFactory = cfg.buildSessionFactory();</span>
-<span class="nc" id="L42">        } catch(Throwable exception) {</span>
-<span class="nc" id="L43">            Log.error(exception);</span>
-<span class="nc" id="L44">            throw new ExceptionInInitializerError();</span>
-<span class="fc" id="L45">        }</span>
-<span class="fc" id="L46">    }</span>
+<span class="fc" id="L41">            System.out.println(&quot;===============================&quot;);</span>
+<span class="fc" id="L42">            System.out.println(&quot;connection.url: &quot; + cfg.getProperty(&quot;connection.url&quot;));</span>
+<span class="fc" id="L43">            System.out.println(&quot;connection.username: &quot; + cfg.getProperty(&quot;connection.username&quot;));</span>
+<span class="fc" id="L44">            System.out.println(&quot;connection.password: &quot; + cfg.getProperty(&quot;connection.password&quot;));</span>
+<span class="fc" id="L45">            System.out.println(&quot;===============================&quot;);</span>
+<span class="fc" id="L46">            System.out.println(&quot;HIBERNATE_URL: &quot; + System.getenv(&quot;HIBERNATE_URL&quot;));</span>
+<span class="fc" id="L47">            System.out.println(&quot;HIBERNATE_USERNAME: &quot; + System.getenv(&quot;HIBERNATE_USERNAME&quot;));</span>
+<span class="fc" id="L48">            System.out.println(&quot;HIBERNATE_PASSWORD: &quot; + System.getenv(&quot;HIBERNATE_PASSWORD&quot;));</span>
+<span class="fc" id="L49">            System.out.println(&quot;===============================&quot;);</span>
+<span class="fc" id="L50">            System.out.println(&quot;secrets.HIBERNATE_URL: &quot; + System.getenv(&quot;secrets.HIBERNATE_URL&quot;));</span>
+<span class="fc" id="L51">            System.out.println(&quot;secrets.HIBERNATE_USERNAME: &quot; + System.getenv(&quot;secrets.HIBERNATE_USERNAME&quot;));</span>
+<span class="fc" id="L52">            System.out.println(&quot;secrets.HIBERNATE_PASSWORD: &quot; + System.getenv(&quot;secrets.HIBERNATE_PASSWORD&quot;));</span>
+<span class="fc" id="L53">            System.out.println(&quot;===============================&quot;);</span>
+            
+<span class="fc" id="L55">            sessionFactory = cfg.buildSessionFactory();</span>
+<span class="nc" id="L56">        } catch(Throwable exception) {</span>
+<span class="nc" id="L57">            Log.error(exception);</span>
+<span class="nc" id="L58">            throw new ExceptionInInitializerError();</span>
+<span class="fc" id="L59">        }</span>
+<span class="fc" id="L60">    }</span>
     
     public static SessionFactory get() {
-<span class="fc" id="L49">        return sessionFactory;</span>
+<span class="fc" id="L63">        return sessionFactory;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.42.0" timestamp="2022-05-19T18:01:58.757">
+<pmd xmlns="http://pmd.sourceforge.net/report/2.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pmd.sourceforge.net/report/2.0.0 http://pmd.sourceforge.net/report_2_0_0.xsd" version="6.42.0" timestamp="2022-05-25T11:49:26.513">
 <file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/controllers/ConvocatoryController.java">
 <violation beginline="7" endline="7" begincolumn="1" endcolumn="42" rule="UnnecessaryImport" ruleset="Code Style" package="app.controllers" class="ConvocatoryController" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
 Unused import 'app.dao.ConvocatoryDocumentTypeDao'
@@ -149,18 +149,12 @@ Overriding method merely calls super
 </violation>
 </file>
 <file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryCreateJInternalFrame.java">
-<violation beginline="17" endline="17" begincolumn="1" endcolumn="32" rule="UnnecessaryImport" ruleset="Code Style" package="app.views.convocatory" class="ConvocatoryCreateJInternalFrame" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
-Unused import 'javax.swing.JDesktopPane'
-</violation>
-<violation beginline="340" endline="340" begincolumn="47" endcolumn="78" rule="UselessParentheses" ruleset="Code Style" package="app.views.convocatory" class="ConvocatoryCreateJInternalFrame" method="validateInputEndDate" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+<violation beginline="339" endline="339" begincolumn="47" endcolumn="78" rule="UselessParentheses" ruleset="Code Style" package="app.views.convocatory" class="ConvocatoryCreateJInternalFrame" method="validateInputEndDate" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
 Useless parentheses.
 </violation>
 </file>
 <file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java">
-<violation beginline="17" endline="17" begincolumn="1" endcolumn="32" rule="UnnecessaryImport" ruleset="Code Style" package="app.views.convocatory" class="ConvocatoryEditJInternalFrame" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
-Unused import 'javax.swing.JDesktopPane'
-</violation>
-<violation beginline="348" endline="348" begincolumn="47" endcolumn="78" rule="UselessParentheses" ruleset="Code Style" package="app.views.convocatory" class="ConvocatoryEditJInternalFrame" method="validateInputEndDate" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
+<violation beginline="347" endline="347" begincolumn="47" endcolumn="78" rule="UselessParentheses" ruleset="Code Style" package="app.views.convocatory" class="ConvocatoryEditJInternalFrame" method="validateInputEndDate" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#uselessparentheses" priority="4">
 Useless parentheses.
 </violation>
 </file>
@@ -190,16 +184,6 @@ Unnecessary use of fully qualified name 'java.lang.String' due to existing impli
 Unnecessary use of fully qualified name 'javax.swing.JTable' due to existing import 'javax.swing.JTable'
 </violation>
 </file>
-<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityCreateJInternalFrame.java">
-<violation beginline="12" endline="12" begincolumn="1" endcolumn="32" rule="UnnecessaryImport" ruleset="Code Style" package="app.views.municipality" class="MunicipalityCreateJInternalFrame" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
-Unused import 'javax.swing.JDesktopPane'
-</violation>
-</file>
-<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityEditJInternalFrame.java">
-<violation beginline="12" endline="12" begincolumn="1" endcolumn="32" rule="UnnecessaryImport" ruleset="Code Style" package="app.views.municipality" class="MunicipalityEditJInternalFrame" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
-Unused import 'javax.swing.JDesktopPane'
-</violation>
-</file>
 <file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityListJInternalFrame.java">
 <violation beginline="62" endline="62" begincolumn="32" endcolumn="49" rule="UnnecessaryFullyQualifiedName" ruleset="Code Style" package="app.views.municipality" class="MunicipalityListJInternalFrame" method="initComponents" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname" priority="4">
 Unnecessary use of fully qualified name 'javax.swing.JTable' due to existing import 'javax.swing.JTable'
@@ -218,19 +202,6 @@ Unnecessary use of fully qualified name 'java.lang.String' due to existing impli
 </violation>
 <violation beginline="146" endline="146" begincolumn="13" endcolumn="30" rule="UnnecessaryFullyQualifiedName" ruleset="Code Style" package="app.views.municipality" class="MunicipalityListJInternalFrame" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryfullyqualifiedname" priority="4">
 Unnecessary use of fully qualified name 'javax.swing.JTable' due to existing import 'javax.swing.JTable'
-</violation>
-</file>
-<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserCreateJInternalFrame.java">
-<violation beginline="18" endline="18" begincolumn="1" endcolumn="32" rule="UnnecessaryImport" ruleset="Code Style" package="app.views.users" class="UserCreateJInternalFrame" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
-Unused import 'javax.swing.JDesktopPane'
-</violation>
-</file>
-<file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserEditJInternalFrame.java">
-<violation beginline="10" endline="10" begincolumn="1" endcolumn="27" rule="UnnecessaryImport" ruleset="Code Style" package="app.views.users" class="UserEditJInternalFrame" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
-Unused import 'app.dao.UserRoleDao'
-</violation>
-<violation beginline="20" endline="20" begincolumn="1" endcolumn="32" rule="UnnecessaryImport" ruleset="Code Style" package="app.views.users" class="UserEditJInternalFrame" externalInfoUrl="https://pmd.github.io/pmd-6.42.0/pmd_rules_java_codestyle.html#unnecessaryimport" priority="4">
-Unused import 'javax.swing.JDesktopPane'
 </violation>
 </file>
 <file name="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserListJInternalFrame.java">

@@ -75,8 +75,8 @@ public class UserDaoTest extends TestCase {
         }
     }
     
-        /**
-     * Test Delete User
+    /**
+     * Test Update User
      * @throws Exception 
      */
     public void testUpdateUser() throws Exception {

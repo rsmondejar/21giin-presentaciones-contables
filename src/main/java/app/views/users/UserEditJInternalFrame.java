@@ -7,7 +7,6 @@ package app.views.users;
 import app.controllers.MunicipalityController;
 import app.controllers.UserController;
 import app.controllers.UserRoleController;
-import app.dao.UserRoleDao;
 import app.entities.Municipality;
 import app.entities.User;
 import app.entities.UserRole;
@@ -17,7 +16,6 @@ import helpers.Log;
 import java.awt.Color;
 import java.util.List;
 import javax.swing.DefaultComboBoxModel;
-import javax.swing.JDesktopPane;
 
 /**
  *
@@ -25,14 +23,11 @@ import javax.swing.JDesktopPane;
  */
 public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
 
-    private final JDesktopPane jDesktopPanelContainer;
-
     /**
      * Creates new form MunicipalityJInternalFrame
      */
-    public UserEditJInternalFrame(JDesktopPane jDesktopPanelContainer) {
+    public UserEditJInternalFrame() {
         initComponents();
-        this.jDesktopPanelContainer = jDesktopPanelContainer;
         jTextFieldUserId.setVisible(false);
     }
 
@@ -184,6 +179,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("unused")
     private void jButtonUserUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserUpdateActionPerformed
         try {
             if (!validateInputs()) {
@@ -214,6 +210,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      *
      * @param evt
      */
+    @SuppressWarnings("unused")
     private void enableUpdateButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enableUpdateButton
         try {
             jButtonUserUpdate.setEnabled(validateInputs());

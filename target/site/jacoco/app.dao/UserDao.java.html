@@ -52,7 +52,7 @@ public class UserDao extends BaseDao {
      */
     @Override
     public User findById(int id) {
-<span class="nc" id="L55">        return addRelations(super.findById(id));</span>
+<span class="nc" id="L55">        return addRelations((User) super.findById(id));</span>
     }
 
     /**

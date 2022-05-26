@@ -23,6 +23,12 @@ import javax.persistence.Transient;
 @Entity(name = "convocatories")
 @NamedNativeQueries({
     @NamedNativeQuery(
+        name = "active",
+        query = "SELECT c.* FROM convocatories c "
+        + " WHERE c.is_valid = 1 AND c.start_date <= CURRENT_DATE AND c.end_date >= CURRENT_DATE ",
+        resultClass = Convocatory.class
+    ),
+    @NamedNativeQuery(
         name = "documents_types",
         query = "SELECT dt.* FROM documents_types as dt "
         + " JOIN convocatories_has_documents_types cdt ON cdt.document_type_id = dt.id "

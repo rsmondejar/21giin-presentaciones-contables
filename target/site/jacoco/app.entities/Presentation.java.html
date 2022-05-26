@@ -11,6 +11,9 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.NamedNativeQueries;
+import javax.persistence.NamedNativeQuery;
+import javax.persistence.Transient;
 
 /**
  * Presentation Model.
@@ -19,6 +22,14 @@ import javax.persistence.Id;
  * @version 1.0.0
  */
 @Entity(name = &quot;presentations&quot;)
+@NamedNativeQueries({
+    @NamedNativeQuery(
+            name = &quot;convocatory&quot;,
+            query = &quot;SELECT c.* FROM convocatories as c &quot;
+            + &quot; WHERE c.id = :convocatory_id&quot;,
+            resultClass = Municipality.class
+    )
+})
 public class Presentation extends BaseEntity {
 
     @Id
@@ -34,61 +45,91 @@ public class Presentation extends BaseEntity {
     
     @Column(name = &quot;convocatory_id&quot;)
     private int convocatoryId;
+    
+    @Column(name = &quot;user_id&quot;)
+    private int userId;
+    
+    @Transient
+    private Convocatory convocatory;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
-<span class="fc" id="L39">    public Presentation() {</span>
-<span class="fc" id="L40">    }</span>
+<span class="fc" id="L56">    public Presentation() {</span>
+<span class="fc" id="L57">    }</span>
 
-<span class="nc" id="L42">    public Presentation(Date date, Boolean isValid, int convocatoryId) {</span>
-<span class="nc" id="L43">        this.setDate(date);</span>
-<span class="nc" id="L44">        this.setIsValid(isValid);</span>
-<span class="nc" id="L45">        this.setConvocatoryId(convocatoryId);</span>
-<span class="nc" id="L46">    }</span>
+<span class="nc" id="L59">    public Presentation(Date date, Boolean isValid, int convocatoryId) {</span>
+<span class="nc" id="L60">        this.setDate(date);</span>
+<span class="nc" id="L61">        this.setIsValid(isValid);</span>
+<span class="nc" id="L62">        this.setConvocatoryId(convocatoryId);</span>
+<span class="nc" id="L63">    }</span>
+    
+<span class="nc" id="L65">    public Presentation(int id, Date date, Boolean isValid, int convocatoryId, int userId) {</span>
+<span class="nc" id="L66">        this.setId(id);</span>
+<span class="nc" id="L67">        this.setDate(date);</span>
+<span class="nc" id="L68">        this.setIsValid(isValid);</span>
+<span class="nc" id="L69">        this.setConvocatoryId(convocatoryId);</span>
+<span class="nc" id="L70">        this.setUserId(userId);</span>
+<span class="nc" id="L71">    }</span>
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;    
     public int getId() {
-<span class="nc" id="L51">        return id;</span>
+<span class="nc" id="L76">        return id;</span>
     }
 
     public void setId(int id) {
-<span class="nc" id="L55">        this.id = id;</span>
-<span class="nc" id="L56">    }</span>
+<span class="nc" id="L80">        this.id = id;</span>
+<span class="nc" id="L81">    }</span>
     
     @SuppressFBWarnings({&quot;EI_EXPOSE_REP&quot;})
     public Date getDate() {
-<span class="nc" id="L60">        return date;</span>
+<span class="nc" id="L85">        return date;</span>
     }
 
     @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
     public void setDate(Date date) {
-<span class="nc" id="L65">        this.date = date;</span>
-<span class="nc" id="L66">    }</span>
+<span class="nc" id="L90">        this.date = date;</span>
+<span class="nc" id="L91">    }</span>
 
     public Boolean getIsValid() {
-<span class="nc" id="L69">        return isValid;</span>
+<span class="nc" id="L94">        return isValid;</span>
     }
 
     public void setIsValid(Boolean isValid) {
-<span class="nc" id="L73">        this.isValid = isValid;</span>
-<span class="nc" id="L74">    }</span>
+<span class="nc" id="L98">        this.isValid = isValid;</span>
+<span class="nc" id="L99">    }</span>
 
     public int getConvocatoryId() {
-<span class="nc" id="L77">        return convocatoryId;</span>
+<span class="nc" id="L102">        return convocatoryId;</span>
     }
 
     public void setConvocatoryId(int convocatoryId) {
-<span class="nc" id="L81">        this.convocatoryId = convocatoryId;</span>
-<span class="nc" id="L82">    }</span>
+<span class="nc" id="L106">        this.convocatoryId = convocatoryId;</span>
+<span class="nc" id="L107">    }</span>
+
+    public int getUserId() {
+<span class="nc" id="L110">        return userId;</span>
+    }
+
+    public void setUserId(int userId) {
+<span class="nc" id="L114">        this.userId = userId;</span>
+<span class="nc" id="L115">    }</span>
+
+    public Convocatory getConvocatory() {
+<span class="nc" id="L118">        return convocatory;</span>
+    }
+
+    public void setConvocatory(Convocatory convocatory) {
+<span class="nc" id="L122">        this.convocatory = convocatory;</span>
+<span class="nc" id="L123">    }</span>
     // &lt;/editor-fold&gt;
 
     @Override
     public String toString() {
-<span class="nc" id="L87">        return &quot;Presentation{&quot;</span>
-<span class="nc" id="L88">                + &quot;id=&quot; + this.getId()</span>
-<span class="nc" id="L89">                + &quot;, date=&quot; + this.getDate()</span>
-<span class="nc" id="L90">                + &quot;, isValid=&quot; + this.getIsValid()</span>
-<span class="nc" id="L91">                + &quot;, convocatoryId=&quot; + this.getConvocatoryId()</span>
+<span class="nc" id="L128">        return &quot;Presentation{&quot;</span>
+<span class="nc" id="L129">                + &quot;id=&quot; + this.getId()</span>
+<span class="nc" id="L130">                + &quot;, date=&quot; + this.getDate()</span>
+<span class="nc" id="L131">                + &quot;, isValid=&quot; + this.getIsValid()</span>
+<span class="nc" id="L132">                + &quot;, convocatoryId=&quot; + this.getConvocatoryId()</span>
                 + '}';
     }
 }

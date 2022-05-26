@@ -268,47 +268,49 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L268">        pack();</span>
 <span class="nc" id="L269">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
+    @SuppressWarnings(&quot;unused&quot;)
     private void jButtonConvocatoryEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryEditActionPerformed
         try {
 
-<span class="nc" id="L274">            int id = Integer.parseInt(jTextFieldConvocatoryId.getText());</span>
-<span class="nc" id="L275">            Convocatory convocatory = ConvocatoryController.findById(id);</span>
+<span class="nc" id="L275">            int id = Integer.parseInt(jTextFieldConvocatoryId.getText());</span>
+<span class="nc" id="L276">            Convocatory convocatory = ConvocatoryController.findById(id);</span>
             
-<span class="nc" id="L277">            ConvocatoryEditJInternalFrame convocatoryEdit = new ConvocatoryEditJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L278">            ConvocatoryEditJInternalFrame convocatoryEdit = new ConvocatoryEditJInternalFrame();</span>
         
-<span class="nc" id="L279">            jDesktopPanelContainer.add(convocatoryEdit);</span>
+<span class="nc" id="L280">            jDesktopPanelContainer.add(convocatoryEdit);</span>
         
             // Load convocatory info in view
-<span class="nc" id="L282">            convocatoryEdit.loadData(convocatory);</span>
+<span class="nc" id="L283">            convocatoryEdit.loadData(convocatory);</span>
             
-<span class="nc" id="L284">            this.hide();</span>
+<span class="nc" id="L285">            this.hide();</span>
             
-<span class="nc" id="L286">            convocatoryEdit.setVisible(true);</span>
-<span class="nc" id="L287">        } catch (NumberFormatException e) {</span>
-<span class="nc" id="L288">            Log.error(e);</span>
-<span class="nc" id="L289">            Dialog.error(e.getMessage(), &quot;Error editar municipio&quot;);</span>
-<span class="nc" id="L290">        }</span>
-<span class="nc" id="L291">    }//GEN-LAST:event_jButtonConvocatoryEditActionPerformed</span>
+<span class="nc" id="L287">            convocatoryEdit.setVisible(true);</span>
+<span class="nc" id="L288">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L289">            Log.error(e);</span>
+<span class="nc" id="L290">            Dialog.error(e.getMessage(), &quot;Error editar municipio&quot;);</span>
+<span class="nc" id="L291">        }</span>
+<span class="nc" id="L292">    }//GEN-LAST:event_jButtonConvocatoryEditActionPerformed</span>
 
+    @SuppressWarnings(&quot;unused&quot;)
     private void jButtonConvocatoryDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryDeleteActionPerformed
-<span class="nc" id="L294">        int input = JOptionPane.showConfirmDialog(null, &quot;Deseas eliminar?&quot;);</span>
+<span class="nc" id="L296">        int input = JOptionPane.showConfirmDialog(null, &quot;Deseas eliminar?&quot;);</span>
         // 0=yes, 1=no, 2=cancel
         
-<span class="nc bnc" id="L297" title="All 2 branches missed.">        if (input == 0) {</span>
+<span class="nc bnc" id="L299" title="All 2 branches missed.">        if (input == 0) {</span>
             // Delete
-<span class="nc" id="L299">            int id = Integer.parseInt(jTextFieldConvocatoryId.getText());</span>
-<span class="nc" id="L300">            boolean status = ConvocatoryController.delete(id);</span>
+<span class="nc" id="L301">            int id = Integer.parseInt(jTextFieldConvocatoryId.getText());</span>
+<span class="nc" id="L302">            boolean status = ConvocatoryController.delete(id);</span>
             
-<span class="nc bnc" id="L302" title="All 2 branches missed.">            if (status) {</span>
-<span class="nc" id="L303">                Dialog.info(&quot;Convocatoria eliminado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc bnc" id="L304" title="All 2 branches missed.">            if (status) {</span>
+<span class="nc" id="L305">                Dialog.info(&quot;Convocatoria eliminado correctamente&quot;, &quot;Info&quot;);</span>
                 
-<span class="nc" id="L305">                this.hide();</span>
+<span class="nc" id="L307">                this.hide();</span>
             } else {
-<span class="nc" id="L307">                Dialog.error(&quot;Convocatoria no se ha eliminado&quot;, &quot;Error&quot;);</span>
+<span class="nc" id="L309">                Dialog.error(&quot;Convocatoria no se ha eliminado&quot;, &quot;Error&quot;);</span>
             }
         }
         
-<span class="nc" id="L311">    }//GEN-LAST:event_jButtonConvocatoryDeleteActionPerformed</span>
+<span class="nc" id="L313">    }//GEN-LAST:event_jButtonConvocatoryDeleteActionPerformed</span>
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

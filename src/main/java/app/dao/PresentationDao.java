@@ -45,7 +45,7 @@ public class PresentationDao extends BaseDao {
      */
     @Override
     public Presentation findById(int id) {
-        return addRelations(super.findById(id));
+        return addRelations((Presentation) super.findById(id));
     }
 
     /**

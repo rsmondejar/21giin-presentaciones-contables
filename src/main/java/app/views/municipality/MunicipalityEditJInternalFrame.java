@@ -9,22 +9,18 @@ import app.entities.Municipality;
 import helpers.Dialog;
 import helpers.Log;
 import java.awt.Color;
-import javax.swing.JDesktopPane;
 
 /**
  *
  * @author raulsm
  */
 public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
-
-    private final JDesktopPane jDesktopPanelContainer;
     
     /**
      * Creates new form MunicipalityJInternalFrame
      */
-    public MunicipalityEditJInternalFrame(JDesktopPane jDesktopPanelContainer) {
+    public MunicipalityEditJInternalFrame() {
         initComponents();
-        this.jDesktopPanelContainer = jDesktopPanelContainer;
         jTextFieldMunicipioId.setVisible(false);
     }
 
@@ -119,6 +115,7 @@ public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("unused")
     private void jButtonMunicipioUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioUpdateActionPerformed
         try {
 
@@ -171,16 +168,7 @@ public class MunicipalityEditJInternalFrame extends javax.swing.JInternalFrame {
      */
     private Boolean validateInputCategory() {
         // TODO: Validation
-        //String category = getInputCategory();
-        
         Boolean isValid = true;
-
-        if (isValid) {
-            jComboBoxMunicipioCategory.setBackground(Color.white);
-        } else {
-            jComboBoxMunicipioCategory.setBackground(Color.orange);
-        }
-
         return isValid;
     }
 

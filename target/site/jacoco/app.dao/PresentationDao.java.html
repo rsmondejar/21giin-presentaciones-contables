@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PresentationDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.dao</a> &gt; <span class="el_source">PresentationDao.java</span></div><h1>PresentationDao.java</h1><pre class="source lang-java linenums">/**
+ * Presentation DAO.
+ */
+package app.dao;
+
+import app.entities.BaseEntity;
+import app.entities.Presentation;
+import app.entities.Convocatory;
+import helpers.Log;
+import java.util.List;
+
+/**
+ * Presentation DAO.
+ *
+ * @author raulsm
+ * @version 1.0.0
+ */
+public class PresentationDao extends BaseDao {
+
+<span class="nc" id="L20">    public PresentationDao() {</span>
+<span class="nc" id="L21">        super.setModel((BaseEntity) new Presentation());</span>
+<span class="nc" id="L22">    }</span>
+
+    /**
+     * List Presentations.
+     *
+     * @return List of presentations
+     */
+    public List&lt;Presentation&gt; all() {
+<span class="nc" id="L30">        List&lt;Presentation&gt; presentations = super.all();</span>
+
+        // Add extra fields
+<span class="nc bnc" id="L33" title="All 2 branches missed.">        for (int i = 0; i &lt; presentations.size(); i++) {</span>
+<span class="nc" id="L34">            presentations.set(i, findById(presentations.get(i).getId()));</span>
+        }
+
+<span class="nc" id="L37">        return presentations;</span>
+    }
+
+    /**
+     * Find by ID.
+     *
+     * @param id Identifer
+     * @return Presentation
+     */
+    @Override
+    public Presentation findById(int id) {
+<span class="nc" id="L48">        return addRelations((Presentation) super.findById(id));</span>
+    }
+
+    /**
+     * Create Presentation.
+     *
+     * @param &lt;T&gt;
+     * @param presentation Presentation
+     * @return status
+     */
+    public &lt;T&gt; Integer create(Presentation presentation) {
+<span class="nc" id="L59">        return super.create((BaseEntity) presentation);</span>
+    }
+
+    /**
+     * Update Presentation.
+     *
+     * @param &lt;T&gt;
+     * @param id Identifier
+     * @param presentation Presentation
+     * @return
+     */
+    public &lt;T&gt; boolean update(int id, Presentation presentation) {
+<span class="nc" id="L71">        return super.update(id, (BaseEntity) presentation);</span>
+    }
+
+    /**
+     * Delete Presentation.
+     *
+     * @param id Identifier
+     * @return status
+     */
+    @Override
+    public boolean delete(int id) {
+<span class="nc" id="L82">        return super.delete(id);</span>
+    }
+
+    /**
+     * Add Relations.
+     *
+     * @param presentation Presentation
+     */
+    private Presentation addRelations(Presentation presentation) {
+        try {
+            // Add Convocatory
+<span class="nc" id="L93">            List&lt;Convocatory&gt; convocatories = super</span>
+<span class="nc" id="L94">                    .whereNamedQuery(</span>
+                            &quot;convocatory&quot;,
+                            &quot;convocatory_id&quot;,
+<span class="nc" id="L97">                            String.valueOf(presentation.getConvocatoryId())</span>
+                    );
+
+<span class="nc" id="L100">            presentation.setConvocatory(convocatories.get(0));</span>
+
+<span class="nc" id="L102">            return presentation;</span>
+<span class="nc" id="L103">        } catch (Exception exception) {</span>
+<span class="nc" id="L104">            Log.error(exception);</span>
+        }
+
+<span class="nc" id="L107">        return null;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

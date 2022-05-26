@@ -9,6 +9,7 @@ import app.entities.User;
 import app.views.convocatory.ConvocatoryCreateJInternalFrame;
 import app.views.convocatory.ConvocatoryListJInternalFrame;
 import app.views.municipality.MunicipalityCreateJInternalFrame;
+import app.views.presentation.PresentationCreateJInternalFrame;
 import app.views.users.UserCreateJInternalFrame;
 import app.views.users.UserListJInternalFrame;
 import helpers.Dialog;
@@ -53,6 +54,8 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenuItemConvocatoriesShow = new javax.swing.JMenuItem();
         jMenuItemConvocatoriesCreate = new javax.swing.JMenuItem();
         jMenuPresentations = new javax.swing.JMenu();
+        jMenuItemPresentationShow = new javax.swing.JMenuItem();
+        jMenuItemPresentationCreate = new javax.swing.JMenuItem();
         jMenuInformation = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -156,6 +159,18 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenuBar1.add(jMenuConvocatories);
 
         jMenuPresentations.setText("Presentaciones");
+
+        jMenuItemPresentationShow.setText("Ver");
+        jMenuPresentations.add(jMenuItemPresentationShow);
+
+        jMenuItemPresentationCreate.setText("Crear");
+        jMenuItemPresentationCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemPresentationCreateActionPerformed(evt);
+            }
+        });
+        jMenuPresentations.add(jMenuItemPresentationCreate);
+
         jMenuBar1.add(jMenuPresentations);
 
         jMenuInformation.setText("Información");
@@ -185,16 +200,19 @@ public class MenuJFrame extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("unused")
     private void jMenuItemCloseSessionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemCloseSessionActionPerformed
         
         Dialog.info("Este apartado todavía no está disponible", "En desarrollo");
     }//GEN-LAST:event_jMenuItemCloseSessionActionPerformed
 
+    @SuppressWarnings("unused")
     private void jMenuItemExitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemExitActionPerformed
 
          System.exit(0);
     }//GEN-LAST:event_jMenuItemExitActionPerformed
 
+    @SuppressWarnings("unused")
     private void jMenuItemMunicipiosShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosShowActionPerformed
         MunicipalityListJInternalFrame municipalitiesList = new MunicipalityListJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(municipalitiesList);
@@ -202,13 +220,15 @@ public class MenuJFrame extends javax.swing.JFrame {
         municipalitiesList.setVisible(true);
     }//GEN-LAST:event_jMenuItemMunicipiosShowActionPerformed
 
+    @SuppressWarnings("unused")
     private void jMenuItemMunicipiosCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemMunicipiosCreateActionPerformed
-        MunicipalityCreateJInternalFrame municipalitiesCreate = new MunicipalityCreateJInternalFrame(jDesktopPanelContainer);
+        MunicipalityCreateJInternalFrame municipalitiesCreate = new MunicipalityCreateJInternalFrame();
         jDesktopPanelContainer.add(municipalitiesCreate);
         
         municipalitiesCreate.setVisible(true);
     }//GEN-LAST:event_jMenuItemMunicipiosCreateActionPerformed
 
+    @SuppressWarnings("unused")
     private void jMenuItemConvocatoriesShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesShowActionPerformed
         ConvocatoryListJInternalFrame convocatoriesList = new ConvocatoryListJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(convocatoriesList);
@@ -216,13 +236,15 @@ public class MenuJFrame extends javax.swing.JFrame {
         convocatoriesList.setVisible(true);
     }//GEN-LAST:event_jMenuItemConvocatoriesShowActionPerformed
 
+    @SuppressWarnings("unused")
     private void jMenuItemConvocatoriesCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemConvocatoriesCreateActionPerformed
-        ConvocatoryCreateJInternalFrame convocatoryCreate = new ConvocatoryCreateJInternalFrame(jDesktopPanelContainer);
+        ConvocatoryCreateJInternalFrame convocatoryCreate = new ConvocatoryCreateJInternalFrame();
         jDesktopPanelContainer.add(convocatoryCreate);
         
         convocatoryCreate.setVisible(true);
     }//GEN-LAST:event_jMenuItemConvocatoriesCreateActionPerformed
 
+    @SuppressWarnings("unused")
     private void jMenuItemUsersShowActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsersShowActionPerformed
         UserListJInternalFrame usersList = new UserListJInternalFrame(jDesktopPanelContainer);
         jDesktopPanelContainer.add(usersList);
@@ -230,12 +252,21 @@ public class MenuJFrame extends javax.swing.JFrame {
         usersList.setVisible(true);
     }//GEN-LAST:event_jMenuItemUsersShowActionPerformed
 
+    @SuppressWarnings("unused")
     private void jMenuItemUsersCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemUsersCreateActionPerformed
-        UserCreateJInternalFrame userCreate = new UserCreateJInternalFrame(jDesktopPanelContainer);
+        UserCreateJInternalFrame userCreate = new UserCreateJInternalFrame();
         jDesktopPanelContainer.add(userCreate);
         
         userCreate.setVisible(true);
     }//GEN-LAST:event_jMenuItemUsersCreateActionPerformed
+
+    @SuppressWarnings("unused")
+    private void jMenuItemPresentationCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPresentationCreateActionPerformed
+        PresentationCreateJInternalFrame presentationCreate = new PresentationCreateJInternalFrame();
+        jDesktopPanelContainer.add(presentationCreate);
+        
+        presentationCreate.setVisible(true);
+    }//GEN-LAST:event_jMenuItemPresentationCreateActionPerformed
 
     /**
      * @param args the command line arguments
@@ -253,15 +284,11 @@ public class MenuJFrame extends javax.swing.JFrame {
                     break;
                 }
             }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
+        } catch (ClassNotFoundException | InstantiationException | IllegalAccessException | javax.swing.UnsupportedLookAndFeelException ex) {
             java.util.logging.Logger.getLogger(MenuJFrame.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
+        
         //</editor-fold>
 
         /* Create and display the form */
@@ -295,6 +322,8 @@ public class MenuJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemExit;
     private javax.swing.JMenuItem jMenuItemMunicipiosCreate;
     private javax.swing.JMenuItem jMenuItemMunicipiosShow;
+    private javax.swing.JMenuItem jMenuItemPresentationCreate;
+    private javax.swing.JMenuItem jMenuItemPresentationShow;
     private javax.swing.JMenuItem jMenuItemUsersCreate;
     private javax.swing.JMenuItem jMenuItemUsersShow;
     private javax.swing.JMenu jMenuMunicipios;

@@ -1,10 +1,12 @@
 app/dao/UserDao.class
 app/views/LoginJFrame$3.class
 app/views/convocatory/ConvocatoryListJInternalFrame.class
+app/views/presentation/PresentationCreateJInternalFrame.class
 app/views/municipality/MunicipalityShowJInternalFrame$1.class
 app/views/convocatory/ConvocatoryListJInternalFrame$2.class
 app/controllers/UserRoleController.class
 app/views/users/UserShowJInternalFrame$2.class
+app/views/MenuJFrame$10.class
 app/views/MenuJFrame$8.class
 app/entities/BaseEntity.class
 app/views/convocatory/ConvocatoryCreateJInternalFrame$1.class
@@ -16,6 +18,7 @@ app/controllers/UserController.class
 app/views/municipality/MunicipalityListJInternalFrame$2.class
 app/views/MenuJFrame$2.class
 app/views/users/UserCreateJInternalFrame$3.class
+app/dao/PresentationDao.class
 app/controllers/MainController.class
 app/entities/Presentation.class
 app/dao/ConvocatoryDocumentTypeDao.class
@@ -28,6 +31,7 @@ app/controllers/LoginController.class
 helpers/RandomString.class
 app/views/LoginJFrame$4.class
 app/entities/Convocatory.class
+app/controllers/PresentationController.class
 app/controllers/ConvocatoryController.class
 app/views/convocatory/ConvocatoryEditJInternalFrame.class
 app/views/MenuJFrame$6.class
@@ -78,4 +82,5 @@ app/views/users/UserListJInternalFrame$2.class
 app/entities/Municipality.class
 app/views/LoginJFrame$2.class
 app/views/users/UserEditJInternalFrame$2.class
+app/views/presentation/PresentationCreateJInternalFrame$1.class
 app/views/users/UserListJInternalFrame.class

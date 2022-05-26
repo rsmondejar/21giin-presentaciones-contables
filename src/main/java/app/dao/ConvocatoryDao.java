@@ -8,7 +8,14 @@ import app.entities.BaseEntity;
 import app.entities.Convocatory;
 import app.entities.ConvocatoryDocumentType;
 import app.entities.DocumentType;
+import app.entities.User;
+import config.HibernateUtil;
+import helpers.Log;
 import java.util.List;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 /**
  * Convocatory DAO.
@@ -40,16 +47,16 @@ public class ConvocatoryDao extends BaseDao {
      */
     @Override
     public Convocatory findById(int id) {
-        
+
         // Add Documents Types
         Convocatory convocatory = super.findById(id);
-        
+
         // Add documents to entity
         List<DocumentType> documentTypesIds = super
-                    .whereNamedQuery("documents_types", "convocatory_id", String.valueOf(id));
+                .whereNamedQuery("documents_types", "convocatory_id", String.valueOf(id));
 
         convocatory.setDocumentsTypes(documentTypesIds);
-        
+
         return convocatory;
     }
 
@@ -65,13 +72,15 @@ public class ConvocatoryDao extends BaseDao {
         // Create documents types
         List<DocumentType> documentTypes = convocatory.getDocumentsTypes();
 
-        ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();
+        if (documentTypes != null) {
+            ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();
 
-        for (DocumentType documentType : documentTypes) {
-            ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());
-            convocatoryDocumentTypeDao.create(convocatoryDocumentType);
+            for (DocumentType documentType : documentTypes) {
+                ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());
+                convocatoryDocumentTypeDao.create(convocatoryDocumentType);
+            }
         }
-        
+
         return id;
     }
 
@@ -85,18 +94,20 @@ public class ConvocatoryDao extends BaseDao {
      */
     public <T> boolean update(int id, Convocatory convocatory) {
         boolean status = super.update(id, (BaseEntity) convocatory);
-        
-        List<DocumentType> documentTypes = convocatory.getDocumentsTypes();
-         
-        Integer statusDelete = super.executeNamedQuery("delete_documents_types", "convocatory_id", String.valueOf(id));
-        
-        ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();
 
-        for (DocumentType documentType : documentTypes) {
-            ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());
-            convocatoryDocumentTypeDao.create(convocatoryDocumentType);
+        List<DocumentType> documentTypes = convocatory.getDocumentsTypes();
+
+        super.executeNamedQuery("delete_documents_types", "convocatory_id", String.valueOf(id));
+
+        if (documentTypes != null) {
+            ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();
+
+            for (DocumentType documentType : documentTypes) {
+                ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());
+                convocatoryDocumentTypeDao.create(convocatoryDocumentType);
+            }
         }
-        
+
         return status;
     }
 
@@ -109,5 +120,14 @@ public class ConvocatoryDao extends BaseDao {
     @Override
     public boolean delete(int id) {
         return super.delete(id);
+    }
+    
+    /**
+     * List Active Convocatories.
+     *
+     * @return List of Convocatories
+     */
+    public List<Convocatory> active() {
+        return super.whereNamedQuery("active", null, null);
     }
 }

@@ -177,13 +177,14 @@ public class UserShowJInternalFrame extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    @SuppressWarnings("unused")
     private void jButtonUserEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserEditActionPerformed
         try {
 
             int id = Integer.parseInt(jTextFieldUserId.getText());
             User user = UserController.findById(id);
             
-            UserEditJInternalFrame userEdit = new UserEditJInternalFrame(jDesktopPanelContainer);
+            UserEditJInternalFrame userEdit = new UserEditJInternalFrame();
         
             jDesktopPanelContainer.add(userEdit);
         
@@ -199,6 +200,7 @@ public class UserShowJInternalFrame extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_jButtonUserEditActionPerformed
 
+    @SuppressWarnings("unused")
     private void jButtonUserDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserDeleteActionPerformed
         int input = JOptionPane.showConfirmDialog(null, "Deseas eliminar?");
         // 0=yes, 1=no, 2=cancel

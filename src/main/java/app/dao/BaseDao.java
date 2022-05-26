@@ -221,7 +221,11 @@ class BaseDao {
         try {
             trns = session.beginTransaction();
 
-            Query query = session.getNamedQuery(queryName).setParameter(columnName, columnValue);
+            Query query = session.getNamedQuery(queryName);
+
+            if (columnName != null && columnValue != null) {
+                query.setParameter(columnName, columnValue);
+            }
 
             List<T> baseEntities = (List<T>) query.getResultList();
 

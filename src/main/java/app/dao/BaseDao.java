@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Base DAO.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.dao;
 
@@ -221,7 +223,11 @@ class BaseDao {
         try {
             trns = session.beginTransaction();
 
-            Query query = session.getNamedQuery(queryName).setParameter(columnName, columnValue);
+            Query query = session.getNamedQuery(queryName);
+
+            if (columnName != null && columnValue != null) {
+                query.setParameter(columnName, columnValue);
+            }
 
             List<T> baseEntities = (List<T>) query.getResultList();
 

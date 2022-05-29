@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>FileTypeFilter.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">helpers.filters.files</a> &gt; <span class="el_source">FileTypeFilter.java</span></div><h1>FileTypeFilter.java</h1><pre class="source lang-java linenums">/**
+ * File Type Filter.
+ *
+ * @author raulsm
+ */
+package helpers.filters.files;
+
+import java.io.File;
+import javax.swing.filechooser.FileFilter;
+
+/**
+ * File Type Filter.
+ *
+ * @author raulsm
+ */
+public final class FileTypeFilter extends FileFilter {
+
+    private String extensionFile;
+    private String descriptionFile;
+
+<span class="nc" id="L21">    public FileTypeFilter(String extension, String description) {</span>
+<span class="nc" id="L22">        setExtensionFile(extension);</span>
+<span class="nc" id="L23">        setDescriptionFile(description);</span>
+<span class="nc" id="L24">    }</span>
+
+    @Override
+    public boolean accept(File file) {
+<span class="nc bnc" id="L28" title="All 2 branches missed.">        if (file.isDirectory()) {</span>
+<span class="nc" id="L29">            return true;</span>
+        }
+<span class="nc" id="L31">        return file.getName().endsWith(getExtensionFile());</span>
+    }
+
+    @Override
+    public String getDescription() {
+<span class="nc" id="L36">        return getDescriptionFile() + String.format(&quot; (*%s)&quot;, getExtensionFile());</span>
+    }
+
+    /**
+     * Get Extension File.
+     *
+     * @return Extension File.
+     */
+    public String getExtensionFile() {
+<span class="nc" id="L45">        return extensionFile;</span>
+    }
+
+    /**
+     * Set Extension File.
+     *
+     * @param extensionFile Extension File.
+     */
+    public void setExtensionFile(String extensionFile) {
+<span class="nc" id="L54">        this.extensionFile = extensionFile;</span>
+<span class="nc" id="L55">    }</span>
+
+    /**
+     * Get Description File.
+     *
+     * @return Description File.
+     */
+    public String getDescriptionFile() {
+<span class="nc" id="L63">        return descriptionFile;</span>
+    }
+
+    /**
+     * Set Description File.
+     *
+     * @param descriptionFile Description File.
+     */
+    public void setDescriptionFile(String descriptionFile) {
+<span class="nc" id="L72">        this.descriptionFile = descriptionFile;</span>
+<span class="nc" id="L73">    }</span>
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

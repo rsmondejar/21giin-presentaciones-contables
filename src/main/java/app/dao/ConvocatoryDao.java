@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Convocatory DAO.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.dao;
 
@@ -8,6 +10,7 @@ import app.entities.BaseEntity;
 import app.entities.Convocatory;
 import app.entities.ConvocatoryDocumentType;
 import app.entities.DocumentType;
+import helpers.Log;
 import java.util.List;
 
 /**
@@ -29,7 +32,14 @@ public class ConvocatoryDao extends BaseDao {
      */
     @Override
     public List<Convocatory> all() {
-        return super.all();
+        List<Convocatory> convocatories = super.all();
+        
+        // Add extra field Document Types
+        for(int i = 0; i < convocatories.size(); i++) {
+            convocatories.set(i, findById(convocatories.get(i).getId()));
+        }
+        
+        return convocatories;
     }
 
     /**
@@ -40,17 +50,7 @@ public class ConvocatoryDao extends BaseDao {
      */
     @Override
     public Convocatory findById(int id) {
-        
-        // Add Documents Types
-        Convocatory convocatory = super.findById(id);
-        
-        // Add documents to entity
-        List<DocumentType> documentTypesIds = super
-                    .whereNamedQuery("documents_types", "convocatory_id", String.valueOf(id));
-
-        convocatory.setDocumentsTypes(documentTypesIds);
-        
-        return convocatory;
+        return addRelations((Convocatory) super.findById(id));
     }
 
     /**
@@ -65,13 +65,15 @@ public class ConvocatoryDao extends BaseDao {
         // Create documents types
         List<DocumentType> documentTypes = convocatory.getDocumentsTypes();
 
-        ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();
+        if (documentTypes != null) {
+            ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();
 
-        for (DocumentType documentType : documentTypes) {
-            ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());
-            convocatoryDocumentTypeDao.create(convocatoryDocumentType);
+            for (DocumentType documentType : documentTypes) {
+                ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());
+                convocatoryDocumentTypeDao.create(convocatoryDocumentType);
+            }
         }
-        
+
         return id;
     }
 
@@ -85,18 +87,20 @@ public class ConvocatoryDao extends BaseDao {
      */
     public <T> boolean update(int id, Convocatory convocatory) {
         boolean status = super.update(id, (BaseEntity) convocatory);
-        
-        List<DocumentType> documentTypes = convocatory.getDocumentsTypes();
-         
-        super.executeNamedQuery("delete_documents_types", "convocatory_id", String.valueOf(id));
-        
-        ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();
 
-        for (DocumentType documentType : documentTypes) {
-            ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());
-            convocatoryDocumentTypeDao.create(convocatoryDocumentType);
+        List<DocumentType> documentTypes = convocatory.getDocumentsTypes();
+
+        super.executeNamedQuery("delete_documents_types", "convocatory_id", String.valueOf(id));
+
+        if (documentTypes != null) {
+            ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();
+
+            for (DocumentType documentType : documentTypes) {
+                ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());
+                convocatoryDocumentTypeDao.create(convocatoryDocumentType);
+            }
         }
-        
+
         return status;
     }
 
@@ -109,5 +113,42 @@ public class ConvocatoryDao extends BaseDao {
     @Override
     public boolean delete(int id) {
         return super.delete(id);
+    }
+    
+    /**
+     * List Active Convocatories.
+     *
+     * @return List of Convocatories
+     */
+    public List<Convocatory> active() {
+        List<Convocatory> convocatories = super.whereNamedQuery("active", null, null);
+        
+        // Add extra field Document Types
+        for(int i = 0; i < convocatories.size(); i++) {
+            convocatories.set(i, findById(convocatories.get(i).getId()));
+        }
+        
+        return convocatories;
+    }
+    
+    /**
+     * Add Relations.
+     * @param convocatory Convocatory
+     * @return Convocatory with relations
+     */ 
+    public Convocatory addRelations(Convocatory convocatory) {
+        try {
+            // Add Documents Types
+            List<DocumentType> documentTypes = super
+                        .whereNamedQuery("documents_types", "convocatory_id", String.valueOf(convocatory.getId()));
+
+            convocatory.setDocumentsTypes(documentTypes);
+
+            return convocatory;
+        } catch(Exception exception) {
+            Log.error(exception);
+        }
+        
+        return null;
     }
 }

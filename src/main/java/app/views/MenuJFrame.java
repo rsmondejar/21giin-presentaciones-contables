@@ -9,6 +9,7 @@ import app.entities.User;
 import app.views.convocatory.ConvocatoryCreateJInternalFrame;
 import app.views.convocatory.ConvocatoryListJInternalFrame;
 import app.views.municipality.MunicipalityCreateJInternalFrame;
+import app.views.presentation.PresentationCreateJInternalFrame;
 import app.views.users.UserCreateJInternalFrame;
 import app.views.users.UserListJInternalFrame;
 import helpers.Dialog;
@@ -53,6 +54,8 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenuItemConvocatoriesShow = new javax.swing.JMenuItem();
         jMenuItemConvocatoriesCreate = new javax.swing.JMenuItem();
         jMenuPresentations = new javax.swing.JMenu();
+        jMenuItemPresentationShow = new javax.swing.JMenuItem();
+        jMenuItemPresentationCreate = new javax.swing.JMenuItem();
         jMenuInformation = new javax.swing.JMenu();
 
         jMenu1.setText("jMenu1");
@@ -156,6 +159,18 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenuBar1.add(jMenuConvocatories);
 
         jMenuPresentations.setText("Presentaciones");
+
+        jMenuItemPresentationShow.setText("Ver");
+        jMenuPresentations.add(jMenuItemPresentationShow);
+
+        jMenuItemPresentationCreate.setText("Crear");
+        jMenuItemPresentationCreate.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItemPresentationCreateActionPerformed(evt);
+            }
+        });
+        jMenuPresentations.add(jMenuItemPresentationCreate);
+
         jMenuBar1.add(jMenuPresentations);
 
         jMenuInformation.setText("Información");
@@ -245,6 +260,14 @@ public class MenuJFrame extends javax.swing.JFrame {
         userCreate.setVisible(true);
     }//GEN-LAST:event_jMenuItemUsersCreateActionPerformed
 
+    @SuppressWarnings("unused")
+    private void jMenuItemPresentationCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItemPresentationCreateActionPerformed
+        PresentationCreateJInternalFrame presentationCreate = new PresentationCreateJInternalFrame();
+        jDesktopPanelContainer.add(presentationCreate);
+        
+        presentationCreate.setVisible(true);
+    }//GEN-LAST:event_jMenuItemPresentationCreateActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -299,6 +322,8 @@ public class MenuJFrame extends javax.swing.JFrame {
     private javax.swing.JMenuItem jMenuItemExit;
     private javax.swing.JMenuItem jMenuItemMunicipiosCreate;
     private javax.swing.JMenuItem jMenuItemMunicipiosShow;
+    private javax.swing.JMenuItem jMenuItemPresentationCreate;
+    private javax.swing.JMenuItem jMenuItemPresentationShow;
     private javax.swing.JMenuItem jMenuItemUsersCreate;
     private javax.swing.JMenuItem jMenuItemUsersShow;
     private javax.swing.JMenu jMenuMunicipios;

@@ -15,7 +15,6 @@ import helpers.Dialog;
 import helpers.Log;
 import java.awt.Color;
 import java.util.List;
-import javax.swing.JDesktopPane;
 
 /**
  *
@@ -26,25 +25,25 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
     /**
      * Creates new form MunicipalityJInternalFrame
      */
-<span class="nc" id="L29">    public UserCreateJInternalFrame() {</span>
-<span class="nc" id="L30">        initComponents();</span>
-<span class="nc" id="L31">        loadData();</span>
-<span class="nc" id="L32">    }</span>
+<span class="nc" id="L28">    public UserCreateJInternalFrame() {</span>
+<span class="nc" id="L29">        initComponents();</span>
+<span class="nc" id="L30">        loadData();</span>
+<span class="nc" id="L31">    }</span>
 
     /**
      * Load Data.
      */
     public void loadData() {
-<span class="nc" id="L38">        jButtonUserCreate.setEnabled(validateInputs());</span>
+<span class="nc" id="L37">        jButtonUserCreate.setEnabled(validateInputs());</span>
 
         // Traer de base de datos el listado de roles y agregar al combobox
-<span class="nc" id="L41">        List&lt;UserRole&gt; userRoles = UserRoleController.list();</span>
-<span class="nc" id="L42">        ComboBox.fill(userRoles, jComboBoxUserRole);</span>
+<span class="nc" id="L40">        List&lt;UserRole&gt; userRoles = UserRoleController.list();</span>
+<span class="nc" id="L41">        ComboBox.fill(userRoles, jComboBoxUserRole);</span>
 
         // Traer de base de datos el listado de Municipios y agregar al combobox
-<span class="nc" id="L45">        List&lt;Municipality&gt; municipalities = MunicipalityController.list();</span>
-<span class="nc" id="L46">        ComboBox.fill(municipalities, jComboBoxMunicipality);</span>
-<span class="nc" id="L47">    }</span>
+<span class="nc" id="L44">        List&lt;Municipality&gt; municipalities = MunicipalityController.list();</span>
+<span class="nc" id="L45">        ComboBox.fill(municipalities, jComboBoxMunicipality);</span>
+<span class="nc" id="L46">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
@@ -54,124 +53,124 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L57">        jButtonUserCreate = new javax.swing.JButton();</span>
-<span class="nc" id="L58">        jLabelUserMunicipality = new javax.swing.JLabel();</span>
-<span class="nc" id="L59">        jLabelUserRole = new javax.swing.JLabel();</span>
-<span class="nc" id="L60">        jPasswordFieldUserPassword = new javax.swing.JPasswordField();</span>
-<span class="nc" id="L61">        jLabelUserPassword = new javax.swing.JLabel();</span>
-<span class="nc" id="L62">        jTextFieldUserLogin = new javax.swing.JTextField();</span>
-<span class="nc" id="L63">        jLabelUserLogin = new javax.swing.JLabel();</span>
-<span class="nc" id="L64">        jComboBoxUserRole = new javax.swing.JComboBox&lt;&gt;();</span>
-<span class="nc" id="L65">        jComboBoxMunicipality = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L56">        jButtonUserCreate = new javax.swing.JButton();</span>
+<span class="nc" id="L57">        jLabelUserMunicipality = new javax.swing.JLabel();</span>
+<span class="nc" id="L58">        jLabelUserRole = new javax.swing.JLabel();</span>
+<span class="nc" id="L59">        jPasswordFieldUserPassword = new javax.swing.JPasswordField();</span>
+<span class="nc" id="L60">        jLabelUserPassword = new javax.swing.JLabel();</span>
+<span class="nc" id="L61">        jTextFieldUserLogin = new javax.swing.JTextField();</span>
+<span class="nc" id="L62">        jLabelUserLogin = new javax.swing.JLabel();</span>
+<span class="nc" id="L63">        jComboBoxUserRole = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L64">        jComboBoxMunicipality = new javax.swing.JComboBox&lt;&gt;();</span>
 
-<span class="nc" id="L67">        setClosable(true);</span>
-<span class="nc" id="L68">        setIconifiable(true);</span>
-<span class="nc" id="L69">        setMaximizable(true);</span>
-<span class="nc" id="L70">        setResizable(true);</span>
-<span class="nc" id="L71">        setTitle(&quot;Crear Usuario&quot;);</span>
-<span class="nc" id="L72">        setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L66">        setClosable(true);</span>
+<span class="nc" id="L67">        setIconifiable(true);</span>
+<span class="nc" id="L68">        setMaximizable(true);</span>
+<span class="nc" id="L69">        setResizable(true);</span>
+<span class="nc" id="L70">        setTitle(&quot;Crear Usuario&quot;);</span>
+<span class="nc" id="L71">        setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L74">        jButtonUserCreate.setText(&quot;Crear&quot;);</span>
-<span class="nc" id="L75">        jButtonUserCreate.setEnabled(false);</span>
-<span class="nc" id="L76">        jButtonUserCreate.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L73">        jButtonUserCreate.setText(&quot;Crear&quot;);</span>
+<span class="nc" id="L74">        jButtonUserCreate.setEnabled(false);</span>
+<span class="nc" id="L75">        jButtonUserCreate.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L78">                jButtonUserCreateActionPerformed(evt);</span>
-<span class="nc" id="L79">            }</span>
+<span class="nc" id="L77">                jButtonUserCreateActionPerformed(evt);</span>
+<span class="nc" id="L78">            }</span>
         });
 
-<span class="nc" id="L82">        jLabelUserMunicipality.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L83">        jLabelUserMunicipality.setText(&quot;Municipio usuario:&quot;);</span>
+<span class="nc" id="L81">        jLabelUserMunicipality.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L82">        jLabelUserMunicipality.setText(&quot;Municipio usuario:&quot;);</span>
 
-<span class="nc" id="L85">        jLabelUserRole.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L86">        jLabelUserRole.setText(&quot;Role usuario:&quot;);</span>
+<span class="nc" id="L84">        jLabelUserRole.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L85">        jLabelUserRole.setText(&quot;Role usuario:&quot;);</span>
 
-<span class="nc" id="L88">        jPasswordFieldUserPassword.addKeyListener(new java.awt.event.KeyAdapter() {</span>
+<span class="nc" id="L87">        jPasswordFieldUserPassword.addKeyListener(new java.awt.event.KeyAdapter() {</span>
             public void keyReleased(java.awt.event.KeyEvent evt) {
-<span class="nc" id="L90">                enableCreateButton(evt);</span>
-<span class="nc" id="L91">            }</span>
+<span class="nc" id="L89">                enableCreateButton(evt);</span>
+<span class="nc" id="L90">            }</span>
         });
 
-<span class="nc" id="L94">        jLabelUserPassword.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L95">        jLabelUserPassword.setText(&quot;Contraseña usuario:&quot;);</span>
+<span class="nc" id="L93">        jLabelUserPassword.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L94">        jLabelUserPassword.setText(&quot;Contraseña usuario:&quot;);</span>
 
-<span class="nc" id="L97">        jTextFieldUserLogin.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
-<span class="nc" id="L98">        jTextFieldUserLogin.addKeyListener(new java.awt.event.KeyAdapter() {</span>
+<span class="nc" id="L96">        jTextFieldUserLogin.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
+<span class="nc" id="L97">        jTextFieldUserLogin.addKeyListener(new java.awt.event.KeyAdapter() {</span>
             public void keyReleased(java.awt.event.KeyEvent evt) {
-<span class="nc" id="L100">                enableCreateButton(evt);</span>
-<span class="nc" id="L101">            }</span>
+<span class="nc" id="L99">                enableCreateButton(evt);</span>
+<span class="nc" id="L100">            }</span>
         });
 
-<span class="nc" id="L104">        jLabelUserLogin.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L105">        jLabelUserLogin.setText(&quot;Login usuario:&quot;);</span>
+<span class="nc" id="L103">        jLabelUserLogin.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L104">        jLabelUserLogin.setText(&quot;Login usuario:&quot;);</span>
 
-<span class="nc" id="L107">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L108">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L109">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L110">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L111">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L112">                .addContainerGap()</span>
-<span class="nc" id="L113">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L114">                    .addComponent(jButtonUserCreate, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)</span>
-<span class="nc" id="L115">                    .addComponent(jTextFieldUserLogin)</span>
-<span class="nc" id="L116">                    .addComponent(jLabelUserLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L117">                    .addComponent(jLabelUserPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)</span>
-<span class="nc" id="L118">                    .addComponent(jPasswordFieldUserPassword)</span>
-<span class="nc" id="L119">                    .addComponent(jLabelUserRole, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L120">                    .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L121">                    .addComponent(jComboBoxUserRole, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L122">                    .addComponent(jComboBoxMunicipality, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-<span class="nc" id="L123">                .addContainerGap())</span>
+<span class="nc" id="L106">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L107">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L108">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L109">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L110">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L111">                .addContainerGap()</span>
+<span class="nc" id="L112">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L113">                    .addComponent(jButtonUserCreate, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)</span>
+<span class="nc" id="L114">                    .addComponent(jTextFieldUserLogin)</span>
+<span class="nc" id="L115">                    .addComponent(jLabelUserLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L116">                    .addComponent(jLabelUserPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)</span>
+<span class="nc" id="L117">                    .addComponent(jPasswordFieldUserPassword)</span>
+<span class="nc" id="L118">                    .addComponent(jLabelUserRole, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L119">                    .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L120">                    .addComponent(jComboBoxUserRole, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L121">                    .addComponent(jComboBoxMunicipality, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L122">                .addContainerGap())</span>
         );
-<span class="nc" id="L125">        layout.setVerticalGroup(</span>
-<span class="nc" id="L126">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L127">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L128">                .addContainerGap()</span>
-<span class="nc" id="L129">                .addComponent(jLabelUserLogin)</span>
-<span class="nc" id="L130">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L131">                .addComponent(jTextFieldUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L132">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L133">                .addComponent(jLabelUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L134">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L135">                .addComponent(jPasswordFieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L136">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L137">                .addComponent(jLabelUserRole)</span>
-<span class="nc" id="L138">                .addGap(5, 5, 5)</span>
-<span class="nc" id="L139">                .addComponent(jComboBoxUserRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L140">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L141">                .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L142">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L143">                .addComponent(jComboBoxMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L144">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L145">                .addComponent(jButtonUserCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L124">        layout.setVerticalGroup(</span>
+<span class="nc" id="L125">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L126">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L127">                .addContainerGap()</span>
+<span class="nc" id="L128">                .addComponent(jLabelUserLogin)</span>
+<span class="nc" id="L129">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L130">                .addComponent(jTextFieldUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L131">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L132">                .addComponent(jLabelUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L133">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L134">                .addComponent(jPasswordFieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L135">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L136">                .addComponent(jLabelUserRole)</span>
+<span class="nc" id="L137">                .addGap(5, 5, 5)</span>
+<span class="nc" id="L138">                .addComponent(jComboBoxUserRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L139">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L140">                .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L141">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L142">                .addComponent(jComboBoxMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L143">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L144">                .addComponent(jButtonUserCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
         );
 
-<span class="nc" id="L148">        pack();</span>
-<span class="nc" id="L149">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L147">        pack();</span>
+<span class="nc" id="L148">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonUserCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserCreateActionPerformed
         try {
-<span class="nc bnc" id="L154" title="All 2 branches missed.">            if (!validateInputs()) {</span>
-<span class="nc" id="L155">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
+<span class="nc bnc" id="L153" title="All 2 branches missed.">            if (!validateInputs()) {</span>
+<span class="nc" id="L154">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
             }
 
-<span class="nc" id="L158">            String login = getInputLogin();</span>
-<span class="nc" id="L159">            String password = getInputPassword();</span>
-<span class="nc" id="L160">            int roleId = getInputUserRole().getId();</span>
-<span class="nc" id="L161">            int municipalityId = getInputMunicipality().getId();</span>
+<span class="nc" id="L157">            String login = getInputLogin();</span>
+<span class="nc" id="L158">            String password = getInputPassword();</span>
+<span class="nc" id="L159">            int roleId = getInputUserRole().getId();</span>
+<span class="nc" id="L160">            int municipalityId = getInputMunicipality().getId();</span>
 
             // User create
-<span class="nc" id="L164">            User user = new User(login, password, roleId, municipalityId);</span>
-<span class="nc" id="L165">            UserController.create(user);</span>
+<span class="nc" id="L163">            User user = new User(login, password, roleId, municipalityId);</span>
+<span class="nc" id="L164">            UserController.create(user);</span>
 
-<span class="nc" id="L167">            Dialog.info(&quot;Usuario creado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc" id="L166">            Dialog.info(&quot;Usuario creado correctamente&quot;, &quot;Info&quot;);</span>
 
-<span class="nc" id="L169">            cleanInputs();</span>
-<span class="nc" id="L170">        } catch (Exception e) {</span>
-<span class="nc" id="L171">            Log.error(e);</span>
-<span class="nc" id="L172">            Dialog.error(e.getMessage(), &quot;Error creando usuario&quot;);</span>
-<span class="nc" id="L173">        }</span>
-<span class="nc" id="L174">    }//GEN-LAST:event_jButtonUserCreateActionPerformed</span>
+<span class="nc" id="L168">            cleanInputs();</span>
+<span class="nc" id="L169">        } catch (Exception e) {</span>
+<span class="nc" id="L170">            Log.error(e);</span>
+<span class="nc" id="L171">            Dialog.error(e.getMessage(), &quot;Error creando usuario&quot;);</span>
+<span class="nc" id="L172">        }</span>
+<span class="nc" id="L173">    }//GEN-LAST:event_jButtonUserCreateActionPerformed</span>
 
     /**
      * Enable Create Button Event.
@@ -181,22 +180,22 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
     @SuppressWarnings(&quot;unused&quot;)
     private void enableCreateButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enableCreateButton
         try {
-<span class="nc" id="L184">            jButtonUserCreate.setEnabled(validateInputs());</span>
-<span class="nc" id="L185">        } catch (Exception e) {</span>
-<span class="nc" id="L186">            Log.error(e);</span>
-<span class="nc" id="L187">        }</span>
-<span class="nc" id="L188">    }//GEN-LAST:event_enableCreateButton</span>
+<span class="nc" id="L183">            jButtonUserCreate.setEnabled(validateInputs());</span>
+<span class="nc" id="L184">        } catch (Exception e) {</span>
+<span class="nc" id="L185">            Log.error(e);</span>
+<span class="nc" id="L186">        }</span>
+<span class="nc" id="L187">    }//GEN-LAST:event_enableCreateButton</span>
 
     /**
      * Clean Inputs.
      */
     private void cleanInputs() {
-<span class="nc" id="L194">        jTextFieldUserLogin.setText(&quot;&quot;);</span>
-<span class="nc" id="L195">        jPasswordFieldUserPassword.setText(&quot;&quot;);</span>
-<span class="nc" id="L196">        jComboBoxUserRole.setSelectedIndex(0);</span>
-<span class="nc" id="L197">        jComboBoxMunicipality.setSelectedIndex(0);</span>
-<span class="nc" id="L198">        validateInputs();</span>
-<span class="nc" id="L199">    }</span>
+<span class="nc" id="L193">        jTextFieldUserLogin.setText(&quot;&quot;);</span>
+<span class="nc" id="L194">        jPasswordFieldUserPassword.setText(&quot;&quot;);</span>
+<span class="nc" id="L195">        jComboBoxUserRole.setSelectedIndex(0);</span>
+<span class="nc" id="L196">        jComboBoxMunicipality.setSelectedIndex(0);</span>
+<span class="nc" id="L197">        validateInputs();</span>
+<span class="nc" id="L198">    }</span>
 
     /**
      * Validate Inputs.
@@ -204,7 +203,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return True if inputs are valid
      */
     private Boolean validateInputs() {
-<span class="nc bnc" id="L207" title="All 4 branches missed.">        return validateInputLogin() &amp;&amp; validateInputPassword();</span>
+<span class="nc bnc" id="L206" title="All 4 branches missed.">        return validateInputLogin() &amp;&amp; validateInputPassword();</span>
     }
 
     /**
@@ -213,16 +212,16 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputLogin() {
-<span class="nc" id="L216">        String name = getInputLogin();</span>
-<span class="nc bnc" id="L217" title="All 4 branches missed.">        Boolean isValid = name.length() &gt;= 1 &amp;&amp; name.length() &lt;= 10;</span>
+<span class="nc" id="L215">        String name = getInputLogin();</span>
+<span class="nc bnc" id="L216" title="All 4 branches missed.">        Boolean isValid = name.length() &gt;= 1 &amp;&amp; name.length() &lt;= 10;</span>
 
-<span class="nc bnc" id="L219" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
-<span class="nc" id="L220">            jTextFieldUserLogin.setBackground(Color.white);</span>
+<span class="nc bnc" id="L218" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
+<span class="nc" id="L219">            jTextFieldUserLogin.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L222">            jTextFieldUserLogin.setBackground(Color.orange);</span>
+<span class="nc" id="L221">            jTextFieldUserLogin.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L225">        return isValid;</span>
+<span class="nc" id="L224">        return isValid;</span>
     }
 
     /**
@@ -231,16 +230,16 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputPassword() {
-<span class="nc" id="L234">        String password = getInputPassword();</span>
-<span class="nc bnc" id="L235" title="All 4 branches missed.">        Boolean isValid = password.length() &gt;= 4 &amp;&amp; password.length() &lt;= 8;</span>
+<span class="nc" id="L233">        String password = getInputPassword();</span>
+<span class="nc bnc" id="L234" title="All 4 branches missed.">        Boolean isValid = password.length() &gt;= 4 &amp;&amp; password.length() &lt;= 8;</span>
 
-<span class="nc bnc" id="L237" title="All 4 branches missed.">        if (isValid || password.length() == 0) {</span>
-<span class="nc" id="L238">            jPasswordFieldUserPassword.setBackground(Color.white);</span>
+<span class="nc bnc" id="L236" title="All 4 branches missed.">        if (isValid || password.length() == 0) {</span>
+<span class="nc" id="L237">            jPasswordFieldUserPassword.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L240">            jPasswordFieldUserPassword.setBackground(Color.orange);</span>
+<span class="nc" id="L239">            jPasswordFieldUserPassword.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L243">        return isValid;</span>
+<span class="nc" id="L242">        return isValid;</span>
     }
 
     /**
@@ -249,7 +248,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Name
      */
     private String getInputLogin() {
-<span class="nc" id="L252">        return jTextFieldUserLogin.getText();</span>
+<span class="nc" id="L251">        return jTextFieldUserLogin.getText();</span>
     }
 
     /**
@@ -258,7 +257,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Password.
      */
     private String getInputPassword() {
-<span class="nc" id="L261">        return String.valueOf(jPasswordFieldUserPassword.getPassword());</span>
+<span class="nc" id="L260">        return String.valueOf(jPasswordFieldUserPassword.getPassword());</span>
     }
 
     /**
@@ -267,7 +266,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input User Role.
      */
     private UserRole getInputUserRole() {
-<span class="nc" id="L270">        return (UserRole) jComboBoxUserRole.getSelectedItem();</span>
+<span class="nc" id="L269">        return (UserRole) jComboBoxUserRole.getSelectedItem();</span>
     }
 
     /**
@@ -276,7 +275,7 @@ public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Munipality.
      */
     private Municipality getInputMunicipality() {
-<span class="nc" id="L279">        return (Municipality) jComboBoxMunicipality.getSelectedItem();</span>
+<span class="nc" id="L278">        return (Municipality) jComboBoxMunicipality.getSelectedItem();</span>
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

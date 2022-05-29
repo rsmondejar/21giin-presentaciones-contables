@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PresentationController.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.controllers</a> &gt; <span class="el_source">PresentationController.java</span></div><h1>PresentationController.java</h1><pre class="source lang-java linenums">/**
+ * Presentation Controller Class
+ */
+package app.controllers;
+
+import app.dao.PresentationDao;
+import app.entities.Presentation;
+import helpers.Dialog;
+import helpers.Log;
+import java.util.List;
+
+/**
+ *
+ * @author raulsm
+ */
+<span class="nc" id="L16">public class PresentationController {</span>
+    
+    /**
+     * List Presentations.
+     * @return 
+     */
+    public static List&lt;Presentation&gt; list() {
+        // Get all presentations
+<span class="nc" id="L24">        List&lt;Presentation&gt; presentations = (new PresentationDao()).all();</span>
+
+<span class="nc" id="L26">        return presentations;</span>
+    }
+    
+    /**
+     * Find Presentation by Id.
+     * @param id Presentation Id
+     * @return Status
+     */
+    public static Presentation findById(int id) {
+<span class="nc" id="L35">        Presentation presentation = null;</span>
+        
+        try {
+<span class="nc" id="L38">            presentation = (new PresentationDao()).findById(id);</span>
+<span class="nc" id="L39">        } catch(Exception e) {</span>
+<span class="nc" id="L40">            Log.error(e);</span>
+<span class="nc" id="L41">            Dialog.error(e.getMessage(), &quot;Error buscando presentación&quot;);</span>
+<span class="nc" id="L42">        }</span>
+        
+<span class="nc" id="L44">        return presentation;</span>
+    }
+    
+    /**
+     * Find Presentation by Id.
+     * @param id Presentation Id
+     * @return Status
+     */
+    public static Presentation edit(int id) {
+<span class="nc" id="L53">        Presentation presentation = null;</span>
+        
+        try {
+<span class="nc" id="L56">            presentation = (new PresentationDao()).findById(id);</span>
+<span class="nc" id="L57">        } catch(Exception e) {</span>
+<span class="nc" id="L58">            Log.error(e);</span>
+<span class="nc" id="L59">            Dialog.error(e.getMessage(), &quot;Error buscando presentación&quot;);</span>
+<span class="nc" id="L60">        }</span>
+        
+<span class="nc" id="L62">        return presentation;</span>
+    }
+    
+    /**
+     * Create Presentation.
+     * @param presentation Presentation
+     * @return Status
+     */
+    public static boolean create(Presentation presentation) {
+<span class="nc" id="L71">        boolean status = false;</span>
+        
+        try {
+<span class="nc" id="L74">            Integer id = (new PresentationDao()).create(presentation);</span>
+<span class="nc bnc" id="L75" title="All 2 branches missed.">            status = id != null;</span>
+<span class="nc" id="L76">        } catch(Exception e) {</span>
+<span class="nc" id="L77">            Log.error(e);</span>
+<span class="nc" id="L78">            Dialog.error(e.getMessage(), &quot;Error creando presentación&quot;);</span>
+<span class="nc" id="L79">        }</span>
+        
+<span class="nc" id="L81">        return status;</span>
+    }
+    
+    /**
+     * Update Presentation.
+     * @param id
+     * @param presentation
+     * @return 
+     */
+    public static boolean update(int id, Presentation presentation) {
+<span class="nc" id="L91">        boolean status = false;</span>
+        
+        try {
+<span class="nc" id="L94">            status = (new PresentationDao()).update(id, presentation);</span>
+<span class="nc" id="L95">        } catch(Exception e) {</span>
+<span class="nc" id="L96">            Log.error(e);</span>
+<span class="nc" id="L97">            Dialog.error(e.getMessage(), &quot;Error actualizando presentación&quot;);</span>
+<span class="nc" id="L98">        }</span>
+        
+<span class="nc" id="L100">        return status;</span>
+    }
+    
+    /**
+     * Delete Presentation.
+     * @param id Presentation Id
+     * @return Status
+     */
+    public static boolean delete(int id) {
+<span class="nc" id="L109">        boolean status = false;</span>
+        
+        try {
+<span class="nc" id="L112">            status = (new PresentationDao()).delete(id);</span>
+<span class="nc" id="L113">        } catch(Exception e) {</span>
+<span class="nc" id="L114">            Log.error(e);</span>
+<span class="nc" id="L115">            Dialog.error(e.getMessage(), &quot;Error eliminando presentación&quot;);</span>
+<span class="nc" id="L116">        }</span>
+        
+<span class="nc" id="L118">        return status;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

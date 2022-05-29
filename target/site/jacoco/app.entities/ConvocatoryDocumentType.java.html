@@ -20,7 +20,7 @@ import javax.persistence.NamedNativeQuery;
 @Entity(name = &quot;convocatories_has_documents_types&quot;)
 @NamedNativeQuery(
         name = &quot;find_by_convocatory_id&quot;,
-        query = &quot;SELECT cdt.document_type_id FROM convocatories_has_documents_types cdt &quot;
+        query = &quot;SELECT cdt.* FROM convocatories_has_documents_types cdt &quot;
         + &quot;WHERE cdt.convocatory_id = :convocatory_id&quot;
 )
 public class ConvocatoryDocumentType extends BaseEntity {

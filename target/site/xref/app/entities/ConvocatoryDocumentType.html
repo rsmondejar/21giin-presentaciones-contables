@@ -28,7 +28,7 @@
 <a class="jxr_linenumber" name="L20" href="#L20">20</a>  @Entity(name = <span class="jxr_string">"convocatories_has_documents_types"</span>)
 <a class="jxr_linenumber" name="L21" href="#L21">21</a>  @NamedNativeQuery(
 <a class="jxr_linenumber" name="L22" href="#L22">22</a>          name = <span class="jxr_string">"find_by_convocatory_id"</span>,
-<a class="jxr_linenumber" name="L23" href="#L23">23</a>          query = <span class="jxr_string">"SELECT cdt.document_type_id FROM convocatories_has_documents_types cdt "</span>
+<a class="jxr_linenumber" name="L23" href="#L23">23</a>          query = <span class="jxr_string">"SELECT cdt.* FROM convocatories_has_documents_types cdt "</span>
 <a class="jxr_linenumber" name="L24" href="#L24">24</a>          + <span class="jxr_string">"WHERE cdt.convocatory_id = :convocatory_id"</span>
 <a class="jxr_linenumber" name="L25" href="#L25">25</a>  )
 <a class="jxr_linenumber" name="L26" href="#L26">26</a>  <strong class="jxr_keyword">public</strong> <strong class="jxr_keyword">class</strong> <a name="ConvocatoryDocumentType" href="../../app/entities/ConvocatoryDocumentType.html#ConvocatoryDocumentType">ConvocatoryDocumentType</a> <strong class="jxr_keyword">extends</strong> <a name="BaseEntity" href="../../app/entities/BaseEntity.html#BaseEntity">BaseEntity</a> {

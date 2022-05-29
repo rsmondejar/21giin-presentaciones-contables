@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Convocatory Document Type DAO.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.dao;
 
@@ -9,7 +11,7 @@ import app.entities.ConvocatoryDocumentType;
 import java.util.List;
 
 /**
- * Municipality DAO.
+ * Convocatory Document Type DAO.
  *
  * @author raulsm
  * @version 1.0.0

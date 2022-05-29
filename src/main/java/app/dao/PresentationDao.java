@@ -1,11 +1,15 @@
 /**
  * Presentation DAO.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.dao;
 
 import app.entities.BaseEntity;
 import app.entities.Presentation;
 import app.entities.Convocatory;
+import app.entities.PresentationDocumentType;
 import helpers.Log;
 import java.util.List;
 
@@ -56,7 +60,20 @@ public class PresentationDao extends BaseDao {
      * @return status
      */
     public <T> Integer create(Presentation presentation) {
-        return super.create((BaseEntity) presentation);
+        Integer id = super.create((BaseEntity) presentation);
+        
+        // Create presentation documents types
+        List<PresentationDocumentType> presentationDocumentTypes = presentation.getPresentationDocumentTypes();
+
+        if (presentationDocumentTypes != null) {
+            PresentationDocumentTypeDao presentationDocumentTypeDao = new PresentationDocumentTypeDao();
+
+            for (PresentationDocumentType presentationDocumentType : presentationDocumentTypes) {
+                presentationDocumentType.setPresentationId(id);
+                presentationDocumentTypeDao.create(presentationDocumentType);
+            }
+        }
+        return id;
     }
 
     /**
@@ -86,6 +103,7 @@ public class PresentationDao extends BaseDao {
      * Add Relations.
      *
      * @param presentation Presentation
+     * @return Presentation with relations
      */
     private Presentation addRelations(Presentation presentation) {
         try {

@@ -1,5 +1,8 @@
 /**
  * User Role DAO.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.dao;
 

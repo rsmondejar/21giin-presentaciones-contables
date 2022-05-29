@@ -120,8 +120,7 @@ public class UserDaoTest extends TestCase {
 
         try {
             user = userDao.findByLoginAndPassword(userName, userPassword);
-        } catch (Exception e) {
-            Log.error(e);
+        } catch (Exception ignore) {
         }
 
         // If user exists, delete

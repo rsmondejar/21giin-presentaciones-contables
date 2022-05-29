@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * Convocatory DAO.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.dao;
 
@@ -8,14 +10,8 @@ import app.entities.BaseEntity;
 import app.entities.Convocatory;
 import app.entities.ConvocatoryDocumentType;
 import app.entities.DocumentType;
-import app.entities.User;
-import config.HibernateUtil;
 import helpers.Log;
 import java.util.List;
-import org.hibernate.HibernateException;
-import org.hibernate.Session;
-import org.hibernate.Transaction;
-import org.hibernate.query.Query;
 
 /**
  * Convocatory DAO.
@@ -36,7 +32,14 @@ public class ConvocatoryDao extends BaseDao {
      */
     @Override
     public List<Convocatory> all() {
-        return super.all();
+        List<Convocatory> convocatories = super.all();
+        
+        // Add extra field Document Types
+        for(int i = 0; i < convocatories.size(); i++) {
+            convocatories.set(i, findById(convocatories.get(i).getId()));
+        }
+        
+        return convocatories;
     }
 
     /**
@@ -47,17 +50,7 @@ public class ConvocatoryDao extends BaseDao {
      */
     @Override
     public Convocatory findById(int id) {
-
-        // Add Documents Types
-        Convocatory convocatory = super.findById(id);
-
-        // Add documents to entity
-        List<DocumentType> documentTypesIds = super
-                .whereNamedQuery("documents_types", "convocatory_id", String.valueOf(id));
-
-        convocatory.setDocumentsTypes(documentTypesIds);
-
-        return convocatory;
+        return addRelations((Convocatory) super.findById(id));
     }
 
     /**
@@ -128,6 +121,34 @@ public class ConvocatoryDao extends BaseDao {
      * @return List of Convocatories
      */
     public List<Convocatory> active() {
-        return super.whereNamedQuery("active", null, null);
+        List<Convocatory> convocatories = super.whereNamedQuery("active", null, null);
+        
+        // Add extra field Document Types
+        for(int i = 0; i < convocatories.size(); i++) {
+            convocatories.set(i, findById(convocatories.get(i).getId()));
+        }
+        
+        return convocatories;
+    }
+    
+    /**
+     * Add Relations.
+     * @param convocatory Convocatory
+     * @return Convocatory with relations
+     */ 
+    public Convocatory addRelations(Convocatory convocatory) {
+        try {
+            // Add Documents Types
+            List<DocumentType> documentTypes = super
+                        .whereNamedQuery("documents_types", "convocatory_id", String.valueOf(convocatory.getId()));
+
+            convocatory.setDocumentsTypes(documentTypes);
+
+            return convocatory;
+        } catch(Exception exception) {
+            Log.error(exception);
+        }
+        
+        return null;
     }
 }

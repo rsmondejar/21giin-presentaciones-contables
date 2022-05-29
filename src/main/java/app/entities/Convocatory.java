@@ -23,17 +23,17 @@ import javax.persistence.Transient;
 @Entity(name = "convocatories")
 @NamedNativeQueries({
     @NamedNativeQuery(
-        name = "active",
-        query = "SELECT c.* FROM convocatories c "
-        + " WHERE c.is_valid = 1 AND c.start_date <= CURRENT_DATE AND c.end_date >= CURRENT_DATE ",
-        resultClass = Convocatory.class
+            name = "active",
+            query = "SELECT c.* FROM convocatories c "
+            + " WHERE c.is_valid = 1 AND c.start_date <= CURRENT_DATE AND c.end_date >= CURRENT_DATE ",
+            resultClass = Convocatory.class
     ),
     @NamedNativeQuery(
-        name = "documents_types",
-        query = "SELECT dt.* FROM documents_types as dt "
-        + " JOIN convocatories_has_documents_types cdt ON cdt.document_type_id = dt.id "
-        + " WHERE cdt.convocatory_id = :convocatory_id",
-        resultClass = DocumentType.class
+            name = "documents_types",
+            query = "SELECT dt.* FROM documents_types as dt "
+            + " JOIN convocatories_has_documents_types cdt ON cdt.document_type_id = dt.id "
+            + " WHERE cdt.convocatory_id = :convocatory_id",
+            resultClass = DocumentType.class
     ),
     @NamedNativeQuery(
             name = "delete_documents_types",
@@ -41,27 +41,27 @@ import javax.persistence.Transient;
     )
 })
 public class Convocatory extends BaseEntity {
-    
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected int id;
-        
+
     @Column(name = "name")
     private String name;
-    
+
     @Column(name = "description")
     private String description;
-    
+
     @Column(name = "start_date")
     private Date startDate;
-    
+
     @Column(name = "end_date")
     private Date endDate;
- 
+
     @Column(name = "is_valid")
     private Boolean isValid;
-    
+
     @Transient
     private List<DocumentType> documentsTypes;
 
@@ -76,7 +76,7 @@ public class Convocatory extends BaseEntity {
         this.setEndDate(endDate);
         this.setIsValid(isValid);
     }
-    
+
     public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid, List<DocumentType> documentsTypes) {
         this.setName(name);
         this.setDescription(description);
@@ -85,7 +85,7 @@ public class Convocatory extends BaseEntity {
         this.setIsValid(isValid);
         this.setDocumentsTypes(documentsTypes);
     }
-    
+
     public Convocatory(int id, String name, String description, Date startDate, Date endDate, Boolean isValid, List<DocumentType> documentsTypes) {
         this.setId(id);
         this.setName(name);
@@ -105,7 +105,7 @@ public class Convocatory extends BaseEntity {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getName() {
         return name;
     }
@@ -149,11 +149,11 @@ public class Convocatory extends BaseEntity {
     public void setIsValid(Boolean isValid) {
         this.isValid = isValid;
     }
-    
+
     public List<DocumentType> getDocumentsTypes() {
         return documentsTypes;
     }
-    
+
     public void setDocumentsTypes(List<DocumentType> documentsTypes) {
         this.documentsTypes = documentsTypes;
     }
@@ -162,5 +162,11 @@ public class Convocatory extends BaseEntity {
     @Override
     public String toString() {
         return this.getName();
+//        return "[%d] %s de %s a %s".formatted(
+//                this.getId(),
+//                this.getName(),
+//                this.getStartDate().toString(),
+//                this.getEndDate().toString()
+//        );
     }
 }

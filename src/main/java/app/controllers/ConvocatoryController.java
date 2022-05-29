@@ -1,18 +1,16 @@
 /**
- * Convocatory Controller Class
+ * Convocatory Controller Class.
  */
 package app.controllers;
 
 import app.dao.ConvocatoryDao;
-import app.dao.ConvocatoryDocumentTypeDao;
 import app.entities.Convocatory;
-import app.entities.ConvocatoryDocumentType;
-import app.entities.DocumentType;
 import helpers.Dialog;
 import helpers.Log;
 import java.util.List;
 
 /**
+ * ConvocatoryController.
  *
  * @author raulsm
  */
@@ -126,5 +124,17 @@ public class ConvocatoryController {
         }
 
         return status;
+    }
+
+    /**
+     * List Active Convocatories.
+     *
+     * @return
+     */
+    public static List<Convocatory> active() {
+        // Get all active convocatories
+        List<Convocatory> convocatories = (new ConvocatoryDao()).active();
+
+        return convocatories;
     }
 }

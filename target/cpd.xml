@@ -1,0 +1,864 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd>
+   <duplication lines="204" tokens="533">
+      <file column="5" endcolumn="31" endline="466" line="263"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryCreateJInternalFrame.java"/>
+      <file column="5" endcolumn="31" endline="482" line="271"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java"/>
+      <codefragment><![CDATA[    }
+    
+    /**
+     * Validate Inputs.
+     *
+     * @return True if inputs are valid
+     */
+    private Boolean validateInputs() {
+        return validateInputName() 
+                && validateInputDescription()
+                && validateInputStartDate()
+                && validateInputEndDate();
+    }
+
+    /**
+     * Validate Input Name.
+     *
+     * @return
+     */
+    private Boolean validateInputName() {
+        String name = getInputName();
+        Boolean isValid = name.length() > 0 && name.length() <= 100;
+
+        if (isValid || name.length() == 0) {
+            jTextFieldConvocatoryName.setBackground(Color.white);
+        } else {
+            jTextFieldConvocatoryName.setBackground(Color.orange);
+        }
+
+        return isValid;
+    }
+    
+    /**
+     * Validate Input Description.
+     *
+     * @return
+     */
+    private Boolean validateInputDescription() {
+        String name = getInputDescription();
+        Boolean isValid = name.length() > 0 && name.length() <= 2000;
+
+        if (isValid || name.length() == 0) {
+            jTextAreaConvocatoryDescription.setBackground(Color.white);
+        } else {
+            jTextAreaConvocatoryDescription.setBackground(Color.orange);
+        }
+
+        return isValid;
+    }
+
+    /**
+     * Validate Input Start Date.
+     *
+     * @return
+     */
+    private Boolean validateInputStartDate() {
+        Date startDate = jDateChooserStartDate.getDate();
+        Boolean isValid = startDate != null;
+
+        if (isValid) {
+            jDateChooserStartDate.setBackground(Color.white);
+        } else {
+            jDateChooserStartDate.setBackground(Color.orange);
+        }
+
+        return isValid;
+    }
+    
+    /**
+     * Validate Input End Date.
+     *
+     * @return
+     */
+    private Boolean validateInputEndDate() {
+        Date startDate = jDateChooserStartDate.getDate();
+        Date endDate = jDateChooserEndDate.getDate();
+        Boolean isValid = endDate != null && (endDate.compareTo(startDate) > 0);
+
+        if (isValid) {
+            jDateChooserEndDate.setBackground(Color.white);
+        } else {
+            jDateChooserEndDate.setBackground(Color.orange);
+        }
+
+        return isValid;
+    }
+
+
+    /**
+     * Get Input Name.
+     *
+     * @return Input Name
+     */
+    private String getInputName() {
+        return jTextFieldConvocatoryName.getText();
+    }
+
+    /**
+     * Get Input Description.
+     *
+     * @return Input Category.
+     */
+    private String getInputDescription() {
+        return jTextAreaConvocatoryDescription.getText();
+    }
+    
+    /**
+     * Get Input Start Date.
+     * @return Input Start Date.
+     */
+    private Date getInputStartDate() {
+        return jDateChooserStartDate.getDate();
+    }
+    
+    /**
+     * Get Input End Date.
+     * @return Input Start Date.
+     */
+    private Date getInputEndDate() {
+        return jDateChooserEndDate.getDate();
+    }
+    
+    /**
+     * Get Input Status.
+     * @return Input Status.
+     */
+    private boolean getInputStatus() {
+        return jCheckBoxConvocatoryStatus.isSelected();
+    }
+    
+    /**
+     * Get Input Document Type Id 1.
+     * @return Input Document Type Id 1.
+     */
+    private boolean getInputDocumentTypeId1() {
+        return jCheckBoxDocumentTypeId1.isSelected();
+    }
+    
+    /**
+     * Get Input Document Type Id 2.
+     * @return Input Document Type Id 2.
+     */
+    private boolean getInputDocumentTypeId2() {
+        return jCheckBoxDocumentTypeId2.isSelected();
+    }
+    
+    /**
+     * Get Input Document Type Id 3.
+     * @return Input Document Type Id 3.
+     */
+    private boolean getInputDocumentTypeId3() {
+        return jCheckBoxDocumentTypeId3.isSelected();
+    }
+    
+    /**
+     * Get Input Document Type Id 4.
+     * @return Input Document Type Id 4.
+     */
+    private boolean getInputDocumentTypeId4() {
+        return jCheckBoxDocumentTypeId4.isSelected();
+    }
+    
+    /**
+     * Get Input Document Type Id 5.
+     * @return Input Document Type Id 5.
+     */
+    private boolean getInputDocumentTypeId5() {
+        return jCheckBoxDocumentTypeId5.isSelected();
+    }
+    
+    /**
+     * Get Input Document Types Selected
+     * @return Documents Types Selected
+     */
+    private List<DocumentType> getInputDocumentTypesSelected() {
+        List<DocumentType> documentsTypes = new ArrayList<>();
+        
+        DocumentTypeDao documentTypeDao = new DocumentTypeDao();
+            
+        if (getInputDocumentTypeId1()) {
+            documentsTypes.add(documentTypeDao.findById(1));
+        }
+
+        if (getInputDocumentTypeId2()) {
+            documentsTypes.add(documentTypeDao.findById(2));
+        }
+
+        if (getInputDocumentTypeId3()) {
+           documentsTypes.add(documentTypeDao.findById(3));
+        }
+
+        if (getInputDocumentTypeId4()) {
+            documentsTypes.add(documentTypeDao.findById(4));
+        }
+
+        if (getInputDocumentTypeId5()) {
+            documentsTypes.add(documentTypeDao.findById(5));
+        }
+            
+        return documentsTypes;
+    }
+    
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonConvocatoryCreate;]]></codefragment>
+   </duplication>
+   <duplication lines="32" tokens="530">
+      <file column="109" endcolumn="83" endline="222" line="191"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java"/>
+      <file column="142" endcolumn="83" endline="246" line="215"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryShowJInternalFrame.java"/>
+      <codefragment><![CDATA[                            .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)))
+                    .addComponent(jSeparator1)
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelConvocatoryName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldConvocatoryName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelConvocatoryDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelConvocatoryStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelConvocatoryEndDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jDateChooserStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jCheckBoxConvocatoryStatus)
+                    .addComponent(jDateChooserEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)]]></codefragment>
+   </duplication>
+   <duplication lines="25" tokens="336">
+      <file column="194" endcolumn="17" endline="143" line="119"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserCreateJInternalFrame.java"/>
+      <file column="55" endcolumn="17" endline="172" line="148"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserEditJInternalFrame.java"/>
+      <codefragment><![CDATA[                    .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBoxUserRole, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBoxMunicipality, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelUserLogin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordFieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelUserRole)
+                .addGap(5, 5, 5)
+                .addComponent(jComboBoxUserRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jComboBoxMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)]]></codefragment>
+   </duplication>
+   <duplication lines="19" tokens="282">
+      <file column="200" endcolumn="104" endline="191" line="173"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java"/>
+      <file column="147" endcolumn="104" endline="215" line="197"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryShowJInternalFrame.java"/>
+      <codefragment><![CDATA[                    .addComponent(jLabelConvocatoryDescription, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jScrollPane1)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(jTextFieldConvocatoryId, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                            .addComponent(jLabelConvocatoryStartDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jDateChooserStartDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jDateChooserEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelConvocatoryEndDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jCheckBoxConvocatoryStatus)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)))]]></codefragment>
+   </duplication>
+   <duplication lines="58" tokens="248">
+      <file column="9" endcolumn="63" endline="88" line="31"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java"/>
+      <file column="9" endcolumn="63" endline="87" line="31"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryShowJInternalFrame.java"/>
+      <codefragment><![CDATA[        jTextFieldConvocatoryId.setVisible(false);
+    }
+
+    /**
+     * Load Data.
+     *
+     * @param convocatory
+     */
+    public void loadData(Convocatory convocatory) {
+        jTextFieldConvocatoryId.setText(String.valueOf(convocatory.getId()));
+
+        jTextFieldConvocatoryName.setText(convocatory.getName());
+        jTextAreaConvocatoryDescription.setText(convocatory.getDescription());
+        jDateChooserStartDate.setDate(convocatory.getStartDate());
+        jDateChooserEndDate.setDate(convocatory.getEndDate());
+        jCheckBoxConvocatoryStatus.setSelected(convocatory.getIsValid());
+
+        // Set documents
+        List<DocumentType> documentTypes = convocatory.getDocumentsTypes();
+        setDocumentsTypes(documentTypes);
+    }
+
+    /**
+     * Set Documents Types
+     *
+     * @param documentTypes Documents Types
+     */
+    private void setDocumentsTypes(List<DocumentType> documentTypes) {
+        for (DocumentType documentType : documentTypes) {
+            if (documentType.getId() == 1) {
+                jCheckBoxDocumentTypeId1.setSelected(true);
+            }
+            if (documentType.getId() == 2) {
+                jCheckBoxDocumentTypeId2.setSelected(true);
+            }
+            if (documentType.getId() == 3) {
+                jCheckBoxDocumentTypeId3.setSelected(true);
+            }
+            if (documentType.getId() == 4) {
+                jCheckBoxDocumentTypeId4.setSelected(true);
+            }
+            if (documentType.getId() == 5) {
+                jCheckBoxDocumentTypeId5.setSelected(true);
+            }
+        }
+    }
+
+    /**
+     * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
+     * content of this method is always regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        jLabelConvocatoryName = new javax.swing.JLabel();
+        jTextFieldConvocatoryName = new javax.swing.JTextField();
+        jLabelConvocatoryDescription = new javax.swing.JLabel();]]></codefragment>
+   </duplication>
+   <duplication lines="90" tokens="244">
+      <file column="9" endcolumn="31" endline="282" line="193"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserCreateJInternalFrame.java"/>
+      <file column="9" endcolumn="31" endline="316" line="227"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserEditJInternalFrame.java"/>
+      <codefragment><![CDATA[        jTextFieldUserLogin.setText("");
+        jPasswordFieldUserPassword.setText("");
+        jComboBoxUserRole.setSelectedIndex(0);
+        jComboBoxMunicipality.setSelectedIndex(0);
+        validateInputs();
+    }
+
+    /**
+     * Validate Inputs.
+     *
+     * @return True if inputs are valid
+     */
+    private Boolean validateInputs() {
+        return validateInputLogin() && validateInputPassword();
+    }
+
+    /**
+     * Validate Input Login.
+     *
+     * @return
+     */
+    private Boolean validateInputLogin() {
+        String name = getInputLogin();
+        Boolean isValid = name.length() >= 1 && name.length() <= 10;
+
+        if (isValid || name.length() == 0) {
+            jTextFieldUserLogin.setBackground(Color.white);
+        } else {
+            jTextFieldUserLogin.setBackground(Color.orange);
+        }
+
+        return isValid;
+    }
+
+    /**
+     * Validate Input Password.
+     *
+     * @return
+     */
+    private Boolean validateInputPassword() {
+        String password = getInputPassword();
+        Boolean isValid = password.length() >= 4 && password.length() <= 8;
+
+        if (isValid || password.length() == 0) {
+            jPasswordFieldUserPassword.setBackground(Color.white);
+        } else {
+            jPasswordFieldUserPassword.setBackground(Color.orange);
+        }
+
+        return isValid;
+    }
+
+    /**
+     * Get Input Login.
+     *
+     * @return Input Name
+     */
+    private String getInputLogin() {
+        return jTextFieldUserLogin.getText();
+    }
+
+    /**
+     * Get Input Password.
+     *
+     * @return Input Password.
+     */
+    private String getInputPassword() {
+        return String.valueOf(jPasswordFieldUserPassword.getPassword());
+    }
+
+    /**
+     * Get Input User Role.
+     *
+     * @return Input User Role.
+     */
+    private UserRole getInputUserRole() {
+        return (UserRole) jComboBoxUserRole.getSelectedItem();
+    }
+
+    /**
+     * Get Input Munipality.
+     *
+     * @return Input Munipality.
+     */
+    private Municipality getInputMunicipality() {
+        return (Municipality) jComboBoxMunicipality.getSelectedItem();
+    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonUserCreate;]]></codefragment>
+   </duplication>
+   <duplication lines="18" tokens="226">
+      <file column="54" endcolumn="17" endline="112" line="95"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityEditJInternalFrame.java"/>
+      <file column="144" endcolumn="17" endline="132" line="115"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityShowJInternalFrame.java"/>
+      <codefragment><![CDATA[                        .addGap(0, 0, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelMunicipioName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldMunicipioName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelMunicipioCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBoxMunicipioCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldMunicipioId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 85, Short.MAX_VALUE)
+                .addComponent(jButtonMunicipioUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))]]></codefragment>
+   </duplication>
+   <duplication lines="26" tokens="212">
+      <file column="57" endcolumn="16" endline="129" line="104"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryListJInternalFrame.java"/>
+      <file column="54" endcolumn="16" endline="126" line="101"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityListJInternalFrame.java"/>
+      <codefragment><![CDATA[        jScrollPane1.setViewportView(jTableConvocatories);
+
+        jLabel1.setText("Seleccionar un registro para visualizar su información y poder editar y eliminar.");
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))
+        );
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    private void jTableConvocatoriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableConvocatoriesMouseClicked]]></codefragment>
+   </duplication>
+   <duplication lines="17" tokens="182">
+      <file column="114" endcolumn="17" endline="137" line="121"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserCreateJInternalFrame.java"/>
+      <file column="114" endcolumn="17" endline="166" line="150"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserEditJInternalFrame.java"/>
+      <file column="55" endcolumn="17" endline="158" line="142"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserShowJInternalFrame.java"/>
+      <codefragment><![CDATA[                    .addComponent(jComboBoxMunicipality, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelUserLogin)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPasswordFieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelUserRole)
+                .addGap(5, 5, 5)]]></codefragment>
+   </duplication>
+   <duplication lines="15" tokens="175">
+      <file column="163" endcolumn="83" endline="96" line="82"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityCreateJInternalFrame.java"/>
+      <file column="55" endcolumn="83" endline="109" line="95"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityEditJInternalFrame.java"/>
+      <file column="145" endcolumn="83" endline="129" line="115"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityShowJInternalFrame.java"/>
+      <codefragment><![CDATA[                    .addComponent(jLabelMunicipioCategoria, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelMunicipioName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldMunicipioName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelMunicipioCategoria, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jComboBoxMunicipioCategory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 117, Short.MAX_VALUE)]]></codefragment>
+   </duplication>
+   <duplication lines="15" tokens="174">
+      <file column="52" endcolumn="76" endline="181" line="167"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryCreateJInternalFrame.java"/>
+      <file column="152" endcolumn="76" endline="212" line="198"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java"/>
+      <file column="152" endcolumn="76" endline="236" line="222"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryShowJInternalFrame.java"/>
+      <codefragment><![CDATA[                        .addComponent(jScrollPane1)))
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabelConvocatoryName)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jTextFieldConvocatoryName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabelConvocatoryDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)]]></codefragment>
+   </duplication>
+   <duplication lines="22" tokens="174">
+      <file column="61" endcolumn="17" endline="111" line="90"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java"/>
+      <file column="59" endcolumn="17" endline="111" line="90"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryShowJInternalFrame.java"/>
+      <codefragment><![CDATA[        jTextFieldConvocatoryId = new javax.swing.JTextField();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextAreaConvocatoryDescription = new javax.swing.JTextArea();
+        jLabelConvocatoryEndDate1 = new javax.swing.JLabel();
+        jCheckBoxConvocatoryStatus = new javax.swing.JCheckBox();
+        jLabelConvocatoryStartDate = new javax.swing.JLabel();
+        jDateChooserStartDate = new com.toedter.calendar.JDateChooser();
+        jLabelConvocatoryStatus = new javax.swing.JLabel();
+        jDateChooserEndDate = new com.toedter.calendar.JDateChooser();
+        jSeparator1 = new javax.swing.JSeparator();
+        jLabel1 = new javax.swing.JLabel();
+        jCheckBoxDocumentTypeId1 = new javax.swing.JCheckBox();
+        jCheckBoxDocumentTypeId2 = new javax.swing.JCheckBox();
+        jCheckBoxDocumentTypeId3 = new javax.swing.JCheckBox();
+        jCheckBoxDocumentTypeId4 = new javax.swing.JCheckBox();
+        jCheckBoxDocumentTypeId5 = new javax.swing.JCheckBox();
+
+        setClosable(true);
+        setIconifiable(true);
+        setMaximizable(true);
+        setResizable(true);
+        setTitle("Editar Convocatoria");]]></codefragment>
+   </duplication>
+   <duplication lines="17" tokens="161">
+      <file column="173" endcolumn="30" endline="210" line="194"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryCreateJInternalFrame.java"/>
+      <file column="172" endcolumn="30" endline="239" line="223"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java"/>
+      <codefragment><![CDATA[                    .addComponent(jDateChooserEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonConvocatoryCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)]]></codefragment>
+   </duplication>
+   <duplication lines="8" tokens="160">
+      <file column="52" endcolumn="21" endline="120" line="113"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserCreateJInternalFrame.java"/>
+      <file column="52" endcolumn="21" endline="146" line="139"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserEditJInternalFrame.java"/>
+      <codefragment><![CDATA[                    .addComponent(jButtonUserCreate, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
+                    .addComponent(jTextFieldUserLogin)
+                    .addComponent(jLabelUserLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelUserPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
+                    .addComponent(jPasswordFieldUserPassword)
+                    .addComponent(jLabelUserRole, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jComboBoxUserRole, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)]]></codefragment>
+   </duplication>
+   <duplication lines="7" tokens="151">
+      <file column="128" endcolumn="152" endline="163" line="157"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryCreateJInternalFrame.java"/>
+      <file column="46" endcolumn="152" endline="198" line="192"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java"/>
+      <file column="46" endcolumn="152" endline="222" line="216"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryShowJInternalFrame.java"/>
+      <codefragment><![CDATA[                            .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jCheckBoxDocumentTypeId5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)]]></codefragment>
+   </duplication>
+   <duplication lines="12" tokens="150">
+      <file column="167" endcolumn="34" endline="158" line="147"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryCreateJInternalFrame.java"/>
+      <file column="192" endcolumn="34" endline="192" line="181"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java"/>
+      <codefragment><![CDATA[                            .addComponent(jDateChooserStartDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jDateChooserEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelConvocatoryEndDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jCheckBoxConvocatoryStatus)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)]]></codefragment>
+   </duplication>
+   <duplication lines="16" tokens="148">
+      <file column="84" endcolumn="30" endline="210" line="195"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryCreateJInternalFrame.java"/>
+      <file column="84" endcolumn="30" endline="239" line="224"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java"/>
+      <file column="139" endcolumn="30" endline="261" line="246"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryShowJInternalFrame.java"/>
+      <codefragment><![CDATA[                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jCheckBoxDocumentTypeId5)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jButtonConvocatoryCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)]]></codefragment>
+   </duplication>
+   <duplication lines="11" tokens="139">
+      <file column="167" endcolumn="104" endline="157" line="147"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryCreateJInternalFrame.java"/>
+      <file column="192" endcolumn="104" endline="215" line="205"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryShowJInternalFrame.java"/>
+      <codefragment><![CDATA[                            .addComponent(jDateChooserStartDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE))
+                        .addGap(29, 29, 29)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jDateChooserEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabelConvocatoryEndDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(39, 39, 39)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(jCheckBoxConvocatoryStatus)
+                                .addGap(0, 0, Short.MAX_VALUE))
+                            .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)))]]></codefragment>
+   </duplication>
+   <duplication lines="21" tokens="138">
+      <file column="5" endcolumn="1" endline="487" line="467"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryCreateJInternalFrame.java"/>
+      <file column="5" endcolumn="1" endline="503" line="483"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java"/>
+      <file column="5" endcolumn="1" endline="339" line="319"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryShowJInternalFrame.java"/>
+      <codefragment><![CDATA[    private javax.swing.JCheckBox jCheckBoxConvocatoryStatus;
+    private javax.swing.JCheckBox jCheckBoxDocumentTypeId1;
+    private javax.swing.JCheckBox jCheckBoxDocumentTypeId2;
+    private javax.swing.JCheckBox jCheckBoxDocumentTypeId3;
+    private javax.swing.JCheckBox jCheckBoxDocumentTypeId4;
+    private javax.swing.JCheckBox jCheckBoxDocumentTypeId5;
+    private com.toedter.calendar.JDateChooser jDateChooserEndDate;
+    private com.toedter.calendar.JDateChooser jDateChooserStartDate;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabelConvocatoryDescription;
+    private javax.swing.JLabel jLabelConvocatoryEndDate1;
+    private javax.swing.JLabel jLabelConvocatoryName;
+    private javax.swing.JLabel jLabelConvocatoryStartDate;
+    private javax.swing.JLabel jLabelConvocatoryStatus;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextArea jTextAreaConvocatoryDescription;
+    private javax.swing.JTextField jTextFieldConvocatoryId;
+    private javax.swing.JTextField jTextFieldConvocatoryName;
+    // End of variables declaration//GEN-END:variables
+}]]></codefragment>
+   </duplication>
+   <duplication lines="60" tokens="131">
+      <file column="5" endcolumn="31" endline="201" line="142"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityCreateJInternalFrame.java"/>
+      <file column="5" endcolumn="31" endline="194" line="135"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityEditJInternalFrame.java"/>
+      <codefragment><![CDATA[    }
+    
+    /**
+     * Validate Inputs.
+     *
+     * @return True if inputs are valid
+     */
+    private Boolean validateInputs() {
+        return validateInputName() && validateInputCategory();
+    }
+
+    /**
+     * Validate Input Name.
+     *
+     * @return
+     */
+    private Boolean validateInputName() {
+        String name = getInputName();
+        Boolean isValid = name.length() > 0 && name.length() <= 30;
+
+        if (isValid || name.length() == 0) {
+            jTextFieldMunicipioName.setBackground(Color.white);
+        } else {
+            jTextFieldMunicipioName.setBackground(Color.orange);
+        }
+
+        return isValid;
+    }
+
+    /**
+     * Validate Input Category.
+     *
+     * @return
+     */
+    private Boolean validateInputCategory() {
+        // TODO: Validation
+        Boolean isValid = true;
+        return isValid;
+    }
+
+    /**
+     * Get Input Name.
+     *
+     * @return Input Name
+     */
+    private String getInputName() {
+        return jTextFieldMunicipioName.getText();
+    }
+
+    /**
+     * Get Input Category.
+     *
+     * @return Input Category.
+     */
+    private String getInputCategory() {
+        return jComboBoxMunicipioCategory.getSelectedItem().toString();
+    }
+    
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButtonMunicipioCreate;]]></codefragment>
+   </duplication>
+   <duplication lines="8" tokens="119">
+      <file column="84" endcolumn="21" endline="188" line="181"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryCreateJInternalFrame.java"/>
+      <file column="86" endcolumn="21" endline="219" line="212"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java"/>
+      <file column="86" endcolumn="21" endline="243" line="236"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryShowJInternalFrame.java"/>
+      <codefragment><![CDATA[                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabelConvocatoryStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelConvocatoryEndDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()]]></codefragment>
+   </duplication>
+   <duplication lines="12" tokens="117">
+      <file column="105" endcolumn="34" endline="80" line="69"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityCreateJInternalFrame.java"/>
+      <file column="47" endcolumn="34" endline="90" line="79"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityEditJInternalFrame.java"/>
+      <file column="10" endcolumn="34" endline="107" line="96"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityShowJInternalFrame.java"/>
+      <codefragment><![CDATA[        jComboBoxMunicipioCategory.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "1" }));
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
+        getContentPane().setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jTextFieldMunicipioName)
+                    .addComponent(jLabelMunicipioName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)]]></codefragment>
+   </duplication>
+</pmd-cpd>

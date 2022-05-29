@@ -6,6 +6,7 @@ package app.entities;
 
 import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 import java.util.Date;
+import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -51,6 +52,9 @@ public class Presentation extends BaseEntity {
     
     @Transient
     private Convocatory convocatory;
+    
+    @Transient
+    private List<PresentationDocumentType> presentationDocumentTypes;
 
     // <editor-fold defaultstate="collapsed" desc="Constructors">
     public Presentation() {
@@ -68,6 +72,22 @@ public class Presentation extends BaseEntity {
         this.setIsValid(isValid);
         this.setConvocatoryId(convocatoryId);
         this.setUserId(userId);
+    }
+    
+    public Presentation(
+            int id,
+            Date date,
+            Boolean isValid,
+            int convocatoryId,
+            int userId,
+            List<PresentationDocumentType> presentationDocumentTypes
+    ) {
+        this.setId(id);
+        this.setDate(date);
+        this.setIsValid(isValid);
+        this.setConvocatoryId(convocatoryId);
+        this.setUserId(userId);
+        this.setPresentationDocumentTypes(presentationDocumentTypes);
     }
     // </editor-fold>
 
@@ -120,6 +140,14 @@ public class Presentation extends BaseEntity {
 
     public void setConvocatory(Convocatory convocatory) {
         this.convocatory = convocatory;
+    }
+
+    public List<PresentationDocumentType> getPresentationDocumentTypes() {
+        return presentationDocumentTypes;
+    }
+
+    public void setPresentationDocumentTypes(List<PresentationDocumentType> presentationDocumentTypes) {
+        this.presentationDocumentTypes = presentationDocumentTypes;
     }
     // </editor-fold>
 

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Convocatory.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.entities</a> &gt; <span class="el_source">Convocatory.java</span></div><h1>Convocatory.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Convocatory.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.entities</a> &gt; <span class="el_source">Convocatory.java</span></div><h1>Convocatory.java</h1><pre class="source lang-java linenums">/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
@@ -23,11 +23,17 @@ import javax.persistence.Transient;
 @Entity(name = &quot;convocatories&quot;)
 @NamedNativeQueries({
     @NamedNativeQuery(
-        name = &quot;documents_types&quot;,
-        query = &quot;SELECT dt.* FROM documents_types as dt &quot;
-        + &quot; JOIN convocatories_has_documents_types cdt ON cdt.document_type_id = dt.id &quot;
-        + &quot; WHERE cdt.convocatory_id = :convocatory_id&quot;,
-        resultClass = DocumentType.class
+            name = &quot;active&quot;,
+            query = &quot;SELECT c.* FROM convocatories c &quot;
+            + &quot; WHERE c.is_valid = 1 AND c.start_date &lt;= CURRENT_DATE AND c.end_date &gt;= CURRENT_DATE &quot;,
+            resultClass = Convocatory.class
+    ),
+    @NamedNativeQuery(
+            name = &quot;documents_types&quot;,
+            query = &quot;SELECT dt.* FROM documents_types as dt &quot;
+            + &quot; JOIN convocatories_has_documents_types cdt ON cdt.document_type_id = dt.id &quot;
+            + &quot; WHERE cdt.convocatory_id = :convocatory_id&quot;,
+            resultClass = DocumentType.class
     ),
     @NamedNativeQuery(
             name = &quot;delete_documents_types&quot;,
@@ -35,127 +41,133 @@ import javax.persistence.Transient;
     )
 })
 public class Convocatory extends BaseEntity {
-    
+
     @Id
     @Column(name = &quot;id&quot;)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected int id;
-        
+
     @Column(name = &quot;name&quot;)
     private String name;
-    
+
     @Column(name = &quot;description&quot;)
     private String description;
-    
+
     @Column(name = &quot;start_date&quot;)
     private Date startDate;
-    
+
     @Column(name = &quot;end_date&quot;)
     private Date endDate;
- 
+
     @Column(name = &quot;is_valid&quot;)
     private Boolean isValid;
-    
+
     @Transient
     private List&lt;DocumentType&gt; documentsTypes;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
-<span class="fc" id="L63">    public Convocatory() {</span>
-<span class="fc" id="L64">    }</span>
+<span class="fc" id="L69">    public Convocatory() {</span>
+<span class="fc" id="L70">    }</span>
 
-<span class="nc" id="L66">    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid) {</span>
-<span class="nc" id="L67">        this.setName(name);</span>
-<span class="nc" id="L68">        this.setDescription(description);</span>
-<span class="nc" id="L69">        this.setStartDate(startDate);</span>
-<span class="nc" id="L70">        this.setEndDate(endDate);</span>
-<span class="nc" id="L71">        this.setIsValid(isValid);</span>
-<span class="nc" id="L72">    }</span>
-    
-<span class="nc" id="L74">    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid, List&lt;DocumentType&gt; documentsTypes) {</span>
-<span class="nc" id="L75">        this.setName(name);</span>
-<span class="nc" id="L76">        this.setDescription(description);</span>
-<span class="nc" id="L77">        this.setStartDate(startDate);</span>
-<span class="nc" id="L78">        this.setEndDate(endDate);</span>
-<span class="nc" id="L79">        this.setIsValid(isValid);</span>
-<span class="nc" id="L80">        this.setDocumentsTypes(documentsTypes);</span>
-<span class="nc" id="L81">    }</span>
-    
-<span class="nc" id="L83">    public Convocatory(int id, String name, String description, Date startDate, Date endDate, Boolean isValid, List&lt;DocumentType&gt; documentsTypes) {</span>
-<span class="nc" id="L84">        this.setId(id);</span>
-<span class="nc" id="L85">        this.setName(name);</span>
-<span class="nc" id="L86">        this.setDescription(description);</span>
-<span class="nc" id="L87">        this.setStartDate(startDate);</span>
-<span class="nc" id="L88">        this.setEndDate(endDate);</span>
-<span class="nc" id="L89">        this.setIsValid(isValid);</span>
-<span class="nc" id="L90">        this.setDocumentsTypes(documentsTypes);</span>
-<span class="nc" id="L91">    }</span>
+<span class="fc" id="L72">    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid) {</span>
+<span class="fc" id="L73">        this.setName(name);</span>
+<span class="fc" id="L74">        this.setDescription(description);</span>
+<span class="fc" id="L75">        this.setStartDate(startDate);</span>
+<span class="fc" id="L76">        this.setEndDate(endDate);</span>
+<span class="fc" id="L77">        this.setIsValid(isValid);</span>
+<span class="fc" id="L78">    }</span>
+
+<span class="nc" id="L80">    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid, List&lt;DocumentType&gt; documentsTypes) {</span>
+<span class="nc" id="L81">        this.setName(name);</span>
+<span class="nc" id="L82">        this.setDescription(description);</span>
+<span class="nc" id="L83">        this.setStartDate(startDate);</span>
+<span class="nc" id="L84">        this.setEndDate(endDate);</span>
+<span class="nc" id="L85">        this.setIsValid(isValid);</span>
+<span class="nc" id="L86">        this.setDocumentsTypes(documentsTypes);</span>
+<span class="nc" id="L87">    }</span>
+
+<span class="nc" id="L89">    public Convocatory(int id, String name, String description, Date startDate, Date endDate, Boolean isValid, List&lt;DocumentType&gt; documentsTypes) {</span>
+<span class="nc" id="L90">        this.setId(id);</span>
+<span class="nc" id="L91">        this.setName(name);</span>
+<span class="nc" id="L92">        this.setDescription(description);</span>
+<span class="nc" id="L93">        this.setStartDate(startDate);</span>
+<span class="nc" id="L94">        this.setEndDate(endDate);</span>
+<span class="nc" id="L95">        this.setIsValid(isValid);</span>
+<span class="nc" id="L96">        this.setDocumentsTypes(documentsTypes);</span>
+<span class="nc" id="L97">    }</span>
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;
     public int getId() {
-<span class="nc" id="L96">        return id;</span>
+<span class="fc" id="L102">        return id;</span>
     }
 
     public void setId(int id) {
-<span class="nc" id="L100">        this.id = id;</span>
-<span class="nc" id="L101">    }</span>
-    
+<span class="nc" id="L106">        this.id = id;</span>
+<span class="nc" id="L107">    }</span>
+
     public String getName() {
-<span class="nc" id="L104">        return name;</span>
+<span class="nc" id="L110">        return name;</span>
     }
 
     public void setName(String name) {
-<span class="nc" id="L108">        this.name = name;</span>
-<span class="nc" id="L109">    }</span>
+<span class="fc" id="L114">        this.name = name;</span>
+<span class="fc" id="L115">    }</span>
 
     public String getDescription() {
-<span class="nc" id="L112">        return description;</span>
+<span class="nc" id="L118">        return description;</span>
     }
 
     public void setDescription(String description) {
-<span class="nc" id="L116">        this.description = description;</span>
-<span class="nc" id="L117">    }</span>
+<span class="fc" id="L122">        this.description = description;</span>
+<span class="fc" id="L123">    }</span>
 
     @SuppressFBWarnings({&quot;EI_EXPOSE_REP&quot;})
     public Date getStartDate() {
-<span class="nc" id="L121">        return startDate;</span>
+<span class="fc" id="L127">        return startDate;</span>
     }
 
     @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
     public void setStartDate(Date startDate) {
-<span class="nc" id="L126">        this.startDate = startDate;</span>
-<span class="nc" id="L127">    }</span>
+<span class="fc" id="L132">        this.startDate = startDate;</span>
+<span class="fc" id="L133">    }</span>
 
     @SuppressFBWarnings({&quot;EI_EXPOSE_REP&quot;})
     public Date getEndDate() {
-<span class="nc" id="L131">        return endDate;</span>
+<span class="fc" id="L137">        return endDate;</span>
     }
 
     @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
     public void setEndDate(Date endDate) {
-<span class="nc" id="L136">        this.endDate = endDate;</span>
-<span class="nc" id="L137">    }</span>
+<span class="fc" id="L142">        this.endDate = endDate;</span>
+<span class="fc" id="L143">    }</span>
 
     public Boolean getIsValid() {
-<span class="nc" id="L140">        return isValid;</span>
+<span class="fc" id="L146">        return isValid;</span>
     }
 
     public void setIsValid(Boolean isValid) {
-<span class="nc" id="L144">        this.isValid = isValid;</span>
-<span class="nc" id="L145">    }</span>
-    
+<span class="fc" id="L150">        this.isValid = isValid;</span>
+<span class="fc" id="L151">    }</span>
+
     public List&lt;DocumentType&gt; getDocumentsTypes() {
-<span class="nc" id="L148">        return documentsTypes;</span>
+<span class="fc" id="L154">        return documentsTypes;</span>
     }
-    
+
     public void setDocumentsTypes(List&lt;DocumentType&gt; documentsTypes) {
-<span class="nc" id="L152">        this.documentsTypes = documentsTypes;</span>
-<span class="nc" id="L153">    }</span>
+<span class="fc" id="L158">        this.documentsTypes = documentsTypes;</span>
+<span class="fc" id="L159">    }</span>
     // &lt;/editor-fold&gt;
 
     @Override
     public String toString() {
-<span class="nc" id="L158">        return this.getName();</span>
+<span class="nc" id="L164">        return this.getName();</span>
+//        return &quot;[%d] %s de %s a %s&quot;.formatted(
+//                this.getId(),
+//                this.getName(),
+//                this.getStartDate().toString(),
+//                this.getEndDate().toString()
+//        );
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,8 +1,11 @@
 /**
  * Date Helper.
+ *
+ * @author raulsm
  */
 package helpers;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -57,4 +60,21 @@ public class DateHelper {
         
         return false;
     }
+    
+    /**
+     * Format Date To yyyy-MM-dd
+     * @param date
+     * @return 
+     */
+    public static String formatToYMD(Date date) {
+        return new SimpleDateFormat("yyyy-MM-dd").format(date);
+    }
+    
+    /**
+     * Get Today Date.
+     * @return Today Date.
+     */
+    public static Date today() {
+        return new Date();
+    } 
 }

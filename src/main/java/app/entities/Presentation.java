@@ -28,8 +28,20 @@ import javax.persistence.Transient;
             name = "convocatory",
             query = "SELECT c.* FROM convocatories as c "
             + " WHERE c.id = :convocatory_id",
-            resultClass = Municipality.class
-    )
+            resultClass = Convocatory.class
+    ),
+    @NamedNativeQuery(
+            name = "user",
+            query = "SELECT u.* FROM users as u "
+            + " WHERE u.id = :user_id",
+            resultClass = User.class
+    ),
+    @NamedNativeQuery(
+            name = "documents",
+            query = "SELECT pdt.* FROM presentations_has_documents_types as pdt "
+            + " WHERE pdt.presentation_id = :presentation_id",
+            resultClass = PresentationDocumentType.class
+    ),
 })
 public class Presentation extends BaseEntity {
 
@@ -52,6 +64,9 @@ public class Presentation extends BaseEntity {
     
     @Transient
     private Convocatory convocatory;
+    
+    @Transient
+    private User user;
     
     @Transient
     private List<PresentationDocumentType> presentationDocumentTypes;
@@ -140,6 +155,14 @@ public class Presentation extends BaseEntity {
 
     public void setConvocatory(Convocatory convocatory) {
         this.convocatory = convocatory;
+    }
+
+    public User getUser() {
+        return user;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
     }
 
     public List<PresentationDocumentType> getPresentationDocumentTypes() {

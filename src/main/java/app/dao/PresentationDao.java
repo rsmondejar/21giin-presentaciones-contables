@@ -10,6 +10,7 @@ import app.entities.BaseEntity;
 import app.entities.Presentation;
 import app.entities.Convocatory;
 import app.entities.PresentationDocumentType;
+import app.entities.User;
 import helpers.Log;
 import java.util.List;
 
@@ -115,7 +116,31 @@ public class PresentationDao extends BaseDao {
                             String.valueOf(presentation.getConvocatoryId())
                     );
 
-            presentation.setConvocatory(convocatories.get(0));
+            if (convocatories != null && convocatories.size() > 0) {
+                 presentation.setConvocatory(convocatories.get(0));
+            }
+            
+            // Add User
+            List<User> users = super
+                    .whereNamedQuery(
+                            "user",
+                            "user_id",
+                            String.valueOf(presentation.getUserId())
+                    );
+
+            if (users != null && users.size() > 0) {
+                presentation.setUser(users.get(0));
+            }
+            
+            // Add Documents
+            List<PresentationDocumentType> presentationDocumentTypes = super
+                    .whereNamedQuery(
+                            "documents",
+                            "presentation_id",
+                            String.valueOf(presentation.getId())
+                    );
+
+            presentation.setPresentationDocumentTypes(presentationDocumentTypes);
 
             return presentation;
         } catch (Exception exception) {

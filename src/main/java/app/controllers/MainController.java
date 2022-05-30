@@ -25,7 +25,7 @@ public class MainController extends BaseController {
         System.out.println(authUser.toString());
 
         MENU_PANEL.setUserFooterInfo(authUser);
-
+        
         // Open Menu
 //        menuPanelShow();
     }

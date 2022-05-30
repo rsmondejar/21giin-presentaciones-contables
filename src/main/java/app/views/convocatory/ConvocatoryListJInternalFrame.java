@@ -69,7 +69,7 @@ public class ConvocatoryListJInternalFrame extends javax.swing.JInternalFrame {
         setIconifiable(true);
         setMaximizable(true);
         setResizable(true);
-        setTitle("Listado Municipios");
+        setTitle("Listado Convocatorias");
         setToolTipText("");
 
         jTableConvocatories.setModel(new javax.swing.table.DefaultTableModel(

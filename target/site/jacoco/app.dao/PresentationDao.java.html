@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PresentationDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.dao</a> &gt; <span class="el_source">PresentationDao.java</span></div><h1>PresentationDao.java</h1><pre class="source lang-java linenums">/**
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PresentationDao.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.dao</a> &gt; <span class="el_source">PresentationDao.java</span></div><h1>PresentationDao.java</h1><pre class="source lang-java linenums">/**
  * Presentation DAO.
  *
  * @author raulsm
@@ -10,6 +10,7 @@ import app.entities.BaseEntity;
 import app.entities.Presentation;
 import app.entities.Convocatory;
 import app.entities.PresentationDocumentType;
+import app.entities.User;
 import helpers.Log;
 import java.util.List;
 
@@ -21,9 +22,9 @@ import java.util.List;
  */
 public class PresentationDao extends BaseDao {
 
-<span class="nc" id="L24">    public PresentationDao() {</span>
-<span class="nc" id="L25">        super.setModel((BaseEntity) new Presentation());</span>
-<span class="nc" id="L26">    }</span>
+<span class="nc" id="L25">    public PresentationDao() {</span>
+<span class="nc" id="L26">        super.setModel((BaseEntity) new Presentation());</span>
+<span class="nc" id="L27">    }</span>
 
     /**
      * List Presentations.
@@ -31,14 +32,14 @@ public class PresentationDao extends BaseDao {
      * @return List of presentations
      */
     public List&lt;Presentation&gt; all() {
-<span class="nc" id="L34">        List&lt;Presentation&gt; presentations = super.all();</span>
+<span class="nc" id="L35">        List&lt;Presentation&gt; presentations = super.all();</span>
 
         // Add extra fields
-<span class="nc bnc" id="L37" title="All 2 branches missed.">        for (int i = 0; i &lt; presentations.size(); i++) {</span>
-<span class="nc" id="L38">            presentations.set(i, findById(presentations.get(i).getId()));</span>
+<span class="nc bnc" id="L38" title="All 2 branches missed.">        for (int i = 0; i &lt; presentations.size(); i++) {</span>
+<span class="nc" id="L39">            presentations.set(i, findById(presentations.get(i).getId()));</span>
         }
 
-<span class="nc" id="L41">        return presentations;</span>
+<span class="nc" id="L42">        return presentations;</span>
     }
 
     /**
@@ -49,7 +50,7 @@ public class PresentationDao extends BaseDao {
      */
     @Override
     public Presentation findById(int id) {
-<span class="nc" id="L52">        return addRelations((Presentation) super.findById(id));</span>
+<span class="nc" id="L53">        return addRelations((Presentation) super.findById(id));</span>
     }
 
     /**
@@ -60,20 +61,20 @@ public class PresentationDao extends BaseDao {
      * @return status
      */
     public &lt;T&gt; Integer create(Presentation presentation) {
-<span class="nc" id="L63">        Integer id = super.create((BaseEntity) presentation);</span>
+<span class="nc" id="L64">        Integer id = super.create((BaseEntity) presentation);</span>
         
         // Create presentation documents types
-<span class="nc" id="L66">        List&lt;PresentationDocumentType&gt; presentationDocumentTypes = presentation.getPresentationDocumentTypes();</span>
+<span class="nc" id="L67">        List&lt;PresentationDocumentType&gt; presentationDocumentTypes = presentation.getPresentationDocumentTypes();</span>
 
-<span class="nc bnc" id="L68" title="All 2 branches missed.">        if (presentationDocumentTypes != null) {</span>
-<span class="nc" id="L69">            PresentationDocumentTypeDao presentationDocumentTypeDao = new PresentationDocumentTypeDao();</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">        if (presentationDocumentTypes != null) {</span>
+<span class="nc" id="L70">            PresentationDocumentTypeDao presentationDocumentTypeDao = new PresentationDocumentTypeDao();</span>
 
-<span class="nc bnc" id="L71" title="All 2 branches missed.">            for (PresentationDocumentType presentationDocumentType : presentationDocumentTypes) {</span>
-<span class="nc" id="L72">                presentationDocumentType.setPresentationId(id);</span>
-<span class="nc" id="L73">                presentationDocumentTypeDao.create(presentationDocumentType);</span>
-<span class="nc" id="L74">            }</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">            for (PresentationDocumentType presentationDocumentType : presentationDocumentTypes) {</span>
+<span class="nc" id="L73">                presentationDocumentType.setPresentationId(id);</span>
+<span class="nc" id="L74">                presentationDocumentTypeDao.create(presentationDocumentType);</span>
+<span class="nc" id="L75">            }</span>
         }
-<span class="nc" id="L76">        return id;</span>
+<span class="nc" id="L77">        return id;</span>
     }
 
     /**
@@ -85,7 +86,7 @@ public class PresentationDao extends BaseDao {
      * @return
      */
     public &lt;T&gt; boolean update(int id, Presentation presentation) {
-<span class="nc" id="L88">        return super.update(id, (BaseEntity) presentation);</span>
+<span class="nc" id="L89">        return super.update(id, (BaseEntity) presentation);</span>
     }
 
     /**
@@ -96,7 +97,7 @@ public class PresentationDao extends BaseDao {
      */
     @Override
     public boolean delete(int id) {
-<span class="nc" id="L99">        return super.delete(id);</span>
+<span class="nc" id="L100">        return super.delete(id);</span>
     }
 
     /**
@@ -108,21 +109,45 @@ public class PresentationDao extends BaseDao {
     private Presentation addRelations(Presentation presentation) {
         try {
             // Add Convocatory
-<span class="nc" id="L111">            List&lt;Convocatory&gt; convocatories = super</span>
-<span class="nc" id="L112">                    .whereNamedQuery(</span>
+<span class="nc" id="L112">            List&lt;Convocatory&gt; convocatories = super</span>
+<span class="nc" id="L113">                    .whereNamedQuery(</span>
                             &quot;convocatory&quot;,
                             &quot;convocatory_id&quot;,
-<span class="nc" id="L115">                            String.valueOf(presentation.getConvocatoryId())</span>
+<span class="nc" id="L116">                            String.valueOf(presentation.getConvocatoryId())</span>
                     );
 
-<span class="nc" id="L118">            presentation.setConvocatory(convocatories.get(0));</span>
+<span class="nc bnc" id="L119" title="All 4 branches missed.">            if (convocatories != null &amp;&amp; convocatories.size() &gt; 0) {</span>
+<span class="nc" id="L120">                 presentation.setConvocatory(convocatories.get(0));</span>
+            }
+            
+            // Add User
+<span class="nc" id="L124">            List&lt;User&gt; users = super</span>
+<span class="nc" id="L125">                    .whereNamedQuery(</span>
+                            &quot;user&quot;,
+                            &quot;user_id&quot;,
+<span class="nc" id="L128">                            String.valueOf(presentation.getUserId())</span>
+                    );
 
-<span class="nc" id="L120">            return presentation;</span>
-<span class="nc" id="L121">        } catch (Exception exception) {</span>
-<span class="nc" id="L122">            Log.error(exception);</span>
+<span class="nc bnc" id="L131" title="All 4 branches missed.">            if (users != null &amp;&amp; users.size() &gt; 0) {</span>
+<span class="nc" id="L132">                presentation.setUser(users.get(0));</span>
+            }
+            
+            // Add Documents
+<span class="nc" id="L136">            List&lt;PresentationDocumentType&gt; presentationDocumentTypes = super</span>
+<span class="nc" id="L137">                    .whereNamedQuery(</span>
+                            &quot;documents&quot;,
+                            &quot;presentation_id&quot;,
+<span class="nc" id="L140">                            String.valueOf(presentation.getId())</span>
+                    );
+
+<span class="nc" id="L143">            presentation.setPresentationDocumentTypes(presentationDocumentTypes);</span>
+
+<span class="nc" id="L145">            return presentation;</span>
+<span class="nc" id="L146">        } catch (Exception exception) {</span>
+<span class="nc" id="L147">            Log.error(exception);</span>
         }
 
-<span class="nc" id="L125">        return null;</span>
+<span class="nc" id="L150">        return null;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

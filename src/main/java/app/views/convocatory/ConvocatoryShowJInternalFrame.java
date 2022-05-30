@@ -4,11 +4,14 @@
  */
 package app.views.convocatory;
 
+import app.Main;
 import app.controllers.ConvocatoryController;
 import app.entities.Convocatory;
 import app.entities.DocumentType;
+import app.entities.User;
 import helpers.Dialog;
 import helpers.Log;
+import helpers.Role;
 import java.util.List;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
@@ -29,6 +32,23 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
         initComponents();
         this.jDesktopPanelContainer = jDesktopPanelContainer;
         jTextFieldConvocatoryId.setVisible(false);
+        
+        // Show or Hide Sections
+        User authUser = Main.getAuthUser();
+        showHideSections(authUser);
+    }
+    
+    /**
+     * Show or Hide Sections by User
+     * @param user Auth User
+     */
+    private void showHideSections(User user) {
+        int roleId = user.getRoleId();
+
+        if (roleId != Role.ADMININISTRATOR && roleId != Role.FISCAL_GENERAL) {
+            jButtonConvocatoryDelete.setVisible(false);
+            jButtonConvocatoryEdit.setVisible(false);
+        }
     }
 
     /**
@@ -287,7 +307,7 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
             convocatoryEdit.setVisible(true);
         } catch (NumberFormatException e) {
             Log.error(e);
-            Dialog.error(e.getMessage(), "Error editar municipio");
+            Dialog.error(e.getMessage(), "Error editar convocatoria");
         }
     }//GEN-LAST:event_jButtonConvocatoryEditActionPerformed
 

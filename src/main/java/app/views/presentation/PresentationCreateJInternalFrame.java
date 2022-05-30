@@ -463,11 +463,11 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
                     .addComponent(jLabel2)
                     .addComponent(jButtonDocumentType2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDocumentType2)
+                .addGroup(jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButtonDocumentTypeDownload2)
-                        .addComponent(jButtonDocumentTypeDelete2)))
+                        .addComponent(jButtonDocumentTypeDelete2))
+                    .addComponent(jLabelDocumentType2))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -528,11 +528,11 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
                     .addComponent(jLabel3)
                     .addComponent(jButtonDocumentType3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDocumentType3)
+                .addGroup(jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButtonDocumentTypeDownload3)
-                        .addComponent(jButtonDocumentTypeDelete3)))
+                        .addComponent(jButtonDocumentTypeDelete3))
+                    .addComponent(jLabelDocumentType3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -593,11 +593,11 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
                     .addComponent(jLabel4)
                     .addComponent(jButtonDocumentType4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDocumentType4)
+                .addGroup(jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButtonDocumentTypeDownload4)
-                        .addComponent(jButtonDocumentTypeDelete4)))
+                        .addComponent(jButtonDocumentTypeDelete4))
+                    .addComponent(jLabelDocumentType4))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -658,11 +658,11 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
                     .addComponent(jLabel5)
                     .addComponent(jButtonDocumentType5))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabelDocumentType5)
+                .addGroup(jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButtonDocumentTypeDownload5)
-                        .addComponent(jButtonDocumentTypeDelete5)))
+                        .addComponent(jButtonDocumentTypeDelete5))
+                    .addComponent(jLabelDocumentType5))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -987,9 +987,8 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
         fileChooser.showOpenDialog(null);
         File file = fileChooser.getSelectedFile();
         String fileName = file.getAbsolutePath();
-
-        try {
-            FileInputStream fileInputStream = new FileInputStream(file);
+        
+        try(FileInputStream fileInputStream = new FileInputStream(file)) {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             byte[] buffer = new byte[1024];
 

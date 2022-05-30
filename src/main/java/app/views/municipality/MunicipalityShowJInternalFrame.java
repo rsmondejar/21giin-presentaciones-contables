@@ -4,10 +4,13 @@
  */
 package app.views.municipality;
 
+import app.Main;
 import app.controllers.MunicipalityController;
 import app.entities.Municipality;
+import app.entities.User;
 import helpers.Dialog;
 import helpers.Log;
+import helpers.Role;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 
@@ -27,8 +30,25 @@ public class MunicipalityShowJInternalFrame extends javax.swing.JInternalFrame {
         initComponents();
         this.jDesktopPanelContainer = jDesktopPanelContainer;
         jTextFieldMunicipioId.setVisible(false);
+        
+        // Show or Hide Sections
+        User authUser = Main.getAuthUser();
+        showHideSections(authUser);
     }
 
+    /**
+     * Show or Hide Sections by User
+     * @param user Auth User
+     */
+    private void showHideSections(User user) {
+        int roleId = user.getRoleId();
+
+        if (roleId != Role.ADMININISTRATOR) {
+            jButtonMunicipioDelete.setVisible(false);
+            jButtonMunicipioEdit.setVisible(false);
+        }
+    }
+    
     /**
      * Load Data.
      * @param municipality

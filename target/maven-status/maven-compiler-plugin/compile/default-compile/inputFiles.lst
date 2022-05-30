@@ -11,7 +11,10 @@
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/seeders/UserSeeder.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/users/UserCreateJInternalFrame.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityListJInternalFrame.java
+/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityEditJInternalFrame.java
+/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/helpers/Role.java
+/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationListJInternalFrame.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/MenuJFrame.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/controllers/PresentationController.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/controllers/MunicipalityController.java
@@ -21,6 +24,7 @@
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityShowJInternalFrame.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/dao/UserRoleDao.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/convocatory/ConvocatoryEditJInternalFrame.java
+/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/entities/ConvocatoryDocumentType.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java
 /Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/entities/Presentation.java

@@ -5,6 +5,7 @@
  */
 package helpers;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
@@ -68,6 +69,17 @@ public class DateHelper {
      */
     public static String formatToYMD(Date date) {
         return new SimpleDateFormat("yyyy-MM-dd").format(date);
+    }
+    
+    /**
+     * Get Date From String With Fromat yyyy-MM-dd
+     * @param dateString Date String with format yyyy-MM-dd
+     * @return Date
+     * @throws ParseException 
+     */
+    public static Date getDateFromStringWithFormatYMD(String dateString) throws ParseException {
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        return sdf.parse(dateString);
     }
     
     /**

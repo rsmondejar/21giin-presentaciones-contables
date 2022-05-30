@@ -1,14 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="es"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConvocatoryShowJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.convocatory</a> &gt; <span class="el_source">ConvocatoryShowJInternalFrame.java</span></div><h1>ConvocatoryShowJInternalFrame.java</h1><pre class="source lang-java linenums">/*
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConvocatoryShowJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.convocatory</a> &gt; <span class="el_source">ConvocatoryShowJInternalFrame.java</span></div><h1>ConvocatoryShowJInternalFrame.java</h1><pre class="source lang-java linenums">/*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
  */
 package app.views.convocatory;
 
+import app.Main;
 import app.controllers.ConvocatoryController;
 import app.entities.Convocatory;
 import app.entities.DocumentType;
+import app.entities.User;
 import helpers.Dialog;
 import helpers.Log;
+import helpers.Role;
 import java.util.List;
 import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
@@ -25,53 +28,70 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
      * Creates new form ConvocatoryShowJInternalFrame
      * @param jDesktopPanelContainer
      */
-<span class="nc" id="L28">    public ConvocatoryShowJInternalFrame(JDesktopPane jDesktopPanelContainer) {</span>
-<span class="nc" id="L29">        initComponents();</span>
-<span class="nc" id="L30">        this.jDesktopPanelContainer = jDesktopPanelContainer;</span>
-<span class="nc" id="L31">        jTextFieldConvocatoryId.setVisible(false);</span>
-<span class="nc" id="L32">    }</span>
+<span class="nc" id="L31">    public ConvocatoryShowJInternalFrame(JDesktopPane jDesktopPanelContainer) {</span>
+<span class="nc" id="L32">        initComponents();</span>
+<span class="nc" id="L33">        this.jDesktopPanelContainer = jDesktopPanelContainer;</span>
+<span class="nc" id="L34">        jTextFieldConvocatoryId.setVisible(false);</span>
+        
+        // Show or Hide Sections
+<span class="nc" id="L37">        User authUser = Main.getAuthUser();</span>
+<span class="nc" id="L38">        showHideSections(authUser);</span>
+<span class="nc" id="L39">    }</span>
+    
+    /**
+     * Show or Hide Sections by User
+     * @param user Auth User
+     */
+    private void showHideSections(User user) {
+<span class="nc" id="L46">        int roleId = user.getRoleId();</span>
+
+<span class="nc bnc" id="L48" title="All 4 branches missed.">        if (roleId != Role.ADMININISTRATOR &amp;&amp; roleId != Role.FISCAL_GENERAL) {</span>
+<span class="nc" id="L49">            jButtonConvocatoryDelete.setVisible(false);</span>
+<span class="nc" id="L50">            jButtonConvocatoryEdit.setVisible(false);</span>
+        }
+<span class="nc" id="L52">    }</span>
 
     /**
      * Load Data.
      * @param convocatory
      */
     public void loadData(Convocatory convocatory) {
-<span class="nc" id="L39">        jTextFieldConvocatoryId.setText(String.valueOf(convocatory.getId()));</span>
+<span class="nc" id="L59">        jTextFieldConvocatoryId.setText(String.valueOf(convocatory.getId()));</span>
         
-<span class="nc" id="L41">        jTextFieldConvocatoryName.setText(convocatory.getName());</span>
-<span class="nc" id="L42">        jTextAreaConvocatoryDescription.setText(convocatory.getDescription());</span>
-<span class="nc" id="L43">        jDateChooserStartDate.setDate(convocatory.getStartDate());</span>
-<span class="nc" id="L44">        jDateChooserEndDate.setDate(convocatory.getEndDate());</span>
-<span class="nc" id="L45">        jCheckBoxConvocatoryStatus.setSelected(convocatory.getIsValid());</span>
+<span class="nc" id="L61">        jTextFieldConvocatoryName.setText(convocatory.getName());</span>
+<span class="nc" id="L62">        jTextAreaConvocatoryDescription.setText(convocatory.getDescription());</span>
+<span class="nc" id="L63">        jDateChooserStartDate.setDate(convocatory.getStartDate());</span>
+<span class="nc" id="L64">        jDateChooserEndDate.setDate(convocatory.getEndDate());</span>
+<span class="nc" id="L65">        jCheckBoxConvocatoryStatus.setSelected(convocatory.getIsValid());</span>
         
         // Set documents
-<span class="nc" id="L48">        List&lt;DocumentType&gt; documentTypes = convocatory.getDocumentsTypes();</span>
-<span class="nc" id="L49">        setDocumentsTypes(documentTypes);</span>
-<span class="nc" id="L50">    }</span>
+<span class="nc" id="L68">        List&lt;DocumentType&gt; documentTypes = convocatory.getDocumentsTypes();</span>
+<span class="nc" id="L69">        setDocumentsTypes(documentTypes);</span>
+<span class="nc" id="L70">    }</span>
     
     /**
      * Set Documents Types
      * @param documentTypes Documents Types
      */
     private void setDocumentsTypes(List&lt;DocumentType&gt; documentTypes) {
-<span class="nc bnc" id="L57" title="All 2 branches missed.">        for(DocumentType documentType : documentTypes) {</span>
-<span class="nc bnc" id="L58" title="All 2 branches missed.">            if (documentType.getId() == 1) {</span>
-<span class="nc" id="L59">                jCheckBoxDocumentTypeId1.setSelected(true);</span>
+<span class="nc bnc" id="L77" title="All 2 branches missed.">        for(DocumentType documentType : documentTypes) {</span>
+<span class="nc bnc" id="L78" title="All 2 branches missed.">            if (documentType.getId() == 1) {</span>
+<span class="nc" id="L79">                jCheckBoxDocumentTypeId1.setSelected(true);</span>
             }
-<span class="nc bnc" id="L61" title="All 2 branches missed.">            if (documentType.getId() == 2) {</span>
-<span class="nc" id="L62">                jCheckBoxDocumentTypeId2.setSelected(true);</span>
+<span class="nc bnc" id="L81" title="All 2 branches missed.">            if (documentType.getId() == 2) {</span>
+<span class="nc" id="L82">                jCheckBoxDocumentTypeId2.setSelected(true);</span>
             }
-<span class="nc bnc" id="L64" title="All 2 branches missed.">            if (documentType.getId() == 3) {</span>
-<span class="nc" id="L65">                jCheckBoxDocumentTypeId3.setSelected(true);</span>
+<span class="nc bnc" id="L84" title="All 2 branches missed.">            if (documentType.getId() == 3) {</span>
+<span class="nc" id="L85">                jCheckBoxDocumentTypeId3.setSelected(true);</span>
             }
-<span class="nc bnc" id="L67" title="All 2 branches missed.">            if (documentType.getId() == 4) {</span>
-<span class="nc" id="L68">                jCheckBoxDocumentTypeId4.setSelected(true);</span>
+<span class="nc bnc" id="L87" title="All 2 branches missed.">            if (documentType.getId() == 4) {</span>
+<span class="nc" id="L88">                jCheckBoxDocumentTypeId4.setSelected(true);</span>
             }
-<span class="nc bnc" id="L70" title="All 2 branches missed.">            if (documentType.getId() == 5) {</span>
-<span class="nc" id="L71">                jCheckBoxDocumentTypeId5.setSelected(true);</span>
+<span class="nc bnc" id="L90" title="All 2 branches missed.">            if (documentType.getId() == 5) {</span>
+<span class="nc" id="L91">                jCheckBoxDocumentTypeId5.setSelected(true);</span>
             }
-<span class="nc" id="L73">        }</span>
-<span class="nc" id="L74">    }</span>
+<span class="nc" id="L93">        }</span>
+<span class="nc" id="L94">    }</span>
     
     /**
      * This method is called from within the constructor to initialize the form.
@@ -82,235 +102,235 @@ public class ConvocatoryShowJInternalFrame extends javax.swing.JInternalFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L85">        jLabelConvocatoryName = new javax.swing.JLabel();</span>
-<span class="nc" id="L86">        jTextFieldConvocatoryName = new javax.swing.JTextField();</span>
-<span class="nc" id="L87">        jLabelConvocatoryDescription = new javax.swing.JLabel();</span>
-<span class="nc" id="L88">        jButtonConvocatoryEdit = new javax.swing.JButton();</span>
-<span class="nc" id="L89">        jTextFieldConvocatoryId = new javax.swing.JTextField();</span>
-<span class="nc" id="L90">        jButtonConvocatoryDelete = new javax.swing.JButton();</span>
-<span class="nc" id="L91">        jScrollPane1 = new javax.swing.JScrollPane();</span>
-<span class="nc" id="L92">        jTextAreaConvocatoryDescription = new javax.swing.JTextArea();</span>
-<span class="nc" id="L93">        jLabelConvocatoryEndDate1 = new javax.swing.JLabel();</span>
-<span class="nc" id="L94">        jCheckBoxConvocatoryStatus = new javax.swing.JCheckBox();</span>
-<span class="nc" id="L95">        jLabelConvocatoryStartDate = new javax.swing.JLabel();</span>
-<span class="nc" id="L96">        jDateChooserStartDate = new com.toedter.calendar.JDateChooser();</span>
-<span class="nc" id="L97">        jLabelConvocatoryStatus = new javax.swing.JLabel();</span>
-<span class="nc" id="L98">        jDateChooserEndDate = new com.toedter.calendar.JDateChooser();</span>
-<span class="nc" id="L99">        jSeparator1 = new javax.swing.JSeparator();</span>
-<span class="nc" id="L100">        jLabel1 = new javax.swing.JLabel();</span>
-<span class="nc" id="L101">        jCheckBoxDocumentTypeId1 = new javax.swing.JCheckBox();</span>
-<span class="nc" id="L102">        jCheckBoxDocumentTypeId2 = new javax.swing.JCheckBox();</span>
-<span class="nc" id="L103">        jCheckBoxDocumentTypeId3 = new javax.swing.JCheckBox();</span>
-<span class="nc" id="L104">        jCheckBoxDocumentTypeId4 = new javax.swing.JCheckBox();</span>
-<span class="nc" id="L105">        jCheckBoxDocumentTypeId5 = new javax.swing.JCheckBox();</span>
+<span class="nc" id="L105">        jLabelConvocatoryName = new javax.swing.JLabel();</span>
+<span class="nc" id="L106">        jTextFieldConvocatoryName = new javax.swing.JTextField();</span>
+<span class="nc" id="L107">        jLabelConvocatoryDescription = new javax.swing.JLabel();</span>
+<span class="nc" id="L108">        jButtonConvocatoryEdit = new javax.swing.JButton();</span>
+<span class="nc" id="L109">        jTextFieldConvocatoryId = new javax.swing.JTextField();</span>
+<span class="nc" id="L110">        jButtonConvocatoryDelete = new javax.swing.JButton();</span>
+<span class="nc" id="L111">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L112">        jTextAreaConvocatoryDescription = new javax.swing.JTextArea();</span>
+<span class="nc" id="L113">        jLabelConvocatoryEndDate1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L114">        jCheckBoxConvocatoryStatus = new javax.swing.JCheckBox();</span>
+<span class="nc" id="L115">        jLabelConvocatoryStartDate = new javax.swing.JLabel();</span>
+<span class="nc" id="L116">        jDateChooserStartDate = new com.toedter.calendar.JDateChooser();</span>
+<span class="nc" id="L117">        jLabelConvocatoryStatus = new javax.swing.JLabel();</span>
+<span class="nc" id="L118">        jDateChooserEndDate = new com.toedter.calendar.JDateChooser();</span>
+<span class="nc" id="L119">        jSeparator1 = new javax.swing.JSeparator();</span>
+<span class="nc" id="L120">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L121">        jCheckBoxDocumentTypeId1 = new javax.swing.JCheckBox();</span>
+<span class="nc" id="L122">        jCheckBoxDocumentTypeId2 = new javax.swing.JCheckBox();</span>
+<span class="nc" id="L123">        jCheckBoxDocumentTypeId3 = new javax.swing.JCheckBox();</span>
+<span class="nc" id="L124">        jCheckBoxDocumentTypeId4 = new javax.swing.JCheckBox();</span>
+<span class="nc" id="L125">        jCheckBoxDocumentTypeId5 = new javax.swing.JCheckBox();</span>
 
-<span class="nc" id="L107">        setClosable(true);</span>
-<span class="nc" id="L108">        setIconifiable(true);</span>
-<span class="nc" id="L109">        setMaximizable(true);</span>
-<span class="nc" id="L110">        setResizable(true);</span>
-<span class="nc" id="L111">        setTitle(&quot;Ver Convocatoria&quot;);</span>
-<span class="nc" id="L112">        setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L127">        setClosable(true);</span>
+<span class="nc" id="L128">        setIconifiable(true);</span>
+<span class="nc" id="L129">        setMaximizable(true);</span>
+<span class="nc" id="L130">        setResizable(true);</span>
+<span class="nc" id="L131">        setTitle(&quot;Ver Convocatoria&quot;);</span>
+<span class="nc" id="L132">        setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L114">        jLabelConvocatoryName.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L115">        jLabelConvocatoryName.setText(&quot;Nombre de la convocatoria:&quot;);</span>
+<span class="nc" id="L134">        jLabelConvocatoryName.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L135">        jLabelConvocatoryName.setText(&quot;Nombre de la convocatoria:&quot;);</span>
 
-<span class="nc" id="L117">        jTextFieldConvocatoryName.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
-<span class="nc" id="L118">        jTextFieldConvocatoryName.setEnabled(false);</span>
+<span class="nc" id="L137">        jTextFieldConvocatoryName.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
+<span class="nc" id="L138">        jTextFieldConvocatoryName.setEnabled(false);</span>
 
-<span class="nc" id="L120">        jLabelConvocatoryDescription.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L121">        jLabelConvocatoryDescription.setText(&quot;Descripción:&quot;);</span>
+<span class="nc" id="L140">        jLabelConvocatoryDescription.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L141">        jLabelConvocatoryDescription.setText(&quot;Descripción:&quot;);</span>
 
-<span class="nc" id="L123">        jButtonConvocatoryEdit.setText(&quot;Editar&quot;);</span>
-<span class="nc" id="L124">        jButtonConvocatoryEdit.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L143">        jButtonConvocatoryEdit.setText(&quot;Editar&quot;);</span>
+<span class="nc" id="L144">        jButtonConvocatoryEdit.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L126">                jButtonConvocatoryEditActionPerformed(evt);</span>
-<span class="nc" id="L127">            }</span>
+<span class="nc" id="L146">                jButtonConvocatoryEditActionPerformed(evt);</span>
+<span class="nc" id="L147">            }</span>
         });
 
-<span class="nc" id="L130">        jTextFieldConvocatoryId.setEditable(false);</span>
-<span class="nc" id="L131">        jTextFieldConvocatoryId.setEnabled(false);</span>
+<span class="nc" id="L150">        jTextFieldConvocatoryId.setEditable(false);</span>
+<span class="nc" id="L151">        jTextFieldConvocatoryId.setEnabled(false);</span>
 
-<span class="nc" id="L133">        jButtonConvocatoryDelete.setBackground(new java.awt.Color(255, 153, 153));</span>
-<span class="nc" id="L134">        jButtonConvocatoryDelete.setText(&quot;Eliminar&quot;);</span>
-<span class="nc" id="L135">        jButtonConvocatoryDelete.setBorderPainted(false);</span>
-<span class="nc" id="L136">        jButtonConvocatoryDelete.setOpaque(true);</span>
-<span class="nc" id="L137">        jButtonConvocatoryDelete.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L153">        jButtonConvocatoryDelete.setBackground(new java.awt.Color(255, 153, 153));</span>
+<span class="nc" id="L154">        jButtonConvocatoryDelete.setText(&quot;Eliminar&quot;);</span>
+<span class="nc" id="L155">        jButtonConvocatoryDelete.setBorderPainted(false);</span>
+<span class="nc" id="L156">        jButtonConvocatoryDelete.setOpaque(true);</span>
+<span class="nc" id="L157">        jButtonConvocatoryDelete.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L139">                jButtonConvocatoryDeleteActionPerformed(evt);</span>
-<span class="nc" id="L140">            }</span>
+<span class="nc" id="L159">                jButtonConvocatoryDeleteActionPerformed(evt);</span>
+<span class="nc" id="L160">            }</span>
         });
 
-<span class="nc" id="L143">        jTextAreaConvocatoryDescription.setEditable(false);</span>
-<span class="nc" id="L144">        jTextAreaConvocatoryDescription.setColumns(20);</span>
-<span class="nc" id="L145">        jTextAreaConvocatoryDescription.setRows(5);</span>
-<span class="nc" id="L146">        jTextAreaConvocatoryDescription.setEnabled(false);</span>
-<span class="nc" id="L147">        jScrollPane1.setViewportView(jTextAreaConvocatoryDescription);</span>
+<span class="nc" id="L163">        jTextAreaConvocatoryDescription.setEditable(false);</span>
+<span class="nc" id="L164">        jTextAreaConvocatoryDescription.setColumns(20);</span>
+<span class="nc" id="L165">        jTextAreaConvocatoryDescription.setRows(5);</span>
+<span class="nc" id="L166">        jTextAreaConvocatoryDescription.setEnabled(false);</span>
+<span class="nc" id="L167">        jScrollPane1.setViewportView(jTextAreaConvocatoryDescription);</span>
 
-<span class="nc" id="L149">        jLabelConvocatoryEndDate1.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L150">        jLabelConvocatoryEndDate1.setText(&quot;Fecha inicio:&quot;);</span>
+<span class="nc" id="L169">        jLabelConvocatoryEndDate1.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L170">        jLabelConvocatoryEndDate1.setText(&quot;Fecha inicio:&quot;);</span>
 
-<span class="nc" id="L152">        jCheckBoxConvocatoryStatus.setText(&quot;¿Activa?&quot;);</span>
-<span class="nc" id="L153">        jCheckBoxConvocatoryStatus.setEnabled(false);</span>
+<span class="nc" id="L172">        jCheckBoxConvocatoryStatus.setText(&quot;¿Activa?&quot;);</span>
+<span class="nc" id="L173">        jCheckBoxConvocatoryStatus.setEnabled(false);</span>
 
-<span class="nc" id="L155">        jLabelConvocatoryStartDate.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L156">        jLabelConvocatoryStartDate.setText(&quot;Fecha inicio:&quot;);</span>
+<span class="nc" id="L175">        jLabelConvocatoryStartDate.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L176">        jLabelConvocatoryStartDate.setText(&quot;Fecha inicio:&quot;);</span>
 
-<span class="nc" id="L158">        jDateChooserStartDate.setDateFormatString(&quot;yyyy-MM-dd&quot;);</span>
-<span class="nc" id="L159">        jDateChooserStartDate.setEnabled(false);</span>
+<span class="nc" id="L178">        jDateChooserStartDate.setDateFormatString(&quot;yyyy-MM-dd&quot;);</span>
+<span class="nc" id="L179">        jDateChooserStartDate.setEnabled(false);</span>
 
-<span class="nc" id="L161">        jLabelConvocatoryStatus.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L162">        jLabelConvocatoryStatus.setText(&quot;Estado Apertura?:&quot;);</span>
+<span class="nc" id="L181">        jLabelConvocatoryStatus.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L182">        jLabelConvocatoryStatus.setText(&quot;Estado Apertura?:&quot;);</span>
 
-<span class="nc" id="L164">        jDateChooserEndDate.setDateFormatString(&quot;yyyy-MM-dd&quot;);</span>
-<span class="nc" id="L165">        jDateChooserEndDate.setEnabled(false);</span>
+<span class="nc" id="L184">        jDateChooserEndDate.setDateFormatString(&quot;yyyy-MM-dd&quot;);</span>
+<span class="nc" id="L185">        jDateChooserEndDate.setEnabled(false);</span>
 
-<span class="nc" id="L167">        jLabel1.setText(&quot;Documentos necesarios:&quot;);</span>
+<span class="nc" id="L187">        jLabel1.setText(&quot;Documentos necesarios:&quot;);</span>
 
-<span class="nc" id="L169">        jCheckBoxDocumentTypeId1.setText(&quot;Libro Diario&quot;);</span>
-<span class="nc" id="L170">        jCheckBoxDocumentTypeId1.setEnabled(false);</span>
+<span class="nc" id="L189">        jCheckBoxDocumentTypeId1.setText(&quot;Libro Diario&quot;);</span>
+<span class="nc" id="L190">        jCheckBoxDocumentTypeId1.setEnabled(false);</span>
 
-<span class="nc" id="L172">        jCheckBoxDocumentTypeId2.setText(&quot;Libro Mayor&quot;);</span>
-<span class="nc" id="L173">        jCheckBoxDocumentTypeId2.setEnabled(false);</span>
+<span class="nc" id="L192">        jCheckBoxDocumentTypeId2.setText(&quot;Libro Mayor&quot;);</span>
+<span class="nc" id="L193">        jCheckBoxDocumentTypeId2.setEnabled(false);</span>
 
-<span class="nc" id="L175">        jCheckBoxDocumentTypeId3.setText(&quot;Balance de Sumas y Saldos&quot;);</span>
-<span class="nc" id="L176">        jCheckBoxDocumentTypeId3.setEnabled(false);</span>
+<span class="nc" id="L195">        jCheckBoxDocumentTypeId3.setText(&quot;Balance de Sumas y Saldos&quot;);</span>
+<span class="nc" id="L196">        jCheckBoxDocumentTypeId3.setEnabled(false);</span>
 
-<span class="nc" id="L178">        jCheckBoxDocumentTypeId4.setText(&quot;Registro de Ingreso de Caja&quot;);</span>
-<span class="nc" id="L179">        jCheckBoxDocumentTypeId4.setEnabled(false);</span>
+<span class="nc" id="L198">        jCheckBoxDocumentTypeId4.setText(&quot;Registro de Ingreso de Caja&quot;);</span>
+<span class="nc" id="L199">        jCheckBoxDocumentTypeId4.setEnabled(false);</span>
 
-<span class="nc" id="L181">        jCheckBoxDocumentTypeId5.setText(&quot;Registro de Movimientos de Bancos&quot;);</span>
-<span class="nc" id="L182">        jCheckBoxDocumentTypeId5.setEnabled(false);</span>
+<span class="nc" id="L201">        jCheckBoxDocumentTypeId5.setText(&quot;Registro de Movimientos de Bancos&quot;);</span>
+<span class="nc" id="L202">        jCheckBoxDocumentTypeId5.setEnabled(false);</span>
 
-<span class="nc" id="L184">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L185">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L186">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L187">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L188">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L189">                .addContainerGap()</span>
-<span class="nc" id="L190">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L191">                    .addComponent(jTextFieldConvocatoryName)</span>
-<span class="nc" id="L192">                    .addComponent(jLabelConvocatoryName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L193">                    .addComponent(jLabelConvocatoryDescription, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L194">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
-<span class="nc" id="L195">                        .addComponent(jButtonConvocatoryDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L196">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L197">                        .addComponent(jButtonConvocatoryEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L198">                    .addComponent(jScrollPane1)</span>
-<span class="nc" id="L199">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L200">                        .addComponent(jTextFieldConvocatoryId, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L201">                        .addGap(0, 0, Short.MAX_VALUE))</span>
-<span class="nc" id="L202">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L203">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
-<span class="nc" id="L204">                            .addComponent(jLabelConvocatoryStartDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L205">                            .addComponent(jDateChooserStartDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L206">                        .addGap(29, 29, 29)</span>
-<span class="nc" id="L207">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L208">                            .addComponent(jDateChooserEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L209">                            .addComponent(jLabelConvocatoryEndDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L210">                        .addGap(39, 39, 39)</span>
-<span class="nc" id="L211">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L212">                            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L213">                                .addComponent(jCheckBoxConvocatoryStatus)</span>
-<span class="nc" id="L214">                                .addGap(0, 0, Short.MAX_VALUE))</span>
-<span class="nc" id="L215">                            .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))</span>
-<span class="nc" id="L216">                    .addComponent(jSeparator1)</span>
-<span class="nc" id="L217">                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L218">                    .addComponent(jCheckBoxDocumentTypeId1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L219">                    .addComponent(jCheckBoxDocumentTypeId2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L220">                    .addComponent(jCheckBoxDocumentTypeId3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L221">                    .addComponent(jCheckBoxDocumentTypeId4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L222">                    .addComponent(jCheckBoxDocumentTypeId5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-<span class="nc" id="L223">                .addContainerGap())</span>
+<span class="nc" id="L204">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L205">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L206">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L207">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L208">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L209">                .addContainerGap()</span>
+<span class="nc" id="L210">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L211">                    .addComponent(jTextFieldConvocatoryName)</span>
+<span class="nc" id="L212">                    .addComponent(jLabelConvocatoryName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L213">                    .addComponent(jLabelConvocatoryDescription, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L214">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L215">                        .addComponent(jButtonConvocatoryDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L216">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L217">                        .addComponent(jButtonConvocatoryEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L218">                    .addComponent(jScrollPane1)</span>
+<span class="nc" id="L219">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L220">                        .addComponent(jTextFieldConvocatoryId, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L221">                        .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L222">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L223">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)</span>
+<span class="nc" id="L224">                            .addComponent(jLabelConvocatoryStartDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L225">                            .addComponent(jDateChooserStartDate, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L226">                        .addGap(29, 29, 29)</span>
+<span class="nc" id="L227">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L228">                            .addComponent(jDateChooserEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L229">                            .addComponent(jLabelConvocatoryEndDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L230">                        .addGap(39, 39, 39)</span>
+<span class="nc" id="L231">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L232">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L233">                                .addComponent(jCheckBoxConvocatoryStatus)</span>
+<span class="nc" id="L234">                                .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L235">                            .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))</span>
+<span class="nc" id="L236">                    .addComponent(jSeparator1)</span>
+<span class="nc" id="L237">                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L238">                    .addComponent(jCheckBoxDocumentTypeId1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L239">                    .addComponent(jCheckBoxDocumentTypeId2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L240">                    .addComponent(jCheckBoxDocumentTypeId3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L241">                    .addComponent(jCheckBoxDocumentTypeId4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L242">                    .addComponent(jCheckBoxDocumentTypeId5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L243">                .addContainerGap())</span>
         );
-<span class="nc" id="L225">        layout.setVerticalGroup(</span>
-<span class="nc" id="L226">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L227">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L228">                .addContainerGap()</span>
-<span class="nc" id="L229">                .addComponent(jLabelConvocatoryName)</span>
-<span class="nc" id="L230">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L231">                .addComponent(jTextFieldConvocatoryName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L232">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L233">                .addComponent(jLabelConvocatoryDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L234">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L235">                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L236">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
-<span class="nc" id="L237">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L238">                    .addComponent(jLabelConvocatoryStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L239">                    .addComponent(jLabelConvocatoryEndDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L240">                    .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L241">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L242">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L243">                    .addComponent(jDateChooserStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L244">                    .addComponent(jCheckBoxConvocatoryStatus)</span>
-<span class="nc" id="L245">                    .addComponent(jDateChooserEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L246">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L247">                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L248">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L249">                .addComponent(jLabel1)</span>
+<span class="nc" id="L245">        layout.setVerticalGroup(</span>
+<span class="nc" id="L246">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L247">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L248">                .addContainerGap()</span>
+<span class="nc" id="L249">                .addComponent(jLabelConvocatoryName)</span>
 <span class="nc" id="L250">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L251">                .addComponent(jCheckBoxDocumentTypeId1)</span>
+<span class="nc" id="L251">                .addComponent(jTextFieldConvocatoryName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
 <span class="nc" id="L252">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L253">                .addComponent(jCheckBoxDocumentTypeId2)</span>
+<span class="nc" id="L253">                .addComponent(jLabelConvocatoryDescription, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
 <span class="nc" id="L254">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L255">                .addComponent(jCheckBoxDocumentTypeId3)</span>
-<span class="nc" id="L256">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L257">                .addComponent(jCheckBoxDocumentTypeId4)</span>
-<span class="nc" id="L258">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L259">                .addComponent(jCheckBoxDocumentTypeId5)</span>
-<span class="nc" id="L260">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L261">                .addComponent(jTextFieldConvocatoryId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L262">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L263">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L264">                    .addComponent(jButtonConvocatoryEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L265">                    .addComponent(jButtonConvocatoryDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L255">                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L256">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)</span>
+<span class="nc" id="L257">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L258">                    .addComponent(jLabelConvocatoryStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L259">                    .addComponent(jLabelConvocatoryEndDate1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L260">                    .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L261">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L262">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L263">                    .addComponent(jDateChooserStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L264">                    .addComponent(jCheckBoxConvocatoryStatus)</span>
+<span class="nc" id="L265">                    .addComponent(jDateChooserEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L266">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L267">                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L268">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L269">                .addComponent(jLabel1)</span>
+<span class="nc" id="L270">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L271">                .addComponent(jCheckBoxDocumentTypeId1)</span>
+<span class="nc" id="L272">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L273">                .addComponent(jCheckBoxDocumentTypeId2)</span>
+<span class="nc" id="L274">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L275">                .addComponent(jCheckBoxDocumentTypeId3)</span>
+<span class="nc" id="L276">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L277">                .addComponent(jCheckBoxDocumentTypeId4)</span>
+<span class="nc" id="L278">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L279">                .addComponent(jCheckBoxDocumentTypeId5)</span>
+<span class="nc" id="L280">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L281">                .addComponent(jTextFieldConvocatoryId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L282">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L283">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L284">                    .addComponent(jButtonConvocatoryEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L285">                    .addComponent(jButtonConvocatoryDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
         );
 
-<span class="nc" id="L268">        pack();</span>
-<span class="nc" id="L269">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L288">        pack();</span>
+<span class="nc" id="L289">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonConvocatoryEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryEditActionPerformed
         try {
 
-<span class="nc" id="L275">            int id = Integer.parseInt(jTextFieldConvocatoryId.getText());</span>
-<span class="nc" id="L276">            Convocatory convocatory = ConvocatoryController.findById(id);</span>
+<span class="nc" id="L295">            int id = Integer.parseInt(jTextFieldConvocatoryId.getText());</span>
+<span class="nc" id="L296">            Convocatory convocatory = ConvocatoryController.findById(id);</span>
             
-<span class="nc" id="L278">            ConvocatoryEditJInternalFrame convocatoryEdit = new ConvocatoryEditJInternalFrame();</span>
+<span class="nc" id="L298">            ConvocatoryEditJInternalFrame convocatoryEdit = new ConvocatoryEditJInternalFrame();</span>
         
-<span class="nc" id="L280">            jDesktopPanelContainer.add(convocatoryEdit);</span>
+<span class="nc" id="L300">            jDesktopPanelContainer.add(convocatoryEdit);</span>
         
             // Load convocatory info in view
-<span class="nc" id="L283">            convocatoryEdit.loadData(convocatory);</span>
+<span class="nc" id="L303">            convocatoryEdit.loadData(convocatory);</span>
             
-<span class="nc" id="L285">            this.hide();</span>
+<span class="nc" id="L305">            this.hide();</span>
             
-<span class="nc" id="L287">            convocatoryEdit.setVisible(true);</span>
-<span class="nc" id="L288">        } catch (NumberFormatException e) {</span>
-<span class="nc" id="L289">            Log.error(e);</span>
-<span class="nc" id="L290">            Dialog.error(e.getMessage(), &quot;Error editar municipio&quot;);</span>
-<span class="nc" id="L291">        }</span>
-<span class="nc" id="L292">    }//GEN-LAST:event_jButtonConvocatoryEditActionPerformed</span>
+<span class="nc" id="L307">            convocatoryEdit.setVisible(true);</span>
+<span class="nc" id="L308">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L309">            Log.error(e);</span>
+<span class="nc" id="L310">            Dialog.error(e.getMessage(), &quot;Error editar convocatoria&quot;);</span>
+<span class="nc" id="L311">        }</span>
+<span class="nc" id="L312">    }//GEN-LAST:event_jButtonConvocatoryEditActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonConvocatoryDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryDeleteActionPerformed
-<span class="nc" id="L296">        int input = JOptionPane.showConfirmDialog(null, &quot;Deseas eliminar?&quot;);</span>
+<span class="nc" id="L316">        int input = JOptionPane.showConfirmDialog(null, &quot;Deseas eliminar?&quot;);</span>
         // 0=yes, 1=no, 2=cancel
         
-<span class="nc bnc" id="L299" title="All 2 branches missed.">        if (input == 0) {</span>
+<span class="nc bnc" id="L319" title="All 2 branches missed.">        if (input == 0) {</span>
             // Delete
-<span class="nc" id="L301">            int id = Integer.parseInt(jTextFieldConvocatoryId.getText());</span>
-<span class="nc" id="L302">            boolean status = ConvocatoryController.delete(id);</span>
+<span class="nc" id="L321">            int id = Integer.parseInt(jTextFieldConvocatoryId.getText());</span>
+<span class="nc" id="L322">            boolean status = ConvocatoryController.delete(id);</span>
             
-<span class="nc bnc" id="L304" title="All 2 branches missed.">            if (status) {</span>
-<span class="nc" id="L305">                Dialog.info(&quot;Convocatoria eliminado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc bnc" id="L324" title="All 2 branches missed.">            if (status) {</span>
+<span class="nc" id="L325">                Dialog.info(&quot;Convocatoria eliminado correctamente&quot;, &quot;Info&quot;);</span>
                 
-<span class="nc" id="L307">                this.hide();</span>
+<span class="nc" id="L327">                this.hide();</span>
             } else {
-<span class="nc" id="L309">                Dialog.error(&quot;Convocatoria no se ha eliminado&quot;, &quot;Error&quot;);</span>
+<span class="nc" id="L329">                Dialog.error(&quot;Convocatoria no se ha eliminado&quot;, &quot;Error&quot;);</span>
             }
         }
         
-<span class="nc" id="L313">    }//GEN-LAST:event_jButtonConvocatoryDeleteActionPerformed</span>
+<span class="nc" id="L333">    }//GEN-LAST:event_jButtonConvocatoryDeleteActionPerformed</span>
 
     
     // Variables declaration - do not modify//GEN-BEGIN:variables

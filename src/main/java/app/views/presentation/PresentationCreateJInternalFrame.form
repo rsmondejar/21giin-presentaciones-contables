@@ -293,12 +293,12 @@
                       <Component id="jButtonDocumentType2" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelDocumentType2" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="jButtonDocumentTypeDownload2" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonDocumentTypeDelete2" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jLabelDocumentType2" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -385,12 +385,12 @@
                       <Component id="jButtonDocumentType3" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelDocumentType3" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="jButtonDocumentTypeDownload3" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonDocumentTypeDelete3" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jLabelDocumentType3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -478,12 +478,12 @@
                       <Component id="jButtonDocumentType4" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelDocumentType4" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="jButtonDocumentTypeDownload4" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonDocumentTypeDelete4" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jLabelDocumentType4" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -571,12 +571,12 @@
                       <Component id="jButtonDocumentType5" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
-                  <Group type="103" groupAlignment="3" attributes="0">
-                      <Component id="jLabelDocumentType5" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                  <Group type="103" groupAlignment="0" attributes="0">
+                      <Group type="103" alignment="0" groupAlignment="3" attributes="0">
                           <Component id="jButtonDocumentTypeDownload5" alignment="3" min="-2" max="-2" attributes="0"/>
                           <Component id="jButtonDocumentTypeDelete5" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
+                      <Component id="jLabelDocumentType5" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>

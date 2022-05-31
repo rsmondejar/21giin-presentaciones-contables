@@ -30,5 +30,6 @@
         <mapping class="app.entities.DocumentType"/>
         <mapping class="app.entities.ConvocatoryDocumentType"/>
         <mapping class="app.entities.PresentationDocumentType"/>
+        <mapping class="app.entities.MunicipalityTotalDocument"/>
     </session-factory>
 </hibernate-configuration>

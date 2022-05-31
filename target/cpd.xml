@@ -2304,6 +2304,35 @@
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()]]></codefragment>
    </duplication>
+   <duplication lines="23" tokens="117">
+      <file column="32" endcolumn="10" endline="152" line="130"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/information/InformationDashboardJInternalFrame.java"/>
+      <file column="34" endcolumn="10" endline="205" line="183"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/information/InformationDashboardJInternalFrame.java"/>
+      <codefragment><![CDATA[        jTableConvocatoriesOpen.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Id", "Convocatoria", "Total Presentaciones"
+            }
+        ) {
+            Class[] types = new Class [] {
+                java.lang.Integer.class, java.lang.String.class, java.lang.Integer.class
+            };
+            boolean[] canEdit = new boolean [] {
+                false, false, false
+            };
+
+            public Class getColumnClass(int columnIndex) {
+                return types [columnIndex];
+            }
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });]]></codefragment>
+   </duplication>
    <duplication lines="12" tokens="117">
       <file column="105" endcolumn="34" endline="80" line="69"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/municipality/MunicipalityCreateJInternalFrame.java"/>

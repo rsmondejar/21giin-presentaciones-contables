@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author raulsm
  */
-public class ConvocatoryController {
+public class ConvocatoryController extends BaseController {
 
     /**
      * List Convocatories.
@@ -129,11 +129,23 @@ public class ConvocatoryController {
     /**
      * List Active Convocatories.
      *
-     * @return
+     * @return List of Active Convocatories
      */
     public static List<Convocatory> active() {
         // Get all active convocatories
         List<Convocatory> convocatories = (new ConvocatoryDao()).active();
+
+        return convocatories;
+    }
+    
+    /**
+     * List No Active Convocatories.
+     *
+     * @return List of No Active Convocatories
+     */
+    public static List<Convocatory> noActive() {
+        // Get all no active convocatories
+        List<Convocatory> convocatories = (new ConvocatoryDao()).noActive();
 
         return convocatories;
     }

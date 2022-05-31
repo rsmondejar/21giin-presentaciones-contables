@@ -9,6 +9,7 @@ import app.views.municipality.MunicipalityListJInternalFrame;
 import app.entities.User;
 import app.views.convocatory.ConvocatoryCreateJInternalFrame;
 import app.views.convocatory.ConvocatoryListJInternalFrame;
+import app.views.information.InformationDashboardJInternalFrame;
 import app.views.municipality.MunicipalityCreateJInternalFrame;
 import app.views.presentation.PresentationCreateJInternalFrame;
 import app.views.presentation.PresentationListJInternalFrame;
@@ -216,6 +217,11 @@ public class MenuJFrame extends javax.swing.JFrame {
         jMenuBar1.add(jMenuPresentations);
 
         jMenuInformation.setText("Información");
+        jMenuInformation.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jMenuInformationMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(jMenuInformation);
 
         setJMenuBar(jMenuBar1);
@@ -317,6 +323,14 @@ public class MenuJFrame extends javax.swing.JFrame {
 
         presentationsList.setVisible(true);
     }//GEN-LAST:event_jMenuItemPresentationShowActionPerformed
+
+    @SuppressWarnings("unused")
+    private void jMenuInformationMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenuInformationMouseClicked
+        InformationDashboardJInternalFrame informationDashboard = new InformationDashboardJInternalFrame();
+        jDesktopPanelContainer.add(informationDashboard);
+
+        informationDashboard.setVisible(true);
+    }//GEN-LAST:event_jMenuInformationMouseClicked
 
     /**
      * @param args the command line arguments

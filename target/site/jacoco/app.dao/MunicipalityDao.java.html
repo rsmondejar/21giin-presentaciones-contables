@@ -8,7 +8,13 @@ package app.dao;
 
 import app.entities.BaseEntity;
 import app.entities.Municipality;
+import config.HibernateUtil;
+import helpers.Log;
 import java.util.List;
+import org.hibernate.HibernateException;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
 
 /**
  * Municipality DAO.
@@ -18,9 +24,9 @@ import java.util.List;
  */
 public class MunicipalityDao extends BaseDao {
 
-<span class="nc" id="L21">    public MunicipalityDao() {</span>
-<span class="nc" id="L22">        super.setModel((BaseEntity) new Municipality());</span>
-<span class="nc" id="L23">    }</span>
+<span class="nc" id="L27">    public MunicipalityDao() {</span>
+<span class="nc" id="L28">        super.setModel((BaseEntity) new Municipality());</span>
+<span class="nc" id="L29">    }</span>
 
     /**
      * List Municipalitys.
@@ -29,7 +35,7 @@ public class MunicipalityDao extends BaseDao {
      */
     @Override
     public List&lt;Municipality&gt; all() {
-<span class="nc" id="L32">        return super.all();</span>
+<span class="nc" id="L38">        return super.all();</span>
     }
 
     /**
@@ -40,7 +46,7 @@ public class MunicipalityDao extends BaseDao {
      */
     @Override
     public Municipality findById(int id) {
-<span class="nc" id="L43">        return super.findById(id);</span>
+<span class="nc" id="L49">        return super.findById(id);</span>
     }
 
     /**
@@ -51,7 +57,7 @@ public class MunicipalityDao extends BaseDao {
      * @return status
      */
     public &lt;T&gt; Integer create(Municipality municipality) {
-<span class="nc" id="L54">        return super.create((BaseEntity) municipality);</span>
+<span class="nc" id="L60">        return super.create((BaseEntity) municipality);</span>
     }
 
     /**
@@ -63,7 +69,7 @@ public class MunicipalityDao extends BaseDao {
      * @return
      */
     public &lt;T&gt; boolean update(int id, Municipality municipality) {
-<span class="nc" id="L66">        return super.update(id, (BaseEntity) municipality);</span>
+<span class="nc" id="L72">        return super.update(id, (BaseEntity) municipality);</span>
     }
 
     /**
@@ -74,7 +80,74 @@ public class MunicipalityDao extends BaseDao {
      */
     @Override
     public boolean delete(int id) {
-<span class="nc" id="L77">        return super.delete(id);</span>
+<span class="nc" id="L83">        return super.delete(id);</span>
+    }
+
+    /**
+     * Get Total Presentation By Municipality.
+     *
+     * @return
+     */
+    public Object totalPresentationsByMunicipality() {
+<span class="nc" id="L92">        Transaction trns = null;</span>
+<span class="nc" id="L93">        Session session = HibernateUtil.get().getCurrentSession();</span>
+
+        try {
+<span class="nc" id="L96">            trns = session.beginTransaction();</span>
+
+<span class="nc" id="L98">            Query query = session.createQuery(</span>
+                    &quot; SELECT m.name as 'municipality_name', count(p.id) as 'total_presentations' &quot;
+                    + &quot; FROM municipalities m &quot;
+                    + &quot; LEFT JOIN users u ON u.municipality_id = m.id &quot;
+                    + &quot; LEFT JOIN presentations p ON p.user_id = u.id &quot;
+                    + &quot; GROUP BY m.id &quot;
+                    + &quot; ORDER BY m.name &quot;
+            );
+
+<span class="nc" id="L107">            Object result = query.uniqueResult();</span>
+
+<span class="nc" id="L109">            trns.commit();</span>
+
+<span class="nc" id="L111">            return result;</span>
+<span class="nc" id="L112">        } catch (HibernateException exception) {</span>
+<span class="nc bnc" id="L113" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L114">                trns.rollback();</span>
+            }
+<span class="nc" id="L116">            Log.error(exception);</span>
+<span class="nc" id="L117">            throw exception;</span>
+        } finally {
+<span class="nc" id="L119">            session.close();</span>
+        }
+    }
+
+    /**
+     * Get Total Presentation By Municipality.
+     *
+     * @return
+     */
+    public List&lt;Object&gt; totalPresentationsDocumentsByMunicipality() {
+<span class="nc" id="L129">        Transaction trns = null;</span>
+<span class="nc" id="L130">        Session session = HibernateUtil.get().getCurrentSession();</span>
+
+        try {
+<span class="nc" id="L133">            trns = session.beginTransaction();</span>
+
+<span class="nc" id="L135">            Query query = session.createQuery(&quot;SELECT t FROM municipalities_total_documents_view as t&quot;);</span>
+
+<span class="nc" id="L137">            List&lt;Object&gt; result = query.getResultList();</span>
+
+<span class="nc" id="L139">            trns.commit();</span>
+
+<span class="nc" id="L141">            return result;</span>
+<span class="nc" id="L142">        } catch (HibernateException exception) {</span>
+<span class="nc bnc" id="L143" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L144">                trns.rollback();</span>
+            }
+<span class="nc" id="L146">            Log.error(exception);</span>
+<span class="nc" id="L147">            throw exception;</span>
+        } finally {
+<span class="nc" id="L149">            session.close();</span>
+        }
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

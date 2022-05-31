@@ -4,7 +4,9 @@
 package app.controllers;
 
 import app.dao.MunicipalityDao;
+import app.dao.MunicipalityTotalDocumentDao;
 import app.entities.Municipality;
+import app.entities.MunicipalityTotalDocument;
 import helpers.Dialog;
 import helpers.Log;
 import java.util.List;
@@ -13,112 +15,135 @@ import java.util.List;
  *
  * @author raulsm
  */
-<span class="nc" id="L16">public class MunicipalityController {</span>
-    
+<span class="nc" id="L18">public class MunicipalityController extends BaseController {</span>
+
     /**
      * List Municipies.
-     * @return 
+     *
+     * @return
      */
     public static List&lt;Municipality&gt; list() {
         // Get all municipalities
-<span class="nc" id="L24">        List&lt;Municipality&gt; municipalities = (new MunicipalityDao()).all();</span>
+<span class="nc" id="L27">        List&lt;Municipality&gt; municipalities = (new MunicipalityDao()).all();</span>
 
-<span class="nc" id="L26">        return municipalities;</span>
+<span class="nc" id="L29">        return municipalities;</span>
     }
-    
+
     /**
      * Find Municipality by Id.
+     *
      * @param id Municipality Id
      * @return Status
      */
     public static Municipality findById(int id) {
-<span class="nc" id="L35">        Municipality municipality = null;</span>
-        
+<span class="nc" id="L39">        Municipality municipality = null;</span>
+
         try {
-<span class="nc" id="L38">            municipality = (new MunicipalityDao()).findById(id);</span>
-<span class="nc" id="L39">        } catch(Exception e) {</span>
-<span class="nc" id="L40">            Log.error(e);</span>
-<span class="nc" id="L41">            Dialog.error(e.getMessage(), &quot;Error buscando municipio&quot;);</span>
-<span class="nc" id="L42">        }</span>
-        
-<span class="nc" id="L44">        return municipality;</span>
+<span class="nc" id="L42">            municipality = (new MunicipalityDao()).findById(id);</span>
+<span class="nc" id="L43">        } catch (Exception e) {</span>
+<span class="nc" id="L44">            Log.error(e);</span>
+<span class="nc" id="L45">            Dialog.error(e.getMessage(), &quot;Error buscando municipio&quot;);</span>
+<span class="nc" id="L46">        }</span>
+
+<span class="nc" id="L48">        return municipality;</span>
     }
-    
+
     /**
      * Find Municipality by Id.
+     *
      * @param id Municipality Id
      * @return Status
      */
     public static Municipality edit(int id) {
-<span class="nc" id="L53">        Municipality municipality = null;</span>
-        
+<span class="nc" id="L58">        Municipality municipality = null;</span>
+
         try {
-<span class="nc" id="L56">            municipality = (new MunicipalityDao()).findById(id);</span>
-            
+<span class="nc" id="L61">            municipality = (new MunicipalityDao()).findById(id);</span>
+
             // Load edit view
-            
-<span class="nc" id="L60">        } catch(Exception e) {</span>
-<span class="nc" id="L61">            Log.error(e);</span>
-<span class="nc" id="L62">            Dialog.error(e.getMessage(), &quot;Error buscando municipio&quot;);</span>
-<span class="nc" id="L63">        }</span>
-        
-<span class="nc" id="L65">        return municipality;</span>
+<span class="nc" id="L64">        } catch (Exception e) {</span>
+<span class="nc" id="L65">            Log.error(e);</span>
+<span class="nc" id="L66">            Dialog.error(e.getMessage(), &quot;Error buscando municipio&quot;);</span>
+<span class="nc" id="L67">        }</span>
+
+<span class="nc" id="L69">        return municipality;</span>
     }
-    
+
     /**
      * Create Municipality.
+     *
      * @param municipality Municipality
      * @return Status
      */
     public static boolean create(Municipality municipality) {
-<span class="nc" id="L74">        boolean status = false;</span>
-        
+<span class="nc" id="L79">        boolean status = false;</span>
+
         try {
-<span class="nc" id="L77">            Integer id = (new MunicipalityDao()).create(municipality);</span>
-<span class="nc bnc" id="L78" title="All 2 branches missed.">            status = id != null;</span>
-<span class="nc" id="L79">        } catch(Exception e) {</span>
-<span class="nc" id="L80">            Log.error(e);</span>
-<span class="nc" id="L81">            Dialog.error(e.getMessage(), &quot;Error creando municipio&quot;);</span>
-<span class="nc" id="L82">        }</span>
-        
-<span class="nc" id="L84">        return status;</span>
+<span class="nc" id="L82">            Integer id = (new MunicipalityDao()).create(municipality);</span>
+<span class="nc bnc" id="L83" title="All 2 branches missed.">            status = id != null;</span>
+<span class="nc" id="L84">        } catch (Exception e) {</span>
+<span class="nc" id="L85">            Log.error(e);</span>
+<span class="nc" id="L86">            Dialog.error(e.getMessage(), &quot;Error creando municipio&quot;);</span>
+<span class="nc" id="L87">        }</span>
+
+<span class="nc" id="L89">        return status;</span>
     }
-    
+
     /**
      * Update Municipality.
+     *
      * @param id
      * @param municipality
-     * @return 
+     * @return
      */
     public static boolean update(int id, Municipality municipality) {
-<span class="nc" id="L94">        boolean status = false;</span>
-        
+<span class="nc" id="L100">        boolean status = false;</span>
+
         try {
-<span class="nc" id="L97">            status = (new MunicipalityDao()).update(id, municipality);</span>
-<span class="nc" id="L98">        } catch(Exception e) {</span>
-<span class="nc" id="L99">            Log.error(e);</span>
-<span class="nc" id="L100">            Dialog.error(e.getMessage(), &quot;Error actualizando municipio&quot;);</span>
-<span class="nc" id="L101">        }</span>
-        
-<span class="nc" id="L103">        return status;</span>
+<span class="nc" id="L103">            status = (new MunicipalityDao()).update(id, municipality);</span>
+<span class="nc" id="L104">        } catch (Exception e) {</span>
+<span class="nc" id="L105">            Log.error(e);</span>
+<span class="nc" id="L106">            Dialog.error(e.getMessage(), &quot;Error actualizando municipio&quot;);</span>
+<span class="nc" id="L107">        }</span>
+
+<span class="nc" id="L109">        return status;</span>
     }
-    
+
     /**
      * Delete Municipality.
+     *
      * @param id Municipality Id
      * @return Status
      */
     public static boolean delete(int id) {
-<span class="nc" id="L112">        boolean status = false;</span>
-        
+<span class="nc" id="L119">        boolean status = false;</span>
+
         try {
-<span class="nc" id="L115">            status = (new MunicipalityDao()).delete(id);</span>
-<span class="nc" id="L116">        } catch(Exception e) {</span>
-<span class="nc" id="L117">            Log.error(e);</span>
-<span class="nc" id="L118">            Dialog.error(e.getMessage(), &quot;Error eliminando municipio&quot;);</span>
-<span class="nc" id="L119">        }</span>
-        
-<span class="nc" id="L121">        return status;</span>
+<span class="nc" id="L122">            status = (new MunicipalityDao()).delete(id);</span>
+<span class="nc" id="L123">        } catch (Exception e) {</span>
+<span class="nc" id="L124">            Log.error(e);</span>
+<span class="nc" id="L125">            Dialog.error(e.getMessage(), &quot;Error eliminando municipio&quot;);</span>
+<span class="nc" id="L126">        }</span>
+
+<span class="nc" id="L128">        return status;</span>
+    }
+
+    /**
+     * Municipalities Presentations Total Documents.
+     *
+     * @return Municipalities Presentation Total Documents.
+     */
+    public static List&lt;MunicipalityTotalDocument&gt; municipalitiesPresentationsTotalDocuments() {
+<span class="nc" id="L137">        List&lt;MunicipalityTotalDocument&gt; municipalities = null;</span>
+
+        try {
+<span class="nc" id="L140">            municipalities = (new MunicipalityTotalDocumentDao()).all();</span>
+<span class="nc" id="L141">        } catch (Exception e) {</span>
+<span class="nc" id="L142">            Log.error(e);</span>
+<span class="nc" id="L143">            Dialog.error(e.getMessage(), &quot;Error recuperando presentaciones por municipio&quot;);</span>
+<span class="nc" id="L144">        }</span>
+
+<span class="nc" id="L146">        return municipalities;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

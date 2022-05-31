@@ -10,6 +10,7 @@ import app.entities.BaseEntity;
 import app.entities.Convocatory;
 import app.entities.ConvocatoryDocumentType;
 import app.entities.DocumentType;
+import app.entities.Presentation;
 import helpers.Log;
 import java.util.List;
 
@@ -132,6 +133,22 @@ public class ConvocatoryDao extends BaseDao {
     }
     
     /**
+     * List No Active Convocatories.
+     *
+     * @return List of Convocatories
+     */
+    public List<Convocatory> noActive() {
+        List<Convocatory> convocatories = super.whereNamedQuery("no_active", null, null);
+        
+        // Add extra field Document Types
+        for(int i = 0; i < convocatories.size(); i++) {
+            convocatories.set(i, findById(convocatories.get(i).getId()));
+        }
+        
+        return convocatories;
+    }
+    
+    /**
      * Add Relations.
      * @param convocatory Convocatory
      * @return Convocatory with relations
@@ -143,6 +160,12 @@ public class ConvocatoryDao extends BaseDao {
                         .whereNamedQuery("documents_types", "convocatory_id", String.valueOf(convocatory.getId()));
 
             convocatory.setDocumentsTypes(documentTypes);
+            
+            // Add Presentations
+            List<Presentation> presentations = super
+                        .whereNamedQuery("presentations", "convocatory_id", String.valueOf(convocatory.getId()));
+            
+            convocatory.setPresentations(presentations);
 
             return convocatory;
         } catch(Exception exception) {

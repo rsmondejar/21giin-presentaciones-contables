@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConvocatoryDocumentType.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.entities</a> &gt; <span class="el_source">ConvocatoryDocumentType.java</span></div><h1>ConvocatoryDocumentType.java</h1><pre class="source lang-java linenums">/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>ConvocatoryDocumentType.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.entities</a> &gt; <span class="el_source">ConvocatoryDocumentType.java</span></div><h1>ConvocatoryDocumentType.java</h1><pre class="source lang-java linenums">/**
+ * Convocatory Document Type Model.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.entities;
 
@@ -37,53 +39,53 @@ public class ConvocatoryDocumentType extends BaseEntity {
     private int documentTypeId;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
-<span class="fc" id="L40">    public ConvocatoryDocumentType() {</span>
-<span class="fc" id="L41">    }</span>
+<span class="fc" id="L42">    public ConvocatoryDocumentType() {</span>
+<span class="fc" id="L43">    }</span>
 
-<span class="nc" id="L43">    public ConvocatoryDocumentType(int convocatoryId, int documentTypeId) {</span>
-<span class="nc" id="L44">        this.setConvocatoryId(convocatoryId);</span>
-<span class="nc" id="L45">        this.setDocumentTypeId(documentTypeId);</span>
-<span class="nc" id="L46">    }</span>
+<span class="nc" id="L45">    public ConvocatoryDocumentType(int convocatoryId, int documentTypeId) {</span>
+<span class="nc" id="L46">        this.setConvocatoryId(convocatoryId);</span>
+<span class="nc" id="L47">        this.setDocumentTypeId(documentTypeId);</span>
+<span class="nc" id="L48">    }</span>
 
-<span class="nc" id="L48">    public ConvocatoryDocumentType(int id, int convocatoryId, int documentTypeId) {</span>
-<span class="nc" id="L49">        this.setId(id);</span>
-<span class="nc" id="L50">        this.setConvocatoryId(convocatoryId);</span>
-<span class="nc" id="L51">        this.setDocumentTypeId(documentTypeId);</span>
-<span class="nc" id="L52">    }</span>
+<span class="nc" id="L50">    public ConvocatoryDocumentType(int id, int convocatoryId, int documentTypeId) {</span>
+<span class="nc" id="L51">        this.setId(id);</span>
+<span class="nc" id="L52">        this.setConvocatoryId(convocatoryId);</span>
+<span class="nc" id="L53">        this.setDocumentTypeId(documentTypeId);</span>
+<span class="nc" id="L54">    }</span>
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;
     public int getId() {
-<span class="nc" id="L57">        return id;</span>
+<span class="nc" id="L59">        return id;</span>
     }
 
     public void setId(int id) {
-<span class="nc" id="L61">        this.id = id;</span>
-<span class="nc" id="L62">    }</span>
+<span class="nc" id="L63">        this.id = id;</span>
+<span class="nc" id="L64">    }</span>
 
     public int getConvocatoryId() {
-<span class="nc" id="L65">        return convocatoryId;</span>
+<span class="nc" id="L67">        return convocatoryId;</span>
     }
 
     public void setConvocatoryId(int convocatoryId) {
-<span class="nc" id="L69">        this.convocatoryId = convocatoryId;</span>
-<span class="nc" id="L70">    }</span>
+<span class="nc" id="L71">        this.convocatoryId = convocatoryId;</span>
+<span class="nc" id="L72">    }</span>
 
     public int getDocumentTypeId() {
-<span class="nc" id="L73">        return documentTypeId;</span>
+<span class="nc" id="L75">        return documentTypeId;</span>
     }
 
     public void setDocumentTypeId(int documentTypeId) {
-<span class="nc" id="L77">        this.documentTypeId = documentTypeId;</span>
-<span class="nc" id="L78">    }</span>
+<span class="nc" id="L79">        this.documentTypeId = documentTypeId;</span>
+<span class="nc" id="L80">    }</span>
     // &lt;/editor-fold&gt;
 
     @Override
     public String toString() {
-<span class="nc" id="L83">        return &quot;ConvocatoryDocumentType{&quot;</span>
-<span class="nc" id="L84">                + &quot;id=&quot; + this.getId()</span>
-<span class="nc" id="L85">                + &quot;, convocatoryId=&quot; + this.getConvocatoryId()</span>
-<span class="nc" id="L86">                + &quot;, documentTypeId=&quot; + this.getDocumentTypeId()</span>
+<span class="nc" id="L85">        return &quot;ConvocatoryDocumentType{&quot;</span>
+<span class="nc" id="L86">                + &quot;id=&quot; + this.getId()</span>
+<span class="nc" id="L87">                + &quot;, convocatoryId=&quot; + this.getConvocatoryId()</span>
+<span class="nc" id="L88">                + &quot;, documentTypeId=&quot; + this.getDocumentTypeId()</span>
                 + '}';
     }
 }

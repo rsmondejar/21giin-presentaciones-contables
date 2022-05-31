@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author raulsm
  */
-public class PresentationController {
+public class PresentationController extends BaseController {
     
     /**
      * List Presentations.

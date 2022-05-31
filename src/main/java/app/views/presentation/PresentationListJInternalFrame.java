@@ -42,7 +42,7 @@ public class PresentationListJInternalFrame extends javax.swing.JInternalFrame {
 
         if (items != null) {
             // Add data
-            Object rowData[] = new Object[model.getColumnCount()];
+            Object[] rowData = new Object[model.getColumnCount()];
 
             for (int i = 0; i < items.size(); i++) {
                 rowData[0] = items.get(i).getId();

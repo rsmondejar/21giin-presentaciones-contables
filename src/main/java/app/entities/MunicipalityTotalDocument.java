@@ -38,6 +38,7 @@ public class MunicipalityTotalDocument extends BaseEntity {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Getters And Setters">
+    @Override
     public int getId() {
         return id;
     }

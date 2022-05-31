@@ -102,61 +102,62 @@ public class PresentationDocumentType extends BaseEntity {
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;
+    @Override
     public int getId() {
-<span class="nc" id="L106">        return id;</span>
+<span class="nc" id="L107">        return id;</span>
     }
 
     public void setId(int id) {
-<span class="nc" id="L110">        this.id = id;</span>
-<span class="nc" id="L111">    }</span>
+<span class="nc" id="L111">        this.id = id;</span>
+<span class="nc" id="L112">    }</span>
 
     public int getPresentationId() {
-<span class="nc" id="L114">        return presentationId;</span>
+<span class="nc" id="L115">        return presentationId;</span>
     }
 
     public void setPresentationId(int presentationId) {
-<span class="nc" id="L118">        this.presentationId = presentationId;</span>
-<span class="nc" id="L119">    }</span>
+<span class="nc" id="L119">        this.presentationId = presentationId;</span>
+<span class="nc" id="L120">    }</span>
 
     public int getDocumentTypeId() {
-<span class="nc" id="L122">        return documentTypeId;</span>
+<span class="nc" id="L123">        return documentTypeId;</span>
     }
 
     public void setDocumentTypeId(int documentTypeId) {
-<span class="nc" id="L126">        this.documentTypeId = documentTypeId;</span>
-<span class="nc" id="L127">    }</span>
+<span class="nc" id="L127">        this.documentTypeId = documentTypeId;</span>
+<span class="nc" id="L128">    }</span>
 
     public byte[] getContent() {
-<span class="nc" id="L130">        return content;</span>
+<span class="nc" id="L131">        return content;</span>
     }
 
     public void setContent(byte[] content) {
-<span class="nc" id="L134">        this.content = content;</span>
-<span class="nc" id="L135">    }</span>
+<span class="nc" id="L135">        this.content = content;</span>
+<span class="nc" id="L136">    }</span>
 
     public String getFileName() {
-<span class="nc" id="L138">        return fileName;</span>
+<span class="nc" id="L139">        return fileName;</span>
     }
 
     public void setFileName(String fileName) {
-<span class="nc" id="L142">        this.fileName = fileName;</span>
-<span class="nc" id="L143">    }</span>
+<span class="nc" id="L143">        this.fileName = fileName;</span>
+<span class="nc" id="L144">    }</span>
 
     public String getFileExtension() {
-<span class="nc" id="L146">        return fileExtension;</span>
+<span class="nc" id="L147">        return fileExtension;</span>
     }
 
     public void setFileExtension(String fileExtension) {
-<span class="nc" id="L150">        this.fileExtension = fileExtension;</span>
-<span class="nc" id="L151">    }</span>
+<span class="nc" id="L151">        this.fileExtension = fileExtension;</span>
+<span class="nc" id="L152">    }</span>
     // &lt;/editor-fold&gt;
     
     @Override
     public String toString() {
-<span class="nc" id="L156">        return &quot;ConvocatoryDocumentType{&quot;</span>
-<span class="nc" id="L157">                + &quot;id=&quot; + this.getId()</span>
-<span class="nc" id="L158">                + &quot;, presentationId=&quot; + this.getPresentationId()</span>
-<span class="nc" id="L159">                + &quot;, documentTypeId=&quot; + this.getDocumentTypeId()</span>
+<span class="nc" id="L157">        return &quot;ConvocatoryDocumentType{&quot;</span>
+<span class="nc" id="L158">                + &quot;id=&quot; + this.getId()</span>
+<span class="nc" id="L159">                + &quot;, presentationId=&quot; + this.getPresentationId()</span>
+<span class="nc" id="L160">                + &quot;, documentTypeId=&quot; + this.getDocumentTypeId()</span>
                 + '}';
     }
 }

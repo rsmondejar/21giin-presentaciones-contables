@@ -27,7 +27,7 @@ import org.hibernate.query.Query;
 public class UserDao extends BaseDao {
 
     public UserDao() {
-        super.setModel((BaseEntity) new User());
+        super.setModel(new User());
     }
 
     /**

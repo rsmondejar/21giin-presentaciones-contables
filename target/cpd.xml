@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pmd-cpd>
-   <duplication lines="236" tokens="915">
-      <file column="5" endcolumn="31" endline="1093" line="858"
+   <duplication lines="197" tokens="830">
+      <file column="5" endcolumn="11" endline="1056" line="860"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="5" endcolumn="31" endline="1181" line="946"
+      <file column="5" endcolumn="11" endline="1144" line="946"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[    }//GEN-LAST:event_jButtonDocumentTypeDownload5ActionPerformed
 
@@ -136,8 +136,8 @@
         fileChooser.showOpenDialog(null);
         File file = fileChooser.getSelectedFile();
         String fileName = file.getAbsolutePath();
-        
-        try(FileInputStream fileInputStream = new FileInputStream(file)) {
+
+        try ( FileInputStream fileInputStream = new FileInputStream(file)) {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             byte[] buffer = new byte[1024];
 
@@ -201,56 +201,18 @@
     /**
      * Clean Inputs.
      */
-    private void cleanInputs() {
-        disableAllInputFiles();
-        disableAllInputFilesDownload();
-        disableAllInputFilesDelete();
-        clearAllInputFiles();
-        jTextFieldConvocatoryStartDate.setText("");
-        jTextFieldConvocatoryEndDate.setText("");
-        jComboBoxConvocatory.setSelectedIndex(0);
-    }
-
-    /**
-     * Validate Inputs.
-     *
-     * @return True if inputs are valid
-     */
-    private Boolean validateInputs() {
-        // @TODO: Validation!
-        return true;
-    }
-
-    /**
-     * Get Input Convocatory.
-     *
-     * @return Convocatory Selected.
-     */
-    private Convocatory getInputConvocatory() {
-        return (Convocatory) jComboBoxConvocatory.getSelectedItem();
-    }
-
-    /**
-     * Get Input User Id.
-     *
-     * @return User Id
-     */
-    private int getInputUserId() {
-        return Integer.parseInt(jTextFieldUserId.getText());
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonDocumentType1;]]></codefragment>
+    private void cleanInputs() {]]></codefragment>
    </duplication>
-   <duplication lines="158" tokens="576">
-      <file column="5" endcolumn="52" endline="272" line="115"
+   <duplication lines="159" tokens="576">
+      <file column="5" endcolumn="52" endline="273" line="115"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="5" endcolumn="52" endline="330" line="173"
+      <file column="5" endcolumn="52" endline="329" line="172"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[    }
 
     /**
      * Set Documents Types Required For Convocatory.
+     *
      * @param convocatory Convocatory
      */
     private void setDocumentsTypesRequiredForConvocatory(Convocatory convocatory) {
@@ -383,7 +345,7 @@
      * Disable All Input Files.
      */
     private void clearAllInputFiles() {
-        // @TODO: Delete previous added files
+        // Delete previous added files
         jLabelDocumentType1.setText(noFile);
         jLabelDocumentType2.setText(noFile);
         jLabelDocumentType3.setText(noFile);
@@ -655,9 +617,9 @@
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)]]></codefragment>
    </duplication>
    <duplication lines="66" tokens="518">
-      <file column="89" endcolumn="84" endline="518" line="453"
+      <file column="89" endcolumn="84" endline="519" line="454"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="89" endcolumn="84" endline="573" line="508"
+      <file column="89" endcolumn="84" endline="572" line="507"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -727,9 +689,9 @@
                         .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)]]></codefragment>
    </duplication>
    <duplication lines="66" tokens="518">
-      <file column="89" endcolumn="84" endline="583" line="518"
+      <file column="89" endcolumn="84" endline="584" line="519"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="89" endcolumn="84" endline="638" line="573"
+      <file column="89" endcolumn="84" endline="637" line="572"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -799,9 +761,9 @@
                         .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)]]></codefragment>
    </duplication>
    <duplication lines="66" tokens="518">
-      <file column="89" endcolumn="84" endline="648" line="583"
+      <file column="89" endcolumn="84" endline="649" line="584"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="89" endcolumn="84" endline="703" line="638"
+      <file column="89" endcolumn="84" endline="702" line="637"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -871,9 +833,9 @@
                         .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)]]></codefragment>
    </duplication>
    <duplication lines="64" tokens="495">
-      <file column="89" endcolumn="84" endline="453" line="390"
+      <file column="89" endcolumn="84" endline="454" line="391"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="89" endcolumn="84" endline="508" line="445"
+      <file column="89" endcolumn="84" endline="507" line="444"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -941,9 +903,9 @@
                         .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)]]></codefragment>
    </duplication>
    <duplication lines="62" tokens="435">
-      <file column="10" endcolumn="84" endline="390" line="329"
+      <file column="10" endcolumn="84" endline="391" line="330"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="50" endcolumn="84" endline="445" line="384"
+      <file column="50" endcolumn="84" endline="444" line="383"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[        });
 
@@ -1009,9 +971,9 @@
                         .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)]]></codefragment>
    </duplication>
    <duplication lines="40" tokens="394">
-      <file column="57" endcolumn="67" endline="312" line="273"
+      <file column="57" endcolumn="67" endline="313" line="274"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="51" endcolumn="67" endline="369" line="330"
+      <file column="51" endcolumn="67" endline="368" line="329"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[        jButtonMunicipioCreate = new javax.swing.JButton();
         jComboBoxConvocatory = new javax.swing.JComboBox<>();
@@ -1055,9 +1017,9 @@
         jTextFieldConvocatoryEndDate = new javax.swing.JTextField();]]></codefragment>
    </duplication>
    <duplication lines="25" tokens="384">
-      <file column="147" endcolumn="193" endline="733" line="709"
+      <file column="147" endcolumn="193" endline="734" line="710"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="55" endcolumn="193" endline="814" line="790"
+      <file column="55" endcolumn="193" endline="813" line="789"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[                    .addComponent(jPanelDocumentType4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1085,10 +1047,10 @@
                             .addComponent(jTextFieldConvocatoryEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jTextFieldConvocatoryStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))]]></codefragment>
    </duplication>
-   <duplication lines="84" tokens="373">
-      <file column="5" endcolumn="16" endline="866" line="783"
+   <duplication lines="76" tokens="371">
+      <file column="5" endcolumn="5" endline="860" line="785"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="5" endcolumn="16" endline="918" line="841"
+      <file column="5" endcolumn="5" endline="915" line="840"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[    }//GEN-LAST:event_jButtonMunicipioCreateActionPerformed
 
@@ -1165,15 +1127,7 @@
     @SuppressWarnings("unused")
     private void jButtonDocumentTypeDownload5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload5ActionPerformed
         downloadFile(5);
-    }//GEN-LAST:event_jButtonDocumentTypeDownload5ActionPerformed
-
-    /**
-     * Delete Uploaded File
-     *
-     * @param documentType
-     * @throws Exception
-     */
-    private void deleteFile(int documentType) {]]></codefragment>
+    }//GEN-LAST:event_jButtonDocumentTypeDownload5ActionPerformed]]></codefragment>
    </duplication>
    <duplication lines="25" tokens="336">
       <file column="194" endcolumn="17" endline="143" line="119"
@@ -1207,9 +1161,9 @@
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)]]></codefragment>
    </duplication>
    <duplication lines="18" tokens="293">
-      <file column="139" endcolumn="25" endline="708" line="691"
+      <file column="139" endcolumn="25" endline="709" line="692"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="139" endcolumn="25" endline="780" line="763"
+      <file column="139" endcolumn="25" endline="779" line="762"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[                    .addComponent(jLabelConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
                     .addComponent(jLabelUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -1256,9 +1210,9 @@
                             .addComponent(jLabelConvocatoryStatus, javax.swing.GroupLayout.DEFAULT_SIZE, 230, Short.MAX_VALUE)))]]></codefragment>
    </duplication>
    <duplication lines="14" tokens="267">
-      <file column="73" endcolumn="76" endline="746" line="733"
+      <file column="73" endcolumn="76" endline="747" line="734"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="67" endcolumn="76" endline="833" line="820"
+      <file column="67" endcolumn="76" endline="832" line="819"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[                            .addComponent(jTextFieldConvocatoryStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1276,9 +1230,9 @@
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)]]></codefragment>
    </duplication>
    <duplication lines="15" tokens="245">
-      <file column="186" endcolumn="17" endline="834" line="820"
+      <file column="186" endcolumn="17" endline="833" line="819"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="183" endcolumn="17" endline="579" line="565"
+      <file column="183" endcolumn="17" endline="562" line="548"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[                            .addComponent(jTextFieldPresentationId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1456,9 +1410,9 @@
         jLabelConvocatoryDescription = new javax.swing.JLabel();]]></codefragment>
    </duplication>
    <duplication lines="14" tokens="242">
-      <file column="192" endcolumn="76" endline="746" line="733"
+      <file column="192" endcolumn="76" endline="747" line="734"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="183" endcolumn="76" endline="578" line="565"
+      <file column="183" endcolumn="76" endline="561" line="548"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[                            .addComponent(jTextFieldConvocatoryStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1500,9 +1454,9 @@
                 .addComponent(jButtonMunicipioUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))]]></codefragment>
    </duplication>
    <duplication lines="29" tokens="226">
-      <file column="89" endcolumn="55" endline="676" line="648"
+      <file column="89" endcolumn="55" endline="677" line="649"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="89" endcolumn="55" endline="731" line="703"
+      <file column="89" endcolumn="55" endline="730" line="702"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1535,11 +1489,11 @@
         jTextFieldConvocatoryEndDate.setEditable(false);]]></codefragment>
    </duplication>
    <duplication lines="69" tokens="219">
-      <file column="9" endcolumn="11" endline="983" line="915"
+      <file column="9" endcolumn="11" endline="985" line="917"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
       <file column="9" endcolumn="11" endline="1071" line="1003"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="9" endcolumn="11" endline="721" line="657"
+      <file column="9" endcolumn="11" endline="704" line="640"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[        }
     }
@@ -1646,9 +1600,9 @@
     private void jTableConvocatoriesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableConvocatoriesMouseClicked]]></codefragment>
    </duplication>
    <duplication lines="13" tokens="206">
-      <file column="37" endcolumn="134" endline="763" line="751"
+      <file column="37" endcolumn="134" endline="762" line="750"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="33" endcolumn="134" endline="504" line="492"
+      <file column="33" endcolumn="134" endline="487" line="475"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[        jCheckBoxPresentationIsValid.setEnabled(false);
 
@@ -1665,9 +1619,9 @@
                     .addComponent(jLabelConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 642, Short.MAX_VALUE)]]></codefragment>
    </duplication>
    <duplication lines="16" tokens="185">
-      <file column="54" endcolumn="30" endline="805" line="790"
+      <file column="54" endcolumn="30" endline="804" line="789"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="147" endcolumn="30" endline="549" line="534"
+      <file column="147" endcolumn="30" endline="532" line="517"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
@@ -1687,9 +1641,9 @@
                 .addComponent(jComboBoxConvocatory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)]]></codefragment>
    </duplication>
    <duplication lines="16" tokens="184">
-      <file column="147" endcolumn="30" endline="724" line="709"
+      <file column="147" endcolumn="30" endline="725" line="710"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="148" endcolumn="30" endline="549" line="534"
+      <file column="148" endcolumn="30" endline="532" line="517"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[                    .addComponent(jPanelDocumentType4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
@@ -1709,11 +1663,11 @@
                 .addComponent(jComboBoxConvocatory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)]]></codefragment>
    </duplication>
    <duplication lines="13" tokens="182">
-      <file column="49" endcolumn="21" endline="688" line="676"
+      <file column="49" endcolumn="21" endline="689" line="677"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="48" endcolumn="21" endline="763" line="751"
+      <file column="48" endcolumn="21" endline="762" line="750"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="44" endcolumn="21" endline="504" line="492"
+      <file column="44" endcolumn="21" endline="487" line="475"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[        jTextFieldConvocatoryEndDate.setEditable(false);
 
@@ -1829,9 +1783,9 @@
         setTitle("Editar Convocatoria");]]></codefragment>
    </duplication>
    <duplication lines="9" tokens="163">
-      <file column="84" endcolumn="194" endline="733" line="725"
+      <file column="84" endcolumn="194" endline="734" line="726"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="40" endcolumn="202" endline="560" line="552"
+      <file column="40" endcolumn="202" endline="543" line="535"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1844,9 +1798,9 @@
                             .addComponent(jTextFieldConvocatoryStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))]]></codefragment>
    </duplication>
    <duplication lines="9" tokens="162">
-      <file column="84" endcolumn="193" endline="814" line="806"
+      <file column="84" endcolumn="193" endline="813" line="805"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="40" endcolumn="201" endline="560" line="552"
+      <file column="40" endcolumn="201" endline="543" line="535"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1896,9 +1850,9 @@
                     .addComponent(jComboBoxUserRole, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)]]></codefragment>
    </duplication>
    <duplication lines="22" tokens="153">
-      <file column="5" endcolumn="34" endline="1220" line="1199"
+      <file column="5" endcolumn="34" endline="1207" line="1186"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="5" endcolumn="34" endline="750" line="729"
+      <file column="5" endcolumn="34" endline="733" line="712"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -1924,11 +1878,11 @@
     private javax.swing.JTextField jTextFieldConvocatoryEndDate;]]></codefragment>
    </duplication>
    <duplication lines="20" tokens="152">
-      <file column="10" endcolumn="25" endline="448" line="429"
+      <file column="10" endcolumn="25" endline="449" line="430"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="10" endcolumn="25" endline="503" line="484"
+      <file column="10" endcolumn="25" endline="502" line="483"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="50" endcolumn="25" endline="302" line="283"
+      <file column="50" endcolumn="25" endline="285" line="266"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[        });
 
@@ -1952,11 +1906,11 @@
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)]]></codefragment>
    </duplication>
    <duplication lines="20" tokens="152">
-      <file column="10" endcolumn="25" endline="513" line="494"
+      <file column="10" endcolumn="25" endline="514" line="495"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="10" endcolumn="25" endline="568" line="549"
+      <file column="10" endcolumn="25" endline="567" line="548"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="50" endcolumn="25" endline="345" line="326"
+      <file column="50" endcolumn="25" endline="328" line="309"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[        });
 
@@ -1980,11 +1934,11 @@
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)]]></codefragment>
    </duplication>
    <duplication lines="20" tokens="152">
-      <file column="10" endcolumn="25" endline="578" line="559"
+      <file column="10" endcolumn="25" endline="579" line="560"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="10" endcolumn="25" endline="633" line="614"
+      <file column="10" endcolumn="25" endline="632" line="613"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="50" endcolumn="25" endline="388" line="369"
+      <file column="50" endcolumn="25" endline="371" line="352"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[        });
 
@@ -2008,11 +1962,11 @@
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)]]></codefragment>
    </duplication>
    <duplication lines="20" tokens="152">
-      <file column="10" endcolumn="25" endline="643" line="624"
+      <file column="10" endcolumn="25" endline="644" line="625"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="10" endcolumn="25" endline="698" line="679"
+      <file column="10" endcolumn="25" endline="697" line="678"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="50" endcolumn="25" endline="431" line="412"
+      <file column="50" endcolumn="25" endline="414" line="395"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[        });
 
@@ -2093,9 +2047,9 @@
                 .addComponent(jButtonConvocatoryCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)]]></codefragment>
    </duplication>
    <duplication lines="10" tokens="145">
-      <file column="157" endcolumn="84" endline="780" line="771"
+      <file column="157" endcolumn="84" endline="779" line="770"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="148" endcolumn="84" endline="526" line="517"
+      <file column="148" endcolumn="84" endline="509" line="500"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[                    .addComponent(jComboBoxConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -2155,9 +2109,9 @@
 }]]></codefragment>
    </duplication>
    <duplication lines="10" tokens="135">
-      <file column="157" endcolumn="25" endline="708" line="699"
+      <file column="157" endcolumn="25" endline="709" line="700"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="148" endcolumn="25" endline="526" line="517"
+      <file column="148" endcolumn="25" endline="509" line="500"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[                    .addComponent(jComboBoxConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(layout.createSequentialGroup()
@@ -2171,11 +2125,11 @@
                         .addGap(0, 0, Short.MAX_VALUE))]]></codefragment>
    </duplication>
    <duplication lines="9" tokens="133">
-      <file column="139" endcolumn="34" endline="699" line="691"
+      <file column="139" endcolumn="34" endline="700" line="692"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="139" endcolumn="34" endline="771" line="763"
+      <file column="139" endcolumn="34" endline="770" line="762"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="172" endcolumn="34" endline="512" line="504"
+      <file column="172" endcolumn="34" endline="495" line="487"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[                    .addComponent(jLabelConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
                     .addComponent(jLabelUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2253,12 +2207,46 @@
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonMunicipioCreate;]]></codefragment>
    </duplication>
-   <duplication lines="27" tokens="122">
-      <file column="21" endcolumn="5" endline="858" line="832"
-            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="21" endcolumn="5" endline="916" line="890"
+   <duplication lines="30" tokens="129">
+      <file column="21" endcolumn="16" endline="918" line="889"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="14" endcolumn="5" endline="615" line="589"
+      <file column="14" endcolumn="16" endline="601" line="572"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
+      <codefragment><![CDATA[        deleteFile(5);
+    }//GEN-LAST:event_jButtonDocumentTypeDelete5ActionPerformed
+
+    @SuppressWarnings("unused")
+    private void jButtonDocumentTypeDownload1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload1ActionPerformed
+        downloadFile(1);
+    }//GEN-LAST:event_jButtonDocumentTypeDownload1ActionPerformed
+
+    @SuppressWarnings("unused")
+    private void jButtonDocumentTypeDownload2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload2ActionPerformed
+        downloadFile(2);
+    }//GEN-LAST:event_jButtonDocumentTypeDownload2ActionPerformed
+
+    @SuppressWarnings("unused")
+    private void jButtonDocumentTypeDownload3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload3ActionPerformed
+        downloadFile(3);
+    }//GEN-LAST:event_jButtonDocumentTypeDownload3ActionPerformed
+
+    @SuppressWarnings("unused")
+    private void jButtonDocumentTypeDownload4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload4ActionPerformed
+        downloadFile(4);
+    }//GEN-LAST:event_jButtonDocumentTypeDownload4ActionPerformed
+
+    @SuppressWarnings("unused")
+    private void jButtonDocumentTypeDownload5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload5ActionPerformed
+        downloadFile(5);
+    }//GEN-LAST:event_jButtonDocumentTypeDownload5ActionPerformed
+
+    @SuppressWarnings("unused")
+    private void jButtonConvocatoryUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryUpdateActionPerformed]]></codefragment>
+   </duplication>
+   <duplication lines="27" tokens="122">
+      <file column="21" endcolumn="5" endline="860" line="834"
+            path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
+      <file column="14" endcolumn="5" endline="598" line="572"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[        deleteFile(5);
     }//GEN-LAST:event_jButtonDocumentTypeDelete5ActionPerformed
@@ -2305,9 +2293,9 @@
                     .addGroup(layout.createSequentialGroup()]]></codefragment>
    </duplication>
    <duplication lines="23" tokens="117">
-      <file column="32" endcolumn="10" endline="152" line="130"
+      <file column="32" endcolumn="10" endline="155" line="133"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/information/InformationDashboardJInternalFrame.java"/>
-      <file column="34" endcolumn="10" endline="205" line="183"
+      <file column="34" endcolumn="10" endline="208" line="186"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/information/InformationDashboardJInternalFrame.java"/>
       <codefragment><![CDATA[        jTableConvocatoriesOpen.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2354,9 +2342,9 @@
                     .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)]]></codefragment>
    </duplication>
    <duplication lines="16" tokens="114">
-      <file column="5" endcolumn="30" endline="1124" line="1109"
+      <file column="5" endcolumn="30" endline="1126" line="1111"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="5" endcolumn="30" endline="1213" line="1198"
+      <file column="5" endcolumn="30" endline="1200" line="1185"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[    private javax.swing.JComboBox<String> jComboBoxConvocatory;
     private javax.swing.JLabel jLabel1;
@@ -2376,9 +2364,9 @@
     private javax.swing.JLabel jLabelUser;]]></codefragment>
    </duplication>
    <duplication lines="16" tokens="110">
-      <file column="5" endcolumn="24" endline="1108" line="1093"
+      <file column="5" endcolumn="24" endline="1110" line="1095"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="5" endcolumn="24" endline="1197" line="1182"
+      <file column="5" endcolumn="24" endline="1184" line="1169"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
       <codefragment><![CDATA[    private javax.swing.JButton jButtonDocumentType1;
     private javax.swing.JButton jButtonDocumentType2;
@@ -2398,11 +2386,11 @@
     private javax.swing.JButton jButtonMunicipioCreate;]]></codefragment>
    </duplication>
    <duplication lines="14" tokens="109">
-      <file column="58" endcolumn="25" endline="385" line="372"
+      <file column="58" endcolumn="25" endline="386" line="373"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="58" endcolumn="25" endline="440" line="427"
+      <file column="58" endcolumn="25" endline="439" line="426"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationEditJInternalFrame.java"/>
-      <file column="60" endcolumn="25" endline="260" line="247"
+      <file column="60" endcolumn="25" endline="243" line="230"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[                jButtonDocumentTypeDelete1ActionPerformed(evt);
             }
@@ -2444,9 +2432,9 @@
         });]]></codefragment>
    </duplication>
    <duplication lines="15" tokens="104">
-      <file column="5" endcolumn="30" endline="1124" line="1110"
+      <file column="5" endcolumn="30" endline="1126" line="1112"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationCreateJInternalFrame.java"/>
-      <file column="5" endcolumn="30" endline="743" line="729"
+      <file column="5" endcolumn="30" endline="726" line="712"
             path="/Users/raulsm/NetBeansProjects/21GIIN/PresentacionesContables/src/main/java/app/views/presentation/PresentationShowJInternalFrame.java"/>
       <codefragment><![CDATA[    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

@@ -19,7 +19,7 @@ import java.util.List;
 public class ConvocatoryDocumentTypeDao extends BaseDao {
 
     public ConvocatoryDocumentTypeDao() {
-        super.setModel((BaseEntity) new ConvocatoryDocumentType());
+        super.setModel(new ConvocatoryDocumentType());
     }
 
     /**

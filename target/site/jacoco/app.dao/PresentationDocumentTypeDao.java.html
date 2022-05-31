@@ -19,62 +19,28 @@ import java.util.List;
 public class PresentationDocumentTypeDao extends BaseDao {
 
 <span class="nc" id="L21">    public PresentationDocumentTypeDao() {</span>
-<span class="nc" id="L22">        super.setModel((BaseEntity) new PresentationDocumentType());</span>
+<span class="nc" id="L22">        super.setModel(new PresentationDocumentType());</span>
 <span class="nc" id="L23">    }</span>
-
-    /**
-     * List Presentation Documents Types.
-     *
-     * @return List of Documents Types
-     */
-    @Override
-    public List&lt;PresentationDocumentType&gt; all() {
-<span class="nc" id="L32">        return super.all();</span>
-    }
-
-    /**
-     * Find by ID.
-     *
-     * @param id Identifer
-     * @return PresentationDocumentType
-     */
-    @Override
-    public PresentationDocumentType findById(int id) {
-<span class="nc" id="L43">        return super.findById(id);</span>
-    }
 
     /**
      * Create Presentation Document Type.
      *
-     * @param &lt;T&gt;
      * @param presentationDocumentType Presentation Document Type
      * @return status
      */
-    public &lt;T&gt; Integer create(PresentationDocumentType presentationDocumentType) {
-<span class="nc" id="L54">        return super.create((BaseEntity) presentationDocumentType);</span>
+    public Integer create(PresentationDocumentType presentationDocumentType) {
+<span class="nc" id="L32">        return super.create((BaseEntity) presentationDocumentType);</span>
     }
 
     /**
      * Update Presentation Document Type.
      *
-     * @param &lt;T&gt;
      * @param id Identifier
      * @param presentationDocumentType Presentation Document Type
      * @return
      */
-    public &lt;T&gt; boolean update(int id, PresentationDocumentType presentationDocumentType) {
-<span class="nc" id="L66">        return super.update(id, (BaseEntity) presentationDocumentType);</span>
-    }
-
-    /**
-     * Delete Presentation Document Type.
-     *
-     * @param id Identifier
-     * @return status
-     */
-    @Override
-    public boolean delete(int id) {
-<span class="nc" id="L77">        return super.delete(id);</span>
+    public boolean update(int id, PresentationDocumentType presentationDocumentType) {
+<span class="nc" id="L43">        return super.update(id, (BaseEntity) presentationDocumentType);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -6,9 +6,7 @@
  */
 package app.dao;
 
-import app.entities.BaseEntity;
 import app.entities.MunicipalityTotalDocument;
-import java.util.List;
 
 /**
  * Municipality Total Document DAO.
@@ -18,18 +16,8 @@ import java.util.List;
  */
 public class MunicipalityTotalDocumentDao extends BaseDao {
 
-<span class="nc" id="L21">    public MunicipalityTotalDocumentDao() {</span>
-<span class="nc" id="L22">        super.setModel((BaseEntity) new MunicipalityTotalDocument());</span>
-<span class="nc" id="L23">    }</span>
-
-    /**
-     * List Municipalitys.
-     *
-     * @return List of Municipalities
-     */
-    @Override
-    public List&lt;MunicipalityTotalDocument&gt; all() {
-<span class="nc" id="L32">        return super.all();</span>
-    }
+<span class="nc" id="L19">    public MunicipalityTotalDocumentDao() {</span>
+<span class="nc" id="L20">        super.setModel(new MunicipalityTotalDocument());</span>
+<span class="nc" id="L21">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

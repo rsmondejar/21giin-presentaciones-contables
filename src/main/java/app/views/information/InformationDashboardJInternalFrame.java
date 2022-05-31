@@ -1,10 +1,11 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+/**
+ * Information Dashboard jInternal Frame.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.views.information;
 
-import app.controllers.ConvocatoryController;
 import app.controllers.InformationController;
 import app.entities.Convocatory;
 import app.entities.MunicipalityTotalDocument;
@@ -13,8 +14,10 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
+ * Information Dashboard jInternal Frame.
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class InformationDashboardJInternalFrame extends javax.swing.JInternalFrame {
 
@@ -56,19 +59,19 @@ public class InformationDashboardJInternalFrame extends javax.swing.JInternalFra
         DefaultTableModel model = (DefaultTableModel) jTableMunicipalitiesDocuments.getModel();
 
         List<MunicipalityTotalDocument> items = InformationController.municipalitiesPresentationsTotalDocuments();
-
-        // Add data
-        Object rowData[] = new Object[model.getColumnCount()];
-
-        if (items != null || items.size() > 0) {
-            for (int i = 0; i < items.size(); i++) {
-            rowData[0] = items.get(i).getMunicipalityName();
-            rowData[1] = items.get(i).getTotalDocuments();
-
-            model.addRow(rowData);
-        }
-        }
         
+        // Add data
+        Object[] rowData = new Object[model.getColumnCount()];
+
+        if (items != null && !items.isEmpty()) {
+            for (int i = 0; i < items.size(); i++) {
+                rowData[0] = items.get(i).getMunicipalityName();
+                rowData[1] = items.get(i).getTotalDocuments();
+
+                model.addRow(rowData);
+            }
+        }
+
     }
 
     /**
@@ -81,9 +84,9 @@ public class InformationDashboardJInternalFrame extends javax.swing.JInternalFra
         DefaultTableModel model = (DefaultTableModel) table.getModel();
 
         // Add data
-        Object rowData[] = new Object[model.getColumnCount()];
+        Object[] rowData = new Object[model.getColumnCount()];
 
-        if (convocatories != null || convocatories.size() > 0) {
+        if (convocatories != null && !convocatories.isEmpty()) {
             for (int i = 0; i < convocatories.size(); i++) {
                 rowData[0] = convocatories.get(i).getId();
                 rowData[1] = convocatories.get(i).getName();

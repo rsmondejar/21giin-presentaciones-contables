@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author raulsm
  */
-public class UserRoleController {
+public class UserRoleController extends BaseController {
     
     /**
      * List Municipies.

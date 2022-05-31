@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MunicipalityTotalDocument.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.entities</a> &gt; <span class="el_source">MunicipalityTotalDocument.java</span></div><h1>MunicipalityTotalDocument.java</h1><pre class="source lang-java linenums">/**
+ * Municipality Total Document View Model.
+ *
+ * @author raulsm
+ * @version 1.0.0
+ */
+package app.entities;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+
+/**
+ * Municipality Total Document View Model.
+ *
+ * @author raulsm
+ * @version 1.0.0
+ */
+@Entity(name = &quot;municipalities_total_documents_view&quot;)
+public class MunicipalityTotalDocument extends BaseEntity {
+
+    @Id
+    @Column(name = &quot;id&quot;)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    protected int id;
+    
+    @Column(name = &quot;municipality_name&quot;)
+    private String municipalityName;
+    
+    @Column(name = &quot;total_documents&quot;)
+    private int totalDocuments;
+
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
+<span class="fc" id="L36">    public MunicipalityTotalDocument() {</span>
+<span class="fc" id="L37">    }</span>
+    // &lt;/editor-fold&gt;
+
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;
+    public int getId() {
+<span class="nc" id="L42">        return id;</span>
+    }
+
+    public void setId(int id) {
+<span class="nc" id="L46">        this.id = id;</span>
+<span class="nc" id="L47">    }</span>
+    
+    public String getMunicipalityName() {
+<span class="nc" id="L50">        return municipalityName;</span>
+    }
+
+    public void setMunicipalityName(String municipalityName) {
+<span class="nc" id="L54">        this.municipalityName = municipalityName;</span>
+<span class="nc" id="L55">    }</span>
+
+    public int getTotalDocuments() {
+<span class="nc" id="L58">        return totalDocuments;</span>
+    }
+
+    public void setTotalDocuments(int totalDocuments) {
+<span class="nc" id="L62">        this.totalDocuments = totalDocuments;</span>
+<span class="nc" id="L63">    }</span>
+    // &lt;/editor-fold&gt;
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

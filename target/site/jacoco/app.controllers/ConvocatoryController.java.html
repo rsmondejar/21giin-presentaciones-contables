@@ -14,7 +14,7 @@ import java.util.List;
  *
  * @author raulsm
  */
-<span class="nc" id="L17">public class ConvocatoryController {</span>
+<span class="nc" id="L17">public class ConvocatoryController extends BaseController {</span>
 
     /**
      * List Convocatories.
@@ -129,13 +129,25 @@ import java.util.List;
     /**
      * List Active Convocatories.
      *
-     * @return
+     * @return List of Active Convocatories
      */
     public static List&lt;Convocatory&gt; active() {
         // Get all active convocatories
 <span class="nc" id="L136">        List&lt;Convocatory&gt; convocatories = (new ConvocatoryDao()).active();</span>
 
 <span class="nc" id="L138">        return convocatories;</span>
+    }
+    
+    /**
+     * List No Active Convocatories.
+     *
+     * @return List of No Active Convocatories
+     */
+    public static List&lt;Convocatory&gt; noActive() {
+        // Get all no active convocatories
+<span class="nc" id="L148">        List&lt;Convocatory&gt; convocatories = (new ConvocatoryDao()).noActive();</span>
+
+<span class="nc" id="L150">        return convocatories;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

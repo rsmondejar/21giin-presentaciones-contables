@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+/**
+ * User Role Model.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.entities;
 
@@ -13,18 +15,20 @@ import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
 /**
+ * User Role Model.
  *
  * @author raulsm
+ * @version 1.0.0
  */
 @Entity(name = "user_roles")
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = "role", name = "roleUniqueConstraint"))
 public class UserRole extends BaseEntity {
-    
+
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected int id;
-    
+
     @Column(name = "role")
     private String role;
 
@@ -45,7 +49,7 @@ public class UserRole extends BaseEntity {
     public void setId(int id) {
         this.id = id;
     }
-    
+
     public String getRole() {
         return role;
     }

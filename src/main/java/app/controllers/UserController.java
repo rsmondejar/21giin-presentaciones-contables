@@ -13,7 +13,7 @@ import java.util.List;
  *
  * @author raulsm
  */
-public class UserController {
+public class UserController extends BaseController {
     
     /**
      * List Users.

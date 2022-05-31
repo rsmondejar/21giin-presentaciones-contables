@@ -1,5 +1,8 @@
 /**
- * Presentation Document Type.
+ * Presentation Document Type Model.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.entities;
 

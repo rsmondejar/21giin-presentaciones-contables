@@ -23,9 +23,7 @@ import java.util.List;
      */
     public static List&lt;Convocatory&gt; list() {
         // Get all convocatories
-<span class="nc" id="L26">        List&lt;Convocatory&gt; convocatories = (new ConvocatoryDao()).all();</span>
-
-<span class="nc" id="L28">        return convocatories;</span>
+<span class="nc" id="L26">        return (new ConvocatoryDao()).all();</span>
     }
 
     /**
@@ -35,17 +33,17 @@ import java.util.List;
      * @return Status
      */
     public static Convocatory findById(int id) {
-<span class="nc" id="L38">        Convocatory convocatory = null;</span>
+<span class="nc" id="L36">        Convocatory convocatory = null;</span>
 
         try {
-<span class="nc" id="L41">            ConvocatoryDao convocatoryDao = new ConvocatoryDao();</span>
-<span class="nc" id="L42">            convocatory = convocatoryDao.findById(id);</span>
-<span class="nc" id="L43">        } catch (Exception e) {</span>
-<span class="nc" id="L44">            Log.error(e);</span>
-<span class="nc" id="L45">            Dialog.error(e.getMessage(), &quot;Error buscando convocatoria&quot;);</span>
-<span class="nc" id="L46">        }</span>
+<span class="nc" id="L39">            ConvocatoryDao convocatoryDao = new ConvocatoryDao();</span>
+<span class="nc" id="L40">            convocatory = convocatoryDao.findById(id);</span>
+<span class="nc" id="L41">        } catch (Exception e) {</span>
+<span class="nc" id="L42">            Log.error(e);</span>
+<span class="nc" id="L43">            Dialog.error(e.getMessage(), &quot;Error buscando convocatoria&quot;);</span>
+<span class="nc" id="L44">        }</span>
 
-<span class="nc" id="L48">        return convocatory;</span>
+<span class="nc" id="L46">        return convocatory;</span>
     }
 
     /**
@@ -55,16 +53,16 @@ import java.util.List;
      * @return Status
      */
     public static Convocatory edit(int id) {
-<span class="nc" id="L58">        Convocatory convocatory = null;</span>
+<span class="nc" id="L56">        Convocatory convocatory = null;</span>
 
         try {
-<span class="nc" id="L61">            convocatory = (new ConvocatoryDao()).findById(id);</span>
-<span class="nc" id="L62">        } catch (Exception e) {</span>
-<span class="nc" id="L63">            Log.error(e);</span>
-<span class="nc" id="L64">            Dialog.error(e.getMessage(), &quot;Error buscando convocatoria&quot;);</span>
-<span class="nc" id="L65">        }</span>
+<span class="nc" id="L59">            convocatory = (new ConvocatoryDao()).findById(id);</span>
+<span class="nc" id="L60">        } catch (Exception e) {</span>
+<span class="nc" id="L61">            Log.error(e);</span>
+<span class="nc" id="L62">            Dialog.error(e.getMessage(), &quot;Error buscando convocatoria&quot;);</span>
+<span class="nc" id="L63">        }</span>
 
-<span class="nc" id="L67">        return convocatory;</span>
+<span class="nc" id="L65">        return convocatory;</span>
     }
 
     /**
@@ -74,17 +72,17 @@ import java.util.List;
      * @return Status
      */
     public static boolean create(Convocatory convocatory) {
-<span class="nc" id="L77">        boolean status = false;</span>
+<span class="nc" id="L75">        boolean status = false;</span>
 
         try {
-<span class="nc" id="L80">            Integer id = (new ConvocatoryDao()).create(convocatory);</span>
-<span class="nc bnc" id="L81" title="All 2 branches missed.">            status = id != null;</span>
-<span class="nc" id="L82">        } catch (Exception e) {</span>
-<span class="nc" id="L83">            Log.error(e);</span>
-<span class="nc" id="L84">            Dialog.error(e.getMessage(), &quot;Error creando convocatoria&quot;);</span>
-<span class="nc" id="L85">        }</span>
+<span class="nc" id="L78">            Integer id = (new ConvocatoryDao()).create(convocatory);</span>
+<span class="nc bnc" id="L79" title="All 2 branches missed.">            status = id != null;</span>
+<span class="nc" id="L80">        } catch (Exception e) {</span>
+<span class="nc" id="L81">            Log.error(e);</span>
+<span class="nc" id="L82">            Dialog.error(e.getMessage(), &quot;Error creando convocatoria&quot;);</span>
+<span class="nc" id="L83">        }</span>
 
-<span class="nc" id="L87">        return status;</span>
+<span class="nc" id="L85">        return status;</span>
     }
 
     /**
@@ -95,16 +93,16 @@ import java.util.List;
      * @return
      */
     public static boolean update(int id, Convocatory convocatory) {
-<span class="nc" id="L98">        boolean status = false;</span>
+<span class="nc" id="L96">        boolean status = false;</span>
 
         try {
-<span class="nc" id="L101">            status = (new ConvocatoryDao()).update(id, convocatory);</span>
-<span class="nc" id="L102">        } catch (Exception e) {</span>
-<span class="nc" id="L103">            Log.error(e);</span>
-<span class="nc" id="L104">            Dialog.error(e.getMessage(), &quot;Error actualizando convocatoria&quot;);</span>
-<span class="nc" id="L105">        }</span>
+<span class="nc" id="L99">            status = (new ConvocatoryDao()).update(id, convocatory);</span>
+<span class="nc" id="L100">        } catch (Exception e) {</span>
+<span class="nc" id="L101">            Log.error(e);</span>
+<span class="nc" id="L102">            Dialog.error(e.getMessage(), &quot;Error actualizando convocatoria&quot;);</span>
+<span class="nc" id="L103">        }</span>
 
-<span class="nc" id="L107">        return status;</span>
+<span class="nc" id="L105">        return status;</span>
     }
 
     /**
@@ -114,16 +112,16 @@ import java.util.List;
      * @return Status
      */
     public static boolean delete(int id) {
-<span class="nc" id="L117">        boolean status = false;</span>
+<span class="nc" id="L115">        boolean status = false;</span>
 
         try {
-<span class="nc" id="L120">            status = (new ConvocatoryDao()).delete(id);</span>
-<span class="nc" id="L121">        } catch (Exception e) {</span>
-<span class="nc" id="L122">            Log.error(e);</span>
-<span class="nc" id="L123">            Dialog.error(e.getMessage(), &quot;Error eliminando convocatoria&quot;);</span>
-<span class="nc" id="L124">        }</span>
+<span class="nc" id="L118">            status = (new ConvocatoryDao()).delete(id);</span>
+<span class="nc" id="L119">        } catch (Exception e) {</span>
+<span class="nc" id="L120">            Log.error(e);</span>
+<span class="nc" id="L121">            Dialog.error(e.getMessage(), &quot;Error eliminando convocatoria&quot;);</span>
+<span class="nc" id="L122">        }</span>
 
-<span class="nc" id="L126">        return status;</span>
+<span class="nc" id="L124">        return status;</span>
     }
 
     /**
@@ -133,9 +131,7 @@ import java.util.List;
      */
     public static List&lt;Convocatory&gt; active() {
         // Get all active convocatories
-<span class="nc" id="L136">        List&lt;Convocatory&gt; convocatories = (new ConvocatoryDao()).active();</span>
-
-<span class="nc" id="L138">        return convocatories;</span>
+<span class="nc" id="L134">        return (new ConvocatoryDao()).active();</span>
     }
     
     /**
@@ -145,9 +141,7 @@ import java.util.List;
      */
     public static List&lt;Convocatory&gt; noActive() {
         // Get all no active convocatories
-<span class="nc" id="L148">        List&lt;Convocatory&gt; convocatories = (new ConvocatoryDao()).noActive();</span>
-
-<span class="nc" id="L150">        return convocatories;</span>
+<span class="nc" id="L144">        return (new ConvocatoryDao()).noActive();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

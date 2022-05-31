@@ -23,7 +23,7 @@ import java.util.List;
 public class PresentationDao extends BaseDao {
 
     public PresentationDao() {
-        super.setModel((BaseEntity) new Presentation());
+        super.setModel(new Presentation());
     }
 
     /**
@@ -116,7 +116,7 @@ public class PresentationDao extends BaseDao {
                             String.valueOf(presentation.getConvocatoryId())
                     );
 
-            if (convocatories != null && convocatories.size() > 0) {
+            if (convocatories != null && !convocatories.isEmpty()) {
                  presentation.setConvocatory(convocatories.get(0));
             }
             
@@ -128,7 +128,7 @@ public class PresentationDao extends BaseDao {
                             String.valueOf(presentation.getUserId())
                     );
 
-            if (users != null && users.size() > 0) {
+            if (users != null && !users.isEmpty()) {
                 presentation.setUser(users.get(0));
             }
             

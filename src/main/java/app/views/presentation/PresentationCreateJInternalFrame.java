@@ -42,21 +42,21 @@ import org.apache.commons.io.FilenameUtils;
 public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame {
 
     String noFile = "Sin fichero";
-    String documentTypeFileName1 = null,
-            documentTypeFileName2 = null,
-            documentTypeFileName3 = null,
-            documentTypeFileName4 = null,
-            documentTypeFileName5 = null;
-    String documentTypeFileExtension1 = null,
-            documentTypeFileExtension2 = null,
-            documentTypeFileExtension3 = null,
-            documentTypeFileExtension4 = null,
-            documentTypeFileExtension5 = null;
-    byte[] documentType1 = null,
-            documentType2 = null,
-            documentType3 = null,
-            documentType4 = null,
-            documentType5 = null;
+    String documentTypeFileName1 = null;
+    String documentTypeFileName2 = null;
+    String documentTypeFileName3 = null;
+    String documentTypeFileName4 = null;
+    String documentTypeFileName5 = null;
+    String documentTypeFileExtension1 = null;
+    String documentTypeFileExtension2 = null;
+    String documentTypeFileExtension3 = null;
+    String documentTypeFileExtension4 = null;
+    String documentTypeFileExtension5 = null;
+    byte[] documentType1 = null;
+    byte[] documentType2 = null;
+    byte[] documentType3 = null;
+    byte[] documentType4 = null;
+    byte[] documentType5 = null;
 
     /**
      * Creates new form PresentationJInternalFrame.
@@ -116,6 +116,7 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
 
     /**
      * Set Documents Types Required For Convocatory.
+     *
      * @param convocatory Convocatory
      */
     private void setDocumentsTypesRequiredForConvocatory(Convocatory convocatory) {
@@ -248,7 +249,7 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
      * Disable All Input Files.
      */
     private void clearAllInputFiles() {
-        // @TODO: Delete previous added files
+        // Delete previous added files
         jLabelDocumentType1.setText(noFile);
         jLabelDocumentType2.setText(noFile);
         jLabelDocumentType3.setText(noFile);
@@ -752,7 +753,8 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
 
     /**
      * Created Button Pressed
-     * @param evt 
+     *
+     * @param evt
      */
     @SuppressWarnings("unused")
     private void jButtonMunicipioCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioCreateActionPerformed
@@ -986,8 +988,8 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
         fileChooser.showOpenDialog(null);
         File file = fileChooser.getSelectedFile();
         String fileName = file.getAbsolutePath();
-        
-        try(FileInputStream fileInputStream = new FileInputStream(file)) {
+
+        try ( FileInputStream fileInputStream = new FileInputStream(file)) {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             byte[] buffer = new byte[1024];
 

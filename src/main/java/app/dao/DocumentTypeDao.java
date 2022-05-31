@@ -19,7 +19,7 @@ import java.util.List;
 public class DocumentTypeDao extends BaseDao {
 
     public DocumentTypeDao() {
-        super.setModel((BaseEntity) new DocumentType());
+        super.setModel(new DocumentType());
     }
 
     /**

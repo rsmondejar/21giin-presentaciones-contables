@@ -15,7 +15,11 @@ import java.util.Date;
  *
  * @author raulsm
  */
-<span class="nc" id="L18">public class DateHelper {</span>
+public class DateHelper {
+
+<span class="nc" id="L20">    private DateHelper() {</span>
+<span class="nc" id="L21">        throw new IllegalStateException(&quot;Utility class&quot;);</span>
+    }
 
     /**
      * Add Days
@@ -25,10 +29,10 @@ import java.util.Date;
      * @return new Date
      */
     public static Date addDays(Date date, int days) {
-<span class="fc" id="L28">        Calendar cal = Calendar.getInstance();</span>
-<span class="fc" id="L29">        cal.setTime(date);</span>
-<span class="fc" id="L30">        cal.add(Calendar.DATE, days); //minus number would decrement the days</span>
-<span class="fc" id="L31">        return cal.getTime();</span>
+<span class="fc" id="L32">        Calendar cal = Calendar.getInstance();</span>
+<span class="fc" id="L33">        cal.setTime(date);</span>
+<span class="fc" id="L34">        cal.add(Calendar.DATE, days); //minus number would decrement the days</span>
+<span class="fc" id="L35">        return cal.getTime();</span>
     }
 
     /**
@@ -39,55 +43,55 @@ import java.util.Date;
      * @return new Date
      */
     public static Date subDays(Date date, int days) {
-<span class="fc" id="L42">        return addDays(date, days * -1);</span>
+<span class="fc" id="L46">        return addDays(date, days * -1);</span>
     }
-    
+
     /**
      * Is Date Between Dates
+     *
      * @param date Date to check
      * @param startDate Start Date
      * @param endDate End Date
      * @return
-     * @throws Exception 
+     * @throws Exception
      */
     public static Boolean isDateBetweenDates(Date date, Date startDate, Date endDate) throws Exception {
-<span class="pc bpc" id="L54" title="1 of 2 branches missed.">        if (endDate.compareTo(startDate) &lt; 0) {</span>
-<span class="nc" id="L55">            throw new Exception(&quot;End Date must to be equal or bigger than Start Date&quot;);</span>
+<span class="pc bpc" id="L59" title="1 of 2 branches missed.">        if (endDate.compareTo(startDate) &lt; 0) {</span>
+<span class="nc" id="L60">            throw new Exception(&quot;End Date must to be equal or bigger than Start Date&quot;);</span>
         }
-        
-<span class="pc bpc" id="L58" title="2 of 4 branches missed.">        if (date.compareTo(startDate) &gt;= 0 &amp;&amp; date.compareTo(endDate) &lt;= 0) {</span>
-<span class="fc" id="L59">            return true;</span>
-        }
-        
-<span class="nc" id="L62">        return false;</span>
+
+<span class="pc bpc" id="L63" title="2 of 4 branches missed.">        return (date.compareTo(startDate) &gt;= 0 &amp;&amp; date.compareTo(endDate) &lt;= 0);</span>
     }
-    
+
     /**
      * Format Date To yyyy-MM-dd
+     *
      * @param date
-     * @return 
+     * @return
      */
     public static String formatToYMD(Date date) {
-<span class="nc" id="L71">        return new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).format(date);</span>
+<span class="nc" id="L73">        return new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).format(date);</span>
     }
-    
+
     /**
      * Get Date From String With Fromat yyyy-MM-dd
+     *
      * @param dateString Date String with format yyyy-MM-dd
      * @return Date
-     * @throws ParseException 
+     * @throws ParseException
      */
     public static Date getDateFromStringWithFormatYMD(String dateString) throws ParseException {
-<span class="nc" id="L81">        SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span>
-<span class="nc" id="L82">        return sdf.parse(dateString);</span>
+<span class="nc" id="L84">        SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span>
+<span class="nc" id="L85">        return sdf.parse(dateString);</span>
     }
-    
+
     /**
      * Get Today Date.
+     *
      * @return Today Date.
      */
     public static Date today() {
-<span class="nc" id="L90">        return new Date();</span>
-    } 
+<span class="nc" id="L94">        return new Date();</span>
+    }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

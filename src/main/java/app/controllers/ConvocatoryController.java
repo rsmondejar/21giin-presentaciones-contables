@@ -23,9 +23,7 @@ public class ConvocatoryController extends BaseController {
      */
     public static List<Convocatory> list() {
         // Get all convocatories
-        List<Convocatory> convocatories = (new ConvocatoryDao()).all();
-
-        return convocatories;
+        return (new ConvocatoryDao()).all();
     }
 
     /**
@@ -133,9 +131,7 @@ public class ConvocatoryController extends BaseController {
      */
     public static List<Convocatory> active() {
         // Get all active convocatories
-        List<Convocatory> convocatories = (new ConvocatoryDao()).active();
-
-        return convocatories;
+        return (new ConvocatoryDao()).active();
     }
     
     /**
@@ -145,8 +141,6 @@ public class ConvocatoryController extends BaseController {
      */
     public static List<Convocatory> noActive() {
         // Get all no active convocatories
-        List<Convocatory> convocatories = (new ConvocatoryDao()).noActive();
-
-        return convocatories;
+        return (new ConvocatoryDao()).noActive();
     }
 }

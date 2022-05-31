@@ -12,7 +12,7 @@ import javax.swing.filechooser.FileFilter;
  *
  * @author raulsm
  */
-<span class="nc" id="L15">public final class FileTypeFilterPDF {</span>
+public final class FileTypeFilterPDF {
 
     /**
      * Extension File.
@@ -30,6 +30,10 @@ import javax.swing.filechooser.FileFilter;
      */
     public static final FileFilter getFilter() {
 <span class="nc" id="L32">       return new FileTypeFilter(EXTENSION, DESCRIPTION);</span>
+    }
+    
+<span class="nc" id="L35">    private FileTypeFilterPDF() {</span>
+<span class="nc" id="L36">        throw new IllegalStateException(&quot;Utility class&quot;);</span>
     }
 }
 

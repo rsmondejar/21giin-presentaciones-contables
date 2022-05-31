@@ -70,7 +70,7 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L858">858</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L860">860</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
@@ -208,8 +208,8 @@
         fileChooser.showOpenDialog(null);
         File file = fileChooser.getSelectedFile();
         String fileName = file.getAbsolutePath();
-        
-        try(FileInputStream fileInputStream = new FileInputStream(file)) {
+
+        try ( FileInputStream fileInputStream = new FileInputStream(file)) {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             byte[] buffer = new byte[1024];
 
@@ -273,46 +273,7 @@
     /**
      * Clean Inputs.
      */
-    private void cleanInputs() {
-        disableAllInputFiles();
-        disableAllInputFilesDownload();
-        disableAllInputFilesDelete();
-        clearAllInputFiles();
-        jTextFieldConvocatoryStartDate.setText(&quot;&quot;);
-        jTextFieldConvocatoryEndDate.setText(&quot;&quot;);
-        jComboBoxConvocatory.setSelectedIndex(0);
-    }
-
-    /**
-     * Validate Inputs.
-     *
-     * @return True if inputs are valid
-     */
-    private Boolean validateInputs() {
-        // @TODO: Validation!
-        return true;
-    }
-
-    /**
-     * Get Input Convocatory.
-     *
-     * @return Convocatory Selected.
-     */
-    private Convocatory getInputConvocatory() {
-        return (Convocatory) jComboBoxConvocatory.getSelectedItem();
-    }
-
-    /**
-     * Get Input User Id.
-     *
-     * @return User Id
-     */
-    private int getInputUserId() {
-        return Integer.parseInt(jTextFieldUserId.getText());
-    }
-
-    // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButtonDocumentType1;</pre></div></td></tr></table>
+    private void cleanInputs() {</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="a">
 <th>File</th>
@@ -325,13 +286,14 @@
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L173">173</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L172">172</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>}
 
     /**
      * Set Documents Types Required For Convocatory.
+     *
      * @param convocatory Convocatory
      */
     private void setDocumentsTypesRequiredForConvocatory(Convocatory convocatory) {
@@ -464,7 +426,7 @@
      * Disable All Input Files.
      */
     private void clearAllInputFiles() {
-        // @TODO: Delete previous added files
+        // Delete previous added files
         jLabelDocumentType1.setText(noFile);
         jLabelDocumentType2.setText(noFile);
         jLabelDocumentType3.setText(noFile);
@@ -760,11 +722,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L453">453</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L454">454</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L508">508</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L507">507</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
@@ -841,11 +803,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L518">518</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L519">519</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L573">573</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L572">572</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
@@ -922,11 +884,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L583">583</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L584">584</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L638">638</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L637">637</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
@@ -1003,11 +965,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L390">390</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L391">391</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L445">445</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L444">444</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
@@ -1082,11 +1044,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L329">329</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L330">330</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L384">384</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L383">383</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>});
@@ -1159,11 +1121,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L273">273</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L274">274</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L330">330</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L329">329</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>jButtonMunicipioCreate = new javax.swing.JButton();
@@ -1214,11 +1176,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L709">709</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L710">710</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L790">790</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L789">789</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jPanelDocumentType4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -1254,11 +1216,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L783">783</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L785">785</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L841">841</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L840">840</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>}//GEN-LAST:event_jButtonMunicipioCreateActionPerformed
@@ -1336,15 +1298,7 @@
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentTypeDownload5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload5ActionPerformed
         downloadFile(5);
-    }//GEN-LAST:event_jButtonDocumentTypeDownload5ActionPerformed
-
-    /**
-     * Delete Uploaded File
-     *
-     * @param documentType
-     * @throws Exception
-     */
-    private void deleteFile(int documentType) {</pre></div></td></tr></table>
+    }//GEN-LAST:event_jButtonDocumentTypeDownload5ActionPerformed</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
 <tr class="a">
 <th>File</th>
@@ -1393,11 +1347,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L691">691</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L692">692</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L763">763</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L762">762</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jLabelConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
@@ -1460,11 +1414,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L733">733</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L734">734</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L820">820</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L819">819</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jTextFieldConvocatoryStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -1489,11 +1443,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L820">820</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L819">819</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L565">565</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L548">548</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jTextFieldPresentationId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -1696,11 +1650,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L733">733</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L734">734</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L565">565</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L548">548</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jTextFieldConvocatoryStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
@@ -1758,11 +1712,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L648">648</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L649">649</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L703">703</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L702">702</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)
@@ -1802,7 +1756,7 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L915">915</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L917">917</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
@@ -1810,7 +1764,7 @@
 <tr class="b">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L657">657</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L640">640</a></td></tr>
 <tr class="a"><td colspan='3'>
 <div>
 <pre>}
@@ -1935,11 +1889,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L751">751</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L750">750</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L492">492</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L475">475</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>jCheckBoxPresentationIsValid.setEnabled(false);
@@ -1963,11 +1917,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L790">790</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L789">789</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L534">534</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L517">517</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addGap(0, 0, Short.MAX_VALUE)))
@@ -1994,11 +1948,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L709">709</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L710">710</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L534">534</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L517">517</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jPanelDocumentType4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -2025,15 +1979,15 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L676">676</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L677">677</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L751">751</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L750">750</a></td></tr>
 <tr class="b">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L492">492</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L475">475</a></td></tr>
 <tr class="a"><td colspan='3'>
 <div>
 <pre>jTextFieldConvocatoryEndDate.setEditable(false);
@@ -2198,11 +2152,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L725">725</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L726">726</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L552">552</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L535">535</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2222,11 +2176,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L806">806</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L805">805</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L552">552</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L535">535</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2301,11 +2255,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L1199">1199</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L1186">1186</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L729">729</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L712">712</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>private javax.swing.JLabel jLabel1;
@@ -2338,15 +2292,15 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L429">429</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L430">430</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L484">484</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L483">483</a></td></tr>
 <tr class="b">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L283">283</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L266">266</a></td></tr>
 <tr class="a"><td colspan='3'>
 <div>
 <pre>});
@@ -2377,15 +2331,15 @@
 <tr class="a">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L494">494</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L495">495</a></td></tr>
 <tr class="b">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L549">549</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L548">548</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L326">326</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L309">309</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>});
@@ -2416,15 +2370,15 @@
 <tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L559">559</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L560">560</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L614">614</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L613">613</a></td></tr>
 <tr class="b">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L369">369</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L352">352</a></td></tr>
 <tr class="a"><td colspan='3'>
 <div>
 <pre>});
@@ -2455,15 +2409,15 @@
 <tr class="a">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L624">624</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L625">625</a></td></tr>
 <tr class="b">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L679">679</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L678">678</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L412">412</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L395">395</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>});
@@ -2582,11 +2536,11 @@
 <tr class="b">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L771">771</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L770">770</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L517">517</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L500">500</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jComboBoxConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2673,11 +2627,11 @@
 <tr class="a">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L699">699</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L700">700</a></td></tr>
 <tr class="b">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L517">517</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L500">500</a></td></tr>
 <tr class="a"><td colspan='3'>
 <div>
 <pre>.addComponent(jComboBoxConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -2698,15 +2652,15 @@
 <tr class="a">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L691">691</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L692">692</a></td></tr>
 <tr class="b">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L763">763</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L762">762</a></td></tr>
 <tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L504">504</a></td></tr>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L487">487</a></td></tr>
 <tr class="b"><td colspan='3'>
 <div>
 <pre>.addComponent(jLabelConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)
@@ -2799,18 +2753,59 @@
 <th>Project</th>
 <th>Line</th></tr>
 <tr class="b">
-<td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
-<td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L832">832</a></td></tr>
-<tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L890">890</a></td></tr>
-<tr class="b">
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L889">889</a></td></tr>
+<tr class="a">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L589">589</a></td></tr>
-<tr class="a"><td colspan='3'>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L572">572</a></td></tr>
+<tr class="b"><td colspan='3'>
+<div>
+<pre>deleteFile(5);
+    }//GEN-LAST:event_jButtonDocumentTypeDelete5ActionPerformed
+
+    @SuppressWarnings(&quot;unused&quot;)
+    private void jButtonDocumentTypeDownload1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload1ActionPerformed
+        downloadFile(1);
+    }//GEN-LAST:event_jButtonDocumentTypeDownload1ActionPerformed
+
+    @SuppressWarnings(&quot;unused&quot;)
+    private void jButtonDocumentTypeDownload2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload2ActionPerformed
+        downloadFile(2);
+    }//GEN-LAST:event_jButtonDocumentTypeDownload2ActionPerformed
+
+    @SuppressWarnings(&quot;unused&quot;)
+    private void jButtonDocumentTypeDownload3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload3ActionPerformed
+        downloadFile(3);
+    }//GEN-LAST:event_jButtonDocumentTypeDownload3ActionPerformed
+
+    @SuppressWarnings(&quot;unused&quot;)
+    private void jButtonDocumentTypeDownload4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload4ActionPerformed
+        downloadFile(4);
+    }//GEN-LAST:event_jButtonDocumentTypeDownload4ActionPerformed
+
+    @SuppressWarnings(&quot;unused&quot;)
+    private void jButtonDocumentTypeDownload5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload5ActionPerformed
+        downloadFile(5);
+    }//GEN-LAST:event_jButtonDocumentTypeDownload5ActionPerformed
+
+    @SuppressWarnings(&quot;unused&quot;)
+    private void jButtonConvocatoryUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryUpdateActionPerformed</pre></div></td></tr></table>
+<table border="0" class="bodyTable">
+<tr class="a">
+<th>File</th>
+<th>Project</th>
+<th>Line</th></tr>
+<tr class="b">
+<td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
+<td>PresentacionesContables</td>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L834">834</a></td></tr>
+<tr class="a">
+<td>app/views/presentation/PresentationShowJInternalFrame.java</td>
+<td>PresentacionesContables</td>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L572">572</a></td></tr>
+<tr class="b"><td colspan='3'>
 <div>
 <pre>deleteFile(5);
     }//GEN-LAST:event_jButtonDocumentTypeDelete5ActionPerformed
@@ -2840,23 +2835,23 @@
         downloadFile(5);
     }//GEN-LAST:event_jButtonDocumentTypeDownload5ActionPerformed</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
-<tr class="b">
+<tr class="a">
 <th>File</th>
 <th>Project</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td>app/views/convocatory/ConvocatoryCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
 <td><a href="./xref/app/views/convocatory/ConvocatoryCreateJInternalFrame.html#L181">181</a></td></tr>
-<tr class="b">
+<tr class="a">
 <td>app/views/convocatory/ConvocatoryEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
 <td><a href="./xref/app/views/convocatory/ConvocatoryEditJInternalFrame.html#L212">212</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td>app/views/convocatory/ConvocatoryShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
 <td><a href="./xref/app/views/convocatory/ConvocatoryShowJInternalFrame.html#L256">256</a></td></tr>
-<tr class="b"><td colspan='3'>
+<tr class="a"><td colspan='3'>
 <div>
 <pre>.addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2867,19 +2862,19 @@
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>File</th>
 <th>Project</th>
 <th>Line</th></tr>
-<tr class="b">
-<td>app/views/information/InformationDashboardJInternalFrame.java</td>
-<td>PresentacionesContables</td>
-<td><a href="./xref/app/views/information/InformationDashboardJInternalFrame.html#L130">130</a></td></tr>
 <tr class="a">
 <td>app/views/information/InformationDashboardJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/information/InformationDashboardJInternalFrame.html#L183">183</a></td></tr>
-<tr class="b"><td colspan='3'>
+<td><a href="./xref/app/views/information/InformationDashboardJInternalFrame.html#L133">133</a></td></tr>
+<tr class="b">
+<td>app/views/information/InformationDashboardJInternalFrame.java</td>
+<td>PresentacionesContables</td>
+<td><a href="./xref/app/views/information/InformationDashboardJInternalFrame.html#L186">186</a></td></tr>
+<tr class="a"><td colspan='3'>
 <div>
 <pre>jTableConvocatoriesOpen.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2905,23 +2900,23 @@
             }
         });</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>File</th>
 <th>Project</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td>app/views/municipality/MunicipalityCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
 <td><a href="./xref/app/views/municipality/MunicipalityCreateJInternalFrame.html#L69">69</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td>app/views/municipality/MunicipalityEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
 <td><a href="./xref/app/views/municipality/MunicipalityEditJInternalFrame.html#L79">79</a></td></tr>
-<tr class="b">
+<tr class="a">
 <td>app/views/municipality/MunicipalityShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
 <td><a href="./xref/app/views/municipality/MunicipalityShowJInternalFrame.html#L116">116</a></td></tr>
-<tr class="a"><td colspan='3'>
+<tr class="b"><td colspan='3'>
 <div>
 <pre>jComboBoxMunicipioCategory.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;1&quot; }));
 
@@ -2936,19 +2931,19 @@
                     .addComponent(jLabelMunicipioName, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
-<tr class="b">
+<tr class="a">
 <th>File</th>
 <th>Project</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L1109">1109</a></td></tr>
-<tr class="b">
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L1111">1111</a></td></tr>
+<tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L1198">1198</a></td></tr>
-<tr class="a"><td colspan='3'>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L1185">1185</a></td></tr>
+<tr class="b"><td colspan='3'>
 <div>
 <pre>private javax.swing.JComboBox&lt;String&gt; jComboBoxConvocatory;
     private javax.swing.JLabel jLabel1;
@@ -2967,19 +2962,19 @@
     private javax.swing.JLabel jLabelNecesaryDocuments;
     private javax.swing.JLabel jLabelUser;</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
-<tr class="b">
+<tr class="a">
 <th>File</th>
 <th>Project</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L1093">1093</a></td></tr>
-<tr class="b">
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L1095">1095</a></td></tr>
+<tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L1182">1182</a></td></tr>
-<tr class="a"><td colspan='3'>
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L1169">1169</a></td></tr>
+<tr class="b"><td colspan='3'>
 <div>
 <pre>private javax.swing.JButton jButtonDocumentType1;
     private javax.swing.JButton jButtonDocumentType2;
@@ -2998,23 +2993,23 @@
     private javax.swing.JButton jButtonDocumentTypeDownload5;
     private javax.swing.JButton jButtonMunicipioCreate;</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
-<tr class="b">
+<tr class="a">
 <th>File</th>
 <th>Project</th>
 <th>Line</th></tr>
-<tr class="a">
+<tr class="b">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L372">372</a></td></tr>
-<tr class="b">
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L373">373</a></td></tr>
+<tr class="a">
 <td>app/views/presentation/PresentationEditJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L427">427</a></td></tr>
-<tr class="a">
+<td><a href="./xref/app/views/presentation/PresentationEditJInternalFrame.html#L426">426</a></td></tr>
+<tr class="b">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L247">247</a></td></tr>
-<tr class="b"><td colspan='3'>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L230">230</a></td></tr>
+<tr class="a"><td colspan='3'>
 <div>
 <pre>jButtonDocumentTypeDelete1ActionPerformed(evt);
             }
@@ -3031,19 +3026,19 @@
                         .addComponent(jLabelDocumentType1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>File</th>
 <th>Project</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td>app/views/convocatory/ConvocatoryListJInternalFrame.java</td>
 <td>PresentacionesContables</td>
 <td><a href="./xref/app/views/convocatory/ConvocatoryListJInternalFrame.html#L80">80</a></td></tr>
-<tr class="a">
+<tr class="b">
 <td>app/views/presentation/PresentationListJInternalFrame.java</td>
 <td>PresentacionesContables</td>
 <td><a href="./xref/app/views/presentation/PresentationListJInternalFrame.html#L83">83</a></td></tr>
-<tr class="b"><td colspan='3'>
+<tr class="a"><td colspan='3'>
 <div>
 <pre>&quot;id&quot;, &quot;name&quot;, &quot;start_date&quot;, &quot;end_date&quot;, &quot;is_valid&quot;
             }
@@ -3064,19 +3059,19 @@
             }
         });</pre></div></td></tr></table>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>File</th>
 <th>Project</th>
 <th>Line</th></tr>
-<tr class="b">
+<tr class="a">
 <td>app/views/presentation/PresentationCreateJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L1110">1110</a></td></tr>
-<tr class="a">
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L1112">1112</a></td></tr>
+<tr class="b">
 <td>app/views/presentation/PresentationShowJInternalFrame.java</td>
 <td>PresentacionesContables</td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L729">729</a></td></tr>
-<tr class="b"><td colspan='3'>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L712">712</a></td></tr>
+<tr class="a"><td colspan='3'>
 <div>
 <pre>private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;

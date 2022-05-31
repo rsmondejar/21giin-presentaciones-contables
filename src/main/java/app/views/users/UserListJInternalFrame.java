@@ -39,7 +39,7 @@ public class UserListJInternalFrame extends javax.swing.JInternalFrame {
         List<User> items = UserController.list();
         
         // @TODO: Add data
-        Object rowData[] = new Object[model.getColumnCount()];
+        Object[] rowData = new Object[model.getColumnCount()];
         for (int i = 0; i < items.size(); i++) {
             rowData[0] = items.get(i).getId();
             rowData[1] = items.get(i).getLogin();

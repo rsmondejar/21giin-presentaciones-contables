@@ -73,7 +73,7 @@
 <th>Missing Classes</th></tr>
 <tr class="b">
 <td>146</td>
-<td>42</td>
+<td>37</td>
 <td>1</td>
 <td>0</td></tr></table></section><section>
 <h2><a name="Files"></a>Files</h2>
@@ -112,17 +112,11 @@
 <td><a href="#app.entities.UserRole">app.entities.UserRole</a></td>
 <td>1</td></tr>
 <tr class="b">
-<td><a href="#app.views.MenuJFrame">app.views.MenuJFrame</a></td>
-<td>1</td></tr>
-<tr class="a">
 <td><a href="#app.views.convocatory.ConvocatoryListJInternalFrame">app.views.convocatory.ConvocatoryListJInternalFrame</a></td>
 <td>1</td></tr>
-<tr class="b">
+<tr class="a">
 <td><a href="#app.views.convocatory.ConvocatoryShowJInternalFrame">app.views.convocatory.ConvocatoryShowJInternalFrame</a></td>
 <td>1</td></tr>
-<tr class="a">
-<td><a href="#app.views.information.InformationDashboardJInternalFrame">app.views.information.InformationDashboardJInternalFrame</a></td>
-<td>4</td></tr>
 <tr class="b">
 <td><a href="#app.views.municipality.MunicipalityListJInternalFrame">app.views.municipality.MunicipalityListJInternalFrame</a></td>
 <td>1</td></tr>
@@ -317,13 +311,13 @@
 <td>app.entities.PresentationDocumentType.getContent() may expose internal representation by returning PresentationDocumentType.content</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP">EI_EXPOSE_REP</a></td>
-<td><a href="./xref/app/entities/PresentationDocumentType.html#L130">130</a></td>
+<td><a href="./xref/app/entities/PresentationDocumentType.html#L131">131</a></td>
 <td>Medium</td></tr>
 <tr class="b">
 <td>app.entities.PresentationDocumentType.setContent(byte[]) may expose internal representation by storing an externally mutable object into PresentationDocumentType.content</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
-<td><a href="./xref/app/entities/PresentationDocumentType.html#L134">134</a></td>
+<td><a href="./xref/app/entities/PresentationDocumentType.html#L135">135</a></td>
 <td>Medium</td></tr>
 <tr class="a">
 <td>Field PresentationDocumentType.id masks field in superclass app.entities.BaseEntity</td>
@@ -382,20 +376,6 @@
 <td>CORRECTNESS</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#MF_CLASS_MASKS_FIELD">MF_CLASS_MASKS_FIELD</a></td>
 <td>Not available</td>
-<td>Medium</td></tr></table></section><a name="app.views.MenuJFrame"></a><section>
-<h3><a name="app.views.MenuJFrame"></a>app.views.MenuJFrame</h3>
-<table border="0" class="bodyTable">
-<tr class="b">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="a">
-<td>Switch statement found in app.views.MenuJFrame.showHideSections(User) where default case is missing</td>
-<td>STYLE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#SF_SWITCH_NO_DEFAULT">SF_SWITCH_NO_DEFAULT</a></td>
-<td><a href="./xref/app/views/MenuJFrame.html#L50">50-63</a></td>
 <td>Medium</td></tr></table></section><a name="app.views.convocatory.ConvocatoryListJInternalFrame"></a><section>
 <h3><a name="app.views.convocatory.ConvocatoryListJInternalFrame"></a>app.views.convocatory.ConvocatoryListJInternalFrame</h3>
 <table border="0" class="bodyTable">
@@ -424,48 +404,16 @@
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
 <td><a href="./xref/app/views/convocatory/ConvocatoryShowJInternalFrame.html#L33">33</a></td>
-<td>Medium</td></tr></table></section><a name="app.views.information.InformationDashboardJInternalFrame"></a><section>
-<h3><a name="app.views.information.InformationDashboardJInternalFrame"></a>app.views.information.InformationDashboardJInternalFrame</h3>
-<table border="0" class="bodyTable">
-<tr class="b">
-<th>Bug</th>
-<th>Category</th>
-<th>Details</th>
-<th>Line</th>
-<th>Priority</th></tr>
-<tr class="a">
-<td>Null pointer dereference of convocatories in app.views.information.InformationDashboardJInternalFrame.loadDataConvocatoriesToTable(List, JTable)</td>
-<td>CORRECTNESS</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#NP_ALWAYS_NULL">NP_ALWAYS_NULL</a></td>
-<td><a href="./xref/app/views/information/InformationDashboardJInternalFrame.html#L86">86</a></td>
-<td>High</td></tr>
-<tr class="b">
-<td>Null pointer dereference of items in app.views.information.InformationDashboardJInternalFrame.loadMunicipalitiesDocumentUploaded()</td>
-<td>CORRECTNESS</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#NP_ALWAYS_NULL">NP_ALWAYS_NULL</a></td>
-<td><a href="./xref/app/views/information/InformationDashboardJInternalFrame.html#L63">63</a></td>
-<td>High</td></tr>
-<tr class="a">
-<td>Load of known null value in app.views.information.InformationDashboardJInternalFrame.loadDataConvocatoriesToTable(List, JTable)</td>
-<td>STYLE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#NP_LOAD_OF_KNOWN_NULL_VALUE">NP_LOAD_OF_KNOWN_NULL_VALUE</a></td>
-<td><a href="./xref/app/views/information/InformationDashboardJInternalFrame.html#L86">86</a></td>
-<td>Medium</td></tr>
-<tr class="b">
-<td>Load of known null value in app.views.information.InformationDashboardJInternalFrame.loadMunicipalitiesDocumentUploaded()</td>
-<td>STYLE</td>
-<td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#NP_LOAD_OF_KNOWN_NULL_VALUE">NP_LOAD_OF_KNOWN_NULL_VALUE</a></td>
-<td><a href="./xref/app/views/information/InformationDashboardJInternalFrame.html#L63">63</a></td>
 <td>Medium</td></tr></table></section><a name="app.views.municipality.MunicipalityListJInternalFrame"></a><section>
 <h3><a name="app.views.municipality.MunicipalityListJInternalFrame"></a>app.views.municipality.MunicipalityListJInternalFrame</h3>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>new app.views.municipality.MunicipalityListJInternalFrame(JDesktopPane) may expose internal representation by storing an externally mutable object into MunicipalityListJInternalFrame.jDesktopPanelContainer</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
@@ -473,13 +421,13 @@
 <td>Medium</td></tr></table></section><a name="app.views.municipality.MunicipalityShowJInternalFrame"></a><section>
 <h3><a name="app.views.municipality.MunicipalityShowJInternalFrame"></a>app.views.municipality.MunicipalityShowJInternalFrame</h3>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>new app.views.municipality.MunicipalityShowJInternalFrame(JDesktopPane) may expose internal representation by storing an externally mutable object into MunicipalityShowJInternalFrame.jDesktopPanelContainer</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
@@ -487,27 +435,27 @@
 <td>Medium</td></tr></table></section><a name="app.views.presentation.PresentationCreateJInternalFrame"></a><section>
 <h3><a name="app.views.presentation.PresentationCreateJInternalFrame"></a>app.views.presentation.PresentationCreateJInternalFrame</h3>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
 <td>SECURITY</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN</a></td>
-<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L955">955</a></td>
+<td><a href="./xref/app/views/presentation/PresentationCreateJInternalFrame.html#L957">957</a></td>
 <td>Medium</td></tr></table></section><a name="app.views.presentation.PresentationEditJInternalFrame"></a><section>
 <h3><a name="app.views.presentation.PresentationEditJInternalFrame"></a>app.views.presentation.PresentationEditJInternalFrame</h3>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
 <td>SECURITY</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN</a></td>
@@ -515,13 +463,13 @@
 <td>Medium</td></tr></table></section><a name="app.views.presentation.PresentationListJInternalFrame"></a><section>
 <h3><a name="app.views.presentation.PresentationListJInternalFrame"></a>app.views.presentation.PresentationListJInternalFrame</h3>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>new app.views.presentation.PresentationListJInternalFrame(JDesktopPane) may expose internal representation by storing an externally mutable object into PresentationListJInternalFrame.jDesktopPanelContainer</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
@@ -529,33 +477,33 @@
 <td>Medium</td></tr></table></section><a name="app.views.presentation.PresentationShowJInternalFrame"></a><section>
 <h3><a name="app.views.presentation.PresentationShowJInternalFrame"></a>app.views.presentation.PresentationShowJInternalFrame</h3>
 <table border="0" class="bodyTable">
-<tr class="a">
+<tr class="b">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="b">
+<tr class="a">
 <td>new app.views.presentation.PresentationShowJInternalFrame(JDesktopPane) may expose internal representation by storing an externally mutable object into PresentationShowJInternalFrame.jDesktopPanelContainer</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
 <td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L53">53</a></td>
 <td>Medium</td></tr>
-<tr class="a">
+<tr class="b">
 <td>This API (java/io/File.&lt;init&gt;(Ljava/lang/String;)V) reads a file whose location might be specified by user input</td>
 <td>SECURITY</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#PATH_TRAVERSAL_IN">PATH_TRAVERSAL_IN</a></td>
-<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L698">698</a></td>
+<td><a href="./xref/app/views/presentation/PresentationShowJInternalFrame.html#L681">681</a></td>
 <td>Medium</td></tr></table></section><a name="app.views.users.UserListJInternalFrame"></a><section>
 <h3><a name="app.views.users.UserListJInternalFrame"></a>app.views.users.UserListJInternalFrame</h3>
 <table border="0" class="bodyTable">
-<tr class="b">
+<tr class="a">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="a">
+<tr class="b">
 <td>new app.views.users.UserListJInternalFrame(JDesktopPane) may expose internal representation by storing an externally mutable object into UserListJInternalFrame.jDesktopPanelContainer</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>
@@ -563,13 +511,13 @@
 <td>Medium</td></tr></table></section><a name="app.views.users.UserShowJInternalFrame"></a><section>
 <h3><a name="app.views.users.UserShowJInternalFrame"></a>app.views.users.UserShowJInternalFrame</h3>
 <table border="0" class="bodyTable">
-<tr class="b">
+<tr class="a">
 <th>Bug</th>
 <th>Category</th>
 <th>Details</th>
 <th>Line</th>
 <th>Priority</th></tr>
-<tr class="a">
+<tr class="b">
 <td>new app.views.users.UserShowJInternalFrame(JDesktopPane) may expose internal representation by storing an externally mutable object into UserShowJInternalFrame.jDesktopPanelContainer</td>
 <td>MALICIOUS_CODE</td>
 <td><a class="externalLink" href="https://spotbugs.readthedocs.io/en/latest/bugDescriptions.html#EI_EXPOSE_REP2">EI_EXPOSE_REP2</a></td>

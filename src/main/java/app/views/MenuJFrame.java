@@ -17,6 +17,8 @@ import app.views.users.UserCreateJInternalFrame;
 import app.views.users.UserListJInternalFrame;
 import helpers.Dialog;
 import helpers.Role;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -28,18 +30,23 @@ public class MenuJFrame extends javax.swing.JFrame {
      * Creates new form MenuJFrame
      */
     public MenuJFrame() {
-        initComponents();
-
-        // Show or Hide Sections
-        User authUser = Main.getAuthUser();
-        showHideSections(authUser);
+        try {
+            initComponents();
+            
+            // Show or Hide Sections
+            User authUser = Main.getAuthUser();
+            showHideSections(authUser);
+        } catch (Exception ex) {
+            Logger.getLogger(MenuJFrame.class.getName()).log(Level.SEVERE, null, ex);
+        }
     }
-    
+
     /**
      * Show or Hide Sections by User
+     *
      * @param user Auth User
      */
-    private void showHideSections(User user) {
+    private void showHideSections(User user) throws Exception {
         int roleId = user.getRoleId();
 
         if (roleId != Role.ADMININISTRATOR) {
@@ -63,6 +70,10 @@ public class MenuJFrame extends javax.swing.JFrame {
                 jMenuItemMunicipiosCreate.setVisible(false);
             }
             break;
+            default: {
+                throw new Exception("Role not suported yet.");
+            }
+
         }
     }
 

@@ -19,7 +19,7 @@ import java.util.List;
 public class UserRoleDao extends BaseDao {
 
     public UserRoleDao() {
-        super.setModel((BaseEntity) new UserRole());
+        super.setModel(new UserRole());
     }
 
     /**

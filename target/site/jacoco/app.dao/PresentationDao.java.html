@@ -23,7 +23,7 @@ import java.util.List;
 public class PresentationDao extends BaseDao {
 
 <span class="nc" id="L25">    public PresentationDao() {</span>
-<span class="nc" id="L26">        super.setModel((BaseEntity) new Presentation());</span>
+<span class="nc" id="L26">        super.setModel(new Presentation());</span>
 <span class="nc" id="L27">    }</span>
 
     /**
@@ -116,7 +116,7 @@ public class PresentationDao extends BaseDao {
 <span class="nc" id="L116">                            String.valueOf(presentation.getConvocatoryId())</span>
                     );
 
-<span class="nc bnc" id="L119" title="All 4 branches missed.">            if (convocatories != null &amp;&amp; convocatories.size() &gt; 0) {</span>
+<span class="nc bnc" id="L119" title="All 4 branches missed.">            if (convocatories != null &amp;&amp; !convocatories.isEmpty()) {</span>
 <span class="nc" id="L120">                 presentation.setConvocatory(convocatories.get(0));</span>
             }
             
@@ -128,7 +128,7 @@ public class PresentationDao extends BaseDao {
 <span class="nc" id="L128">                            String.valueOf(presentation.getUserId())</span>
                     );
 
-<span class="nc bnc" id="L131" title="All 4 branches missed.">            if (users != null &amp;&amp; users.size() &gt; 0) {</span>
+<span class="nc bnc" id="L131" title="All 4 branches missed.">            if (users != null &amp;&amp; !users.isEmpty()) {</span>
 <span class="nc" id="L132">                presentation.setUser(users.get(0));</span>
             }
             

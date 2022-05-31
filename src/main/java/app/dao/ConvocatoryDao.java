@@ -23,7 +23,7 @@ import java.util.List;
 public class ConvocatoryDao extends BaseDao {
 
     public ConvocatoryDao() {
-        super.setModel((BaseEntity) new Convocatory());
+        super.setModel(new Convocatory());
     }
 
     /**

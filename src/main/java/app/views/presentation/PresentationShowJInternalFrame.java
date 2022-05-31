@@ -32,16 +32,16 @@ public class PresentationShowJInternalFrame extends javax.swing.JInternalFrame {
     private final JDesktopPane jDesktopPanelContainer;
 
     String noFile = "Sin fichero";
-    String documentTypeFileName1 = null,
-            documentTypeFileName2 = null,
-            documentTypeFileName3 = null,
-            documentTypeFileName4 = null,
-            documentTypeFileName5 = null;
-    byte[] documentType1 = null,
-            documentType2 = null,
-            documentType3 = null,
-            documentType4 = null,
-            documentType5 = null;
+    String documentTypeFileName1 = null;
+    String documentTypeFileName2 = null;
+    String documentTypeFileName3 = null;
+    String documentTypeFileName4 = null;
+    String documentTypeFileName5 = null;
+    byte[] documentType1 = null;
+    byte[] documentType2 = null;
+    byte[] documentType3 = null;
+    byte[] documentType4 = null;
+    byte[] documentType5 = null;
 
     /**
      * Creates new form PresentationJInternalFrame.
@@ -146,23 +146,6 @@ public class PresentationShowJInternalFrame extends javax.swing.JInternalFrame {
         jButtonDocumentTypeDownload3.setEnabled(false);
         jButtonDocumentTypeDownload4.setEnabled(false);
         jButtonDocumentTypeDownload5.setEnabled(false);
-    }
-
-    /**
-     * Disable All Input Files.
-     */
-    private void clearAllInputFiles() {
-        // Delete previous added files
-        jLabelDocumentType1.setText(noFile);
-        jLabelDocumentType2.setText(noFile);
-        jLabelDocumentType3.setText(noFile);
-        jLabelDocumentType4.setText(noFile);
-        jLabelDocumentType5.setText(noFile);
-        documentType1 = null;
-        documentType2 = null;
-        documentType3 = null;
-        documentType4 = null;
-        documentType5 = null;
     }
 
     /**

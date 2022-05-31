@@ -42,21 +42,21 @@ import org.apache.commons.io.FilenameUtils;
 public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
 
     String noFile = "Sin fichero";
-    String documentTypeFileName1 = null,
-            documentTypeFileName2 = null,
-            documentTypeFileName3 = null,
-            documentTypeFileName4 = null,
-            documentTypeFileName5 = null;
-    String documentTypeFileExtension1 = null,
-            documentTypeFileExtension2 = null,
-            documentTypeFileExtension3 = null,
-            documentTypeFileExtension4 = null,
-            documentTypeFileExtension5 = null;
-    byte[] documentType1 = null,
-            documentType2 = null,
-            documentType3 = null,
-            documentType4 = null,
-            documentType5 = null;
+    String documentTypeFileName1 = null;
+    String documentTypeFileName2 = null;
+    String documentTypeFileName3 = null;
+    String documentTypeFileName4 = null;
+    String documentTypeFileName5 = null;
+    String documentTypeFileExtension1 = null;
+    String documentTypeFileExtension2 = null;
+    String documentTypeFileExtension3 = null;
+    String documentTypeFileExtension4 = null;
+    String documentTypeFileExtension5 = null;
+    byte[] documentType1 = null;
+    byte[] documentType2 = null;
+    byte[] documentType3 = null;
+    byte[] documentType4 = null;
+    byte[] documentType5 = null;
 
     /**
      * Creates new form PresentationJInternalFrame.
@@ -96,8 +96,7 @@ public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
         jTextFieldPresentationId.setVisible(false);
         jTextFieldPresentationId.setText(String.valueOf(presentation.getId()));
         
-        // TODO: Setear la convocatoria
-
+        // Setear la convocatoria
         Convocatory convocatory = (Convocatory) jComboBoxConvocatory.getSelectedItem();
         setDocumentsTypesRequiredForConvocatory(convocatory);
         setDatesConvocatory(convocatory);
@@ -306,7 +305,7 @@ public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
      * Disable All Input Files.
      */
     private void clearAllInputFiles() {
-        // @TODO: Delete previous added files
+        // Delete previous added files
         jLabelDocumentType1.setText(noFile);
         jLabelDocumentType2.setText(noFile);
         jLabelDocumentType3.setText(noFile);
@@ -915,9 +914,10 @@ public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
         downloadFile(5);
     }//GEN-LAST:event_jButtonDocumentTypeDownload5ActionPerformed
 
+    @SuppressWarnings("unused")
     private void jButtonConvocatoryUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonConvocatoryUpdateActionPerformed
         try {
-            if (!validateInputs()) {
+            if (Boolean.FALSE.equals(validateInputs())) {
                 throw new Exception("Inputs fieds are invalid.");
             }
             
@@ -1134,19 +1134,6 @@ public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
             Dialog.error(ex.getMessage(), "Opción no valida");
             Log.error(ex);
         }
-    }
-
-    /**
-     * Clean Inputs.
-     */
-    private void cleanInputs() {
-        disableAllInputFiles();
-        disableAllInputFilesDownload();
-        disableAllInputFilesDelete();
-        clearAllInputFiles();
-        jTextFieldConvocatoryStartDate.setText("");
-        jTextFieldConvocatoryEndDate.setText("");
-        jComboBoxConvocatory.setSelectedIndex(0);
     }
 
     /**

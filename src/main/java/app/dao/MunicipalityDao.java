@@ -25,7 +25,7 @@ import org.hibernate.query.Query;
 public class MunicipalityDao extends BaseDao {
 
     public MunicipalityDao() {
-        super.setModel((BaseEntity) new Municipality());
+        super.setModel(new Municipality());
     }
 
     /**

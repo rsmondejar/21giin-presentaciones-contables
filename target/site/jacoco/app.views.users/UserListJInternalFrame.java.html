@@ -39,7 +39,7 @@ public class UserListJInternalFrame extends javax.swing.JInternalFrame {
 <span class="nc" id="L39">        List&lt;User&gt; items = UserController.list();</span>
         
         // @TODO: Add data
-<span class="nc" id="L42">        Object rowData[] = new Object[model.getColumnCount()];</span>
+<span class="nc" id="L42">        Object[] rowData = new Object[model.getColumnCount()];</span>
 <span class="nc bnc" id="L43" title="All 2 branches missed.">        for (int i = 0; i &lt; items.size(); i++) {</span>
 <span class="nc" id="L44">            rowData[0] = items.get(i).getId();</span>
 <span class="nc" id="L45">            rowData[1] = items.get(i).getLogin();</span>

@@ -31,5 +31,9 @@ public final class FileTypeFilterPDF {
     public static final FileFilter getFilter() {
        return new FileTypeFilter(EXTENSION, DESCRIPTION);
     }
+    
+    private FileTypeFilterPDF() {
+        throw new IllegalStateException("Utility class");
+    }
 }
 

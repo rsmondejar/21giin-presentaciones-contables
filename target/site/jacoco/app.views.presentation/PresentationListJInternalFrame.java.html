@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PresentationListJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.presentation</a> &gt; <span class="el_source">PresentationListJInternalFrame.java</span></div><h1>PresentationListJInternalFrame.java</h1><pre class="source lang-java linenums">/**
- * PresentationListJInternalFrame.
+ * Presentation List JInternal Frame
  *
  * @author raulsm
+ * @version 1.0.0
  */
 package app.views.presentation;
 
@@ -13,9 +14,10 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * PresentationListJInternalFrame.
+ * Presentation List JInternal Frame
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class PresentationListJInternalFrame extends javax.swing.JInternalFrame {
 
@@ -24,37 +26,37 @@ public class PresentationListJInternalFrame extends javax.swing.JInternalFrame {
     /**
      * Creates new form PresentationListJInternalFrame
      *
-     * @param jDesktopPanelContaine
+     * @param jDesktopPanelContaine Desktop Panel Container
      */
-<span class="nc" id="L29">    public PresentationListJInternalFrame(JDesktopPane jDesktopPanelContaine) {</span>
-<span class="nc" id="L30">        initComponents();</span>
-<span class="nc" id="L31">        this.jDesktopPanelContainer = jDesktopPanelContaine;</span>
-<span class="nc" id="L32">        loadData();</span>
-<span class="nc" id="L33">    }</span>
+<span class="nc" id="L31">    public PresentationListJInternalFrame(JDesktopPane jDesktopPanelContaine) {</span>
+<span class="nc" id="L32">        initComponents();</span>
+<span class="nc" id="L33">        this.jDesktopPanelContainer = jDesktopPanelContaine;</span>
+<span class="nc" id="L34">        loadData();</span>
+<span class="nc" id="L35">    }</span>
 
     /**
      * Load Data.
      */
     public void loadData() {
-<span class="nc" id="L39">        DefaultTableModel model = (DefaultTableModel) jTablePresentations.getModel();</span>
+<span class="nc" id="L41">        DefaultTableModel model = (DefaultTableModel) jTablePresentations.getModel();</span>
 
-<span class="nc" id="L41">        List&lt;Presentation&gt; items = PresentationController.list();</span>
+<span class="nc" id="L43">        List&lt;Presentation&gt; items = PresentationController.list();</span>
 
-<span class="nc bnc" id="L43" title="All 2 branches missed.">        if (items != null) {</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">        if (items != null) {</span>
             // Add data
-<span class="nc" id="L45">            Object[] rowData = new Object[model.getColumnCount()];</span>
+<span class="nc" id="L47">            Object[] rowData = new Object[model.getColumnCount()];</span>
 
-<span class="nc bnc" id="L47" title="All 2 branches missed.">            for (int i = 0; i &lt; items.size(); i++) {</span>
-<span class="nc" id="L48">                rowData[0] = items.get(i).getId();</span>
-<span class="nc" id="L49">                rowData[1] = items.get(i).getConvocatory().getName();</span>
-<span class="nc" id="L50">                rowData[2] = items.get(i).getUser().getLogin();</span>
-<span class="nc" id="L51">                rowData[3] = items.get(i).getDate().toString();</span>
-<span class="nc" id="L52">                rowData[4] = items.get(i).getIsValid();</span>
+<span class="nc bnc" id="L49" title="All 2 branches missed.">            for (int i = 0; i &lt; items.size(); i++) {</span>
+<span class="nc" id="L50">                rowData[0] = items.get(i).getId();</span>
+<span class="nc" id="L51">                rowData[1] = items.get(i).getConvocatory().getName();</span>
+<span class="nc" id="L52">                rowData[2] = items.get(i).getUser().getLogin();</span>
+<span class="nc" id="L53">                rowData[3] = items.get(i).getDate().toString();</span>
+<span class="nc" id="L54">                rowData[4] = items.get(i).getIsValid();</span>
 
-<span class="nc" id="L54">                model.addRow(rowData);</span>
+<span class="nc" id="L56">                model.addRow(rowData);</span>
             }
         }
-<span class="nc" id="L57">    }</span>
+<span class="nc" id="L59">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
@@ -64,86 +66,86 @@ public class PresentationListJInternalFrame extends javax.swing.JInternalFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L67">        jScrollPane1 = new javax.swing.JScrollPane();</span>
-<span class="nc" id="L68">        jTablePresentations = new javax.swing.JTable();</span>
-<span class="nc" id="L69">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L69">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L70">        jTablePresentations = new javax.swing.JTable();</span>
+<span class="nc" id="L71">        jLabel1 = new javax.swing.JLabel();</span>
 
-<span class="nc" id="L71">        setClosable(true);</span>
-<span class="nc" id="L72">        setIconifiable(true);</span>
-<span class="nc" id="L73">        setMaximizable(true);</span>
-<span class="nc" id="L74">        setResizable(true);</span>
-<span class="nc" id="L75">        setTitle(&quot;Listado Presentaciones&quot;);</span>
-<span class="nc" id="L76">        setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L73">        setClosable(true);</span>
+<span class="nc" id="L74">        setIconifiable(true);</span>
+<span class="nc" id="L75">        setMaximizable(true);</span>
+<span class="nc" id="L76">        setResizable(true);</span>
+<span class="nc" id="L77">        setTitle(&quot;Listado Presentaciones&quot;);</span>
+<span class="nc" id="L78">        setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L78">        jTablePresentations.setModel(new javax.swing.table.DefaultTableModel(</span>
+<span class="nc" id="L80">        jTablePresentations.setModel(new javax.swing.table.DefaultTableModel(</span>
             new Object [][] {
 
             },
             new String [] {
                 &quot;id&quot;, &quot;convocatory&quot;, &quot;user&quot;, &quot;date&quot;, &quot;is_valid&quot;
             }
-<span class="nc" id="L85">        ) {</span>
-<span class="nc" id="L86">            Class[] types = new Class [] {</span>
+<span class="nc" id="L87">        ) {</span>
+<span class="nc" id="L88">            Class[] types = new Class [] {</span>
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.Boolean.class
             };
-<span class="nc" id="L89">            boolean[] canEdit = new boolean [] {</span>
+<span class="nc" id="L91">            boolean[] canEdit = new boolean [] {</span>
                 false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-<span class="nc" id="L94">                return types [columnIndex];</span>
+<span class="nc" id="L96">                return types [columnIndex];</span>
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-<span class="nc" id="L98">                return canEdit [columnIndex];</span>
+<span class="nc" id="L100">                return canEdit [columnIndex];</span>
             }
         });
-<span class="nc" id="L101">        jTablePresentations.getTableHeader().setReorderingAllowed(false);</span>
-<span class="nc" id="L102">        jTablePresentations.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L103">        jTablePresentations.getTableHeader().setReorderingAllowed(false);</span>
+<span class="nc" id="L104">        jTablePresentations.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L104">                jTablePresentationsMouseClicked(evt);</span>
-<span class="nc" id="L105">            }</span>
+<span class="nc" id="L106">                jTablePresentationsMouseClicked(evt);</span>
+<span class="nc" id="L107">            }</span>
         });
-<span class="nc" id="L107">        jScrollPane1.setViewportView(jTablePresentations);</span>
+<span class="nc" id="L109">        jScrollPane1.setViewportView(jTablePresentations);</span>
 
-<span class="nc" id="L109">        jLabel1.setText(&quot;Seleccionar un registro para visualizar su información y poder editar y eliminar.&quot;);</span>
+<span class="nc" id="L111">        jLabel1.setText(&quot;Seleccionar un registro para visualizar su información y poder editar y eliminar.&quot;);</span>
 
-<span class="nc" id="L111">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L112">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L113">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L114">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L115">            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)</span>
-<span class="nc" id="L116">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L117">                .addContainerGap()</span>
-<span class="nc" id="L118">                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L119">                .addContainerGap())</span>
+<span class="nc" id="L113">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L114">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L115">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L116">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L117">            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 646, Short.MAX_VALUE)</span>
+<span class="nc" id="L118">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L119">                .addContainerGap()</span>
+<span class="nc" id="L120">                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L121">                .addContainerGap())</span>
         );
-<span class="nc" id="L121">        layout.setVerticalGroup(</span>
-<span class="nc" id="L122">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L123">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
-<span class="nc" id="L124">                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)</span>
-<span class="nc" id="L125">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L126">                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L123">        layout.setVerticalGroup(</span>
+<span class="nc" id="L124">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L125">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L126">                .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 30, Short.MAX_VALUE)</span>
+<span class="nc" id="L127">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L128">                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 257, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
         );
 
-<span class="nc" id="L129">        pack();</span>
-<span class="nc" id="L130">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L131">        pack();</span>
+<span class="nc" id="L132">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void jTablePresentationsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTablePresentationsMouseClicked
-<span class="nc" id="L133">        JTable source = (JTable) evt.getSource();</span>
-<span class="nc" id="L134">        int row = source.rowAtPoint(evt.getPoint());</span>
-<span class="nc" id="L135">        int id = Integer.parseInt(source.getModel().getValueAt(row, 0).toString());</span>
+<span class="nc" id="L135">        JTable source = (JTable) evt.getSource();</span>
+<span class="nc" id="L136">        int row = source.rowAtPoint(evt.getPoint());</span>
+<span class="nc" id="L137">        int id = Integer.parseInt(source.getModel().getValueAt(row, 0).toString());</span>
 
-<span class="nc" id="L137">        Presentation presentation = PresentationController.findById(id);</span>
+<span class="nc" id="L139">        Presentation presentation = PresentationController.findById(id);</span>
 
-<span class="nc" id="L139">        PresentationShowJInternalFrame presentationShow = new PresentationShowJInternalFrame(jDesktopPanelContainer);</span>
-<span class="nc" id="L140">        jDesktopPanelContainer.add(presentationShow);</span>
-<span class="nc" id="L141">        presentationShow.loadData(presentation);</span>
+<span class="nc" id="L141">        PresentationShowJInternalFrame presentationShow = new PresentationShowJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L142">        jDesktopPanelContainer.add(presentationShow);</span>
+<span class="nc" id="L143">        presentationShow.loadData(presentation);</span>
 
-<span class="nc" id="L143">        this.hide();</span>
+<span class="nc" id="L145">        this.hide();</span>
 
-<span class="nc" id="L145">        presentationShow.setVisible(true);</span>
-<span class="nc" id="L146">    }//GEN-LAST:event_jTablePresentationsMouseClicked</span>
+<span class="nc" id="L147">        presentationShow.setVisible(true);</span>
+<span class="nc" id="L148">    }//GEN-LAST:event_jTablePresentationsMouseClicked</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

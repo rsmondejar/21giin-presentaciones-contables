@@ -18,9 +18,12 @@ import java.util.List;
  */
 public class ConvocatoryDocumentTypeDao extends BaseDao {
 
-<span class="nc" id="L21">    public ConvocatoryDocumentTypeDao() {</span>
-<span class="nc" id="L22">        super.setModel(new ConvocatoryDocumentType());</span>
-<span class="nc" id="L23">    }</span>
+    /**
+     * Convocatory Document Type DAO Constructor.
+     */
+<span class="nc" id="L24">    public ConvocatoryDocumentTypeDao() {</span>
+<span class="nc" id="L25">        super.setModel(new ConvocatoryDocumentType());</span>
+<span class="nc" id="L26">    }</span>
 
     /**
      * List Convocatories Documents Types.
@@ -29,7 +32,7 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      */
     @Override
     public List&lt;ConvocatoryDocumentType&gt; all() {
-<span class="nc" id="L32">        return super.all();</span>
+<span class="nc" id="L35">        return super.all();</span>
     }
 
     /**
@@ -40,30 +43,30 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      */
     @Override
     public ConvocatoryDocumentType findById(int id) {
-<span class="nc" id="L43">        return super.findById(id);</span>
+<span class="nc" id="L46">        return super.findById(id);</span>
     }
 
     /**
      * Create Convocatory Document Type.
      *
-     * @param &lt;T&gt;
+     * @param &lt;T&gt; Class
      * @param convocatoryDocumentType Convocatory Document Type
      * @return status
      */
     public &lt;T&gt; Integer create(ConvocatoryDocumentType convocatoryDocumentType) {
-<span class="nc" id="L54">        return super.create((BaseEntity) convocatoryDocumentType);</span>
+<span class="nc" id="L57">        return super.create((BaseEntity) convocatoryDocumentType);</span>
     }
 
     /**
      * Update Convocatory Document Type.
      *
-     * @param &lt;T&gt;
+     * @param &lt;T&gt; T
      * @param id Identifier
      * @param convocatoryDocumentType Document Type
-     * @return
+     * @return Status
      */
     public &lt;T&gt; boolean update(int id, ConvocatoryDocumentType convocatoryDocumentType) {
-<span class="nc" id="L66">        return super.update(id, (BaseEntity) convocatoryDocumentType);</span>
+<span class="nc" id="L69">        return super.update(id, (BaseEntity) convocatoryDocumentType);</span>
     }
 
     /**
@@ -74,7 +77,7 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
      */
     @Override
     public boolean delete(int id) {
-<span class="nc" id="L77">        return super.delete(id);</span>
+<span class="nc" id="L80">        return super.delete(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

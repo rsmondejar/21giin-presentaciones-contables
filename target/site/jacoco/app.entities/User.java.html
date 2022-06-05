@@ -41,6 +41,9 @@ import javax.persistence.UniqueConstraint;
 })
 public class User extends BaseEntity {
 
+    /**
+     * id Id.
+     */
     @Id
     @Column(name = &quot;id&quot;)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -63,96 +66,202 @@ public class User extends BaseEntity {
 
     @Transient
     private Municipality municipality;
-    
-    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
-<span class="fc" id="L68">    public User() {</span>
-<span class="fc" id="L69">    }</span>
 
-<span class="fc" id="L71">    public User(String login, String password, int roleId, int municipalityId) {</span>
-<span class="fc" id="L72">        this.setLogin(login);</span>
-<span class="fc" id="L73">        this.setPassword(password);</span>
-<span class="fc" id="L74">        this.setRoleId(roleId);</span>
-<span class="fc" id="L75">        this.setMunicipalityId(municipalityId);</span>
-<span class="fc" id="L76">    }</span>
-    
-<span class="nc" id="L78">    public User(int id, String login, String password, int roleId, int municipalityId) {</span>
-<span class="nc" id="L79">        this.setId(id);</span>
-<span class="nc" id="L80">        this.setLogin(login);</span>
-<span class="nc" id="L81">        this.setPassword(password);</span>
-<span class="nc" id="L82">        this.setRoleId(roleId);</span>
-<span class="nc" id="L83">        this.setMunicipalityId(municipalityId);</span>
-<span class="nc" id="L84">    }</span>
+    // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
+    /**
+     * User Constructor.
+     */
+<span class="fc" id="L74">    public User() {</span>
+<span class="fc" id="L75">    }</span>
+
+    /**
+     * User Constructor.
+     *
+     * @param login Login.
+     * @param password Password.
+     * @param roleId Role Id.
+     * @param municipalityId Municipality Id.
+     */
+<span class="fc" id="L85">    public User(String login, String password, int roleId, int municipalityId) {</span>
+<span class="fc" id="L86">        this.setLogin(login);</span>
+<span class="fc" id="L87">        this.setPassword(password);</span>
+<span class="fc" id="L88">        this.setRoleId(roleId);</span>
+<span class="fc" id="L89">        this.setMunicipalityId(municipalityId);</span>
+<span class="fc" id="L90">    }</span>
+
+    /**
+     * User Constructor.
+     *
+     * @param id Id.
+     * @param login Login.
+     * @param password Password.
+     * @param roleId Role Id.
+     * @param municipalityId Municipality Id.
+     */
+<span class="nc" id="L101">    public User(int id, String login, String password, int roleId, int municipalityId) {</span>
+<span class="nc" id="L102">        this.setId(id);</span>
+<span class="nc" id="L103">        this.setLogin(login);</span>
+<span class="nc" id="L104">        this.setPassword(password);</span>
+<span class="nc" id="L105">        this.setRoleId(roleId);</span>
+<span class="nc" id="L106">        this.setMunicipalityId(municipalityId);</span>
+<span class="nc" id="L107">    }</span>
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;
+    /**
+     * Get Id.
+     *
+     * @return Id.
+     */
+    @Override
     public int getId() {
-<span class="fc" id="L89">        return id;</span>
+<span class="fc" id="L118">        return id;</span>
     }
 
+    /**
+     * Set Id.
+     *
+     * @param id Id.
+     */
     public void setId(int id) {
-<span class="nc" id="L93">        this.id = id;</span>
-<span class="nc" id="L94">    }</span>
+<span class="nc" id="L127">        this.id = id;</span>
+<span class="nc" id="L128">    }</span>
 
+    /**
+     * Get Login.
+     *
+     * @return Login.
+     */
     public String getLogin() {
-<span class="nc" id="L97">        return login;</span>
+<span class="nc" id="L136">        return login;</span>
     }
 
+    /**
+     * Set Login.
+     *
+     * @param login Login.
+     */
     public void setLogin(String login) {
-<span class="fc" id="L101">        this.login = login;</span>
-<span class="fc" id="L102">    }</span>
+<span class="fc" id="L145">        this.login = login;</span>
+<span class="fc" id="L146">    }</span>
 
+    /**
+     * Get Password.
+     *
+     * @return Password.
+     */
     public String getPassword() {
-<span class="nc" id="L105">        return password;</span>
+<span class="nc" id="L154">        return password;</span>
     }
 
+    /**
+     * Set Password.
+     *
+     * @param password Password.
+     */
     public void setPassword(String password) {
-<span class="fc" id="L109">        this.password = password;</span>
-<span class="fc" id="L110">    }</span>
+<span class="fc" id="L163">        this.password = password;</span>
+<span class="fc" id="L164">    }</span>
 
+    /**
+     * Get Role Id.
+     *
+     * @return Role Id.
+     */
     public int getRoleId() {
-<span class="fc" id="L113">        return roleId;</span>
+<span class="fc" id="L172">        return roleId;</span>
     }
 
+    /**
+     * Set Role Id.
+     *
+     * @param roleId Role Id.
+     */
     public void setRoleId(int roleId) {
-<span class="fc" id="L117">        this.roleId = roleId;</span>
-<span class="fc" id="L118">    }</span>
+<span class="fc" id="L181">        this.roleId = roleId;</span>
+<span class="fc" id="L182">    }</span>
 
+    /**
+     * Get Municipality Id.
+     *
+     * @return Municipality Id.
+     */
     public int getMunicipalityId() {
-<span class="fc" id="L121">        return municipalityId;</span>
+<span class="fc" id="L190">        return municipalityId;</span>
     }
 
+    /**
+     * Set Municipality Id.
+     *
+     * @param municipalityId Municipality Id.
+     */
     public void setMunicipalityId(int municipalityId) {
-<span class="fc" id="L125">        this.municipalityId = municipalityId;</span>
-<span class="fc" id="L126">    }</span>
+<span class="fc" id="L199">        this.municipalityId = municipalityId;</span>
+<span class="fc" id="L200">    }</span>
 
+    /**
+     * Get User Role.
+     *
+     * @return User Role.
+     */
     public UserRole getUserRole() {
-<span class="nc" id="L129">        return userRole;</span>
+<span class="nc" id="L208">        return userRole;</span>
     }
 
+    /**
+     * Set User Role.
+     *
+     * @param userRole User Role.
+     */
     public void setUserRole(UserRole userRole) {
-<span class="fc" id="L133">        this.userRole = userRole;</span>
-<span class="fc" id="L134">    }</span>
+<span class="fc" id="L217">        this.userRole = userRole;</span>
+<span class="fc" id="L218">    }</span>
 
+    /**
+     * Get Muncipality.
+     *
+     * @return Municipality.
+     */
     public Municipality getMunicipality() {
-<span class="nc" id="L137">        return municipality;</span>
+<span class="nc" id="L226">        return municipality;</span>
     }
 
+    /**
+     * Set Municipality.
+     *
+     * @param municipality Municipality.
+     */
     public void setMunicipality(Municipality municipality) {
-<span class="fc" id="L141">        this.municipality = municipality;</span>
-<span class="fc" id="L142">    }</span>
-    
+<span class="fc" id="L235">        this.municipality = municipality;</span>
+<span class="fc" id="L236">    }</span>
+
+    /**
+     * Get Role Name.
+     *
+     * @return Role Name.
+     */
     public String getRoleName() {
-<span class="nc" id="L145">        return this.getUserRole().getRole();</span>
+<span class="nc" id="L244">        return this.getUserRole().getRole();</span>
     }
-    
+
+    /**
+     * Get Municipality Name.
+     *
+     * @return Municipality Name.
+     */
     public String getMunicipalityName() {
-<span class="nc" id="L149">        return this.getMunicipality().getName();</span>
+<span class="nc" id="L253">        return this.getMunicipality().getName();</span>
     }
     // &lt;/editor-fold&gt;
 
+    /**
+     * To String.
+     *
+     * @return Login
+     */
     @Override
     public String toString() {
-<span class="nc" id="L155">        return this.getLogin();</span>
+<span class="nc" id="L264">        return this.getLogin();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+/**
+ * Convocatory List JInternal Frame.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.views.convocatory;
 
@@ -12,8 +14,10 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
+ * Convocatory List JInternal Frame.
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class ConvocatoryListJInternalFrame extends javax.swing.JInternalFrame {
 
@@ -21,7 +25,7 @@ public class ConvocatoryListJInternalFrame extends javax.swing.JInternalFrame {
     
     /**
      * Creates new form MunicipalityJInternalFrame
-     * @param jDesktopPanelContaine
+     * @param jDesktopPanelContaine Desktop Panel Container
      */
     public ConvocatoryListJInternalFrame(JDesktopPane jDesktopPanelContaine) {
         initComponents();

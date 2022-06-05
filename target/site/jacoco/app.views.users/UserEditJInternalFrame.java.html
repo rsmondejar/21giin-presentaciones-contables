@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserEditJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.users</a> &gt; <span class="el_source">UserEditJInternalFrame.java</span></div><h1>UserEditJInternalFrame.java</h1><pre class="source lang-java linenums">/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserEditJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.users</a> &gt; <span class="el_source">UserEditJInternalFrame.java</span></div><h1>UserEditJInternalFrame.java</h1><pre class="source lang-java linenums">/**
+ * User Edit JInternal Frame.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.views.users;
 
@@ -18,55 +20,57 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 
 /**
+ * User Edit JInternal Frame.
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form MunicipalityJInternalFrame
+     * Creates new form MunicipalityJInternalFrame.
      */
-<span class="nc" id="L29">    public UserEditJInternalFrame() {</span>
-<span class="nc" id="L30">        initComponents();</span>
-<span class="nc" id="L31">        jTextFieldUserId.setVisible(false);</span>
-<span class="nc" id="L32">    }</span>
+<span class="nc" id="L33">    public UserEditJInternalFrame() {</span>
+<span class="nc" id="L34">        initComponents();</span>
+<span class="nc" id="L35">        jTextFieldUserId.setVisible(false);</span>
+<span class="nc" id="L36">    }</span>
 
     /**
      * Load Data.
      *
-     * @param user
+     * @param user User.
      */
     public void loadData(User user) {
         // Traer de base de datos el listado de roles y agregar al combobox
-<span class="nc" id="L41">        List&lt;UserRole&gt; userRoles = UserRoleController.list();</span>
-<span class="nc" id="L42">        ComboBox.fill(userRoles, jComboBoxUserRole);</span>
+<span class="nc" id="L45">        List&lt;UserRole&gt; userRoles = UserRoleController.list();</span>
+<span class="nc" id="L46">        ComboBox.fill(userRoles, jComboBoxUserRole);</span>
 
         // Traer de base de datos el listado de Municipios y agregar al combobox
-<span class="nc" id="L45">        List&lt;Municipality&gt; municipalities = MunicipalityController.list();</span>
-<span class="nc" id="L46">        ComboBox.fill(municipalities, jComboBoxMunicipality);</span>
+<span class="nc" id="L49">        List&lt;Municipality&gt; municipalities = MunicipalityController.list();</span>
+<span class="nc" id="L50">        ComboBox.fill(municipalities, jComboBoxMunicipality);</span>
 
-<span class="nc" id="L48">        setUserInfo(user);</span>
-<span class="nc" id="L49">    }</span>
+<span class="nc" id="L52">        setUserInfo(user);</span>
+<span class="nc" id="L53">    }</span>
 
     /**
      * Set User Info.
      *
-     * @param user
+     * @param user User
      */
     private void setUserInfo(User user) {
-<span class="nc" id="L57">        DefaultComboBoxModel defaultComboBoxModelUserRole = (DefaultComboBoxModel) jComboBoxUserRole.getModel();</span>
-<span class="nc" id="L58">        DefaultComboBoxModel defaultComboBoxModelMunicipality = (DefaultComboBoxModel) jComboBoxMunicipality.getModel();</span>
+<span class="nc" id="L61">        DefaultComboBoxModel defaultComboBoxModelUserRole = (DefaultComboBoxModel) jComboBoxUserRole.getModel();</span>
+<span class="nc" id="L62">        DefaultComboBoxModel defaultComboBoxModelMunicipality = (DefaultComboBoxModel) jComboBoxMunicipality.getModel();</span>
 
         // Set user role    
-<span class="nc" id="L61">        defaultComboBoxModelUserRole.setSelectedItem(user.getUserRole());</span>
+<span class="nc" id="L65">        defaultComboBoxModelUserRole.setSelectedItem(user.getUserRole());</span>
 
         // Set municipality
-<span class="nc" id="L64">        defaultComboBoxModelMunicipality.setSelectedItem(user.getMunicipality());</span>
+<span class="nc" id="L68">        defaultComboBoxModelMunicipality.setSelectedItem(user.getMunicipality());</span>
 
-<span class="nc" id="L66">        jTextFieldUserId.setText(String.valueOf(user.getId()));</span>
-<span class="nc" id="L67">        jTextFieldUserLogin.setText(user.getLogin());</span>
-<span class="nc" id="L68">        jPasswordFieldUserPassword.setText(user.getPassword());</span>
-<span class="nc" id="L69">    }</span>
+<span class="nc" id="L70">        jTextFieldUserId.setText(String.valueOf(user.getId()));</span>
+<span class="nc" id="L71">        jTextFieldUserLogin.setText(user.getLogin());</span>
+<span class="nc" id="L72">        jPasswordFieldUserPassword.setText(user.getPassword());</span>
+<span class="nc" id="L73">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
@@ -76,134 +80,134 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L79">        jButtonUserUpdate = new javax.swing.JButton();</span>
-<span class="nc" id="L80">        jLabelUserMunicipality = new javax.swing.JLabel();</span>
-<span class="nc" id="L81">        jLabelUserRole = new javax.swing.JLabel();</span>
-<span class="nc" id="L82">        jPasswordFieldUserPassword = new javax.swing.JPasswordField();</span>
-<span class="nc" id="L83">        jLabelUserPassword = new javax.swing.JLabel();</span>
-<span class="nc" id="L84">        jTextFieldUserLogin = new javax.swing.JTextField();</span>
-<span class="nc" id="L85">        jLabelUserLogin = new javax.swing.JLabel();</span>
-<span class="nc" id="L86">        jTextFieldUserId = new javax.swing.JTextField();</span>
-<span class="nc" id="L87">        jComboBoxUserRole = new javax.swing.JComboBox&lt;&gt;();</span>
-<span class="nc" id="L88">        jComboBoxMunicipality = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L83">        jButtonUserUpdate = new javax.swing.JButton();</span>
+<span class="nc" id="L84">        jLabelUserMunicipality = new javax.swing.JLabel();</span>
+<span class="nc" id="L85">        jLabelUserRole = new javax.swing.JLabel();</span>
+<span class="nc" id="L86">        jPasswordFieldUserPassword = new javax.swing.JPasswordField();</span>
+<span class="nc" id="L87">        jLabelUserPassword = new javax.swing.JLabel();</span>
+<span class="nc" id="L88">        jTextFieldUserLogin = new javax.swing.JTextField();</span>
+<span class="nc" id="L89">        jLabelUserLogin = new javax.swing.JLabel();</span>
+<span class="nc" id="L90">        jTextFieldUserId = new javax.swing.JTextField();</span>
+<span class="nc" id="L91">        jComboBoxUserRole = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L92">        jComboBoxMunicipality = new javax.swing.JComboBox&lt;&gt;();</span>
 
-<span class="nc" id="L90">        setClosable(true);</span>
-<span class="nc" id="L91">        setIconifiable(true);</span>
-<span class="nc" id="L92">        setMaximizable(true);</span>
-<span class="nc" id="L93">        setResizable(true);</span>
-<span class="nc" id="L94">        setTitle(&quot;Editar Usuario&quot;);</span>
-<span class="nc" id="L95">        setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L94">        setClosable(true);</span>
+<span class="nc" id="L95">        setIconifiable(true);</span>
+<span class="nc" id="L96">        setMaximizable(true);</span>
+<span class="nc" id="L97">        setResizable(true);</span>
+<span class="nc" id="L98">        setTitle(&quot;Editar Usuario&quot;);</span>
+<span class="nc" id="L99">        setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L97">        jButtonUserUpdate.setText(&quot;Actualizar&quot;);</span>
-<span class="nc" id="L98">        jButtonUserUpdate.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L101">        jButtonUserUpdate.setText(&quot;Actualizar&quot;);</span>
+<span class="nc" id="L102">        jButtonUserUpdate.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L100">                jButtonUserUpdateActionPerformed(evt);</span>
-<span class="nc" id="L101">            }</span>
+<span class="nc" id="L104">                jButtonUserUpdateActionPerformed(evt);</span>
+<span class="nc" id="L105">            }</span>
         });
 
-<span class="nc" id="L104">        jLabelUserMunicipality.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L105">        jLabelUserMunicipality.setText(&quot;Municipio usuario:&quot;);</span>
+<span class="nc" id="L108">        jLabelUserMunicipality.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L109">        jLabelUserMunicipality.setText(&quot;Municipio usuario:&quot;);</span>
 
-<span class="nc" id="L107">        jLabelUserRole.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L108">        jLabelUserRole.setText(&quot;Role usuario:&quot;);</span>
+<span class="nc" id="L111">        jLabelUserRole.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L112">        jLabelUserRole.setText(&quot;Role usuario:&quot;);</span>
 
-<span class="nc" id="L110">        jPasswordFieldUserPassword.addKeyListener(new java.awt.event.KeyAdapter() {</span>
+<span class="nc" id="L114">        jPasswordFieldUserPassword.addKeyListener(new java.awt.event.KeyAdapter() {</span>
             public void keyReleased(java.awt.event.KeyEvent evt) {
-<span class="nc" id="L112">                enableUpdateButton(evt);</span>
-<span class="nc" id="L113">            }</span>
+<span class="nc" id="L116">                enableUpdateButton(evt);</span>
+<span class="nc" id="L117">            }</span>
         });
 
-<span class="nc" id="L116">        jLabelUserPassword.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L117">        jLabelUserPassword.setText(&quot;Contraseña usuario:&quot;);</span>
+<span class="nc" id="L120">        jLabelUserPassword.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L121">        jLabelUserPassword.setText(&quot;Contraseña usuario:&quot;);</span>
 
-<span class="nc" id="L119">        jTextFieldUserLogin.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
-<span class="nc" id="L120">        jTextFieldUserLogin.addKeyListener(new java.awt.event.KeyAdapter() {</span>
+<span class="nc" id="L123">        jTextFieldUserLogin.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
+<span class="nc" id="L124">        jTextFieldUserLogin.addKeyListener(new java.awt.event.KeyAdapter() {</span>
             public void keyReleased(java.awt.event.KeyEvent evt) {
-<span class="nc" id="L122">                enableUpdateButton(evt);</span>
-<span class="nc" id="L123">            }</span>
+<span class="nc" id="L126">                enableUpdateButton(evt);</span>
+<span class="nc" id="L127">            }</span>
         });
 
-<span class="nc" id="L126">        jLabelUserLogin.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L127">        jLabelUserLogin.setText(&quot;Login usuario:&quot;);</span>
+<span class="nc" id="L130">        jLabelUserLogin.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L131">        jLabelUserLogin.setText(&quot;Login usuario:&quot;);</span>
 
-<span class="nc" id="L129">        jTextFieldUserId.setEditable(false);</span>
-<span class="nc" id="L130">        jTextFieldUserId.setEnabled(false);</span>
+<span class="nc" id="L133">        jTextFieldUserId.setEditable(false);</span>
+<span class="nc" id="L134">        jTextFieldUserId.setEnabled(false);</span>
 
-<span class="nc" id="L132">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L133">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L134">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L135">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L136">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L137">                .addContainerGap()</span>
-<span class="nc" id="L138">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L139">                    .addComponent(jButtonUserUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)</span>
-<span class="nc" id="L140">                    .addComponent(jTextFieldUserLogin)</span>
-<span class="nc" id="L141">                    .addComponent(jLabelUserLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L142">                    .addComponent(jLabelUserPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)</span>
-<span class="nc" id="L143">                    .addComponent(jPasswordFieldUserPassword)</span>
-<span class="nc" id="L144">                    .addComponent(jLabelUserRole, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L145">                    .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L146">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L147">                        .addComponent(jTextFieldUserId, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L148">                        .addGap(0, 0, Short.MAX_VALUE))</span>
-<span class="nc" id="L149">                    .addComponent(jComboBoxUserRole, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L150">                    .addComponent(jComboBoxMunicipality, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-<span class="nc" id="L151">                .addContainerGap())</span>
+<span class="nc" id="L136">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L137">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L138">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L139">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L140">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L141">                .addContainerGap()</span>
+<span class="nc" id="L142">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L143">                    .addComponent(jButtonUserUpdate, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)</span>
+<span class="nc" id="L144">                    .addComponent(jTextFieldUserLogin)</span>
+<span class="nc" id="L145">                    .addComponent(jLabelUserLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L146">                    .addComponent(jLabelUserPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)</span>
+<span class="nc" id="L147">                    .addComponent(jPasswordFieldUserPassword)</span>
+<span class="nc" id="L148">                    .addComponent(jLabelUserRole, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L149">                    .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L150">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L151">                        .addComponent(jTextFieldUserId, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L152">                        .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L153">                    .addComponent(jComboBoxUserRole, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L154">                    .addComponent(jComboBoxMunicipality, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L155">                .addContainerGap())</span>
         );
-<span class="nc" id="L153">        layout.setVerticalGroup(</span>
-<span class="nc" id="L154">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L155">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L156">                .addContainerGap()</span>
-<span class="nc" id="L157">                .addComponent(jLabelUserLogin)</span>
-<span class="nc" id="L158">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L159">                .addComponent(jTextFieldUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L160">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L161">                .addComponent(jLabelUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L157">        layout.setVerticalGroup(</span>
+<span class="nc" id="L158">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L159">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L160">                .addContainerGap()</span>
+<span class="nc" id="L161">                .addComponent(jLabelUserLogin)</span>
 <span class="nc" id="L162">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L163">                .addComponent(jPasswordFieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L163">                .addComponent(jTextFieldUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
 <span class="nc" id="L164">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L165">                .addComponent(jLabelUserRole)</span>
-<span class="nc" id="L166">                .addGap(5, 5, 5)</span>
-<span class="nc" id="L167">                .addComponent(jComboBoxUserRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L165">                .addComponent(jLabelUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L166">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L167">                .addComponent(jPasswordFieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
 <span class="nc" id="L168">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L169">                .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L170">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L171">                .addComponent(jComboBoxMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L172">                .addGap(5, 5, 5)</span>
-<span class="nc" id="L173">                .addComponent(jTextFieldUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L174">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L175">                .addComponent(jButtonUserUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L176">                .addContainerGap())</span>
+<span class="nc" id="L169">                .addComponent(jLabelUserRole)</span>
+<span class="nc" id="L170">                .addGap(5, 5, 5)</span>
+<span class="nc" id="L171">                .addComponent(jComboBoxUserRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L172">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L173">                .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L174">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L175">                .addComponent(jComboBoxMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L176">                .addGap(5, 5, 5)</span>
+<span class="nc" id="L177">                .addComponent(jTextFieldUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L178">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L179">                .addComponent(jButtonUserUpdate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L180">                .addContainerGap())</span>
         );
 
-<span class="nc" id="L179">        pack();</span>
-<span class="nc" id="L180">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L183">        pack();</span>
+<span class="nc" id="L184">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonUserUpdateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserUpdateActionPerformed
         try {
-<span class="nc bnc" id="L185" title="All 2 branches missed.">            if (!validateInputs()) {</span>
-<span class="nc" id="L186">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
+<span class="nc bnc" id="L189" title="All 2 branches missed.">            if (!validateInputs()) {</span>
+<span class="nc" id="L190">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
             }
 
-<span class="nc" id="L189">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
-<span class="nc" id="L190">            String login = getInputLogin();</span>
-<span class="nc" id="L191">            String password = getInputPassword();</span>
-<span class="nc" id="L192">            int roleId = getInputUserRole().getId();</span>
-<span class="nc" id="L193">            int municipalityId = getInputMunicipality().getId();</span>
+<span class="nc" id="L193">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
+<span class="nc" id="L194">            String login = getInputLogin();</span>
+<span class="nc" id="L195">            String password = getInputPassword();</span>
+<span class="nc" id="L196">            int roleId = getInputUserRole().getId();</span>
+<span class="nc" id="L197">            int municipalityId = getInputMunicipality().getId();</span>
 
             // User update
-<span class="nc" id="L196">            User user = new User(id, login, password, roleId, municipalityId);</span>
-<span class="nc" id="L197">            UserController.update(id, user);</span>
+<span class="nc" id="L200">            User user = new User(id, login, password, roleId, municipalityId);</span>
+<span class="nc" id="L201">            UserController.update(id, user);</span>
 
-<span class="nc" id="L199">            Dialog.info(&quot;Usuario actualizado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc" id="L203">            Dialog.info(&quot;Usuario actualizado correctamente&quot;, &quot;Info&quot;);</span>
 
-<span class="nc" id="L201">            cleanInputs();</span>
-<span class="nc" id="L202">        } catch (Exception e) {</span>
-<span class="nc" id="L203">            Log.error(e);</span>
-<span class="nc" id="L204">            Dialog.error(e.getMessage(), &quot;Error actualiazdno usuario&quot;);</span>
-<span class="nc" id="L205">        }</span>
-<span class="nc" id="L206">    }//GEN-LAST:event_jButtonUserUpdateActionPerformed</span>
+<span class="nc" id="L205">            cleanInputs();</span>
+<span class="nc" id="L206">        } catch (Exception e) {</span>
+<span class="nc" id="L207">            Log.error(e);</span>
+<span class="nc" id="L208">            Dialog.error(e.getMessage(), &quot;Error actualiazdno usuario&quot;);</span>
+<span class="nc" id="L209">        }</span>
+<span class="nc" id="L210">    }//GEN-LAST:event_jButtonUserUpdateActionPerformed</span>
 
     /**
      * Enable Update Button.
@@ -213,23 +217,23 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
     @SuppressWarnings(&quot;unused&quot;)
     private void enableUpdateButton(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_enableUpdateButton
         try {
-<span class="nc" id="L216">            jButtonUserUpdate.setEnabled(validateInputs());</span>
-<span class="nc" id="L217">        } catch (Exception e) {</span>
-<span class="nc" id="L218">            Log.error(e);</span>
-<span class="nc" id="L219">        }</span>
-<span class="nc" id="L220">    }//GEN-LAST:event_enableUpdateButton</span>
+<span class="nc" id="L220">            jButtonUserUpdate.setEnabled(validateInputs());</span>
+<span class="nc" id="L221">        } catch (Exception e) {</span>
+<span class="nc" id="L222">            Log.error(e);</span>
+<span class="nc" id="L223">        }</span>
+<span class="nc" id="L224">    }//GEN-LAST:event_enableUpdateButton</span>
 
     /**
      * Clean Inputs.
      */
     private void cleanInputs() {
-<span class="nc" id="L226">        jTextFieldUserId.setText(&quot;&quot;);</span>
-<span class="nc" id="L227">        jTextFieldUserLogin.setText(&quot;&quot;);</span>
-<span class="nc" id="L228">        jPasswordFieldUserPassword.setText(&quot;&quot;);</span>
-<span class="nc" id="L229">        jComboBoxUserRole.setSelectedIndex(0);</span>
-<span class="nc" id="L230">        jComboBoxMunicipality.setSelectedIndex(0);</span>
-<span class="nc" id="L231">        validateInputs();</span>
-<span class="nc" id="L232">    }</span>
+<span class="nc" id="L230">        jTextFieldUserId.setText(&quot;&quot;);</span>
+<span class="nc" id="L231">        jTextFieldUserLogin.setText(&quot;&quot;);</span>
+<span class="nc" id="L232">        jPasswordFieldUserPassword.setText(&quot;&quot;);</span>
+<span class="nc" id="L233">        jComboBoxUserRole.setSelectedIndex(0);</span>
+<span class="nc" id="L234">        jComboBoxMunicipality.setSelectedIndex(0);</span>
+<span class="nc" id="L235">        validateInputs();</span>
+<span class="nc" id="L236">    }</span>
 
     /**
      * Validate Inputs.
@@ -237,7 +241,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return True if inputs are valid
      */
     private Boolean validateInputs() {
-<span class="nc bnc" id="L240" title="All 4 branches missed.">        return validateInputLogin() &amp;&amp; validateInputPassword();</span>
+<span class="nc bnc" id="L244" title="All 4 branches missed.">        return validateInputLogin() &amp;&amp; validateInputPassword();</span>
     }
 
     /**
@@ -246,16 +250,16 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputLogin() {
-<span class="nc" id="L249">        String name = getInputLogin();</span>
-<span class="nc bnc" id="L250" title="All 4 branches missed.">        Boolean isValid = name.length() &gt;= 1 &amp;&amp; name.length() &lt;= 10;</span>
+<span class="nc" id="L253">        String name = getInputLogin();</span>
+<span class="nc bnc" id="L254" title="All 4 branches missed.">        Boolean isValid = name.length() &gt;= 1 &amp;&amp; name.length() &lt;= 10;</span>
 
-<span class="nc bnc" id="L252" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
-<span class="nc" id="L253">            jTextFieldUserLogin.setBackground(Color.white);</span>
+<span class="nc bnc" id="L256" title="All 4 branches missed.">        if (isValid || name.length() == 0) {</span>
+<span class="nc" id="L257">            jTextFieldUserLogin.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L255">            jTextFieldUserLogin.setBackground(Color.orange);</span>
+<span class="nc" id="L259">            jTextFieldUserLogin.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L258">        return isValid;</span>
+<span class="nc" id="L262">        return isValid;</span>
     }
 
     /**
@@ -264,16 +268,16 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return
      */
     private Boolean validateInputPassword() {
-<span class="nc" id="L267">        String password = getInputPassword();</span>
-<span class="nc bnc" id="L268" title="All 4 branches missed.">        Boolean isValid = password.length() &gt;= 4 &amp;&amp; password.length() &lt;= 8;</span>
+<span class="nc" id="L271">        String password = getInputPassword();</span>
+<span class="nc bnc" id="L272" title="All 4 branches missed.">        Boolean isValid = password.length() &gt;= 4 &amp;&amp; password.length() &lt;= 8;</span>
 
-<span class="nc bnc" id="L270" title="All 4 branches missed.">        if (isValid || password.length() == 0) {</span>
-<span class="nc" id="L271">            jPasswordFieldUserPassword.setBackground(Color.white);</span>
+<span class="nc bnc" id="L274" title="All 4 branches missed.">        if (isValid || password.length() == 0) {</span>
+<span class="nc" id="L275">            jPasswordFieldUserPassword.setBackground(Color.white);</span>
         } else {
-<span class="nc" id="L273">            jPasswordFieldUserPassword.setBackground(Color.orange);</span>
+<span class="nc" id="L277">            jPasswordFieldUserPassword.setBackground(Color.orange);</span>
         }
 
-<span class="nc" id="L276">        return isValid;</span>
+<span class="nc" id="L280">        return isValid;</span>
     }
 
     /**
@@ -282,7 +286,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Name
      */
     private String getInputLogin() {
-<span class="nc" id="L285">        return jTextFieldUserLogin.getText();</span>
+<span class="nc" id="L289">        return jTextFieldUserLogin.getText();</span>
     }
 
     /**
@@ -291,7 +295,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Password.
      */
     private String getInputPassword() {
-<span class="nc" id="L294">        return String.valueOf(jPasswordFieldUserPassword.getPassword());</span>
+<span class="nc" id="L298">        return String.valueOf(jPasswordFieldUserPassword.getPassword());</span>
     }
 
     /**
@@ -300,7 +304,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input User Role.
      */
     private UserRole getInputUserRole() {
-<span class="nc" id="L303">        return (UserRole) jComboBoxUserRole.getSelectedItem();</span>
+<span class="nc" id="L307">        return (UserRole) jComboBoxUserRole.getSelectedItem();</span>
     }
 
     /**
@@ -309,7 +313,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
      * @return Input Munipality.
      */
     private Municipality getInputMunicipality() {
-<span class="nc" id="L312">        return (Municipality) jComboBoxMunicipality.getSelectedItem();</span>
+<span class="nc" id="L316">        return (Municipality) jComboBoxMunicipality.getSelectedItem();</span>
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

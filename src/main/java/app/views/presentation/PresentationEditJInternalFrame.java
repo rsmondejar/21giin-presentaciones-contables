@@ -1,5 +1,8 @@
 /**
- * Presentation Create JInternalFrame.
+ * Presentation Edit JInternal Frame
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.views.presentation;
 
@@ -36,8 +39,10 @@ import javax.swing.JLabel;
 import org.apache.commons.io.FilenameUtils;
 
 /**
+ * Presentation Edit JInternal Frame
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
 
@@ -67,6 +72,8 @@ public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
 
     /**
      * Load Data.
+     *
+     * @param presentation Presentation.
      */
     public void loadData(Presentation presentation) {
         disableAllInputFiles();
@@ -91,16 +98,16 @@ public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
                 setDatesConvocatory(convocatory);
             }
         });
-        
+
         jCheckBoxPresentationIsValid.setSelected(presentation.getIsValid());
         jTextFieldPresentationId.setVisible(false);
         jTextFieldPresentationId.setText(String.valueOf(presentation.getId()));
-        
+
         // Setear la convocatoria
         Convocatory convocatory = (Convocatory) jComboBoxConvocatory.getSelectedItem();
         setDocumentsTypesRequiredForConvocatory(convocatory);
         setDatesConvocatory(convocatory);
-        
+
         // Load uploaded documents
         loadUploadedDocuments(presentation);
     }
@@ -120,18 +127,19 @@ public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
         jTextFieldConvocatoryStartDate.setText(DateHelper.formatToYMD(convocatory.getStartDate()));
         jTextFieldConvocatoryEndDate.setText(DateHelper.formatToYMD(convocatory.getEndDate()));
     }
-    
+
     /**
      * Load Uploaded Documents.
+     *
      * @param presentation Presentation
      */
     private void loadUploadedDocuments(Presentation presentation) {
         List<PresentationDocumentType> presentationDocumentTypes = presentation.getPresentationDocumentTypes();
-        
-        if (presentationDocumentTypes != null) {            
-            for(PresentationDocumentType presentationDocumentType : presentationDocumentTypes) {
+
+        if (presentationDocumentTypes != null) {
+            for (PresentationDocumentType presentationDocumentType : presentationDocumentTypes) {
                 int documentTypeID = presentationDocumentType.getDocumentTypeId();
-                
+
                 if (documentTypeID == 1) {
                     jButtonDocumentTypeDownload1.setEnabled(true);
                     jButtonDocumentTypeDelete1.setEnabled(true);
@@ -173,6 +181,7 @@ public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
 
     /**
      * Set Documents Types Required For Convocatory.
+     *
      * @param convocatory Convocatory
      */
     private void setDocumentsTypesRequiredForConvocatory(Convocatory convocatory) {
@@ -920,9 +929,9 @@ public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
             if (Boolean.FALSE.equals(validateInputs())) {
                 throw new Exception("Inputs fieds are invalid.");
             }
-            
+
             int id = Integer.parseInt(jTextFieldPresentationId.getText());
-            
+
             Convocatory convocatory = getInputConvocatory();
             int userId = getInputUserId();
             List<PresentationDocumentType> presentationDocumentsTypes = getDocumentsUploaded(convocatory);
@@ -934,7 +943,7 @@ public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
             presentation.setIsValid(jCheckBoxPresentationIsValid.isSelected());
             presentation.setPresentationDocumentTypes(presentationDocumentsTypes);
             presentation.setId(id);
-            
+
             // Presentation update
             PresentationController.update(id, presentation);
 
@@ -1074,8 +1083,8 @@ public class PresentationEditJInternalFrame extends javax.swing.JInternalFrame {
         fileChooser.showOpenDialog(null);
         File file = fileChooser.getSelectedFile();
         String fileName = file.getAbsolutePath();
-        
-        try(FileInputStream fileInputStream = new FileInputStream(file)) {
+
+        try ( FileInputStream fileInputStream = new FileInputStream(file)) {
             ByteArrayOutputStream bos = new ByteArrayOutputStream();
             byte[] buffer = new byte[1024];
 

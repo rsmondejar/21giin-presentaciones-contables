@@ -8,7 +8,6 @@ package app.dao;
 
 import app.entities.BaseEntity;
 import app.entities.PresentationDocumentType;
-import java.util.List;
 
 /**
  * Presentation Document Type DAO.
@@ -18,6 +17,9 @@ import java.util.List;
  */
 public class PresentationDocumentTypeDao extends BaseDao {
 
+    /**
+     * Presentation Document Type DAO.
+     */
     public PresentationDocumentTypeDao() {
         super.setModel(new PresentationDocumentType());
     }
@@ -37,7 +39,7 @@ public class PresentationDocumentTypeDao extends BaseDao {
      *
      * @param id Identifier
      * @param presentationDocumentType Presentation Document Type
-     * @return
+     * @return Status.
      */
     public boolean update(int id, PresentationDocumentType presentationDocumentType) {
         return super.update(id, (BaseEntity) presentationDocumentType);

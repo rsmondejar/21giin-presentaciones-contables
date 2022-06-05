@@ -21,46 +21,55 @@ import javax.persistence.Id;
 @Entity(name = "municipalities_total_documents_view")
 public class MunicipalityTotalDocument extends BaseEntity {
 
+    /**
+     * id Id.
+     */
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected int id;
-    
+
     @Column(name = "municipality_name")
     private String municipalityName;
-    
+
     @Column(name = "total_documents")
     private int totalDocuments;
 
     // <editor-fold defaultstate="collapsed" desc="Constructors">
+    /**
+     * Municipality Total Document Constructor.
+     */
     public MunicipalityTotalDocument() {
     }
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Getters And Setters">
+    /**
+     * Get Id.
+     *
+     * @return Id.
+     */
     @Override
     public int getId() {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
-    }
-    
+    /**
+     * Get Municipality Name.
+     *
+     * @return Municipality Name.
+     */
     public String getMunicipalityName() {
         return municipalityName;
     }
 
-    public void setMunicipalityName(String municipalityName) {
-        this.municipalityName = municipalityName;
-    }
-
+    /**
+     * Get Total Documents.
+     *
+     * @return Total Documents.
+     */
     public int getTotalDocuments() {
         return totalDocuments;
-    }
-
-    public void setTotalDocuments(int totalDocuments) {
-        this.totalDocuments = totalDocuments;
     }
     // </editor-fold>
 }

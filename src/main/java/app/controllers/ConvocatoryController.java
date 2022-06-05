@@ -19,7 +19,7 @@ public class ConvocatoryController extends BaseController {
     /**
      * List Convocatories.
      *
-     * @return
+     * @return List Convocatories.
      */
     public static List<Convocatory> list() {
         // Get all convocatories
@@ -90,7 +90,7 @@ public class ConvocatoryController extends BaseController {
      *
      * @param id Convocatory Id
      * @param convocatory Convocatory
-     * @return
+     * @return Status
      */
     public static boolean update(int id, Convocatory convocatory) {
         boolean status = false;

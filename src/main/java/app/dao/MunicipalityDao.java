@@ -24,6 +24,9 @@ import org.hibernate.query.Query;
  */
 public class MunicipalityDao extends BaseDao {
 
+    /**
+     * Municipality DAO Constructor.
+     */
     public MunicipalityDao() {
         super.setModel(new Municipality());
     }
@@ -52,7 +55,7 @@ public class MunicipalityDao extends BaseDao {
     /**
      * Create Municipality.
      *
-     * @param <T>
+     * @param <T> T
      * @param municipality Municipality
      * @return status
      */
@@ -63,10 +66,10 @@ public class MunicipalityDao extends BaseDao {
     /**
      * Update Municipality.
      *
-     * @param <T>
+     * @param <T> T
      * @param id Identifier
      * @param municipality Municipality
-     * @return
+     * @return Status
      */
     public <T> boolean update(int id, Municipality municipality) {
         return super.update(id, (BaseEntity) municipality);
@@ -86,7 +89,7 @@ public class MunicipalityDao extends BaseDao {
     /**
      * Get Total Presentation By Municipality.
      *
-     * @return
+     * @return Total Presentation By Municipality.
      */
     public Object totalPresentationsByMunicipality() {
         Transaction trns = null;
@@ -123,7 +126,7 @@ public class MunicipalityDao extends BaseDao {
     /**
      * Get Total Presentation By Municipality.
      *
-     * @return
+     * @return Total Presentatons By Municipality
      */
     public List<Object> totalPresentationsDocumentsByMunicipality() {
         Transaction trns = null;

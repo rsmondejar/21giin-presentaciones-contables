@@ -22,6 +22,9 @@ import java.util.List;
  */
 public class PresentationDao extends BaseDao {
 
+    /**
+     * Presentation DAO Constructor.
+     */
     public PresentationDao() {
         super.setModel(new Presentation());
     }
@@ -56,13 +59,13 @@ public class PresentationDao extends BaseDao {
     /**
      * Create Presentation.
      *
-     * @param <T>
+     * @param <T> T
      * @param presentation Presentation
      * @return status
      */
     public <T> Integer create(Presentation presentation) {
         Integer id = super.create((BaseEntity) presentation);
-        
+
         // Create presentation documents types
         List<PresentationDocumentType> presentationDocumentTypes = presentation.getPresentationDocumentTypes();
 
@@ -80,10 +83,10 @@ public class PresentationDao extends BaseDao {
     /**
      * Update Presentation.
      *
-     * @param <T>
+     * @param <T> T
      * @param id Identifier
      * @param presentation Presentation
-     * @return
+     * @return Status.
      */
     public <T> boolean update(int id, Presentation presentation) {
         return super.update(id, (BaseEntity) presentation);
@@ -117,9 +120,9 @@ public class PresentationDao extends BaseDao {
                     );
 
             if (convocatories != null && !convocatories.isEmpty()) {
-                 presentation.setConvocatory(convocatories.get(0));
+                presentation.setConvocatory(convocatories.get(0));
             }
-            
+
             // Add User
             List<User> users = super
                     .whereNamedQuery(
@@ -131,7 +134,7 @@ public class PresentationDao extends BaseDao {
             if (users != null && !users.isEmpty()) {
                 presentation.setUser(users.get(0));
             }
-            
+
             // Add Documents
             List<PresentationDocumentType> presentationDocumentTypes = super
                     .whereNamedQuery(

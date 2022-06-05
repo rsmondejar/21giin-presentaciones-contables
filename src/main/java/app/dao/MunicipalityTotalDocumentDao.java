@@ -16,6 +16,9 @@ import app.entities.MunicipalityTotalDocument;
  */
 public class MunicipalityTotalDocumentDao extends BaseDao {
 
+    /**
+     * Municipality Total Documents DAO.
+     */
     public MunicipalityTotalDocumentDao() {
         super.setModel(new MunicipalityTotalDocument());
     }

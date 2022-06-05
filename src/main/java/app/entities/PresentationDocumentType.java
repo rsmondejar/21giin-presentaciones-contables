@@ -27,6 +27,9 @@ import javax.persistence.NamedNativeQuery;
 )
 public class PresentationDocumentType extends BaseEntity {
 
+    /**
+     * id Id.
+     */
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,10 +43,10 @@ public class PresentationDocumentType extends BaseEntity {
 
     @Column(name = "content")
     private byte[] content;
-    
+
     @Column(name = "file_name")
     private String fileName;
-    
+
     @Column(name = "file_extension")
     private String fileExtension;
 
@@ -56,6 +59,7 @@ public class PresentationDocumentType extends BaseEntity {
 
     /**
      * Presentation Document Type Constructor.
+     *
      * @param presentationId Presentation Id.
      * @param documentTypeId Document Type Id.
      */
@@ -66,6 +70,7 @@ public class PresentationDocumentType extends BaseEntity {
 
     /**
      * Presentation Document Type Constructor.
+     *
      * @param id Id.
      * @param presentationId Presentation Id.
      * @param documentTypeId Document Type Id.
@@ -78,6 +83,7 @@ public class PresentationDocumentType extends BaseEntity {
 
     /**
      * Presentation Document Type Constructor.
+     *
      * @param id Id.
      * @param presentationId Presentation Id.
      * @param documentTypeId Document Type Id.
@@ -102,56 +108,121 @@ public class PresentationDocumentType extends BaseEntity {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Getters And Setters">
+    /**
+     * Get ID.
+     *
+     * @return Id.
+     */
     @Override
     public int getId() {
         return id;
     }
 
+    /**
+     * Set Id.
+     *
+     * @param id Id.
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Get Presentation Id.
+     *
+     * @return Presentation Id.
+     */
     public int getPresentationId() {
         return presentationId;
     }
 
+    /**
+     * Set Presentation Id.
+     *
+     * @param presentationId Presentation Id.
+     */
     public void setPresentationId(int presentationId) {
         this.presentationId = presentationId;
     }
 
+    /**
+     * Get Document Type Id.
+     *
+     * @return Document Type Id.
+     */
     public int getDocumentTypeId() {
         return documentTypeId;
     }
 
+    /**
+     * Set Document Type Id.
+     *
+     * @param documentTypeId Document Type Id.
+     */
     public void setDocumentTypeId(int documentTypeId) {
         this.documentTypeId = documentTypeId;
     }
 
+    /**
+     * Get Content.
+     *
+     * @return Content.
+     */
     public byte[] getContent() {
         return content;
     }
 
+    /**
+     * Set Content.
+     *
+     * @param content Content.
+     */
     public void setContent(byte[] content) {
         this.content = content;
     }
 
+    /**
+     * Get File Name.
+     *
+     * @return File Name.
+     */
     public String getFileName() {
         return fileName;
     }
 
+    /**
+     * Set File Name.
+     *
+     * @param fileName File Name.
+     */
     public void setFileName(String fileName) {
         this.fileName = fileName;
     }
 
+    /**
+     * Get File Extension.
+     *
+     * @return File Extension.
+     */
     public String getFileExtension() {
         return fileExtension;
     }
 
+    /**
+     * Set File Extension.
+     *
+     * @param fileExtension File Extension.
+     */
     public void setFileExtension(String fileExtension) {
         this.fileExtension = fileExtension;
     }
     // </editor-fold>
-    
+
+    /**
+     * To String
+     *
+     * @return String
+     */
     @Override
     public String toString() {
         return "ConvocatoryDocumentType{"

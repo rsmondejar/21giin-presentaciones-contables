@@ -24,9 +24,12 @@ import org.hibernate.query.Query;
  */
 public class MunicipalityDao extends BaseDao {
 
-<span class="nc" id="L27">    public MunicipalityDao() {</span>
-<span class="nc" id="L28">        super.setModel(new Municipality());</span>
-<span class="nc" id="L29">    }</span>
+    /**
+     * Municipality DAO Constructor.
+     */
+<span class="nc" id="L30">    public MunicipalityDao() {</span>
+<span class="nc" id="L31">        super.setModel(new Municipality());</span>
+<span class="nc" id="L32">    }</span>
 
     /**
      * List Municipalitys.
@@ -35,7 +38,7 @@ public class MunicipalityDao extends BaseDao {
      */
     @Override
     public List&lt;Municipality&gt; all() {
-<span class="nc" id="L38">        return super.all();</span>
+<span class="nc" id="L41">        return super.all();</span>
     }
 
     /**
@@ -46,30 +49,30 @@ public class MunicipalityDao extends BaseDao {
      */
     @Override
     public Municipality findById(int id) {
-<span class="nc" id="L49">        return super.findById(id);</span>
+<span class="nc" id="L52">        return super.findById(id);</span>
     }
 
     /**
      * Create Municipality.
      *
-     * @param &lt;T&gt;
+     * @param &lt;T&gt; T
      * @param municipality Municipality
      * @return status
      */
     public &lt;T&gt; Integer create(Municipality municipality) {
-<span class="nc" id="L60">        return super.create((BaseEntity) municipality);</span>
+<span class="nc" id="L63">        return super.create((BaseEntity) municipality);</span>
     }
 
     /**
      * Update Municipality.
      *
-     * @param &lt;T&gt;
+     * @param &lt;T&gt; T
      * @param id Identifier
      * @param municipality Municipality
-     * @return
+     * @return Status
      */
     public &lt;T&gt; boolean update(int id, Municipality municipality) {
-<span class="nc" id="L72">        return super.update(id, (BaseEntity) municipality);</span>
+<span class="nc" id="L75">        return super.update(id, (BaseEntity) municipality);</span>
     }
 
     /**
@@ -80,22 +83,22 @@ public class MunicipalityDao extends BaseDao {
      */
     @Override
     public boolean delete(int id) {
-<span class="nc" id="L83">        return super.delete(id);</span>
+<span class="nc" id="L86">        return super.delete(id);</span>
     }
 
     /**
      * Get Total Presentation By Municipality.
      *
-     * @return
+     * @return Total Presentation By Municipality.
      */
     public Object totalPresentationsByMunicipality() {
-<span class="nc" id="L92">        Transaction trns = null;</span>
-<span class="nc" id="L93">        Session session = HibernateUtil.get().getCurrentSession();</span>
+<span class="nc" id="L95">        Transaction trns = null;</span>
+<span class="nc" id="L96">        Session session = HibernateUtil.get().getCurrentSession();</span>
 
         try {
-<span class="nc" id="L96">            trns = session.beginTransaction();</span>
+<span class="nc" id="L99">            trns = session.beginTransaction();</span>
 
-<span class="nc" id="L98">            Query query = session.createQuery(</span>
+<span class="nc" id="L101">            Query query = session.createQuery(</span>
                     &quot; SELECT m.name as 'municipality_name', count(p.id) as 'total_presentations' &quot;
                     + &quot; FROM municipalities m &quot;
                     + &quot; LEFT JOIN users u ON u.municipality_id = m.id &quot;
@@ -104,49 +107,49 @@ public class MunicipalityDao extends BaseDao {
                     + &quot; ORDER BY m.name &quot;
             );
 
-<span class="nc" id="L107">            Object result = query.uniqueResult();</span>
+<span class="nc" id="L110">            Object result = query.uniqueResult();</span>
 
-<span class="nc" id="L109">            trns.commit();</span>
+<span class="nc" id="L112">            trns.commit();</span>
 
-<span class="nc" id="L111">            return result;</span>
-<span class="nc" id="L112">        } catch (HibernateException exception) {</span>
-<span class="nc bnc" id="L113" title="All 2 branches missed.">            if (trns != null) {</span>
-<span class="nc" id="L114">                trns.rollback();</span>
+<span class="nc" id="L114">            return result;</span>
+<span class="nc" id="L115">        } catch (HibernateException exception) {</span>
+<span class="nc bnc" id="L116" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L117">                trns.rollback();</span>
             }
-<span class="nc" id="L116">            Log.error(exception);</span>
-<span class="nc" id="L117">            throw exception;</span>
+<span class="nc" id="L119">            Log.error(exception);</span>
+<span class="nc" id="L120">            throw exception;</span>
         } finally {
-<span class="nc" id="L119">            session.close();</span>
+<span class="nc" id="L122">            session.close();</span>
         }
     }
 
     /**
      * Get Total Presentation By Municipality.
      *
-     * @return
+     * @return Total Presentatons By Municipality
      */
     public List&lt;Object&gt; totalPresentationsDocumentsByMunicipality() {
-<span class="nc" id="L129">        Transaction trns = null;</span>
-<span class="nc" id="L130">        Session session = HibernateUtil.get().getCurrentSession();</span>
+<span class="nc" id="L132">        Transaction trns = null;</span>
+<span class="nc" id="L133">        Session session = HibernateUtil.get().getCurrentSession();</span>
 
         try {
-<span class="nc" id="L133">            trns = session.beginTransaction();</span>
+<span class="nc" id="L136">            trns = session.beginTransaction();</span>
 
-<span class="nc" id="L135">            Query query = session.createQuery(&quot;SELECT t FROM municipalities_total_documents_view as t&quot;);</span>
+<span class="nc" id="L138">            Query query = session.createQuery(&quot;SELECT t FROM municipalities_total_documents_view as t&quot;);</span>
 
-<span class="nc" id="L137">            List&lt;Object&gt; result = query.getResultList();</span>
+<span class="nc" id="L140">            List&lt;Object&gt; result = query.getResultList();</span>
 
-<span class="nc" id="L139">            trns.commit();</span>
+<span class="nc" id="L142">            trns.commit();</span>
 
-<span class="nc" id="L141">            return result;</span>
-<span class="nc" id="L142">        } catch (HibernateException exception) {</span>
-<span class="nc bnc" id="L143" title="All 2 branches missed.">            if (trns != null) {</span>
-<span class="nc" id="L144">                trns.rollback();</span>
+<span class="nc" id="L144">            return result;</span>
+<span class="nc" id="L145">        } catch (HibernateException exception) {</span>
+<span class="nc bnc" id="L146" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L147">                trns.rollback();</span>
             }
-<span class="nc" id="L146">            Log.error(exception);</span>
-<span class="nc" id="L147">            throw exception;</span>
+<span class="nc" id="L149">            Log.error(exception);</span>
+<span class="nc" id="L150">            throw exception;</span>
         } finally {
-<span class="nc" id="L149">            session.close();</span>
+<span class="nc" id="L152">            session.close();</span>
         }
     }
 }

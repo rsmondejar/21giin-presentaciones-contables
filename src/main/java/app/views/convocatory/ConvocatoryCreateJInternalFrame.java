@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+/**
+ * Convocatory Create JInternal Frame.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.views.convocatory;
 
@@ -16,8 +18,10 @@ import java.util.Date;
 import java.util.List;
 
 /**
+ * Convocatory Create JInternal Frame.
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class ConvocatoryCreateJInternalFrame extends javax.swing.JInternalFrame {
     
@@ -31,7 +35,7 @@ public class ConvocatoryCreateJInternalFrame extends javax.swing.JInternalFrame 
 
     /**
      * Load Data.
-     * @param convocatory
+     * @param convocatory Convocatory.
      */
     public void loadData(Convocatory convocatory) {        
         jTextFieldConvocatoryName.setText(convocatory.getName());

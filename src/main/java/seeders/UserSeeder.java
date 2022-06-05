@@ -22,7 +22,7 @@ public class UserSeeder {
      *
      * @param total Total users to add
      * @return boolean
-     * @throws Exception
+     * @throws Exception Exception.
      */
     @SuppressFBWarnings("HARD_CODE_PASSWORD")
     public static boolean create(int total) throws Exception {

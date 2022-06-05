@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserShowJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.users</a> &gt; <span class="el_source">UserShowJInternalFrame.java</span></div><h1>UserShowJInternalFrame.java</h1><pre class="source lang-java linenums">/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserShowJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.users</a> &gt; <span class="el_source">UserShowJInternalFrame.java</span></div><h1>UserShowJInternalFrame.java</h1><pre class="source lang-java linenums">/**
+ * User Show JInternal Frame.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.views.users;
 
@@ -12,215 +14,218 @@ import javax.swing.JDesktopPane;
 import javax.swing.JOptionPane;
 
 /**
+ * User Show JInternal Frame.
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class UserShowJInternalFrame extends javax.swing.JInternalFrame {
 
     private final JDesktopPane jDesktopPanelContainer;
-    
+
     /**
      * Creates new form ConvocatoryShowJInternalFrame
-     * @param jDesktopPanelContainer
+     *
+     * @param jDesktopPanelContainer Desktop Panel Container
      */
-<span class="nc" id="L26">    public UserShowJInternalFrame(JDesktopPane jDesktopPanelContainer) {</span>
-<span class="nc" id="L27">        initComponents();</span>
-<span class="nc" id="L28">        this.jDesktopPanelContainer = jDesktopPanelContainer;</span>
-<span class="nc" id="L29">        jTextFieldUserId.setVisible(false);</span>
-<span class="nc" id="L30">    }</span>
+<span class="nc" id="L31">    public UserShowJInternalFrame(JDesktopPane jDesktopPanelContainer) {</span>
+<span class="nc" id="L32">        initComponents();</span>
+<span class="nc" id="L33">        this.jDesktopPanelContainer = jDesktopPanelContainer;</span>
+<span class="nc" id="L34">        jTextFieldUserId.setVisible(false);</span>
+<span class="nc" id="L35">    }</span>
 
     /**
      * Load Data.
-     * @param user
+     *
+     * @param user User
      */
     public void loadData(User user) {
-<span class="nc" id="L37">        jTextFieldUserId.setText(String.valueOf(user.getId()));</span>
-        
-<span class="nc" id="L39">        jTextFieldUserLogin.setText(user.getLogin());</span>
-<span class="nc" id="L40">        jPasswordFieldUserPassword.setText(user.getPassword());</span>
-<span class="nc" id="L41">        jTextFieldUserRole.setText(user.getRoleName());</span>
-<span class="nc" id="L42">        jTextFieldUserMunicipality.setText(user.getMunicipalityName());</span>
-<span class="nc" id="L43">    }</span>
-    
+<span class="nc" id="L43">        jTextFieldUserId.setText(String.valueOf(user.getId()));</span>
+
+<span class="nc" id="L45">        jTextFieldUserLogin.setText(user.getLogin());</span>
+<span class="nc" id="L46">        jPasswordFieldUserPassword.setText(user.getPassword());</span>
+<span class="nc" id="L47">        jTextFieldUserRole.setText(user.getRoleName());</span>
+<span class="nc" id="L48">        jTextFieldUserMunicipality.setText(user.getMunicipalityName());</span>
+<span class="nc" id="L49">    }</span>
+
     /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
+     * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
+     * content of this method is always regenerated by the Form Editor.
      */
     @SuppressWarnings(&quot;unchecked&quot;)
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L54">        jLabelUserLogin = new javax.swing.JLabel();</span>
-<span class="nc" id="L55">        jTextFieldUserLogin = new javax.swing.JTextField();</span>
-<span class="nc" id="L56">        jLabelUserPassword = new javax.swing.JLabel();</span>
-<span class="nc" id="L57">        jButtonUserEdit = new javax.swing.JButton();</span>
-<span class="nc" id="L58">        jTextFieldUserId = new javax.swing.JTextField();</span>
-<span class="nc" id="L59">        jButtonUserDelete = new javax.swing.JButton();</span>
-<span class="nc" id="L60">        jPasswordFieldUserPassword = new javax.swing.JPasswordField();</span>
-<span class="nc" id="L61">        jLabelUserRole = new javax.swing.JLabel();</span>
-<span class="nc" id="L62">        jTextFieldUserRole = new javax.swing.JTextField();</span>
-<span class="nc" id="L63">        jLabelUserMunicipality = new javax.swing.JLabel();</span>
-<span class="nc" id="L64">        jTextFieldUserMunicipality = new javax.swing.JTextField();</span>
+<span class="nc" id="L59">        jLabelUserLogin = new javax.swing.JLabel();</span>
+<span class="nc" id="L60">        jTextFieldUserLogin = new javax.swing.JTextField();</span>
+<span class="nc" id="L61">        jLabelUserPassword = new javax.swing.JLabel();</span>
+<span class="nc" id="L62">        jButtonUserEdit = new javax.swing.JButton();</span>
+<span class="nc" id="L63">        jTextFieldUserId = new javax.swing.JTextField();</span>
+<span class="nc" id="L64">        jButtonUserDelete = new javax.swing.JButton();</span>
+<span class="nc" id="L65">        jPasswordFieldUserPassword = new javax.swing.JPasswordField();</span>
+<span class="nc" id="L66">        jLabelUserRole = new javax.swing.JLabel();</span>
+<span class="nc" id="L67">        jTextFieldUserRole = new javax.swing.JTextField();</span>
+<span class="nc" id="L68">        jLabelUserMunicipality = new javax.swing.JLabel();</span>
+<span class="nc" id="L69">        jTextFieldUserMunicipality = new javax.swing.JTextField();</span>
 
-<span class="nc" id="L66">        setClosable(true);</span>
-<span class="nc" id="L67">        setIconifiable(true);</span>
-<span class="nc" id="L68">        setMaximizable(true);</span>
-<span class="nc" id="L69">        setResizable(true);</span>
-<span class="nc" id="L70">        setTitle(&quot;Ver Usuario&quot;);</span>
-<span class="nc" id="L71">        setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L71">        setClosable(true);</span>
+<span class="nc" id="L72">        setIconifiable(true);</span>
+<span class="nc" id="L73">        setMaximizable(true);</span>
+<span class="nc" id="L74">        setResizable(true);</span>
+<span class="nc" id="L75">        setTitle(&quot;Ver Usuario&quot;);</span>
+<span class="nc" id="L76">        setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L73">        jLabelUserLogin.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L74">        jLabelUserLogin.setText(&quot;Login usuario:&quot;);</span>
+<span class="nc" id="L78">        jLabelUserLogin.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L79">        jLabelUserLogin.setText(&quot;Login usuario:&quot;);</span>
 
-<span class="nc" id="L76">        jTextFieldUserLogin.setEditable(false);</span>
-<span class="nc" id="L77">        jTextFieldUserLogin.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
-<span class="nc" id="L78">        jTextFieldUserLogin.setEnabled(false);</span>
+<span class="nc" id="L81">        jTextFieldUserLogin.setEditable(false);</span>
+<span class="nc" id="L82">        jTextFieldUserLogin.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
+<span class="nc" id="L83">        jTextFieldUserLogin.setEnabled(false);</span>
 
-<span class="nc" id="L80">        jLabelUserPassword.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L81">        jLabelUserPassword.setText(&quot;Contraseña usuario:&quot;);</span>
+<span class="nc" id="L85">        jLabelUserPassword.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L86">        jLabelUserPassword.setText(&quot;Contraseña usuario:&quot;);</span>
 
-<span class="nc" id="L83">        jButtonUserEdit.setText(&quot;Editar&quot;);</span>
-<span class="nc" id="L84">        jButtonUserEdit.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L88">        jButtonUserEdit.setText(&quot;Editar&quot;);</span>
+<span class="nc" id="L89">        jButtonUserEdit.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L86">                jButtonUserEditActionPerformed(evt);</span>
-<span class="nc" id="L87">            }</span>
+<span class="nc" id="L91">                jButtonUserEditActionPerformed(evt);</span>
+<span class="nc" id="L92">            }</span>
         });
 
-<span class="nc" id="L90">        jTextFieldUserId.setEditable(false);</span>
-<span class="nc" id="L91">        jTextFieldUserId.setEnabled(false);</span>
+<span class="nc" id="L95">        jTextFieldUserId.setEditable(false);</span>
+<span class="nc" id="L96">        jTextFieldUserId.setEnabled(false);</span>
 
-<span class="nc" id="L93">        jButtonUserDelete.setBackground(new java.awt.Color(255, 153, 153));</span>
-<span class="nc" id="L94">        jButtonUserDelete.setText(&quot;Eliminar&quot;);</span>
-<span class="nc" id="L95">        jButtonUserDelete.setBorderPainted(false);</span>
-<span class="nc" id="L96">        jButtonUserDelete.setOpaque(true);</span>
-<span class="nc" id="L97">        jButtonUserDelete.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L98">        jButtonUserDelete.setBackground(new java.awt.Color(255, 153, 153));</span>
+<span class="nc" id="L99">        jButtonUserDelete.setText(&quot;Eliminar&quot;);</span>
+<span class="nc" id="L100">        jButtonUserDelete.setBorderPainted(false);</span>
+<span class="nc" id="L101">        jButtonUserDelete.setOpaque(true);</span>
+<span class="nc" id="L102">        jButtonUserDelete.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L99">                jButtonUserDeleteActionPerformed(evt);</span>
-<span class="nc" id="L100">            }</span>
+<span class="nc" id="L104">                jButtonUserDeleteActionPerformed(evt);</span>
+<span class="nc" id="L105">            }</span>
         });
 
-<span class="nc" id="L103">        jPasswordFieldUserPassword.setEditable(false);</span>
-<span class="nc" id="L104">        jPasswordFieldUserPassword.setEnabled(false);</span>
+<span class="nc" id="L108">        jPasswordFieldUserPassword.setEditable(false);</span>
+<span class="nc" id="L109">        jPasswordFieldUserPassword.setEnabled(false);</span>
 
-<span class="nc" id="L106">        jLabelUserRole.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L107">        jLabelUserRole.setText(&quot;Role usuario:&quot;);</span>
+<span class="nc" id="L111">        jLabelUserRole.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L112">        jLabelUserRole.setText(&quot;Role usuario:&quot;);</span>
 
-<span class="nc" id="L109">        jTextFieldUserRole.setEditable(false);</span>
-<span class="nc" id="L110">        jTextFieldUserRole.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
-<span class="nc" id="L111">        jTextFieldUserRole.setEnabled(false);</span>
+<span class="nc" id="L114">        jTextFieldUserRole.setEditable(false);</span>
+<span class="nc" id="L115">        jTextFieldUserRole.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
+<span class="nc" id="L116">        jTextFieldUserRole.setEnabled(false);</span>
 
-<span class="nc" id="L113">        jLabelUserMunicipality.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L114">        jLabelUserMunicipality.setText(&quot;Municipio usuario:&quot;);</span>
+<span class="nc" id="L118">        jLabelUserMunicipality.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L119">        jLabelUserMunicipality.setText(&quot;Municipio usuario:&quot;);</span>
 
-<span class="nc" id="L116">        jTextFieldUserMunicipality.setEditable(false);</span>
-<span class="nc" id="L117">        jTextFieldUserMunicipality.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
-<span class="nc" id="L118">        jTextFieldUserMunicipality.setEnabled(false);</span>
+<span class="nc" id="L121">        jTextFieldUserMunicipality.setEditable(false);</span>
+<span class="nc" id="L122">        jTextFieldUserMunicipality.setToolTipText(&quot;Introducir nombre del municipio&quot;);</span>
+<span class="nc" id="L123">        jTextFieldUserMunicipality.setEnabled(false);</span>
 
-<span class="nc" id="L120">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L121">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L122">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L123">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L124">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L125">                .addContainerGap()</span>
-<span class="nc" id="L126">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L127">                    .addComponent(jTextFieldUserLogin)</span>
-<span class="nc" id="L128">                    .addComponent(jLabelUserLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L129">                    .addComponent(jLabelUserPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L130">                    .addComponent(jPasswordFieldUserPassword)</span>
-<span class="nc" id="L131">                    .addComponent(jTextFieldUserRole)</span>
-<span class="nc" id="L132">                    .addComponent(jLabelUserRole, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L133">                    .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L134">                    .addComponent(jTextFieldUserMunicipality)</span>
-<span class="nc" id="L135">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L136">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L137">                            .addComponent(jTextFieldUserId, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L138">                            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L139">                                .addComponent(jButtonUserDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L140">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L141">                                .addComponent(jButtonUserEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
-<span class="nc" id="L142">                        .addGap(0, 9, Short.MAX_VALUE)))</span>
-<span class="nc" id="L143">                .addContainerGap())</span>
+<span class="nc" id="L125">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L126">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L127">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L128">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L129">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L130">                .addContainerGap()</span>
+<span class="nc" id="L131">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L132">                    .addComponent(jTextFieldUserLogin)</span>
+<span class="nc" id="L133">                    .addComponent(jLabelUserLogin, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L134">                    .addComponent(jLabelUserPassword, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L135">                    .addComponent(jPasswordFieldUserPassword)</span>
+<span class="nc" id="L136">                    .addComponent(jTextFieldUserRole)</span>
+<span class="nc" id="L137">                    .addComponent(jLabelUserRole, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L138">                    .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L139">                    .addComponent(jTextFieldUserMunicipality)</span>
+<span class="nc" id="L140">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L141">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L142">                            .addComponent(jTextFieldUserId, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L143">                            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L144">                                .addComponent(jButtonUserDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L145">                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L146">                                .addComponent(jButtonUserEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 376, javax.swing.GroupLayout.PREFERRED_SIZE)))</span>
+<span class="nc" id="L147">                        .addGap(0, 9, Short.MAX_VALUE)))</span>
+<span class="nc" id="L148">                .addContainerGap())</span>
         );
-<span class="nc" id="L145">        layout.setVerticalGroup(</span>
-<span class="nc" id="L146">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L147">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L148">                .addContainerGap()</span>
-<span class="nc" id="L149">                .addComponent(jLabelUserLogin)</span>
-<span class="nc" id="L150">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L151">                .addComponent(jTextFieldUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L152">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L153">                .addComponent(jLabelUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L154">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L155">                .addComponent(jPasswordFieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L156">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L157">                .addComponent(jLabelUserRole)</span>
-<span class="nc" id="L158">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L159">                .addComponent(jTextFieldUserRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L160">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L161">                .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L162">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L163">                .addComponent(jTextFieldUserMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L164">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L165">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L166">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L167">                        .addComponent(jTextFieldUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L168">                        .addGap(0, 0, Short.MAX_VALUE))</span>
-<span class="nc" id="L169">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
-<span class="nc" id="L170">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)</span>
-<span class="nc" id="L171">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L172">                            .addComponent(jButtonUserEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L173">                            .addComponent(jButtonUserDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L174">                        .addContainerGap())))</span>
+<span class="nc" id="L150">        layout.setVerticalGroup(</span>
+<span class="nc" id="L151">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L152">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L153">                .addContainerGap()</span>
+<span class="nc" id="L154">                .addComponent(jLabelUserLogin)</span>
+<span class="nc" id="L155">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L156">                .addComponent(jTextFieldUserLogin, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L157">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L158">                .addComponent(jLabelUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L159">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L160">                .addComponent(jPasswordFieldUserPassword, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L161">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L162">                .addComponent(jLabelUserRole)</span>
+<span class="nc" id="L163">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L164">                .addComponent(jTextFieldUserRole, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L165">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L166">                .addComponent(jLabelUserMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L167">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L168">                .addComponent(jTextFieldUserMunicipality, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L169">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L170">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L171">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L172">                        .addComponent(jTextFieldUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L173">                        .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L174">                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L175">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)</span>
+<span class="nc" id="L176">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L177">                            .addComponent(jButtonUserEdit, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L178">                            .addComponent(jButtonUserDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L179">                        .addContainerGap())))</span>
         );
 
-<span class="nc" id="L177">        pack();</span>
-<span class="nc" id="L178">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L182">        pack();</span>
+<span class="nc" id="L183">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonUserEditActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserEditActionPerformed
         try {
 
-<span class="nc" id="L184">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
-<span class="nc" id="L185">            User user = UserController.findById(id);</span>
-            
-<span class="nc" id="L187">            UserEditJInternalFrame userEdit = new UserEditJInternalFrame();</span>
-        
-<span class="nc" id="L189">            jDesktopPanelContainer.add(userEdit);</span>
-        
+<span class="nc" id="L189">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
+<span class="nc" id="L190">            User user = UserController.findById(id);</span>
+
+<span class="nc" id="L192">            UserEditJInternalFrame userEdit = new UserEditJInternalFrame();</span>
+
+<span class="nc" id="L194">            jDesktopPanelContainer.add(userEdit);</span>
+
             // Load user info in view
-<span class="nc" id="L192">            userEdit.loadData(user);</span>
-            
-<span class="nc" id="L194">            this.hide();</span>
-            
-<span class="nc" id="L196">            userEdit.setVisible(true);</span>
-<span class="nc" id="L197">        } catch (NumberFormatException e) {</span>
-<span class="nc" id="L198">            Log.error(e);</span>
-<span class="nc" id="L199">            Dialog.error(e.getMessage(), &quot;Error editar municipio&quot;);</span>
-<span class="nc" id="L200">        }</span>
-<span class="nc" id="L201">    }//GEN-LAST:event_jButtonUserEditActionPerformed</span>
+<span class="nc" id="L197">            userEdit.loadData(user);</span>
+
+<span class="nc" id="L199">            this.hide();</span>
+
+<span class="nc" id="L201">            userEdit.setVisible(true);</span>
+<span class="nc" id="L202">        } catch (NumberFormatException e) {</span>
+<span class="nc" id="L203">            Log.error(e);</span>
+<span class="nc" id="L204">            Dialog.error(e.getMessage(), &quot;Error editar municipio&quot;);</span>
+<span class="nc" id="L205">        }</span>
+<span class="nc" id="L206">    }//GEN-LAST:event_jButtonUserEditActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonUserDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonUserDeleteActionPerformed
-<span class="nc" id="L205">        int input = JOptionPane.showConfirmDialog(null, &quot;Deseas eliminar?&quot;);</span>
+<span class="nc" id="L210">        int input = JOptionPane.showConfirmDialog(null, &quot;Deseas eliminar?&quot;);</span>
         // 0=yes, 1=no, 2=cancel
-        
-<span class="nc bnc" id="L208" title="All 2 branches missed.">        if (input == 0) {</span>
+
+<span class="nc bnc" id="L213" title="All 2 branches missed.">        if (input == 0) {</span>
             // Delete
-<span class="nc" id="L210">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
-<span class="nc" id="L211">            boolean status = UserController.delete(id);</span>
-            
-<span class="nc bnc" id="L213" title="All 2 branches missed.">            if (status) {</span>
-<span class="nc" id="L214">                Dialog.info(&quot;Usuario eliminado correctamente&quot;, &quot;Info&quot;);</span>
-                
-<span class="nc" id="L216">                this.hide();</span>
+<span class="nc" id="L215">            int id = Integer.parseInt(jTextFieldUserId.getText());</span>
+<span class="nc" id="L216">            boolean status = UserController.delete(id);</span>
+
+<span class="nc bnc" id="L218" title="All 2 branches missed.">            if (status) {</span>
+<span class="nc" id="L219">                Dialog.info(&quot;Usuario eliminado correctamente&quot;, &quot;Info&quot;);</span>
+
+<span class="nc" id="L221">                this.hide();</span>
             } else {
-<span class="nc" id="L218">                Dialog.error(&quot;Usuario no se ha eliminado&quot;, &quot;Error&quot;);</span>
+<span class="nc" id="L223">                Dialog.error(&quot;Usuario no se ha eliminado&quot;, &quot;Error&quot;);</span>
             }
         }
-<span class="nc" id="L221">    }//GEN-LAST:event_jButtonUserDeleteActionPerformed</span>
+<span class="nc" id="L226">    }//GEN-LAST:event_jButtonUserDeleteActionPerformed</span>
 
-    
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButtonUserDelete;
     private javax.swing.JButton jButtonUserEdit;

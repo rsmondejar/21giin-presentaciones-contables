@@ -1,6 +1,7 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+/**
+ * Municipality Create JInternal Frame
+ *
+ * @author raulsm
  */
 package app.views.municipality;
 
@@ -11,6 +12,7 @@ import helpers.Log;
 import java.awt.Color;
 
 /**
+ * Municipality Create JInternal Frame
  *
  * @author raulsm
  */

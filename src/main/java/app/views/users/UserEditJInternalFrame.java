@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+/**
+ * User Edit JInternal Frame.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.views.users;
 
@@ -18,13 +20,15 @@ import java.util.List;
 import javax.swing.DefaultComboBoxModel;
 
 /**
+ * User Edit JInternal Frame.
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
 
     /**
-     * Creates new form MunicipalityJInternalFrame
+     * Creates new form MunicipalityJInternalFrame.
      */
     public UserEditJInternalFrame() {
         initComponents();
@@ -34,7 +38,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
     /**
      * Load Data.
      *
-     * @param user
+     * @param user User.
      */
     public void loadData(User user) {
         // Traer de base de datos el listado de roles y agregar al combobox
@@ -51,7 +55,7 @@ public class UserEditJInternalFrame extends javax.swing.JInternalFrame {
     /**
      * Set User Info.
      *
-     * @param user
+     * @param user User
      */
     private void setUserInfo(User user) {
         DefaultComboBoxModel defaultComboBoxModelUserRole = (DefaultComboBoxModel) jComboBoxUserRole.getModel();

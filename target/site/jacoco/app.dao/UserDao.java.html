@@ -26,9 +26,12 @@ import org.hibernate.query.Query;
  */
 public class UserDao extends BaseDao {
 
-<span class="fc" id="L29">    public UserDao() {</span>
-<span class="fc" id="L30">        super.setModel(new User());</span>
-<span class="fc" id="L31">    }</span>
+    /**
+     * User DAO Constructor.
+     */
+<span class="fc" id="L32">    public UserDao() {</span>
+<span class="fc" id="L33">        super.setModel(new User());</span>
+<span class="fc" id="L34">    }</span>
 
     /**
      * List Users.
@@ -36,14 +39,14 @@ public class UserDao extends BaseDao {
      * @return List of users
      */
     public List&lt;User&gt; all() {
-<span class="nc" id="L39">        List&lt;User&gt; users = super.all();</span>
-        
+<span class="nc" id="L42">        List&lt;User&gt; users = super.all();</span>
+
         // Add extra fields: Municpality and UserRole
-<span class="nc bnc" id="L42" title="All 2 branches missed.">        for(int i = 0; i &lt; users.size(); i++) {</span>
-<span class="nc" id="L43">            users.set(i, findById(users.get(i).getId()));</span>
+<span class="nc bnc" id="L45" title="All 2 branches missed.">        for (int i = 0; i &lt; users.size(); i++) {</span>
+<span class="nc" id="L46">            users.set(i, findById(users.get(i).getId()));</span>
         }
-        
-<span class="nc" id="L46">        return users;</span>
+
+<span class="nc" id="L49">        return users;</span>
     }
 
     /**
@@ -54,30 +57,30 @@ public class UserDao extends BaseDao {
      */
     @Override
     public User findById(int id) {
-<span class="nc" id="L57">        return addRelations((User) super.findById(id));</span>
+<span class="nc" id="L60">        return addRelations((User) super.findById(id));</span>
     }
 
     /**
      * Create User.
      *
-     * @param &lt;T&gt;
+     * @param &lt;T&gt; T
      * @param user User
      * @return status
      */
     public &lt;T&gt; Integer create(User user) {
-<span class="fc" id="L68">        return super.create((BaseEntity) user);</span>
+<span class="fc" id="L71">        return super.create((BaseEntity) user);</span>
     }
 
     /**
      * Update User.
      *
-     * @param &lt;T&gt;
+     * @param &lt;T&gt; T
      * @param id Identifier
      * @param user User
-     * @return
+     * @return Status
      */
     public &lt;T&gt; boolean update(int id, User user) {
-<span class="fc" id="L80">        return super.update(id, (BaseEntity) user);</span>
+<span class="fc" id="L83">        return super.update(id, (BaseEntity) user);</span>
     }
 
     /**
@@ -88,72 +91,74 @@ public class UserDao extends BaseDao {
      */
     @Override
     public boolean delete(int id) {
-<span class="fc" id="L91">        return super.delete(id);</span>
+<span class="fc" id="L94">        return super.delete(id);</span>
     }
-    
+
     /**
      * Find By Login And Password.
+     *
      * @param login Login
      * @param password Password
      * @return User
-     * @throws Exception 
+     * @throws Exception Exception
      */
     public User findByLoginAndPassword(String login, String password) throws Exception {
-<span class="fc" id="L102">        Transaction trns = null;</span>
-<span class="fc" id="L103">        Session session = HibernateUtil.get().getCurrentSession();</span>
-        
-        try {
-<span class="fc" id="L106">            trns = session.beginTransaction();</span>
-            
-<span class="fc" id="L108">            Query query = session.createQuery(&quot;SELECT u FROM users u WHERE u.login=:login AND u.password=:password&quot;);</span>
-<span class="fc" id="L109">            query.setParameter(&quot;login&quot;, login);</span>
-<span class="fc" id="L110">            query.setParameter(&quot;password&quot;, password);</span>
-            
-<span class="fc" id="L112">            User user = (User) query.uniqueResult();</span>
-            
-<span class="fc bfc" id="L114" title="All 2 branches covered.">            if (user == null) {</span>
-<span class="fc" id="L115">                throw new Exception(&quot;Not found user with login '%s' and password '%s'&quot;.formatted(login, password));</span>
-            }
-            
-<span class="fc" id="L118">            trns.commit();</span>
+<span class="fc" id="L106">        Transaction trns = null;</span>
+<span class="fc" id="L107">        Session session = HibernateUtil.get().getCurrentSession();</span>
 
-<span class="fc" id="L120">            return addRelations(user);</span>
-<span class="nc" id="L121">        } catch (HibernateException exception) {</span>
-<span class="nc bnc" id="L122" title="All 2 branches missed.">            if (trns != null) {</span>
-<span class="nc" id="L123">                trns.rollback();</span>
+        try {
+<span class="fc" id="L110">            trns = session.beginTransaction();</span>
+
+<span class="fc" id="L112">            Query query = session.createQuery(&quot;SELECT u FROM users u WHERE u.login=:login AND u.password=:password&quot;);</span>
+<span class="fc" id="L113">            query.setParameter(&quot;login&quot;, login);</span>
+<span class="fc" id="L114">            query.setParameter(&quot;password&quot;, password);</span>
+
+<span class="fc" id="L116">            User user = (User) query.uniqueResult();</span>
+
+<span class="fc bfc" id="L118" title="All 2 branches covered.">            if (user == null) {</span>
+<span class="fc" id="L119">                throw new Exception(&quot;Not found user with login '%s' and password '%s'&quot;.formatted(login, password));</span>
             }
-<span class="nc" id="L125">            Log.error(exception);</span>
-<span class="nc" id="L126">            throw exception;</span>
+
+<span class="fc" id="L122">            trns.commit();</span>
+
+<span class="fc" id="L124">            return addRelations(user);</span>
+<span class="nc" id="L125">        } catch (HibernateException exception) {</span>
+<span class="nc bnc" id="L126" title="All 2 branches missed.">            if (trns != null) {</span>
+<span class="nc" id="L127">                trns.rollback();</span>
+            }
+<span class="nc" id="L129">            Log.error(exception);</span>
+<span class="nc" id="L130">            throw exception;</span>
         } finally {
-<span class="fc" id="L128">            session.close();</span>
+<span class="fc" id="L132">            session.close();</span>
         }
     }
-    
+
     /**
      * Add Relations.
+     *
      * @param user User
      * @return User with relations
-     */ 
+     */
     private User addRelations(User user) {
         try {
             // Add Role
-<span class="fc" id="L140">            List&lt;UserRole&gt; userRoles = super</span>
-<span class="fc" id="L141">                        .whereNamedQuery(&quot;role&quot;, &quot;role_id&quot;, String.valueOf(user.getRoleId()));</span>
+<span class="fc" id="L145">            List&lt;UserRole&gt; userRoles = super</span>
+<span class="fc" id="L146">                    .whereNamedQuery(&quot;role&quot;, &quot;role_id&quot;, String.valueOf(user.getRoleId()));</span>
 
-<span class="fc" id="L143">            user.setUserRole(userRoles.get(0));</span>
+<span class="fc" id="L148">            user.setUserRole(userRoles.get(0));</span>
 
             // Add Municipality
-<span class="fc" id="L146">            List&lt;Municipality&gt; municipalities = super</span>
-<span class="fc" id="L147">                        .whereNamedQuery(&quot;municipality&quot;, &quot;municipality_id&quot;, String.valueOf(user.getMunicipalityId()));</span>
+<span class="fc" id="L151">            List&lt;Municipality&gt; municipalities = super</span>
+<span class="fc" id="L152">                    .whereNamedQuery(&quot;municipality&quot;, &quot;municipality_id&quot;, String.valueOf(user.getMunicipalityId()));</span>
 
-<span class="fc" id="L149">            user.setMunicipality(municipalities.get(0));</span>
+<span class="fc" id="L154">            user.setMunicipality(municipalities.get(0));</span>
 
-<span class="fc" id="L151">            return user;</span>
-<span class="nc" id="L152">        } catch(Exception exception) {</span>
-<span class="nc" id="L153">            Log.error(exception);</span>
+<span class="fc" id="L156">            return user;</span>
+<span class="nc" id="L157">        } catch (Exception exception) {</span>
+<span class="nc" id="L158">            Log.error(exception);</span>
         }
-        
-<span class="nc" id="L156">        return null;</span>
+
+<span class="nc" id="L161">        return null;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

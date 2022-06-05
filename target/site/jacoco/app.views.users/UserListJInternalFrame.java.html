@@ -1,6 +1,8 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserListJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.users</a> &gt; <span class="el_source">UserListJInternalFrame.java</span></div><h1>UserListJInternalFrame.java</h1><pre class="source lang-java linenums">/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>UserListJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.users</a> &gt; <span class="el_source">UserListJInternalFrame.java</span></div><h1>UserListJInternalFrame.java</h1><pre class="source lang-java linenums">/**
+ * User List JInternal Frame.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.views.users;
 
@@ -12,135 +14,137 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
+ * User List JInternal Frame.
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class UserListJInternalFrame extends javax.swing.JInternalFrame {
 
     private final JDesktopPane jDesktopPanelContainer;
-    
+
     /**
      * Creates new form MunicipalityJInternalFrame
-     * @param jDesktopPanelContaine
+     *
+     * @param jDesktopPanelContaine Desktop Panel Container
      */
-<span class="nc" id="L26">    public UserListJInternalFrame(JDesktopPane jDesktopPanelContaine) {</span>
-<span class="nc" id="L27">        initComponents();</span>
-<span class="nc" id="L28">        this.jDesktopPanelContainer = jDesktopPanelContaine;</span>
-<span class="nc" id="L29">        loadData();</span>
-<span class="nc" id="L30">    }</span>
+<span class="nc" id="L31">    public UserListJInternalFrame(JDesktopPane jDesktopPanelContaine) {</span>
+<span class="nc" id="L32">        initComponents();</span>
+<span class="nc" id="L33">        this.jDesktopPanelContainer = jDesktopPanelContaine;</span>
+<span class="nc" id="L34">        loadData();</span>
+<span class="nc" id="L35">    }</span>
 
     /**
      * Load Data.
      */
     public void loadData() {
-<span class="nc" id="L36">        DefaultTableModel model = (DefaultTableModel) jTableUsers.getModel();</span>
-        
+<span class="nc" id="L41">        DefaultTableModel model = (DefaultTableModel) jTableUsers.getModel();</span>
+
         // @TODO: Load Data
-<span class="nc" id="L39">        List&lt;User&gt; items = UserController.list();</span>
-        
+<span class="nc" id="L44">        List&lt;User&gt; items = UserController.list();</span>
+
         // @TODO: Add data
-<span class="nc" id="L42">        Object[] rowData = new Object[model.getColumnCount()];</span>
-<span class="nc bnc" id="L43" title="All 2 branches missed.">        for (int i = 0; i &lt; items.size(); i++) {</span>
-<span class="nc" id="L44">            rowData[0] = items.get(i).getId();</span>
-<span class="nc" id="L45">            rowData[1] = items.get(i).getLogin();</span>
-<span class="nc" id="L46">            rowData[2] = items.get(i).getRoleName();</span>
-<span class="nc" id="L47">            rowData[3] = items.get(i).getMunicipalityName();</span>
-            
-<span class="nc" id="L49">            model.addRow(rowData);</span>
+<span class="nc" id="L47">        Object[] rowData = new Object[model.getColumnCount()];</span>
+<span class="nc bnc" id="L48" title="All 2 branches missed.">        for (int i = 0; i &lt; items.size(); i++) {</span>
+<span class="nc" id="L49">            rowData[0] = items.get(i).getId();</span>
+<span class="nc" id="L50">            rowData[1] = items.get(i).getLogin();</span>
+<span class="nc" id="L51">            rowData[2] = items.get(i).getRoleName();</span>
+<span class="nc" id="L52">            rowData[3] = items.get(i).getMunicipalityName();</span>
+
+<span class="nc" id="L54">            model.addRow(rowData);</span>
         }
-<span class="nc" id="L51">    }</span>
-    
+<span class="nc" id="L56">    }</span>
+
     /**
-     * This method is called from within the constructor to initialize the form.
-     * WARNING: Do NOT modify this code. The content of this method is always
-     * regenerated by the Form Editor.
+     * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
+     * content of this method is always regenerated by the Form Editor.
      */
     @SuppressWarnings(&quot;unchecked&quot;)
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L62">        jScrollPane1 = new javax.swing.JScrollPane();</span>
-<span class="nc" id="L63">        jTableUsers = new javax.swing.JTable();</span>
-<span class="nc" id="L64">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L66">        jScrollPane1 = new javax.swing.JScrollPane();</span>
+<span class="nc" id="L67">        jTableUsers = new javax.swing.JTable();</span>
+<span class="nc" id="L68">        jLabel1 = new javax.swing.JLabel();</span>
 
-<span class="nc" id="L66">        setClosable(true);</span>
-<span class="nc" id="L67">        setIconifiable(true);</span>
-<span class="nc" id="L68">        setMaximizable(true);</span>
-<span class="nc" id="L69">        setResizable(true);</span>
-<span class="nc" id="L70">        setTitle(&quot;Listado Usuarios&quot;);</span>
-<span class="nc" id="L71">        setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L70">        setClosable(true);</span>
+<span class="nc" id="L71">        setIconifiable(true);</span>
+<span class="nc" id="L72">        setMaximizable(true);</span>
+<span class="nc" id="L73">        setResizable(true);</span>
+<span class="nc" id="L74">        setTitle(&quot;Listado Usuarios&quot;);</span>
+<span class="nc" id="L75">        setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L73">        jTableUsers.setModel(new javax.swing.table.DefaultTableModel(</span>
+<span class="nc" id="L77">        jTableUsers.setModel(new javax.swing.table.DefaultTableModel(</span>
             new Object [][] {
 
             },
             new String [] {
                 &quot;Id&quot;, &quot;Login&quot;, &quot;Perfil&quot;, &quot;Municipio&quot;
             }
-<span class="nc" id="L80">        ) {</span>
-<span class="nc" id="L81">            Class[] types = new Class [] {</span>
+<span class="nc" id="L84">        ) {</span>
+<span class="nc" id="L85">            Class[] types = new Class [] {</span>
                 java.lang.Integer.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
-<span class="nc" id="L84">            boolean[] canEdit = new boolean [] {</span>
+<span class="nc" id="L88">            boolean[] canEdit = new boolean [] {</span>
                 false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
-<span class="nc" id="L89">                return types [columnIndex];</span>
+<span class="nc" id="L93">                return types [columnIndex];</span>
             }
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
-<span class="nc" id="L93">                return canEdit [columnIndex];</span>
+<span class="nc" id="L97">                return canEdit [columnIndex];</span>
             }
         });
-<span class="nc" id="L96">        jTableUsers.getTableHeader().setReorderingAllowed(false);</span>
-<span class="nc" id="L97">        jTableUsers.addMouseListener(new java.awt.event.MouseAdapter() {</span>
+<span class="nc" id="L100">        jTableUsers.getTableHeader().setReorderingAllowed(false);</span>
+<span class="nc" id="L101">        jTableUsers.addMouseListener(new java.awt.event.MouseAdapter() {</span>
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-<span class="nc" id="L99">                jTableUsersMouseClicked(evt);</span>
-<span class="nc" id="L100">            }</span>
+<span class="nc" id="L103">                jTableUsersMouseClicked(evt);</span>
+<span class="nc" id="L104">            }</span>
         });
-<span class="nc" id="L102">        jScrollPane1.setViewportView(jTableUsers);</span>
+<span class="nc" id="L106">        jScrollPane1.setViewportView(jTableUsers);</span>
 
-<span class="nc" id="L104">        jLabel1.setText(&quot;Seleccionar un registro para visualizar su información y poder editar y eliminar.&quot;);</span>
+<span class="nc" id="L108">        jLabel1.setText(&quot;Seleccionar un registro para visualizar su información y poder editar y eliminar.&quot;);</span>
 
-<span class="nc" id="L106">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L107">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L108">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L109">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L110">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L111">                .addContainerGap()</span>
-<span class="nc" id="L112">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L113">                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)</span>
-<span class="nc" id="L114">                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE))</span>
-<span class="nc" id="L115">                .addContainerGap())</span>
+<span class="nc" id="L110">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L111">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L112">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L113">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L114">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L115">                .addContainerGap()</span>
+<span class="nc" id="L116">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L117">                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)</span>
+<span class="nc" id="L118">                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE))</span>
+<span class="nc" id="L119">                .addContainerGap())</span>
         );
-<span class="nc" id="L117">        layout.setVerticalGroup(</span>
-<span class="nc" id="L118">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L119">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
-<span class="nc" id="L120">                .addContainerGap()</span>
-<span class="nc" id="L121">                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L122">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L123">                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE))</span>
+<span class="nc" id="L121">        layout.setVerticalGroup(</span>
+<span class="nc" id="L122">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L123">            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()</span>
+<span class="nc" id="L124">                .addContainerGap()</span>
+<span class="nc" id="L125">                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L126">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L127">                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 311, Short.MAX_VALUE))</span>
         );
 
-<span class="nc" id="L126">        pack();</span>
-<span class="nc" id="L127">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L130">        pack();</span>
+<span class="nc" id="L131">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     private void jTableUsersMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTableUsersMouseClicked
-<span class="nc" id="L130">        JTable source = (JTable) evt.getSource();</span>
-<span class="nc" id="L131">        int row = source.rowAtPoint(evt.getPoint());</span>
-<span class="nc" id="L132">        int id = Integer.parseInt(source.getModel().getValueAt(row, 0).toString());</span>
-        
-<span class="nc" id="L134">        User user = UserController.findById(id);</span>
+<span class="nc" id="L134">        JTable source = (JTable) evt.getSource();</span>
+<span class="nc" id="L135">        int row = source.rowAtPoint(evt.getPoint());</span>
+<span class="nc" id="L136">        int id = Integer.parseInt(source.getModel().getValueAt(row, 0).toString());</span>
 
-<span class="nc" id="L136">        UserShowJInternalFrame userShow = new UserShowJInternalFrame(jDesktopPanelContainer);</span>
-<span class="nc" id="L137">        jDesktopPanelContainer.add(userShow);</span>
-<span class="nc" id="L138">        userShow.loadData(user);</span>
-        
-<span class="nc" id="L140">        this.hide();</span>
-        
-<span class="nc" id="L142">        userShow.setVisible(true);</span>
-<span class="nc" id="L143">    }//GEN-LAST:event_jTableUsersMouseClicked</span>
+<span class="nc" id="L138">        User user = UserController.findById(id);</span>
+
+<span class="nc" id="L140">        UserShowJInternalFrame userShow = new UserShowJInternalFrame(jDesktopPanelContainer);</span>
+<span class="nc" id="L141">        jDesktopPanelContainer.add(userShow);</span>
+<span class="nc" id="L142">        userShow.loadData(user);</span>
+
+<span class="nc" id="L144">        this.hide();</span>
+
+<span class="nc" id="L146">        userShow.setVisible(true);</span>
+<span class="nc" id="L147">    }//GEN-LAST:event_jTableUsersMouseClicked</span>
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

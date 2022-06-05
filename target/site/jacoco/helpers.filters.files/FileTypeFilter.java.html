@@ -18,22 +18,27 @@ public final class FileTypeFilter extends FileFilter {
     private String extensionFile;
     private String descriptionFile;
 
-<span class="nc" id="L21">    public FileTypeFilter(String extension, String description) {</span>
-<span class="nc" id="L22">        setExtensionFile(extension);</span>
-<span class="nc" id="L23">        setDescriptionFile(description);</span>
-<span class="nc" id="L24">    }</span>
+    /**
+     * File Type Filter Constructor.
+     * @param extension Extension.
+     * @param description Description.
+     */
+<span class="nc" id="L26">    public FileTypeFilter(String extension, String description) {</span>
+<span class="nc" id="L27">        setExtensionFile(extension);</span>
+<span class="nc" id="L28">        setDescriptionFile(description);</span>
+<span class="nc" id="L29">    }</span>
 
     @Override
     public boolean accept(File file) {
-<span class="nc bnc" id="L28" title="All 2 branches missed.">        if (file.isDirectory()) {</span>
-<span class="nc" id="L29">            return true;</span>
+<span class="nc bnc" id="L33" title="All 2 branches missed.">        if (file.isDirectory()) {</span>
+<span class="nc" id="L34">            return true;</span>
         }
-<span class="nc" id="L31">        return file.getName().endsWith(getExtensionFile());</span>
+<span class="nc" id="L36">        return file.getName().endsWith(getExtensionFile());</span>
     }
 
     @Override
     public String getDescription() {
-<span class="nc" id="L36">        return getDescriptionFile() + String.format(&quot; (*%s)&quot;, getExtensionFile());</span>
+<span class="nc" id="L41">        return getDescriptionFile() + String.format(&quot; (*%s)&quot;, getExtensionFile());</span>
     }
 
     /**
@@ -42,7 +47,7 @@ public final class FileTypeFilter extends FileFilter {
      * @return Extension File.
      */
     public String getExtensionFile() {
-<span class="nc" id="L45">        return extensionFile;</span>
+<span class="nc" id="L50">        return extensionFile;</span>
     }
 
     /**
@@ -51,8 +56,8 @@ public final class FileTypeFilter extends FileFilter {
      * @param extensionFile Extension File.
      */
     public void setExtensionFile(String extensionFile) {
-<span class="nc" id="L54">        this.extensionFile = extensionFile;</span>
-<span class="nc" id="L55">    }</span>
+<span class="nc" id="L59">        this.extensionFile = extensionFile;</span>
+<span class="nc" id="L60">    }</span>
 
     /**
      * Get Description File.
@@ -60,7 +65,7 @@ public final class FileTypeFilter extends FileFilter {
      * @return Description File.
      */
     public String getDescriptionFile() {
-<span class="nc" id="L63">        return descriptionFile;</span>
+<span class="nc" id="L68">        return descriptionFile;</span>
     }
 
     /**
@@ -69,7 +74,7 @@ public final class FileTypeFilter extends FileFilter {
      * @param descriptionFile Description File.
      */
     public void setDescriptionFile(String descriptionFile) {
-<span class="nc" id="L72">        this.descriptionFile = descriptionFile;</span>
-<span class="nc" id="L73">    }</span>
+<span class="nc" id="L77">        this.descriptionFile = descriptionFile;</span>
+<span class="nc" id="L78">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

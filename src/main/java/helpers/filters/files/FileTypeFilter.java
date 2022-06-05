@@ -18,6 +18,11 @@ public final class FileTypeFilter extends FileFilter {
     private String extensionFile;
     private String descriptionFile;
 
+    /**
+     * File Type Filter Constructor.
+     * @param extension Extension.
+     * @param description Description.
+     */
     public FileTypeFilter(String extension, String description) {
         setExtensionFile(extension);
         setDescriptionFile(description);

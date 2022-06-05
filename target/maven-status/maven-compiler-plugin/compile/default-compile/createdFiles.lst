@@ -31,8 +31,10 @@ app/controllers/LoginController.class
 helpers/RandomString.class
 app/views/LoginJFrame$4.class
 app/entities/Convocatory.class
+app/views/information/InformationDashboardJInternalFrame$3.class
 app/views/convocatory/ConvocatoryEditJInternalFrame.class
 app/views/presentation/PresentationCreateJInternalFrame$10.class
+app/views/MenuJFrame$12.class
 app/views/presentation/PresentationCreateJInternalFrame$6.class
 app/views/presentation/PresentationEditJInternalFrame$16.class
 app/views/municipality/MunicipalityEditJInternalFrame.class
@@ -46,6 +48,7 @@ app/views/users/UserEditJInternalFrame.class
 app/views/MenuJFrame$3.class
 app/dao/DocumentTypeDao.class
 config/HibernateUtil.class
+app/views/information/InformationDashboardJInternalFrame$2.class
 app/Main.class
 app/views/MenuJFrame.class
 app/dao/UserRoleDao.class
@@ -64,6 +67,7 @@ app/views/municipality/MunicipalityShowJInternalFrame.class
 app/views/convocatory/ConvocatoryShowJInternalFrame.class
 app/views/presentation/PresentationEditJInternalFrame$6.class
 helpers/filters/files/FileTypeFilter.class
+app/views/information/InformationDashboardJInternalFrame$1.class
 app/views/users/UserCreateJInternalFrame.class
 helpers/Role.class
 seeders/UserSeeder.class
@@ -77,6 +81,7 @@ app/views/LoginJFrame$3.class
 app/views/presentation/PresentationCreateJInternalFrame$14.class
 app/views/presentation/PresentationCreateJInternalFrame$4.class
 app/dao/PresentationDocumentTypeDao.class
+app/entities/MunicipalityTotalDocument.class
 app/views/convocatory/ConvocatoryListJInternalFrame.class
 app/views/presentation/PresentationShowJInternalFrame$7.class
 app/controllers/UserRoleController.class
@@ -87,6 +92,7 @@ app/entities/ConvocatoryDocumentType.class
 app/views/municipality/MunicipalityListJInternalFrame$2.class
 app/views/presentation/PresentationCreateJInternalFrame$7.class
 app/views/presentation/PresentationCreateJInternalFrame$11.class
+app/controllers/InformationController.class
 app/views/users/UserCreateJInternalFrame$3.class
 app/controllers/MainController.class
 app/dao/ConvocatoryDocumentTypeDao.class
@@ -124,11 +130,13 @@ app/views/MenuJFrame$11.class
 app/views/BaseView.class
 app/views/presentation/PresentationEditJInternalFrame$3.class
 app/views/presentation/PresentationShowJInternalFrame$4.class
+app/views/information/InformationDashboardJInternalFrame.class
 app/views/LoginJFrame.class
 app/views/presentation/PresentationEditJInternalFrame$14.class
 app/views/users/UserCreateJInternalFrame$1.class
 app/views/MenuJFrame$1.class
 app/entities/User.class
+app/dao/MunicipalityTotalDocumentDao.class
 app/views/municipality/MunicipalityListJInternalFrame.class
 app/views/convocatory/ConvocatoryShowJInternalFrame$1.class
 app/dao/ConvocatoryDao.class

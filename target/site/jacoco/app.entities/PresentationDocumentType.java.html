@@ -27,6 +27,9 @@ import javax.persistence.NamedNativeQuery;
 )
 public class PresentationDocumentType extends BaseEntity {
 
+    /**
+     * id Id.
+     */
     @Id
     @Column(name = &quot;id&quot;)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -40,10 +43,10 @@ public class PresentationDocumentType extends BaseEntity {
 
     @Column(name = &quot;content&quot;)
     private byte[] content;
-    
+
     @Column(name = &quot;file_name&quot;)
     private String fileName;
-    
+
     @Column(name = &quot;file_extension&quot;)
     private String fileExtension;
 
@@ -51,33 +54,36 @@ public class PresentationDocumentType extends BaseEntity {
     /**
      * Presentation Document Type Constructor.
      */
-<span class="fc" id="L54">    public PresentationDocumentType() {</span>
-<span class="fc" id="L55">    }</span>
+<span class="fc" id="L57">    public PresentationDocumentType() {</span>
+<span class="fc" id="L58">    }</span>
 
     /**
      * Presentation Document Type Constructor.
+     *
      * @param presentationId Presentation Id.
      * @param documentTypeId Document Type Id.
      */
-<span class="nc" id="L62">    public PresentationDocumentType(int presentationId, int documentTypeId) {</span>
-<span class="nc" id="L63">        this.setPresentationId(presentationId);</span>
-<span class="nc" id="L64">        this.setDocumentTypeId(documentTypeId);</span>
-<span class="nc" id="L65">    }</span>
+<span class="nc" id="L66">    public PresentationDocumentType(int presentationId, int documentTypeId) {</span>
+<span class="nc" id="L67">        this.setPresentationId(presentationId);</span>
+<span class="nc" id="L68">        this.setDocumentTypeId(documentTypeId);</span>
+<span class="nc" id="L69">    }</span>
 
     /**
      * Presentation Document Type Constructor.
+     *
      * @param id Id.
      * @param presentationId Presentation Id.
      * @param documentTypeId Document Type Id.
      */
-<span class="nc" id="L73">    public PresentationDocumentType(int id, int presentationId, int documentTypeId) {</span>
-<span class="nc" id="L74">        this.setId(id);</span>
-<span class="nc" id="L75">        this.setPresentationId(presentationId);</span>
-<span class="nc" id="L76">        this.setDocumentTypeId(documentTypeId);</span>
-<span class="nc" id="L77">    }</span>
+<span class="nc" id="L78">    public PresentationDocumentType(int id, int presentationId, int documentTypeId) {</span>
+<span class="nc" id="L79">        this.setId(id);</span>
+<span class="nc" id="L80">        this.setPresentationId(presentationId);</span>
+<span class="nc" id="L81">        this.setDocumentTypeId(documentTypeId);</span>
+<span class="nc" id="L82">    }</span>
 
     /**
      * Presentation Document Type Constructor.
+     *
      * @param id Id.
      * @param presentationId Presentation Id.
      * @param documentTypeId Document Type Id.
@@ -91,73 +97,138 @@ public class PresentationDocumentType extends BaseEntity {
             byte[] content,
             String fileName,
             String fileExtension
-<span class="nc" id="L94">    ) {</span>
-<span class="nc" id="L95">        this.setId(id);</span>
-<span class="nc" id="L96">        this.setPresentationId(presentationId);</span>
-<span class="nc" id="L97">        this.setDocumentTypeId(documentTypeId);</span>
-<span class="nc" id="L98">        this.setContent(content);</span>
-<span class="nc" id="L99">        this.setFileName(fileName);</span>
-<span class="nc" id="L100">        this.setFileExtension(fileExtension);</span>
-<span class="nc" id="L101">    }</span>
+<span class="nc" id="L100">    ) {</span>
+<span class="nc" id="L101">        this.setId(id);</span>
+<span class="nc" id="L102">        this.setPresentationId(presentationId);</span>
+<span class="nc" id="L103">        this.setDocumentTypeId(documentTypeId);</span>
+<span class="nc" id="L104">        this.setContent(content);</span>
+<span class="nc" id="L105">        this.setFileName(fileName);</span>
+<span class="nc" id="L106">        this.setFileExtension(fileExtension);</span>
+<span class="nc" id="L107">    }</span>
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;
+    /**
+     * Get ID.
+     *
+     * @return Id.
+     */
     @Override
     public int getId() {
-<span class="nc" id="L107">        return id;</span>
+<span class="nc" id="L118">        return id;</span>
     }
 
+    /**
+     * Set Id.
+     *
+     * @param id Id.
+     */
     public void setId(int id) {
-<span class="nc" id="L111">        this.id = id;</span>
-<span class="nc" id="L112">    }</span>
-
-    public int getPresentationId() {
-<span class="nc" id="L115">        return presentationId;</span>
-    }
-
-    public void setPresentationId(int presentationId) {
-<span class="nc" id="L119">        this.presentationId = presentationId;</span>
-<span class="nc" id="L120">    }</span>
-
-    public int getDocumentTypeId() {
-<span class="nc" id="L123">        return documentTypeId;</span>
-    }
-
-    public void setDocumentTypeId(int documentTypeId) {
-<span class="nc" id="L127">        this.documentTypeId = documentTypeId;</span>
+<span class="nc" id="L127">        this.id = id;</span>
 <span class="nc" id="L128">    }</span>
 
+    /**
+     * Get Presentation Id.
+     *
+     * @return Presentation Id.
+     */
+    public int getPresentationId() {
+<span class="nc" id="L136">        return presentationId;</span>
+    }
+
+    /**
+     * Set Presentation Id.
+     *
+     * @param presentationId Presentation Id.
+     */
+    public void setPresentationId(int presentationId) {
+<span class="nc" id="L145">        this.presentationId = presentationId;</span>
+<span class="nc" id="L146">    }</span>
+
+    /**
+     * Get Document Type Id.
+     *
+     * @return Document Type Id.
+     */
+    public int getDocumentTypeId() {
+<span class="nc" id="L154">        return documentTypeId;</span>
+    }
+
+    /**
+     * Set Document Type Id.
+     *
+     * @param documentTypeId Document Type Id.
+     */
+    public void setDocumentTypeId(int documentTypeId) {
+<span class="nc" id="L163">        this.documentTypeId = documentTypeId;</span>
+<span class="nc" id="L164">    }</span>
+
+    /**
+     * Get Content.
+     *
+     * @return Content.
+     */
     public byte[] getContent() {
-<span class="nc" id="L131">        return content;</span>
+<span class="nc" id="L172">        return content;</span>
     }
 
+    /**
+     * Set Content.
+     *
+     * @param content Content.
+     */
     public void setContent(byte[] content) {
-<span class="nc" id="L135">        this.content = content;</span>
-<span class="nc" id="L136">    }</span>
+<span class="nc" id="L181">        this.content = content;</span>
+<span class="nc" id="L182">    }</span>
 
+    /**
+     * Get File Name.
+     *
+     * @return File Name.
+     */
     public String getFileName() {
-<span class="nc" id="L139">        return fileName;</span>
+<span class="nc" id="L190">        return fileName;</span>
     }
 
+    /**
+     * Set File Name.
+     *
+     * @param fileName File Name.
+     */
     public void setFileName(String fileName) {
-<span class="nc" id="L143">        this.fileName = fileName;</span>
-<span class="nc" id="L144">    }</span>
+<span class="nc" id="L199">        this.fileName = fileName;</span>
+<span class="nc" id="L200">    }</span>
 
+    /**
+     * Get File Extension.
+     *
+     * @return File Extension.
+     */
     public String getFileExtension() {
-<span class="nc" id="L147">        return fileExtension;</span>
+<span class="nc" id="L208">        return fileExtension;</span>
     }
 
+    /**
+     * Set File Extension.
+     *
+     * @param fileExtension File Extension.
+     */
     public void setFileExtension(String fileExtension) {
-<span class="nc" id="L151">        this.fileExtension = fileExtension;</span>
-<span class="nc" id="L152">    }</span>
+<span class="nc" id="L217">        this.fileExtension = fileExtension;</span>
+<span class="nc" id="L218">    }</span>
     // &lt;/editor-fold&gt;
-    
+
+    /**
+     * To String
+     *
+     * @return String
+     */
     @Override
     public String toString() {
-<span class="nc" id="L157">        return &quot;ConvocatoryDocumentType{&quot;</span>
-<span class="nc" id="L158">                + &quot;id=&quot; + this.getId()</span>
-<span class="nc" id="L159">                + &quot;, presentationId=&quot; + this.getPresentationId()</span>
-<span class="nc" id="L160">                + &quot;, documentTypeId=&quot; + this.getDocumentTypeId()</span>
+<span class="nc" id="L228">        return &quot;ConvocatoryDocumentType{&quot;</span>
+<span class="nc" id="L229">                + &quot;id=&quot; + this.getId()</span>
+<span class="nc" id="L230">                + &quot;, presentationId=&quot; + this.getPresentationId()</span>
+<span class="nc" id="L231">                + &quot;, documentTypeId=&quot; + this.getDocumentTypeId()</span>
                 + '}';
     }
 }

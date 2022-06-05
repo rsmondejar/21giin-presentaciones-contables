@@ -12,31 +12,44 @@ import java.util.Random;
 
 /**
  * RandomString Helper.
- * 
+ *
  * @author raulsm
- * @link https://stackoverflow.com/questions/41107/how-to-generate-a-random-alpha-numeric-string
+ * @see &lt;a href=&quot;https://stackoverflow.com/questions/41107/how-to-generate-a-random-alpha-numeric-string&quot;&gt;
+ * how-to-generate-a-random-alpha-numeric-string&lt;/a&gt;
  */
 public class RandomString {
 
     /**
      * Generate a random string.
      *
-     * @return
+     * @return Random String
      */
     public String nextString() {
-<span class="nc bnc" id="L27" title="All 2 branches missed.">        for (int idx = 0; idx &lt; buf.length; ++idx) {</span>
-<span class="nc" id="L28">            buf[idx] = symbols[random.nextInt(symbols.length)];</span>
+<span class="nc bnc" id="L28" title="All 2 branches missed.">        for (int idx = 0; idx &lt; buf.length; ++idx) {</span>
+<span class="nc" id="L29">            buf[idx] = symbols[random.nextInt(symbols.length)];</span>
         }
-<span class="nc" id="L30">        return new String(buf);</span>
+<span class="nc" id="L31">        return new String(buf);</span>
     }
 
+    /**
+     * Available Letters.
+     */
     public static final String UPPER = &quot;ABCDEFGHIJKLMNOPQRSTUVWXYZ&quot;;
 
-<span class="nc" id="L35">    public static final String LOWER = UPPER.toLowerCase(Locale.ROOT);</span>
+    /**
+     * Available Letters in lower case.
+     */
+<span class="nc" id="L42">    public static final String LOWER = UPPER.toLowerCase(Locale.ROOT);</span>
 
+    /**
+     * Available Digits.
+     */
     public static final String DIGITS = &quot;0123456789&quot;;
 
-<span class="nc" id="L39">    public static final String ALPHANUM = UPPER + LOWER + DIGITS;</span>
+    /**
+     * Available alphanumeric Letters And Digits.
+     */
+<span class="nc" id="L52">    public static final String ALPHANUM = UPPER + LOWER + DIGITS;</span>
 
     private final Random random;
 
@@ -47,22 +60,22 @@ public class RandomString {
     /**
      * RandomString constructor
      *
-     * @param length
-     * @param random
-     * @param symbols
+     * @param length Length.
+     * @param random Random.
+     * @param symbols Symbols.
      */
     @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
-<span class="nc" id="L55">    public RandomString(int length, Random random, String symbols) {</span>
-<span class="nc bnc" id="L56" title="All 2 branches missed.">        if (length &lt; 1) {</span>
-<span class="nc" id="L57">            throw new IllegalArgumentException();</span>
+<span class="nc" id="L68">    public RandomString(int length, Random random, String symbols) {</span>
+<span class="nc bnc" id="L69" title="All 2 branches missed.">        if (length &lt; 1) {</span>
+<span class="nc" id="L70">            throw new IllegalArgumentException();</span>
         }
-<span class="nc bnc" id="L59" title="All 2 branches missed.">        if (symbols.length() &lt; 2) {</span>
-<span class="nc" id="L60">            throw new IllegalArgumentException();</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        if (symbols.length() &lt; 2) {</span>
+<span class="nc" id="L73">            throw new IllegalArgumentException();</span>
         }
-<span class="nc" id="L62">        this.random = Objects.requireNonNull(random);</span>
-<span class="nc" id="L63">        this.symbols = symbols.toCharArray();</span>
-<span class="nc" id="L64">        this.buf = new char[length];</span>
-<span class="nc" id="L65">    }</span>
+<span class="nc" id="L75">        this.random = Objects.requireNonNull(random);</span>
+<span class="nc" id="L76">        this.symbols = symbols.toCharArray();</span>
+<span class="nc" id="L77">        this.buf = new char[length];</span>
+<span class="nc" id="L78">    }</span>
 
     /**
      * Create an alphanumeric string generator.
@@ -71,8 +84,8 @@ public class RandomString {
      * @param random Random
      */
     public RandomString(int length, Random random) {
-<span class="nc" id="L74">        this(length, random, ALPHANUM);</span>
-<span class="nc" id="L75">    }</span>
+<span class="nc" id="L87">        this(length, random, ALPHANUM);</span>
+<span class="nc" id="L88">    }</span>
 
     /**
      * Create an alphanumeric strings from a secure generator.
@@ -80,14 +93,14 @@ public class RandomString {
      * @param length Length
      */
     public RandomString(int length) {
-<span class="nc" id="L83">        this(length, new SecureRandom());</span>
-<span class="nc" id="L84">    }</span>
+<span class="nc" id="L96">        this(length, new SecureRandom());</span>
+<span class="nc" id="L97">    }</span>
 
     /**
      * Create session identifiers.
      */
     public RandomString() {
-<span class="nc" id="L90">        this(21);</span>
-<span class="nc" id="L91">    }</span>
+<span class="nc" id="L103">        this(21);</span>
+<span class="nc" id="L104">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

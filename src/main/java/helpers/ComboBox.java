@@ -19,7 +19,7 @@ public class ComboBox {
     /**
      * Fill Combo Box.
      *
-     * @param <T>
+     * @param <T> T
      * @param entities List of entities
      * @param comboBox JComboBox
      */

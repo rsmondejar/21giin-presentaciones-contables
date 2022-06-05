@@ -18,6 +18,9 @@ import java.util.List;
  */
 public class UserRoleDao extends BaseDao {
 
+    /**
+     * User Role DAO Constructor.
+     */
     public UserRoleDao() {
         super.setModel(new UserRole());
     }
@@ -45,7 +48,7 @@ public class UserRoleDao extends BaseDao {
     /**
      * Create User Role.
      *
-     * @param <T>
+     * @param <T> T
      * @param userRole User Role
      * @return status
      */
@@ -56,10 +59,10 @@ public class UserRoleDao extends BaseDao {
     /**
      * Update User Role.
      *
-     * @param <T>
+     * @param <T> T
      * @param id Identifier
      * @param userRole User
-     * @return
+     * @return Status
      */
     public <T> boolean update(int id, UserRole userRole) {
         return super.update(id, (BaseEntity) userRole);

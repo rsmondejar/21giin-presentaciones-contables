@@ -52,8 +52,8 @@ public class DateHelper {
      * @param date Date to check
      * @param startDate Start Date
      * @param endDate End Date
-     * @return
-     * @throws Exception
+     * @return boolean
+     * @throws Exception Exception.
      */
     public static Boolean isDateBetweenDates(Date date, Date startDate, Date endDate) throws Exception {
 <span class="pc bpc" id="L59" title="1 of 2 branches missed.">        if (endDate.compareTo(startDate) &lt; 0) {</span>
@@ -66,8 +66,8 @@ public class DateHelper {
     /**
      * Format Date To yyyy-MM-dd
      *
-     * @param date
-     * @return
+     * @param date Date.
+     * @return Date in format yyyy-MM-dd
      */
     public static String formatToYMD(Date date) {
 <span class="nc" id="L73">        return new SimpleDateFormat(&quot;yyyy-MM-dd&quot;).format(date);</span>
@@ -77,8 +77,8 @@ public class DateHelper {
      * Get Date From String With Fromat yyyy-MM-dd
      *
      * @param dateString Date String with format yyyy-MM-dd
-     * @return Date
-     * @throws ParseException
+     * @return Date Date.
+     * @throws ParseException Parse Exception.
      */
     public static Date getDateFromStringWithFormatYMD(String dateString) throws ParseException {
 <span class="nc" id="L84">        SimpleDateFormat sdf = new SimpleDateFormat(&quot;yyyy-MM-dd&quot;);</span>

@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="en"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>PresentationCreateJInternalFrame.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">PresentacionesContables</a> &gt; <a href="index.source.html" class="el_package">app.views.presentation</a> &gt; <span class="el_source">PresentationCreateJInternalFrame.java</span></div><h1>PresentationCreateJInternalFrame.java</h1><pre class="source lang-java linenums">/**
- * Presentation Create JInternalFrame.
+ * Presentation Create JInternal Frame
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.views.presentation;
 
@@ -36,83 +39,85 @@ import javax.swing.JLabel;
 import org.apache.commons.io.FilenameUtils;
 
 /**
+ * Presentation Create JInternal Frame
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame {
 
-<span class="nc" id="L44">    String noFile = &quot;Sin fichero&quot;;</span>
-<span class="nc" id="L45">    String documentTypeFileName1 = null;</span>
-<span class="nc" id="L46">    String documentTypeFileName2 = null;</span>
-<span class="nc" id="L47">    String documentTypeFileName3 = null;</span>
-<span class="nc" id="L48">    String documentTypeFileName4 = null;</span>
-<span class="nc" id="L49">    String documentTypeFileName5 = null;</span>
-<span class="nc" id="L50">    String documentTypeFileExtension1 = null;</span>
-<span class="nc" id="L51">    String documentTypeFileExtension2 = null;</span>
-<span class="nc" id="L52">    String documentTypeFileExtension3 = null;</span>
-<span class="nc" id="L53">    String documentTypeFileExtension4 = null;</span>
-<span class="nc" id="L54">    String documentTypeFileExtension5 = null;</span>
-<span class="nc" id="L55">    byte[] documentType1 = null;</span>
-<span class="nc" id="L56">    byte[] documentType2 = null;</span>
-<span class="nc" id="L57">    byte[] documentType3 = null;</span>
-<span class="nc" id="L58">    byte[] documentType4 = null;</span>
-<span class="nc" id="L59">    byte[] documentType5 = null;</span>
+<span class="nc" id="L49">    String noFile = &quot;Sin fichero&quot;;</span>
+<span class="nc" id="L50">    String documentTypeFileName1 = null;</span>
+<span class="nc" id="L51">    String documentTypeFileName2 = null;</span>
+<span class="nc" id="L52">    String documentTypeFileName3 = null;</span>
+<span class="nc" id="L53">    String documentTypeFileName4 = null;</span>
+<span class="nc" id="L54">    String documentTypeFileName5 = null;</span>
+<span class="nc" id="L55">    String documentTypeFileExtension1 = null;</span>
+<span class="nc" id="L56">    String documentTypeFileExtension2 = null;</span>
+<span class="nc" id="L57">    String documentTypeFileExtension3 = null;</span>
+<span class="nc" id="L58">    String documentTypeFileExtension4 = null;</span>
+<span class="nc" id="L59">    String documentTypeFileExtension5 = null;</span>
+<span class="nc" id="L60">    byte[] documentType1 = null;</span>
+<span class="nc" id="L61">    byte[] documentType2 = null;</span>
+<span class="nc" id="L62">    byte[] documentType3 = null;</span>
+<span class="nc" id="L63">    byte[] documentType4 = null;</span>
+<span class="nc" id="L64">    byte[] documentType5 = null;</span>
 
     /**
      * Creates new form PresentationJInternalFrame.
      */
-<span class="nc" id="L64">    public PresentationCreateJInternalFrame() {</span>
-<span class="nc" id="L65">        initComponents();</span>
-<span class="nc" id="L66">        loadData();</span>
-<span class="nc" id="L67">    }</span>
+<span class="nc" id="L69">    public PresentationCreateJInternalFrame() {</span>
+<span class="nc" id="L70">        initComponents();</span>
+<span class="nc" id="L71">        loadData();</span>
+<span class="nc" id="L72">    }</span>
 
     /**
      * Load Data.
      */
     public void loadData() {
-<span class="nc" id="L73">        disableAllInputFiles();</span>
-<span class="nc" id="L74">        disableAllInputFilesDownload();</span>
-<span class="nc" id="L75">        disableAllInputFilesDelete();</span>
-<span class="nc" id="L76">        loadConvocatoriesComboBox();</span>
-<span class="nc" id="L77">        loadLoggedUserInfo();</span>
+<span class="nc" id="L78">        disableAllInputFiles();</span>
+<span class="nc" id="L79">        disableAllInputFilesDownload();</span>
+<span class="nc" id="L80">        disableAllInputFilesDelete();</span>
+<span class="nc" id="L81">        loadConvocatoriesComboBox();</span>
+<span class="nc" id="L82">        loadLoggedUserInfo();</span>
 
         // Add ComboBox change event listener
-<span class="nc" id="L80">        jComboBoxConvocatory.addActionListener(new ActionListener() {</span>
+<span class="nc" id="L85">        jComboBoxConvocatory.addActionListener(new ActionListener() {</span>
             @Override
             public void actionPerformed(ActionEvent event) {
-<span class="nc" id="L83">                JComboBox comboBox = (JComboBox) event.getSource();</span>
-<span class="nc" id="L84">                Convocatory convocatory = (Convocatory) comboBox.getSelectedItem();</span>
+<span class="nc" id="L88">                JComboBox comboBox = (JComboBox) event.getSource();</span>
+<span class="nc" id="L89">                Convocatory convocatory = (Convocatory) comboBox.getSelectedItem();</span>
 
-<span class="nc" id="L86">                disableAllInputFiles();</span>
-<span class="nc" id="L87">                disableAllInputFilesDownload();</span>
-<span class="nc" id="L88">                disableAllInputFilesDelete();</span>
-<span class="nc" id="L89">                clearAllInputFiles();</span>
+<span class="nc" id="L91">                disableAllInputFiles();</span>
+<span class="nc" id="L92">                disableAllInputFilesDownload();</span>
+<span class="nc" id="L93">                disableAllInputFilesDelete();</span>
+<span class="nc" id="L94">                clearAllInputFiles();</span>
 
-<span class="nc" id="L91">                setDocumentsTypesRequiredForConvocatory(convocatory);</span>
-<span class="nc" id="L92">                setDatesConvocatory(convocatory);</span>
-<span class="nc" id="L93">            }</span>
+<span class="nc" id="L96">                setDocumentsTypesRequiredForConvocatory(convocatory);</span>
+<span class="nc" id="L97">                setDatesConvocatory(convocatory);</span>
+<span class="nc" id="L98">            }</span>
         });
 
-<span class="nc" id="L96">        Convocatory convocatory = (Convocatory) jComboBoxConvocatory.getSelectedItem();</span>
-<span class="nc" id="L97">        setDocumentsTypesRequiredForConvocatory(convocatory);</span>
-<span class="nc" id="L98">        setDatesConvocatory(convocatory);</span>
-<span class="nc" id="L99">    }</span>
+<span class="nc" id="L101">        Convocatory convocatory = (Convocatory) jComboBoxConvocatory.getSelectedItem();</span>
+<span class="nc" id="L102">        setDocumentsTypesRequiredForConvocatory(convocatory);</span>
+<span class="nc" id="L103">        setDatesConvocatory(convocatory);</span>
+<span class="nc" id="L104">    }</span>
 
     /**
      * Load Convocatories ComboBox.
      */
     private void loadConvocatoriesComboBox() {
-<span class="nc" id="L105">        List&lt;Convocatory&gt; convocatories = ConvocatoryController.active();</span>
-<span class="nc" id="L106">        ComboBox.fill(convocatories, jComboBoxConvocatory);</span>
-<span class="nc" id="L107">    }</span>
+<span class="nc" id="L110">        List&lt;Convocatory&gt; convocatories = ConvocatoryController.active();</span>
+<span class="nc" id="L111">        ComboBox.fill(convocatories, jComboBoxConvocatory);</span>
+<span class="nc" id="L112">    }</span>
 
     /**
      * Set Dates Convocatory.
      */
     private void setDatesConvocatory(Convocatory convocatory) {
-<span class="nc" id="L113">        jTextFieldConvocatoryStartDate.setText(DateHelper.formatToYMD(convocatory.getStartDate()));</span>
-<span class="nc" id="L114">        jTextFieldConvocatoryEndDate.setText(DateHelper.formatToYMD(convocatory.getEndDate()));</span>
-<span class="nc" id="L115">    }</span>
+<span class="nc" id="L118">        jTextFieldConvocatoryStartDate.setText(DateHelper.formatToYMD(convocatory.getStartDate()));</span>
+<span class="nc" id="L119">        jTextFieldConvocatoryEndDate.setText(DateHelper.formatToYMD(convocatory.getEndDate()));</span>
+<span class="nc" id="L120">    }</span>
 
     /**
      * Set Documents Types Required For Convocatory.
@@ -120,29 +125,29 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
      * @param convocatory Convocatory
      */
     private void setDocumentsTypesRequiredForConvocatory(Convocatory convocatory) {
-<span class="nc" id="L123">        List&lt;DocumentType&gt; documentTypes = convocatory.getDocumentsTypes();</span>
+<span class="nc" id="L128">        List&lt;DocumentType&gt; documentTypes = convocatory.getDocumentsTypes();</span>
 
-<span class="nc bnc" id="L125" title="All 2 branches missed.">        if (documentTypes != null) {</span>
-<span class="nc bnc" id="L126" title="All 2 branches missed.">            for (DocumentType documentType : documentTypes) {</span>
-<span class="nc" id="L127">                int documentTypeID = documentType.getId();</span>
-<span class="nc bnc" id="L128" title="All 2 branches missed.">                if (documentTypeID == 1) {</span>
-<span class="nc" id="L129">                    jButtonDocumentType1.setEnabled(true);</span>
+<span class="nc bnc" id="L130" title="All 2 branches missed.">        if (documentTypes != null) {</span>
+<span class="nc bnc" id="L131" title="All 2 branches missed.">            for (DocumentType documentType : documentTypes) {</span>
+<span class="nc" id="L132">                int documentTypeID = documentType.getId();</span>
+<span class="nc bnc" id="L133" title="All 2 branches missed.">                if (documentTypeID == 1) {</span>
+<span class="nc" id="L134">                    jButtonDocumentType1.setEnabled(true);</span>
                 }
-<span class="nc bnc" id="L131" title="All 2 branches missed.">                if (documentTypeID == 2) {</span>
-<span class="nc" id="L132">                    jButtonDocumentType2.setEnabled(true);</span>
+<span class="nc bnc" id="L136" title="All 2 branches missed.">                if (documentTypeID == 2) {</span>
+<span class="nc" id="L137">                    jButtonDocumentType2.setEnabled(true);</span>
                 }
-<span class="nc bnc" id="L134" title="All 2 branches missed.">                if (documentTypeID == 3) {</span>
-<span class="nc" id="L135">                    jButtonDocumentType3.setEnabled(true);</span>
+<span class="nc bnc" id="L139" title="All 2 branches missed.">                if (documentTypeID == 3) {</span>
+<span class="nc" id="L140">                    jButtonDocumentType3.setEnabled(true);</span>
                 }
-<span class="nc bnc" id="L137" title="All 2 branches missed.">                if (documentTypeID == 4) {</span>
-<span class="nc" id="L138">                    jButtonDocumentType4.setEnabled(true);</span>
+<span class="nc bnc" id="L142" title="All 2 branches missed.">                if (documentTypeID == 4) {</span>
+<span class="nc" id="L143">                    jButtonDocumentType4.setEnabled(true);</span>
                 }
-<span class="nc bnc" id="L140" title="All 2 branches missed.">                if (documentTypeID == 5) {</span>
-<span class="nc" id="L141">                    jButtonDocumentType5.setEnabled(true);</span>
+<span class="nc bnc" id="L145" title="All 2 branches missed.">                if (documentTypeID == 5) {</span>
+<span class="nc" id="L146">                    jButtonDocumentType5.setEnabled(true);</span>
                 }
-<span class="nc" id="L143">            }</span>
+<span class="nc" id="L148">            }</span>
         }
-<span class="nc" id="L145">    }</span>
+<span class="nc" id="L150">    }</span>
 
     /**
      * Get Documents Uploaded
@@ -151,116 +156,116 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
      * @return
      */
     private List&lt;PresentationDocumentType&gt; getDocumentsUploaded(Convocatory convocatory) {
-<span class="nc" id="L154">        List&lt;DocumentType&gt; documentTypes = convocatory.getDocumentsTypes();</span>
-<span class="nc" id="L155">        List&lt;PresentationDocumentType&gt; presentationDocumentTypes = new ArrayList&lt;&gt;();</span>
+<span class="nc" id="L159">        List&lt;DocumentType&gt; documentTypes = convocatory.getDocumentsTypes();</span>
+<span class="nc" id="L160">        List&lt;PresentationDocumentType&gt; presentationDocumentTypes = new ArrayList&lt;&gt;();</span>
 
-<span class="nc bnc" id="L157" title="All 2 branches missed.">        if (documentTypes != null) {</span>
-<span class="nc bnc" id="L158" title="All 2 branches missed.">            for (DocumentType documentType : documentTypes) {</span>
-<span class="nc" id="L159">                int documentTypeID = documentType.getId();</span>
+<span class="nc bnc" id="L162" title="All 2 branches missed.">        if (documentTypes != null) {</span>
+<span class="nc bnc" id="L163" title="All 2 branches missed.">            for (DocumentType documentType : documentTypes) {</span>
+<span class="nc" id="L164">                int documentTypeID = documentType.getId();</span>
 
-<span class="nc" id="L161">                PresentationDocumentType presentationDocumentType = new PresentationDocumentType();</span>
-<span class="nc" id="L162">                presentationDocumentType.setDocumentTypeId(documentTypeID);</span>
-<span class="nc" id="L163">                byte[] documentContent = null;</span>
-<span class="nc" id="L164">                String fileName = null;</span>
-<span class="nc" id="L165">                String fileExtension = null;</span>
+<span class="nc" id="L166">                PresentationDocumentType presentationDocumentType = new PresentationDocumentType();</span>
+<span class="nc" id="L167">                presentationDocumentType.setDocumentTypeId(documentTypeID);</span>
+<span class="nc" id="L168">                byte[] documentContent = null;</span>
+<span class="nc" id="L169">                String fileName = null;</span>
+<span class="nc" id="L170">                String fileExtension = null;</span>
 
-<span class="nc bnc" id="L167" title="All 4 branches missed.">                if (documentTypeID == 1 &amp;&amp; documentType1.length &gt; 0) {</span>
-<span class="nc" id="L168">                    documentContent = documentType1;</span>
-<span class="nc" id="L169">                    fileName = documentTypeFileName1;</span>
-<span class="nc" id="L170">                    fileExtension = documentTypeFileExtension1;</span>
+<span class="nc bnc" id="L172" title="All 4 branches missed.">                if (documentTypeID == 1 &amp;&amp; documentType1.length &gt; 0) {</span>
+<span class="nc" id="L173">                    documentContent = documentType1;</span>
+<span class="nc" id="L174">                    fileName = documentTypeFileName1;</span>
+<span class="nc" id="L175">                    fileExtension = documentTypeFileExtension1;</span>
                 }
-<span class="nc bnc" id="L172" title="All 4 branches missed.">                if (documentTypeID == 2 &amp;&amp; documentType2.length &gt; 0) {</span>
-<span class="nc" id="L173">                    documentContent = documentType2;</span>
-<span class="nc" id="L174">                    fileName = documentTypeFileName2;</span>
-<span class="nc" id="L175">                    fileExtension = documentTypeFileExtension2;</span>
+<span class="nc bnc" id="L177" title="All 4 branches missed.">                if (documentTypeID == 2 &amp;&amp; documentType2.length &gt; 0) {</span>
+<span class="nc" id="L178">                    documentContent = documentType2;</span>
+<span class="nc" id="L179">                    fileName = documentTypeFileName2;</span>
+<span class="nc" id="L180">                    fileExtension = documentTypeFileExtension2;</span>
                 }
-<span class="nc bnc" id="L177" title="All 4 branches missed.">                if (documentTypeID == 3 &amp;&amp; documentType3.length &gt; 0) {</span>
-<span class="nc" id="L178">                    documentContent = documentType3;</span>
-<span class="nc" id="L179">                    fileName = documentTypeFileName3;</span>
-<span class="nc" id="L180">                    fileExtension = documentTypeFileExtension3;</span>
+<span class="nc bnc" id="L182" title="All 4 branches missed.">                if (documentTypeID == 3 &amp;&amp; documentType3.length &gt; 0) {</span>
+<span class="nc" id="L183">                    documentContent = documentType3;</span>
+<span class="nc" id="L184">                    fileName = documentTypeFileName3;</span>
+<span class="nc" id="L185">                    fileExtension = documentTypeFileExtension3;</span>
                 }
-<span class="nc bnc" id="L182" title="All 4 branches missed.">                if (documentTypeID == 4 &amp;&amp; documentType4.length &gt; 0) {</span>
-<span class="nc" id="L183">                    documentContent = documentType4;</span>
-<span class="nc" id="L184">                    fileName = documentTypeFileName4;</span>
-<span class="nc" id="L185">                    fileExtension = documentTypeFileExtension4;</span>
+<span class="nc bnc" id="L187" title="All 4 branches missed.">                if (documentTypeID == 4 &amp;&amp; documentType4.length &gt; 0) {</span>
+<span class="nc" id="L188">                    documentContent = documentType4;</span>
+<span class="nc" id="L189">                    fileName = documentTypeFileName4;</span>
+<span class="nc" id="L190">                    fileExtension = documentTypeFileExtension4;</span>
                 }
-<span class="nc bnc" id="L187" title="All 4 branches missed.">                if (documentTypeID == 5 &amp;&amp; documentType5.length &gt; 0) {</span>
-<span class="nc" id="L188">                    documentContent = documentType5;</span>
-<span class="nc" id="L189">                    fileName = documentTypeFileName5;</span>
-<span class="nc" id="L190">                    fileExtension = documentTypeFileExtension5;</span>
+<span class="nc bnc" id="L192" title="All 4 branches missed.">                if (documentTypeID == 5 &amp;&amp; documentType5.length &gt; 0) {</span>
+<span class="nc" id="L193">                    documentContent = documentType5;</span>
+<span class="nc" id="L194">                    fileName = documentTypeFileName5;</span>
+<span class="nc" id="L195">                    fileExtension = documentTypeFileExtension5;</span>
                 }
 
-<span class="nc bnc" id="L193" title="All 2 branches missed.">                if (documentContent != null) {</span>
-<span class="nc" id="L194">                    presentationDocumentType.setContent(documentContent);</span>
-<span class="nc" id="L195">                    presentationDocumentType.setFileName(fileName);</span>
-<span class="nc" id="L196">                    presentationDocumentType.setFileExtension(fileExtension);</span>
-<span class="nc" id="L197">                    presentationDocumentTypes.add(presentationDocumentType);</span>
+<span class="nc bnc" id="L198" title="All 2 branches missed.">                if (documentContent != null) {</span>
+<span class="nc" id="L199">                    presentationDocumentType.setContent(documentContent);</span>
+<span class="nc" id="L200">                    presentationDocumentType.setFileName(fileName);</span>
+<span class="nc" id="L201">                    presentationDocumentType.setFileExtension(fileExtension);</span>
+<span class="nc" id="L202">                    presentationDocumentTypes.add(presentationDocumentType);</span>
                 }
-<span class="nc" id="L199">            }</span>
+<span class="nc" id="L204">            }</span>
         }
 
-<span class="nc" id="L202">        return presentationDocumentTypes;</span>
+<span class="nc" id="L207">        return presentationDocumentTypes;</span>
     }
 
     /**
      * Load Logged User Info
      */
     private void loadLoggedUserInfo() {
-<span class="nc" id="L209">        User authUser = Main.getAuthUser();</span>
-<span class="nc" id="L210">        jTextFieldUserId.setText(String.valueOf(authUser.getId()));</span>
-<span class="nc" id="L211">        jTextFieldUserName.setText(authUser.getLogin());</span>
-<span class="nc" id="L212">    }</span>
+<span class="nc" id="L214">        User authUser = Main.getAuthUser();</span>
+<span class="nc" id="L215">        jTextFieldUserId.setText(String.valueOf(authUser.getId()));</span>
+<span class="nc" id="L216">        jTextFieldUserName.setText(authUser.getLogin());</span>
+<span class="nc" id="L217">    }</span>
 
     /**
      * Disable All Input Files.
      */
     private void disableAllInputFiles() {
-<span class="nc" id="L218">        jButtonDocumentType1.setEnabled(false);</span>
-<span class="nc" id="L219">        jButtonDocumentType2.setEnabled(false);</span>
-<span class="nc" id="L220">        jButtonDocumentType3.setEnabled(false);</span>
-<span class="nc" id="L221">        jButtonDocumentType4.setEnabled(false);</span>
-<span class="nc" id="L222">        jButtonDocumentType5.setEnabled(false);</span>
+<span class="nc" id="L223">        jButtonDocumentType1.setEnabled(false);</span>
+<span class="nc" id="L224">        jButtonDocumentType2.setEnabled(false);</span>
+<span class="nc" id="L225">        jButtonDocumentType3.setEnabled(false);</span>
+<span class="nc" id="L226">        jButtonDocumentType4.setEnabled(false);</span>
+<span class="nc" id="L227">        jButtonDocumentType5.setEnabled(false);</span>
 
-<span class="nc" id="L224">    }</span>
+<span class="nc" id="L229">    }</span>
 
     /**
      * Disable All Input Files Download.
      */
     private void disableAllInputFilesDownload() {
-<span class="nc" id="L230">        jButtonDocumentTypeDownload1.setEnabled(false);</span>
-<span class="nc" id="L231">        jButtonDocumentTypeDownload2.setEnabled(false);</span>
-<span class="nc" id="L232">        jButtonDocumentTypeDownload3.setEnabled(false);</span>
-<span class="nc" id="L233">        jButtonDocumentTypeDownload4.setEnabled(false);</span>
-<span class="nc" id="L234">        jButtonDocumentTypeDownload5.setEnabled(false);</span>
-<span class="nc" id="L235">    }</span>
+<span class="nc" id="L235">        jButtonDocumentTypeDownload1.setEnabled(false);</span>
+<span class="nc" id="L236">        jButtonDocumentTypeDownload2.setEnabled(false);</span>
+<span class="nc" id="L237">        jButtonDocumentTypeDownload3.setEnabled(false);</span>
+<span class="nc" id="L238">        jButtonDocumentTypeDownload4.setEnabled(false);</span>
+<span class="nc" id="L239">        jButtonDocumentTypeDownload5.setEnabled(false);</span>
+<span class="nc" id="L240">    }</span>
 
     /**
      * Disable All Input Files Delete.
      */
     private void disableAllInputFilesDelete() {
-<span class="nc" id="L241">        jButtonDocumentTypeDelete1.setEnabled(false);</span>
-<span class="nc" id="L242">        jButtonDocumentTypeDelete2.setEnabled(false);</span>
-<span class="nc" id="L243">        jButtonDocumentTypeDelete3.setEnabled(false);</span>
-<span class="nc" id="L244">        jButtonDocumentTypeDelete4.setEnabled(false);</span>
-<span class="nc" id="L245">        jButtonDocumentTypeDelete5.setEnabled(false);</span>
-<span class="nc" id="L246">    }</span>
+<span class="nc" id="L246">        jButtonDocumentTypeDelete1.setEnabled(false);</span>
+<span class="nc" id="L247">        jButtonDocumentTypeDelete2.setEnabled(false);</span>
+<span class="nc" id="L248">        jButtonDocumentTypeDelete3.setEnabled(false);</span>
+<span class="nc" id="L249">        jButtonDocumentTypeDelete4.setEnabled(false);</span>
+<span class="nc" id="L250">        jButtonDocumentTypeDelete5.setEnabled(false);</span>
+<span class="nc" id="L251">    }</span>
 
     /**
      * Disable All Input Files.
      */
     private void clearAllInputFiles() {
         // Delete previous added files
-<span class="nc" id="L253">        jLabelDocumentType1.setText(noFile);</span>
-<span class="nc" id="L254">        jLabelDocumentType2.setText(noFile);</span>
-<span class="nc" id="L255">        jLabelDocumentType3.setText(noFile);</span>
-<span class="nc" id="L256">        jLabelDocumentType4.setText(noFile);</span>
-<span class="nc" id="L257">        jLabelDocumentType5.setText(noFile);</span>
-<span class="nc" id="L258">        documentType1 = null;</span>
-<span class="nc" id="L259">        documentType2 = null;</span>
-<span class="nc" id="L260">        documentType3 = null;</span>
-<span class="nc" id="L261">        documentType4 = null;</span>
-<span class="nc" id="L262">        documentType5 = null;</span>
-<span class="nc" id="L263">    }</span>
+<span class="nc" id="L258">        jLabelDocumentType1.setText(noFile);</span>
+<span class="nc" id="L259">        jLabelDocumentType2.setText(noFile);</span>
+<span class="nc" id="L260">        jLabelDocumentType3.setText(noFile);</span>
+<span class="nc" id="L261">        jLabelDocumentType4.setText(noFile);</span>
+<span class="nc" id="L262">        jLabelDocumentType5.setText(noFile);</span>
+<span class="nc" id="L263">        documentType1 = null;</span>
+<span class="nc" id="L264">        documentType2 = null;</span>
+<span class="nc" id="L265">        documentType3 = null;</span>
+<span class="nc" id="L266">        documentType4 = null;</span>
+<span class="nc" id="L267">        documentType5 = null;</span>
+<span class="nc" id="L268">    }</span>
 
     /**
      * This method is called from within the constructor to initialize the form. WARNING: Do NOT modify this code. The
@@ -270,486 +275,486 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Generated Code&quot;&gt;//GEN-BEGIN:initComponents
     private void initComponents() {
 
-<span class="nc" id="L273">        jLabelConvocatory = new javax.swing.JLabel();</span>
-<span class="nc" id="L274">        jButtonMunicipioCreate = new javax.swing.JButton();</span>
-<span class="nc" id="L275">        jComboBoxConvocatory = new javax.swing.JComboBox&lt;&gt;();</span>
-<span class="nc" id="L276">        jLabelUser = new javax.swing.JLabel();</span>
-<span class="nc" id="L277">        jTextFieldUserId = new javax.swing.JTextField();</span>
-<span class="nc" id="L278">        jTextFieldUserName = new javax.swing.JTextField();</span>
-<span class="nc" id="L279">        jLabelNecesaryDocuments = new javax.swing.JLabel();</span>
-<span class="nc" id="L280">        jPanelDocumentType1 = new javax.swing.JPanel();</span>
-<span class="nc" id="L281">        jLabel1 = new javax.swing.JLabel();</span>
-<span class="nc" id="L282">        jButtonDocumentType1 = new javax.swing.JButton();</span>
-<span class="nc" id="L283">        jLabelDocumentType1 = new javax.swing.JLabel();</span>
-<span class="nc" id="L284">        jButtonDocumentTypeDownload1 = new javax.swing.JButton();</span>
-<span class="nc" id="L285">        jButtonDocumentTypeDelete1 = new javax.swing.JButton();</span>
-<span class="nc" id="L286">        jPanelDocumentType2 = new javax.swing.JPanel();</span>
-<span class="nc" id="L287">        jLabel2 = new javax.swing.JLabel();</span>
-<span class="nc" id="L288">        jButtonDocumentType2 = new javax.swing.JButton();</span>
-<span class="nc" id="L289">        jLabelDocumentType2 = new javax.swing.JLabel();</span>
-<span class="nc" id="L290">        jButtonDocumentTypeDelete2 = new javax.swing.JButton();</span>
-<span class="nc" id="L291">        jButtonDocumentTypeDownload2 = new javax.swing.JButton();</span>
-<span class="nc" id="L292">        jPanelDocumentType3 = new javax.swing.JPanel();</span>
-<span class="nc" id="L293">        jLabel3 = new javax.swing.JLabel();</span>
-<span class="nc" id="L294">        jButtonDocumentType3 = new javax.swing.JButton();</span>
-<span class="nc" id="L295">        jLabelDocumentType3 = new javax.swing.JLabel();</span>
-<span class="nc" id="L296">        jButtonDocumentTypeDelete3 = new javax.swing.JButton();</span>
-<span class="nc" id="L297">        jButtonDocumentTypeDownload3 = new javax.swing.JButton();</span>
-<span class="nc" id="L298">        jPanelDocumentType4 = new javax.swing.JPanel();</span>
-<span class="nc" id="L299">        jLabel4 = new javax.swing.JLabel();</span>
-<span class="nc" id="L300">        jButtonDocumentType4 = new javax.swing.JButton();</span>
-<span class="nc" id="L301">        jLabelDocumentType4 = new javax.swing.JLabel();</span>
-<span class="nc" id="L302">        jButtonDocumentTypeDelete4 = new javax.swing.JButton();</span>
-<span class="nc" id="L303">        jButtonDocumentTypeDownload4 = new javax.swing.JButton();</span>
-<span class="nc" id="L304">        jPanelDocumentType5 = new javax.swing.JPanel();</span>
-<span class="nc" id="L305">        jLabel5 = new javax.swing.JLabel();</span>
-<span class="nc" id="L306">        jButtonDocumentType5 = new javax.swing.JButton();</span>
-<span class="nc" id="L307">        jLabelDocumentType5 = new javax.swing.JLabel();</span>
-<span class="nc" id="L308">        jButtonDocumentTypeDelete5 = new javax.swing.JButton();</span>
-<span class="nc" id="L309">        jButtonDocumentTypeDownload5 = new javax.swing.JButton();</span>
-<span class="nc" id="L310">        jLabelConvocatory1 = new javax.swing.JLabel();</span>
-<span class="nc" id="L311">        jTextFieldConvocatoryStartDate = new javax.swing.JTextField();</span>
-<span class="nc" id="L312">        jLabelConvocatory2 = new javax.swing.JLabel();</span>
-<span class="nc" id="L313">        jTextFieldConvocatoryEndDate = new javax.swing.JTextField();</span>
+<span class="nc" id="L278">        jLabelConvocatory = new javax.swing.JLabel();</span>
+<span class="nc" id="L279">        jButtonMunicipioCreate = new javax.swing.JButton();</span>
+<span class="nc" id="L280">        jComboBoxConvocatory = new javax.swing.JComboBox&lt;&gt;();</span>
+<span class="nc" id="L281">        jLabelUser = new javax.swing.JLabel();</span>
+<span class="nc" id="L282">        jTextFieldUserId = new javax.swing.JTextField();</span>
+<span class="nc" id="L283">        jTextFieldUserName = new javax.swing.JTextField();</span>
+<span class="nc" id="L284">        jLabelNecesaryDocuments = new javax.swing.JLabel();</span>
+<span class="nc" id="L285">        jPanelDocumentType1 = new javax.swing.JPanel();</span>
+<span class="nc" id="L286">        jLabel1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L287">        jButtonDocumentType1 = new javax.swing.JButton();</span>
+<span class="nc" id="L288">        jLabelDocumentType1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L289">        jButtonDocumentTypeDownload1 = new javax.swing.JButton();</span>
+<span class="nc" id="L290">        jButtonDocumentTypeDelete1 = new javax.swing.JButton();</span>
+<span class="nc" id="L291">        jPanelDocumentType2 = new javax.swing.JPanel();</span>
+<span class="nc" id="L292">        jLabel2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L293">        jButtonDocumentType2 = new javax.swing.JButton();</span>
+<span class="nc" id="L294">        jLabelDocumentType2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L295">        jButtonDocumentTypeDelete2 = new javax.swing.JButton();</span>
+<span class="nc" id="L296">        jButtonDocumentTypeDownload2 = new javax.swing.JButton();</span>
+<span class="nc" id="L297">        jPanelDocumentType3 = new javax.swing.JPanel();</span>
+<span class="nc" id="L298">        jLabel3 = new javax.swing.JLabel();</span>
+<span class="nc" id="L299">        jButtonDocumentType3 = new javax.swing.JButton();</span>
+<span class="nc" id="L300">        jLabelDocumentType3 = new javax.swing.JLabel();</span>
+<span class="nc" id="L301">        jButtonDocumentTypeDelete3 = new javax.swing.JButton();</span>
+<span class="nc" id="L302">        jButtonDocumentTypeDownload3 = new javax.swing.JButton();</span>
+<span class="nc" id="L303">        jPanelDocumentType4 = new javax.swing.JPanel();</span>
+<span class="nc" id="L304">        jLabel4 = new javax.swing.JLabel();</span>
+<span class="nc" id="L305">        jButtonDocumentType4 = new javax.swing.JButton();</span>
+<span class="nc" id="L306">        jLabelDocumentType4 = new javax.swing.JLabel();</span>
+<span class="nc" id="L307">        jButtonDocumentTypeDelete4 = new javax.swing.JButton();</span>
+<span class="nc" id="L308">        jButtonDocumentTypeDownload4 = new javax.swing.JButton();</span>
+<span class="nc" id="L309">        jPanelDocumentType5 = new javax.swing.JPanel();</span>
+<span class="nc" id="L310">        jLabel5 = new javax.swing.JLabel();</span>
+<span class="nc" id="L311">        jButtonDocumentType5 = new javax.swing.JButton();</span>
+<span class="nc" id="L312">        jLabelDocumentType5 = new javax.swing.JLabel();</span>
+<span class="nc" id="L313">        jButtonDocumentTypeDelete5 = new javax.swing.JButton();</span>
+<span class="nc" id="L314">        jButtonDocumentTypeDownload5 = new javax.swing.JButton();</span>
+<span class="nc" id="L315">        jLabelConvocatory1 = new javax.swing.JLabel();</span>
+<span class="nc" id="L316">        jTextFieldConvocatoryStartDate = new javax.swing.JTextField();</span>
+<span class="nc" id="L317">        jLabelConvocatory2 = new javax.swing.JLabel();</span>
+<span class="nc" id="L318">        jTextFieldConvocatoryEndDate = new javax.swing.JTextField();</span>
 
-<span class="nc" id="L315">        setClosable(true);</span>
-<span class="nc" id="L316">        setIconifiable(true);</span>
-<span class="nc" id="L317">        setMaximizable(true);</span>
-<span class="nc" id="L318">        setResizable(true);</span>
-<span class="nc" id="L319">        setTitle(&quot;Crear Presentación&quot;);</span>
-<span class="nc" id="L320">        setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L320">        setClosable(true);</span>
+<span class="nc" id="L321">        setIconifiable(true);</span>
+<span class="nc" id="L322">        setMaximizable(true);</span>
+<span class="nc" id="L323">        setResizable(true);</span>
+<span class="nc" id="L324">        setTitle(&quot;Crear Presentación&quot;);</span>
+<span class="nc" id="L325">        setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L322">        jLabelConvocatory.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L323">        jLabelConvocatory.setText(&quot;Convocatoria:&quot;);</span>
+<span class="nc" id="L327">        jLabelConvocatory.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L328">        jLabelConvocatory.setText(&quot;Convocatoria:&quot;);</span>
 
-<span class="nc" id="L325">        jButtonMunicipioCreate.setText(&quot;Crear&quot;);</span>
-<span class="nc" id="L326">        jButtonMunicipioCreate.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L330">        jButtonMunicipioCreate.setText(&quot;Crear&quot;);</span>
+<span class="nc" id="L331">        jButtonMunicipioCreate.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L328">                jButtonMunicipioCreateActionPerformed(evt);</span>
-<span class="nc" id="L329">            }</span>
+<span class="nc" id="L333">                jButtonMunicipioCreateActionPerformed(evt);</span>
+<span class="nc" id="L334">            }</span>
         });
 
-<span class="nc" id="L332">        jComboBoxConvocatory.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;1&quot; }));</span>
+<span class="nc" id="L337">        jComboBoxConvocatory.setModel(new javax.swing.DefaultComboBoxModel&lt;&gt;(new String[] { &quot;1&quot; }));</span>
 
-<span class="nc" id="L334">        jLabelUser.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L335">        jLabelUser.setText(&quot;Nombre del usuario:&quot;);</span>
+<span class="nc" id="L339">        jLabelUser.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L340">        jLabelUser.setText(&quot;Nombre del usuario:&quot;);</span>
 
-<span class="nc" id="L337">        jTextFieldUserId.setEditable(false);</span>
-<span class="nc" id="L338">        jTextFieldUserId.setText(&quot;ID&quot;);</span>
-<span class="nc" id="L339">        jTextFieldUserId.setEnabled(false);</span>
+<span class="nc" id="L342">        jTextFieldUserId.setEditable(false);</span>
+<span class="nc" id="L343">        jTextFieldUserId.setText(&quot;ID&quot;);</span>
+<span class="nc" id="L344">        jTextFieldUserId.setEnabled(false);</span>
 
-<span class="nc" id="L341">        jTextFieldUserName.setEditable(false);</span>
-<span class="nc" id="L342">        jTextFieldUserName.setText(&quot;Nombre Usuario&quot;);</span>
-<span class="nc" id="L343">        jTextFieldUserName.setEnabled(false);</span>
+<span class="nc" id="L346">        jTextFieldUserName.setEditable(false);</span>
+<span class="nc" id="L347">        jTextFieldUserName.setText(&quot;Nombre Usuario&quot;);</span>
+<span class="nc" id="L348">        jTextFieldUserName.setEnabled(false);</span>
 
-<span class="nc" id="L345">        jLabelNecesaryDocuments.setText(&quot;Documentos necesarios:&quot;);</span>
+<span class="nc" id="L350">        jLabelNecesaryDocuments.setText(&quot;Documentos necesarios:&quot;);</span>
 
-<span class="nc" id="L347">        jPanelDocumentType1.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L352">        jPanelDocumentType1.setBackground(new java.awt.Color(255, 255, 255));</span>
 
-<span class="nc" id="L349">        jLabel1.setText(&quot;Libro Diario&quot;);</span>
+<span class="nc" id="L354">        jLabel1.setText(&quot;Libro Diario&quot;);</span>
 
-<span class="nc" id="L351">        jButtonDocumentType1.setText(&quot;Agregar&quot;);</span>
-<span class="nc" id="L352">        jButtonDocumentType1.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L356">        jButtonDocumentType1.setText(&quot;Agregar&quot;);</span>
+<span class="nc" id="L357">        jButtonDocumentType1.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L354">                jButtonDocumentType1ActionPerformed(evt);</span>
-<span class="nc" id="L355">            }</span>
+<span class="nc" id="L359">                jButtonDocumentType1ActionPerformed(evt);</span>
+<span class="nc" id="L360">            }</span>
         });
 
-<span class="nc" id="L358">        jLabelDocumentType1.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 10)); // NOI18N</span>
-<span class="nc" id="L359">        jLabelDocumentType1.setText(&quot;Sin fichero&quot;);</span>
+<span class="nc" id="L363">        jLabelDocumentType1.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 10)); // NOI18N</span>
+<span class="nc" id="L364">        jLabelDocumentType1.setText(&quot;Sin fichero&quot;);</span>
 
-<span class="nc" id="L361">        jButtonDocumentTypeDownload1.setText(&quot;Ver&quot;);</span>
-<span class="nc" id="L362">        jButtonDocumentTypeDownload1.setEnabled(false);</span>
-<span class="nc" id="L363">        jButtonDocumentTypeDownload1.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L366">        jButtonDocumentTypeDownload1.setText(&quot;Ver&quot;);</span>
+<span class="nc" id="L367">        jButtonDocumentTypeDownload1.setEnabled(false);</span>
+<span class="nc" id="L368">        jButtonDocumentTypeDownload1.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L365">                jButtonDocumentTypeDownload1ActionPerformed(evt);</span>
-<span class="nc" id="L366">            }</span>
+<span class="nc" id="L370">                jButtonDocumentTypeDownload1ActionPerformed(evt);</span>
+<span class="nc" id="L371">            }</span>
         });
 
-<span class="nc" id="L369">        jButtonDocumentTypeDelete1.setText(&quot;Borrar&quot;);</span>
-<span class="nc" id="L370">        jButtonDocumentTypeDelete1.setEnabled(false);</span>
-<span class="nc" id="L371">        jButtonDocumentTypeDelete1.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L374">        jButtonDocumentTypeDelete1.setText(&quot;Borrar&quot;);</span>
+<span class="nc" id="L375">        jButtonDocumentTypeDelete1.setEnabled(false);</span>
+<span class="nc" id="L376">        jButtonDocumentTypeDelete1.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L373">                jButtonDocumentTypeDelete1ActionPerformed(evt);</span>
-<span class="nc" id="L374">            }</span>
+<span class="nc" id="L378">                jButtonDocumentTypeDelete1ActionPerformed(evt);</span>
+<span class="nc" id="L379">            }</span>
         });
 
-<span class="nc" id="L377">        javax.swing.GroupLayout jPanelDocumentType1Layout = new javax.swing.GroupLayout(jPanelDocumentType1);</span>
-<span class="nc" id="L378">        jPanelDocumentType1.setLayout(jPanelDocumentType1Layout);</span>
-<span class="nc" id="L379">        jPanelDocumentType1Layout.setHorizontalGroup(</span>
-<span class="nc" id="L380">            jPanelDocumentType1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L381">            .addGroup(jPanelDocumentType1Layout.createSequentialGroup()</span>
-<span class="nc" id="L382">                .addContainerGap()</span>
-<span class="nc" id="L383">                .addGroup(jPanelDocumentType1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L384">                    .addGroup(jPanelDocumentType1Layout.createSequentialGroup()</span>
-<span class="nc" id="L385">                        .addComponent(jLabelDocumentType1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L386">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L387">                        .addComponent(jButtonDocumentTypeDelete1)</span>
-<span class="nc" id="L388">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L389">                        .addComponent(jButtonDocumentTypeDownload1))</span>
-<span class="nc" id="L390">                    .addGroup(jPanelDocumentType1Layout.createSequentialGroup()</span>
-<span class="nc" id="L391">                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)</span>
-<span class="nc" id="L392">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L393">                        .addComponent(jButtonDocumentType1))))</span>
+<span class="nc" id="L382">        javax.swing.GroupLayout jPanelDocumentType1Layout = new javax.swing.GroupLayout(jPanelDocumentType1);</span>
+<span class="nc" id="L383">        jPanelDocumentType1.setLayout(jPanelDocumentType1Layout);</span>
+<span class="nc" id="L384">        jPanelDocumentType1Layout.setHorizontalGroup(</span>
+<span class="nc" id="L385">            jPanelDocumentType1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L386">            .addGroup(jPanelDocumentType1Layout.createSequentialGroup()</span>
+<span class="nc" id="L387">                .addContainerGap()</span>
+<span class="nc" id="L388">                .addGroup(jPanelDocumentType1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L389">                    .addGroup(jPanelDocumentType1Layout.createSequentialGroup()</span>
+<span class="nc" id="L390">                        .addComponent(jLabelDocumentType1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L391">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L392">                        .addComponent(jButtonDocumentTypeDelete1)</span>
+<span class="nc" id="L393">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L394">                        .addComponent(jButtonDocumentTypeDownload1))</span>
+<span class="nc" id="L395">                    .addGroup(jPanelDocumentType1Layout.createSequentialGroup()</span>
+<span class="nc" id="L396">                        .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)</span>
+<span class="nc" id="L397">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L398">                        .addComponent(jButtonDocumentType1))))</span>
         );
-<span class="nc" id="L395">        jPanelDocumentType1Layout.setVerticalGroup(</span>
-<span class="nc" id="L396">            jPanelDocumentType1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L397">            .addGroup(jPanelDocumentType1Layout.createSequentialGroup()</span>
-<span class="nc" id="L398">                .addContainerGap()</span>
-<span class="nc" id="L399">                .addGroup(jPanelDocumentType1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L400">                    .addComponent(jLabel1)</span>
-<span class="nc" id="L401">                    .addComponent(jButtonDocumentType1))</span>
-<span class="nc" id="L402">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L403">                .addGroup(jPanelDocumentType1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L404">                    .addComponent(jLabelDocumentType1)</span>
-<span class="nc" id="L405">                    .addComponent(jButtonDocumentTypeDownload1)</span>
-<span class="nc" id="L406">                    .addComponent(jButtonDocumentTypeDelete1))</span>
-<span class="nc" id="L407">                .addContainerGap())</span>
-        );
-
-<span class="nc" id="L410">        jPanelDocumentType2.setBackground(new java.awt.Color(255, 255, 255));</span>
-
-<span class="nc" id="L412">        jLabel2.setText(&quot;Libro Mayor&quot;);</span>
-
-<span class="nc" id="L414">        jButtonDocumentType2.setText(&quot;Agregar&quot;);</span>
-<span class="nc" id="L415">        jButtonDocumentType2.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L417">                jButtonDocumentType2ActionPerformed(evt);</span>
-<span class="nc" id="L418">            }</span>
-        });
-
-<span class="nc" id="L421">        jLabelDocumentType2.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 10)); // NOI18N</span>
-<span class="nc" id="L422">        jLabelDocumentType2.setText(&quot;Sin fichero&quot;);</span>
-
-<span class="nc" id="L424">        jButtonDocumentTypeDelete2.setText(&quot;Borrar&quot;);</span>
-<span class="nc" id="L425">        jButtonDocumentTypeDelete2.setEnabled(false);</span>
-<span class="nc" id="L426">        jButtonDocumentTypeDelete2.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L428">                jButtonDocumentTypeDelete2ActionPerformed(evt);</span>
-<span class="nc" id="L429">            }</span>
-        });
-
-<span class="nc" id="L432">        jButtonDocumentTypeDownload2.setText(&quot;Ver&quot;);</span>
-<span class="nc" id="L433">        jButtonDocumentTypeDownload2.setEnabled(false);</span>
-<span class="nc" id="L434">        jButtonDocumentTypeDownload2.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L436">                jButtonDocumentTypeDownload2ActionPerformed(evt);</span>
-<span class="nc" id="L437">            }</span>
-        });
-
-<span class="nc" id="L440">        javax.swing.GroupLayout jPanelDocumentType2Layout = new javax.swing.GroupLayout(jPanelDocumentType2);</span>
-<span class="nc" id="L441">        jPanelDocumentType2.setLayout(jPanelDocumentType2Layout);</span>
-<span class="nc" id="L442">        jPanelDocumentType2Layout.setHorizontalGroup(</span>
-<span class="nc" id="L443">            jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L444">            .addGroup(jPanelDocumentType2Layout.createSequentialGroup()</span>
-<span class="nc" id="L445">                .addContainerGap()</span>
-<span class="nc" id="L446">                .addGroup(jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L447">                    .addGroup(jPanelDocumentType2Layout.createSequentialGroup()</span>
-<span class="nc" id="L448">                        .addComponent(jLabelDocumentType2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L449">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L450">                        .addComponent(jButtonDocumentTypeDelete2)</span>
-<span class="nc" id="L451">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L452">                        .addComponent(jButtonDocumentTypeDownload2))</span>
-<span class="nc" id="L453">                    .addGroup(jPanelDocumentType2Layout.createSequentialGroup()</span>
-<span class="nc" id="L454">                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)</span>
-<span class="nc" id="L455">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L456">                        .addComponent(jButtonDocumentType2))))</span>
-        );
-<span class="nc" id="L458">        jPanelDocumentType2Layout.setVerticalGroup(</span>
-<span class="nc" id="L459">            jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L460">            .addGroup(jPanelDocumentType2Layout.createSequentialGroup()</span>
-<span class="nc" id="L461">                .addContainerGap()</span>
-<span class="nc" id="L462">                .addGroup(jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L463">                    .addComponent(jLabel2)</span>
-<span class="nc" id="L464">                    .addComponent(jButtonDocumentType2))</span>
-<span class="nc" id="L465">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L466">                .addGroup(jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L467">                    .addGroup(jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L468">                        .addComponent(jButtonDocumentTypeDownload2)</span>
-<span class="nc" id="L469">                        .addComponent(jButtonDocumentTypeDelete2))</span>
-<span class="nc" id="L470">                    .addComponent(jLabelDocumentType2))</span>
-<span class="nc" id="L471">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L400">        jPanelDocumentType1Layout.setVerticalGroup(</span>
+<span class="nc" id="L401">            jPanelDocumentType1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L402">            .addGroup(jPanelDocumentType1Layout.createSequentialGroup()</span>
+<span class="nc" id="L403">                .addContainerGap()</span>
+<span class="nc" id="L404">                .addGroup(jPanelDocumentType1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L405">                    .addComponent(jLabel1)</span>
+<span class="nc" id="L406">                    .addComponent(jButtonDocumentType1))</span>
+<span class="nc" id="L407">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L408">                .addGroup(jPanelDocumentType1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L409">                    .addComponent(jLabelDocumentType1)</span>
+<span class="nc" id="L410">                    .addComponent(jButtonDocumentTypeDownload1)</span>
+<span class="nc" id="L411">                    .addComponent(jButtonDocumentTypeDelete1))</span>
+<span class="nc" id="L412">                .addContainerGap())</span>
         );
 
-<span class="nc" id="L474">        jPanelDocumentType3.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L415">        jPanelDocumentType2.setBackground(new java.awt.Color(255, 255, 255));</span>
 
-<span class="nc" id="L476">        jLabel3.setText(&quot;Balance de Sumas y Saldos&quot;);</span>
-<span class="nc" id="L477">        jLabel3.setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L417">        jLabel2.setText(&quot;Libro Mayor&quot;);</span>
 
-<span class="nc" id="L479">        jButtonDocumentType3.setText(&quot;Agregar&quot;);</span>
-<span class="nc" id="L480">        jButtonDocumentType3.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L419">        jButtonDocumentType2.setText(&quot;Agregar&quot;);</span>
+<span class="nc" id="L420">        jButtonDocumentType2.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L482">                jButtonDocumentType3ActionPerformed(evt);</span>
-<span class="nc" id="L483">            }</span>
+<span class="nc" id="L422">                jButtonDocumentType2ActionPerformed(evt);</span>
+<span class="nc" id="L423">            }</span>
         });
 
-<span class="nc" id="L486">        jLabelDocumentType3.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 10)); // NOI18N</span>
-<span class="nc" id="L487">        jLabelDocumentType3.setText(&quot;Sin fichero&quot;);</span>
+<span class="nc" id="L426">        jLabelDocumentType2.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 10)); // NOI18N</span>
+<span class="nc" id="L427">        jLabelDocumentType2.setText(&quot;Sin fichero&quot;);</span>
 
-<span class="nc" id="L489">        jButtonDocumentTypeDelete3.setText(&quot;Borrar&quot;);</span>
-<span class="nc" id="L490">        jButtonDocumentTypeDelete3.setEnabled(false);</span>
-<span class="nc" id="L491">        jButtonDocumentTypeDelete3.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L429">        jButtonDocumentTypeDelete2.setText(&quot;Borrar&quot;);</span>
+<span class="nc" id="L430">        jButtonDocumentTypeDelete2.setEnabled(false);</span>
+<span class="nc" id="L431">        jButtonDocumentTypeDelete2.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L493">                jButtonDocumentTypeDelete3ActionPerformed(evt);</span>
-<span class="nc" id="L494">            }</span>
+<span class="nc" id="L433">                jButtonDocumentTypeDelete2ActionPerformed(evt);</span>
+<span class="nc" id="L434">            }</span>
         });
 
-<span class="nc" id="L497">        jButtonDocumentTypeDownload3.setText(&quot;Ver&quot;);</span>
-<span class="nc" id="L498">        jButtonDocumentTypeDownload3.setEnabled(false);</span>
-<span class="nc" id="L499">        jButtonDocumentTypeDownload3.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L437">        jButtonDocumentTypeDownload2.setText(&quot;Ver&quot;);</span>
+<span class="nc" id="L438">        jButtonDocumentTypeDownload2.setEnabled(false);</span>
+<span class="nc" id="L439">        jButtonDocumentTypeDownload2.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L501">                jButtonDocumentTypeDownload3ActionPerformed(evt);</span>
-<span class="nc" id="L502">            }</span>
+<span class="nc" id="L441">                jButtonDocumentTypeDownload2ActionPerformed(evt);</span>
+<span class="nc" id="L442">            }</span>
         });
 
-<span class="nc" id="L505">        javax.swing.GroupLayout jPanelDocumentType3Layout = new javax.swing.GroupLayout(jPanelDocumentType3);</span>
-<span class="nc" id="L506">        jPanelDocumentType3.setLayout(jPanelDocumentType3Layout);</span>
-<span class="nc" id="L507">        jPanelDocumentType3Layout.setHorizontalGroup(</span>
-<span class="nc" id="L508">            jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L509">            .addGroup(jPanelDocumentType3Layout.createSequentialGroup()</span>
-<span class="nc" id="L510">                .addContainerGap()</span>
-<span class="nc" id="L511">                .addGroup(jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L512">                    .addGroup(jPanelDocumentType3Layout.createSequentialGroup()</span>
-<span class="nc" id="L513">                        .addComponent(jLabelDocumentType3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L514">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L515">                        .addComponent(jButtonDocumentTypeDelete3)</span>
-<span class="nc" id="L516">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L517">                        .addComponent(jButtonDocumentTypeDownload3))</span>
-<span class="nc" id="L518">                    .addGroup(jPanelDocumentType3Layout.createSequentialGroup()</span>
-<span class="nc" id="L519">                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)</span>
-<span class="nc" id="L520">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L521">                        .addComponent(jButtonDocumentType3))))</span>
+<span class="nc" id="L445">        javax.swing.GroupLayout jPanelDocumentType2Layout = new javax.swing.GroupLayout(jPanelDocumentType2);</span>
+<span class="nc" id="L446">        jPanelDocumentType2.setLayout(jPanelDocumentType2Layout);</span>
+<span class="nc" id="L447">        jPanelDocumentType2Layout.setHorizontalGroup(</span>
+<span class="nc" id="L448">            jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L449">            .addGroup(jPanelDocumentType2Layout.createSequentialGroup()</span>
+<span class="nc" id="L450">                .addContainerGap()</span>
+<span class="nc" id="L451">                .addGroup(jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L452">                    .addGroup(jPanelDocumentType2Layout.createSequentialGroup()</span>
+<span class="nc" id="L453">                        .addComponent(jLabelDocumentType2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L454">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L455">                        .addComponent(jButtonDocumentTypeDelete2)</span>
+<span class="nc" id="L456">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L457">                        .addComponent(jButtonDocumentTypeDownload2))</span>
+<span class="nc" id="L458">                    .addGroup(jPanelDocumentType2Layout.createSequentialGroup()</span>
+<span class="nc" id="L459">                        .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)</span>
+<span class="nc" id="L460">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L461">                        .addComponent(jButtonDocumentType2))))</span>
         );
-<span class="nc" id="L523">        jPanelDocumentType3Layout.setVerticalGroup(</span>
-<span class="nc" id="L524">            jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L525">            .addGroup(jPanelDocumentType3Layout.createSequentialGroup()</span>
-<span class="nc" id="L526">                .addContainerGap()</span>
-<span class="nc" id="L527">                .addGroup(jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L528">                    .addComponent(jLabel3)</span>
-<span class="nc" id="L529">                    .addComponent(jButtonDocumentType3))</span>
-<span class="nc" id="L530">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L531">                .addGroup(jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L532">                    .addGroup(jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L533">                        .addComponent(jButtonDocumentTypeDownload3)</span>
-<span class="nc" id="L534">                        .addComponent(jButtonDocumentTypeDelete3))</span>
-<span class="nc" id="L535">                    .addComponent(jLabelDocumentType3))</span>
-<span class="nc" id="L536">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-        );
-
-<span class="nc" id="L539">        jPanelDocumentType4.setBackground(new java.awt.Color(255, 255, 255));</span>
-
-<span class="nc" id="L541">        jLabel4.setText(&quot;Registro de Ingreso de Caja&quot;);</span>
-<span class="nc" id="L542">        jLabel4.setToolTipText(&quot;&quot;);</span>
-
-<span class="nc" id="L544">        jButtonDocumentType4.setText(&quot;Agregar&quot;);</span>
-<span class="nc" id="L545">        jButtonDocumentType4.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L547">                jButtonDocumentType4ActionPerformed(evt);</span>
-<span class="nc" id="L548">            }</span>
-        });
-
-<span class="nc" id="L551">        jLabelDocumentType4.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 10)); // NOI18N</span>
-<span class="nc" id="L552">        jLabelDocumentType4.setText(&quot;Sin fichero&quot;);</span>
-
-<span class="nc" id="L554">        jButtonDocumentTypeDelete4.setText(&quot;Borrar&quot;);</span>
-<span class="nc" id="L555">        jButtonDocumentTypeDelete4.setEnabled(false);</span>
-<span class="nc" id="L556">        jButtonDocumentTypeDelete4.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L558">                jButtonDocumentTypeDelete4ActionPerformed(evt);</span>
-<span class="nc" id="L559">            }</span>
-        });
-
-<span class="nc" id="L562">        jButtonDocumentTypeDownload4.setText(&quot;Ver&quot;);</span>
-<span class="nc" id="L563">        jButtonDocumentTypeDownload4.setEnabled(false);</span>
-<span class="nc" id="L564">        jButtonDocumentTypeDownload4.addActionListener(new java.awt.event.ActionListener() {</span>
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L566">                jButtonDocumentTypeDownload4ActionPerformed(evt);</span>
-<span class="nc" id="L567">            }</span>
-        });
-
-<span class="nc" id="L570">        javax.swing.GroupLayout jPanelDocumentType4Layout = new javax.swing.GroupLayout(jPanelDocumentType4);</span>
-<span class="nc" id="L571">        jPanelDocumentType4.setLayout(jPanelDocumentType4Layout);</span>
-<span class="nc" id="L572">        jPanelDocumentType4Layout.setHorizontalGroup(</span>
-<span class="nc" id="L573">            jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L574">            .addGroup(jPanelDocumentType4Layout.createSequentialGroup()</span>
-<span class="nc" id="L575">                .addContainerGap()</span>
-<span class="nc" id="L576">                .addGroup(jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L577">                    .addGroup(jPanelDocumentType4Layout.createSequentialGroup()</span>
-<span class="nc" id="L578">                        .addComponent(jLabelDocumentType4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L579">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L580">                        .addComponent(jButtonDocumentTypeDelete4)</span>
-<span class="nc" id="L581">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L582">                        .addComponent(jButtonDocumentTypeDownload4))</span>
-<span class="nc" id="L583">                    .addGroup(jPanelDocumentType4Layout.createSequentialGroup()</span>
-<span class="nc" id="L584">                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)</span>
-<span class="nc" id="L585">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L586">                        .addComponent(jButtonDocumentType4))))</span>
-        );
-<span class="nc" id="L588">        jPanelDocumentType4Layout.setVerticalGroup(</span>
-<span class="nc" id="L589">            jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L590">            .addGroup(jPanelDocumentType4Layout.createSequentialGroup()</span>
-<span class="nc" id="L591">                .addContainerGap()</span>
-<span class="nc" id="L592">                .addGroup(jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L593">                    .addComponent(jLabel4)</span>
-<span class="nc" id="L594">                    .addComponent(jButtonDocumentType4))</span>
-<span class="nc" id="L595">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L596">                .addGroup(jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L597">                    .addGroup(jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L598">                        .addComponent(jButtonDocumentTypeDownload4)</span>
-<span class="nc" id="L599">                        .addComponent(jButtonDocumentTypeDelete4))</span>
-<span class="nc" id="L600">                    .addComponent(jLabelDocumentType4))</span>
-<span class="nc" id="L601">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L463">        jPanelDocumentType2Layout.setVerticalGroup(</span>
+<span class="nc" id="L464">            jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L465">            .addGroup(jPanelDocumentType2Layout.createSequentialGroup()</span>
+<span class="nc" id="L466">                .addContainerGap()</span>
+<span class="nc" id="L467">                .addGroup(jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L468">                    .addComponent(jLabel2)</span>
+<span class="nc" id="L469">                    .addComponent(jButtonDocumentType2))</span>
+<span class="nc" id="L470">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L471">                .addGroup(jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L472">                    .addGroup(jPanelDocumentType2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L473">                        .addComponent(jButtonDocumentTypeDownload2)</span>
+<span class="nc" id="L474">                        .addComponent(jButtonDocumentTypeDelete2))</span>
+<span class="nc" id="L475">                    .addComponent(jLabelDocumentType2))</span>
+<span class="nc" id="L476">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
         );
 
-<span class="nc" id="L604">        jPanelDocumentType5.setBackground(new java.awt.Color(255, 255, 255));</span>
+<span class="nc" id="L479">        jPanelDocumentType3.setBackground(new java.awt.Color(255, 255, 255));</span>
 
-<span class="nc" id="L606">        jLabel5.setText(&quot;Registro de Movimientos de Bancos&quot;);</span>
-<span class="nc" id="L607">        jLabel5.setToolTipText(&quot;&quot;);</span>
+<span class="nc" id="L481">        jLabel3.setText(&quot;Balance de Sumas y Saldos&quot;);</span>
+<span class="nc" id="L482">        jLabel3.setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L609">        jButtonDocumentType5.setText(&quot;Agregar&quot;);</span>
-<span class="nc" id="L610">        jButtonDocumentType5.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L484">        jButtonDocumentType3.setText(&quot;Agregar&quot;);</span>
+<span class="nc" id="L485">        jButtonDocumentType3.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L612">                jButtonDocumentType5ActionPerformed(evt);</span>
-<span class="nc" id="L613">            }</span>
+<span class="nc" id="L487">                jButtonDocumentType3ActionPerformed(evt);</span>
+<span class="nc" id="L488">            }</span>
         });
 
-<span class="nc" id="L616">        jLabelDocumentType5.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 10)); // NOI18N</span>
-<span class="nc" id="L617">        jLabelDocumentType5.setText(&quot;Sin fichero&quot;);</span>
+<span class="nc" id="L491">        jLabelDocumentType3.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 10)); // NOI18N</span>
+<span class="nc" id="L492">        jLabelDocumentType3.setText(&quot;Sin fichero&quot;);</span>
 
-<span class="nc" id="L619">        jButtonDocumentTypeDelete5.setText(&quot;Borrar&quot;);</span>
-<span class="nc" id="L620">        jButtonDocumentTypeDelete5.setEnabled(false);</span>
-<span class="nc" id="L621">        jButtonDocumentTypeDelete5.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L494">        jButtonDocumentTypeDelete3.setText(&quot;Borrar&quot;);</span>
+<span class="nc" id="L495">        jButtonDocumentTypeDelete3.setEnabled(false);</span>
+<span class="nc" id="L496">        jButtonDocumentTypeDelete3.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L623">                jButtonDocumentTypeDelete5ActionPerformed(evt);</span>
-<span class="nc" id="L624">            }</span>
+<span class="nc" id="L498">                jButtonDocumentTypeDelete3ActionPerformed(evt);</span>
+<span class="nc" id="L499">            }</span>
         });
 
-<span class="nc" id="L627">        jButtonDocumentTypeDownload5.setText(&quot;Ver&quot;);</span>
-<span class="nc" id="L628">        jButtonDocumentTypeDownload5.setEnabled(false);</span>
-<span class="nc" id="L629">        jButtonDocumentTypeDownload5.addActionListener(new java.awt.event.ActionListener() {</span>
+<span class="nc" id="L502">        jButtonDocumentTypeDownload3.setText(&quot;Ver&quot;);</span>
+<span class="nc" id="L503">        jButtonDocumentTypeDownload3.setEnabled(false);</span>
+<span class="nc" id="L504">        jButtonDocumentTypeDownload3.addActionListener(new java.awt.event.ActionListener() {</span>
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-<span class="nc" id="L631">                jButtonDocumentTypeDownload5ActionPerformed(evt);</span>
-<span class="nc" id="L632">            }</span>
+<span class="nc" id="L506">                jButtonDocumentTypeDownload3ActionPerformed(evt);</span>
+<span class="nc" id="L507">            }</span>
         });
 
-<span class="nc" id="L635">        javax.swing.GroupLayout jPanelDocumentType5Layout = new javax.swing.GroupLayout(jPanelDocumentType5);</span>
-<span class="nc" id="L636">        jPanelDocumentType5.setLayout(jPanelDocumentType5Layout);</span>
-<span class="nc" id="L637">        jPanelDocumentType5Layout.setHorizontalGroup(</span>
-<span class="nc" id="L638">            jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L639">            .addGroup(jPanelDocumentType5Layout.createSequentialGroup()</span>
-<span class="nc" id="L640">                .addContainerGap()</span>
-<span class="nc" id="L641">                .addGroup(jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L642">                    .addGroup(jPanelDocumentType5Layout.createSequentialGroup()</span>
-<span class="nc" id="L643">                        .addComponent(jLabelDocumentType5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L644">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L645">                        .addComponent(jButtonDocumentTypeDelete5)</span>
-<span class="nc" id="L646">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L647">                        .addComponent(jButtonDocumentTypeDownload5))</span>
-<span class="nc" id="L648">                    .addGroup(jPanelDocumentType5Layout.createSequentialGroup()</span>
-<span class="nc" id="L649">                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)</span>
-<span class="nc" id="L650">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L651">                        .addComponent(jButtonDocumentType5))))</span>
+<span class="nc" id="L510">        javax.swing.GroupLayout jPanelDocumentType3Layout = new javax.swing.GroupLayout(jPanelDocumentType3);</span>
+<span class="nc" id="L511">        jPanelDocumentType3.setLayout(jPanelDocumentType3Layout);</span>
+<span class="nc" id="L512">        jPanelDocumentType3Layout.setHorizontalGroup(</span>
+<span class="nc" id="L513">            jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L514">            .addGroup(jPanelDocumentType3Layout.createSequentialGroup()</span>
+<span class="nc" id="L515">                .addContainerGap()</span>
+<span class="nc" id="L516">                .addGroup(jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L517">                    .addGroup(jPanelDocumentType3Layout.createSequentialGroup()</span>
+<span class="nc" id="L518">                        .addComponent(jLabelDocumentType3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L519">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L520">                        .addComponent(jButtonDocumentTypeDelete3)</span>
+<span class="nc" id="L521">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L522">                        .addComponent(jButtonDocumentTypeDownload3))</span>
+<span class="nc" id="L523">                    .addGroup(jPanelDocumentType3Layout.createSequentialGroup()</span>
+<span class="nc" id="L524">                        .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)</span>
+<span class="nc" id="L525">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L526">                        .addComponent(jButtonDocumentType3))))</span>
         );
-<span class="nc" id="L653">        jPanelDocumentType5Layout.setVerticalGroup(</span>
-<span class="nc" id="L654">            jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L655">            .addGroup(jPanelDocumentType5Layout.createSequentialGroup()</span>
-<span class="nc" id="L656">                .addContainerGap()</span>
-<span class="nc" id="L657">                .addGroup(jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L658">                    .addComponent(jLabel5)</span>
-<span class="nc" id="L659">                    .addComponent(jButtonDocumentType5))</span>
-<span class="nc" id="L660">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L661">                .addGroup(jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L662">                    .addGroup(jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L663">                        .addComponent(jButtonDocumentTypeDownload5)</span>
-<span class="nc" id="L664">                        .addComponent(jButtonDocumentTypeDelete5))</span>
-<span class="nc" id="L665">                    .addComponent(jLabelDocumentType5))</span>
-<span class="nc" id="L666">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L528">        jPanelDocumentType3Layout.setVerticalGroup(</span>
+<span class="nc" id="L529">            jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L530">            .addGroup(jPanelDocumentType3Layout.createSequentialGroup()</span>
+<span class="nc" id="L531">                .addContainerGap()</span>
+<span class="nc" id="L532">                .addGroup(jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L533">                    .addComponent(jLabel3)</span>
+<span class="nc" id="L534">                    .addComponent(jButtonDocumentType3))</span>
+<span class="nc" id="L535">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L536">                .addGroup(jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L537">                    .addGroup(jPanelDocumentType3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L538">                        .addComponent(jButtonDocumentTypeDownload3)</span>
+<span class="nc" id="L539">                        .addComponent(jButtonDocumentTypeDelete3))</span>
+<span class="nc" id="L540">                    .addComponent(jLabelDocumentType3))</span>
+<span class="nc" id="L541">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
         );
 
-<span class="nc" id="L669">        jLabelConvocatory1.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L670">        jLabelConvocatory1.setText(&quot;Convocatoria fecha inicio:&quot;);</span>
+<span class="nc" id="L544">        jPanelDocumentType4.setBackground(new java.awt.Color(255, 255, 255));</span>
 
-<span class="nc" id="L672">        jTextFieldConvocatoryStartDate.setEditable(false);</span>
+<span class="nc" id="L546">        jLabel4.setText(&quot;Registro de Ingreso de Caja&quot;);</span>
+<span class="nc" id="L547">        jLabel4.setToolTipText(&quot;&quot;);</span>
 
-<span class="nc" id="L674">        jLabelConvocatory2.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
-<span class="nc" id="L675">        jLabelConvocatory2.setText(&quot;Convocatoria fecha fin:&quot;);</span>
+<span class="nc" id="L549">        jButtonDocumentType4.setText(&quot;Agregar&quot;);</span>
+<span class="nc" id="L550">        jButtonDocumentType4.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L552">                jButtonDocumentType4ActionPerformed(evt);</span>
+<span class="nc" id="L553">            }</span>
+        });
 
-<span class="nc" id="L677">        jTextFieldConvocatoryEndDate.setEditable(false);</span>
+<span class="nc" id="L556">        jLabelDocumentType4.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 10)); // NOI18N</span>
+<span class="nc" id="L557">        jLabelDocumentType4.setText(&quot;Sin fichero&quot;);</span>
 
-<span class="nc" id="L679">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
-<span class="nc" id="L680">        getContentPane().setLayout(layout);</span>
-<span class="nc" id="L681">        layout.setHorizontalGroup(</span>
-<span class="nc" id="L682">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L683">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L684">                .addContainerGap()</span>
-<span class="nc" id="L685">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L686">                    .addComponent(jPanelDocumentType3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L687">                    .addComponent(jPanelDocumentType2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L688">                    .addComponent(jPanelDocumentType1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L689">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L690">                        .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L691">                        .addGap(544, 544, 544))</span>
-<span class="nc" id="L692">                    .addComponent(jLabelConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)</span>
-<span class="nc" id="L693">                    .addComponent(jLabelUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L559">        jButtonDocumentTypeDelete4.setText(&quot;Borrar&quot;);</span>
+<span class="nc" id="L560">        jButtonDocumentTypeDelete4.setEnabled(false);</span>
+<span class="nc" id="L561">        jButtonDocumentTypeDelete4.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L563">                jButtonDocumentTypeDelete4ActionPerformed(evt);</span>
+<span class="nc" id="L564">            }</span>
+        });
+
+<span class="nc" id="L567">        jButtonDocumentTypeDownload4.setText(&quot;Ver&quot;);</span>
+<span class="nc" id="L568">        jButtonDocumentTypeDownload4.setEnabled(false);</span>
+<span class="nc" id="L569">        jButtonDocumentTypeDownload4.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L571">                jButtonDocumentTypeDownload4ActionPerformed(evt);</span>
+<span class="nc" id="L572">            }</span>
+        });
+
+<span class="nc" id="L575">        javax.swing.GroupLayout jPanelDocumentType4Layout = new javax.swing.GroupLayout(jPanelDocumentType4);</span>
+<span class="nc" id="L576">        jPanelDocumentType4.setLayout(jPanelDocumentType4Layout);</span>
+<span class="nc" id="L577">        jPanelDocumentType4Layout.setHorizontalGroup(</span>
+<span class="nc" id="L578">            jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L579">            .addGroup(jPanelDocumentType4Layout.createSequentialGroup()</span>
+<span class="nc" id="L580">                .addContainerGap()</span>
+<span class="nc" id="L581">                .addGroup(jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L582">                    .addGroup(jPanelDocumentType4Layout.createSequentialGroup()</span>
+<span class="nc" id="L583">                        .addComponent(jLabelDocumentType4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L584">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L585">                        .addComponent(jButtonDocumentTypeDelete4)</span>
+<span class="nc" id="L586">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L587">                        .addComponent(jButtonDocumentTypeDownload4))</span>
+<span class="nc" id="L588">                    .addGroup(jPanelDocumentType4Layout.createSequentialGroup()</span>
+<span class="nc" id="L589">                        .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)</span>
+<span class="nc" id="L590">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L591">                        .addComponent(jButtonDocumentType4))))</span>
+        );
+<span class="nc" id="L593">        jPanelDocumentType4Layout.setVerticalGroup(</span>
+<span class="nc" id="L594">            jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L595">            .addGroup(jPanelDocumentType4Layout.createSequentialGroup()</span>
+<span class="nc" id="L596">                .addContainerGap()</span>
+<span class="nc" id="L597">                .addGroup(jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L598">                    .addComponent(jLabel4)</span>
+<span class="nc" id="L599">                    .addComponent(jButtonDocumentType4))</span>
+<span class="nc" id="L600">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L601">                .addGroup(jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L602">                    .addGroup(jPanelDocumentType4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L603">                        .addComponent(jButtonDocumentTypeDownload4)</span>
+<span class="nc" id="L604">                        .addComponent(jButtonDocumentTypeDelete4))</span>
+<span class="nc" id="L605">                    .addComponent(jLabelDocumentType4))</span>
+<span class="nc" id="L606">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L609">        jPanelDocumentType5.setBackground(new java.awt.Color(255, 255, 255));</span>
+
+<span class="nc" id="L611">        jLabel5.setText(&quot;Registro de Movimientos de Bancos&quot;);</span>
+<span class="nc" id="L612">        jLabel5.setToolTipText(&quot;&quot;);</span>
+
+<span class="nc" id="L614">        jButtonDocumentType5.setText(&quot;Agregar&quot;);</span>
+<span class="nc" id="L615">        jButtonDocumentType5.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L617">                jButtonDocumentType5ActionPerformed(evt);</span>
+<span class="nc" id="L618">            }</span>
+        });
+
+<span class="nc" id="L621">        jLabelDocumentType5.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 10)); // NOI18N</span>
+<span class="nc" id="L622">        jLabelDocumentType5.setText(&quot;Sin fichero&quot;);</span>
+
+<span class="nc" id="L624">        jButtonDocumentTypeDelete5.setText(&quot;Borrar&quot;);</span>
+<span class="nc" id="L625">        jButtonDocumentTypeDelete5.setEnabled(false);</span>
+<span class="nc" id="L626">        jButtonDocumentTypeDelete5.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L628">                jButtonDocumentTypeDelete5ActionPerformed(evt);</span>
+<span class="nc" id="L629">            }</span>
+        });
+
+<span class="nc" id="L632">        jButtonDocumentTypeDownload5.setText(&quot;Ver&quot;);</span>
+<span class="nc" id="L633">        jButtonDocumentTypeDownload5.setEnabled(false);</span>
+<span class="nc" id="L634">        jButtonDocumentTypeDownload5.addActionListener(new java.awt.event.ActionListener() {</span>
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+<span class="nc" id="L636">                jButtonDocumentTypeDownload5ActionPerformed(evt);</span>
+<span class="nc" id="L637">            }</span>
+        });
+
+<span class="nc" id="L640">        javax.swing.GroupLayout jPanelDocumentType5Layout = new javax.swing.GroupLayout(jPanelDocumentType5);</span>
+<span class="nc" id="L641">        jPanelDocumentType5.setLayout(jPanelDocumentType5Layout);</span>
+<span class="nc" id="L642">        jPanelDocumentType5Layout.setHorizontalGroup(</span>
+<span class="nc" id="L643">            jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L644">            .addGroup(jPanelDocumentType5Layout.createSequentialGroup()</span>
+<span class="nc" id="L645">                .addContainerGap()</span>
+<span class="nc" id="L646">                .addGroup(jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L647">                    .addGroup(jPanelDocumentType5Layout.createSequentialGroup()</span>
+<span class="nc" id="L648">                        .addComponent(jLabelDocumentType5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L649">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L650">                        .addComponent(jButtonDocumentTypeDelete5)</span>
+<span class="nc" id="L651">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L652">                        .addComponent(jButtonDocumentTypeDownload5))</span>
+<span class="nc" id="L653">                    .addGroup(jPanelDocumentType5Layout.createSequentialGroup()</span>
+<span class="nc" id="L654">                        .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, 529, Short.MAX_VALUE)</span>
+<span class="nc" id="L655">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L656">                        .addComponent(jButtonDocumentType5))))</span>
+        );
+<span class="nc" id="L658">        jPanelDocumentType5Layout.setVerticalGroup(</span>
+<span class="nc" id="L659">            jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L660">            .addGroup(jPanelDocumentType5Layout.createSequentialGroup()</span>
+<span class="nc" id="L661">                .addContainerGap()</span>
+<span class="nc" id="L662">                .addGroup(jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L663">                    .addComponent(jLabel5)</span>
+<span class="nc" id="L664">                    .addComponent(jButtonDocumentType5))</span>
+<span class="nc" id="L665">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L666">                .addGroup(jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L667">                    .addGroup(jPanelDocumentType5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L668">                        .addComponent(jButtonDocumentTypeDownload5)</span>
+<span class="nc" id="L669">                        .addComponent(jButtonDocumentTypeDelete5))</span>
+<span class="nc" id="L670">                    .addComponent(jLabelDocumentType5))</span>
+<span class="nc" id="L671">                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+        );
+
+<span class="nc" id="L674">        jLabelConvocatory1.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L675">        jLabelConvocatory1.setText(&quot;Convocatoria fecha inicio:&quot;);</span>
+
+<span class="nc" id="L677">        jTextFieldConvocatoryStartDate.setEditable(false);</span>
+
+<span class="nc" id="L679">        jLabelConvocatory2.setFont(new java.awt.Font(&quot;Lucida Grande&quot;, 2, 13)); // NOI18N</span>
+<span class="nc" id="L680">        jLabelConvocatory2.setText(&quot;Convocatoria fecha fin:&quot;);</span>
+
+<span class="nc" id="L682">        jTextFieldConvocatoryEndDate.setEditable(false);</span>
+
+<span class="nc" id="L684">        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());</span>
+<span class="nc" id="L685">        getContentPane().setLayout(layout);</span>
+<span class="nc" id="L686">        layout.setHorizontalGroup(</span>
+<span class="nc" id="L687">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L688">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L689">                .addContainerGap()</span>
+<span class="nc" id="L690">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L691">                    .addComponent(jPanelDocumentType3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L692">                    .addComponent(jPanelDocumentType2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L693">                    .addComponent(jPanelDocumentType1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
 <span class="nc" id="L694">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L695">                        .addComponent(jTextFieldUserId, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L696">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L697">                        .addComponent(jTextFieldUserName))</span>
-<span class="nc" id="L698">                    .addComponent(jPanelDocumentType5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L699">                    .addComponent(jLabelNecesaryDocuments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L700">                    .addComponent(jComboBoxConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L701">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L702">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
-<span class="nc" id="L703">                            .addComponent(jLabelConvocatory1, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)</span>
-<span class="nc" id="L704">                            .addComponent(jTextFieldConvocatoryStartDate))</span>
-<span class="nc" id="L705">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L706">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
-<span class="nc" id="L707">                            .addComponent(jLabelConvocatory2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L708">                            .addComponent(jTextFieldConvocatoryEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L709">                        .addGap(0, 0, Short.MAX_VALUE))</span>
-<span class="nc" id="L710">                    .addComponent(jPanelDocumentType4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
-<span class="nc" id="L711">                .addContainerGap())</span>
+<span class="nc" id="L695">                        .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L696">                        .addGap(544, 544, 544))</span>
+<span class="nc" id="L697">                    .addComponent(jLabelConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 634, Short.MAX_VALUE)</span>
+<span class="nc" id="L698">                    .addComponent(jLabelUser, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L699">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L700">                        .addComponent(jTextFieldUserId, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L701">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L702">                        .addComponent(jTextFieldUserName))</span>
+<span class="nc" id="L703">                    .addComponent(jPanelDocumentType5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L704">                    .addComponent(jLabelNecesaryDocuments, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L705">                    .addComponent(jComboBoxConvocatory, javax.swing.GroupLayout.Alignment.TRAILING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L706">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L707">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L708">                            .addComponent(jLabelConvocatory1, javax.swing.GroupLayout.DEFAULT_SIZE, 192, Short.MAX_VALUE)</span>
+<span class="nc" id="L709">                            .addComponent(jTextFieldConvocatoryStartDate))</span>
+<span class="nc" id="L710">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L711">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)</span>
+<span class="nc" id="L712">                            .addComponent(jLabelConvocatory2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L713">                            .addComponent(jTextFieldConvocatoryEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, 192, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L714">                        .addGap(0, 0, Short.MAX_VALUE))</span>
+<span class="nc" id="L715">                    .addComponent(jPanelDocumentType4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))</span>
+<span class="nc" id="L716">                .addContainerGap())</span>
         );
-<span class="nc" id="L713">        layout.setVerticalGroup(</span>
-<span class="nc" id="L714">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L715">            .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L716">                .addContainerGap()</span>
-<span class="nc" id="L717">                .addComponent(jLabelUser)</span>
-<span class="nc" id="L718">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L719">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L720">                    .addComponent(jTextFieldUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L721">                    .addComponent(jTextFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
-<span class="nc" id="L722">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L723">                .addComponent(jLabelConvocatory, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L724">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L725">                .addComponent(jComboBoxConvocatory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L726">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L727">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
-<span class="nc" id="L728">                    .addComponent(jLabelConvocatory1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L729">                    .addGroup(layout.createSequentialGroup()</span>
-<span class="nc" id="L730">                        .addComponent(jLabelConvocatory2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L731">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L732">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
-<span class="nc" id="L733">                            .addComponent(jTextFieldConvocatoryEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L734">                            .addComponent(jTextFieldConvocatoryStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
-<span class="nc" id="L735">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L736">                .addComponent(jLabelNecesaryDocuments)</span>
-<span class="nc" id="L737">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L738">                .addComponent(jPanelDocumentType1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L739">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L740">                .addComponent(jPanelDocumentType2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L741">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L742">                .addComponent(jPanelDocumentType3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L743">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L744">                .addComponent(jPanelDocumentType4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L745">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
-<span class="nc" id="L746">                .addComponent(jPanelDocumentType5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
-<span class="nc" id="L747">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
-<span class="nc" id="L748">                .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L718">        layout.setVerticalGroup(</span>
+<span class="nc" id="L719">            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L720">            .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L721">                .addContainerGap()</span>
+<span class="nc" id="L722">                .addComponent(jLabelUser)</span>
+<span class="nc" id="L723">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L724">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L725">                    .addComponent(jTextFieldUserId, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L726">                    .addComponent(jTextFieldUserName, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
+<span class="nc" id="L727">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L728">                .addComponent(jLabelConvocatory, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L729">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L730">                .addComponent(jComboBoxConvocatory, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L731">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L732">                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)</span>
+<span class="nc" id="L733">                    .addComponent(jLabelConvocatory1, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L734">                    .addGroup(layout.createSequentialGroup()</span>
+<span class="nc" id="L735">                        .addComponent(jLabelConvocatory2, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L736">                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L737">                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)</span>
+<span class="nc" id="L738">                            .addComponent(jTextFieldConvocatoryEndDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L739">                            .addComponent(jTextFieldConvocatoryStartDate, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))</span>
+<span class="nc" id="L740">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L741">                .addComponent(jLabelNecesaryDocuments)</span>
+<span class="nc" id="L742">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L743">                .addComponent(jPanelDocumentType1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L744">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L745">                .addComponent(jPanelDocumentType2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L746">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L747">                .addComponent(jPanelDocumentType3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L748">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L749">                .addComponent(jPanelDocumentType4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L750">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)</span>
+<span class="nc" id="L751">                .addComponent(jPanelDocumentType5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)</span>
+<span class="nc" id="L752">                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)</span>
+<span class="nc" id="L753">                .addComponent(jButtonMunicipioCreate, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE))</span>
         );
 
-<span class="nc" id="L751">        pack();</span>
-<span class="nc" id="L752">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
+<span class="nc" id="L756">        pack();</span>
+<span class="nc" id="L757">    }// &lt;/editor-fold&gt;//GEN-END:initComponents</span>
 
     /**
      * Created Button Pressed
@@ -759,105 +764,105 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonMunicipioCreateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonMunicipioCreateActionPerformed
         try {
-<span class="nc bnc" id="L762" title="All 2 branches missed.">            if (!validateInputs()) {</span>
-<span class="nc" id="L763">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
+<span class="nc bnc" id="L767" title="All 2 branches missed.">            if (!validateInputs()) {</span>
+<span class="nc" id="L768">                throw new Exception(&quot;Inputs fieds are invalid.&quot;);</span>
             }
 
-<span class="nc" id="L766">            Convocatory convocatory = getInputConvocatory();</span>
-<span class="nc" id="L767">            int userId = getInputUserId();</span>
-<span class="nc" id="L768">            List&lt;PresentationDocumentType&gt; presentationDocumentsTypes = getDocumentsUploaded(convocatory);</span>
+<span class="nc" id="L771">            Convocatory convocatory = getInputConvocatory();</span>
+<span class="nc" id="L772">            int userId = getInputUserId();</span>
+<span class="nc" id="L773">            List&lt;PresentationDocumentType&gt; presentationDocumentsTypes = getDocumentsUploaded(convocatory);</span>
 
-<span class="nc" id="L770">            Presentation presentation = new Presentation();</span>
-<span class="nc" id="L771">            presentation.setConvocatoryId(convocatory.getId());</span>
-<span class="nc" id="L772">            presentation.setDate(DateHelper.today());</span>
-<span class="nc" id="L773">            presentation.setUserId(userId);</span>
-<span class="nc" id="L774">            presentation.setIsValid(true);</span>
-<span class="nc" id="L775">            presentation.setPresentationDocumentTypes(presentationDocumentsTypes);</span>
+<span class="nc" id="L775">            Presentation presentation = new Presentation();</span>
+<span class="nc" id="L776">            presentation.setConvocatoryId(convocatory.getId());</span>
+<span class="nc" id="L777">            presentation.setDate(DateHelper.today());</span>
+<span class="nc" id="L778">            presentation.setUserId(userId);</span>
+<span class="nc" id="L779">            presentation.setIsValid(true);</span>
+<span class="nc" id="L780">            presentation.setPresentationDocumentTypes(presentationDocumentsTypes);</span>
 
-<span class="nc" id="L777">            PresentationController.create(presentation);</span>
-<span class="nc" id="L778">            Dialog.info(&quot;Presentación creado correctamente&quot;, &quot;Info&quot;);</span>
+<span class="nc" id="L782">            PresentationController.create(presentation);</span>
+<span class="nc" id="L783">            Dialog.info(&quot;Presentación creado correctamente&quot;, &quot;Info&quot;);</span>
 
-<span class="nc" id="L780">            cleanInputs();</span>
-<span class="nc" id="L781">        } catch (Exception e) {</span>
-<span class="nc" id="L782">            Log.error(e);</span>
-<span class="nc" id="L783">            Dialog.error(e.getMessage(), &quot;Error creando municipio&quot;);</span>
-<span class="nc" id="L784">        }</span>
-<span class="nc" id="L785">    }//GEN-LAST:event_jButtonMunicipioCreateActionPerformed</span>
+<span class="nc" id="L785">            cleanInputs();</span>
+<span class="nc" id="L786">        } catch (Exception e) {</span>
+<span class="nc" id="L787">            Log.error(e);</span>
+<span class="nc" id="L788">            Dialog.error(e.getMessage(), &quot;Error creando municipio&quot;);</span>
+<span class="nc" id="L789">        }</span>
+<span class="nc" id="L790">    }//GEN-LAST:event_jButtonMunicipioCreateActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentType1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentType1ActionPerformed
-<span class="nc" id="L789">        loadFileContent(jLabelDocumentType1, 1);</span>
-<span class="nc" id="L790">    }//GEN-LAST:event_jButtonDocumentType1ActionPerformed</span>
+<span class="nc" id="L794">        loadFileContent(jLabelDocumentType1, 1);</span>
+<span class="nc" id="L795">    }//GEN-LAST:event_jButtonDocumentType1ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentType2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentType2ActionPerformed
-<span class="nc" id="L794">        loadFileContent(jLabelDocumentType2, 2);</span>
-<span class="nc" id="L795">    }//GEN-LAST:event_jButtonDocumentType2ActionPerformed</span>
+<span class="nc" id="L799">        loadFileContent(jLabelDocumentType2, 2);</span>
+<span class="nc" id="L800">    }//GEN-LAST:event_jButtonDocumentType2ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentType3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentType3ActionPerformed
-<span class="nc" id="L799">        loadFileContent(jLabelDocumentType3, 3);</span>
-<span class="nc" id="L800">    }//GEN-LAST:event_jButtonDocumentType3ActionPerformed</span>
+<span class="nc" id="L804">        loadFileContent(jLabelDocumentType3, 3);</span>
+<span class="nc" id="L805">    }//GEN-LAST:event_jButtonDocumentType3ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentType4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentType4ActionPerformed
-<span class="nc" id="L804">        loadFileContent(jLabelDocumentType4, 4);</span>
-<span class="nc" id="L805">    }//GEN-LAST:event_jButtonDocumentType4ActionPerformed</span>
+<span class="nc" id="L809">        loadFileContent(jLabelDocumentType4, 4);</span>
+<span class="nc" id="L810">    }//GEN-LAST:event_jButtonDocumentType4ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentType5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentType5ActionPerformed
-<span class="nc" id="L809">        loadFileContent(jLabelDocumentType5, 5);</span>
-<span class="nc" id="L810">    }//GEN-LAST:event_jButtonDocumentType5ActionPerformed</span>
+<span class="nc" id="L814">        loadFileContent(jLabelDocumentType5, 5);</span>
+<span class="nc" id="L815">    }//GEN-LAST:event_jButtonDocumentType5ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentTypeDelete1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDelete1ActionPerformed
-<span class="nc" id="L814">        deleteFile(1);</span>
-<span class="nc" id="L815">    }//GEN-LAST:event_jButtonDocumentTypeDelete1ActionPerformed</span>
+<span class="nc" id="L819">        deleteFile(1);</span>
+<span class="nc" id="L820">    }//GEN-LAST:event_jButtonDocumentTypeDelete1ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentTypeDelete2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDelete2ActionPerformed
-<span class="nc" id="L819">        deleteFile(2);</span>
-<span class="nc" id="L820">    }//GEN-LAST:event_jButtonDocumentTypeDelete2ActionPerformed</span>
+<span class="nc" id="L824">        deleteFile(2);</span>
+<span class="nc" id="L825">    }//GEN-LAST:event_jButtonDocumentTypeDelete2ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentTypeDelete3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDelete3ActionPerformed
-<span class="nc" id="L824">        deleteFile(3);</span>
-<span class="nc" id="L825">    }//GEN-LAST:event_jButtonDocumentTypeDelete3ActionPerformed</span>
+<span class="nc" id="L829">        deleteFile(3);</span>
+<span class="nc" id="L830">    }//GEN-LAST:event_jButtonDocumentTypeDelete3ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentTypeDelete4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDelete4ActionPerformed
-<span class="nc" id="L829">        deleteFile(4);</span>
-<span class="nc" id="L830">    }//GEN-LAST:event_jButtonDocumentTypeDelete4ActionPerformed</span>
+<span class="nc" id="L834">        deleteFile(4);</span>
+<span class="nc" id="L835">    }//GEN-LAST:event_jButtonDocumentTypeDelete4ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentTypeDelete5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDelete5ActionPerformed
-<span class="nc" id="L834">        deleteFile(5);</span>
-<span class="nc" id="L835">    }//GEN-LAST:event_jButtonDocumentTypeDelete5ActionPerformed</span>
+<span class="nc" id="L839">        deleteFile(5);</span>
+<span class="nc" id="L840">    }//GEN-LAST:event_jButtonDocumentTypeDelete5ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentTypeDownload1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload1ActionPerformed
-<span class="nc" id="L839">        downloadFile(1);</span>
-<span class="nc" id="L840">    }//GEN-LAST:event_jButtonDocumentTypeDownload1ActionPerformed</span>
+<span class="nc" id="L844">        downloadFile(1);</span>
+<span class="nc" id="L845">    }//GEN-LAST:event_jButtonDocumentTypeDownload1ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentTypeDownload2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload2ActionPerformed
-<span class="nc" id="L844">        downloadFile(2);</span>
-<span class="nc" id="L845">    }//GEN-LAST:event_jButtonDocumentTypeDownload2ActionPerformed</span>
+<span class="nc" id="L849">        downloadFile(2);</span>
+<span class="nc" id="L850">    }//GEN-LAST:event_jButtonDocumentTypeDownload2ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentTypeDownload3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload3ActionPerformed
-<span class="nc" id="L849">        downloadFile(3);</span>
-<span class="nc" id="L850">    }//GEN-LAST:event_jButtonDocumentTypeDownload3ActionPerformed</span>
+<span class="nc" id="L854">        downloadFile(3);</span>
+<span class="nc" id="L855">    }//GEN-LAST:event_jButtonDocumentTypeDownload3ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentTypeDownload4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload4ActionPerformed
-<span class="nc" id="L854">        downloadFile(4);</span>
-<span class="nc" id="L855">    }//GEN-LAST:event_jButtonDocumentTypeDownload4ActionPerformed</span>
+<span class="nc" id="L859">        downloadFile(4);</span>
+<span class="nc" id="L860">    }//GEN-LAST:event_jButtonDocumentTypeDownload4ActionPerformed</span>
 
     @SuppressWarnings(&quot;unused&quot;)
     private void jButtonDocumentTypeDownload5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonDocumentTypeDownload5ActionPerformed
-<span class="nc" id="L859">        downloadFile(5);</span>
-<span class="nc" id="L860">    }//GEN-LAST:event_jButtonDocumentTypeDownload5ActionPerformed</span>
+<span class="nc" id="L864">        downloadFile(5);</span>
+<span class="nc" id="L865">    }//GEN-LAST:event_jButtonDocumentTypeDownload5ActionPerformed</span>
 
     /**
      * Delete Uploaded File
@@ -867,55 +872,55 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
      */
     private void deleteFile(int documentType) {
         try {
-<span class="nc bnc" id="L870" title="All 6 branches missed.">            switch (documentType) {</span>
+<span class="nc bnc" id="L875" title="All 6 branches missed.">            switch (documentType) {</span>
                 case 1:
-<span class="nc" id="L872">                    documentType1 = null;</span>
-<span class="nc" id="L873">                    documentTypeFileName1 = null;</span>
-<span class="nc" id="L874">                    documentTypeFileExtension1 = null;</span>
-<span class="nc" id="L875">                    jButtonDocumentTypeDelete1.setEnabled(false);</span>
-<span class="nc" id="L876">                    jButtonDocumentTypeDownload1.setEnabled(false);</span>
-<span class="nc" id="L877">                    jLabelDocumentType1.setText(noFile);</span>
-<span class="nc" id="L878">                    break;</span>
+<span class="nc" id="L877">                    documentType1 = null;</span>
+<span class="nc" id="L878">                    documentTypeFileName1 = null;</span>
+<span class="nc" id="L879">                    documentTypeFileExtension1 = null;</span>
+<span class="nc" id="L880">                    jButtonDocumentTypeDelete1.setEnabled(false);</span>
+<span class="nc" id="L881">                    jButtonDocumentTypeDownload1.setEnabled(false);</span>
+<span class="nc" id="L882">                    jLabelDocumentType1.setText(noFile);</span>
+<span class="nc" id="L883">                    break;</span>
                 case 2:
-<span class="nc" id="L880">                    documentType2 = null;</span>
-<span class="nc" id="L881">                    documentTypeFileName2 = null;</span>
-<span class="nc" id="L882">                    documentTypeFileExtension2 = null;</span>
-<span class="nc" id="L883">                    jButtonDocumentTypeDelete2.setEnabled(false);</span>
-<span class="nc" id="L884">                    jButtonDocumentTypeDownload2.setEnabled(false);</span>
-<span class="nc" id="L885">                    jLabelDocumentType2.setText(noFile);</span>
-<span class="nc" id="L886">                    break;</span>
+<span class="nc" id="L885">                    documentType2 = null;</span>
+<span class="nc" id="L886">                    documentTypeFileName2 = null;</span>
+<span class="nc" id="L887">                    documentTypeFileExtension2 = null;</span>
+<span class="nc" id="L888">                    jButtonDocumentTypeDelete2.setEnabled(false);</span>
+<span class="nc" id="L889">                    jButtonDocumentTypeDownload2.setEnabled(false);</span>
+<span class="nc" id="L890">                    jLabelDocumentType2.setText(noFile);</span>
+<span class="nc" id="L891">                    break;</span>
                 case 3:
-<span class="nc" id="L888">                    documentType3 = null;</span>
-<span class="nc" id="L889">                    documentTypeFileName3 = null;</span>
-<span class="nc" id="L890">                    documentTypeFileExtension3 = null;</span>
-<span class="nc" id="L891">                    jButtonDocumentTypeDelete3.setEnabled(false);</span>
-<span class="nc" id="L892">                    jButtonDocumentTypeDownload3.setEnabled(false);</span>
-<span class="nc" id="L893">                    jLabelDocumentType3.setText(noFile);</span>
-<span class="nc" id="L894">                    break;</span>
+<span class="nc" id="L893">                    documentType3 = null;</span>
+<span class="nc" id="L894">                    documentTypeFileName3 = null;</span>
+<span class="nc" id="L895">                    documentTypeFileExtension3 = null;</span>
+<span class="nc" id="L896">                    jButtonDocumentTypeDelete3.setEnabled(false);</span>
+<span class="nc" id="L897">                    jButtonDocumentTypeDownload3.setEnabled(false);</span>
+<span class="nc" id="L898">                    jLabelDocumentType3.setText(noFile);</span>
+<span class="nc" id="L899">                    break;</span>
                 case 4:
-<span class="nc" id="L896">                    documentType4 = null;</span>
-<span class="nc" id="L897">                    documentTypeFileName4 = null;</span>
-<span class="nc" id="L898">                    documentTypeFileExtension4 = null;</span>
-<span class="nc" id="L899">                    jButtonDocumentTypeDelete4.setEnabled(false);</span>
-<span class="nc" id="L900">                    jButtonDocumentTypeDownload4.setEnabled(false);</span>
-<span class="nc" id="L901">                    jLabelDocumentType4.setText(noFile);</span>
-<span class="nc" id="L902">                    break;</span>
+<span class="nc" id="L901">                    documentType4 = null;</span>
+<span class="nc" id="L902">                    documentTypeFileName4 = null;</span>
+<span class="nc" id="L903">                    documentTypeFileExtension4 = null;</span>
+<span class="nc" id="L904">                    jButtonDocumentTypeDelete4.setEnabled(false);</span>
+<span class="nc" id="L905">                    jButtonDocumentTypeDownload4.setEnabled(false);</span>
+<span class="nc" id="L906">                    jLabelDocumentType4.setText(noFile);</span>
+<span class="nc" id="L907">                    break;</span>
                 case 5:
-<span class="nc" id="L904">                    documentType5 = null;</span>
-<span class="nc" id="L905">                    documentTypeFileName5 = null;</span>
-<span class="nc" id="L906">                    documentTypeFileExtension5 = null;</span>
-<span class="nc" id="L907">                    jButtonDocumentTypeDelete5.setEnabled(false);</span>
-<span class="nc" id="L908">                    jButtonDocumentTypeDownload5.setEnabled(false);</span>
-<span class="nc" id="L909">                    jLabelDocumentType5.setText(noFile);</span>
-<span class="nc" id="L910">                    break;</span>
+<span class="nc" id="L909">                    documentType5 = null;</span>
+<span class="nc" id="L910">                    documentTypeFileName5 = null;</span>
+<span class="nc" id="L911">                    documentTypeFileExtension5 = null;</span>
+<span class="nc" id="L912">                    jButtonDocumentTypeDelete5.setEnabled(false);</span>
+<span class="nc" id="L913">                    jButtonDocumentTypeDownload5.setEnabled(false);</span>
+<span class="nc" id="L914">                    jLabelDocumentType5.setText(noFile);</span>
+<span class="nc" id="L915">                    break;</span>
                 default:
-<span class="nc" id="L912">                    throw new Exception(&quot;Document type option ['%d'] is not valid&quot;.formatted(documentType));</span>
+<span class="nc" id="L917">                    throw new Exception(&quot;Document type option ['%d'] is not valid&quot;.formatted(documentType));</span>
             }
-<span class="nc" id="L914">        } catch (Exception ex) {</span>
-<span class="nc" id="L915">            Dialog.error(ex.getMessage(), &quot;Opción no valida&quot;);</span>
-<span class="nc" id="L916">            Log.error(ex);</span>
-<span class="nc" id="L917">        }</span>
-<span class="nc" id="L918">    }</span>
+<span class="nc" id="L919">        } catch (Exception ex) {</span>
+<span class="nc" id="L920">            Dialog.error(ex.getMessage(), &quot;Opción no valida&quot;);</span>
+<span class="nc" id="L921">            Log.error(ex);</span>
+<span class="nc" id="L922">        }</span>
+<span class="nc" id="L923">    }</span>
 
     /**
      * Download File
@@ -924,57 +929,57 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
      * @throws Exception
      */
     private void downloadFile(int documentType) {
-<span class="nc" id="L927">        JFileChooser fileChooser = new JFileChooser();</span>
+<span class="nc" id="L932">        JFileChooser fileChooser = new JFileChooser();</span>
         byte[] documentContent;
-<span class="nc" id="L929">        String fileName = null;</span>
+<span class="nc" id="L934">        String fileName = null;</span>
 
         try {
-<span class="nc bnc" id="L932" title="All 6 branches missed.">            switch (documentType) {</span>
+<span class="nc bnc" id="L937" title="All 6 branches missed.">            switch (documentType) {</span>
                 case 1:
-<span class="nc" id="L934">                    documentContent = documentType1;</span>
-<span class="nc" id="L935">                    fileName = documentTypeFileName1;</span>
-<span class="nc" id="L936">                    break;</span>
+<span class="nc" id="L939">                    documentContent = documentType1;</span>
+<span class="nc" id="L940">                    fileName = documentTypeFileName1;</span>
+<span class="nc" id="L941">                    break;</span>
                 case 2:
-<span class="nc" id="L938">                    documentContent = documentType2;</span>
-<span class="nc" id="L939">                    fileName = documentTypeFileName2;</span>
-<span class="nc" id="L940">                    break;</span>
+<span class="nc" id="L943">                    documentContent = documentType2;</span>
+<span class="nc" id="L944">                    fileName = documentTypeFileName2;</span>
+<span class="nc" id="L945">                    break;</span>
                 case 3:
-<span class="nc" id="L942">                    documentContent = documentType3;</span>
-<span class="nc" id="L943">                    fileName = documentTypeFileName3;</span>
-<span class="nc" id="L944">                    break;</span>
+<span class="nc" id="L947">                    documentContent = documentType3;</span>
+<span class="nc" id="L948">                    fileName = documentTypeFileName3;</span>
+<span class="nc" id="L949">                    break;</span>
                 case 4:
-<span class="nc" id="L946">                    documentContent = documentType4;</span>
-<span class="nc" id="L947">                    fileName = documentTypeFileName4;</span>
-<span class="nc" id="L948">                    break;</span>
+<span class="nc" id="L951">                    documentContent = documentType4;</span>
+<span class="nc" id="L952">                    fileName = documentTypeFileName4;</span>
+<span class="nc" id="L953">                    break;</span>
                 case 5:
-<span class="nc" id="L950">                    documentContent = documentType5;</span>
-<span class="nc" id="L951">                    fileName = documentTypeFileName5;</span>
-<span class="nc" id="L952">                    break;</span>
+<span class="nc" id="L955">                    documentContent = documentType5;</span>
+<span class="nc" id="L956">                    fileName = documentTypeFileName5;</span>
+<span class="nc" id="L957">                    break;</span>
                 default:
-<span class="nc" id="L954">                    throw new Exception(&quot;Document type option ['%d'] is not valid&quot;.formatted(documentType));</span>
+<span class="nc" id="L959">                    throw new Exception(&quot;Document type option ['%d'] is not valid&quot;.formatted(documentType));</span>
             }
 
-<span class="nc" id="L957">            fileChooser.setSelectedFile(new File(fileName));</span>
-<span class="nc" id="L958">            int tampak = fileChooser.showSaveDialog(null);</span>
+<span class="nc" id="L962">            fileChooser.setSelectedFile(new File(fileName));</span>
+<span class="nc" id="L963">            int tampak = fileChooser.showSaveDialog(null);</span>
 
-<span class="nc bnc" id="L960" title="All 2 branches missed.">            if (tampak == JFileChooser.APPROVE_OPTION) {</span>
-<span class="nc" id="L961">                File file = fileChooser.getSelectedFile();</span>
-<span class="nc" id="L962">                Blob blob = new SerialBlob(documentContent);</span>
-<span class="nc" id="L963">                InputStream stream = blob.getBinaryStream();</span>
+<span class="nc bnc" id="L965" title="All 2 branches missed.">            if (tampak == JFileChooser.APPROVE_OPTION) {</span>
+<span class="nc" id="L966">                File file = fileChooser.getSelectedFile();</span>
+<span class="nc" id="L967">                Blob blob = new SerialBlob(documentContent);</span>
+<span class="nc" id="L968">                InputStream stream = blob.getBinaryStream();</span>
 
-<span class="nc" id="L965">                try ( OutputStream output = new FileOutputStream(file)) {</span>
-<span class="nc" id="L966">                    byte[] buffer = new byte[4096];</span>
+<span class="nc" id="L970">                try ( OutputStream output = new FileOutputStream(file)) {</span>
+<span class="nc" id="L971">                    byte[] buffer = new byte[4096];</span>
 
-<span class="nc bnc" id="L968" title="All 2 branches missed.">                    while (stream.read(buffer) &gt; 0) {</span>
-<span class="nc" id="L969">                        output.write(buffer);</span>
+<span class="nc bnc" id="L973" title="All 2 branches missed.">                    while (stream.read(buffer) &gt; 0) {</span>
+<span class="nc" id="L974">                        output.write(buffer);</span>
                     }
                 }
             }
-<span class="nc" id="L973">        } catch (Exception ex) {</span>
-<span class="nc" id="L974">            Dialog.error(ex.getMessage(), &quot;Opción no valida&quot;);</span>
-<span class="nc" id="L975">            Log.error(ex);</span>
-<span class="nc" id="L976">        }</span>
-<span class="nc" id="L977">    }</span>
+<span class="nc" id="L978">        } catch (Exception ex) {</span>
+<span class="nc" id="L979">            Dialog.error(ex.getMessage(), &quot;Opción no valida&quot;);</span>
+<span class="nc" id="L980">            Log.error(ex);</span>
+<span class="nc" id="L981">        }</span>
+<span class="nc" id="L982">    }</span>
 
     /**
      * Load File Content.
@@ -983,85 +988,85 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
      * @param documentType Document Type
      */
     private void loadFileContent(JLabel fileNameLabel, int documentType) {
-<span class="nc" id="L986">        JFileChooser fileChooser = new JFileChooser();</span>
-<span class="nc" id="L987">        fileChooser.setFileFilter(FileTypeFilterPDF.getFilter());</span>
-<span class="nc" id="L988">        fileChooser.showOpenDialog(null);</span>
-<span class="nc" id="L989">        File file = fileChooser.getSelectedFile();</span>
-<span class="nc" id="L990">        String fileName = file.getAbsolutePath();</span>
+<span class="nc" id="L991">        JFileChooser fileChooser = new JFileChooser();</span>
+<span class="nc" id="L992">        fileChooser.setFileFilter(FileTypeFilterPDF.getFilter());</span>
+<span class="nc" id="L993">        fileChooser.showOpenDialog(null);</span>
+<span class="nc" id="L994">        File file = fileChooser.getSelectedFile();</span>
+<span class="nc" id="L995">        String fileName = file.getAbsolutePath();</span>
 
-<span class="nc" id="L992">        try ( FileInputStream fileInputStream = new FileInputStream(file)) {</span>
-<span class="nc" id="L993">            ByteArrayOutputStream bos = new ByteArrayOutputStream();</span>
-<span class="nc" id="L994">            byte[] buffer = new byte[1024];</span>
+<span class="nc" id="L997">        try ( FileInputStream fileInputStream = new FileInputStream(file)) {</span>
+<span class="nc" id="L998">            ByteArrayOutputStream bos = new ByteArrayOutputStream();</span>
+<span class="nc" id="L999">            byte[] buffer = new byte[1024];</span>
 
-<span class="nc bnc" id="L996" title="All 2 branches missed.">            for (int readNum; (readNum = fileInputStream.read(buffer)) != -1;) {</span>
-<span class="nc" id="L997">                bos.write(buffer, 0, readNum);</span>
+<span class="nc bnc" id="L1001" title="All 2 branches missed.">            for (int readNum; (readNum = fileInputStream.read(buffer)) != -1;) {</span>
+<span class="nc" id="L1002">                bos.write(buffer, 0, readNum);</span>
             }
 
-<span class="nc bnc" id="L1000" title="All 6 branches missed.">            switch (documentType) {</span>
+<span class="nc bnc" id="L1005" title="All 6 branches missed.">            switch (documentType) {</span>
                 case 1:
-<span class="nc" id="L1002">                    documentType1 = bos.toByteArray();</span>
-<span class="nc" id="L1003">                    documentTypeFileName1 = file.getName();</span>
-<span class="nc" id="L1004">                    documentTypeFileExtension1 = FilenameUtils.getExtension(fileName);</span>
-<span class="nc" id="L1005">                    jButtonDocumentTypeDelete1.setEnabled(true);</span>
-<span class="nc" id="L1006">                    jButtonDocumentTypeDownload1.setEnabled(true);</span>
-<span class="nc" id="L1007">                    break;</span>
+<span class="nc" id="L1007">                    documentType1 = bos.toByteArray();</span>
+<span class="nc" id="L1008">                    documentTypeFileName1 = file.getName();</span>
+<span class="nc" id="L1009">                    documentTypeFileExtension1 = FilenameUtils.getExtension(fileName);</span>
+<span class="nc" id="L1010">                    jButtonDocumentTypeDelete1.setEnabled(true);</span>
+<span class="nc" id="L1011">                    jButtonDocumentTypeDownload1.setEnabled(true);</span>
+<span class="nc" id="L1012">                    break;</span>
                 case 2:
-<span class="nc" id="L1009">                    documentType2 = bos.toByteArray();</span>
-<span class="nc" id="L1010">                    documentTypeFileName2 = file.getName();</span>
-<span class="nc" id="L1011">                    documentTypeFileExtension2 = FilenameUtils.getExtension(fileName);</span>
-<span class="nc" id="L1012">                    jButtonDocumentTypeDelete2.setEnabled(true);</span>
-<span class="nc" id="L1013">                    jButtonDocumentTypeDownload2.setEnabled(true);</span>
-<span class="nc" id="L1014">                    break;</span>
+<span class="nc" id="L1014">                    documentType2 = bos.toByteArray();</span>
+<span class="nc" id="L1015">                    documentTypeFileName2 = file.getName();</span>
+<span class="nc" id="L1016">                    documentTypeFileExtension2 = FilenameUtils.getExtension(fileName);</span>
+<span class="nc" id="L1017">                    jButtonDocumentTypeDelete2.setEnabled(true);</span>
+<span class="nc" id="L1018">                    jButtonDocumentTypeDownload2.setEnabled(true);</span>
+<span class="nc" id="L1019">                    break;</span>
                 case 3:
-<span class="nc" id="L1016">                    documentType3 = bos.toByteArray();</span>
-<span class="nc" id="L1017">                    documentTypeFileName3 = file.getName();</span>
-<span class="nc" id="L1018">                    documentTypeFileExtension3 = FilenameUtils.getExtension(fileName);</span>
-<span class="nc" id="L1019">                    jButtonDocumentTypeDelete3.setEnabled(true);</span>
-<span class="nc" id="L1020">                    jButtonDocumentTypeDownload3.setEnabled(true);</span>
-<span class="nc" id="L1021">                    break;</span>
+<span class="nc" id="L1021">                    documentType3 = bos.toByteArray();</span>
+<span class="nc" id="L1022">                    documentTypeFileName3 = file.getName();</span>
+<span class="nc" id="L1023">                    documentTypeFileExtension3 = FilenameUtils.getExtension(fileName);</span>
+<span class="nc" id="L1024">                    jButtonDocumentTypeDelete3.setEnabled(true);</span>
+<span class="nc" id="L1025">                    jButtonDocumentTypeDownload3.setEnabled(true);</span>
+<span class="nc" id="L1026">                    break;</span>
                 case 4:
-<span class="nc" id="L1023">                    documentType4 = bos.toByteArray();</span>
-<span class="nc" id="L1024">                    documentTypeFileName4 = file.getName();</span>
-<span class="nc" id="L1025">                    documentTypeFileExtension4 = FilenameUtils.getExtension(fileName);</span>
-<span class="nc" id="L1026">                    jButtonDocumentTypeDelete4.setEnabled(true);</span>
-<span class="nc" id="L1027">                    jButtonDocumentTypeDownload4.setEnabled(true);</span>
-<span class="nc" id="L1028">                    break;</span>
+<span class="nc" id="L1028">                    documentType4 = bos.toByteArray();</span>
+<span class="nc" id="L1029">                    documentTypeFileName4 = file.getName();</span>
+<span class="nc" id="L1030">                    documentTypeFileExtension4 = FilenameUtils.getExtension(fileName);</span>
+<span class="nc" id="L1031">                    jButtonDocumentTypeDelete4.setEnabled(true);</span>
+<span class="nc" id="L1032">                    jButtonDocumentTypeDownload4.setEnabled(true);</span>
+<span class="nc" id="L1033">                    break;</span>
                 case 5:
-<span class="nc" id="L1030">                    documentType5 = bos.toByteArray();</span>
-<span class="nc" id="L1031">                    documentTypeFileName5 = file.getName();</span>
-<span class="nc" id="L1032">                    documentTypeFileExtension5 = FilenameUtils.getExtension(fileName);</span>
-<span class="nc" id="L1033">                    jButtonDocumentTypeDelete5.setEnabled(true);</span>
-<span class="nc" id="L1034">                    jButtonDocumentTypeDownload5.setEnabled(true);</span>
-<span class="nc" id="L1035">                    break;</span>
+<span class="nc" id="L1035">                    documentType5 = bos.toByteArray();</span>
+<span class="nc" id="L1036">                    documentTypeFileName5 = file.getName();</span>
+<span class="nc" id="L1037">                    documentTypeFileExtension5 = FilenameUtils.getExtension(fileName);</span>
+<span class="nc" id="L1038">                    jButtonDocumentTypeDelete5.setEnabled(true);</span>
+<span class="nc" id="L1039">                    jButtonDocumentTypeDownload5.setEnabled(true);</span>
+<span class="nc" id="L1040">                    break;</span>
                 default:
-<span class="nc" id="L1037">                    throw new Exception(&quot;Document type option ['%d'] is not valid&quot;.formatted(documentType));</span>
+<span class="nc" id="L1042">                    throw new Exception(&quot;Document type option ['%d'] is not valid&quot;.formatted(documentType));</span>
             }
 
-<span class="nc" id="L1040">            fileNameLabel.setText(fileName);</span>
-<span class="nc" id="L1041">        } catch (FileNotFoundException ex) {</span>
-<span class="nc" id="L1042">            Dialog.error(ex.getMessage(), &quot;Fichero no encontrado&quot;);</span>
-<span class="nc" id="L1043">            Log.error(ex);</span>
-<span class="nc" id="L1044">        } catch (IOException ex) {</span>
-<span class="nc" id="L1045">            Dialog.error(ex.getMessage(), &quot;Error al processar el fichero&quot;);</span>
-<span class="nc" id="L1046">            Log.error(ex);</span>
-<span class="nc" id="L1047">        } catch (Exception ex) {</span>
-<span class="nc" id="L1048">            Dialog.error(ex.getMessage(), &quot;Opción no valida&quot;);</span>
-<span class="nc" id="L1049">            Log.error(ex);</span>
-<span class="nc" id="L1050">        }</span>
-<span class="nc" id="L1051">    }</span>
+<span class="nc" id="L1045">            fileNameLabel.setText(fileName);</span>
+<span class="nc" id="L1046">        } catch (FileNotFoundException ex) {</span>
+<span class="nc" id="L1047">            Dialog.error(ex.getMessage(), &quot;Fichero no encontrado&quot;);</span>
+<span class="nc" id="L1048">            Log.error(ex);</span>
+<span class="nc" id="L1049">        } catch (IOException ex) {</span>
+<span class="nc" id="L1050">            Dialog.error(ex.getMessage(), &quot;Error al processar el fichero&quot;);</span>
+<span class="nc" id="L1051">            Log.error(ex);</span>
+<span class="nc" id="L1052">        } catch (Exception ex) {</span>
+<span class="nc" id="L1053">            Dialog.error(ex.getMessage(), &quot;Opción no valida&quot;);</span>
+<span class="nc" id="L1054">            Log.error(ex);</span>
+<span class="nc" id="L1055">        }</span>
+<span class="nc" id="L1056">    }</span>
 
     /**
      * Clean Inputs.
      */
     private void cleanInputs() {
-<span class="nc" id="L1057">        disableAllInputFiles();</span>
-<span class="nc" id="L1058">        disableAllInputFilesDownload();</span>
-<span class="nc" id="L1059">        disableAllInputFilesDelete();</span>
-<span class="nc" id="L1060">        clearAllInputFiles();</span>
-<span class="nc" id="L1061">        jTextFieldConvocatoryStartDate.setText(&quot;&quot;);</span>
-<span class="nc" id="L1062">        jTextFieldConvocatoryEndDate.setText(&quot;&quot;);</span>
-<span class="nc" id="L1063">        jComboBoxConvocatory.setSelectedIndex(0);</span>
-<span class="nc" id="L1064">    }</span>
+<span class="nc" id="L1062">        disableAllInputFiles();</span>
+<span class="nc" id="L1063">        disableAllInputFilesDownload();</span>
+<span class="nc" id="L1064">        disableAllInputFilesDelete();</span>
+<span class="nc" id="L1065">        clearAllInputFiles();</span>
+<span class="nc" id="L1066">        jTextFieldConvocatoryStartDate.setText(&quot;&quot;);</span>
+<span class="nc" id="L1067">        jTextFieldConvocatoryEndDate.setText(&quot;&quot;);</span>
+<span class="nc" id="L1068">        jComboBoxConvocatory.setSelectedIndex(0);</span>
+<span class="nc" id="L1069">    }</span>
 
     /**
      * Validate Inputs.
@@ -1070,7 +1075,7 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
      */
     private Boolean validateInputs() {
         // @TODO: Validation!
-<span class="nc" id="L1073">        return true;</span>
+<span class="nc" id="L1078">        return true;</span>
     }
 
     /**
@@ -1079,7 +1084,7 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
      * @return Convocatory Selected.
      */
     private Convocatory getInputConvocatory() {
-<span class="nc" id="L1082">        return (Convocatory) jComboBoxConvocatory.getSelectedItem();</span>
+<span class="nc" id="L1087">        return (Convocatory) jComboBoxConvocatory.getSelectedItem();</span>
     }
 
     /**
@@ -1088,7 +1093,7 @@ public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame
      * @return User Id
      */
     private int getInputUserId() {
-<span class="nc" id="L1091">        return Integer.parseInt(jTextFieldUserId.getText());</span>
+<span class="nc" id="L1096">        return Integer.parseInt(jTextFieldUserId.getText());</span>
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

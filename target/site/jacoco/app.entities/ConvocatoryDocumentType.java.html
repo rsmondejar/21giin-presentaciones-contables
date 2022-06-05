@@ -27,6 +27,9 @@ import javax.persistence.NamedNativeQuery;
 )
 public class ConvocatoryDocumentType extends BaseEntity {
 
+    /**
+     * id Id.
+     */
     @Id
     @Column(name = &quot;id&quot;)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,53 +42,105 @@ public class ConvocatoryDocumentType extends BaseEntity {
     private int documentTypeId;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
-<span class="fc" id="L42">    public ConvocatoryDocumentType() {</span>
-<span class="fc" id="L43">    }</span>
+    /**
+     * Convocatory Document Type Constructor.
+     */
+<span class="fc" id="L48">    public ConvocatoryDocumentType() {</span>
+<span class="fc" id="L49">    }</span>
 
-<span class="nc" id="L45">    public ConvocatoryDocumentType(int convocatoryId, int documentTypeId) {</span>
-<span class="nc" id="L46">        this.setConvocatoryId(convocatoryId);</span>
-<span class="nc" id="L47">        this.setDocumentTypeId(documentTypeId);</span>
-<span class="nc" id="L48">    }</span>
+    /**
+     * Convocatory Document Type Constructor.
+     *
+     * @param convocatoryId Convocatory Id.
+     * @param documentTypeId Document Type Id.
+     */
+<span class="nc" id="L57">    public ConvocatoryDocumentType(int convocatoryId, int documentTypeId) {</span>
+<span class="nc" id="L58">        this.setConvocatoryId(convocatoryId);</span>
+<span class="nc" id="L59">        this.setDocumentTypeId(documentTypeId);</span>
+<span class="nc" id="L60">    }</span>
 
-<span class="nc" id="L50">    public ConvocatoryDocumentType(int id, int convocatoryId, int documentTypeId) {</span>
-<span class="nc" id="L51">        this.setId(id);</span>
-<span class="nc" id="L52">        this.setConvocatoryId(convocatoryId);</span>
-<span class="nc" id="L53">        this.setDocumentTypeId(documentTypeId);</span>
-<span class="nc" id="L54">    }</span>
+    /**
+     * Convocatory Document Type Constructor.
+     *
+     * @param id Id.
+     * @param convocatoryId Convocatory Id.
+     * @param documentTypeId Document Type Id.
+     */
+<span class="nc" id="L69">    public ConvocatoryDocumentType(int id, int convocatoryId, int documentTypeId) {</span>
+<span class="nc" id="L70">        this.setId(id);</span>
+<span class="nc" id="L71">        this.setConvocatoryId(convocatoryId);</span>
+<span class="nc" id="L72">        this.setDocumentTypeId(documentTypeId);</span>
+<span class="nc" id="L73">    }</span>
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;
+    /**
+     * Get Id.
+     *
+     * @return Id.
+     */
+    @Override
     public int getId() {
-<span class="nc" id="L59">        return id;</span>
+<span class="nc" id="L84">        return id;</span>
     }
 
+    /**
+     * Set Id.
+     *
+     * @param id Id.
+     */
     public void setId(int id) {
-<span class="nc" id="L63">        this.id = id;</span>
-<span class="nc" id="L64">    }</span>
+<span class="nc" id="L93">        this.id = id;</span>
+<span class="nc" id="L94">    }</span>
 
+    /**
+     * Get Convocatory Id.
+     *
+     * @return Convocatory Id.
+     */
     public int getConvocatoryId() {
-<span class="nc" id="L67">        return convocatoryId;</span>
+<span class="nc" id="L102">        return convocatoryId;</span>
     }
 
+    /**
+     * Set Convocatory Id.
+     *
+     * @param convocatoryId Convocatory Id.
+     */
     public void setConvocatoryId(int convocatoryId) {
-<span class="nc" id="L71">        this.convocatoryId = convocatoryId;</span>
-<span class="nc" id="L72">    }</span>
+<span class="nc" id="L111">        this.convocatoryId = convocatoryId;</span>
+<span class="nc" id="L112">    }</span>
 
+    /**
+     * Get Document Type Id.
+     *
+     * @return Document Type Id.
+     */
     public int getDocumentTypeId() {
-<span class="nc" id="L75">        return documentTypeId;</span>
+<span class="nc" id="L120">        return documentTypeId;</span>
     }
 
+    /**
+     * Set Document Type Id.
+     *
+     * @param documentTypeId Document Type Id.
+     */
     public void setDocumentTypeId(int documentTypeId) {
-<span class="nc" id="L79">        this.documentTypeId = documentTypeId;</span>
-<span class="nc" id="L80">    }</span>
+<span class="nc" id="L129">        this.documentTypeId = documentTypeId;</span>
+<span class="nc" id="L130">    }</span>
     // &lt;/editor-fold&gt;
 
+    /**
+     * To String
+     *
+     * @return String
+     */
     @Override
     public String toString() {
-<span class="nc" id="L85">        return &quot;ConvocatoryDocumentType{&quot;</span>
-<span class="nc" id="L86">                + &quot;id=&quot; + this.getId()</span>
-<span class="nc" id="L87">                + &quot;, convocatoryId=&quot; + this.getConvocatoryId()</span>
-<span class="nc" id="L88">                + &quot;, documentTypeId=&quot; + this.getDocumentTypeId()</span>
+<span class="nc" id="L140">        return &quot;ConvocatoryDocumentType{&quot;</span>
+<span class="nc" id="L141">                + &quot;id=&quot; + this.getId()</span>
+<span class="nc" id="L142">                + &quot;, convocatoryId=&quot; + this.getConvocatoryId()</span>
+<span class="nc" id="L143">                + &quot;, documentTypeId=&quot; + this.getDocumentTypeId()</span>
                 + '}';
     }
 }

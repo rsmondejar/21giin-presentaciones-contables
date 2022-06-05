@@ -1,5 +1,8 @@
 /**
- * Presentation Create JInternalFrame.
+ * Presentation Create JInternal Frame
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.views.presentation;
 
@@ -36,8 +39,10 @@ import javax.swing.JLabel;
 import org.apache.commons.io.FilenameUtils;
 
 /**
+ * Presentation Create JInternal Frame
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class PresentationCreateJInternalFrame extends javax.swing.JInternalFrame {
 

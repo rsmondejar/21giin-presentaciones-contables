@@ -22,9 +22,12 @@ import java.util.List;
  */
 public class ConvocatoryDao extends BaseDao {
 
-<span class="fc" id="L25">    public ConvocatoryDao() {</span>
-<span class="fc" id="L26">        super.setModel(new Convocatory());</span>
-<span class="fc" id="L27">    }</span>
+    /**
+     * Convocatory DAO Constructor.
+     */
+<span class="fc" id="L28">    public ConvocatoryDao() {</span>
+<span class="fc" id="L29">        super.setModel(new Convocatory());</span>
+<span class="fc" id="L30">    }</span>
 
     /**
      * List Convocatories.
@@ -33,14 +36,14 @@ public class ConvocatoryDao extends BaseDao {
      */
     @Override
     public List&lt;Convocatory&gt; all() {
-<span class="nc" id="L36">        List&lt;Convocatory&gt; convocatories = super.all();</span>
-        
+<span class="nc" id="L39">        List&lt;Convocatory&gt; convocatories = super.all();</span>
+
         // Add extra field Document Types
-<span class="nc bnc" id="L39" title="All 2 branches missed.">        for(int i = 0; i &lt; convocatories.size(); i++) {</span>
-<span class="nc" id="L40">            convocatories.set(i, findById(convocatories.get(i).getId()));</span>
+<span class="nc bnc" id="L42" title="All 2 branches missed.">        for (int i = 0; i &lt; convocatories.size(); i++) {</span>
+<span class="nc" id="L43">            convocatories.set(i, findById(convocatories.get(i).getId()));</span>
         }
-        
-<span class="nc" id="L43">        return convocatories;</span>
+
+<span class="nc" id="L46">        return convocatories;</span>
     }
 
     /**
@@ -51,58 +54,58 @@ public class ConvocatoryDao extends BaseDao {
      */
     @Override
     public Convocatory findById(int id) {
-<span class="fc" id="L54">        return addRelations((Convocatory) super.findById(id));</span>
+<span class="fc" id="L57">        return addRelations((Convocatory) super.findById(id));</span>
     }
 
     /**
      * Create Convocatory.
      *
-     * @param &lt;T&gt;
+     * @param &lt;T&gt; T
      * @param convocatory Convocatory
      * @return status
      */
     public &lt;T&gt; Integer create(Convocatory convocatory) {
-<span class="fc" id="L65">        Integer id = super.create((BaseEntity) convocatory);</span>
+<span class="fc" id="L68">        Integer id = super.create((BaseEntity) convocatory);</span>
         // Create documents types
-<span class="fc" id="L67">        List&lt;DocumentType&gt; documentTypes = convocatory.getDocumentsTypes();</span>
+<span class="fc" id="L70">        List&lt;DocumentType&gt; documentTypes = convocatory.getDocumentsTypes();</span>
 
-<span class="pc bpc" id="L69" title="1 of 2 branches missed.">        if (documentTypes != null) {</span>
-<span class="nc" id="L70">            ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();</span>
+<span class="pc bpc" id="L72" title="1 of 2 branches missed.">        if (documentTypes != null) {</span>
+<span class="nc" id="L73">            ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();</span>
 
-<span class="nc bnc" id="L72" title="All 2 branches missed.">            for (DocumentType documentType : documentTypes) {</span>
-<span class="nc" id="L73">                ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());</span>
-<span class="nc" id="L74">                convocatoryDocumentTypeDao.create(convocatoryDocumentType);</span>
-<span class="nc" id="L75">            }</span>
+<span class="nc bnc" id="L75" title="All 2 branches missed.">            for (DocumentType documentType : documentTypes) {</span>
+<span class="nc" id="L76">                ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());</span>
+<span class="nc" id="L77">                convocatoryDocumentTypeDao.create(convocatoryDocumentType);</span>
+<span class="nc" id="L78">            }</span>
         }
 
-<span class="fc" id="L78">        return id;</span>
+<span class="fc" id="L81">        return id;</span>
     }
 
     /**
      * Update Convocatory.
      *
-     * @param &lt;T&gt;
+     * @param &lt;T&gt; T
      * @param id Identifier
      * @param convocatory Convocatory
-     * @return
+     * @return Status
      */
     public &lt;T&gt; boolean update(int id, Convocatory convocatory) {
-<span class="fc" id="L90">        boolean status = super.update(id, (BaseEntity) convocatory);</span>
+<span class="fc" id="L93">        boolean status = super.update(id, (BaseEntity) convocatory);</span>
 
-<span class="fc" id="L92">        List&lt;DocumentType&gt; documentTypes = convocatory.getDocumentsTypes();</span>
+<span class="fc" id="L95">        List&lt;DocumentType&gt; documentTypes = convocatory.getDocumentsTypes();</span>
 
-<span class="fc" id="L94">        super.executeNamedQuery(&quot;delete_documents_types&quot;, &quot;convocatory_id&quot;, String.valueOf(id));</span>
+<span class="fc" id="L97">        super.executeNamedQuery(&quot;delete_documents_types&quot;, &quot;convocatory_id&quot;, String.valueOf(id));</span>
 
-<span class="pc bpc" id="L96" title="1 of 2 branches missed.">        if (documentTypes != null) {</span>
-<span class="nc" id="L97">            ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();</span>
+<span class="pc bpc" id="L99" title="1 of 2 branches missed.">        if (documentTypes != null) {</span>
+<span class="nc" id="L100">            ConvocatoryDocumentTypeDao convocatoryDocumentTypeDao = new ConvocatoryDocumentTypeDao();</span>
 
-<span class="nc bnc" id="L99" title="All 2 branches missed.">            for (DocumentType documentType : documentTypes) {</span>
-<span class="nc" id="L100">                ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());</span>
-<span class="nc" id="L101">                convocatoryDocumentTypeDao.create(convocatoryDocumentType);</span>
-<span class="nc" id="L102">            }</span>
+<span class="nc bnc" id="L102" title="All 2 branches missed.">            for (DocumentType documentType : documentTypes) {</span>
+<span class="nc" id="L103">                ConvocatoryDocumentType convocatoryDocumentType = new ConvocatoryDocumentType(id, documentType.getId());</span>
+<span class="nc" id="L104">                convocatoryDocumentTypeDao.create(convocatoryDocumentType);</span>
+<span class="nc" id="L105">            }</span>
         }
 
-<span class="fc" id="L105">        return status;</span>
+<span class="fc" id="L108">        return status;</span>
     }
 
     /**
@@ -113,66 +116,67 @@ public class ConvocatoryDao extends BaseDao {
      */
     @Override
     public boolean delete(int id) {
-<span class="fc" id="L116">        return super.delete(id);</span>
+<span class="fc" id="L119">        return super.delete(id);</span>
     }
-    
+
     /**
      * List Active Convocatories.
      *
      * @return List of Convocatories
      */
     public List&lt;Convocatory&gt; active() {
-<span class="fc" id="L125">        List&lt;Convocatory&gt; convocatories = super.whereNamedQuery(&quot;active&quot;, null, null);</span>
-        
+<span class="fc" id="L128">        List&lt;Convocatory&gt; convocatories = super.whereNamedQuery(&quot;active&quot;, null, null);</span>
+
         // Add extra field Document Types
-<span class="fc bfc" id="L128" title="All 2 branches covered.">        for(int i = 0; i &lt; convocatories.size(); i++) {</span>
-<span class="fc" id="L129">            convocatories.set(i, findById(convocatories.get(i).getId()));</span>
+<span class="fc bfc" id="L131" title="All 2 branches covered.">        for (int i = 0; i &lt; convocatories.size(); i++) {</span>
+<span class="fc" id="L132">            convocatories.set(i, findById(convocatories.get(i).getId()));</span>
         }
-        
-<span class="fc" id="L132">        return convocatories;</span>
+
+<span class="fc" id="L135">        return convocatories;</span>
     }
-    
+
     /**
      * List No Active Convocatories.
      *
      * @return List of Convocatories
      */
     public List&lt;Convocatory&gt; noActive() {
-<span class="nc" id="L141">        List&lt;Convocatory&gt; convocatories = super.whereNamedQuery(&quot;no_active&quot;, null, null);</span>
-        
+<span class="nc" id="L144">        List&lt;Convocatory&gt; convocatories = super.whereNamedQuery(&quot;no_active&quot;, null, null);</span>
+
         // Add extra field Document Types
-<span class="nc bnc" id="L144" title="All 2 branches missed.">        for(int i = 0; i &lt; convocatories.size(); i++) {</span>
-<span class="nc" id="L145">            convocatories.set(i, findById(convocatories.get(i).getId()));</span>
+<span class="nc bnc" id="L147" title="All 2 branches missed.">        for (int i = 0; i &lt; convocatories.size(); i++) {</span>
+<span class="nc" id="L148">            convocatories.set(i, findById(convocatories.get(i).getId()));</span>
         }
-        
-<span class="nc" id="L148">        return convocatories;</span>
+
+<span class="nc" id="L151">        return convocatories;</span>
     }
-    
+
     /**
      * Add Relations.
+     *
      * @param convocatory Convocatory
      * @return Convocatory with relations
-     */ 
+     */
     public Convocatory addRelations(Convocatory convocatory) {
         try {
             // Add Documents Types
-<span class="fc" id="L159">            List&lt;DocumentType&gt; documentTypes = super</span>
-<span class="fc" id="L160">                        .whereNamedQuery(&quot;documents_types&quot;, &quot;convocatory_id&quot;, String.valueOf(convocatory.getId()));</span>
+<span class="fc" id="L163">            List&lt;DocumentType&gt; documentTypes = super</span>
+<span class="fc" id="L164">                    .whereNamedQuery(&quot;documents_types&quot;, &quot;convocatory_id&quot;, String.valueOf(convocatory.getId()));</span>
 
-<span class="fc" id="L162">            convocatory.setDocumentsTypes(documentTypes);</span>
-            
+<span class="fc" id="L166">            convocatory.setDocumentsTypes(documentTypes);</span>
+
             // Add Presentations
-<span class="fc" id="L165">            List&lt;Presentation&gt; presentations = super</span>
-<span class="fc" id="L166">                        .whereNamedQuery(&quot;presentations&quot;, &quot;convocatory_id&quot;, String.valueOf(convocatory.getId()));</span>
-            
-<span class="fc" id="L168">            convocatory.setPresentations(presentations);</span>
+<span class="fc" id="L169">            List&lt;Presentation&gt; presentations = super</span>
+<span class="fc" id="L170">                    .whereNamedQuery(&quot;presentations&quot;, &quot;convocatory_id&quot;, String.valueOf(convocatory.getId()));</span>
 
-<span class="fc" id="L170">            return convocatory;</span>
-<span class="nc" id="L171">        } catch(Exception exception) {</span>
-<span class="nc" id="L172">            Log.error(exception);</span>
+<span class="fc" id="L172">            convocatory.setPresentations(presentations);</span>
+
+<span class="fc" id="L174">            return convocatory;</span>
+<span class="nc" id="L175">        } catch (Exception exception) {</span>
+<span class="nc" id="L176">            Log.error(exception);</span>
         }
-        
-<span class="nc" id="L175">        return null;</span>
+
+<span class="nc" id="L179">        return null;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

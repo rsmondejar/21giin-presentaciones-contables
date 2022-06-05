@@ -19,13 +19,21 @@ import javax.persistence.Id;
  */
 <span class="fc" id="L20">public class BaseEntity {</span>
 
+    /**
+     * id Id.
+     */
     @Id
     @Column(name = &quot;id&quot;)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected int id;
 
+    /**
+     * Get Id.
+     *
+     * @return Id.
+     */
     public int getId() {
-<span class="nc" id="L28">        return id;</span>
+<span class="nc" id="L36">        return id;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

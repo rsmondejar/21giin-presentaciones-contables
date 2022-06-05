@@ -18,6 +18,9 @@ import java.util.List;
  */
 public class ConvocatoryDocumentTypeDao extends BaseDao {
 
+    /**
+     * Convocatory Document Type DAO Constructor.
+     */
     public ConvocatoryDocumentTypeDao() {
         super.setModel(new ConvocatoryDocumentType());
     }
@@ -46,7 +49,7 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
     /**
      * Create Convocatory Document Type.
      *
-     * @param <T>
+     * @param <T> Class
      * @param convocatoryDocumentType Convocatory Document Type
      * @return status
      */
@@ -57,10 +60,10 @@ public class ConvocatoryDocumentTypeDao extends BaseDao {
     /**
      * Update Convocatory Document Type.
      *
-     * @param <T>
+     * @param <T> T
      * @param id Identifier
      * @param convocatoryDocumentType Document Type
-     * @return
+     * @return Status
      */
     public <T> boolean update(int id, ConvocatoryDocumentType convocatoryDocumentType) {
         return super.update(id, (BaseEntity) convocatoryDocumentType);

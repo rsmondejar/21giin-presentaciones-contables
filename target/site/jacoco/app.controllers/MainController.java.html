@@ -8,41 +8,39 @@ import app.entities.User;
 import app.views.MenuJFrame;
 
 /**
+ * Main Controller.
  *
  * @author raulsm
  */
 public class MainController extends BaseController {
 
-<span class="nc" id="L16">    private static final MenuJFrame MENU_PANEL = new MenuJFrame();</span>
+<span class="nc" id="L17">    private static final MenuJFrame MENU_PANEL = new MenuJFrame();</span>
 
     /**
-     * Main Controller constructor
+     * Main Controller constructor.
      */
-<span class="nc" id="L21">    public MainController() {</span>
+<span class="nc" id="L22">    public MainController() {</span>
         // Get user info
-<span class="nc" id="L23">        User authUser = Main.getAuthUser();</span>
+<span class="nc" id="L24">        User authUser = Main.getAuthUser();</span>
 
-<span class="nc" id="L25">        System.out.println(authUser.toString());</span>
+<span class="nc" id="L26">        System.out.println(authUser.toString());</span>
 
-<span class="nc" id="L27">        MENU_PANEL.setUserFooterInfo(authUser);</span>
-        
-        // Open Menu
-//        menuPanelShow();
-<span class="nc" id="L31">    }</span>
+<span class="nc" id="L28">        MENU_PANEL.setUserFooterInfo(authUser);</span>
+<span class="nc" id="L29">    }</span>
 
     /**
      * Menu Panel Show.
      */
     public void menuPanelShow() {
-<span class="nc" id="L37">        MENU_PANEL.setLocationRelativeTo(null);</span>
-<span class="nc" id="L38">        MENU_PANEL.setVisible(true);</span>
-<span class="nc" id="L39">    }</span>
+<span class="nc" id="L35">        MENU_PANEL.setLocationRelativeTo(null);</span>
+<span class="nc" id="L36">        MENU_PANEL.setVisible(true);</span>
+<span class="nc" id="L37">    }</span>
 
     /**
      * Menu Panel Hide.
      */
     public void menuPanelHide() {
-<span class="nc" id="L45">        MENU_PANEL.setVisible(false);</span>
-<span class="nc" id="L46">    }</span>
+<span class="nc" id="L43">        MENU_PANEL.setVisible(false);</span>
+<span class="nc" id="L44">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

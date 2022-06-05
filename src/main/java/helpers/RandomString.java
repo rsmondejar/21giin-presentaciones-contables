@@ -12,16 +12,17 @@ import java.util.Random;
 
 /**
  * RandomString Helper.
- * 
+ *
  * @author raulsm
- * @link https://stackoverflow.com/questions/41107/how-to-generate-a-random-alpha-numeric-string
+ * @see <a href="https://stackoverflow.com/questions/41107/how-to-generate-a-random-alpha-numeric-string">
+ * how-to-generate-a-random-alpha-numeric-string</a>
  */
 public class RandomString {
 
     /**
      * Generate a random string.
      *
-     * @return
+     * @return Random String
      */
     public String nextString() {
         for (int idx = 0; idx < buf.length; ++idx) {
@@ -30,12 +31,24 @@ public class RandomString {
         return new String(buf);
     }
 
+    /**
+     * Available Letters.
+     */
     public static final String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+    /**
+     * Available Letters in lower case.
+     */
     public static final String LOWER = UPPER.toLowerCase(Locale.ROOT);
 
+    /**
+     * Available Digits.
+     */
     public static final String DIGITS = "0123456789";
 
+    /**
+     * Available alphanumeric Letters And Digits.
+     */
     public static final String ALPHANUM = UPPER + LOWER + DIGITS;
 
     private final Random random;
@@ -47,9 +60,9 @@ public class RandomString {
     /**
      * RandomString constructor
      *
-     * @param length
-     * @param random
-     * @param symbols
+     * @param length Length.
+     * @param random Random.
+     * @param symbols Symbols.
      */
     @SuppressFBWarnings({"EI_EXPOSE_REP2"})
     public RandomString(int length, Random random, String symbols) {

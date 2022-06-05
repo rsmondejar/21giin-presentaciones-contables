@@ -8,7 +8,6 @@ package app.dao;
 
 import app.entities.BaseEntity;
 import app.entities.PresentationDocumentType;
-import java.util.List;
 
 /**
  * Presentation Document Type DAO.
@@ -18,9 +17,12 @@ import java.util.List;
  */
 public class PresentationDocumentTypeDao extends BaseDao {
 
-<span class="nc" id="L21">    public PresentationDocumentTypeDao() {</span>
-<span class="nc" id="L22">        super.setModel(new PresentationDocumentType());</span>
-<span class="nc" id="L23">    }</span>
+    /**
+     * Presentation Document Type DAO.
+     */
+<span class="nc" id="L23">    public PresentationDocumentTypeDao() {</span>
+<span class="nc" id="L24">        super.setModel(new PresentationDocumentType());</span>
+<span class="nc" id="L25">    }</span>
 
     /**
      * Create Presentation Document Type.
@@ -29,7 +31,7 @@ public class PresentationDocumentTypeDao extends BaseDao {
      * @return status
      */
     public Integer create(PresentationDocumentType presentationDocumentType) {
-<span class="nc" id="L32">        return super.create((BaseEntity) presentationDocumentType);</span>
+<span class="nc" id="L34">        return super.create((BaseEntity) presentationDocumentType);</span>
     }
 
     /**
@@ -37,10 +39,10 @@ public class PresentationDocumentTypeDao extends BaseDao {
      *
      * @param id Identifier
      * @param presentationDocumentType Presentation Document Type
-     * @return
+     * @return Status.
      */
     public boolean update(int id, PresentationDocumentType presentationDocumentType) {
-<span class="nc" id="L43">        return super.update(id, (BaseEntity) presentationDocumentType);</span>
+<span class="nc" id="L45">        return super.update(id, (BaseEntity) presentationDocumentType);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

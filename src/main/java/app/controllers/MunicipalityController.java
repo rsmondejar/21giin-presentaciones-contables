@@ -1,5 +1,5 @@
 /**
- * Municipality Controller Class
+ * Municipality Controller Class.
  */
 package app.controllers;
 
@@ -12,6 +12,7 @@ import helpers.Log;
 import java.util.List;
 
 /**
+ * Municipality Controller Class.
  *
  * @author raulsm
  */
@@ -20,7 +21,7 @@ public class MunicipalityController extends BaseController {
     /**
      * List Municipies.
      *
-     * @return
+     * @return List Municipies
      */
     public static List<Municipality> list() {
         // Get all municipalities
@@ -92,9 +93,9 @@ public class MunicipalityController extends BaseController {
     /**
      * Update Municipality.
      *
-     * @param id
-     * @param municipality
-     * @return
+     * @param id Municipality Id.
+     * @param municipality Municipality.
+     * @return Status
      */
     public static boolean update(int id, Municipality municipality) {
         boolean status = false;

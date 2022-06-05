@@ -58,6 +58,9 @@ import javax.persistence.Transient;
 })
 public class Convocatory extends BaseEntity {
 
+    /**
+     * id ID.
+     */
     @Id
     @Column(name = &quot;id&quot;)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -80,125 +83,244 @@ public class Convocatory extends BaseEntity {
 
     @Transient
     private List&lt;DocumentType&gt; documentsTypes;
-    
+
     @Transient
     private List&lt;Presentation&gt; presentations;
-    
+
     @Transient
     private int totalPresentations;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
-<span class="fc" id="L91">    public Convocatory() {</span>
-<span class="fc" id="L92">    }</span>
+    /**
+     * Constructor.
+     */
+<span class="fc" id="L97">    public Convocatory() {</span>
+<span class="fc" id="L98">    }</span>
 
-<span class="fc" id="L94">    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid) {</span>
-<span class="fc" id="L95">        this.setName(name);</span>
-<span class="fc" id="L96">        this.setDescription(description);</span>
-<span class="fc" id="L97">        this.setStartDate(startDate);</span>
-<span class="fc" id="L98">        this.setEndDate(endDate);</span>
-<span class="fc" id="L99">        this.setIsValid(isValid);</span>
-<span class="fc" id="L100">    }</span>
+    /**
+     * Constructor.
+     *
+     * @param name Name.
+     * @param description Description.
+     * @param startDate Start Date.
+     * @param endDate End Date.
+     * @param isValid Is valid?
+     */
+<span class="fc" id="L109">    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid) {</span>
+<span class="fc" id="L110">        this.setName(name);</span>
+<span class="fc" id="L111">        this.setDescription(description);</span>
+<span class="fc" id="L112">        this.setStartDate(startDate);</span>
+<span class="fc" id="L113">        this.setEndDate(endDate);</span>
+<span class="fc" id="L114">        this.setIsValid(isValid);</span>
+<span class="fc" id="L115">    }</span>
 
-<span class="nc" id="L102">    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid, List&lt;DocumentType&gt; documentsTypes) {</span>
-<span class="nc" id="L103">        this.setName(name);</span>
-<span class="nc" id="L104">        this.setDescription(description);</span>
-<span class="nc" id="L105">        this.setStartDate(startDate);</span>
-<span class="nc" id="L106">        this.setEndDate(endDate);</span>
-<span class="nc" id="L107">        this.setIsValid(isValid);</span>
-<span class="nc" id="L108">        this.setDocumentsTypes(documentsTypes);</span>
-<span class="nc" id="L109">    }</span>
+    /**
+     * Constructor.
+     *
+     * @param name Name.
+     * @param description Description.
+     * @param startDate Start Date.
+     * @param endDate End Date.
+     * @param isValid Is valid?
+     * @param documentsTypes Document Types
+     */
+<span class="nc" id="L127">    public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid, List&lt;DocumentType&gt; documentsTypes) {</span>
+<span class="nc" id="L128">        this.setName(name);</span>
+<span class="nc" id="L129">        this.setDescription(description);</span>
+<span class="nc" id="L130">        this.setStartDate(startDate);</span>
+<span class="nc" id="L131">        this.setEndDate(endDate);</span>
+<span class="nc" id="L132">        this.setIsValid(isValid);</span>
+<span class="nc" id="L133">        this.setDocumentsTypes(documentsTypes);</span>
+<span class="nc" id="L134">    }</span>
 
-<span class="nc" id="L111">    public Convocatory(int id, String name, String description, Date startDate, Date endDate, Boolean isValid, List&lt;DocumentType&gt; documentsTypes) {</span>
-<span class="nc" id="L112">        this.setId(id);</span>
-<span class="nc" id="L113">        this.setName(name);</span>
-<span class="nc" id="L114">        this.setDescription(description);</span>
-<span class="nc" id="L115">        this.setStartDate(startDate);</span>
-<span class="nc" id="L116">        this.setEndDate(endDate);</span>
-<span class="nc" id="L117">        this.setIsValid(isValid);</span>
-<span class="nc" id="L118">        this.setDocumentsTypes(documentsTypes);</span>
-<span class="nc" id="L119">    }</span>
+    /**
+     * Constructor.
+     *
+     * @param id Id.
+     * @param name Name.
+     * @param description Description.
+     * @param startDate Start Date.
+     * @param endDate End Date.
+     * @param isValid Is valid?
+     * @param documentsTypes Document Types
+     */
+<span class="nc" id="L147">    public Convocatory(int id, String name, String description, Date startDate, Date endDate, Boolean isValid, List&lt;DocumentType&gt; documentsTypes) {</span>
+<span class="nc" id="L148">        this.setId(id);</span>
+<span class="nc" id="L149">        this.setName(name);</span>
+<span class="nc" id="L150">        this.setDescription(description);</span>
+<span class="nc" id="L151">        this.setStartDate(startDate);</span>
+<span class="nc" id="L152">        this.setEndDate(endDate);</span>
+<span class="nc" id="L153">        this.setIsValid(isValid);</span>
+<span class="nc" id="L154">        this.setDocumentsTypes(documentsTypes);</span>
+<span class="nc" id="L155">    }</span>
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;
+    @Override
     public int getId() {
-<span class="fc" id="L124">        return id;</span>
+<span class="fc" id="L161">        return id;</span>
     }
 
+    /**
+     * Set Id.
+     *
+     * @param id Id.
+     */
     public void setId(int id) {
-<span class="nc" id="L128">        this.id = id;</span>
-<span class="nc" id="L129">    }</span>
+<span class="nc" id="L170">        this.id = id;</span>
+<span class="nc" id="L171">    }</span>
 
+    /**
+     * Get Name.
+     *
+     * @return Name.
+     */
     public String getName() {
-<span class="nc" id="L132">        return name;</span>
+<span class="nc" id="L179">        return name;</span>
     }
 
+    /**
+     * Set Name.
+     *
+     * @param name Name.
+     */
     public void setName(String name) {
-<span class="fc" id="L136">        this.name = name;</span>
-<span class="fc" id="L137">    }</span>
-
-    public String getDescription() {
-<span class="nc" id="L140">        return description;</span>
-    }
-
-    public void setDescription(String description) {
-<span class="fc" id="L144">        this.description = description;</span>
-<span class="fc" id="L145">    }</span>
-
-    @SuppressFBWarnings({&quot;EI_EXPOSE_REP&quot;})
-    public Date getStartDate() {
-<span class="fc" id="L149">        return startDate;</span>
-    }
-
-    @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
-    public void setStartDate(Date startDate) {
-<span class="fc" id="L154">        this.startDate = startDate;</span>
-<span class="fc" id="L155">    }</span>
-
-    @SuppressFBWarnings({&quot;EI_EXPOSE_REP&quot;})
-    public Date getEndDate() {
-<span class="fc" id="L159">        return endDate;</span>
-    }
-
-    @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
-    public void setEndDate(Date endDate) {
-<span class="fc" id="L164">        this.endDate = endDate;</span>
-<span class="fc" id="L165">    }</span>
-
-    public Boolean getIsValid() {
-<span class="fc" id="L168">        return isValid;</span>
-    }
-
-    public void setIsValid(Boolean isValid) {
-<span class="fc" id="L172">        this.isValid = isValid;</span>
-<span class="fc" id="L173">    }</span>
-
-    public List&lt;DocumentType&gt; getDocumentsTypes() {
-<span class="fc" id="L176">        return documentsTypes;</span>
-    }
-
-    public void setDocumentsTypes(List&lt;DocumentType&gt; documentsTypes) {
-<span class="fc" id="L180">        this.documentsTypes = documentsTypes;</span>
-<span class="fc" id="L181">    }</span>
-
-    public List&lt;Presentation&gt; getPresentations() {
-<span class="nc" id="L184">        return presentations;</span>
-    }
-
-    public void setPresentations(List&lt;Presentation&gt; presentations) {
-<span class="fc" id="L188">        this.presentations = presentations;</span>
+<span class="fc" id="L188">        this.name = name;</span>
 <span class="fc" id="L189">    }</span>
 
+    /**
+     * Get Description.
+     *
+     * @return Description.
+     */
+    public String getDescription() {
+<span class="nc" id="L197">        return description;</span>
+    }
+
+    /**
+     * Set Description.
+     *
+     * @param description Description.
+     */
+    public void setDescription(String description) {
+<span class="fc" id="L206">        this.description = description;</span>
+<span class="fc" id="L207">    }</span>
+
+    /**
+     * Get Start Date.
+     *
+     * @return Start Date.
+     */
+    @SuppressFBWarnings({&quot;EI_EXPOSE_REP&quot;})
+    public Date getStartDate() {
+<span class="fc" id="L216">        return startDate;</span>
+    }
+
+    /**
+     * Set Start Date.
+     *
+     * @param startDate Start Date.
+     */
+    @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
+    public void setStartDate(Date startDate) {
+<span class="fc" id="L226">        this.startDate = startDate;</span>
+<span class="fc" id="L227">    }</span>
+
+    /**
+     * Get End Date.
+     *
+     * @return End Date.
+     */
+    @SuppressFBWarnings({&quot;EI_EXPOSE_REP&quot;})
+    public Date getEndDate() {
+<span class="fc" id="L236">        return endDate;</span>
+    }
+
+    /**
+     * Set End Date.
+     *
+     * @param endDate End Date.
+     */
+    @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
+    public void setEndDate(Date endDate) {
+<span class="fc" id="L246">        this.endDate = endDate;</span>
+<span class="fc" id="L247">    }</span>
+
+    /**
+     * Get IS Valid
+     *
+     * @return Is Valid?
+     */
+    public Boolean getIsValid() {
+<span class="fc" id="L255">        return isValid;</span>
+    }
+
+    /**
+     * Set Is Valid
+     *
+     * @param isValid Is Valid?
+     */
+    public void setIsValid(Boolean isValid) {
+<span class="fc" id="L264">        this.isValid = isValid;</span>
+<span class="fc" id="L265">    }</span>
+
+    /**
+     * Get Documents Types.
+     *
+     * @return Documents Types.
+     */
+    public List&lt;DocumentType&gt; getDocumentsTypes() {
+<span class="fc" id="L273">        return documentsTypes;</span>
+    }
+
+    /**
+     * Set Documents Types
+     *
+     * @param documentsTypes Documents Types.
+     */
+    public void setDocumentsTypes(List&lt;DocumentType&gt; documentsTypes) {
+<span class="fc" id="L282">        this.documentsTypes = documentsTypes;</span>
+<span class="fc" id="L283">    }</span>
+
+    /**
+     * Get Presentations.
+     *
+     * @return Presentatios.
+     */
+    public List&lt;Presentation&gt; getPresentations() {
+<span class="nc" id="L291">        return presentations;</span>
+    }
+
+    /**
+     * Set Presentations.
+     *
+     * @param presentations Presentations.
+     */
+    public void setPresentations(List&lt;Presentation&gt; presentations) {
+<span class="fc" id="L300">        this.presentations = presentations;</span>
+<span class="fc" id="L301">    }</span>
+
+    /**
+     * Get Total Presentations.
+     *
+     * @return Total Presentations.
+     */
     public int getTotalPresentations() {
-<span class="nc bnc" id="L192" title="All 2 branches missed.">        if (this.getPresentations() == null) {</span>
-<span class="nc" id="L193">            return 0;</span>
+<span class="nc bnc" id="L309" title="All 2 branches missed.">        if (this.getPresentations() == null) {</span>
+<span class="nc" id="L310">            return 0;</span>
         }
-<span class="nc" id="L195">        return this.getPresentations().size();</span>
-    }    
+<span class="nc" id="L312">        return this.getPresentations().size();</span>
+    }
     // &lt;/editor-fold&gt;
 
+    /**
+     * To String.
+     *
+     * @return Name
+     */
     @Override
     public String toString() {
-<span class="nc" id="L201">        return this.getName();</span>
+<span class="nc" id="L323">        return this.getName();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

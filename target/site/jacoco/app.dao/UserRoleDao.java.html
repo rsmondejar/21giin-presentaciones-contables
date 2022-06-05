@@ -18,9 +18,12 @@ import java.util.List;
  */
 public class UserRoleDao extends BaseDao {
 
-<span class="nc" id="L21">    public UserRoleDao() {</span>
-<span class="nc" id="L22">        super.setModel(new UserRole());</span>
-<span class="nc" id="L23">    }</span>
+    /**
+     * User Role DAO Constructor.
+     */
+<span class="nc" id="L24">    public UserRoleDao() {</span>
+<span class="nc" id="L25">        super.setModel(new UserRole());</span>
+<span class="nc" id="L26">    }</span>
 
     /**
      * List Users Roles.
@@ -28,7 +31,7 @@ public class UserRoleDao extends BaseDao {
      * @return List of users
      */
     public List&lt;UserRole&gt; all() {
-<span class="nc" id="L31">        return super.all();</span>
+<span class="nc" id="L34">        return super.all();</span>
     }
 
     /**
@@ -39,30 +42,30 @@ public class UserRoleDao extends BaseDao {
      */
     @Override
     public UserRole findById(int id) {
-<span class="nc" id="L42">        return super.findById(id);</span>
+<span class="nc" id="L45">        return super.findById(id);</span>
     }
 
     /**
      * Create User Role.
      *
-     * @param &lt;T&gt;
+     * @param &lt;T&gt; T
      * @param userRole User Role
      * @return status
      */
     public &lt;T&gt; Integer create(UserRole userRole) {
-<span class="nc" id="L53">        return super.create((BaseEntity) userRole);</span>
+<span class="nc" id="L56">        return super.create((BaseEntity) userRole);</span>
     }
 
     /**
      * Update User Role.
      *
-     * @param &lt;T&gt;
+     * @param &lt;T&gt; T
      * @param id Identifier
      * @param userRole User
-     * @return
+     * @return Status
      */
     public &lt;T&gt; boolean update(int id, UserRole userRole) {
-<span class="nc" id="L65">        return super.update(id, (BaseEntity) userRole);</span>
+<span class="nc" id="L68">        return super.update(id, (BaseEntity) userRole);</span>
     }
 
     /**
@@ -73,7 +76,7 @@ public class UserRoleDao extends BaseDao {
      */
     @Override
     public boolean delete(int id) {
-<span class="nc" id="L76">        return super.delete(id);</span>
+<span class="nc" id="L79">        return super.delete(id);</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

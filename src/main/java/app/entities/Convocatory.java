@@ -58,6 +58,9 @@ import javax.persistence.Transient;
 })
 public class Convocatory extends BaseEntity {
 
+    /**
+     * id ID.
+     */
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -80,17 +83,29 @@ public class Convocatory extends BaseEntity {
 
     @Transient
     private List<DocumentType> documentsTypes;
-    
+
     @Transient
     private List<Presentation> presentations;
-    
+
     @Transient
     private int totalPresentations;
 
     // <editor-fold defaultstate="collapsed" desc="Constructors">
+    /**
+     * Constructor.
+     */
     public Convocatory() {
     }
 
+    /**
+     * Constructor.
+     *
+     * @param name Name.
+     * @param description Description.
+     * @param startDate Start Date.
+     * @param endDate End Date.
+     * @param isValid Is valid?
+     */
     public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid) {
         this.setName(name);
         this.setDescription(description);
@@ -99,6 +114,16 @@ public class Convocatory extends BaseEntity {
         this.setIsValid(isValid);
     }
 
+    /**
+     * Constructor.
+     *
+     * @param name Name.
+     * @param description Description.
+     * @param startDate Start Date.
+     * @param endDate End Date.
+     * @param isValid Is valid?
+     * @param documentsTypes Document Types
+     */
     public Convocatory(String name, String description, Date startDate, Date endDate, Boolean isValid, List<DocumentType> documentsTypes) {
         this.setName(name);
         this.setDescription(description);
@@ -108,6 +133,17 @@ public class Convocatory extends BaseEntity {
         this.setDocumentsTypes(documentsTypes);
     }
 
+    /**
+     * Constructor.
+     *
+     * @param id Id.
+     * @param name Name.
+     * @param description Description.
+     * @param startDate Start Date.
+     * @param endDate End Date.
+     * @param isValid Is valid?
+     * @param documentsTypes Document Types
+     */
     public Convocatory(int id, String name, String description, Date startDate, Date endDate, Boolean isValid, List<DocumentType> documentsTypes) {
         this.setId(id);
         this.setName(name);
@@ -120,82 +156,168 @@ public class Convocatory extends BaseEntity {
     // </editor-fold>
 
     // <editor-fold defaultstate="collapsed" desc="Getters And Setters">
+    @Override
     public int getId() {
         return id;
     }
 
+    /**
+     * Set Id.
+     *
+     * @param id Id.
+     */
     public void setId(int id) {
         this.id = id;
     }
 
+    /**
+     * Get Name.
+     *
+     * @return Name.
+     */
     public String getName() {
         return name;
     }
 
+    /**
+     * Set Name.
+     *
+     * @param name Name.
+     */
     public void setName(String name) {
         this.name = name;
     }
 
+    /**
+     * Get Description.
+     *
+     * @return Description.
+     */
     public String getDescription() {
         return description;
     }
 
+    /**
+     * Set Description.
+     *
+     * @param description Description.
+     */
     public void setDescription(String description) {
         this.description = description;
     }
 
+    /**
+     * Get Start Date.
+     *
+     * @return Start Date.
+     */
     @SuppressFBWarnings({"EI_EXPOSE_REP"})
     public Date getStartDate() {
         return startDate;
     }
 
+    /**
+     * Set Start Date.
+     *
+     * @param startDate Start Date.
+     */
     @SuppressFBWarnings({"EI_EXPOSE_REP2"})
     public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
 
+    /**
+     * Get End Date.
+     *
+     * @return End Date.
+     */
     @SuppressFBWarnings({"EI_EXPOSE_REP"})
     public Date getEndDate() {
         return endDate;
     }
 
+    /**
+     * Set End Date.
+     *
+     * @param endDate End Date.
+     */
     @SuppressFBWarnings({"EI_EXPOSE_REP2"})
     public void setEndDate(Date endDate) {
         this.endDate = endDate;
     }
 
+    /**
+     * Get IS Valid
+     *
+     * @return Is Valid?
+     */
     public Boolean getIsValid() {
         return isValid;
     }
 
+    /**
+     * Set Is Valid
+     *
+     * @param isValid Is Valid?
+     */
     public void setIsValid(Boolean isValid) {
         this.isValid = isValid;
     }
 
+    /**
+     * Get Documents Types.
+     *
+     * @return Documents Types.
+     */
     public List<DocumentType> getDocumentsTypes() {
         return documentsTypes;
     }
 
+    /**
+     * Set Documents Types
+     *
+     * @param documentsTypes Documents Types.
+     */
     public void setDocumentsTypes(List<DocumentType> documentsTypes) {
         this.documentsTypes = documentsTypes;
     }
 
+    /**
+     * Get Presentations.
+     *
+     * @return Presentatios.
+     */
     public List<Presentation> getPresentations() {
         return presentations;
     }
 
+    /**
+     * Set Presentations.
+     *
+     * @param presentations Presentations.
+     */
     public void setPresentations(List<Presentation> presentations) {
         this.presentations = presentations;
     }
 
+    /**
+     * Get Total Presentations.
+     *
+     * @return Total Presentations.
+     */
     public int getTotalPresentations() {
         if (this.getPresentations() == null) {
             return 0;
         }
         return this.getPresentations().size();
-    }    
+    }
     // </editor-fold>
 
+    /**
+     * To String.
+     *
+     * @return Name
+     */
     @Override
     public String toString() {
         return this.getName();

@@ -19,11 +19,19 @@ import javax.persistence.Id;
  */
 public class BaseEntity {
 
+    /**
+     * id Id.
+     */
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected int id;
 
+    /**
+     * Get Id.
+     *
+     * @return Id.
+     */
     public int getId() {
         return id;
     }

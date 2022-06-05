@@ -45,6 +45,10 @@ public class HibernateUtil {
         }
     }
     
+    /**
+     * Get Session Factory
+     * @return Session Factory.
+     */
     public static SessionFactory get() {
         return sessionFactory;
     }

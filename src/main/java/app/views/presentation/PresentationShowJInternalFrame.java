@@ -1,5 +1,8 @@
 /**
- * Presentation Create JInternalFrame.
+ * Presentation Show JInternal Frame
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.views.presentation;
 
@@ -24,8 +27,10 @@ import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 
 /**
+ * Presentation Show JInternal Frame
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class PresentationShowJInternalFrame extends javax.swing.JInternalFrame {
 
@@ -46,7 +51,7 @@ public class PresentationShowJInternalFrame extends javax.swing.JInternalFrame {
     /**
      * Creates new form PresentationJInternalFrame.
      *
-     * @param jDesktopPanelContainer
+     * @param jDesktopPanelContainer Desktop Panel Container
      */
     public PresentationShowJInternalFrame(JDesktopPane jDesktopPanelContainer) {
         initComponents();
@@ -55,6 +60,7 @@ public class PresentationShowJInternalFrame extends javax.swing.JInternalFrame {
 
     /**
      * Load Data.
+     *
      * @param presentation Presentation
      */
     public void loadData(Presentation presentation) {
@@ -65,12 +71,12 @@ public class PresentationShowJInternalFrame extends javax.swing.JInternalFrame {
         Convocatory convocatory = presentation.getConvocatory();
         jTextFieldConvocatory.setText(convocatory.getName());
         setDatesConvocatory(convocatory);
-        
+
         jTextFieldPresentationDate.setText(DateHelper.formatToYMD(presentation.getDate()));
         jCheckBoxPresentationIsValid.setSelected(presentation.getIsValid());
         jTextFieldPresentationId.setVisible(false);
         jTextFieldPresentationId.setText(String.valueOf(presentation.getId()));
-        
+
         // Load uploaded documents
         loadUploadedDocuments(presentation);
     }
@@ -82,18 +88,19 @@ public class PresentationShowJInternalFrame extends javax.swing.JInternalFrame {
         jTextFieldConvocatoryStartDate.setText(DateHelper.formatToYMD(convocatory.getStartDate()));
         jTextFieldConvocatoryEndDate.setText(DateHelper.formatToYMD(convocatory.getEndDate()));
     }
-    
+
     /**
      * Load Uploaded Documents.
+     *
      * @param presentation Presentation
      */
     private void loadUploadedDocuments(Presentation presentation) {
         List<PresentationDocumentType> presentationDocumentTypes = presentation.getPresentationDocumentTypes();
-        
-        if (presentationDocumentTypes != null) {            
-            for(PresentationDocumentType presentationDocumentType : presentationDocumentTypes) {
+
+        if (presentationDocumentTypes != null) {
+            for (PresentationDocumentType presentationDocumentType : presentationDocumentTypes) {
                 int documentTypeID = presentationDocumentType.getDocumentTypeId();
-                
+
                 if (documentTypeID == 1) {
                     jButtonDocumentTypeDownload1.setEnabled(true);
                     documentType1 = presentationDocumentType.getContent();

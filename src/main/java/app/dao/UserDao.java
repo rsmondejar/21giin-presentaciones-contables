@@ -26,6 +26,9 @@ import org.hibernate.query.Query;
  */
 public class UserDao extends BaseDao {
 
+    /**
+     * User DAO Constructor.
+     */
     public UserDao() {
         super.setModel(new User());
     }
@@ -37,12 +40,12 @@ public class UserDao extends BaseDao {
      */
     public List<User> all() {
         List<User> users = super.all();
-        
+
         // Add extra fields: Municpality and UserRole
-        for(int i = 0; i < users.size(); i++) {
+        for (int i = 0; i < users.size(); i++) {
             users.set(i, findById(users.get(i).getId()));
         }
-        
+
         return users;
     }
 
@@ -60,7 +63,7 @@ public class UserDao extends BaseDao {
     /**
      * Create User.
      *
-     * @param <T>
+     * @param <T> T
      * @param user User
      * @return status
      */
@@ -71,10 +74,10 @@ public class UserDao extends BaseDao {
     /**
      * Update User.
      *
-     * @param <T>
+     * @param <T> T
      * @param id Identifier
      * @param user User
-     * @return
+     * @return Status
      */
     public <T> boolean update(int id, User user) {
         return super.update(id, (BaseEntity) user);
@@ -90,31 +93,32 @@ public class UserDao extends BaseDao {
     public boolean delete(int id) {
         return super.delete(id);
     }
-    
+
     /**
      * Find By Login And Password.
+     *
      * @param login Login
      * @param password Password
      * @return User
-     * @throws Exception 
+     * @throws Exception Exception
      */
     public User findByLoginAndPassword(String login, String password) throws Exception {
         Transaction trns = null;
         Session session = HibernateUtil.get().getCurrentSession();
-        
+
         try {
             trns = session.beginTransaction();
-            
+
             Query query = session.createQuery("SELECT u FROM users u WHERE u.login=:login AND u.password=:password");
             query.setParameter("login", login);
             query.setParameter("password", password);
-            
+
             User user = (User) query.uniqueResult();
-            
+
             if (user == null) {
                 throw new Exception("Not found user with login '%s' and password '%s'".formatted(login, password));
             }
-            
+
             trns.commit();
 
             return addRelations(user);
@@ -128,31 +132,32 @@ public class UserDao extends BaseDao {
             session.close();
         }
     }
-    
+
     /**
      * Add Relations.
+     *
      * @param user User
      * @return User with relations
-     */ 
+     */
     private User addRelations(User user) {
         try {
             // Add Role
             List<UserRole> userRoles = super
-                        .whereNamedQuery("role", "role_id", String.valueOf(user.getRoleId()));
+                    .whereNamedQuery("role", "role_id", String.valueOf(user.getRoleId()));
 
             user.setUserRole(userRoles.get(0));
 
             // Add Municipality
             List<Municipality> municipalities = super
-                        .whereNamedQuery("municipality", "municipality_id", String.valueOf(user.getMunicipalityId()));
+                    .whereNamedQuery("municipality", "municipality_id", String.valueOf(user.getMunicipalityId()));
 
             user.setMunicipality(municipalities.get(0));
 
             return user;
-        } catch(Exception exception) {
+        } catch (Exception exception) {
             Log.error(exception);
         }
-        
+
         return null;
     }
 }

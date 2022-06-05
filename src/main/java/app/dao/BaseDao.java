@@ -30,16 +30,26 @@ class BaseDao {
      */
     protected BaseEntity model;
 
+    /**
+     * Set Model.
+     *
+     * @param model Model.
+     */
     public void setModel(BaseEntity model) {
         this.model = model;
     }
 
+    /**
+     * Get Model.
+     *
+     * @return Model.
+     */
     public BaseEntity getModel() {
         return this.model;
     }
 
     /**
-     * Get all
+     * Get all.
      *
      * @param <T> T
      * @return All registers
@@ -50,7 +60,6 @@ class BaseDao {
 
         try {
             trns = session.beginTransaction();
-//            session.beginTransaction();
             List<T> baseEntities = (List<T>) loadAllData(getModel().getClass(), session);
 
             if (baseEntities == null) {
@@ -210,11 +219,12 @@ class BaseDao {
 
     /**
      * Find by Named Query.
+     *
      * @param <T> T
      * @param queryName Query Name
      * @param columnName Column Name
      * @param columnValue Column Value
-     * @return 
+     * @return List
      */
     public <T> List<T> whereNamedQuery(String queryName, String columnName, String columnValue) {
         Transaction trns = null;
@@ -244,14 +254,14 @@ class BaseDao {
             session.close();
         }
     }
-    
+
     /**
      * Execute Named Query.
-     * @param <T> T
+     *
      * @param queryName Query Name
      * @param columnName Column Name
      * @param columnValue Column Value
-     * @return 
+     * @return Status
      */
     public Integer executeNamedQuery(String queryName, String columnName, String columnValue) {
         Transaction trns = null;

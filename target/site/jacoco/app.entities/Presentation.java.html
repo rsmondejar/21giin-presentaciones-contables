@@ -43,54 +43,85 @@ import javax.persistence.Transient;
             query = &quot;SELECT pdt.* FROM presentations_has_documents_types as pdt &quot;
             + &quot; WHERE pdt.presentation_id = :presentation_id&quot;,
             resultClass = PresentationDocumentType.class
-    ),
-})
+    ),})
 public class Presentation extends BaseEntity {
 
+    /**
+     * id Id.
+     */
     @Id
     @Column(name = &quot;id&quot;)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     protected int id;
-    
+
     @Column(name = &quot;date&quot;)
     private Date date;
-    
+
     @Column(name = &quot;is_valid&quot;)
     private Boolean isValid;
-    
+
     @Column(name = &quot;convocatory_id&quot;)
     private int convocatoryId;
-    
+
     @Column(name = &quot;user_id&quot;)
     private int userId;
-    
+
     @Transient
     private Convocatory convocatory;
-    
+
     @Transient
     private User user;
-    
+
     @Transient
     private List&lt;PresentationDocumentType&gt; presentationDocumentTypes;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
-<span class="fc" id="L77">    public Presentation() {</span>
-<span class="fc" id="L78">    }</span>
+    /**
+     * Presentation Constructor.
+     */
+<span class="fc" id="L82">    public Presentation() {</span>
+<span class="fc" id="L83">    }</span>
 
-<span class="nc" id="L80">    public Presentation(Date date, Boolean isValid, int convocatoryId) {</span>
-<span class="nc" id="L81">        this.setDate(date);</span>
-<span class="nc" id="L82">        this.setIsValid(isValid);</span>
-<span class="nc" id="L83">        this.setConvocatoryId(convocatoryId);</span>
-<span class="nc" id="L84">    }</span>
-    
-<span class="nc" id="L86">    public Presentation(int id, Date date, Boolean isValid, int convocatoryId, int userId) {</span>
-<span class="nc" id="L87">        this.setId(id);</span>
-<span class="nc" id="L88">        this.setDate(date);</span>
-<span class="nc" id="L89">        this.setIsValid(isValid);</span>
-<span class="nc" id="L90">        this.setConvocatoryId(convocatoryId);</span>
-<span class="nc" id="L91">        this.setUserId(userId);</span>
-<span class="nc" id="L92">    }</span>
-    
+    /**
+     * Presentation Constructor.
+     *
+     * @param date Date.
+     * @param isValid Is Valid.
+     * @param convocatoryId Convocatory Id.
+     */
+<span class="nc" id="L92">    public Presentation(Date date, Boolean isValid, int convocatoryId) {</span>
+<span class="nc" id="L93">        this.setDate(date);</span>
+<span class="nc" id="L94">        this.setIsValid(isValid);</span>
+<span class="nc" id="L95">        this.setConvocatoryId(convocatoryId);</span>
+<span class="nc" id="L96">    }</span>
+
+    /**
+     * Presentation Constructor.
+     *
+     * @param id Id.
+     * @param date Date.
+     * @param isValid Is Valid.
+     * @param convocatoryId Convocatory Id.
+     * @param userId User Id.
+     */
+<span class="nc" id="L107">    public Presentation(int id, Date date, Boolean isValid, int convocatoryId, int userId) {</span>
+<span class="nc" id="L108">        this.setId(id);</span>
+<span class="nc" id="L109">        this.setDate(date);</span>
+<span class="nc" id="L110">        this.setIsValid(isValid);</span>
+<span class="nc" id="L111">        this.setConvocatoryId(convocatoryId);</span>
+<span class="nc" id="L112">        this.setUserId(userId);</span>
+<span class="nc" id="L113">    }</span>
+
+    /**
+     * Presentation Constructor.
+     *
+     * @param id Id.
+     * @param date Date.
+     * @param isValid Is Valid.
+     * @param convocatoryId Convocatory Id.
+     * @param userId User Id.
+     * @param presentationDocumentTypes Presentation Document Types.
+     */
     public Presentation(
             int id,
             Date date,
@@ -98,91 +129,177 @@ public class Presentation extends BaseEntity {
             int convocatoryId,
             int userId,
             List&lt;PresentationDocumentType&gt; presentationDocumentTypes
-<span class="nc" id="L101">    ) {</span>
-<span class="nc" id="L102">        this.setId(id);</span>
-<span class="nc" id="L103">        this.setDate(date);</span>
-<span class="nc" id="L104">        this.setIsValid(isValid);</span>
-<span class="nc" id="L105">        this.setConvocatoryId(convocatoryId);</span>
-<span class="nc" id="L106">        this.setUserId(userId);</span>
-<span class="nc" id="L107">        this.setPresentationDocumentTypes(presentationDocumentTypes);</span>
-<span class="nc" id="L108">    }</span>
+<span class="nc" id="L132">    ) {</span>
+<span class="nc" id="L133">        this.setId(id);</span>
+<span class="nc" id="L134">        this.setDate(date);</span>
+<span class="nc" id="L135">        this.setIsValid(isValid);</span>
+<span class="nc" id="L136">        this.setConvocatoryId(convocatoryId);</span>
+<span class="nc" id="L137">        this.setUserId(userId);</span>
+<span class="nc" id="L138">        this.setPresentationDocumentTypes(presentationDocumentTypes);</span>
+<span class="nc" id="L139">    }</span>
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;    
+    /**
+     * Get Id.
+     *
+     * @return Id.
+     */
+    @Override
     public int getId() {
-<span class="nc" id="L113">        return id;</span>
+<span class="nc" id="L150">        return id;</span>
     }
 
+    /**
+     * Set Id.
+     *
+     * @param id Id.
+     */
     public void setId(int id) {
-<span class="nc" id="L117">        this.id = id;</span>
-<span class="nc" id="L118">    }</span>
-    
-    @SuppressFBWarnings({&quot;EI_EXPOSE_REP&quot;})
-    public Date getDate() {
-<span class="nc" id="L122">        return date;</span>
-    }
-
-    @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
-    public void setDate(Date date) {
-<span class="nc" id="L127">        this.date = date;</span>
-<span class="nc" id="L128">    }</span>
-
-    public Boolean getIsValid() {
-<span class="nc" id="L131">        return isValid;</span>
-    }
-
-    public void setIsValid(Boolean isValid) {
-<span class="nc" id="L135">        this.isValid = isValid;</span>
-<span class="nc" id="L136">    }</span>
-
-    public int getConvocatoryId() {
-<span class="nc" id="L139">        return convocatoryId;</span>
-    }
-
-    public void setConvocatoryId(int convocatoryId) {
-<span class="nc" id="L143">        this.convocatoryId = convocatoryId;</span>
-<span class="nc" id="L144">    }</span>
-
-    public int getUserId() {
-<span class="nc" id="L147">        return userId;</span>
-    }
-
-    public void setUserId(int userId) {
-<span class="nc" id="L151">        this.userId = userId;</span>
-<span class="nc" id="L152">    }</span>
-
-    public Convocatory getConvocatory() {
-<span class="nc" id="L155">        return convocatory;</span>
-    }
-
-    public void setConvocatory(Convocatory convocatory) {
-<span class="nc" id="L159">        this.convocatory = convocatory;</span>
+<span class="nc" id="L159">        this.id = id;</span>
 <span class="nc" id="L160">    }</span>
 
+    /**
+     * Get Date.
+     *
+     * @return Date.
+     */
+    @SuppressFBWarnings({&quot;EI_EXPOSE_REP&quot;})
+    public Date getDate() {
+<span class="nc" id="L169">        return date;</span>
+    }
+
+    /**
+     * Set Date.
+     *
+     * @param date Date.
+     */
+    @SuppressFBWarnings({&quot;EI_EXPOSE_REP2&quot;})
+    public void setDate(Date date) {
+<span class="nc" id="L179">        this.date = date;</span>
+<span class="nc" id="L180">    }</span>
+
+    /**
+     * Get Is valid?.
+     *
+     * @return Is Valid?
+     */
+    public Boolean getIsValid() {
+<span class="nc" id="L188">        return isValid;</span>
+    }
+
+    /**
+     * Set Is Valid?
+     *
+     * @param isValid Is Valid?
+     */
+    public void setIsValid(Boolean isValid) {
+<span class="nc" id="L197">        this.isValid = isValid;</span>
+<span class="nc" id="L198">    }</span>
+
+    /**
+     * Get Convocatory Id.
+     *
+     * @return Convocatory Id.
+     */
+    public int getConvocatoryId() {
+<span class="nc" id="L206">        return convocatoryId;</span>
+    }
+
+    /**
+     * Set Convocatory Id.
+     *
+     * @param convocatoryId Convocatory Id.
+     */
+    public void setConvocatoryId(int convocatoryId) {
+<span class="nc" id="L215">        this.convocatoryId = convocatoryId;</span>
+<span class="nc" id="L216">    }</span>
+
+    /**
+     * Get User Id.
+     *
+     * @return User Id.
+     */
+    public int getUserId() {
+<span class="nc" id="L224">        return userId;</span>
+    }
+
+    /**
+     * Set User Id.
+     *
+     * @param userId User Id.
+     */
+    public void setUserId(int userId) {
+<span class="nc" id="L233">        this.userId = userId;</span>
+<span class="nc" id="L234">    }</span>
+
+    /**
+     * Get Convocatory.
+     *
+     * @return Convocatory.
+     */
+    public Convocatory getConvocatory() {
+<span class="nc" id="L242">        return convocatory;</span>
+    }
+
+    /**
+     * Set Convocatory.
+     *
+     * @param convocatory Convocatory.
+     */
+    public void setConvocatory(Convocatory convocatory) {
+<span class="nc" id="L251">        this.convocatory = convocatory;</span>
+<span class="nc" id="L252">    }</span>
+
+    /**
+     * Get User.
+     *
+     * @return User.
+     */
     public User getUser() {
-<span class="nc" id="L163">        return user;</span>
+<span class="nc" id="L260">        return user;</span>
     }
 
+    /**
+     * Set User.
+     *
+     * @param user User.
+     */
     public void setUser(User user) {
-<span class="nc" id="L167">        this.user = user;</span>
-<span class="nc" id="L168">    }</span>
+<span class="nc" id="L269">        this.user = user;</span>
+<span class="nc" id="L270">    }</span>
 
+    /**
+     * Get Presentation Documents Types.
+     *
+     * @return Presentation Documents Types.
+     */
     public List&lt;PresentationDocumentType&gt; getPresentationDocumentTypes() {
-<span class="nc" id="L171">        return presentationDocumentTypes;</span>
+<span class="nc" id="L278">        return presentationDocumentTypes;</span>
     }
 
+    /**
+     * Set Presentation Documents Types.
+     *
+     * @param presentationDocumentTypes Presentation Documents Types.
+     */
     public void setPresentationDocumentTypes(List&lt;PresentationDocumentType&gt; presentationDocumentTypes) {
-<span class="nc" id="L175">        this.presentationDocumentTypes = presentationDocumentTypes;</span>
-<span class="nc" id="L176">    }</span>
+<span class="nc" id="L287">        this.presentationDocumentTypes = presentationDocumentTypes;</span>
+<span class="nc" id="L288">    }</span>
     // &lt;/editor-fold&gt;
 
+    /**
+     * To String
+     *
+     * @return String.
+     */
     @Override
     public String toString() {
-<span class="nc" id="L181">        return &quot;Presentation{&quot;</span>
-<span class="nc" id="L182">                + &quot;id=&quot; + this.getId()</span>
-<span class="nc" id="L183">                + &quot;, date=&quot; + this.getDate()</span>
-<span class="nc" id="L184">                + &quot;, isValid=&quot; + this.getIsValid()</span>
-<span class="nc" id="L185">                + &quot;, convocatoryId=&quot; + this.getConvocatoryId()</span>
+<span class="nc" id="L298">        return &quot;Presentation{&quot;</span>
+<span class="nc" id="L299">                + &quot;id=&quot; + this.getId()</span>
+<span class="nc" id="L300">                + &quot;, date=&quot; + this.getDate()</span>
+<span class="nc" id="L301">                + &quot;, isValid=&quot; + this.getIsValid()</span>
+<span class="nc" id="L302">                + &quot;, convocatoryId=&quot; + this.getConvocatoryId()</span>
                 + '}';
     }
 }

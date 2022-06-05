@@ -1,6 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JInternalFrame.java to edit this template
+/**
+ * User Create JInternal Frame.
+ *
+ * @author raulsm
+ * @version 1.0.0
  */
 package app.views.users;
 
@@ -17,8 +19,10 @@ import java.awt.Color;
 import java.util.List;
 
 /**
+ * User Create JInternal Frame.
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class UserCreateJInternalFrame extends javax.swing.JInternalFrame {
 

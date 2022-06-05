@@ -22,9 +22,12 @@ import java.util.List;
  */
 public class PresentationDao extends BaseDao {
 
-<span class="nc" id="L25">    public PresentationDao() {</span>
-<span class="nc" id="L26">        super.setModel(new Presentation());</span>
-<span class="nc" id="L27">    }</span>
+    /**
+     * Presentation DAO Constructor.
+     */
+<span class="nc" id="L28">    public PresentationDao() {</span>
+<span class="nc" id="L29">        super.setModel(new Presentation());</span>
+<span class="nc" id="L30">    }</span>
 
     /**
      * List Presentations.
@@ -32,14 +35,14 @@ public class PresentationDao extends BaseDao {
      * @return List of presentations
      */
     public List&lt;Presentation&gt; all() {
-<span class="nc" id="L35">        List&lt;Presentation&gt; presentations = super.all();</span>
+<span class="nc" id="L38">        List&lt;Presentation&gt; presentations = super.all();</span>
 
         // Add extra fields
-<span class="nc bnc" id="L38" title="All 2 branches missed.">        for (int i = 0; i &lt; presentations.size(); i++) {</span>
-<span class="nc" id="L39">            presentations.set(i, findById(presentations.get(i).getId()));</span>
+<span class="nc bnc" id="L41" title="All 2 branches missed.">        for (int i = 0; i &lt; presentations.size(); i++) {</span>
+<span class="nc" id="L42">            presentations.set(i, findById(presentations.get(i).getId()));</span>
         }
 
-<span class="nc" id="L42">        return presentations;</span>
+<span class="nc" id="L45">        return presentations;</span>
     }
 
     /**
@@ -50,43 +53,43 @@ public class PresentationDao extends BaseDao {
      */
     @Override
     public Presentation findById(int id) {
-<span class="nc" id="L53">        return addRelations((Presentation) super.findById(id));</span>
+<span class="nc" id="L56">        return addRelations((Presentation) super.findById(id));</span>
     }
 
     /**
      * Create Presentation.
      *
-     * @param &lt;T&gt;
+     * @param &lt;T&gt; T
      * @param presentation Presentation
      * @return status
      */
     public &lt;T&gt; Integer create(Presentation presentation) {
-<span class="nc" id="L64">        Integer id = super.create((BaseEntity) presentation);</span>
-        
+<span class="nc" id="L67">        Integer id = super.create((BaseEntity) presentation);</span>
+
         // Create presentation documents types
-<span class="nc" id="L67">        List&lt;PresentationDocumentType&gt; presentationDocumentTypes = presentation.getPresentationDocumentTypes();</span>
+<span class="nc" id="L70">        List&lt;PresentationDocumentType&gt; presentationDocumentTypes = presentation.getPresentationDocumentTypes();</span>
 
-<span class="nc bnc" id="L69" title="All 2 branches missed.">        if (presentationDocumentTypes != null) {</span>
-<span class="nc" id="L70">            PresentationDocumentTypeDao presentationDocumentTypeDao = new PresentationDocumentTypeDao();</span>
+<span class="nc bnc" id="L72" title="All 2 branches missed.">        if (presentationDocumentTypes != null) {</span>
+<span class="nc" id="L73">            PresentationDocumentTypeDao presentationDocumentTypeDao = new PresentationDocumentTypeDao();</span>
 
-<span class="nc bnc" id="L72" title="All 2 branches missed.">            for (PresentationDocumentType presentationDocumentType : presentationDocumentTypes) {</span>
-<span class="nc" id="L73">                presentationDocumentType.setPresentationId(id);</span>
-<span class="nc" id="L74">                presentationDocumentTypeDao.create(presentationDocumentType);</span>
-<span class="nc" id="L75">            }</span>
+<span class="nc bnc" id="L75" title="All 2 branches missed.">            for (PresentationDocumentType presentationDocumentType : presentationDocumentTypes) {</span>
+<span class="nc" id="L76">                presentationDocumentType.setPresentationId(id);</span>
+<span class="nc" id="L77">                presentationDocumentTypeDao.create(presentationDocumentType);</span>
+<span class="nc" id="L78">            }</span>
         }
-<span class="nc" id="L77">        return id;</span>
+<span class="nc" id="L80">        return id;</span>
     }
 
     /**
      * Update Presentation.
      *
-     * @param &lt;T&gt;
+     * @param &lt;T&gt; T
      * @param id Identifier
      * @param presentation Presentation
-     * @return
+     * @return Status.
      */
     public &lt;T&gt; boolean update(int id, Presentation presentation) {
-<span class="nc" id="L89">        return super.update(id, (BaseEntity) presentation);</span>
+<span class="nc" id="L92">        return super.update(id, (BaseEntity) presentation);</span>
     }
 
     /**
@@ -97,7 +100,7 @@ public class PresentationDao extends BaseDao {
      */
     @Override
     public boolean delete(int id) {
-<span class="nc" id="L100">        return super.delete(id);</span>
+<span class="nc" id="L103">        return super.delete(id);</span>
     }
 
     /**
@@ -109,45 +112,45 @@ public class PresentationDao extends BaseDao {
     private Presentation addRelations(Presentation presentation) {
         try {
             // Add Convocatory
-<span class="nc" id="L112">            List&lt;Convocatory&gt; convocatories = super</span>
-<span class="nc" id="L113">                    .whereNamedQuery(</span>
+<span class="nc" id="L115">            List&lt;Convocatory&gt; convocatories = super</span>
+<span class="nc" id="L116">                    .whereNamedQuery(</span>
                             &quot;convocatory&quot;,
                             &quot;convocatory_id&quot;,
-<span class="nc" id="L116">                            String.valueOf(presentation.getConvocatoryId())</span>
+<span class="nc" id="L119">                            String.valueOf(presentation.getConvocatoryId())</span>
                     );
 
-<span class="nc bnc" id="L119" title="All 4 branches missed.">            if (convocatories != null &amp;&amp; !convocatories.isEmpty()) {</span>
-<span class="nc" id="L120">                 presentation.setConvocatory(convocatories.get(0));</span>
+<span class="nc bnc" id="L122" title="All 4 branches missed.">            if (convocatories != null &amp;&amp; !convocatories.isEmpty()) {</span>
+<span class="nc" id="L123">                presentation.setConvocatory(convocatories.get(0));</span>
             }
-            
+
             // Add User
-<span class="nc" id="L124">            List&lt;User&gt; users = super</span>
-<span class="nc" id="L125">                    .whereNamedQuery(</span>
+<span class="nc" id="L127">            List&lt;User&gt; users = super</span>
+<span class="nc" id="L128">                    .whereNamedQuery(</span>
                             &quot;user&quot;,
                             &quot;user_id&quot;,
-<span class="nc" id="L128">                            String.valueOf(presentation.getUserId())</span>
+<span class="nc" id="L131">                            String.valueOf(presentation.getUserId())</span>
                     );
 
-<span class="nc bnc" id="L131" title="All 4 branches missed.">            if (users != null &amp;&amp; !users.isEmpty()) {</span>
-<span class="nc" id="L132">                presentation.setUser(users.get(0));</span>
+<span class="nc bnc" id="L134" title="All 4 branches missed.">            if (users != null &amp;&amp; !users.isEmpty()) {</span>
+<span class="nc" id="L135">                presentation.setUser(users.get(0));</span>
             }
-            
+
             // Add Documents
-<span class="nc" id="L136">            List&lt;PresentationDocumentType&gt; presentationDocumentTypes = super</span>
-<span class="nc" id="L137">                    .whereNamedQuery(</span>
+<span class="nc" id="L139">            List&lt;PresentationDocumentType&gt; presentationDocumentTypes = super</span>
+<span class="nc" id="L140">                    .whereNamedQuery(</span>
                             &quot;documents&quot;,
                             &quot;presentation_id&quot;,
-<span class="nc" id="L140">                            String.valueOf(presentation.getId())</span>
+<span class="nc" id="L143">                            String.valueOf(presentation.getId())</span>
                     );
 
-<span class="nc" id="L143">            presentation.setPresentationDocumentTypes(presentationDocumentTypes);</span>
+<span class="nc" id="L146">            presentation.setPresentationDocumentTypes(presentationDocumentTypes);</span>
 
-<span class="nc" id="L145">            return presentation;</span>
-<span class="nc" id="L146">        } catch (Exception exception) {</span>
-<span class="nc" id="L147">            Log.error(exception);</span>
+<span class="nc" id="L148">            return presentation;</span>
+<span class="nc" id="L149">        } catch (Exception exception) {</span>
+<span class="nc" id="L150">            Log.error(exception);</span>
         }
 
-<span class="nc" id="L150">        return null;</span>
+<span class="nc" id="L153">        return null;</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

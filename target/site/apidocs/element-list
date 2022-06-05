@@ -1,0 +1,14 @@
+app
+app.controllers
+app.dao
+app.entities
+app.views
+app.views.convocatory
+app.views.information
+app.views.municipality
+app.views.presentation
+app.views.users
+config
+helpers
+helpers.filters.files
+seeders

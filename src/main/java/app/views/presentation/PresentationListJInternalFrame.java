@@ -1,7 +1,8 @@
 /**
- * PresentationListJInternalFrame.
+ * Presentation List JInternal Frame
  *
  * @author raulsm
+ * @version 1.0.0
  */
 package app.views.presentation;
 
@@ -13,9 +14,10 @@ import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 /**
- * PresentationListJInternalFrame.
+ * Presentation List JInternal Frame
  *
  * @author raulsm
+ * @version 1.0.0
  */
 public class PresentationListJInternalFrame extends javax.swing.JInternalFrame {
 
@@ -24,7 +26,7 @@ public class PresentationListJInternalFrame extends javax.swing.JInternalFrame {
     /**
      * Creates new form PresentationListJInternalFrame
      *
-     * @param jDesktopPanelContaine
+     * @param jDesktopPanelContaine Desktop Panel Container
      */
     public PresentationListJInternalFrame(JDesktopPane jDesktopPanelContaine) {
         initComponents();

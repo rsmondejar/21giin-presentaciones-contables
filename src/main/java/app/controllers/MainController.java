@@ -8,6 +8,7 @@ import app.entities.User;
 import app.views.MenuJFrame;
 
 /**
+ * Main Controller.
  *
  * @author raulsm
  */
@@ -16,7 +17,7 @@ public class MainController extends BaseController {
     private static final MenuJFrame MENU_PANEL = new MenuJFrame();
 
     /**
-     * Main Controller constructor
+     * Main Controller constructor.
      */
     public MainController() {
         // Get user info
@@ -25,9 +26,6 @@ public class MainController extends BaseController {
         System.out.println(authUser.toString());
 
         MENU_PANEL.setUserFooterInfo(authUser);
-        
-        // Open Menu
-//        menuPanelShow();
     }
 
     /**

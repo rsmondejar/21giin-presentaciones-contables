@@ -24,6 +24,9 @@ import javax.persistence.UniqueConstraint;
 @Table(uniqueConstraints = @UniqueConstraint(columnNames = &quot;role&quot;, name = &quot;roleUniqueConstraint&quot;))
 public class UserRole extends BaseEntity {
 
+    /**
+     * id Id.
+     */
     @Id
     @Column(name = &quot;id&quot;)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,35 +36,69 @@ public class UserRole extends BaseEntity {
     private String role;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Constructors&quot;&gt;
-<span class="fc" id="L36">    public UserRole() {</span>
-<span class="fc" id="L37">    }</span>
+    /**
+     * User Role Constructor.
+     */
+<span class="fc" id="L42">    public UserRole() {</span>
+<span class="fc" id="L43">    }</span>
 
-<span class="nc" id="L39">    public UserRole(String role) {</span>
-<span class="nc" id="L40">        this.setRole(role);</span>
-<span class="nc" id="L41">    }</span>
+    /**
+     * User Role Constructor.
+     *
+     * @param role Role.
+     */
+<span class="nc" id="L50">    public UserRole(String role) {</span>
+<span class="nc" id="L51">        this.setRole(role);</span>
+<span class="nc" id="L52">    }</span>
     // &lt;/editor-fold&gt;
 
     // &lt;editor-fold defaultstate=&quot;collapsed&quot; desc=&quot;Getters And Setters&quot;&gt;    
+    /**
+     * Get Id.
+     *
+     * @return Id.
+     */
+    @Override
     public int getId() {
-<span class="nc" id="L46">        return id;</span>
+<span class="nc" id="L63">        return id;</span>
     }
 
+    /**
+     * Set Id,
+     *
+     * @param id Id.
+     */
     public void setId(int id) {
-<span class="nc" id="L50">        this.id = id;</span>
-<span class="nc" id="L51">    }</span>
+<span class="nc" id="L72">        this.id = id;</span>
+<span class="nc" id="L73">    }</span>
 
+    /**
+     * Get Role.
+     *
+     * @return Role.
+     */
     public String getRole() {
-<span class="nc" id="L54">        return role;</span>
+<span class="nc" id="L81">        return role;</span>
     }
 
+    /**
+     * Set Role.
+     *
+     * @param role Role.
+     */
     public void setRole(String role) {
-<span class="nc" id="L58">        this.role = role;</span>
-<span class="nc" id="L59">    }</span>
+<span class="nc" id="L90">        this.role = role;</span>
+<span class="nc" id="L91">    }</span>
     // &lt;/editor-fold&gt;
 
+    /**
+     * To String
+     *
+     * @return Role
+     */
     @Override
     public String toString() {
-<span class="nc" id="L64">        return this.getRole();</span>
+<span class="nc" id="L101">        return this.getRole();</span>
     }
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

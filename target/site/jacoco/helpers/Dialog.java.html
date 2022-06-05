@@ -13,36 +13,53 @@ import javax.swing.JOptionPane;
  */
 <span class="nc" id="L14">public class Dialog {</span>
 
+    /**
+     * Info message.
+     *
+     * @param message Message description
+     * @param title Title
+     */
     public static void info(String message, String title) {
-<span class="nc" id="L17">        custom(message, title, JOptionPane.INFORMATION_MESSAGE);</span>
-<span class="nc" id="L18">    }</span>
-
-    public static void error(String message, String title) {
-<span class="nc" id="L21">        custom(message, title, JOptionPane.ERROR_MESSAGE);</span>
-<span class="nc" id="L22">    }</span>
-    
-    public static void warning(String message, String title) {
-<span class="nc" id="L25">        custom(message, title, JOptionPane.WARNING_MESSAGE);</span>
-<span class="nc" id="L26">    }</span>
+<span class="nc" id="L23">        custom(message, title, JOptionPane.INFORMATION_MESSAGE);</span>
+<span class="nc" id="L24">    }</span>
 
     /**
-     * Brings up a dialog that displays a message using a default icon
-     * determined by the &lt;code&gt;messageType&lt;/code&gt; parameter.
+     * Error message.
+     *
+     * @param message Message description
+     * @param title Title
+     */
+    public static void error(String message, String title) {
+<span class="nc" id="L33">        custom(message, title, JOptionPane.ERROR_MESSAGE);</span>
+<span class="nc" id="L34">    }</span>
+
+    /**
+     * Warning message.
+     *
+     * @param message Message description
+     * @param title Title
+     */
+    public static void warning(String message, String title) {
+<span class="nc" id="L43">        custom(message, title, JOptionPane.WARNING_MESSAGE);</span>
+<span class="nc" id="L44">    }</span>
+
+    /**
+     * Brings up a dialog that displays a message using a default icon determined by the &lt;code&gt;messageType&lt;/code&gt;
+     * parameter.
      *
      * @param message the &lt;code&gt;Object&lt;/code&gt; to display
      * @param title the title string for the dialog
-     * @param messageType the type of message to be displayed:
-     * &lt;code&gt;ERROR_MESSAGE&lt;/code&gt;, &lt;code&gt;INFORMATION_MESSAGE&lt;/code&gt;,
-     * &lt;code&gt;WARNING_MESSAGE&lt;/code&gt;, &lt;code&gt;QUESTION_MESSAGE&lt;/code&gt;, or
+     * @param messageType the type of message to be displayed: &lt;code&gt;ERROR_MESSAGE&lt;/code&gt;,
+     * &lt;code&gt;INFORMATION_MESSAGE&lt;/code&gt;, &lt;code&gt;WARNING_MESSAGE&lt;/code&gt;, &lt;code&gt;QUESTION_MESSAGE&lt;/code&gt;, or
      * &lt;code&gt;PLAIN_MESSAGE&lt;/code&gt;
      */
     public static void custom(String message, String title, int messageType) {
-<span class="nc" id="L40">        JOptionPane.showMessageDialog(</span>
+<span class="nc" id="L57">        JOptionPane.showMessageDialog(</span>
                 null,
                 message,
                 title,
                 messageType
         );
-<span class="nc" id="L46">    }</span>
+<span class="nc" id="L63">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>

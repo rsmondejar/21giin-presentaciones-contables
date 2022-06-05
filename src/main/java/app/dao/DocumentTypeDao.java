@@ -18,6 +18,9 @@ import java.util.List;
  */
 public class DocumentTypeDao extends BaseDao {
 
+    /**
+     * Document Type DAO Consructor.
+     */
     public DocumentTypeDao() {
         super.setModel(new DocumentType());
     }
@@ -46,7 +49,7 @@ public class DocumentTypeDao extends BaseDao {
     /**
      * Create Document Type.
      *
-     * @param <T>
+     * @param <T> T
      * @param documentType Document Type
      * @return status
      */
@@ -57,10 +60,10 @@ public class DocumentTypeDao extends BaseDao {
     /**
      * Update Document Type.
      *
-     * @param <T>
+     * @param <T> T
      * @param id Identifier
      * @param documentType Document Type
-     * @return
+     * @return Status
      */
     public <T> boolean update(int id, DocumentType documentType) {
         return super.update(id, (BaseEntity) documentType);
